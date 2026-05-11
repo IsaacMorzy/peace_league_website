@@ -1,0 +1,26 @@
+[project]
+name = "peace_league_website"
+version = "0.0.1"
+description = "Astro-powered web portal for Peace League Africa"
+authors = [
+    {name = "Peace League Africa", email = "info@peaceleagueafrica.org"}
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = []
+
+[build-system]
+requires = ["flit_core>=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.frappe]
+app-name = "peace_league_website"
+app-title = "Peace League Website"
+app-publisher = "Peace League Africa"
+app-description = "Astro-powered web portal for Peace League Africa"
+app-email = "info@peaceleagueafrica.org"
+app-license = "AGPL-3.0"
+app-required-apps = ["frappe_npo"]
+app-version = "0.0.1"

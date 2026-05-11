@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Volunteer">
+  <Navigation />
+  
+  <main>
+    <section class="bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold">Join Our Team</h1>
+        <p class="mt-4 text-xl text-green-100">Share your skills and make an impact</p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Volunteer With Us</h2>
+          
+          <div class="prose prose-lg mb-8">
+            <p>
+              We are always looking for passionate individuals to join our volunteer team. 
+              Whether you can give a few hours a week or commit to a longer-term placement, 
+              your contribution matters.
+            </p>
+            
+            <h3>Volunteer Opportunities</h3>
+            <ul>
+              <li>Teaching and education support</li>
+              <li>Healthcare and wellness programs</li>
+              <li>Administrative and project coordination</li>
+              <li>Fundraising and outreach</li>
+              <li>Skills-based volunteering (legal, tech, marketing)</li>
+            </ul>
+            
+            <h3>Requirements</h3>
+            <ul>
+              <li>Passion for community service</li>
+              <li>Commitment to our values</li>
+              <li>Relevant skills for your chosen area</li>
+              <li>Background check (for certain positions)</li>
+            </ul>
+          </div>
+          
+          <form id="volunteer-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                <input type="text" id="first_name" name="first_name" required 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+              </div>
+              <div>
+                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" required 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                <input type="email" id="email" name="email" required 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                <input type="tel" id="phone" name="phone" required 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+              </div>
+            </div>
+            
+            <div>
+              <label for="volunteer_type" class="block text-sm font-medium text-gray-700 mb-2">Volunteer Type *</label>
+              <select id="volunteer_type" name="volunteer_type" required 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                <option value="">Select a type</option>
+                <option value="Teaching">Teaching & Education</option>
+                <option value="Healthcare">Healthcare & Wellness</option>
+                <option value="Administration">Administration</option>
+                <option value="Fundraising">Fundraising & Outreach</option>
+                <option value="Technical">Technical (Legal, Tech, Marketing)</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="availability" class="block text-sm font-medium text-gray-700 mb-2">Availability</label>
+              <input type="text" id="availability" name="availability" placeholder="e.g., Weekends, 10 hours/week"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+            </div>
+            
+            <div>
+              <label for="skills" class="block text-sm font-medium text-gray-700 mb-2">Skills</label>
+              <textarea id="skills" name="skills" rows="2" placeholder="List your relevant skills"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+            </div>
+            
+            <div>
+              <label for="motivation" class="block text-sm font-medium text-gray-700 mb-2">Why do you want to volunteer?</label>
+              <textarea id="motivation" name="motivation" rows="4" placeholder="Tell us about your motivation"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+            </div>
+            
+            <div id="form-message" class="hidden"></div>
+            
+            <button type="submit" id="submit-btn"
+              class="w-full bg-green-700 text-white py-4 rounded-lg font-semibold hover:bg-green-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed">
+              Submit Application
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import { submitVolunteer } from '../lib/api.js';
+
+  const form = document.getElementById('volunteer-form');
+  const messageDiv = document.getElementById('form-message');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    messageDiv.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    
+    try {
+      const response = await submitVolunteer(data);
+      
+      if (response.status === 'success') {
+        messageDiv.className = 'p-4 bg-green-100 text-green-800 rounded-lg';
+        messageDiv.textContent = 'Thank you! Your volunteer application has been submitted successfully.';
+        form.reset();
+      } else {
+        throw new Error(response.message || 'Failed to submit application');
+      }
+    } catch (error) {
+      messageDiv.className = 'p-4 bg-red-100 text-red-800 rounded-lg';
+      messageDiv.textContent = 'Error: ' + error.message + '. Please try again.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Application';
+      messageDiv.classList.remove('hidden');
+    }
+  });
+</script>
