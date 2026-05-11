@@ -12,8 +12,8 @@ dependencies = []
 dev = []
 
 [build-system]
-requires = ["flit_core>=3.4,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [tool.frappe]
 app-name = "peace_league_website"
@@ -24,3 +24,8 @@ app-email = "info@peaceleagueafrica.org"
 app-license = "AGPL-3.0"
 app-required-apps = ["frappe_npo"]
 app-version = "0.0.1"
+exclude_from_build = true
+
+[tool.setuptools]
+packages = ["peace_league_website"]
+package-dir = {"" = "peace_league_website"}

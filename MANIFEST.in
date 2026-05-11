@@ -1,0 +1,10 @@
+include README.md
+include pyproject.toml
+recursive-include peace_league_website *.py
+recursive-include peace_league_website *.json
+recursive-exclude peace_league_website __pycache__ *
+recursive-exclude peace_league_website *.pyc
+recursive-exclude frontend *
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude *.pyo
