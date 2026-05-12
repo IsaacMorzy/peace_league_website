@@ -63,7 +63,32 @@ import Footer from '../components/Footer.astro';
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12" data-aos="fade-up">Featured Programs</h2>
-        <div id="programs-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <div id="programs-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up">
+            <div class="h-48 bg-hairline"></div>
+            <div class="p-6">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Education</span>
+              <h3 class="text-xl font-semibold text-ink mt-2">Peace Education Program</h3>
+              <p class="mt-2 text-steel line-clamp-3">Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills across East Africa.</p>
+            </div>
+          </div>
+          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-48 bg-hairline"></div>
+            <div class="p-6">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Youth</span>
+              <h3 class="text-xl font-semibold text-ink mt-2">Youth Empowerment Initiative</h3>
+              <p class="mt-2 text-steel line-clamp-3">Empowering young leaders through mentorship programs, skills training, and community service opportunities in 12 communities across 5 countries.</p>
+            </div>
+          </div>
+          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-48 bg-hairline"></div>
+            <div class="p-6">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Community</span>
+              <h3 class="text-xl font-semibold text-ink mt-2">Community Reconciliation</h3>
+              <p class="mt-2 text-steel line-clamp-3">Facilitating dialogue and reconciliation processes in communities affected by conflict and division across the Great Lakes region.</p>
+            </div>
+          </div>
+        </div>
         <div class="mt-12 text-center" data-aos="fade-up">
           <a href="/programs" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
             View All Programs
@@ -192,21 +217,7 @@ import Footer from '../components/Footer.astro';
           }
         }
       } catch (e) {
-        console.log('API not available, using static content');
-        document.getElementById('programs-container').innerHTML = [
-          {title:'Peace Education Program',category:'Education',description:'Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills.'},
-          {title:'Youth Empowerment Initiative',category:'Youth',description:'Empowering young leaders through mentorship programs, skills training, and community service opportunities in 12 communities.'},
-          {title:'Community Reconciliation',category:'Community',description:'Facilitating dialogue and reconciliation processes in communities affected by conflict and division across the Great Lakes region.'}
-        ].slice(0,3).map(p => `
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
-            <div class="h-48 bg-hairline"></div>
-            <div class="p-6">
-              <span class="badge-tag">${p.category}</span>
-              <h3 class="text-xl font-semibold text-ink mt-2">${p.title}</h3>
-              <p class="mt-2 text-steel line-clamp-3">${p.description}</p>
-            </div>
-          </div>
-        `).join('');
+        console.log('API not available, static content shown');
       }
     }
     fetchHomepageData();
