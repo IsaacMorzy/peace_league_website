@@ -8,11 +8,12 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="relative text-white hero-gradient overflow-hidden">
+    <section id="hero-section" class="relative text-white hero-gradient overflow-hidden">
       <div class="absolute inset-0 bg-pattern opacity-[0.12]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#1a3d4a]/70 via-transparent to-[#1a3d4a]/30"></div>
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-[0.15]"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-[120px]">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a3d4a]/70 via-transparent to-[#1a3d4a]/30 z-[1]"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent-warm/10 animate-gradient-overlay z-[2]"></div>
+      <div id="hero-parallax-bg" class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-[0.15] parallax-bg"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-[120px] z-[3]">
         <div class="max-w-3xl">
           <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 animate-hold text-[40px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.05] tracking-[-2px] text-white">
             12 Countries, <br/>
@@ -66,9 +67,13 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12">Our Causes</h2>
         <div id="causes-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 0ms">
-            <div class="h-48 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center group">
-              <svg class="w-14 h-14 text-accent/30 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 0ms">
+            <div class="h-48 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&auto=format&fit=crop" alt="Peace Education" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-14 h-14 text-white/30 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
             </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Education</span>
@@ -89,9 +94,13 @@ import Footer from '../components/Footer.astro';
               </a>
             </div>
           </div>
-          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 150ms">
-            <div class="h-48 bg-gradient-to-br from-accent-warm/20 to-accent/5 flex items-center justify-center group">
-              <svg class="w-14 h-14 text-accent-warm/40 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 150ms">
+            <div class="h-48 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Youth Empowerment" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-14 h-14 text-white/30 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
             </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Youth</span>
@@ -112,9 +121,13 @@ import Footer from '../components/Footer.astro';
               </a>
             </div>
           </div>
-          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 300ms">
-            <div class="h-48 bg-gradient-to-br from-accent-deep/20 to-accent/5 flex items-center justify-center group">
-              <svg class="w-14 h-14 text-accent-deep/40 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 300ms">
+            <div class="h-48 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&auto=format&fit=crop" alt="Community Reconciliation" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-14 h-14 text-white/30 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
             </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Community</span>
@@ -168,25 +181,28 @@ import Footer from '../components/Footer.astro';
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">What People Say</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Real voices from the communities you've helped restore, rebuild, and reconcile.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: testimonial-1;">
-            <svg class="w-10 h-10 text-accent mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
-            <p class="text-steel leading-relaxed mb-6">Peace League Africa transformed our community. The peace education program reached over 500 children in our village.</p>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-1;">
+            <img src="https://ui-avatars.com/api/?name=Mama+Sarah&background=00d4a4&color=fff&size=80" alt="Mama Sarah" class="w-16 h-16 rounded-full mx-auto mb-4" loading="lazy" />
+            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6 italic">Peace League Africa transformed our community. The peace education program reached over 500 children in our village.</p>
             <div>
               <p class="text-ink font-semibold">Mama Sarah</p>
               <p class="text-stone text-sm">Community Leader, Uganda</p>
             </div>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: testimonial-2;">
-            <svg class="w-10 h-10 text-accent mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
-            <p class="text-steel leading-relaxed mb-6">As a volunteer, I've seen firsthand how donations change lives. Every dollar goes directly to those who need it most.</p>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-2;">
+            <img src="https://ui-avatars.com/api/?name=James+K.&background=0a0a0a&color=fff&size=80" alt="James K." class="w-16 h-16 rounded-full mx-auto mb-4" loading="lazy" />
+            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6 italic">As a volunteer, I've seen firsthand how donations change lives. Every dollar goes directly to those who need it most.</p>
             <div>
               <p class="text-ink font-semibold">James K.</p>
               <p class="text-stone text-sm">Volunteer Coordinator</p>
             </div>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: testimonial-3;">
-            <svg class="w-10 h-10 text-accent mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
-            <p class="text-steel leading-relaxed mb-6">The clean water initiative saved our village. We no longer walk 10km for clean water.</p>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-3;">
+            <img src="https://ui-avatars.com/api/?name=Esther+M.&background=f59e0b&color=fff&size=80" alt="Esther M." class="w-16 h-16 rounded-full mx-auto mb-4" loading="lazy" />
+            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6 italic">The clean water initiative saved our village. We no longer walk 10km for clean water.</p>
             <div>
               <p class="text-ink font-semibold">Esther M.</p>
               <p class="text-stone text-sm">Teacher, Kenya</p>
@@ -202,6 +218,7 @@ import Footer from '../components/Footer.astro';
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Come build peace with us. From workshops to health fairs, find an event near you.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-1;">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" alt="Peace Education Workshop" class="w-full h-32 object-cover" loading="lazy" />
             <div class="flex">
               <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
                 <span class="text-2xl font-bold leading-none">Jun</span>
@@ -222,6 +239,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-2;">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop" alt="Community Health Fair" class="w-full h-32 object-cover" loading="lazy" />
             <div class="flex">
               <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
                 <span class="text-2xl font-bold leading-none">Jul</span>
@@ -242,6 +260,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-3;">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80&auto=format&fit=crop" alt="Annual Fundraising Gala" class="w-full h-32 object-cover" loading="lazy" />
             <div class="flex">
               <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
                 <span class="text-2xl font-bold leading-none">Sep</span>
@@ -276,6 +295,9 @@ import Footer from '../components/Footer.astro';
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Stories of resilience, lessons in reconciliation, and updates from the frontlines of peace-building.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-1;">
+            <div class="h-36 bg-gradient-to-br from-accent/20 to-accent-warm/10 flex items-center justify-center">
+              <svg class="w-12 h-12 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Technology</span>
               <h3 class="text-xl font-semibold text-ink mt-2">Digital Giving: How Technology is Transforming the Way We Donate</h3>
@@ -287,6 +309,9 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-2;">
+            <div class="h-36 bg-gradient-to-tr from-accent-warm/20 to-accent/10 flex items-center justify-center">
+              <svg class="w-12 h-12 text-accent-warm/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Impact</span>
               <h3 class="text-xl font-semibold text-ink mt-2">The Power of Small Donations: How Every Contribution Makes a Big Impact</h3>
@@ -298,6 +323,9 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-3;">
+            <div class="h-36 bg-gradient-to-bl from-accent-deep/20 to-accent/10 flex items-center justify-center">
+              <svg class="w-12 h-12 text-accent-deep/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Giving</span>
               <h3 class="text-xl font-semibold text-ink mt-2">One-Time vs. Monthly Donations: Which Is Better for Nonprofits?</h3>
@@ -376,6 +404,15 @@ import Footer from '../components/Footer.astro';
       document.querySelectorAll('.progress-bar').forEach(el => progressObserver.observe(el));
     }
 
+    const CAUSE_IMAGES = {
+      'peace-education': 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&auto=format&fit=crop',
+      'youth-empowerment': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop',
+      'community-reconciliation': 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&auto=format&fit=crop',
+      'health': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop',
+      'water': 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=600&q=80&auto=format&fit=crop',
+      'agriculture': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80&auto=format&fit=crop'
+    };
+
     async function fetchHomepageData() {
       try {
         const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_homepage_data`);
@@ -394,10 +431,18 @@ import Footer from '../components/Footer.astro';
 
           if (causes && causes.length > 0) {
             const container = document.getElementById('causes-container');
-            container.innerHTML = causes.slice(0, 3).map((cause, idx) => `
-              <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: ${idx * 150}ms">
-                ${cause.image
-                  ? `<img src="${cause.image}" alt="${cause.title}" class="w-full h-48 object-cover"/>`
+            container.innerHTML = causes.slice(0, 3).map((cause, idx) => {
+              const causeImg = cause.image || CAUSE_IMAGES[cause.name?.toLowerCase()] || '';
+              return `
+              <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: ${idx * 150}ms">
+                ${causeImg
+                  ? `<div class="h-48 relative overflow-hidden">
+                      <img src="${causeImg}" alt="${cause.title}" class="w-full h-full object-cover" loading="lazy" />
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <svg class="w-14 h-14 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                      </div>
+                    </div>`
                   : `<div class="h-48 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
                       <svg class="w-14 h-14 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     </div>`}
@@ -421,8 +466,8 @@ import Footer from '../components/Footer.astro';
                     Donate Now
                   </a>
                 </div>
-              </div>
-            `).join('');
+              </div>`;
+            }).join('');
             observeProgressBars();
           }
         }
@@ -432,5 +477,26 @@ import Footer from '../components/Footer.astro';
     }
     fetchHomepageData();
     setTimeout(observeProgressBars, 500);
+
+    (function() {
+      const heroBg = document.getElementById('hero-parallax-bg');
+      if (!heroBg) return;
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const heroSection = document.getElementById('hero-section');
+            if (heroSection) {
+              const rect = heroSection.getBoundingClientRect();
+              if (rect.bottom > 0) {
+                heroBg.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+              }
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
   </script>
 </Layout>

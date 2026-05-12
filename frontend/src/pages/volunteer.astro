@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <section class="py-16 bg-gradient-to-b from-surface to-canvas">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex items-center gap-2 mb-8 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div class="flex items-center gap-2">
@@ -35,100 +35,175 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
-          <h2 class="text-2xl font-bold text-ink mb-4">Become a Peace Volunteer</h2>
-          
-          <div class="mb-6 text-steel leading-relaxed space-y-4 text-sm">
-            <p>
-              Peace League Africa is powered by over 1,200 volunteers across 12 countries — teachers, 
-              nurses, engineers, students, and retirees — each giving their time to build peace. 
-              Whether you have two hours a week or two months, there is a place for you here.
-            </p>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          <div class="lg:col-span-3 scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+            <h2 class="text-2xl font-bold text-ink mb-4">Become a Peace Volunteer</h2>
             
-            <h3 class="text-base font-semibold text-ink">Volunteer Opportunities</h3>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>Teaching and education support</li>
-              <li>Healthcare and wellness programs</li>
-              <li>Administrative and project coordination</li>
-              <li>Fundraising and outreach</li>
-              <li>Skills-based volunteering (legal, tech, marketing)</li>
-            </ul>
+            <div class="mb-6 text-steel leading-relaxed space-y-4 text-sm">
+              <p>
+                Peace League Africa is powered by over 1,200 volunteers across 12 countries — teachers, 
+                nurses, engineers, students, and retirees — each giving their time to build peace. 
+                Whether you have two hours a week or two months, there is a place for you here.
+              </p>
+              
+              <h3 class="text-base font-semibold text-ink">Volunteer Opportunities</h3>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Teaching and education support</li>
+                <li>Healthcare and wellness programs</li>
+                <li>Administrative and project coordination</li>
+                <li>Fundraising and outreach</li>
+                <li>Skills-based volunteering (legal, tech, marketing)</li>
+              </ul>
+              
+              <h3 class="text-base font-semibold text-ink">Requirements</h3>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Passion for community service</li>
+                <li>Commitment to our values</li>
+                <li>Relevant skills for your chosen area</li>
+                <li>Background check (for certain positions)</li>
+              </ul>
+            </div>
             
-            <h3 class="text-base font-semibold text-ink">Requirements</h3>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>Passion for community service</li>
-              <li>Commitment to our values</li>
-              <li>Relevant skills for your chosen area</li>
-              <li>Background check (for certain positions)</li>
-            </ul>
+            <form id="volunteer-form" class="space-y-5">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label for="first_name" class="block text-sm font-medium text-ink mb-1.5">First Name *</label>
+                  <input type="text" id="first_name" name="first_name" required 
+                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                </div>
+                <div>
+                  <label for="last_name" class="block text-sm font-medium text-ink mb-1.5">Last Name *</label>
+                  <input type="text" id="last_name" name="last_name" required 
+                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
+                  <input type="email" id="email" name="email" required 
+                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required 
+                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                </div>
+              </div>
+              
+              <div>
+                <label for="volunteer_type" class="block text-sm font-medium text-ink mb-1.5">Volunteer Type *</label>
+                <select id="volunteer_type" name="volunteer_type" required 
+                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none">
+                  <option value="">Select a type</option>
+                  <option value="Teaching">Teaching & Education</option>
+                  <option value="Healthcare">Healthcare & Wellness</option>
+                  <option value="Administration">Administration</option>
+                  <option value="Fundraising">Fundraising & Outreach</option>
+                  <option value="Technical">Technical (Legal, Tech, Marketing)</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="availability" class="block text-sm font-medium text-ink mb-1.5">Availability</label>
+                <input type="text" id="availability" name="availability" placeholder="e.g., Weekends — 5 hours per week"
+                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+              </div>
+              
+              <div>
+                <label for="skills" class="block text-sm font-medium text-ink mb-1.5">Skills</label>
+                <textarea id="skills" name="skills" rows="2" placeholder="e.g., Teaching, first aid, social media, carpentry..."
+                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
+              </div>
+              
+              <div>
+                <label for="motivation" class="block text-sm font-medium text-ink mb-1.5">Why do you want to volunteer?</label>
+                <textarea id="motivation" name="motivation" rows="4" placeholder="What draws you to peace-building in Africa?"
+                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
+              </div>
+              
+              <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
+                <button type="submit" id="submit-btn"
+                  class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
+                  Send My Application
+                </button>
+              </div>
+            </form>
           </div>
-          
-          <form id="volunteer-form" class="space-y-5">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label for="first_name" class="block text-sm font-medium text-ink mb-1.5">First Name *</label>
-                <input type="text" id="first_name" name="first_name" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+
+          <div class="lg:col-span-2 hidden lg:block">
+            <div class="sticky top-24 bg-surface rounded-lg border border-hairline p-8">
+              <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" class="w-full h-auto text-accent mb-6">
+                <circle cx="100" cy="100" r="80" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
+                <circle cx="100" cy="100" r="55" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+                <circle cx="100" cy="100" r="30" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
+                <g opacity="0.3">
+                  <line x1="100" y1="20" x2="100" y2="180" stroke-width="0.5"/>
+                  <line x1="20" y1="100" x2="180" y2="100" stroke-width="0.5"/>
+                  <line x1="43" y1="43" x2="157" y2="157" stroke-width="0.5"/>
+                  <line x1="157" y1="43" x2="43" y2="157" stroke-width="0.5"/>
+                </g>
+                <circle cx="100" cy="100" r="6" fill="currentColor" opacity="0.9"/>
+                <g opacity="0.5">
+                  <circle cx="100" cy="24" r="4" fill="currentColor"/>
+                  <circle cx="176" cy="100" r="4" fill="currentColor"/>
+                  <circle cx="100" cy="176" r="4" fill="currentColor"/>
+                  <circle cx="24" cy="100" r="4" fill="currentColor"/>
+                </g>
+                <g opacity="0.35">
+                  <circle cx="62" cy="62" r="3" fill="currentColor"/>
+                  <circle cx="138" cy="62" r="3" fill="currentColor"/>
+                  <circle cx="62" cy="138" r="3" fill="currentColor"/>
+                  <circle cx="138" cy="138" r="3" fill="currentColor"/>
+                </g>
+                <g opacity="0.2">
+                  <circle cx="145" cy="42" r="2.5" fill="currentColor"/>
+                  <circle cx="55" cy="42" r="2.5" fill="currentColor"/>
+                  <circle cx="42" cy="145" r="2.5" fill="currentColor"/>
+                  <circle cx="158" cy="145" r="2.5" fill="currentColor"/>
+                </g>
+              </svg>
+              <h3 class="text-xl font-semibold text-ink text-center">Your Time Builds Peace</h3>
+              <p class="text-steel text-sm text-center mt-2 leading-relaxed">
+                Every hour you give strengthens the fabric of peace across Africa. 
+                Our volunteers are the backbone of everything we do.
+              </p>
+              <div class="mt-6 space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-ink">Flexible Commitment</p>
+                    <p class="text-xs text-steel">From 2 hours a week to full-time — you choose</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-ink">Training Provided</p>
+                    <p class="text-xs text-steel">Full orientation and skills development included</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-ink">Join 1,200+ Volunteers</p>
+                    <p class="text-xs text-steel">Part of a growing movement across 12 countries</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label for="last_name" class="block text-sm font-medium text-ink mb-1.5">Last Name *</label>
-                <input type="text" id="last_name" name="last_name" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+              <div class="mt-6 pt-6 border-t border-hairline">
+                <img src="https://ui-avatars.com/api/?name=Peace+League&background=00d4a4&color=fff&size=200" alt="Peace League Africa" class="w-12 h-12 rounded-full mx-auto" loading="lazy" />
+                <p class="text-xs text-center text-stone mt-2">"Peace begins with a single volunteer"</p>
               </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
-                <input type="email" id="email" name="email" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
-              </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone *</label>
-                <input type="tel" id="phone" name="phone" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
-              </div>
-            </div>
-            
-            <div>
-              <label for="volunteer_type" class="block text-sm font-medium text-ink mb-1.5">Volunteer Type *</label>
-              <select id="volunteer_type" name="volunteer_type" required 
-                class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none">
-                <option value="">Select a type</option>
-                <option value="Teaching">Teaching & Education</option>
-                <option value="Healthcare">Healthcare & Wellness</option>
-                <option value="Administration">Administration</option>
-                <option value="Fundraising">Fundraising & Outreach</option>
-                <option value="Technical">Technical (Legal, Tech, Marketing)</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="availability" class="block text-sm font-medium text-ink mb-1.5">Availability</label>
-              <input type="text" id="availability" name="availability" placeholder="e.g., Weekends — 5 hours per week"
-                class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
-            </div>
-            
-            <div>
-              <label for="skills" class="block text-sm font-medium text-ink mb-1.5">Skills</label>
-              <textarea id="skills" name="skills" rows="2" placeholder="e.g., Teaching, first aid, social media, carpentry..."
-                class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
-            </div>
-            
-            <div>
-              <label for="motivation" class="block text-sm font-medium text-ink mb-1.5">Why do you want to volunteer?</label>
-              <textarea id="motivation" name="motivation" rows="4" placeholder="What draws you to peace-building in Africa?"
-                class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
-            </div>
-            
-            <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
-              <button type="submit" id="submit-btn"
-                class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
-                Send My Application
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>

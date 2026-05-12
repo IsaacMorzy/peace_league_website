@@ -15,31 +15,71 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <section class="py-16">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-steel leading-relaxed space-y-4">
-          <h2 class="scroll-reveal text-3xl font-semibold text-ink leading-[1.20] tracking-tight">Our Mission</h2>
-          <p>
-            Peace League Africa exists because conflict steals futures — and peace can restore them. 
-            We work alongside communities in East Africa and the Great Lakes region to replace 
-            division with dialogue, poverty with opportunity, and despair with hope.
-          </p>
-          
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+          <div>
+            <h2 class="scroll-reveal text-3xl font-semibold text-ink leading-[1.20] tracking-tight">Our Mission</h2>
+            <p class="mt-4 text-steel leading-relaxed">
+              Peace League Africa exists because conflict steals futures — and peace can restore them. 
+              We work alongside communities in East Africa and the Great Lakes region to replace 
+              division with dialogue, poverty with opportunity, and despair with hope.
+            </p>
+          </div>
+          <div class="scroll-reveal relative">
+            <img src="https://images.unsplash.com/photo-1573163713675?w=600&q=80&auto=format&fit=crop" alt="Peace League Africa community gathering" class="rounded-lg w-full h-auto object-cover shadow-lg" loading="lazy" />
+            <div class="absolute -bottom-3 -right-3 w-full h-full border-2 border-accent/20 rounded-lg -z-10"></div>
+          </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-4 mb-16">
           <h2 class="scroll-reveal text-3xl font-semibold text-ink leading-[1.20] tracking-tight">Our History</h2>
-          <p>
+          <p class="text-steel leading-relaxed">
             What began in 2015 as a single peace workshop in a Nairobi community hall has grown into 
             a movement spanning 12 African countries. Today, our programs reach more than 50,000 
             people annually — from conflict-resolution classrooms in Kampala to reconciliation 
             dialogues in Kigali and clean-water initiatives in rural Kenya.
           </p>
-          
-          <h2 class="scroll-reveal text-3xl font-semibold text-ink leading-[1.20] tracking-tight">Our Values</h2>
-          <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Compassion:</strong> Every child, every mother, every elder we serve deserves to be seen, heard, and valued — not as a beneficiary, but as family.</li>
-            <li><strong>Integrity:</strong> 95% of donations go directly to programs. Our books are open, our decisions are transparent, and our promises are kept.</li>
-            <li><strong>Innovation:</strong> From mobile-money giving platforms to community radio peace programs, we meet challenges with African creativity — not imported templates.</li>
-            <li><strong>Sustainability:</strong> We don't just build wells; we train local water committees. We don't just teach peace; we train teachers to carry the work forward.</li>
-            <li><strong>Inclusivity:</strong> Whether you are a farmer in Goma, a student in Nairobi, or a donor in London — if you believe in peace, you belong here.</li>
-          </ul>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <h2 class="scroll-reveal text-3xl font-semibold text-ink leading-[1.20] tracking-tight text-center">Our Values</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+              <h3 class="font-semibold text-ink">Compassion</h3>
+              <p class="text-steel text-sm mt-1 leading-relaxed">Every child, every mother, every elder we serve deserves to be seen, heard, and valued — not as a beneficiary, but as family.</p>
+            </div>
+            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 50ms">
+              <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h3 class="font-semibold text-ink">Integrity</h3>
+              <p class="text-steel text-sm mt-1 leading-relaxed">95% of donations go directly to programs. Our books are open, our decisions are transparent, and our promises are kept.</p>
+            </div>
+            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 100ms">
+              <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              </div>
+              <h3 class="font-semibold text-ink">Innovation</h3>
+              <p class="text-steel text-sm mt-1 leading-relaxed">From mobile-money giving platforms to community radio peace programs, we meet challenges with African creativity — not imported templates.</p>
+            </div>
+            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 150ms">
+              <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <h3 class="font-semibold text-ink">Sustainability</h3>
+              <p class="text-steel text-sm mt-1 leading-relaxed">We don't just build wells; we train local water committees. We don't just teach peace; we train teachers to carry the work forward.</p>
+            </div>
+            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:col-span-2 max-w-md mx-auto w-full" style="animation-delay: 200ms">
+              <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <h3 class="font-semibold text-ink">Inclusivity</h3>
+              <p class="text-steel text-sm mt-1 leading-relaxed">Whether you are a farmer in Goma, a student in Nairobi, or a donor in London — if you believe in peace, you belong here.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -47,26 +87,59 @@ import Footer from '../components/Footer.astro';
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-3xl font-semibold text-ink text-center mb-12 leading-[1.20] tracking-tight">Our Chapters</h2>
-        <div id="chapters-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <div class="space-y-2">
-              <div class="skeleton-shimmer h-5 w-40"></div>
-              <div class="skeleton-shimmer h-3 w-24"></div>
-              <div class="skeleton-shimmer h-3 w-full"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+          <div class="lg:col-span-3">
+            <div id="chapters-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div class="space-y-2">
+                  <div class="skeleton-shimmer h-5 w-40"></div>
+                  <div class="skeleton-shimmer h-3 w-24"></div>
+                  <div class="skeleton-shimmer h-3 w-full"></div>
+                </div>
+              </div>
+              <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div class="space-y-2">
+                  <div class="skeleton-shimmer h-5 w-40"></div>
+                  <div class="skeleton-shimmer h-3 w-24"></div>
+                  <div class="skeleton-shimmer h-3 w-full"></div>
+                </div>
+              </div>
+              <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div class="space-y-2">
+                  <div class="skeleton-shimmer h-5 w-40"></div>
+                  <div class="skeleton-shimmer h-3 w-24"></div>
+                  <div class="skeleton-shimmer h-3 w-full"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <div class="space-y-2">
-              <div class="skeleton-shimmer h-5 w-40"></div>
-              <div class="skeleton-shimmer h-3 w-24"></div>
-              <div class="skeleton-shimmer h-3 w-full"></div>
-            </div>
-          </div>
-          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <div class="space-y-2">
-              <div class="skeleton-shimmer h-5 w-40"></div>
-              <div class="skeleton-shimmer h-3 w-24"></div>
-              <div class="skeleton-shimmer h-3 w-full"></div>
+          <div class="lg:col-span-1 hidden lg:block">
+            <div class="sticky top-24">
+              <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" class="w-full h-auto text-accent">
+                <circle cx="100" cy="100" r="85" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
+                <circle cx="100" cy="100" r="65" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+                <circle cx="100" cy="100" r="45" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
+                <g opacity="0.3">
+                  <line x1="100" y1="15" x2="100" y2="185" stroke-width="0.5"/>
+                  <line x1="15" y1="100" x2="185" y2="100" stroke-width="0.5"/>
+                  <line x1="40" y1="40" x2="160" y2="160" stroke-width="0.5"/>
+                  <line x1="160" y1="40" x2="40" y2="160" stroke-width="0.5"/>
+                </g>
+                <circle cx="100" cy="100" r="10" fill="currentColor" opacity="0.8"/>
+                <circle cx="100" cy="18" r="5" fill="currentColor" opacity="0.5"/>
+                <circle cx="182" cy="100" r="5" fill="currentColor" opacity="0.5"/>
+                <circle cx="100" cy="182" r="5" fill="currentColor" opacity="0.5"/>
+                <circle cx="18" cy="100" r="5" fill="currentColor" opacity="0.5"/>
+                <circle cx="62" cy="62" r="3.5" fill="currentColor" opacity="0.35"/>
+                <circle cx="138" cy="62" r="3.5" fill="currentColor" opacity="0.35"/>
+                <circle cx="62" cy="138" r="3.5" fill="currentColor" opacity="0.35"/>
+                <circle cx="138" cy="138" r="3.5" fill="currentColor" opacity="0.35"/>
+                <circle cx="145" cy="40" r="3" fill="currentColor" opacity="0.25"/>
+                <circle cx="55" cy="40" r="3" fill="currentColor" opacity="0.25"/>
+                <circle cx="40" cy="145" r="3" fill="currentColor" opacity="0.25"/>
+                <circle cx="160" cy="145" r="3" fill="currentColor" opacity="0.25"/>
+              </svg>
+              <p class="text-center text-xs text-steel mt-3">Connected across 12 countries</p>
             </div>
           </div>
         </div>
@@ -124,7 +197,6 @@ import Footer from '../components/Footer.astro';
               ${chapter.address ? `<p class="mt-2 text-steel text-sm line-clamp-2">${chapter.address}</p>` : ''}
             </div>
           `).join('');
-          // AOS removed
         }
       } catch (e) {
         console.log('API not available, using static content');

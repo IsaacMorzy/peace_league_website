@@ -375,6 +375,48 @@ html {
   pointer-events: none;
 }
 
+/* ── Parallax & Image Effects ── */
+
+.parallax-bg {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+@keyframes gradient-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.img-shimmer {
+  background: linear-gradient(90deg, var(--color-hairline) 25%, var(--color-surface) 50%, var(--color-hairline) 75%);
+  background-size: 200% 100%;
+  animation: gradient-shimmer 2s ease-in-out infinite;
+}
+
+/* ── Image Hover Zoom ── */
+
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* ── Animated Gradient Overlay ── */
+
+@keyframes gradient-sweep {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+.animate-gradient-overlay {
+  animation: gradient-sweep 6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -387,4 +429,5 @@ html {
   .theme-icon-rotate { animation: none !important; }
   #back-to-top { transition: none !important; }
   .social-link:hover { transform: none !important; }
+  .parallax-bg { transform: none !important; }
 }

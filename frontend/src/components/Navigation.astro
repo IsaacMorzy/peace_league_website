@@ -1,68 +1,75 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const navLinks = [
+const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/causes', label: 'Causes' },
+  {
+    label: 'About',
+    dropdown: [
+      { href: '/about', label: 'Our Story' },
+      { href: '/about#mission', label: 'Mission & Vision' },
+      { href: '/about#values', label: 'Our Values' },
+      { href: '/about#chapters', label: 'Our Chapters' },
+      { href: '/faq', label: 'FAQ' },
+    ],
+  },
+  {
+    label: 'Causes',
+    dropdown: [
+      { href: '/causes', label: 'All Causes' },
+      { href: '/causes?category=Education', label: 'Education' },
+      { href: '/causes?category=Health', label: 'Health' },
+      { href: '/causes?category=Water', label: 'Clean Water' },
+      { href: '/causes?category=Youth', label: 'Youth' },
+      { href: '/causes?category=Agriculture', label: 'Agriculture' },
+    ],
+  },
+  {
+    label: 'Get Involved',
+    dropdown: [
+      { href: '/donate', label: 'Donate' },
+      { href: '/volunteer', label: 'Volunteer' },
+      { href: '/partner', label: 'Partner With Us' },
+      { href: '/careers', label: 'Careers' },
+    ],
+  },
   {
     label: 'Community',
     dropdown: [
-      { href: '/causes', label: 'Our Programs' },
       { href: '/events', label: 'Events' },
       { href: '/blog', label: 'Blog' },
-      { href: '/contact', label: 'Contact' },
+      { href: '/testimonials', label: 'Testimonials' },
+      { href: '/gallery', label: 'Gallery' },
     ],
   },
-  { href: '/volunteer', label: 'Volunteer' },
+  { href: '/contact', label: 'Contact' },
 ];
 ---
 
 <!-- Mobile drawer backdrop -->
-<div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none"></div>
+<div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300"></div>
 
 <!-- Mobile drawer panel -->
-<div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-72 sm:w-80 bg-canvas border-l border-hairline shadow-xl translate-x-full invisible overflow-y-auto">
-  <div class="flex justify-end p-4">
-    <button
-      id="mobile-close-btn"
-      type="button"
-      class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
-      aria-label="Close menu"
-    >
-      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
+<div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-80 bg-canvas border-l border-hairline shadow-xl translate-x-full invisible transition-all duration-300 ease-in-out overflow-y-auto">
+  <div class="flex justify-between items-center p-4 border-b border-hairline">
+    <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
+    <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
-  <nav class="px-4 pb-8" aria-label="Mobile navigation">
+  <nav class="px-4 py-4" aria-label="Mobile navigation">
     <div class="flex flex-col gap-1">
-      {navLinks.map((link, i) => (
-        link.dropdown ? (
+      {navItems.map((item, i) => (
+        item.dropdown ? (
           <div class="mobile-dropdown-group">
-            <button
-              data-mobile-dropdown
-              class="flex items-center justify-between w-full px-3 py-3 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors"
-              aria-expanded="false"
-            >
-              <span>Community</span>
-              <svg class="mobile-chevron w-3.5 h-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+            <button data-mobile-dropdown class="flex items-center justify-between w-full px-4 py-3 text-sm text-ink font-medium hover:bg-surface rounded-full transition-colors" aria-expanded="false">
+              <span>{item.label}</span>
+              <svg class="mobile-chevron w-4 h-4 text-steel transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="mobile-dropdown-children overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-              <div class="flex flex-col gap-1 pl-4 pt-1 pb-2">
-                {link.dropdown.map((child, j) => (
-                  <a
-                    href={child.href}
-                    style={`--delay: ${(i + j) * 50}ms`}
-                    class={`nav-link-stagger px-3 py-2.5 text-sm transition-colors rounded-full ${
-                      currentPath === child.href
-                        ? 'text-ink bg-surface font-medium'
-                        : 'text-steel hover:text-ink hover:bg-surface'
-                    }`}
-                    aria-current={currentPath === child.href ? 'page' : undefined}
-                  >
+              <div class="flex flex-col gap-0.5 pl-4 pr-2 pb-2 pt-1">
+                {item.dropdown.map((child, j) => (
+                  <a href={child.href} class={`nav-link-stagger px-4 py-2.5 text-sm transition-colors rounded-full ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
                     {child.label}
                   </a>
                 ))}
@@ -70,39 +77,20 @@ const navLinks = [
             </div>
           </div>
         ) : (
-          <a
-            href={link.href}
-            style={`--delay: ${(i * 50)}ms`}
-            class={`nav-link-stagger px-3 py-3 text-sm transition-colors rounded-full ${
-              currentPath === link.href
-                ? 'text-ink bg-surface font-medium'
-                : 'text-steel hover:text-ink hover:bg-surface'
-            }`}
-            aria-current={currentPath === link.href ? 'page' : undefined}
-          >
-            {link.label}
+          <a href={item.href} class={`nav-link-stagger px-4 py-3 text-sm transition-colors rounded-full ${currentPath === item.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
+            {item.label}
           </a>
         )
       ))}
     </div>
     <div class="mt-6 pt-6 border-t border-hairline flex flex-col gap-3">
-      <a
-        href="/login"
-        class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors"
-      >
-        Log in
-      </a>
-      <a
-        href="/donate"
-        class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors"
-      >
-        Donate
-      </a>
+      <a href="/login" class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors">Log in</a>
+      <a href="/donate" class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">Donate</a>
     </div>
   </nav>
 </div>
 
-<!-- Site header (scroll-aware) -->
+<!-- Site header -->
 <header id="site-header" class="sticky top-0 z-30 nav-visible border-b border-hairline">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex justify-between items-center h-16">
@@ -113,36 +101,18 @@ const navLinks = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center gap-1">
-        {navLinks.map(link => (
-          link.dropdown ? (
-            <div class="relative group">
-              <button
-                class="flex items-center gap-1 px-3 py-2 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Community
-                <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+      <div class="hidden lg:flex items-center gap-0.5">
+        {navItems.map(item => (
+          item.dropdown ? (
+            <div class="relative group px-0.5">
+              <button class="flex items-center gap-1 px-3 py-2 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors" aria-haspopup="true">
+                <span>{item.label}</span>
+                <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
-              <div class="dropdown-menu absolute top-full left-0 mt-1.5 w-48 bg-canvas border border-hairline rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
-                <div class="py-1">
-                  {link.dropdown.map((child, idx) => (
-                    <a
-                      href={child.href}
-                      class={`block px-4 py-2.5 text-sm transition-colors ${
-                        idx === 0 ? 'rounded-t-lg' : ''
-                      } ${
-                        idx === link.dropdown.length - 1 ? 'rounded-b-lg' : ''
-                      } ${
-                        currentPath === child.href
-                          ? 'text-ink bg-surface font-medium'
-                          : 'text-steel hover:text-ink hover:bg-surface'
-                      }`}
-                      aria-current={currentPath === child.href ? 'page' : undefined}
-                    >
+              <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-52 bg-canvas border border-hairline rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
+                <div class="py-1.5">
+                  {item.dropdown.map((child, idx) => (
+                    <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors ${idx === 0 ? 'rounded-t-xl' : ''} ${idx === item.dropdown.length - 1 ? 'rounded-b-xl' : ''} ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
                       {child.label}
                     </a>
                   ))}
@@ -150,16 +120,8 @@ const navLinks = [
               </div>
             </div>
           ) : (
-            <a
-              href={link.href}
-              class={`nav-link-underline px-3 py-2 text-sm transition-colors ${
-                currentPath === link.href
-                  ? 'text-ink bg-surface font-medium rounded-full'
-                  : 'text-steel hover:text-ink hover:bg-surface rounded-full'
-              }`}
-              aria-current={currentPath === link.href ? 'page' : undefined}
-            >
-              {link.label}
+            <a href={item.href} class={`nav-link-underline px-3 py-2 text-sm transition-colors ${currentPath === item.href ? 'text-ink bg-surface font-medium rounded-full' : 'text-steel hover:text-ink hover:bg-surface rounded-full'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
+              {item.label}
             </a>
           )
         ))}
@@ -167,248 +129,118 @@ const navLinks = [
 
       <!-- Desktop Right Side -->
       <div class="hidden lg:flex items-center gap-3">
-        <a
-          href="/login"
-          class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 px-2"
-        >
-          Log in
-        </a>
-
-        <!-- Dark Mode Toggle -->
-        <button
-          id="theme-toggle"
-          type="button"
-          class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
-          aria-label="Switch to dark mode"
-        >
-          <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <svg id="theme-moon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
+        <a href="/login" class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 px-2">Log in</a>
+        <button id="theme-toggle" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
+          <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="theme-moon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
-
-        <a
-          href="/donate"
-          class="inline-flex items-center px-5 py-2 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
-        >
-          Donate
+        <a href="/donate" class="inline-flex items-center px-5 py-2 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
+          Donate Now
         </a>
       </div>
 
       <!-- Mobile buttons -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button
-          id="theme-toggle-mobile"
-          type="button"
-          class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
-          aria-label="Switch to dark mode"
-        >
-          <svg id="theme-sun-mobile" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <svg id="theme-moon-mobile" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
+        <button id="theme-toggle-mobile" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
+          <svg id="theme-sun-mobile" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="theme-moon-mobile" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
-        <button
-          type="button"
-          id="mobile-menu-btn"
-          class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
-          aria-expanded="false"
-          aria-controls="mobile-drawer"
-          aria-label="Open menu"
-        >
-          <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+        <button type="button" id="mobile-menu-btn" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
   </nav>
 </header>
+
 <style>
-  .nav-link-underline {
-    position: relative;
-  }
+  .nav-link-underline { position: relative; }
   .nav-link-underline::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    width: 0;
-    height: 1.5px;
-    background-color: var(--color-accent);
+    content: ''; position: absolute; bottom: 2px; left: 50%;
+    width: 0; height: 1.5px;
+    background: var(--color-accent);
     transition: width 0.2s ease, left 0.2s ease;
     border-radius: 1px;
   }
-  .nav-link-underline:hover::after {
-    width: 60%;
-    left: 20%;
-  }
-
-  .login-link {
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  .login-link:hover {
-    transform: scale(1.05);
-  }
-
-  .dropdown-menu {
-    transform: translateY(-4px);
-    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-  }
-  .group:hover .dropdown-menu {
-    transform: translateY(0);
-  }
+  .nav-link-underline:hover::after { width: 60%; left: 20%; }
+  .login-link { transition: transform 0.2s ease, color 0.2s ease; }
+  .login-link:hover { transform: scale(1.05); }
+  .dropdown-menu { transform: translateY(-4px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; }
+  .group:hover .dropdown-menu { transform: translateY(0); }
 </style>
 
 <script>
-  // └─ Mobile Drawer ___
-
+  // Mobile Drawer
   const menuBtn = document.getElementById('mobile-menu-btn');
   const drawer = document.getElementById('mobile-drawer');
   const backdrop = document.getElementById('mobile-backdrop');
   const closeBtn = document.getElementById('mobile-close-btn');
-  const menuIconOpen = document.getElementById('menu-icon-open');
-  const menuIconClose = document.getElementById('menu-icon-close');
-  const staggerLinks = document.querySelectorAll('.nav-link-stagger');
 
   function openDrawer() {
     menuBtn.setAttribute('aria-expanded', 'true');
     menuBtn.setAttribute('aria-label', 'Close menu');
-    menuIconOpen?.classList.add('hidden');
-    menuIconClose?.classList.remove('hidden');
     backdrop?.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
     backdrop?.classList.add('opacity-100', 'visible', 'pointer-events-auto');
     drawer?.classList.add('open');
     document.body.classList.add('overflow-hidden');
-    staggerLinks.forEach(el => {
-      el.style.animation = 'none';
-      el.classList.remove('animate');
-      void el.offsetWidth;
-      el.style.animation = '';
-      el.classList.add('animate');
-    });
   }
-
   function closeDrawer() {
     menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.setAttribute('aria-label', 'Open menu');
-    menuIconOpen?.classList.remove('hidden');
-    menuIconClose?.classList.add('hidden');
     backdrop?.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
     backdrop?.classList.add('opacity-0', 'invisible', 'pointer-events-none');
     drawer?.classList.remove('open');
     document.body.classList.remove('overflow-hidden');
   }
-
   menuBtn?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer?.classList.contains('open')) closeDrawer(); });
+  drawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDrawer));
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer?.classList.contains('open')) {
-      closeDrawer();
-    }
-  });
-
-  // └⤀ Mobile Collapsible Community Dropdown ___
-
-  const communityBtns = document.querySelectorAll('[data-mobile-dropdown]');
-  communityBtns.forEach(btn => {
+  // Mobile collapsible dropdowns
+  document.querySelectorAll('[data-mobile-dropdown]').forEach(btn => {
     btn.addEventListener('click', () => {
       const group = btn.closest('.mobile-dropdown-group');
       const children = group?.querySelector('.mobile-dropdown-children');
       const chevron = btn.querySelector('.mobile-chevron');
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
       btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
       if (children) {
-        if (isOpen) {
-          children.style.maxHeight = '0';
-          if (chevron) chevron.style.transform = 'rotate(0deg)';
-        } else {
-          children.style.maxHeight = children.scrollHeight + 'px';
-          if (chevron) chevron.style.transform = 'rotate(180deg)';
-        }
+        children.style.maxHeight = isOpen ? '0' : children.scrollHeight + 'px';
+        if (chevron) chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
       }
     });
   });
 
-  // └�─ Close drawer on nav link click (mobile) ___
-
-  drawer?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      closeDrawer();
-    });
-  });
-
-  // └─ Scroll-Aware Header ___
-
+  // Scroll-aware header
   let lastScrollY = 0;
   const header = document.getElementById('site-header');
-  const scrollThreshold = 80;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header?.classList.toggle('scrolled', y > 80);
+    header?.classList.toggle('nav-hidden', y > lastScrollY && y > 120);
+    header?.classList.toggle('nav-visible', y <= lastScrollY || y <= 120);
+    lastScrollY = y;
+  }, { passive: true });
 
-  function onScroll() {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > scrollThreshold) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-
-    if (currentScrollY > lastScrollY && currentScrollY > 120) {
-      header?.classList.remove('nav-visible');
-      header?.classList.add('nav-hidden');
-    } else {
-      header?.classList.remove('nav-hidden');
-      header?.classList.add('nav-visible');
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // └─ Dark Mode Toggle ___
-
+  // Dark mode toggle
   function setupThemeToggle(btnId, sunId, moonId) {
-    const btn = document.getElementById(btnId);
-    const sun = document.getElementById(sunId);
-    const moon = document.getElementById(moonId);
-
+    const btn = document.getElementById(btnId), sun = document.getElementById(sunId), moon = document.getElementById(moonId);
     if (!btn) return;
-
-    function updateIcons() {
-      const isDark = document.documentElement.classList.contains('dark');
-      if (sun) sun.classList.toggle('hidden', !isDark);
-      if (moon) moon.classList.toggle('hidden', isDark);
-      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    function u() {
+      const d = document.documentElement.classList.contains('dark');
+      if (sun) sun.classList.toggle('hidden', !d);
+      if (moon) moon.classList.toggle('hidden', d);
+      btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode');
     }
-
-    updateIcons();
-
+    u();
     btn.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateIcons();
-
-      const icon = isDark ? sun : moon;
-      if (icon) {
-        icon.classList.remove('theme-icon-rotate');
-        void icon.offsetWidth;
-        icon.classList.add('theme-icon-rotate');
-        setTimeout(() => icon.classList.remove('theme-icon-rotate'), 500);
-      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      u();
     });
   }
-
   setupThemeToggle('theme-toggle', 'theme-sun', 'theme-moon');
   setupThemeToggle('theme-toggle-mobile', 'theme-sun-mobile', 'theme-moon-mobile');
 </script>

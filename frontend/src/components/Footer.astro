@@ -2,23 +2,33 @@
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
-  explore: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Our Programs', href: '/programs' },
-    { label: 'Success Stories', href: '/stories' },
-    { label: 'Annual Reports', href: '/reports' },
+  about: [
+    { label: 'Our Story', href: '/about' },
+    { label: 'Mission & Vision', href: '/about#mission' },
+    { label: 'Our Team', href: '/team' },
+    { label: 'Our Chapters', href: '/about#chapters' },
+    { label: 'FAQ', href: '/faq' },
+  ],
+  causes: [
+    { label: 'All Causes', href: '/causes' },
+    { label: 'Peace Education', href: '/causes?category=Education' },
+    { label: 'Healthcare', href: '/causes?category=Health' },
+    { label: 'Clean Water', href: '/causes?category=Water' },
+    { label: 'Youth Empowerment', href: '/causes?category=Youth' },
   ],
   getInvolved: [
     { label: 'Donate', href: '/donate' },
     { label: 'Volunteer', href: '/volunteer' },
     { label: 'Partner With Us', href: '/partner' },
     { label: 'Careers', href: '/careers' },
+    { label: 'Fundraise', href: '/fundraise' },
   ],
-  support: [
+  community: [
+    { label: 'Events', href: '/events' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Contact Us', href: '/contact' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
   ],
 };
 ---
@@ -113,11 +123,11 @@ const footerLinks = {
       </div>
 
       <!-- Links columns -->
-      <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
-        <div class="scroll-reveal" style="animation-delay:100ms">
-          <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Explore</h4>
+      <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 100ms">
+          <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">About</h4>
           <ul class="flex flex-col gap-1">
-            {footerLinks.explore.map(link => (
+            {footerLinks.about.map(link => (
               <li>
                 <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
                   {link.label}
@@ -127,7 +137,20 @@ const footerLinks = {
           </ul>
         </div>
 
-        <div class="scroll-reveal" style="animation-delay:200ms">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 150ms">
+          <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Causes</h4>
+          <ul class="flex flex-col gap-1">
+            {footerLinks.causes.map(link => (
+              <li>
+                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 200ms">
           <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Get Involved</h4>
           <ul class="flex flex-col gap-1">
             {footerLinks.getInvolved.map(link => (
@@ -140,10 +163,10 @@ const footerLinks = {
           </ul>
         </div>
 
-        <div class="scroll-reveal" style="animation-delay:300ms">
-          <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Support</h4>
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 250ms">
+          <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Community</h4>
           <ul class="flex flex-col gap-1">
-            {footerLinks.support.map(link => (
+            {footerLinks.community.map(link => (
               <li>
                 <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
                   {link.label}

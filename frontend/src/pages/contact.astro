@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <section class="py-16 bg-gradient-to-b from-surface to-canvas">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex items-center gap-2 mb-8 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div class="flex items-center gap-2">
@@ -35,8 +35,8 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          <div class="lg:col-span-3 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
             <h2 class="text-2xl font-bold text-ink mb-6">Send Us a Message</h2>
             
             <form id="contact-form" class="space-y-5">
@@ -79,37 +79,62 @@ import Footer from '../components/Footer.astro';
             </form>
           </div>
           
-          <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-            <h2 class="text-2xl font-bold text-ink mb-6">Contact Information</h2>
-            
-            <div class="space-y-6">
-              <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                <h3 class="font-semibold text-ink">Email</h3>
-                <p class="text-steel text-sm mt-1">info@peaceleagueafrica.org</p>
-              </div>
+          <div class="lg:col-span-2 space-y-6">
+            <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+              <h2 class="text-2xl font-bold text-ink mb-6">Contact Information</h2>
               
-              <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                <h3 class="font-semibold text-ink">Phone</h3>
-                <p class="text-steel text-sm mt-1">+1 (555) 123-4567</p>
-              </div>
-              
-              <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                <h3 class="font-semibold text-ink">Address</h3>
-                <p class="text-steel text-sm mt-1">
-                  123 Peace Avenue<br />
-                  Nairobi, Kenya<br />
-                  Africa
-                </p>
-              </div>
-              
-              <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                <h3 class="font-semibold text-ink">Follow Us</h3>
-                <div class="flex gap-4 mt-3">
-                  <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors">Twitter</a>
-                  <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors">Facebook</a>
-                  <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors">LinkedIn</a>
+              <div class="space-y-6">
+                <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                  <h3 class="font-semibold text-ink">Email</h3>
+                  <p class="text-steel text-sm mt-1">info@peaceleagueafrica.org</p>
+                </div>
+                
+                <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                  <h3 class="font-semibold text-ink">Phone</h3>
+                  <p class="text-steel text-sm mt-1">+1 (555) 123-4567</p>
+                </div>
+                
+                <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                  <h3 class="font-semibold text-ink">Address</h3>
+                  <p class="text-steel text-sm mt-1">
+                    123 Peace Avenue<br />
+                    Nairobi, Kenya<br />
+                    Africa
+                  </p>
+                </div>
+                
+                <div class="bg-surface rounded-lg p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                  <h3 class="font-semibold text-ink">Follow Us</h3>
+                  <div class="flex gap-4 mt-3">
+                    <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors">Twitter</a>
+                    <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors">Facebook</a>
+                    <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors">LinkedIn</a>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 bg-surface rounded-lg border border-hairline p-6 text-center">
+              <svg viewBox="0 0 200 140" fill="none" stroke="currentColor" class="w-full h-auto text-accent/60 max-w-[160px] mx-auto">
+                <circle cx="100" cy="70" r="55" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.3"/>
+                <circle cx="100" cy="70" r="38" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+                <g opacity="0.25">
+                  <line x1="100" y1="15" x2="100" y2="125" stroke-width="0.5"/>
+                  <line x1="45" y1="70" x2="155" y2="70" stroke-width="0.5"/>
+                  <line x1="61" y1="31" x2="139" y2="109" stroke-width="0.5"/>
+                  <line x1="139" y1="31" x2="61" y2="109" stroke-width="0.5"/>
+                </g>
+                <circle cx="100" cy="70" r="5" fill="currentColor" opacity="0.8"/>
+                <circle cx="100" cy="18" r="3.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="152" cy="70" r="3.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="100" cy="122" r="3.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="48" cy="70" r="3.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="68" cy="38" r="2.5" fill="currentColor" opacity="0.3"/>
+                <circle cx="132" cy="38" r="2.5" fill="currentColor" opacity="0.3"/>
+                <circle cx="68" cy="102" r="2.5" fill="currentColor" opacity="0.3"/>
+                <circle cx="132" cy="102" r="2.5" fill="currentColor" opacity="0.3"/>
+              </svg>
+              <p class="text-xs text-stone mt-3">We respond within 24 hours</p>
             </div>
           </div>
         </div>
