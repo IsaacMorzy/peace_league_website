@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="relative text-white" style="background: linear-gradient(135deg, #1a3d4a, #2d5a4f, #3d5a3f);">
+    <section class="relative text-white hero-gradient">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-20"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-[120px]">
         <div class="max-w-3xl">
@@ -21,7 +21,7 @@ import Footer from '../components/Footer.astro';
             education, and sustainable development. Together, we are creating lasting change.
           </p>
           <div class="mt-10 flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full">
+            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full btn-pulse-glow">
               Donate Now
             </a>
             <a href="/programs" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium text-sm rounded-full">
@@ -40,20 +40,20 @@ import Footer from '../components/Footer.astro';
             Working across Africa to create meaningful, lasting change in communities.
           </p>
         </div>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-accent/5 p-6 rounded-lg border border-accent/20 text-center" data-aos="fade-up" data-aos-delay="0">
+        <div id="stat-cards" class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-accent/5 p-6 rounded-lg border border-accent/20 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/40" data-aos="fade-up" data-aos-delay="0">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <div id="stat-donations" class="text-4xl font-bold text-accent">$0</div>
+            <div id="stat-donations" class="stat-value text-4xl font-bold text-accent" data-count-target="0" data-count-prefix="$">$0</div>
             <div class="mt-2 text-steel">Total Donations Received</div>
           </div>
-          <div class="bg-canvas p-6 rounded-lg border border-hairline text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-canvas p-6 rounded-lg border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="100">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-            <div id="stat-volunteers" class="text-4xl font-bold text-accent">0</div>
+            <div id="stat-volunteers" class="stat-value text-4xl font-bold text-accent" data-count-target="0">0</div>
             <div class="mt-2 text-steel">Active Volunteers</div>
           </div>
-          <div class="bg-surface p-6 rounded-lg border border-hairline text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-surface p-6 rounded-lg border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="200">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <div id="stat-chapters" class="text-4xl font-bold text-accent">0+</div>
+            <div id="stat-chapters" class="stat-value text-4xl font-bold text-accent" data-count-target="0" data-count-suffix="+">0+</div>
             <div class="mt-2 text-steel">Active Chapters</div>
           </div>
         </div>
@@ -64,23 +64,29 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12" data-aos="fade-up">Featured Programs</h2>
         <div id="programs-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline p-6" data-aos="fade-up" data-aos-delay="0">
-            <div class="h-48 bg-hairline rounded-lg mb-4"></div>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Education</span>
-            <h3 class="text-xl font-semibold text-ink">Education for All</h3>
-            <p class="mt-2 text-steel line-clamp-3">Providing quality education to underserved communities across Africa.</p>
+          <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+            <div class="h-48 skeleton-shimmer !rounded-none"></div>
+            <div class="p-6 space-y-3">
+              <div class="skeleton-shimmer h-4 w-20"></div>
+              <div class="skeleton-shimmer h-6 w-3/4"></div>
+              <div class="skeleton-shimmer h-4 w-full"></div>
+            </div>
           </div>
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline p-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="h-48 bg-hairline rounded-lg mb-4"></div>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Health</span>
-            <h3 class="text-xl font-semibold text-ink">Healthcare Initiative</h3>
-            <p class="mt-2 text-steel line-clamp-3">Bringing essential healthcare services to remote areas.</p>
+          <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+            <div class="h-48 skeleton-shimmer !rounded-none"></div>
+            <div class="p-6 space-y-3">
+              <div class="skeleton-shimmer h-4 w-20"></div>
+              <div class="skeleton-shimmer h-6 w-3/4"></div>
+              <div class="skeleton-shimmer h-4 w-full"></div>
+            </div>
           </div>
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline p-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="h-48 bg-hairline rounded-lg mb-4"></div>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Water</span>
-            <h3 class="text-xl font-semibold text-ink">Clean Water Project</h3>
-            <p class="mt-2 text-steel line-clamp-3">Ensuring access to clean, safe drinking water for communities in need.</p>
+          <div class="bg-canvas rounded-lg border border-hairline overflow-hidden">
+            <div class="h-48 skeleton-shimmer !rounded-none"></div>
+            <div class="p-6 space-y-3">
+              <div class="skeleton-shimmer h-4 w-20"></div>
+              <div class="skeleton-shimmer h-6 w-3/4"></div>
+              <div class="skeleton-shimmer h-4 w-full"></div>
+            </div>
           </div>
         </div>
         <div class="mt-12 text-center" data-aos="fade-up">
@@ -116,7 +122,60 @@ import Footer from '../components/Footer.astro';
 
   <script>
     const API_BASE_URL = window.ENV?.PUBLIC_API_URL || '';
-    
+
+    function animateCounter(el, target, suffix, prefix) {
+      const duration = 1500;
+      const startTime = performance.now();
+      function tick(now) {
+        const p = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const current = Math.floor(eased * target);
+        el.textContent = current === 0 && target === 0
+          ? `${prefix}0${suffix}`
+          : `${prefix}${current.toLocaleString()}${suffix}`;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.countTarget, 10);
+          animateCounter(el, target, el.dataset.countSuffix || '', el.dataset.countPrefix || '');
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.stat-value').forEach(el => statObserver.observe(el));
+
+    function animateStats() {
+      document.querySelectorAll('.stat-value').forEach(el => {
+        const target = parseInt(el.dataset.countTarget, 10);
+        if (target > 0) {
+          el.textContent = `${el.dataset.countPrefix || ''}0${el.dataset.countSuffix || ''}`;
+          animateCounter(el, target, el.dataset.countSuffix || '', el.dataset.countPrefix || '');
+        }
+      });
+    }
+
+    const progressObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const targetWidth = parseFloat(el.dataset.progressWidth) || 0;
+          requestAnimationFrame(() => { el.style.width = targetWidth + '%'; });
+          progressObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    function observeProgressBars() {
+      document.querySelectorAll('.progress-bar').forEach(el => progressObserver.observe(el));
+    }
+
     async function fetchHomepageData() {
       try {
         const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_homepage_data`);
@@ -124,17 +183,18 @@ import Footer from '../components/Footer.astro';
         const data = await response.json();
         if (data.status === 'success') {
           const { programs, chapters, stats } = data.data;
-          
+
           if (stats) {
-            document.getElementById('stat-donations').textContent = `$${stats.total_donations?.toLocaleString() || 0}`;
-            document.getElementById('stat-volunteers').textContent = stats.total_volunteers?.toLocaleString() || 0;
-            document.getElementById('stat-chapters').textContent = `${(chapters?.length || 0)}+`;
+            document.getElementById('stat-donations').dataset.countTarget = stats.total_donations || 0;
+            document.getElementById('stat-volunteers').dataset.countTarget = stats.total_volunteers || 0;
+            document.getElementById('stat-chapters').dataset.countTarget = chapters?.length || 0;
+            animateStats();
           }
-          
+
           if (programs && programs.length > 0) {
             const container = document.getElementById('programs-container');
             container.innerHTML = programs.slice(0, 3).map((program, idx) => `
-              <div class="bg-canvas rounded-lg overflow-hidden border border-hairline" data-aos="fade-up" data-aos-delay="${idx * 100}">
+              <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="${idx * 100}">
                 ${program.image ? `<img src="${program.image}" alt="${program.title}" class="w-full h-48 object-cover"/>` : '<div class="h-48 bg-hairline"></div>'}
                 <div class="p-6">
                   <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${program.category || 'Program'}</span>
@@ -142,8 +202,8 @@ import Footer from '../components/Footer.astro';
                   <p class="mt-2 text-steel line-clamp-3">${program.description || ''}</p>
                   ${program.raised_amount > 0 && program.goal_amount > 0 ? `
                     <div class="mt-4">
-                      <div class="w-full bg-hairline rounded-full h-2">
-                        <div class="bg-accent h-2 rounded-full" style="width: ${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}%"></div>
+                      <div class="w-full bg-hairline rounded-full h-2 progress-track">
+                        <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width="${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}" style="width: 0"></div>
                       </div>
                       <p class="mt-2 text-sm text-stone">$${program.raised_amount.toLocaleString()} raised of $${program.goal_amount.toLocaleString()}</p>
                     </div>
@@ -151,6 +211,8 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
             `).join('');
+            observeProgressBars();
+            if (window.AOS) AOS.refresh();
           }
         }
       } catch (e) {

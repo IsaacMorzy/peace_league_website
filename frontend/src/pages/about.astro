@@ -47,20 +47,26 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-semibold text-ink text-center mb-12 leading-[1.20] tracking-tight" data-aos="fade-up">Our Chapters</h2>
         <div id="chapters-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent" data-aos="fade-up" data-aos-delay="0">
-            <h3 class="text-lg font-semibold text-accent-deep">Nairobi Chapter</h3>
-            <p class="mt-1 text-sm text-stone">Kenya</p>
-            <p class="mt-2 text-steel text-sm line-clamp-2">Leading community initiatives in Kenya's capital city.</p>
+          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="space-y-2">
+              <div class="skeleton-shimmer h-5 w-40"></div>
+              <div class="skeleton-shimmer h-3 w-24"></div>
+              <div class="skeleton-shimmer h-3 w-full"></div>
+            </div>
           </div>
-          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="text-lg font-semibold text-accent-deep">Lagos Chapter</h3>
-            <p class="mt-1 text-sm text-stone">Nigeria</p>
-            <p class="mt-2 text-steel text-sm line-clamp-2">Empowering communities in Nigeria's largest city.</p>
+          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="space-y-2">
+              <div class="skeleton-shimmer h-5 w-40"></div>
+              <div class="skeleton-shimmer h-3 w-24"></div>
+              <div class="skeleton-shimmer h-3 w-full"></div>
+            </div>
           </div>
-          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="text-lg font-semibold text-accent-deep">Johannesburg Chapter</h3>
-            <p class="mt-1 text-sm text-stone">South Africa</p>
-            <p class="mt-2 text-steel text-sm line-clamp-2">Driving change in South Africa's economic hub.</p>
+          <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="space-y-2">
+              <div class="skeleton-shimmer h-5 w-40"></div>
+              <div class="skeleton-shimmer h-3 w-24"></div>
+              <div class="skeleton-shimmer h-3 w-full"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -71,7 +77,7 @@ import Footer from '../components/Footer.astro';
 
   <script>
     const API_BASE_URL = window.ENV?.PUBLIC_API_URL || '';
-    
+
     async function fetchChapters() {
       try {
         const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_chapters`);
@@ -80,12 +86,13 @@ import Footer from '../components/Footer.astro';
         if (data.status === 'success' && data.data && data.data.length > 0) {
           const container = document.getElementById('chapters-list');
           container.innerHTML = data.data.map((chapter, idx) => `
-            <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent" data-aos="fade-up" data-aos-delay="${idx * 100}">
+            <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-aos="fade-up" data-aos-delay="${idx * 100}">
               <h3 class="text-lg font-semibold text-accent-deep">${chapter.introduction || ''}</h3>
               ${chapter.region ? `<p class="mt-1 text-sm text-stone">${chapter.region}</p>` : ''}
               ${chapter.address ? `<p class="mt-2 text-steel text-sm line-clamp-2">${chapter.address}</p>` : ''}
             </div>
           `).join('');
+          if (window.AOS) AOS.refresh();
         }
       } catch (e) {
         console.log('API not available, using static content');

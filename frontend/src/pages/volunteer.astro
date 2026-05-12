@@ -104,10 +104,8 @@ import Footer from '../components/Footer.astro';
                 class="w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
             </div>
             
-            <div id="form-message" class="hidden"></div>
-            
             <button type="submit" id="submit-btn"
-              class="w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed">
+              class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
               Submit Application
             </button>
           </form>
@@ -123,36 +121,37 @@ import Footer from '../components/Footer.astro';
   import { submitVolunteer } from '../lib/api.js';
 
   const form = document.getElementById('volunteer-form');
-  const messageDiv = document.getElementById('form-message');
   const submitBtn = document.getElementById('submit-btn');
+  const originalBtnHtml = submitBtn.innerHTML;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
-    messageDiv.classList.add('hidden');
+
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
-    
+    submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+
     try {
       const response = await submitVolunteer(data);
-      
+
       if (response.status === 'success') {
-        messageDiv.className = 'p-4 bg-success-bg text-success rounded-lg';
-        messageDiv.textContent = 'Thank you! Your volunteer application has been submitted successfully.';
+        window.showToast('Thank you! Your volunteer application has been submitted successfully.', 'success');
+        submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
+        window.createConfetti(submitBtn);
         form.reset();
+        setTimeout(() => {
+          submitBtn.innerHTML = originalBtnHtml;
+          submitBtn.disabled = false;
+        }, 2000);
       } else {
         throw new Error(response.message || 'Failed to submit application');
       }
     } catch (error) {
-      messageDiv.className = 'p-4 bg-error-bg text-error rounded-lg';
-      messageDiv.textContent = 'Error: ' + error.message + '. Please try again.';
-    } finally {
+      window.showToast('Error: ' + error.message + '. Please try again.', 'error');
+      submitBtn.innerHTML = originalBtnHtml;
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Application';
-      messageDiv.classList.remove('hidden');
     }
   });
 </script>
