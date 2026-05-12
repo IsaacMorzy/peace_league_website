@@ -87,6 +87,9 @@ const pageTitle = `${title} | Peace League Africa`;
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#00d4a4" />
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col">
     <!-- Skip to main content for accessibility -->
@@ -95,5 +98,15 @@ const pageTitle = `${title} | Peace League Africa`;
     </a>
 
     <slot />
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out',
+        once: true,
+        offset: 50,
+      });
+    </script>
   </body>
 </html>
