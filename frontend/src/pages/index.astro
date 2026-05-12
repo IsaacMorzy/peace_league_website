@@ -180,7 +180,8 @@ import Footer from '../components/Footer.astro';
       try {
         const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_homepage_data`);
         if (!response.ok) return;
-        const data = await response.json();
+        const json = await response.json();
+        const data = json.message || json;
         if (data.status === 'success') {
           const { programs, chapters, stats } = data.data;
 

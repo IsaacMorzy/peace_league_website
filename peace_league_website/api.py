@@ -44,49 +44,94 @@ def get_sample_programs():
     """Return sample program data for frontend demo."""
     return [
         {
-            "name": "peace-education-2025",
+            "name": "peace-education",
             "title": "Peace Education Program",
-            "description": "Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills.",
-            "start_date": "2025-01-15",
-            "end_date": "2025-12-31",
+            "description": "Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills across East Africa.",
+            "start_date": "2026-01-15",
+            "end_date": "2026-12-31",
             "category": "Education",
             "image": "/images/programs/peace-education.jpg"
         },
         {
-            "name": "youth-empowerment-2025",
+            "name": "youth-empowerment",
             "title": "Youth Empowerment Initiative",
-            "description": "Empowering young leaders through mentorship programs, skills training, and community service opportunities.",
-            "start_date": "2025-03-01",
-            "end_date": "2025-11-30",
+            "description": "Empowering young leaders through mentorship programs, skills training, and community service opportunities in 12 communities across 5 countries.",
+            "start_date": "2026-03-01",
+            "end_date": "2026-11-30",
             "category": "Youth",
             "image": "/images/programs/youth-empowerment.jpg"
         },
         {
-            "name": "community-reconciliation-2025",
+            "name": "community-reconciliation",
             "title": "Community Reconciliation",
-            "description": "Facilitating dialogue and reconciliation processes in communities affected by conflict and division.",
-            "start_date": "2025-02-01",
-            "end_date": "2025-10-31",
+            "description": "Facilitating dialogue and reconciliation processes in communities affected by conflict and division across the Great Lakes region.",
+            "start_date": "2026-02-01",
+            "end_date": "2026-10-31",
             "category": "Community",
             "image": "/images/programs/reconciliation.jpg"
         },
         {
-            "name": "leadership-training-2025",
+            "name": "peace-leader-training",
             "title": "Peace Leader Training",
-            "description": "Intensive leadership development program for emerging peace leaders and community organizers.",
-            "start_date": "2025-04-15",
-            "end_date": "2025-08-15",
+            "description": "Intensive leadership development program for emerging peace leaders and community organizers from 20 African nations.",
+            "start_date": "2026-04-15",
+            "end_date": "2026-08-15",
             "category": "Training",
             "image": "/images/programs/leadership.jpg"
         },
         {
-            "name": "global-peace-summit-2025",
-            "title": "Global Peace Summit 2025",
-            "description": "Annual international conference bringing together peace advocates, leaders, and organizations from around the world.",
-            "start_date": "2025-09-20",
-            "end_date": "2025-09-25",
+            "name": "global-peace-summit-2026",
+            "title": "Global Peace Summit 2026",
+            "description": "Annual international conference bringing together peace advocates, leaders, and organizations from around the world in Nairobi.",
+            "start_date": "2026-09-20",
+            "end_date": "2026-09-25",
             "category": "Event",
             "image": "/images/programs/summit.jpg"
+        },
+        {
+            "name": "girls-education",
+            "title": "Girls Education Initiative",
+            "description": "Breaking barriers to girls' education through scholarships, mentorship programs, and community advocacy in rural communities across 8 regions.",
+            "start_date": "2026-01-01",
+            "end_date": "2026-12-31",
+            "category": "Education",
+            "image": "/images/programs/girls-education.jpg"
+        },
+        {
+            "name": "clean-water-access",
+            "title": "Clean Water Access",
+            "description": "Building sustainable water wells and purification systems for 50 communities facing water scarcity across Kenya's arid and semi-arid regions.",
+            "start_date": "2026-03-15",
+            "end_date": "2027-03-15",
+            "category": "Water",
+            "image": "/images/programs/clean-water.jpg"
+        },
+        {
+            "name": "healthcare-outreach",
+            "title": "Healthcare Outreach",
+            "description": "Mobile health clinics bringing essential healthcare services including vaccinations, maternal care, and health education to remote villages.",
+            "start_date": "2026-02-01",
+            "end_date": "2026-12-31",
+            "category": "Health",
+            "image": "/images/programs/healthcare.jpg"
+        },
+        {
+            "name": "sustainable-agriculture",
+            "title": "Sustainable Agriculture",
+            "description": "Training farmers in climate-resilient farming techniques, providing improved seeds and tools to 2,000 families across 5 agricultural regions.",
+            "start_date": "2026-04-01",
+            "end_date": "2027-04-01",
+            "category": "Agriculture",
+            "image": "/images/programs/agriculture.jpg"
+        },
+        {
+            "name": "digital-literacy",
+            "title": "Digital Literacy for All",
+            "description": "Bridging the digital divide by providing computer labs, internet access, and digital skills training to students in 100 underserved schools.",
+            "start_date": "2026-05-01",
+            "end_date": "2027-05-01",
+            "category": "Education",
+            "image": "/images/programs/digital-literacy.jpg"
         }
     ]
 
@@ -366,20 +411,8 @@ def get_homepage_data():
     """Get data for homepage using available DocTypes."""
     try:
         frappe.flags.ignore_permissions = True
-        campaigns = frappe.get_list(
-            "Email Campaign",
-            filters={"status": "Active"},
-            fields=["name", "campaign_name", "start_date"],
-            limit=3,
-            ignore_permissions=True
-        )
-        programs = []
-        for c in campaigns:
-            programs.append({
-                "name": c.name,
-                "title": c.campaign_name,
-                "start_date": c.start_date,
-            })
+
+        programs = get_programs()["data"] if get_programs()["status"] == "success" else []
 
         chapters = frappe.get_list(
             "Chapter",

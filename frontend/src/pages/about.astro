@@ -82,7 +82,8 @@ import Footer from '../components/Footer.astro';
       try {
         const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_chapters`);
         if (!response.ok) return;
-        const data = await response.json();
+        const json = await response.json();
+        const data = json.message || json;
         if (data.status === 'success' && data.data && data.data.length > 0) {
           const container = document.getElementById('chapters-list');
           container.innerHTML = data.data.map((chapter, idx) => `
