@@ -149,13 +149,49 @@ html {
   transform: translateY(0);
 }
 
+/* ── Animations ── */
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+.animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+
+@keyframes float-up {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 0; }
+}
+.animate-float { animation: float-up 3s ease-out infinite; }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,212,164,0.4); }
+  50% { box-shadow: 0 0 20px rgba(0,212,164,0.8); }
+}
+.animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
+
+@keyframes progress-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* ── Footer ── */
 
 .social-link {
-  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .social-link:hover {
   transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(0,212,164,0.4);
+  background: rgba(0,212,164,0.08);
 }
 
 .footer-link-underline {
@@ -173,6 +209,26 @@ html {
 }
 .footer-link-underline:hover::after {
   width: 100%;
+}
+
+#footer-back-to-top {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+}
+#footer-back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-text 4s ease infinite;
 }
 
 /* ── Hero Gradient Animation ── */

@@ -10,8 +10,8 @@ import Footer from '../components/Footer.astro';
   <main>
     <section class="hero-pattern bg-hero-bg text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-5xl font-semibold leading-[1.10] tracking-tight">Join Our Team</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Share your skills and make an impact</p>
+        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-5xl font-semibold leading-[1.10] tracking-tight">Lend Your Hands to Peace</h1>
+        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Your time is the most powerful gift you can give. Join 1,200+ volunteers across Africa.</p>
       </div>
     </section>
 
@@ -36,13 +36,13 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
-          <h2 class="text-2xl font-bold text-ink mb-4">Volunteer With Us</h2>
+          <h2 class="text-2xl font-bold text-ink mb-4">Become a Peace Volunteer</h2>
           
           <div class="mb-6 text-steel leading-relaxed space-y-4 text-sm">
             <p>
-              We are always looking for passionate individuals to join our volunteer team. 
-              Whether you can give a few hours a week or commit to a longer-term placement, 
-              your contribution matters.
+              Peace League Africa is powered by over 1,200 volunteers across 12 countries — teachers, 
+              nurses, engineers, students, and retirees — each giving their time to build peace. 
+              Whether you have two hours a week or two months, there is a place for you here.
             </p>
             
             <h3 class="text-base font-semibold text-ink">Volunteer Opportunities</h3>
@@ -106,26 +106,26 @@ import Footer from '../components/Footer.astro';
             
             <div>
               <label for="availability" class="block text-sm font-medium text-ink mb-1.5">Availability</label>
-              <input type="text" id="availability" name="availability" placeholder="e.g., Weekends, 10 hours/week"
+              <input type="text" id="availability" name="availability" placeholder="e.g., Weekends — 5 hours per week"
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
             </div>
             
             <div>
               <label for="skills" class="block text-sm font-medium text-ink mb-1.5">Skills</label>
-              <textarea id="skills" name="skills" rows="2" placeholder="List your relevant skills"
+              <textarea id="skills" name="skills" rows="2" placeholder="e.g., Teaching, first aid, social media, carpentry..."
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
             </div>
             
             <div>
               <label for="motivation" class="block text-sm font-medium text-ink mb-1.5">Why do you want to volunteer?</label>
-              <textarea id="motivation" name="motivation" rows="4" placeholder="Tell us about your motivation"
+              <textarea id="motivation" name="motivation" rows="4" placeholder="What draws you to peace-building in Africa?"
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
             </div>
             
             <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
               <button type="submit" id="submit-btn"
                 class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
-                Submit Application
+                Send My Application
               </button>
             </div>
           </form>
@@ -157,7 +157,7 @@ import Footer from '../components/Footer.astro';
       const response = await submitVolunteer(data);
 
       if (response.status === 'success') {
-        window.showToast('Thank you! Your volunteer application has been submitted successfully.', 'success');
+        window.showToast('Welcome to the Peace League Africa volunteer family! We have received your application and will be in touch within 48 hours.', 'success');
         submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
         window.createConfetti(submitBtn);
         form.reset();

@@ -10,8 +10,8 @@ import Footer from '../components/Footer.astro';
   <main>
     <section class="hero-pattern bg-hero-bg text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-5xl font-semibold leading-[1.10] tracking-tight">Support Our Mission</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Your contribution makes a real difference</p>
+        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-5xl font-semibold leading-[1.10] tracking-tight">Give. Restore. Rebuild.</h1>
+        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">$50 can train a peace teacher. $25 can provide clean water for a family. Every dollar rebuilds a community.</p>
       </div>
     </section>
 
@@ -36,10 +36,10 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
-          <h2 class="text-2xl font-bold text-ink mb-4">Make a Donation</h2>
+          <h2 class="text-2xl font-bold text-ink mb-4">Donate to Peace League Africa</h2>
           <p class="text-steel mb-6 text-sm">
-            Every donation helps us continue our work across Africa. You can donate directly 
-            through our secure payment system or contact us for other donation options.
+            Your gift — whatever the size — goes directly to peace-building programs across East Africa. 
+            Choose an amount below and join the movement to restore hope, one community at a time.
           </p>
           
           <form id="donation-form" class="space-y-5">
@@ -76,7 +76,7 @@ import Footer from '../components/Footer.astro';
             
             <div>
               <label for="amount" class="block text-sm font-medium text-ink mb-1.5">Or enter custom amount ($) *</label>
-              <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="Enter amount"
+              <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="e.g. 50"
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
             </div>
             
@@ -94,7 +94,7 @@ import Footer from '../components/Footer.astro';
             
             <div>
               <label for="message" class="block text-sm font-medium text-ink mb-1.5">Message (Optional)</label>
-              <textarea id="message" name="message" rows="2" placeholder="Leave a message with your donation"
+              <textarea id="message" name="message" rows="2" placeholder="Tell us what inspires you to give..."
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
             </div>
             
@@ -106,13 +106,13 @@ import Footer from '../components/Footer.astro';
             <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
               <button type="submit" id="submit-btn"
                 class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
-                Donate Now
+                Complete My Donation
               </button>
             </div>
           </form>
           
           <p class="mt-6 text-sm text-stone text-center">
-            All donations are tax-deductible. You will receive a receipt via email.
+            All donations are tax-deductible. You will receive a receipt and a story of impact via email.
           </p>
         </div>
       </div>
@@ -162,7 +162,7 @@ import Footer from '../components/Footer.astro';
       const response = await submitDonation(data);
 
       if (response.status === 'success') {
-        window.showToast('Thank you! Your donation has been recorded. You will receive a confirmation email shortly.', 'success');
+        window.showToast('Thank you! Your donation has been received and will go directly to peace-building programs. Watch your inbox for a confirmation and the story of the life you have touched.', 'success');
         submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
         window.createConfetti(submitBtn);
         form.reset();

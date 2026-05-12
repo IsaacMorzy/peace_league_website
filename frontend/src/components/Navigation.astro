@@ -5,10 +5,16 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/causes', label: 'Causes' },
-  { href: '/donate', label: 'Donate' },
+  {
+    label: 'Community',
+    dropdown: [
+      { href: '/causes', label: 'Our Programs' },
+      { href: '/events', label: 'Events' },
+      { href: '/blog', label: 'Blog' },
+      { href: '/contact', label: 'Contact' },
+    ],
+  },
   { href: '/volunteer', label: 'Volunteer' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/login', label: 'Login' },
 ];
 ---
 
@@ -32,21 +38,60 @@ const navLinks = [
   <nav class="px-4 pb-8" aria-label="Mobile navigation">
     <div class="flex flex-col gap-1">
       {navLinks.map((link, i) => (
-        <a
-          href={link.href}
-          style={`--delay: ${i * 50}ms`}
-          class={`nav-link-stagger px-3 py-3 text-sm transition-colors rounded-full ${
-            currentPath === link.href
-              ? 'text-ink bg-surface font-medium'
-              : 'text-steel hover:text-ink hover:bg-surface'
-          }`}
-          aria-current={currentPath === link.href ? 'page' : undefined}
-        >
-          {link.label}
-        </a>
+        link.dropdown ? (
+          <div class="mobile-dropdown-group">
+            <button
+              data-mobile-dropdown
+              class="flex items-center justify-between w-full px-3 py-3 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors"
+              aria-expanded="false"
+            >
+              <span>Community</span>
+              <svg class="mobile-chevron w-3.5 h-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="mobile-dropdown-children overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+              <div class="flex flex-col gap-1 pl-4 pt-1 pb-2">
+                {link.dropdown.map((child, j) => (
+                  <a
+                    href={child.href}
+                    style={`--delay: ${(i + j) * 50}ms`}
+                    class={`nav-link-stagger px-3 py-2.5 text-sm transition-colors rounded-full ${
+                      currentPath === child.href
+                        ? 'text-ink bg-surface font-medium'
+                        : 'text-steel hover:text-ink hover:bg-surface'
+                    }`}
+                    aria-current={currentPath === child.href ? 'page' : undefined}
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={link.href}
+            style={`--delay: ${(i * 50)}ms`}
+            class={`nav-link-stagger px-3 py-3 text-sm transition-colors rounded-full ${
+              currentPath === link.href
+                ? 'text-ink bg-surface font-medium'
+                : 'text-steel hover:text-ink hover:bg-surface'
+            }`}
+            aria-current={currentPath === link.href ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        )
       ))}
     </div>
-    <div class="mt-6 pt-6 border-t border-hairline">
+    <div class="mt-6 pt-6 border-t border-hairline flex flex-col gap-3">
+      <a
+        href="/login"
+        class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors"
+      >
+        Log in
+      </a>
       <a
         href="/donate"
         class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors"
@@ -62,7 +107,7 @@ const navLinks = [
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-baseline gap-2" aria-label="Peace League Africa Home">
+      <a href="/" class="flex items-baseline gap-2 shrink-0" aria-label="Peace League Africa Home">
         <span class="text-lg font-semibold tracking-tight text-ink">Peace League</span>
         <span class="text-sm text-steel font-medium">Africa</span>
       </a>
@@ -70,17 +115,53 @@ const navLinks = [
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-1">
         {navLinks.map(link => (
-          <a
-            href={link.href}
-            class={`px-3 py-2 text-sm transition-colors ${
-              currentPath === link.href
-                ? 'text-ink bg-surface font-medium rounded-full'
-                : 'text-steel hover:text-ink hover:bg-surface rounded-full'
-            }`}
-            aria-current={currentPath === link.href ? 'page' : undefined}
-          >
-            {link.label}
-          </a>
+          link.dropdown ? (
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 px-3 py-2 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Community
+                <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="dropdown-menu absolute top-full left-0 mt-1.5 w-48 bg-canvas border border-hairline rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
+                <div class="py-1">
+                  {link.dropdown.map((child, idx) => (
+                    <a
+                      href={child.href}
+                      class={`block px-4 py-2.5 text-sm transition-colors ${
+                        idx === 0 ? 'rounded-t-lg' : ''
+                      } ${
+                        idx === link.dropdown.length - 1 ? 'rounded-b-lg' : ''
+                      } ${
+                        currentPath === child.href
+                          ? 'text-ink bg-surface font-medium'
+                          : 'text-steel hover:text-ink hover:bg-surface'
+                      }`}
+                      aria-current={currentPath === child.href ? 'page' : undefined}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={link.href}
+              class={`nav-link-underline px-3 py-2 text-sm transition-colors ${
+                currentPath === link.href
+                  ? 'text-ink bg-surface font-medium rounded-full'
+                  : 'text-steel hover:text-ink hover:bg-surface rounded-full'
+              }`}
+              aria-current={currentPath === link.href ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          )
         ))}
       </div>
 
@@ -88,9 +169,9 @@ const navLinks = [
       <div class="hidden lg:flex items-center gap-3">
         <a
           href="/login"
-          class="text-sm text-steel hover:text-ink font-medium transition-colors px-2"
+          class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 px-2"
         >
-          Login
+          Log in
         </a>
 
         <!-- Dark Mode Toggle -->
@@ -150,9 +231,44 @@ const navLinks = [
     </div>
   </nav>
 </header>
+<style>
+  .nav-link-underline {
+    position: relative;
+  }
+  .nav-link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-accent);
+    transition: width 0.2s ease, left 0.2s ease;
+    border-radius: 1px;
+  }
+  .nav-link-underline:hover::after {
+    width: 60%;
+    left: 20%;
+  }
+
+  .login-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .login-link:hover {
+    transform: scale(1.05);
+  }
+
+  .dropdown-menu {
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  }
+  .group:hover .dropdown-menu {
+    transform: translateY(0);
+  }
+</style>
 
 <script>
-  // ── Mobile Drawer ──
+  // └─ Mobile Drawer ___
 
   const menuBtn = document.getElementById('mobile-menu-btn');
   const drawer = document.getElementById('mobile-drawer');
@@ -201,7 +317,38 @@ const navLinks = [
     }
   });
 
-  // ── Scroll-Aware Header ──
+  // └⤀ Mobile Collapsible Community Dropdown ___
+
+  const communityBtns = document.querySelectorAll('[data-mobile-dropdown]');
+  communityBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.mobile-dropdown-group');
+      const children = group?.querySelector('.mobile-dropdown-children');
+      const chevron = btn.querySelector('.mobile-chevron');
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      if (children) {
+        if (isOpen) {
+          children.style.maxHeight = '0';
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        } else {
+          children.style.maxHeight = children.scrollHeight + 'px';
+          if (chevron) chevron.style.transform = 'rotate(180deg)';
+        }
+      }
+    });
+  });
+
+  // └�─ Close drawer on nav link click (mobile) ___
+
+  drawer?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // └─ Scroll-Aware Header ___
 
   let lastScrollY = 0;
   const header = document.getElementById('site-header');
@@ -229,7 +376,7 @@ const navLinks = [
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // ── Dark Mode Toggle ──
+  // └─ Dark Mode Toggle ___
 
   function setupThemeToggle(btnId, sunId, moonId) {
     const btn = document.getElementById(btnId);
