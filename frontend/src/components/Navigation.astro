@@ -1,5 +1,9 @@
 ---
 const currentPath = Astro.url.pathname;
+const normalizedFrappeBase = (import.meta.env.PUBLIC_FRAPPE_BASE_URL || import.meta.env.PUBLIC_API_URL || '')
+  .replace(/\/api\/?$/, '')
+  .replace(/\/$/, '');
+const portalAppUrl = normalizedFrappeBase ? `${normalizedFrappeBase}/app` : '/app';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -84,7 +88,7 @@ const navItems = [
             ))}
           </div>
           <div class="mt-6 pt-6 border-t border-hairline flex flex-col gap-3">
-            <a href="/login" class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors">Log in</a>
+            <a href={portalAppUrl} class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors">Log in</a>
             <a href="/donate" class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">Donate</a>
           </div>
         </nav>
@@ -100,7 +104,7 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center gap-1">
+      <div class="flex items-center gap-1">
         {navItems.map((item, idx) => (
           <>{item.dropdown ? (
             <div class="relative group">
@@ -127,8 +131,8 @@ const navItems = [
       </div>
 
       <!-- Desktop Right Side -->
-      <div class="hidden lg:flex items-center gap-3 shrink-0">
-        <a href="/login" class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 px-2">Log in</a>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href={portalAppUrl} class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 px-2">Log in</a>
         <button id="theme-toggle" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="theme-moon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
@@ -202,11 +206,28 @@ const navItems = [
       el.style.opacity = '0';
     });
   }
-  menuBtn?.addEventListener('click', openDrawer);
+  function toggleDrawer() {
+    if (drawer?.classList.contains('open')) {
+      closeDrawer();
+      return;
+    }
+    openDrawer();
+  }
+
+  menuBtn?.addEventListener('click', toggleDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer?.classList.contains('open')) closeDrawer(); });
   drawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDrawer));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && drawer?.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+  window.addEventListener('pageshow', closeDrawer);
+  window.addEventListener('beforeunload', () => {
+    document.body.classList.remove('overflow-hidden');
+  });
 
   // Mobile collapsible dropdowns
   document.querySelectorAll('[data-mobile-dropdown]').forEach(btn => {

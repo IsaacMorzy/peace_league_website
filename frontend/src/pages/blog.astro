@@ -27,27 +27,52 @@ const posts = [
 ];
 
 const categories = ['All', 'Education', 'Peace', 'Health', 'Water', 'Youth', 'Community', 'Technology', 'Impact'];
-
-const recentPosts = posts.slice(0, 4);
-const sidebarCategories = categories.filter(c => c !== 'All');
+const featured = posts[0];
+const perPage = 6;
+const totalPages = Math.ceil(posts.length / perPage);
+const page = 1;
+const paginatedPosts = posts.slice(0, perPage);
+const p = 1;
 ---
 
 <Layout title="Blog — Peace League Africa">
   <Navigation />
 
   <main>
+    <!-- Hero -->
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
+        <div class="scroll-reveal">
           <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">Latest News & Stories</h1>
           <p class="mt-4 text-lg text-white/80 max-w-2xl">Stories of hope, impact, and the people building peace across Africa.</p>
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-surface">
+    <!-- Featured Post -->
+    <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap gap-2 mb-12">
+        <div class="relative rounded-2xl overflow-hidden group">
+          <img src={`https://images.unsplash.com/${featured.image}?w=1400&q=80&auto=format&fit=crop`} alt={featured.title} class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+            <span class="inline-block px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full mb-4">{featured.category}</span>
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight">{featured.title}</h2>
+            <p class="text-white/70 text-sm md:text-base max-w-2xl mb-4">{featured.excerpt.substring(0, 120)}...</p>
+            <div class="flex items-center gap-4 text-sm text-white/60">
+              <span>{featured.date}</span>
+              <span>&middot;</span>
+              <span>{featured.author}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Grid + Sidebar -->
+    <section class="pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-2 mb-10">
           {categories.map((cat, idx) => (
             <span class={`px-4 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer hover:-translate-y-0.5 ${idx === 0 ? 'bg-primary text-on-primary border-primary' : 'bg-canvas text-steel border-hairline hover:border-accent hover:text-accent'}`}>
               {cat}
@@ -56,49 +81,77 @@ const sidebarCategories = categories.filter(c => c !== 'All');
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          <!-- Main Grid -->
           <div class="lg:col-span-3">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post, idx) => (
-                <article class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group" style={`animation-delay: ${idx * 80}ms`}>
-                  <div class="relative overflow-hidden img-zoom">
-                    <img src={`https://images.unsplash.com/${post.image}?w=800&q=80&auto=format&fit=crop`} alt={post.title} class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-108" loading="lazy" />
-                    <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full shadow-lg">{post.category}</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {paginatedPosts.map((post, idx) => (
+                <article class="scroll-reveal bg-canvas rounded-xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/20 group" style={`animation-delay: ${idx * 80}ms`}>
+                  <div class="relative overflow-hidden h-52">
+                    <img src={`https://images.unsplash.com/${post.image}?w=600&q=80&auto=format&fit=crop`} alt={post.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                    <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full shadow-lg backdrop-blur-sm">{post.category}</span>
                   </div>
                   <div class="p-6">
-                    <p class="text-xs text-steel mb-2">{post.date} &middot; {post.author}</p>
+                    <div class="flex items-center gap-3 text-xs text-steel mb-3">
+                      <span>{post.date}</span>
+                      <span class="w-1 h-1 rounded-full bg-hairline"></span>
+                      <span>{post.author}</span>
+                    </div>
                     <h3 class="text-lg font-semibold text-ink mb-2 leading-snug line-clamp-2">{post.title}</h3>
                     <p class="text-sm text-steel leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
-                    <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors">
-                      Read More
-                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors group/link">
+                      Read Article
+                      <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
                   </div>
                 </article>
               ))}
             </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex items-center justify-center gap-3">
+              <button class="px-4 py-2 text-sm font-medium text-steel bg-canvas border border-hairline rounded-full hover:text-ink hover:border-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed" disabled={p <= 1}>
+                <svg class="w-4 h-4 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Previous
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
+                <button class={`w-10 h-10 text-sm font-medium rounded-full transition-all duration-200 ${pageNum === p ? 'bg-primary text-on-primary shadow-md' : 'text-steel bg-canvas border border-hairline hover:border-accent hover:text-accent'}`}>
+                  {pageNum}
+                </button>
+              ))}
+              <button class="px-4 py-2 text-sm font-medium text-steel bg-canvas border border-hairline rounded-full hover:text-ink hover:border-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed" disabled={p >= totalPages}>
+                Next
+                <svg class="w-4 h-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
 
+          <!-- Sidebar -->
           <aside class="lg:col-span-1 space-y-8">
-            <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6">
-              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Categories</h3>
-              <div class="space-y-2">
-                {sidebarCategories.map((cat, idx) => (
-                  <span class="flex items-center gap-2 px-3 py-2 text-sm text-steel bg-surface rounded-lg hover:text-accent hover:bg-accent/5 transition-colors cursor-pointer" style={`animation-delay: ${idx * 30}ms`}>
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+            <div class="bg-canvas rounded-xl border border-hairline p-6 hover:shadow-md transition-shadow">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span class="w-1 h-4 bg-accent rounded-full"></span>Categories
+              </h3>
+              <div class="space-y-1">
+                {categories.filter(c => c !== 'All').map((cat, idx) => (
+                  <span class="flex items-center gap-2 px-3 py-2 text-sm text-steel rounded-lg hover:text-accent hover:bg-accent/5 transition-colors cursor-pointer group" style={`animation-delay: ${idx * 30}ms`}>
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors shrink-0"></span>
                     {cat}
+                    <span class="ml-auto text-xs text-stone">({posts.filter(p => p.category === cat).length})</span>
                   </span>
                 ))}
               </div>
             </div>
 
-            <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6" style="animation-delay: 50ms">
-              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Recent Posts</h3>
+            <div class="bg-canvas rounded-xl border border-hairline p-6 hover:shadow-md transition-shadow">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span class="w-1 h-4 bg-accent rounded-full"></span>Recent Posts
+              </h3>
               <div class="space-y-4">
-                {recentPosts.map((post, idx) => (
+                {posts.slice(0, 4).map((post, idx) => (
                   <a href="/blog" class="group flex gap-3 transition-all duration-200 hover:-translate-x-0.5" style={`animation-delay: ${idx * 40}ms`}>
                     <img src={`https://images.unsplash.com/${post.image}?w=80&q=80&auto=format&fit=crop&h=80`} alt={post.title} class="w-14 h-14 rounded-lg object-cover shrink-0" loading="lazy" />
                     <div class="min-w-0">
-                      <p class="text-sm font-medium text-ink leading-snug group-hover:text-accent transition-colors line-clamp-2">{post.title}</p>
+                      <p class="text-sm font-medium text-ink truncate group-hover:text-accent transition-colors">{post.title}</p>
                       <p class="text-xs text-steel mt-1">{post.date}</p>
                     </div>
                   </a>
@@ -106,26 +159,25 @@ const sidebarCategories = categories.filter(c => c !== 'All');
               </div>
             </div>
 
-            <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6" style="animation-delay: 100ms">
-              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Newsletter</h3>
-              <p class="text-sm text-steel mb-4">Get our latest stories delivered to your inbox.</p>
-              <form class="flex flex-col gap-3">
-                <input type="email" placeholder="Your email" class="w-full px-3 py-[10px] text-sm bg-canvas border border-hairline rounded-md text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
-                <button type="submit" class="w-full px-5 py-2.5 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors cursor-pointer">
-                  Subscribe
-                </button>
-              </form>
+            <div class="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl border border-accent/20 p-6">
+              <h3 class="text-sm font-semibold text-ink mb-2">Stay Connected</h3>
+              <p class="text-xs text-steel mb-4">Get our latest stories delivered to your inbox.</p>
+              <div class="flex flex-col gap-2">
+                <input type="email" placeholder="Your email" class="w-full px-3 py-2 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+                <button class="w-full px-4 py-2 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors cursor-pointer">Subscribe</button>
+              </div>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="py-16 hero-gradient text-white hero-pattern">
+    <!-- Newsletter CTA -->
+    <section class="py-16 bg-surface">
       <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Have a Story to Share?</h2>
-        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">We love featuring voices from our community. Pitch us your peace-building story.</p>
-        <a href="/contact" class="scroll-reveal inline-flex items-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
+        <h2 class="scroll-reveal text-3xl font-semibold text-ink">Have a Story to Share?</h2>
+        <p class="scroll-reveal mt-3 text-steel mb-8">We love featuring voices from our community. Pitch us your peace-building story.</p>
+        <a href="/contact" class="scroll-reveal inline-flex items-center px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors shadow-md">
           Submit Your Story
         </a>
       </div>
