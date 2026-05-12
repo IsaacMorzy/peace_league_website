@@ -14,7 +14,8 @@ const footerLinks = {
     { label: 'Peace Education', href: '/causes?category=Education' },
     { label: 'Healthcare', href: '/causes?category=Health' },
     { label: 'Clean Water', href: '/causes?category=Water' },
-    { label: 'Youth Empowerment', href: '/causes?category=Youth' },
+    { label: 'Youth', href: '/causes?category=Youth' },
+    { label: 'Agriculture', href: '/causes?category=Agriculture' },
   ],
   getInvolved: [
     { label: 'Donate', href: '/donate' },
@@ -30,6 +31,11 @@ const footerLinks = {
     { label: 'Gallery', href: '/gallery' },
     { label: 'Contact Us', href: '/contact' },
   ],
+  support: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Sitemap', href: '/sitemap' },
+  ],
 };
 ---
 
@@ -37,32 +43,19 @@ const footerLinks = {
   <!-- Gradient border-top -->
   <div class="h-px bg-gradient-to-r from-accent via-accent/30 to-transparent"></div>
 
-  <!-- Stay Connected -->
-  <div class="relative overflow-hidden bg-gradient-to-r from-accent/[0.04] via-accent/[0.09] to-accent/[0.04]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center relative z-10">
-      <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 mb-4 animate-heartbeat">
-        <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-        </svg>
+<!-- Stay Connected -->
+  <div class="border-t border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-ink mb-1">Join Our Newsletter</h3>
+          <p class="text-steel text-sm">Monthly updates on our impact across Africa.</p>
+        </div>
+        <form class="flex w-full md:w-auto gap-2" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Your email address" class="flex-1 md:w-64 px-3 py-[10px] bg-surface border border-hairline rounded-md text-ink placeholder:text-stone text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent" required aria-label="Email address" />
+          <button type="submit" class="px-6 py-2.5 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors whitespace-nowrap">Subscribe</button>
+        </form>
       </div>
-      <h3 class="text-xl font-semibold text-ink mb-2">Stay Connected</h3>
-      <p class="text-steel max-w-lg mx-auto text-sm leading-relaxed">
-        Every act of kindness creates ripples that reach across borders
-      </p>
-      <div class="mt-6 max-w-md mx-auto flex gap-3">
-        <input type="email" placeholder="Your email address" class="flex-1 px-4 py-2.5 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
-        <button class="px-5 py-2.5 text-sm font-medium bg-accent text-primary rounded-lg hover:bg-accent-deep transition-colors whitespace-nowrap cursor-pointer">
-          Subscribe
-        </button>
-      </div>
-    </div>
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute w-1 h-1 rounded-full bg-accent/30" style="left:10%;top:20%;animation:float-up 3.5s ease-out 0s infinite"></div>
-      <div class="absolute w-1 h-1 rounded-full bg-accent-warm/30" style="left:25%;top:40%;animation:float-up 4s ease-out 1s infinite"></div>
-      <div class="absolute w-1.5 h-1.5 rounded-full bg-accent/20" style="left:50%;top:30%;animation:float-up 3s ease-out .5s infinite"></div>
-      <div class="absolute w-1 h-1 rounded-full bg-accent-soft/30" style="left:70%;top:25%;animation:float-up 4.5s ease-out 2s infinite"></div>
-      <div class="absolute w-1 h-1 rounded-full bg-accent-warm/20" style="left:85%;top:35%;animation:float-up 3.8s ease-out 1.5s infinite"></div>
-      <div class="absolute w-1.5 h-1.5 rounded-full bg-accent/15" style="left:40%;top:15%;animation:float-up 4.2s ease-out .8s infinite"></div>
     </div>
   </div>
 
@@ -123,8 +116,8 @@ const footerLinks = {
       </div>
 
       <!-- Links columns -->
-      <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 100ms">
+      <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 0ms">
           <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">About</h4>
           <ul class="flex flex-col gap-1">
             {footerLinks.about.map(link => (
@@ -137,7 +130,7 @@ const footerLinks = {
           </ul>
         </div>
 
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 150ms">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 100ms">
           <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Causes</h4>
           <ul class="flex flex-col gap-1">
             {footerLinks.causes.map(link => (
@@ -163,10 +156,23 @@ const footerLinks = {
           </ul>
         </div>
 
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 250ms">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 300ms">
           <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Community</h4>
           <ul class="flex flex-col gap-1">
             {footerLinks.community.map(link => (
+              <li>
+                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 400ms">
+          <h4 class="text-[11px] font-semibold text-steel uppercase tracking-[0.5px] mb-4">Support</h4>
+          <ul class="flex flex-col gap-1">
+            {footerLinks.support.map(link => (
               <li>
                 <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
                   {link.label}

@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const jobs = [
+  { title: 'Program Manager — Peace Education', location: 'Nairobi, Kenya', type: 'Full-time', department: 'Programs', desc: 'Lead the design, implementation, and evaluation of our peace education curriculum across 50+ partner schools in East Africa.' },
+  { title: 'Field Officer — Community Health', location: 'Turkana, Kenya', type: 'Full-time', department: 'Health', desc: 'Coordinate community health initiatives including mobile clinics, nutrition programs, and health education workshops in remote areas.' },
+  { title: 'Communications Coordinator', location: 'Nairobi, Kenya', type: 'Full-time', department: 'Communications', desc: 'Manage social media, produce impact stories, and support fundraising communications across digital and traditional channels.' },
+  { title: 'Monitoring & Evaluation Associate', location: 'Kampala, Uganda', type: 'Part-time', department: 'Operations', desc: 'Support data collection, impact assessment, and reporting for programs across the Great Lakes region.' },
+];
+
+const benefits = [
+  { icon: 'heart', title: 'Purpose-Driven Work', desc: 'Every role contributes directly to building peace and transforming lives across African communities.' },
+  { icon: 'users', title: 'Great Team Culture', desc: 'Collaborative, supportive, and diverse team spanning multiple countries and cultures across Africa.' },
+  { icon: 'chart', title: 'Growth & Development', desc: 'Professional development opportunities, mentorship, and the chance to grow your skills while growing your impact.' },
+];
+
+const whyStats = [
+  { value: '12+', label: 'Countries' },
+  { value: '50+', label: 'Team Members' },
+  { value: '10', label: 'Years of Impact' },
+  { value: '95%', label: 'Program Funding' },
+];
+---
+
+<Layout title="Careers — Peace League Africa">
+  <Navigation />
+
+  <main>
+    <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
+          <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">Join Our Team</h1>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">Turn your passion for peace into a career. Work alongside dedicated people making a real difference across Africa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Why Work With Us</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-4">More than a job — an opportunity to build peace every day.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-3xl mx-auto">
+          {whyStats.map((s, idx) => (
+            <div class="scroll-reveal text-center bg-surface rounded-lg border border-hairline p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style={`animation-delay: ${idx * 60}ms`}>
+              <div class="text-3xl font-bold text-accent">{s.value}</div>
+              <div class="text-sm text-steel mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {benefits.map((ben, idx) => (
+            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" style={`animation-delay: ${idx * 100}ms`}>
+              <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                {ben.icon === 'heart' && (
+                  <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                )}
+                {ben.icon === 'users' && (
+                  <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                )}
+                {ben.icon === 'chart' && (
+                  <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                )}
+              </div>
+              <h3 class="text-xl font-semibold text-ink">{ben.title}</h3>
+              <p class="mt-3 text-steel text-sm leading-relaxed">{ben.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Open Positions</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Join us in building peace across Africa.</p>
+        <div class="max-w-4xl mx-auto space-y-6">
+          {jobs.map((job, idx) => (
+            <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-lg border border-hairline p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-accent/20" style={`animation-delay: ${idx * 80}ms`}>
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2.5 py-0.5 text-xs font-medium bg-accent/10 text-accent rounded-full">{job.department}</span>
+                    <span class="px-2.5 py-0.5 text-xs font-medium bg-surface text-steel rounded-full">{job.type}</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-ink mt-2">{job.title}</h3>
+                  <div class="flex items-center gap-1.5 text-xs text-steel mt-1">
+                    <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    {job.location}
+                  </div>
+                </div>
+                <a href="/contact" class="shrink-0 inline-flex items-center px-5 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-300 shadow-sm hover:shadow-md">
+                  Apply Now
+                  <svg class="w-3.5 h-3.5 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+              <p class="mt-4 text-sm text-steel leading-relaxed border-t border-hairline pt-4">{job.desc}</p>
+            </div>
+          ))}
+        </div>
+        <p class="scroll-reveal text-center text-sm text-steel mt-8">
+          Don't see a role that fits? <a href="/contact" class="text-accent font-medium hover:text-accent-deep transition-colors">Send us your resume</a> and we will keep you in mind for future opportunities.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 hero-gradient text-white hero-pattern">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Volunteer Opportunities</h2>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-4">Not looking for a full-time role? You can still make a difference.</p>
+        <p class="scroll-reveal text-white/70 text-sm max-w-xl mx-auto mb-8">We welcome volunteers with skills in teaching, healthcare, communications, IT, logistics, and more. Whether you can give a few hours a week or join a field mission, your time creates peace.</p>
+        <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/volunteer" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
+            View Volunteer Opportunities
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

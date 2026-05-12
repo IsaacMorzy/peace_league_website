@@ -15,7 +15,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-16 bg-gradient-to-b from-canvas to-surface">
+    <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="causes-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-canvas rounded-2xl border border-hairline overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
@@ -150,7 +150,7 @@ import Footer from '../components/Footer.astro';
                     <svg class="w-14 h-14 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                   </div>`}
               <div class="p-6">
-                <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${cause.category || 'Cause'}</span>
+                <span class="badge-tag mb-3">${cause.category || 'Cause'}</span>
                 <h3 class="text-xl font-semibold text-ink">${cause.title || ''}</h3>
                 <p class="mt-2 text-steel line-clamp-3">${cause.description || ''}</p>
                 ${cause.start_date ? `<p class="mt-4 text-sm text-stone"><span class="font-medium text-ink">Starts:</span> ${new Date(cause.start_date).toLocaleDateString()}</p>` : ''}

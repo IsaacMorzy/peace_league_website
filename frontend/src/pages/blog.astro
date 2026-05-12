@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const posts = [
+  { category: 'Education', title: 'Bringing Peace Education to 50 New Schools in 2026', excerpt: 'Our expanded curriculum reaches thousands of students with conflict resolution, empathy training, and leadership skills.', date: 'May 8, 2026', image: 'photo-1504711434969-e33886168d6c', author: 'Grace Mwangi' },
+  { category: 'Impact', title: 'Clean Water Transforms a Community in Turkana', excerpt: 'How a single well changed the lives of 3,000 people — and what we learned about sustainable water development.', date: 'Apr 22, 2026', image: 'photo-1559027615-cd4628902d4a', author: 'David Ochieng' },
+  { category: 'Giving', title: 'The Power of Monthly Giving: Small Acts, Big Impact', excerpt: 'Why recurring donations are the most effective way to support lasting peace and development across Africa.', date: 'Apr 10, 2026', image: 'photo-1488521787991-ed7bbaae773c', author: 'Sarah Kimani' },
+  { category: 'Community', title: 'Youth Leaders Graduate from Peacebuilding Academy', excerpt: '100 young leaders from 8 countries complete our flagship program and return to their communities ready to lead.', date: 'Mar 28, 2026', image: 'photo-1486312338219-ce68d2c6f44d', author: 'James Njoroge' },
+  { category: 'Health', title: 'Mental Health Support in Post-Conflict Communities', excerpt: 'Our new partnership brings trauma-informed care to communities healing from decades of conflict in the Great Lakes region.', date: 'Mar 15, 2026', image: 'photo-1571019613454-1cb2f99b2d8b', author: 'Dr. Amina Hassan' },
+  { category: 'Impact', title: 'Annual Report 2025: A Year of Growth and Impact', excerpt: 'Read about our achievements, financial transparency, and the communities we served together in 2025.', date: 'Feb 28, 2026', image: 'photo-1500937386664-56d1dfef3854', author: 'Peace League Team' },
+];
+
+const categories = ['All', 'Education', 'Impact', 'Giving', 'Community', 'Health', 'Events'];
+
+const recentPosts = posts.slice(0, 4);
+---
+
+<Layout title="Blog — Peace League Africa">
+  <Navigation />
+
+  <main>
+    <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
+          <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">Latest News & Stories</h1>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">Stories of hope, impact, and the people building peace across Africa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-2 mb-12">
+          {categories.map((cat, idx) => (
+            <span class={`px-4 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer hover:-translate-y-0.5 ${idx === 0 ? 'bg-primary text-on-primary border-primary' : 'bg-canvas text-steel border-hairline hover:border-accent hover:text-accent'}`}>
+              {cat}
+            </span>
+          ))}
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          <div class="lg:col-span-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {posts.map((post, idx) => (
+                <article class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group" style={`animation-delay: ${idx * 80}ms`}>
+                  <div class="relative overflow-hidden img-zoom">
+                    <img src={`https://images.unsplash.com/${post.image}?w=600&q=80&auto=format&fit=crop`} alt={post.title} class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-108" loading="lazy" />
+                    <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full shadow-lg">{post.category}</span>
+                  </div>
+                  <div class="p-6">
+                    <p class="text-xs text-steel mb-2">{post.date} &middot; {post.author}</p>
+                    <h3 class="text-lg font-semibold text-ink mb-2 leading-snug">{post.title}</h3>
+                    <p class="text-sm text-steel leading-relaxed mb-4">{post.excerpt}</p>
+                    <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors">
+                      Read More
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <aside class="lg:col-span-1 space-y-8">
+            <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Categories</h3>
+              <div class="space-y-2">
+                {categories.filter(c => c !== 'All').map((cat, idx) => (
+                  <span class="flex items-center gap-2 px-3 py-2 text-sm text-steel bg-surface rounded-lg hover:text-accent hover:bg-accent/5 transition-colors cursor-pointer" style={`animation-delay: ${idx * 30}ms`}>
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                    {cat}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6" style="animation-delay: 50ms">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Recent Posts</h3>
+              <div class="space-y-4">
+                {recentPosts.map((post, idx) => (
+                  <a href="/blog" class="group flex gap-3 transition-all duration-200 hover:-translate-x-0.5" style={`animation-delay: ${idx * 40}ms`}>
+                    <img src={`https://images.unsplash.com/${post.image}?w=80&q=80&auto=format&fit=crop&h=80`} alt={post.title} class="w-14 h-14 rounded-lg object-cover shrink-0" loading="lazy" />
+                    <div class="min-w-0">
+                      <p class="text-sm font-medium text-ink leading-snug group-hover:text-accent transition-colors line-clamp-2">{post.title}</p>
+                      <p class="text-xs text-steel mt-1">{post.date}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6" style="animation-delay: 100ms">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Newsletter</h3>
+              <p class="text-sm text-steel mb-4">Get our latest stories delivered to your inbox.</p>
+              <form class="flex flex-col gap-3">
+                <input type="email" placeholder="Your email" class="w-full px-3 py-[10px] text-sm bg-canvas border border-hairline rounded-md text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+                <button type="submit" class="w-full px-5 py-2.5 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors cursor-pointer">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 hero-gradient text-white hero-pattern">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Have a Story to Share?</h2>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">We love featuring voices from our community. Pitch us your peace-building story.</p>
+        <a href="/contact" class="scroll-reveal inline-flex items-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
+          Submit Your Story
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

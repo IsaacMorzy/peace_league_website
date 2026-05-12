@@ -8,7 +8,7 @@ const navItems = [
     dropdown: [
       { href: '/about', label: 'Our Story' },
       { href: '/about#mission', label: 'Mission & Vision' },
-      { href: '/about#values', label: 'Our Values' },
+      { href: '/team', label: 'Our Team' },
       { href: '/about#chapters', label: 'Our Chapters' },
       { href: '/faq', label: 'FAQ' },
     ],
@@ -50,7 +50,7 @@ const navItems = [
 <div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300"></div>
 
 <!-- Mobile drawer panel -->
-<div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-80 bg-canvas border-l border-hairline shadow-xl translate-x-full invisible transition-all duration-300 ease-in-out overflow-y-auto">
+<div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-80 bg-canvas border-l border-hairline shadow-xl overflow-y-auto">
   <div class="flex justify-between items-center p-4 border-b border-hairline">
     <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
     <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
@@ -95,24 +95,23 @@ const navItems = [
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-baseline gap-2 shrink-0" aria-label="Peace League Africa Home">
-        <span class="text-lg font-semibold tracking-tight text-ink">Peace League</span>
-        <span class="text-sm text-steel font-medium">Africa</span>
+      <a href="/" class="flex items-center gap-1.5 shrink-0" aria-label="Peace League Africa Home">
+        <span class="text-lg font-bold tracking-tight text-ink">PLA</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="flex items-center gap-0.5">
-        {navItems.map(item => (
-          item.dropdown ? (
-            <div class="relative group px-0.5">
-              <button class="flex items-center gap-1 px-3 py-2 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors" aria-haspopup="true">
+      <div class="flex items-center gap-1">
+        {navItems.map((item, idx) => (
+          <>{item.dropdown ? (
+            <div class="relative group">
+              <button class="flex items-center gap-1 px-3 py-2 text-sm text-steel hover:text-ink hover:bg-surface rounded-full transition-colors whitespace-nowrap" aria-haspopup="true">
                 <span>{item.label}</span>
                 <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
-              <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-52 bg-canvas border border-hairline rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
+              <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-52 dropdown-glass border border-hairline rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
                 <div class="py-1.5">
-                  {item.dropdown.map((child, idx) => (
-                    <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors ${idx === 0 ? 'rounded-t-xl' : ''} ${idx === item.dropdown.length - 1 ? 'rounded-b-xl' : ''} ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
+                  {item.dropdown.map((child, cidx) => (
+                    <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors ${cidx === 0 ? 'rounded-t-xl' : ''} ${cidx === item.dropdown.length - 1 ? 'rounded-b-xl' : ''} ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
                       {child.label}
                     </a>
                   ))}
@@ -120,10 +119,10 @@ const navItems = [
               </div>
             </div>
           ) : (
-            <a href={item.href} class={`nav-link-underline px-3 py-2 text-sm transition-colors ${currentPath === item.href ? 'text-ink bg-surface font-medium rounded-full' : 'text-steel hover:text-ink hover:bg-surface rounded-full'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
+            <a href={item.href} class={`nav-link-underline px-3 py-2 text-sm transition-colors whitespace-nowrap ${currentPath === item.href ? 'text-ink bg-surface font-medium rounded-full' : 'text-steel hover:text-ink hover:bg-surface rounded-full'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
               {item.label}
             </a>
-          )
+          )}{idx < navItems.length - 1 ? <span class="text-hairline">|</span> : ''}</>
         ))}
       </div>
 

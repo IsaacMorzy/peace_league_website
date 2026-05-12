@@ -9,11 +9,18 @@ import Footer from '../components/Footer.astro';
   
   <main>
     <section id="hero-section" class="relative text-white hero-gradient overflow-hidden">
-      <div class="absolute inset-0 bg-pattern opacity-[0.12]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#1a3d4a]/70 via-transparent to-[#1a3d4a]/30 z-[1]"></div>
+      <div class="absolute inset-0 bg-pattern opacity-[0.12] z-[1]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a3d4a]/70 via-transparent to-[#1a3d4a]/30 z-[2]"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent-warm/10 animate-gradient-overlay z-[2]"></div>
-      <div id="hero-parallax-bg" class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-[0.15] parallax-bg"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-[120px] z-[3]">
+      <!-- Hero Image Carousel -->
+      <div class="absolute inset-0 z-[1]">
+        <div class="hero-carousel-slide hero-img-1"></div>
+        <div class="hero-carousel-slide hero-img-2"></div>
+        <div class="hero-carousel-slide hero-img-3"></div>
+        <div class="hero-carousel-slide hero-img-4"></div>
+        <div class="hero-carousel-slide hero-img-5"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 z-[3]">
         <div class="max-w-3xl">
           <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 animate-hold text-[40px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.05] tracking-[-2px] text-white">
             12 Countries, <br/>
@@ -24,7 +31,7 @@ import Footer from '../components/Footer.astro';
             reconciliation, and community-driven development. Together, we are rebuilding what war divided.
           </p>
           <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[400ms] animate-hold mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full btn-pulse-glow shadow-lg shadow-white/20">
+            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full btn-pulse-glow shadow-lg shadow-white/20 hover:bg-white/90 transition-colors">
               Donate Now
             </a>
             <a href="/causes" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full glass hover:bg-white/15 hover:border-white/50 transition-all duration-300">
@@ -44,17 +51,17 @@ import Footer from '../components/Footer.astro';
           </p>
         </div>
         <div id="stat-cards" class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="scroll-reveal bg-accent/5 p-6 rounded-lg border border-accent/20 text-center stat-card-glass">
+          <div class="scroll-reveal bg-accent/5 p-6 rounded-lg border border-accent/20 text-center stat-card-glass backdrop-blur-sm">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <div id="stat-donations" class="stat-value text-4xl font-bold text-accent" data-count-target="0" data-count-prefix="$">$0</div>
             <div class="mt-2 text-steel">Total Donations Received</div>
           </div>
-          <div class="scroll-reveal bg-canvas p-6 rounded-lg border border-hairline text-center stat-card-glass" style="animation-delay: 100ms">
+          <div class="scroll-reveal bg-canvas p-6 rounded-lg border border-hairline text-center stat-card-glass backdrop-blur-sm" style="animation-delay: 100ms">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             <div id="stat-volunteers" class="stat-value text-4xl font-bold text-accent" data-count-target="0">0</div>
             <div class="mt-2 text-steel">Active Volunteers</div>
           </div>
-          <div class="scroll-reveal bg-surface p-6 rounded-lg border border-hairline text-center stat-card-glass" style="animation-delay: 200ms">
+          <div class="scroll-reveal bg-surface p-6 rounded-lg border border-hairline text-center stat-card-glass backdrop-blur-sm" style="animation-delay: 200ms">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <div id="stat-chapters" class="stat-value text-4xl font-bold text-accent" data-count-target="0" data-count-suffix="+">0+</div>
             <div class="mt-2 text-steel">Active Chapters</div>
@@ -80,7 +87,7 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
               <div class="p-6">
-                <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Education</span>
+                <span class="badge-tag mb-3">Education</span>
                 <h3 class="text-xl font-semibold text-ink">Peace Education</h3>
                 <p class="mt-2 text-steel line-clamp-3">Hands-on peace education workshops reaching 5,000+ students across 45 schools in Kenya and Uganda — teaching young Africans how to resolve conflict, listen deeply, and lead with empathy.</p>
                 <div class="mt-4">
@@ -107,7 +114,7 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
               <div class="p-6">
-                <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Youth</span>
+                <span class="badge-tag mb-3">Youth</span>
                 <h3 class="text-xl font-semibold text-ink">Youth Empowerment Initiative</h3>
                 <p class="mt-2 text-steel line-clamp-3">A youth leadership pipeline that has mentored 800+ young Africans into community organizers, entrepreneurs, and peace ambassadors — across 12 communities in 5 countries.</p>
                 <div class="mt-4">
@@ -134,7 +141,7 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
               <div class="p-6">
-                <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Community</span>
+                <span class="badge-tag mb-3">Community</span>
                 <h3 class="text-xl font-semibold text-ink">Community Reconciliation</h3>
                 <p class="mt-2 text-steel line-clamp-3">Healing the wounds of conflict through facilitated inter-community dialogues, trauma counseling, and grassroots peace-building across Rwanda, DRC, and Burundi.</p>
                 <div class="mt-4">
@@ -158,7 +165,7 @@ import Footer from '../components/Footer.astro';
           </button>
         </div>
         <div class="mt-8 text-center">
-          <a href="/causes" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+          <a href="/causes" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors">
             View All Causes
           </a>
         </div>
@@ -173,10 +180,10 @@ import Footer from '../components/Footer.astro';
             Your hands, your voice, your resources — every contribution builds peace. Join thousands of Africans already taking action.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/volunteer" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+            <a href="/volunteer" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors">
               Volunteer With Us
             </a>
-            <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-hairline text-ink font-medium text-sm rounded-full">
+            <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-hairline text-ink font-medium text-sm rounded-full hover:bg-surface transition-colors">
               Contact Us
             </a>
           </div>
@@ -187,29 +194,29 @@ import Footer from '../components/Footer.astro';
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">What People Say</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Real voices from the communities you've helped restore, rebuild, and reconcile.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Real voices from the communities you have helped restore, rebuild, and reconcile.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-1;">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 p-6 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-1;">
             <img src="https://images.unsplash.com/photo-1524502397800-3605f2cba3a5?w=120&h=120&fit=crop&crop=face&q=80" alt="Mama Sarah" class="w-16 h-16 rounded-full mx-auto mb-4" loading="lazy" />
-            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C2.433 6.068.87 8.789.87 11H4.87v10H0z"/></svg>
             <p class="text-steel leading-relaxed mb-6 italic">Peace League Africa transformed our community. The peace education program reached over 500 children in our village.</p>
             <div>
               <p class="text-ink font-semibold">Mama Sarah</p>
               <p class="text-stone text-sm">Community Leader, Uganda</p>
             </div>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-2;">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 p-6 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-2;">
             <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=120&h=120&fit=crop&crop=face&q=80" alt="James K." class="w-16 h-16 rounded-full mx-auto mb-4" loading="lazy" />
-            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
-            <p class="text-steel leading-relaxed mb-6 italic">As a volunteer, I've seen firsthand how donations change lives. Every dollar goes directly to those who need it most.</p>
+            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C2.433 6.068.87 8.789.87 11H4.87v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6 italic">As a volunteer, I have seen firsthand how donations change lives. Every dollar goes directly to those who need it most.</p>
             <div>
               <p class="text-ink font-semibold">James K.</p>
               <p class="text-stone text-sm">Volunteer Coordinator</p>
             </div>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-3;">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 p-6 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 text-center" style="view-transition-name: testimonial-3;">
             <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=120&h=120&fit=crop&crop=face&q=80" alt="Esther M." class="w-16 h-16 rounded-full mx-auto mb-4" loading="lazy" />
-            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <svg class="w-8 h-8 text-accent/40 mb-3 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C2.433 6.068.87 8.789.87 11H4.87v10H0z"/></svg>
             <p class="text-steel leading-relaxed mb-6 italic">The clean water initiative saved our village. We no longer walk 10km for clean water.</p>
             <div>
               <p class="text-ink font-semibold">Esther M.</p>
@@ -290,7 +297,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="mt-12 text-center">
-          <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+          <a href="/events" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors">
             View All Events
           </a>
         </div>
@@ -307,7 +314,7 @@ import Footer from '../components/Footer.astro';
               <svg class="w-12 h-12 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div class="p-6">
-              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Technology</span>
+              <span class="badge-tag mb-3">Technology</span>
               <h3 class="text-xl font-semibold text-ink mt-2">Digital Giving: How Technology is Transforming the Way We Donate</h3>
               <p class="mt-2 text-steel text-sm leading-relaxed line-clamp-3">From mobile payments to blockchain transparency, technology is making it easier than ever to support causes you care about from anywhere in the world.</p>
               <a href="/blog/digital-giving" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">
@@ -321,7 +328,7 @@ import Footer from '../components/Footer.astro';
               <svg class="w-12 h-12 text-accent-warm/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
             </div>
             <div class="p-6">
-              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Impact</span>
+              <span class="badge-tag mb-3">Impact</span>
               <h3 class="text-xl font-semibold text-ink mt-2">The Power of Small Donations: How Every Contribution Makes a Big Impact</h3>
               <p class="mt-2 text-steel text-sm leading-relaxed line-clamp-3">Small donations add up to life-changing sums. Discover how regular micro-donations are funding sustainable community projects across Africa.</p>
               <a href="/blog/small-donations" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">
@@ -335,7 +342,7 @@ import Footer from '../components/Footer.astro';
               <svg class="w-12 h-12 text-accent-deep/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div class="p-6">
-              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Giving</span>
+              <span class="badge-tag mb-3">Giving</span>
               <h3 class="text-xl font-semibold text-ink mt-2">One-Time vs. Monthly Donations: Which Is Better for Nonprofits?</h3>
               <p class="mt-2 text-steel text-sm leading-relaxed line-clamp-3">Monthly donations provide predictable funding that helps nonprofits plan long-term. Compare the benefits of each giving model and find what works for you.</p>
               <a href="/blog/donation-types" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">
@@ -346,15 +353,14 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="mt-12 text-center">
-          <a href="/blog" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+          <a href="/blog" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors">
             View All News
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Our Impact Numbers -->
-    <section class="py-20 bg-gradient-to-br from-accent/5 via-canvas to-surface">
+    <section class="py-16 bg-gradient-to-br from-accent/5 via-canvas to-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-14">
           <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our Impact by the Numbers</h2>
@@ -392,8 +398,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- How We Work -->
-    <section class="py-20 bg-surface">
+    <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-14">
           <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">How We Work</h2>
@@ -401,7 +406,7 @@ import Footer from '../components/Footer.astro';
             A simple, proven approach to creating lasting change in every community we serve.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="scroll-reveal text-center">
             <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
               <svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
@@ -436,7 +441,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Partner Logos -->
     <section class="py-16 bg-canvas border-y border-hairline overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="scroll-reveal text-center text-sm font-semibold text-steel uppercase tracking-[0.5px] mb-10">Trusted by leading organizations</p>
@@ -457,13 +461,12 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="py-20 bg-gradient-to-r from-accent/10 to-accent/5">
+    <section class="py-16 bg-gradient-to-r from-accent/10 to-accent/5">
       <div class="max-w-2xl mx-auto text-center px-4">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Stay Connected</h2>
         <p class="scroll-reveal mt-4 text-lg text-steel mb-10">Get monthly updates on our impact across Africa &mdash; stories of hope, progress, and the people making it happen.</p>
         <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input type="email" placeholder="Enter your email" required class="newsletter-input flex-1 px-4 py-3 bg-canvas border border-hairline rounded-lg text-ink placeholder:text-stone text-sm focus:outline-none focus:ring-2 focus:ring-accent/30" />
+          <input type="email" placeholder="Enter your email" required class="newsletter-input flex-1 px-3 py-[10px] bg-canvas border border-hairline rounded-md text-ink placeholder:text-stone text-sm focus:outline-none focus:ring-2 focus:ring-accent/30" />
           <button type="submit" class="px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors whitespace-nowrap">
             Subscribe
           </button>
@@ -546,12 +549,27 @@ import Footer from '../components/Footer.astro';
 
     const CAUSE_IMAGES = {
       'peace-education': 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&auto=format&fit=crop',
+      'peace education program': 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&auto=format&fit=crop',
       'youth-empowerment': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop',
+      'youth empowerment initiative': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop',
       'community-reconciliation': 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&auto=format&fit=crop',
+      'community reconciliation': 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&auto=format&fit=crop',
       'health': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop',
+      'healthcare outreach': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop',
       'water': 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=600&q=80&auto=format&fit=crop',
+      'clean water access': 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=600&q=80&auto=format&fit=crop',
       'agriculture': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80&auto=format&fit=crop',
+      'sustainable agriculture': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80&auto=format&fit=crop',
       'training': 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop',
+      'peace leader training': 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop',
+      'global peace summit 2026': 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop',
+      'girls education initiative': 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&auto=format&fit=crop',
+      'digital literacy for all': 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80&auto=format&fit=crop',
+      'emergency relief fund': 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=80&auto=format&fit=crop',
+      'women empowerment program': 'https://images.unsplash.com/photo-1524502397800-3605f2cba3a5?w=600&q=80&auto=format&fit=crop',
+      'climate resilience initiative': 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&q=80&auto=format&fit=crop',
+      'orphanage support program': 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&auto=format&fit=crop',
+      'sports for peace': 'https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?w=600&q=80&auto=format&fit=crop',
       'default': 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&auto=format&fit=crop'
     };
 
@@ -591,7 +609,7 @@ import Footer from '../components/Footer.astro';
                   </div>
                 </div>
                 <div class="p-6">
-                  <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${cause.category || 'Cause'}</span>
+                  <span class="badge-tag mb-3">${cause.category || 'Cause'}</span>
                   <h3 class="text-xl font-semibold text-ink">${cause.title || ''}</h3>
                   <p class="mt-2 text-steel line-clamp-3">${cause.description || ''}</p>
                   ${cause.raised_amount > 0 && cause.goal_amount > 0 ? `
@@ -616,76 +634,11 @@ import Footer from '../components/Footer.astro';
           }
         }
       } catch (e) {
-        console.log('API not available, static content shown');
+        console.log('API not available, using static content');
       }
     }
+
+    observeProgressBars();
     fetchHomepageData();
-    setTimeout(observeProgressBars, 500);
-
-    // Horizontal scroll arrows
-    (function() {
-      const container = document.getElementById('causes-container');
-      const leftBtn = document.getElementById('causes-scroll-left');
-      const rightBtn = document.getElementById('causes-scroll-right');
-      if (!container) return;
-      const scrollAmount = 370;
-      leftBtn.addEventListener('click', () => {
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      });
-      rightBtn.addEventListener('click', () => {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      });
-      function updateArrows() {
-        leftBtn.style.display = container.scrollLeft <= 5 ? 'none' : 'flex';
-        rightBtn.style.display = container.scrollLeft >= container.scrollWidth - container.clientWidth - 5 ? 'none' : 'flex';
-      }
-      container.addEventListener('scroll', updateArrows);
-      setTimeout(updateArrows, 100);
-    })();
-
-    // Parallax
-    (function() {
-      const heroBg = document.getElementById('hero-parallax-bg');
-      if (!heroBg) return;
-      let ticking = false;
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            const heroSection = document.getElementById('hero-section');
-            if (heroSection) {
-              const rect = heroSection.getBoundingClientRect();
-              if (rect.bottom > 0) {
-                heroBg.style.transform = 'translateY(' + (window.scrollY * 0.12) + 'px)';
-              }
-            }
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-    })();
-
-    // Newsletter form
-    (function() {
-      const form = document.getElementById('newsletter-form');
-      const status = document.getElementById('newsletter-status');
-      if (!form) return;
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = form.querySelector('input[type="email"]')?.value;
-        if (!email) return;
-        status.classList.remove('hidden');
-        status.textContent = 'Thank you for subscribing!';
-        status.classList.add('text-accent');
-        form.querySelector('input[type="email"]').value = '';
-        try {
-          await fetch(API_BASE_URL + '/api/method/peace_league_website.api.newsletter_signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email })
-          });
-        } catch (e) {}
-      });
-    })();
   </script>
 </Layout>

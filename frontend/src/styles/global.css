@@ -80,6 +80,33 @@ html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ── Hero Carousel ── */
+
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: hero-crossfade 25s ease-in-out infinite;
+}
+.hero-img-1 { background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600'); }
+.hero-img-2 { background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600'); animation-delay: 5s; }
+.hero-img-3 { background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600'); animation-delay: 10s; }
+.hero-img-4 { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600'); animation-delay: 15s; }
+.hero-img-5 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600'); animation-delay: 20s; }
+
+@keyframes hero-crossfade {
+  0%, 16% { opacity: 0.2; }
+  8% { opacity: 0.15; }
+  20%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-slide { animation: none; opacity: 0.15; }
+  .hero-img-1 { opacity: 0.15; }
+}
+
 /* ── Scroll-Aware Navigation ── */
 
 #site-header {
@@ -114,6 +141,8 @@ html {
 }
 
 #mobile-drawer {
+  transform: translateX(100%);
+  visibility: hidden;
   transition: transform 0.3s ease-in-out, visibility 0.3s ease;
 }
 #mobile-drawer.open {
@@ -468,6 +497,44 @@ html {
   transform: scale(1.01);
   border-color: var(--color-accent) !important;
   box-shadow: 0 0 0 3px rgba(0, 212, 164, 0.15) !important;
+}
+
+/* ── Amount Button Selected State ── */
+
+.amount-btn.selected {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+}
+.amount-btn.selected:hover {
+  background-color: var(--color-accent-deep);
+}
+
+/* ── Badge Tag (replaces hardcoded #3772cf) ── */
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  background-color: rgba(55, 114, 207, 0.15);
+  color: var(--color-brand-tag);
+}
+
+/* ── Glass Dropdown ── */
+
+.dropdown-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.dark .dropdown-glass {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 @media (prefers-reduced-motion: reduce) {

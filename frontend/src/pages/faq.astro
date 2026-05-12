@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  { q: 'How do I donate?', a: 'You can donate online through our secure donation page using credit card, debit card, or PayPal. We also accept bank transfers, mobile money (M-Pesa), and cryptocurrency. Visit our Donate page to get started, or contact us for large gifts and legacy giving options.' },
+  { q: 'Is my donation tax-deductible?', a: 'Yes. Peace League Africa is a registered 501(c)(3) non-profit organization. All donations are tax-deductible to the extent allowed by law. You will receive a receipt for your donation via email within 48 hours.' },
+  { q: 'Where does my money go?', a: '95% of every dollar donated goes directly to our programs on the ground. We maintain a lean administrative overhead of just 5%, which covers essential operations, monitoring, and reporting. Our financial records are audited annually by an independent firm and are publicly available.' },
+  { q: 'How can I volunteer?', a: 'We welcome volunteers with diverse skills — from teaching and healthcare to communications and logistics. You can volunteer locally at one of our chapters, or join a field program. Visit our Volunteer page to see current opportunities and apply.' },
+  { q: 'Can I sponsor a specific cause?', a: 'Absolutely. You can choose to sponsor a specific cause such as Peace Education, Healthcare, Clean Water, Youth Empowerment, or Agriculture. Each cause page shows the specific programs and funding needs. You can also sponsor a child\'s education or a community water well.' },
+  { q: 'How are causes selected?', a: 'Causes are selected through a community-driven process. Local leaders, field staff, and community members identify the most pressing needs. Our team then assesses feasibility, sustainability, and potential impact before launching a new cause or program.' },
+  { q: 'Do you work internationally?', a: 'Yes. While our primary focus is East Africa and the Great Lakes region, we have programs in 12 African countries. We also accept international donations and partner with global organizations. Our headquarters is in Nairobi, Kenya, with chapters in major cities worldwide.' },
+  { q: 'How do I start a fundraiser?', a: 'You can start a personal fundraiser through our website. Whether it is for your birthday, a marathon, or a community event, we will provide you with tools, resources, and support to make your fundraiser a success. Sign up on our Fundraise page to get started.' },
+  { q: 'What is your financial transparency policy?', a: 'We believe full transparency builds trust. Our annual audited financial statements, Form 990, and program impact reports are all publicly available on our website. We also provide quarterly updates to our donors showing exactly how their contributions are being used.' },
+  { q: 'How do I join the newsletter?', a: 'Simply enter your email address in the newsletter signup form on our website, and you will receive monthly updates featuring stories from the field, impact reports, upcoming events, and ways to get involved. You can unsubscribe at any time.' },
+  { q: 'Can I partner with Peace League Africa?', a: 'We welcome partnerships with corporations, foundations, NGOs, and government agencies. Partnership types include financial sponsorships, in-kind support, pro-bono services, and program collaboration. Visit our Partner page to learn more and start the conversation.' },
+  { q: 'How do I contact your team?', a: 'You can reach us through our Contact page, email us at info@peaceleagueafrica.org, or call our Nairobi office at +254-700-123-456. For media inquiries, please contact media@peaceleagueafrica.org. We aim to respond to all inquiries within 48 hours.' },
+];
+---
+
+<Layout title="FAQ — Peace League Africa">
+  <Navigation />
+
+  <main>
+    <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
+          <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">Frequently Asked Questions</h1>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">Everything you need to know about Peace League Africa, our programs, and how to get involved.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-3" id="faq-container">
+          {faqs.map((faq, idx) => (
+            <div class="scroll-reveal faq-item bg-canvas rounded-lg border border-hairline transition-all duration-300 hover:shadow-md" style={`animation-delay: ${idx * 40}ms`}>
+              <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-surface/50 transition-colors rounded-lg" aria-expanded="false">
+                <span class="text-base font-semibold text-ink pr-4">{faq.q}</span>
+                <svg class="faq-chevron w-5 h-5 text-steel shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                <div class="px-6 pb-5 pt-0">
+                  <p class="text-sm text-steel leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 hero-gradient text-white hero-pattern">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Still Have Questions?</h2>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">We are here to help. Reach out to our team and we will get back to you within 48 hours.</p>
+        <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            Contact Us
+          </a>
+          <a href="mailto:info@peaceleagueafrica.org" class="inline-flex items-center justify-center gap-2 px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const chevron = btn.querySelector('.faq-chevron');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        document.querySelectorAll('.faq-toggle').forEach(other => {
+          if (other !== btn && other.getAttribute('aria-expanded') === 'true') {
+            const otherItem = other.closest('.faq-item');
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            const otherChevron = other.querySelector('.faq-chevron');
+            other.setAttribute('aria-expanded', 'false');
+            if (otherAnswer) otherAnswer.style.maxHeight = '0';
+            if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        if (answer) {
+          if (isOpen) {
+            answer.style.maxHeight = '0';
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + 48 + 'px';
+          }
+        }
+        if (chevron) {
+          chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</Layout>
