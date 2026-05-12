@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="bg-[#1a3d4a] text-white py-16 lg:py-20">
+    <section class="bg-hero-bg text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight" data-aos="fade-down">Support Our Mission</h1>
         <p class="mt-4 text-lg text-on-dark-muted" data-aos="fade-down" data-aos-delay="100">Your contribution makes a real difference</p>
@@ -122,11 +122,11 @@ import Footer from '../components/Footer.astro';
       amountField.value = amount;
       
       amountInputs.forEach(b => {
-        b.classList.remove('border-[#00d4a4]', 'bg-[#00d4a4]/5', 'text-[#00d4a4]');
-        b.classList.add('border-gray-200', 'text-gray-900');
+        b.classList.remove('border-accent', 'bg-accent/5', 'text-accent');
+        b.classList.add('border-hairline', 'text-ink');
       });
-      btn.classList.remove('border-gray-200', 'text-gray-900');
-      btn.classList.add('border-[#00d4a4]', 'bg-[#00d4a4]/5', 'text-[#00d4a4]');
+      btn.classList.remove('border-hairline', 'text-ink');
+      btn.classList.add('border-accent', 'bg-accent/5', 'text-accent');
     });
   });
 
@@ -146,18 +146,18 @@ import Footer from '../components/Footer.astro';
       const response = await submitDonation(data);
       
       if (response.status === 'success') {
-        messageDiv.className = 'p-4 bg-green-100 text-green-800 rounded-lg';
+        messageDiv.className = 'p-4 bg-success-bg text-success rounded-lg';
         messageDiv.textContent = 'Thank you! Your donation has been recorded. You will receive a confirmation email shortly.';
         form.reset();
         amountInputs.forEach(b => {
-          b.classList.remove('border-[#00d4a4]', 'bg-[#00d4a4]/5', 'text-[#00d4a4]');
-          b.classList.add('border-gray-200', 'text-gray-900');
+          b.classList.remove('border-accent', 'bg-accent/5', 'text-accent');
+          b.classList.add('border-hairline', 'text-ink');
         });
       } else {
         throw new Error(response.message || 'Failed to process donation');
       }
     } catch (error) {
-      messageDiv.className = 'p-4 bg-red-100 text-red-800 rounded-lg';
+      messageDiv.className = 'p-4 bg-error-bg text-error rounded-lg';
       messageDiv.textContent = 'Error: ' + error.message + '. Please try again.';
     } finally {
       submitBtn.disabled = false;
