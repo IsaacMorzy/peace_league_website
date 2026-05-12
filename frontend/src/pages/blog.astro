@@ -4,17 +4,32 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 const posts = [
-  { category: 'Education', title: 'Bringing Peace Education to 50 New Schools in 2026', excerpt: 'Our expanded curriculum reaches thousands of students with conflict resolution, empathy training, and leadership skills.', date: 'May 8, 2026', image: 'photo-1504711434969-e33886168d6c', author: 'Grace Mwangi' },
-  { category: 'Impact', title: 'Clean Water Transforms a Community in Turkana', excerpt: 'How a single well changed the lives of 3,000 people — and what we learned about sustainable water development.', date: 'Apr 22, 2026', image: 'photo-1559027615-cd4628902d4a', author: 'David Ochieng' },
-  { category: 'Giving', title: 'The Power of Monthly Giving: Small Acts, Big Impact', excerpt: 'Why recurring donations are the most effective way to support lasting peace and development across Africa.', date: 'Apr 10, 2026', image: 'photo-1488521787991-ed7bbaae773c', author: 'Sarah Kimani' },
-  { category: 'Community', title: 'Youth Leaders Graduate from Peacebuilding Academy', excerpt: '100 young leaders from 8 countries complete our flagship program and return to their communities ready to lead.', date: 'Mar 28, 2026', image: 'photo-1486312338219-ce68d2c6f44d', author: 'James Njoroge' },
-  { category: 'Health', title: 'Mental Health Support in Post-Conflict Communities', excerpt: 'Our new partnership brings trauma-informed care to communities healing from decades of conflict in the Great Lakes region.', date: 'Mar 15, 2026', image: 'photo-1571019613454-1cb2f99b2d8b', author: 'Dr. Amina Hassan' },
-  { category: 'Impact', title: 'Annual Report 2025: A Year of Growth and Impact', excerpt: 'Read about our achievements, financial transparency, and the communities we served together in 2025.', date: 'Feb 28, 2026', image: 'photo-1500937386664-56d1dfef3854', author: 'Peace League Team' },
+  { category: 'Education', title: 'How Peace Education is Transforming Schools in Rural Kenya', excerpt: 'Across rural Kenya, a quiet revolution is unfolding in classrooms where conflict resolution and empathy training are becoming as fundamental as math and reading.', date: 'May 12, 2026', image: 'photo-1504711434969-e33886168d6c', author: 'Grace Mwangi' },
+  { category: 'Peace', title: 'Meet the Women Leading Reconciliation Efforts in Rwanda', excerpt: 'From village cooperatives to national dialogues, women across Rwanda are healing communities torn apart by genocide with courage, compassion, and unwavering hope.', date: 'May 8, 2026', image: 'photo-1559027615-cd4628902d4a', author: 'Annonciata Mukamana' },
+  { category: 'Water', title: 'Clean Water Access: A Village Journey from Crisis to Hope', excerpt: 'For generations, the women of Lodwar walked six hours for water. Today, a single borehole has rewritten the future of an entire community.', date: 'Apr 28, 2026', image: 'photo-1488521787991-ed7bbaae773c', author: 'David Ochieng' },
+  { category: 'Youth', title: 'Youth Leadership: The Next Generation of Peacebuilders in Africa', excerpt: 'A new generation of young leaders is stepping up across Africa, bringing fresh energy, digital savvy, and an unshakeable commitment to building peace.', date: 'Apr 22, 2026', image: 'photo-1486312338219-ce68d2c6f44d', author: 'James Njoroge' },
+  { category: 'Health', title: 'Healthcare Outreach: Reaching the Last Mile in Rural Uganda', excerpt: 'Mobile clinics and community health workers are bringing life-saving care to some of the most remote villages in eastern Uganda.', date: 'Apr 15, 2026', image: 'photo-1571019613454-1cb2f99b2d8b', author: 'Dr. Amina Hassan' },
+  { category: 'Community', title: 'From Conflict to Community: A Story of Healing in South Sudan', excerpt: 'After years of civil war, a small town in South Sudan shows the world what reconciliation looks like when communities choose peace over revenge.', date: 'Apr 8, 2026', image: 'photo-1500937386664-56d1dfef3854', author: 'Samuel Garang' },
+  { category: 'Technology', title: 'Digital Literacy: Bridging the Technology Gap in African Schools', excerpt: 'With solar-powered computer labs and offline digital libraries, students in off-grid communities are accessing the same educational resources as their urban peers.', date: 'Mar 30, 2026', image: 'photo-1524178232363-1fb2b075b655', author: 'Wanjiru Kimani' },
+  { category: 'Peace', title: 'Annual Report 2025: Impact Across 12 African Countries', excerpt: 'Our 2025 annual report showcases measurable progress across education, health, water, and peace-building programs serving communities in 12 countries.', date: 'Mar 22, 2026', image: 'photo-1540575467063-178a50c2df87', author: 'Peace League Team' },
+  { category: 'Community', title: 'Sports for Peace: How Football United Divided Communities', excerpt: 'In a region where ethnic divisions once ran deep, a community football league is bridging divides and teaching young people the value of teamwork across lines of difference.', date: 'Mar 15, 2026', image: 'photo-1461896836934-bd45ba8fcf9b', author: 'Peter Lokol' },
+  { category: 'Impact', title: 'Emergency Relief: Responding to Crisis in the Horn of Africa', excerpt: 'When drought threatened millions, Peace League Africa mobilized emergency food, water, and medical supplies to the hardest-hit communities across the Horn.', date: 'Mar 5, 2026', image: 'photo-1511795409834-ef04bbd61622', author: 'Fatima Ahmed' },
+  { category: 'Youth', title: 'Girls Education: Breaking Barriers, Building Futures', excerpt: 'From classrooms in Nairobi to village schools in Malawi, girls are overcoming poverty, tradition, and conflict to claim their right to an education.', date: 'Feb 25, 2026', image: 'photo-1529156069898-49953e39b3ac', author: 'Mary Akinyi' },
+  { category: 'Impact', title: 'The Power of Small Donations: Micro Giving, Macro Impact', excerpt: 'A thousand small acts of generosity add up to something extraordinary. Discover how micro-donors are funding big changes across Africa.', date: 'Feb 18, 2026', image: 'photo-1534274988757-a28bf1a57c17', author: 'Sarah Kimani' },
+  { category: 'Community', title: 'Volunteer Stories: Why I Choose to Build Peace in Africa', excerpt: 'Meet the volunteers who spend their days building peace across Africa from a retired teacher in Kenya to a young engineer from Nigeria.', date: 'Feb 10, 2026', image: 'photo-1507003211169-0a1dd7228f2d', author: 'Volunteer Corps' },
+  { category: 'Impact', title: 'Partnership Spotlight: Working with Local Communities', excerpt: 'Real change happens when outside support meets local leadership. Our partnership model puts community voices at the center of every decision.', date: 'Feb 2, 2026', image: 'photo-1524502397800-3605f2cba3a5', author: 'Daniel Mugisha' },
+  { category: 'Peace', title: 'Mental Health and Peacebuilding: An Overlooked Connection', excerpt: 'Untreated trauma fuels cycles of violence. A growing movement of peace-builders is recognizing mental health as essential to lasting reconciliation.', date: 'Jan 25, 2026', image: 'photo-1472099645785-15c8c6b8c5e0', author: 'Dr. Amina Hassan' },
+  { category: 'Technology', title: 'Sustainable Agriculture: Climate Resilient Farming Takes Root', excerpt: 'Smallholder farmers across East Africa are adopting drought-resistant crops and regenerative techniques that are transforming food security in the region.', date: 'Jan 18, 2026', image: 'photo-1517486808906-6ca8b3c8e1c1', author: 'Grace Mwangi' },
+  { category: 'Community', title: 'Music, Art and Peace: Creative Expression as a Tool for Healing', excerpt: 'In post-conflict communities, music and art programs are giving young people a voice and a path forward where words alone fall short.', date: 'Jan 10, 2026', image: 'photo-1531123897727-8f129e1688ce', author: 'Kofi Mensah' },
+  { category: 'Education', title: 'Climate Change and Conflict: Building Resilience in the Sahel', excerpt: 'As resources grow scarce, competition for water and grazing land is rising. Communities across the Sahel are learning to adapt together.', date: 'Jan 5, 2026', image: 'photo-1500648767791-49c5b4f88f56', author: 'Dr. James Ochieng' },
+  { category: 'Health', title: 'Food Security: Community Gardens Feeding Thousands', excerpt: 'A network of community gardens across Kenya and Uganda is putting fresh food on the table for thousands of families while teaching sustainable farming.', date: 'Dec 20, 2025', image: 'photo-1529626455594-4ff0802cfb7e', author: 'Peace League Team' },
+  { category: 'Peace', title: 'Looking Ahead: Our Vision for Peace in Africa 2027', excerpt: 'As we look toward 2027, we are scaling our most effective programs, deepening community partnerships, and investing in the next generation of peace-builders.', date: 'Dec 12, 2025', image: 'photo-1494790108377-be3c2b3b1c0b', author: 'Sarah Kimani' },
 ];
 
-const categories = ['All', 'Education', 'Impact', 'Giving', 'Community', 'Health', 'Events'];
+const categories = ['All', 'Education', 'Peace', 'Health', 'Water', 'Youth', 'Community', 'Technology', 'Impact'];
 
 const recentPosts = posts.slice(0, 4);
+const sidebarCategories = categories.filter(c => c !== 'All');
 ---
 
 <Layout title="Blog — Peace League Africa">
@@ -42,17 +57,17 @@ const recentPosts = posts.slice(0, 4);
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div class="lg:col-span-3">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, idx) => (
                 <article class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group" style={`animation-delay: ${idx * 80}ms`}>
                   <div class="relative overflow-hidden img-zoom">
-                    <img src={`https://images.unsplash.com/${post.image}?w=600&q=80&auto=format&fit=crop`} alt={post.title} class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-108" loading="lazy" />
+                    <img src={`https://images.unsplash.com/${post.image}?w=800&q=80&auto=format&fit=crop`} alt={post.title} class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-108" loading="lazy" />
                     <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full shadow-lg">{post.category}</span>
                   </div>
                   <div class="p-6">
                     <p class="text-xs text-steel mb-2">{post.date} &middot; {post.author}</p>
-                    <h3 class="text-lg font-semibold text-ink mb-2 leading-snug">{post.title}</h3>
-                    <p class="text-sm text-steel leading-relaxed mb-4">{post.excerpt}</p>
+                    <h3 class="text-lg font-semibold text-ink mb-2 leading-snug line-clamp-2">{post.title}</h3>
+                    <p class="text-sm text-steel leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
                     <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors">
                       Read More
                       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -67,7 +82,7 @@ const recentPosts = posts.slice(0, 4);
             <div class="scroll-reveal bg-canvas rounded-lg border border-hairline p-6">
               <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Categories</h3>
               <div class="space-y-2">
-                {categories.filter(c => c !== 'All').map((cat, idx) => (
+                {sidebarCategories.map((cat, idx) => (
                   <span class="flex items-center gap-2 px-3 py-2 text-sm text-steel bg-surface rounded-lg hover:text-accent hover:bg-accent/5 transition-colors cursor-pointer" style={`animation-delay: ${idx * 30}ms`}>
                     <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
                     {cat}

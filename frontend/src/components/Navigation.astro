@@ -89,38 +89,6 @@ const navItems = [
           </div>
         </nav>
       </div>
-  <nav class="px-4 py-4" aria-label="Mobile navigation">
-    <div class="flex flex-col gap-1">
-      {navItems.map((item, i) => (
-        item.dropdown ? (
-          <div class="mobile-dropdown-group">
-            <button data-mobile-dropdown class="flex items-center justify-between w-full px-4 py-3 text-sm text-ink font-medium hover:bg-surface rounded-full transition-colors" aria-expanded="false">
-              <span>{item.label}</span>
-              <svg class="mobile-chevron w-4 h-4 text-steel transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="mobile-dropdown-children overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-              <div class="flex flex-col gap-0.5 pl-4 pr-2 pb-2 pt-1">
-                {item.dropdown.map((child, j) => (
-                  <a href={child.href} class={`nav-link-stagger px-4 py-2.5 text-sm transition-colors rounded-full ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
-                    {child.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <a href={item.href} class={`nav-link-stagger px-4 py-3 text-sm transition-colors rounded-full ${currentPath === item.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
-            {item.label}
-          </a>
-        )
-      ))}
-    </div>
-    <div class="mt-6 pt-6 border-t border-hairline flex flex-col gap-3">
-      <a href="/login" class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors">Log in</a>
-      <a href="/donate" class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">Donate</a>
-    </div>
-  </nav>
-</div>
 
 <!-- Site header -->
 <header id="site-header" class="sticky top-0 z-30 nav-visible border-b border-hairline">
@@ -140,7 +108,7 @@ const navItems = [
                 <span>{item.label}</span>
                 <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
-              <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-52 dropdown-glass border border-hairline rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
+              <div class="dropdown-menu-2 absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-52 dropdown-glass border border-hairline rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
                 <div class="py-1.5">
                   {item.dropdown.map((child, cidx) => (
                     <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors ${cidx === 0 ? 'rounded-t-xl' : ''} ${cidx === item.dropdown.length - 1 ? 'rounded-b-xl' : ''} ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
@@ -196,8 +164,9 @@ const navItems = [
   .nav-link-underline:hover::after { width: 60%; left: 20%; }
   .login-link { transition: transform 0.2s ease, color 0.2s ease; }
   .login-link:hover { transform: scale(1.05); }
-  .dropdown-menu { transform: translateY(-4px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; }
-  .group:hover .dropdown-menu { transform: translateY(0); }
+  .dropdown-menu-2 { transform: translateY(-4px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; }
+  .group:hover .dropdown-menu-2,
+  .dropdown-menu-2.active { transform: translateY(0); opacity: 1 !important; visibility: visible !important; }
 </style>
 
 <script>
@@ -285,30 +254,18 @@ const navItems = [
   setupThemeToggle('theme-toggle', 'theme-sun', 'theme-moon');
   setupThemeToggle('theme-toggle-mobile', 'theme-sun-mobile', 'theme-moon-mobile');
 
-  // Desktop dropdown toggle for touch devices
-  if ('ontouchstart' in window) {
-    document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        var menu = this.nextElementSibling;
-        if (menu) {
-          menu.classList.toggle('opacity-0');
-          menu.classList.toggle('invisible');
-          menu.classList.toggle('opacity-100');
-          menu.classList.toggle('visible');
-        }
-      });
+  // Desktop dropdown toggle — works on click (touch) and hover (desktop)
+  document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var menu = this.closest('.group').querySelector('.dropdown-menu-2');
+      if (menu) menu.classList.toggle('active');
     });
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('.relative.group').forEach(function(group) {
-        if (!group.contains(e.target)) {
-          var menu = group.querySelector('.dropdown-menu');
-          if (menu) {
-            menu.classList.add('opacity-0', 'invisible');
-            menu.classList.remove('opacity-100', 'visible');
-          }
-        }
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.group')) {
+      document.querySelectorAll('.dropdown-menu-2.active').forEach(function(m) {
+        m.classList.remove('active');
       });
-    });
-  }
+    }
+  });
 </script>
