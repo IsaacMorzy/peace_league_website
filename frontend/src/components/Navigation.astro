@@ -46,17 +46,49 @@ const navItems = [
 ];
 ---
 
-<!-- Mobile drawer backdrop -->
-<div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300"></div>
+      <!-- Mobile drawer backdrop -->
+      <div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300"></div>
 
-<!-- Mobile drawer panel -->
-<div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-80 bg-canvas border-l border-hairline shadow-xl overflow-y-auto">
-  <div class="flex justify-between items-center p-4 border-b border-hairline">
-    <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
-    <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
-      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-  </div>
+      <!-- Mobile drawer panel -->
+      <div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-80 bg-canvas/95 backdrop-blur-2xl border-l border-hairline shadow-2xl translate-x-full invisible transition-all duration-300 ease-out overflow-y-auto">
+        <div class="flex justify-between items-center p-4 border-b border-hairline">
+          <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
+          <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="px-4 py-4" aria-label="Mobile navigation">
+          <div class="flex flex-col gap-1">
+            {navItems.map((item, i) => (
+              item.dropdown ? (
+                <div class="mobile-dropdown-group">
+                  <button data-mobile-dropdown class="flex items-center justify-between w-full px-4 py-3 text-sm text-ink font-medium hover:bg-surface rounded-full transition-all duration-200 translate-x-4 opacity-0 drawer-item" aria-expanded="false">
+                    <span>{item.label}</span>
+                    <svg class="mobile-chevron w-4 h-4 text-steel transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  </button>
+                  <div class="mobile-dropdown-children overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                    <div class="flex flex-col gap-0.5 pl-4 pr-2 pb-2 pt-1">
+                      {item.dropdown.map((child) => (
+                        <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors rounded-full ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a href={item.href} class={`px-4 py-3 text-sm transition-colors rounded-full translate-x-4 opacity-0 drawer-item ${currentPath === item.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              )
+            ))}
+          </div>
+          <div class="mt-6 pt-6 border-t border-hairline flex flex-col gap-3">
+            <a href="/login" class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors">Log in</a>
+            <a href="/donate" class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">Donate</a>
+          </div>
+        </nav>
+      </div>
   <nav class="px-4 py-4" aria-label="Mobile navigation">
     <div class="flex flex-col gap-1">
       {navItems.map((item, i) => (
@@ -100,7 +132,7 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-1">
         {navItems.map((item, idx) => (
           <>{item.dropdown ? (
             <div class="relative group">
@@ -127,7 +159,7 @@ const navItems = [
       </div>
 
       <!-- Desktop Right Side -->
-      <div class="flex items-center gap-3">
+      <div class="hidden lg:flex items-center gap-3">
         <a href="/login" class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 px-2">Log in</a>
         <button id="theme-toggle" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
@@ -182,6 +214,12 @@ const navItems = [
     backdrop?.classList.add('opacity-100', 'visible', 'pointer-events-auto');
     drawer?.classList.add('open');
     document.body.classList.add('overflow-hidden');
+    // Staggered animation for drawer items
+    drawer?.querySelectorAll('.drawer-item').forEach(function(el, idx) {
+      el.style.transition = 'all 0.3s ease-out ' + (idx * 60) + 'ms';
+      el.style.transform = 'translateX(0)';
+      el.style.opacity = '1';
+    });
   }
   function closeDrawer() {
     menuBtn.setAttribute('aria-expanded', 'false');
@@ -190,6 +228,10 @@ const navItems = [
     backdrop?.classList.add('opacity-0', 'invisible', 'pointer-events-none');
     drawer?.classList.remove('open');
     document.body.classList.remove('overflow-hidden');
+    drawer?.querySelectorAll('.drawer-item').forEach(function(el) {
+      el.style.transform = 'translateX(16px)';
+      el.style.opacity = '0';
+    });
   }
   menuBtn?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);

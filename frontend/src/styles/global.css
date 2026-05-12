@@ -141,9 +141,15 @@ html {
 }
 
 #mobile-drawer {
-  transform: translateX(100%);
-  visibility: hidden;
-  transition: transform 0.3s ease-in-out, visibility 0.3s ease;
+  transition: transform 0.3s ease-out, visibility 0.3s ease;
+}
+#mobile-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.drawer-item {
+  transition: all 0.3s ease-out;
 }
 #mobile-drawer.open {
   transform: translateX(0);
