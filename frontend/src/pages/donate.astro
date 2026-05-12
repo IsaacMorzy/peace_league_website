@@ -8,67 +8,67 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-24">
+    <section class="bg-[#1a3d4a] text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold">Support Our Mission</h1>
-        <p class="mt-4 text-xl text-green-100">Your contribution makes a real difference</p>
+        <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight">Support Our Mission</h1>
+        <p class="mt-4 text-lg text-gray-300">Your contribution makes a real difference</p>
       </div>
     </section>
 
     <section class="py-16">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">Make a Donation</h2>
-          <p class="text-gray-600 mb-8">
+        <div class="bg-white rounded-lg border border-gray-200 p-6">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Make a Donation</h2>
+          <p class="text-gray-600 mb-6 text-sm">
             Every donation helps us continue our work across Africa. You can donate directly 
             through our secure payment system or contact us for other donation options.
           </p>
           
-          <form id="donation-form" class="space-y-6">
+          <form id="donation-form" class="space-y-5">
             <div>
-              <label for="donor_name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+              <label for="donor_name" class="block text-sm font-medium text-gray-900 mb-1.5">Full Name *</label>
               <input type="text" id="donor_name" name="donor_name" required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                class="w-full px-3 py-[10px] border border-gray-200 rounded-md text-[16px] text-gray-900 focus:border-[#00d4a4] focus:ring-1 focus:ring-[#00d4a4] focus:outline-none" />
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                <label for="email" class="block text-sm font-medium text-gray-900 mb-1.5">Email *</label>
                 <input type="email" id="email" name="email" required 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                  class="w-full px-3 py-[10px] border border-gray-200 rounded-md text-[16px] text-gray-900 focus:border-[#00d4a4] focus:ring-1 focus:ring-[#00d4a4] focus:outline-none" />
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <label for="phone" class="block text-sm font-medium text-gray-900 mb-1.5">Phone</label>
                 <input type="tel" id="phone" name="phone" 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                  class="w-full px-3 py-[10px] border border-gray-200 rounded-md text-[16px] text-gray-900 focus:border-[#00d4a4] focus:ring-1 focus:ring-[#00d4a4] focus:outline-none" />
               </div>
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-3">Select Amount</label>
-              <div class="grid grid-cols-3 gap-4">
-                <button type="button" class="amount-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-600 hover:bg-green-50 font-semibold text-gray-700 transition-colors" data-amount="25">
+              <label class="block text-sm font-medium text-gray-900 mb-2">Select Amount</label>
+              <div class="grid grid-cols-3 gap-3">
+                <button type="button" class="amount-btn p-3 border border-gray-200 rounded-lg font-medium text-gray-900 text-sm hover:border-[#00d4a4] hover:bg-[#00d4a4]/5 transition-colors" data-amount="25">
                   $25
                 </button>
-                <button type="button" class="amount-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-600 hover:bg-green-50 font-semibold text-gray-700 transition-colors" data-amount="50">
+                <button type="button" class="amount-btn p-3 border border-gray-200 rounded-lg font-medium text-gray-900 text-sm hover:border-[#00d4a4] hover:bg-[#00d4a4]/5 transition-colors" data-amount="50">
                   $50
                 </button>
-                <button type="button" class="amount-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-600 hover:bg-green-50 font-semibold text-gray-700 transition-colors" data-amount="100">
+                <button type="button" class="amount-btn p-3 border border-gray-200 rounded-lg font-medium text-gray-900 text-sm hover:border-[#00d4a4] hover:bg-[#00d4a4]/5 transition-colors" data-amount="100">
                   $100
                 </button>
               </div>
             </div>
             
             <div>
-              <label for="amount" class="block text-sm font-medium text-gray-700 mb-2">Or enter custom amount ($) *</label>
+              <label for="amount" class="block text-sm font-medium text-gray-900 mb-1.5">Or enter custom amount ($) *</label>
               <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="Enter amount"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                class="w-full px-3 py-[10px] border border-gray-200 rounded-md text-[16px] text-gray-900 focus:border-[#00d4a4] focus:ring-1 focus:ring-[#00d4a4] focus:outline-none" />
             </div>
             
             <div>
-              <label for="payment_method" class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
+              <label for="payment_method" class="block text-sm font-medium text-gray-900 mb-1.5">Payment Method *</label>
               <select id="payment_method" name="payment_method" required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                class="w-full px-3 py-[10px] border border-gray-200 rounded-md text-[16px] text-gray-900 focus:border-[#00d4a4] focus:ring-1 focus:ring-[#00d4a4] focus:outline-none">
                 <option value="">Select payment method</option>
                 <option value="Credit Card">Credit Card</option>
                 <option value="Bank Transfer">Bank Transfer</option>
@@ -78,20 +78,20 @@ import Footer from '../components/Footer.astro';
             </div>
             
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message (Optional)</label>
+              <label for="message" class="block text-sm font-medium text-gray-900 mb-1.5">Message (Optional)</label>
               <textarea id="message" name="message" rows="2" placeholder="Leave a message with your donation"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+                class="w-full px-3 py-[10px] border border-gray-200 rounded-md text-[16px] text-gray-900 focus:border-[#00d4a4] focus:ring-1 focus:ring-[#00d4a4] focus:outline-none"></textarea>
             </div>
             
             <div class="flex items-center">
-              <input type="checkbox" id="anonymous" name="anonymous" value="1" class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500" />
+              <input type="checkbox" id="anonymous" name="anonymous" value="1" class="w-4 h-4 text-[#00d4a4] border-gray-300 rounded focus:ring-[#00d4a4]" />
               <label for="anonymous" class="ml-2 text-sm text-gray-600">Make this donation anonymous</label>
             </div>
             
             <div id="form-message" class="hidden"></div>
             
             <button type="submit" id="submit-btn"
-              class="w-full bg-green-700 text-white py-4 rounded-lg font-semibold hover:bg-green-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed">
+              class="w-full bg-[#0a0a0a] text-white py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-[#1c1c1e] transition-colors disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed">
               Donate Now
             </button>
           </form>
@@ -122,11 +122,11 @@ import Footer from '../components/Footer.astro';
       amountField.value = amount;
       
       amountInputs.forEach(b => {
-        b.classList.remove('border-green-600', 'bg-green-50', 'text-green-800');
-        b.classList.add('border-gray-300', 'text-gray-700');
+        b.classList.remove('border-[#00d4a4]', 'bg-[#00d4a4]/5', 'text-[#00d4a4]');
+        b.classList.add('border-gray-200', 'text-gray-900');
       });
-      btn.classList.remove('border-gray-300', 'text-gray-700');
-      btn.classList.add('border-green-600', 'bg-green-50', 'text-green-800');
+      btn.classList.remove('border-gray-200', 'text-gray-900');
+      btn.classList.add('border-[#00d4a4]', 'bg-[#00d4a4]/5', 'text-[#00d4a4]');
     });
   });
 
@@ -150,8 +150,8 @@ import Footer from '../components/Footer.astro';
         messageDiv.textContent = 'Thank you! Your donation has been recorded. You will receive a confirmation email shortly.';
         form.reset();
         amountInputs.forEach(b => {
-          b.classList.remove('border-green-600', 'bg-green-50', 'text-green-800');
-          b.classList.add('border-gray-300', 'text-gray-700');
+          b.classList.remove('border-[#00d4a4]', 'bg-[#00d4a4]/5', 'text-[#00d4a4]');
+          b.classList.add('border-gray-200', 'text-gray-900');
         });
       } else {
         throw new Error(response.message || 'Failed to process donation');

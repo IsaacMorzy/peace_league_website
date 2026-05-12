@@ -8,23 +8,23 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white">
+    <section class="relative text-white" style="background: linear-gradient(135deg, #1a3d4a, #2d5a4f);">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-20"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-48">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-[120px]">
         <div class="max-w-3xl">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 class="text-[40px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.05] tracking-[-2px] text-white">
             Building Peace, <br/>
-            <span class="text-green-300">One Community</span> at a Time
+            <span class="text-[#7cebcb]">One Community</span> at a Time
           </h1>
-          <p class="mt-6 text-xl text-green-100 leading-relaxed">
+          <p class="mt-6 text-lg leading-relaxed text-white/80">
             Peace League Africa unites communities across the continent through compassion, 
             education, and sustainable development. Together, we are creating lasting change.
           </p>
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="/donate" class="inline-flex items-center justify-center px-8 py-4 bg-white text-green-800 font-semibold rounded-lg hover:bg-green-50 transition-colors shadow-lg">
+            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-[#0a0a0a] font-medium text-sm rounded-full">
               Donate Now
             </a>
-            <a href="/programs" class="inline-flex items-center justify-center px-8 py-8 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">
+            <a href="/programs" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium text-sm rounded-full">
               Our Programs
             </a>
           </div>
@@ -32,72 +32,72 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-20 bg-gray-50">
+    <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900">Our Impact</h2>
-          <p class="mt-4 text-lg text-gray-600">
+          <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-[#0a0a0a]">Our Impact</h2>
+          <p class="mt-4 text-lg text-[#5a5a5c]">
             Working across Africa to create meaningful, lasting change in communities.
           </p>
         </div>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-xl shadow-sm text-center">
-            <div id="stat-donations" class="text-4xl font-bold text-green-700">$0</div>
-            <div class="mt-2 text-gray-600">Total Donations Received</div>
+          <div class="bg-white p-6 rounded-[12px] border border-[#e5e5e5] text-center">
+            <div id="stat-donations" class="text-4xl font-bold text-[#00d4a4]">$0</div>
+            <div class="mt-2 text-[#5a5a5c]">Total Donations Received</div>
           </div>
-          <div class="bg-white p-8 rounded-xl shadow-sm text-center">
-            <div id="stat-volunteers" class="text-4xl font-bold text-green-700">0</div>
-            <div class="mt-2 text-gray-600">Active Volunteers</div>
+          <div class="bg-white p-6 rounded-[12px] border border-[#e5e5e5] text-center">
+            <div id="stat-volunteers" class="text-4xl font-bold text-[#00d4a4]">0</div>
+            <div class="mt-2 text-[#5a5a5c]">Active Volunteers</div>
           </div>
-          <div class="bg-white p-8 rounded-xl shadow-sm text-center">
-            <div id="stat-chapters" class="text-4xl font-bold text-green-700">0+</div>
-            <div class="mt-2 text-gray-600">Active Chapters</div>
+          <div class="bg-white p-6 rounded-[12px] border border-[#e5e5e5] text-center">
+            <div id="stat-chapters" class="text-4xl font-bold text-[#00d4a4]">0+</div>
+            <div class="mt-2 text-[#5a5a5c]">Active Chapters</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Featured Programs</h2>
+        <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-[#0a0a0a] text-center mb-12">Featured Programs</h2>
         <div id="programs-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 p-6">
+          <div class="bg-white rounded-[12px] overflow-hidden border border-[#e5e5e5] p-6">
             <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-gray-900">Education for All</h3>
-            <p class="mt-2 text-gray-600 line-clamp-3">Providing quality education to underserved communities across Africa.</p>
+            <h3 class="text-xl font-semibold text-[#0a0a0a]">Education for All</h3>
+            <p class="mt-2 text-[#5a5a5c] line-clamp-3">Providing quality education to underserved communities across Africa.</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 p-6">
+          <div class="bg-white rounded-[12px] overflow-hidden border border-[#e5e5e5] p-6">
             <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-gray-900">Healthcare Initiative</h3>
-            <p class="mt-2 text-gray-600 line-clamp-3">Bringing essential healthcare services to remote areas.</p>
+            <h3 class="text-xl font-semibold text-[#0a0a0a]">Healthcare Initiative</h3>
+            <p class="mt-2 text-[#5a5a5c] line-clamp-3">Bringing essential healthcare services to remote areas.</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 p-6">
+          <div class="bg-white rounded-[12px] overflow-hidden border border-[#e5e5e5] p-6">
             <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-gray-900">Clean Water Project</h3>
-            <p class="mt-2 text-gray-600 line-clamp-3">Ensuring access to clean, safe drinking water for communities in need.</p>
+            <h3 class="text-xl font-semibold text-[#0a0a0a]">Clean Water Project</h3>
+            <p class="mt-2 text-[#5a5a5c] line-clamp-3">Ensuring access to clean, safe drinking water for communities in need.</p>
           </div>
         </div>
         <div class="mt-12 text-center">
-          <a href="/programs" class="inline-flex items-center justify-center px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition-colors">
+          <a href="/programs" class="inline-flex items-center justify-center px-6 py-3 bg-[#0a0a0a] text-white font-medium text-sm rounded-full">
             View All Programs
           </a>
         </div>
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl font-bold text-gray-900">Get Involved</h2>
-          <p class="mt-4 text-lg text-gray-600">
+          <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-[#0a0a0a]">Get Involved</h2>
+          <p class="mt-4 text-lg text-[#5a5a5c]">
             Whether you want to volunteer your time, make a donation, or spread the word, 
             there are many ways to join our mission.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/volunteer" class="inline-flex items-center justify-center px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition-colors">
+            <a href="/volunteer" class="inline-flex items-center justify-center px-6 py-3 bg-[#0a0a0a] text-white font-medium text-sm rounded-full">
               Volunteer With Us
             </a>
-            <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border-2 border-green-700 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition-colors">
+            <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-[#e5e5e5] text-[#0a0a0a] font-medium text-sm rounded-full">
               Contact Us
             </a>
           </div>
@@ -128,17 +128,17 @@ import Footer from '../components/Footer.astro';
           if (programs && programs.length > 0) {
             const container = document.getElementById('programs-container');
             container.innerHTML = programs.slice(0, 3).map(program => `
-              <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+              <div class="bg-white rounded-[12px] overflow-hidden border border-[#e5e5e5]">
                 ${program.image ? `<img src="${program.image}" alt="${program.title}" class="w-full h-48 object-cover"/>` : '<div class="h-48 bg-gray-200"></div>'}
                 <div class="p-6">
-                  <h3 class="text-xl font-semibold text-gray-900">${program.title || ''}</h3>
-                  <p class="mt-2 text-gray-600 line-clamp-3">${program.description || ''}</p>
+                  <h3 class="text-xl font-semibold text-[#0a0a0a]">${program.title || ''}</h3>
+                  <p class="mt-2 text-[#5a5a5c] line-clamp-3">${program.description || ''}</p>
                   ${program.raised_amount > 0 && program.goal_amount > 0 ? `
                     <div class="mt-4">
                       <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-green-600 h-2 rounded-full" style="width: ${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}%"></div>
+                        <div class="bg-[#00d4a4] h-2 rounded-full" style="width: ${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}%"></div>
                       </div>
-                      <p class="mt-2 text-sm text-gray-500">$${program.raised_amount.toLocaleString()} raised of $${program.goal_amount.toLocaleString()}</p>
+                      <p class="mt-2 text-sm text-[#888888]">$${program.raised_amount.toLocaleString()} raised of $${program.goal_amount.toLocaleString()}</p>
                     </div>
                   ` : ''}
                 </div>

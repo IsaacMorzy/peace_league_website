@@ -8,31 +8,31 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-24">
+    <section class="bg-[#1a3d4a] text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold">About Peace League Africa</h1>
+        <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight">About Peace League Africa</h1>
       </div>
     </section>
 
     <section class="py-16">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-lg max-w-none">
-          <h2>Our Mission</h2>
+        <div class="text-gray-600 leading-relaxed space-y-4">
+          <h2 class="text-3xl font-semibold text-gray-900 leading-[1.20] tracking-tight">Our Mission</h2>
           <p>
             Peace League Africa is dedicated to fostering peace, understanding, and sustainable 
             development across the African continent. We believe that through education, 
             community engagement, and compassion, we can create lasting positive change.
           </p>
           
-          <h2>Our History</h2>
+          <h2 class="text-3xl font-semibold text-gray-900 leading-[1.20] tracking-tight">Our History</h2>
           <p>
             Founded with a vision of unity, Peace League Africa has grown from a small 
             grassroots movement into a continental force for good. Our programs span multiple 
             countries and touch the lives of thousands each year.
           </p>
           
-          <h2>Our Values</h2>
-          <ul>
+          <h2 class="text-3xl font-semibold text-gray-900 leading-[1.20] tracking-tight">Our Values</h2>
+          <ul class="list-disc pl-5 space-y-1">
             <li><strong>Compassion:</strong> We lead with empathy in all our interactions</li>
             <li><strong>Integrity:</strong> We operate with transparency and accountability</li>
             <li><strong>Innovation:</strong> We seek creative solutions to complex challenges</li>
@@ -45,20 +45,20 @@ import Footer from '../components/Footer.astro';
 
     <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-gray-900 text-center mb-12">Our Chapters</h2>
+        <h2 class="text-3xl font-semibold text-gray-900 text-center mb-12 leading-[1.20] tracking-tight">Our Chapters</h2>
         <div id="chapters-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <h3 class="text-lg font-semibold text-green-800">Nairobi Chapter</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-lg font-semibold text-[#00b48a]">Nairobi Chapter</h3>
             <p class="mt-1 text-sm text-gray-500">Kenya</p>
             <p class="mt-2 text-gray-600 text-sm line-clamp-2">Leading community initiatives in Kenya's capital city.</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <h3 class="text-lg font-semibold text-green-800">Lagos Chapter</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-lg font-semibold text-[#00b48a]">Lagos Chapter</h3>
             <p class="mt-1 text-sm text-gray-500">Nigeria</p>
             <p class="mt-2 text-gray-600 text-sm line-clamp-2">Empowering communities in Nigeria's largest city.</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <h3 class="text-lg font-semibold text-green-800">Johannesburg Chapter</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-lg font-semibold text-[#00b48a]">Johannesburg Chapter</h3>
             <p class="mt-1 text-sm text-gray-500">South Africa</p>
             <p class="mt-2 text-gray-600 text-sm line-clamp-2">Driving change in South Africa's economic hub.</p>
           </div>
@@ -80,8 +80,8 @@ import Footer from '../components/Footer.astro';
         if (data.status === 'success' && data.data && data.data.length > 0) {
           const container = document.getElementById('chapters-list');
           container.innerHTML = data.data.map(chapter => `
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-              <h3 class="text-lg font-semibold text-green-800">${chapter.introduction || ''}</h3>
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 class="text-lg font-semibold text-[#00b48a]">${chapter.introduction || ''}</h3>
               ${chapter.region ? `<p class="mt-1 text-sm text-gray-500">${chapter.region}</p>` : ''}
               ${chapter.address ? `<p class="mt-2 text-gray-600 text-sm line-clamp-2">${chapter.address}</p>` : ''}
             </div>

@@ -8,49 +8,43 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-24">
+    <section class="bg-[#1a3d4a] text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold">Our Programs</h1>
-        <p class="mt-4 text-xl text-green-100">Comprehensive initiatives creating lasting impact</p>
+        <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight">Our Programs</h1>
+        <p class="mt-4 text-lg text-gray-300">Comprehensive initiatives creating lasting impact</p>
       </div>
     </section>
 
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="programs-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-green-800">Education for All</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-semibold text-[#00b48a]">Education for All</h3>
             <p class="mt-2 text-gray-600 line-clamp-3">Providing quality education to underserved communities across Africa. Our programs focus on teacher training, school supplies, and digital learning resources.</p>
             <p class="mt-4 text-sm text-gray-500"><span class="font-medium">Status:</span> Active</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-green-800">Healthcare Initiative</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-semibold text-[#00b48a]">Healthcare Initiative</h3>
             <p class="mt-2 text-gray-600 line-clamp-3">Bringing essential healthcare services to remote areas. We organize mobile clinics, health education workshops, and vaccination drives.</p>
             <p class="mt-4 text-sm text-gray-500"><span class="font-medium">Status:</span> Active</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-green-800">Clean Water Project</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-semibold text-[#00b48a]">Clean Water Project</h3>
             <p class="mt-2 text-gray-600 line-clamp-3">Ensuring access to clean, safe drinking water for communities in need through well construction and water purification systems.</p>
             <p class="mt-4 text-sm text-gray-500"><span class="font-medium">Status:</span> Active</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-green-800">Food Security Program</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-semibold text-[#00b48a]">Food Security Program</h3>
             <p class="mt-2 text-gray-600 line-clamp-3">Combating hunger through sustainable agriculture training, community gardens, and emergency food distribution.</p>
             <p class="mt-4 text-sm text-gray-500"><span class="font-medium">Status:</span> Active</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-green-800">Youth Empowerment</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-semibold text-[#00b48a]">Youth Empowerment</h3>
             <p class="mt-2 text-gray-600 line-clamp-3">Leadership training, mentorship programs, and entrepreneurship support for young people across the continent.</p>
             <p class="mt-4 text-sm text-gray-500"><span class="font-medium">Status:</span> Active</p>
           </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
-            <h3 class="text-xl font-semibold text-green-800">Peace Building</h3>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 class="text-xl font-semibold text-[#00b48a]">Peace Building</h3>
             <p class="mt-2 text-gray-600 line-clamp-3">Conflict resolution workshops, community dialogue sessions, and peace education in schools.</p>
             <p class="mt-4 text-sm text-gray-500"><span class="font-medium">Status:</span> Active</p>
           </div>
@@ -72,21 +66,21 @@ import Footer from '../components/Footer.astro';
         if (data.status === 'success' && data.data && data.data.length > 0) {
           const container = document.getElementById('programs-list');
           container.innerHTML = data.data.map(program => `
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
-              ${program.image ? `<img src="${program.image}" alt="${program.title}" class="w-full h-48 object-cover"/>` : '<div class="h-48 bg-gray-200"></div>'}
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              ${program.image ? `<img src="${program.image}" alt="${program.title}" class="w-full h-48 object-cover"/>` : ''}
               <div class="p-6">
-                <h3 class="text-xl font-semibold text-green-800">${program.title || ''}</h3>
+                <h3 class="text-xl font-semibold text-[#00b48a]">${program.title || ''}</h3>
                 <p class="mt-2 text-gray-600 line-clamp-3">${program.description || ''}</p>
                 ${program.start_date ? `<p class="mt-4 text-sm text-gray-500"><span class="font-medium">Starts:</span> ${new Date(program.start_date).toLocaleDateString()}</p>` : ''}
                 ${program.raised_amount > 0 && program.goal_amount > 0 ? `
                   <div class="mt-4">
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="bg-green-600 h-2 rounded-full" style="width: ${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}%"></div>
+                      <div class="bg-[#00b48a] h-2 rounded-full" style="width: ${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}%"></div>
                     </div>
                     <p class="mt-2 text-sm text-gray-500">$${program.raised_amount.toLocaleString()} raised of $${program.goal_amount.toLocaleString()}</p>
                   </div>
                 ` : ''}
-                <a href="/donate?program=${encodeURIComponent(program.name || '')}" class="mt-4 inline-block text-green-700 font-medium hover:text-green-800">
+                <a href="/donate?program=${encodeURIComponent(program.name || '')}" class="mt-4 inline-block text-[#00b48a] font-medium text-sm hover:text-[#00d4a4]">
                   Support this program →
                 </a>
               </div>
