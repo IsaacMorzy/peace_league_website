@@ -8,24 +8,26 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <section class="relative text-white hero-gradient">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-20"></div>
+    <section class="relative text-white hero-gradient overflow-hidden">
+      <div class="absolute inset-0 bg-pattern opacity-[0.12]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a3d4a]/70 via-transparent to-[#1a3d4a]/30"></div>
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600')] bg-cover bg-center opacity-[0.15]"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-[120px]">
         <div class="max-w-3xl">
-          <h1 class="text-[40px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.05] tracking-[-2px] text-white">
+          <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 animate-hold text-[40px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.05] tracking-[-2px] text-white">
             Building Peace, <br/>
             <span class="text-accent-soft">One Community</span> at a Time
           </h1>
-          <p class="mt-6 text-lg leading-relaxed text-white/80">
+          <p class="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 animate-hold mt-6 text-lg leading-relaxed text-white/80 max-w-2xl">
             Peace League Africa unites communities across the continent through compassion, 
             education, and sustainable development. Together, we are creating lasting change.
           </p>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full btn-pulse-glow">
+          <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[400ms] animate-hold mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full btn-pulse-glow shadow-lg shadow-white/20">
               Donate Now
             </a>
-            <a href="/causes" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium text-sm rounded-full">
-              Our Causes
+            <a href="/causes" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full glass hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+              Our Programs
             </a>
           </div>
         </div>
@@ -40,18 +42,18 @@ import Footer from '../components/Footer.astro';
             Working across Africa to create meaningful, lasting change in communities.
           </p>
         </div>
-        <div id="stat-cards" class="scroll-reveal mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-accent/5 p-6 rounded-lg border border-accent/20 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/40">
+        <div id="stat-cards" class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-reveal bg-accent/5 p-6 rounded-lg border border-accent/20 text-center stat-card-glass">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <div id="stat-donations" class="stat-value text-4xl font-bold text-accent" data-count-target="0" data-count-prefix="$">$0</div>
             <div class="mt-2 text-steel">Total Donations Received</div>
           </div>
-          <div class="bg-canvas p-6 rounded-lg border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
+          <div class="scroll-reveal bg-canvas p-6 rounded-lg border border-hairline text-center stat-card-glass" style="animation-delay: 100ms">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             <div id="stat-volunteers" class="stat-value text-4xl font-bold text-accent" data-count-target="0">0</div>
             <div class="mt-2 text-steel">Active Volunteers</div>
           </div>
-          <div class="bg-surface p-6 rounded-lg border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
+          <div class="scroll-reveal bg-surface p-6 rounded-lg border border-hairline text-center stat-card-glass" style="animation-delay: 200ms">
             <svg class="w-8 h-8 mx-auto text-accent mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <div id="stat-chapters" class="stat-value text-4xl font-bold text-accent" data-count-target="0" data-count-suffix="+">0+</div>
             <div class="mt-2 text-steel">Active Chapters</div>
@@ -60,32 +62,77 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-16">
+    <section class="py-16 bg-gradient-to-b from-canvas to-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12">Our Causes</h2>
         <div id="causes-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
-            <div class="h-48 bg-hairline"></div>
+          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 0ms">
+            <div class="h-48 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center group">
+              <svg class="w-14 h-14 text-accent/30 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Education</span>
-              <h3 class="text-xl font-semibold text-ink mt-2">Peace Education</h3>
+              <h3 class="text-xl font-semibold text-ink">Peace Education</h3>
               <p class="mt-2 text-steel line-clamp-3">Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills across East Africa.</p>
+              <div class="mt-4">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="font-medium text-ink">$12,500</span>
+                  <span class="text-stone">$50,000</span>
+                </div>
+                <div class="w-full bg-hairline rounded-full h-2.5 progress-track">
+                  <div class="bg-accent h-2.5 rounded-full progress-bar" data-progress-width="25" style="width: 0"></div>
+                </div>
+                <p class="mt-1 text-xs text-stone">raised of $50,000 goal</p>
+              </div>
+              <a href="/donate?cause=peace-education" class="mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">
+                Donate Now
+              </a>
             </div>
           </div>
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
-            <div class="h-48 bg-hairline"></div>
+          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 150ms">
+            <div class="h-48 bg-gradient-to-br from-accent-warm/20 to-accent/5 flex items-center justify-center group">
+              <svg class="w-14 h-14 text-accent-warm/40 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Youth</span>
-              <h3 class="text-xl font-semibold text-ink mt-2">Youth Empowerment Initiative</h3>
+              <h3 class="text-xl font-semibold text-ink">Youth Empowerment Initiative</h3>
               <p class="mt-2 text-steel line-clamp-3">Empowering young leaders through mentorship programs, skills training, and community service opportunities in 12 communities across 5 countries.</p>
+              <div class="mt-4">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="font-medium text-ink">$8,200</span>
+                  <span class="text-stone">$35,000</span>
+                </div>
+                <div class="w-full bg-hairline rounded-full h-2.5 progress-track">
+                  <div class="bg-accent h-2.5 rounded-full progress-bar" data-progress-width="23" style="width: 0"></div>
+                </div>
+                <p class="mt-1 text-xs text-stone">raised of $35,000 goal</p>
+              </div>
+              <a href="/donate?cause=youth-empowerment" class="mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">
+                Donate Now
+              </a>
             </div>
           </div>
-          <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
-            <div class="h-48 bg-hairline"></div>
+          <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: 300ms">
+            <div class="h-48 bg-gradient-to-br from-accent-deep/20 to-accent/5 flex items-center justify-center group">
+              <svg class="w-14 h-14 text-accent-deep/40 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Community</span>
-              <h3 class="text-xl font-semibold text-ink mt-2">Community Reconciliation</h3>
+              <h3 class="text-xl font-semibold text-ink">Community Reconciliation</h3>
               <p class="mt-2 text-steel line-clamp-3">Facilitating dialogue and reconciliation processes in communities affected by conflict and division across the Great Lakes region.</p>
+              <div class="mt-4">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="font-medium text-ink">$15,000</span>
+                  <span class="text-stone">$40,000</span>
+                </div>
+                <div class="w-full bg-hairline rounded-full h-2.5 progress-track">
+                  <div class="bg-accent h-2.5 rounded-full progress-bar" data-progress-width="37" style="width: 0"></div>
+                </div>
+                <p class="mt-1 text-xs text-stone">raised of $40,000 goal</p>
+              </div>
+              <a href="/donate?cause=community-reconciliation" class="mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">
+                Donate Now
+              </a>
             </div>
           </div>
         </div>
@@ -113,6 +160,160 @@ import Footer from '../components/Footer.astro';
               Contact Us
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">What People Say</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Hear from the communities and individuals whose lives have been transformed through your support.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: testimonial-1;">
+            <svg class="w-10 h-10 text-accent mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6">Peace League Africa transformed our community. The peace education program reached over 500 children in our village.</p>
+            <div>
+              <p class="text-ink font-semibold">Mama Sarah</p>
+              <p class="text-stone text-sm">Community Leader, Uganda</p>
+            </div>
+          </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: testimonial-2;">
+            <svg class="w-10 h-10 text-accent mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6">As a volunteer, I've seen firsthand how donations change lives. Every dollar goes directly to those who need it most.</p>
+            <div>
+              <p class="text-ink font-semibold">James K.</p>
+              <p class="text-stone text-sm">Volunteer Coordinator</p>
+            </div>
+          </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 p-8 rounded-lg border border-hairline bg-canvas/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: testimonial-3;">
+            <svg class="w-10 h-10 text-accent mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+            <p class="text-steel leading-relaxed mb-6">The clean water initiative saved our village. We no longer walk 10km for clean water.</p>
+            <div>
+              <p class="text-ink font-semibold">Esther M.</p>
+              <p class="text-stone text-sm">Teacher, Kenya</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Upcoming Events</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Join us at our upcoming events and be part of the change.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-1;">
+            <div class="flex">
+              <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
+                <span class="text-2xl font-bold leading-none">Jun</span>
+                <span class="text-3xl font-bold leading-none mt-1">15</span>
+              </div>
+              <div class="p-5 flex-1">
+                <h3 class="text-lg font-semibold text-ink">Peace Education Workshop</h3>
+                <div class="mt-2 flex items-center text-stone text-sm">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  June 15, 2026
+                </div>
+                <div class="mt-1 flex items-center text-stone text-sm">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  Nairobi, Kenya
+                </div>
+                <p class="mt-3 text-steel text-sm leading-relaxed">A day-long workshop training educators in conflict resolution and peace-building curriculum.</p>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-2;">
+            <div class="flex">
+              <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
+                <span class="text-2xl font-bold leading-none">Jul</span>
+                <span class="text-3xl font-bold leading-none mt-1">22</span>
+              </div>
+              <div class="p-5 flex-1">
+                <h3 class="text-lg font-semibold text-ink">Community Health Fair</h3>
+                <div class="mt-2 flex items-center text-stone text-sm">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  July 22, 2026
+                </div>
+                <div class="mt-1 flex items-center text-stone text-sm">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  Kampala, Uganda
+                </div>
+                <p class="mt-3 text-steel text-sm leading-relaxed">Free health screenings, vaccinations, and wellness education for families in underserved communities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-3;">
+            <div class="flex">
+              <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
+                <span class="text-2xl font-bold leading-none">Sep</span>
+                <span class="text-3xl font-bold leading-none mt-1">10</span>
+              </div>
+              <div class="p-5 flex-1">
+                <h3 class="text-lg font-semibold text-ink">Annual Fundraising Gala</h3>
+                <div class="mt-2 flex items-center text-stone text-sm">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  September 10, 2026
+                </div>
+                <div class="mt-1 flex items-center text-stone text-sm">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  Kigali, Rwanda
+                </div>
+                <p class="mt-3 text-steel text-sm leading-relaxed">An evening of celebration, storytelling, and fundraising to support our programs across Africa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+            View All Events
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Latest News</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Insights, stories, and updates from Peace League Africa.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-1;">
+            <div class="p-6">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Technology</span>
+              <h3 class="text-xl font-semibold text-ink mt-2">Digital Giving: How Technology is Transforming the Way We Donate</h3>
+              <p class="mt-2 text-steel text-sm leading-relaxed line-clamp-3">From mobile payments to blockchain transparency, technology is making it easier than ever to support causes you care about from anywhere in the world.</p>
+              <a href="/blog/digital-giving" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-2;">
+            <div class="p-6">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Impact</span>
+              <h3 class="text-xl font-semibold text-ink mt-2">The Power of Small Donations: How Every Contribution Makes a Big Impact</h3>
+              <p class="mt-2 text-steel text-sm leading-relaxed line-clamp-3">Small donations add up to life-changing sums. Discover how regular micro-donations are funding sustainable community projects across Africa.</p>
+              <a href="/blog/small-donations" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-3;">
+            <div class="p-6">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Giving</span>
+              <h3 class="text-xl font-semibold text-ink mt-2">One-Time vs. Monthly Donations: Which Is Better for Nonprofits?</h3>
+              <p class="mt-2 text-steel text-sm leading-relaxed line-clamp-3">Monthly donations provide predictable funding that helps nonprofits plan long-term. Compare the benefits of each giving model and find what works for you.</p>
+              <a href="/blog/donation-types" class="mt-4 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">
+                Read More
+                <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a href="/blog" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+            View All News
+          </a>
         </div>
       </div>
     </section>
@@ -195,25 +396,35 @@ import Footer from '../components/Footer.astro';
           if (causes && causes.length > 0) {
             const container = document.getElementById('causes-container');
             container.innerHTML = causes.slice(0, 3).map((cause, idx) => `
-              <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
-                ${cause.image ? `<img src="${cause.image}" alt="${cause.title}" class="w-full h-48 object-cover"/>` : '<div class="h-48 bg-hairline"></div>'}
+              <div class="bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700" style="animation-delay: ${idx * 150}ms">
+                ${cause.image
+                  ? `<img src="${cause.image}" alt="${cause.title}" class="w-full h-48 object-cover"/>`
+                  : `<div class="h-48 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                      <svg class="w-14 h-14 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>`}
                 <div class="p-6">
                   <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${cause.category || 'Cause'}</span>
                   <h3 class="text-xl font-semibold text-ink">${cause.title || ''}</h3>
                   <p class="mt-2 text-steel line-clamp-3">${cause.description || ''}</p>
                   ${cause.raised_amount > 0 && cause.goal_amount > 0 ? `
                     <div class="mt-4">
-                      <div class="w-full bg-hairline rounded-full h-2 progress-track">
-                        <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width="${Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)}" style="width: 0"></div>
+                      <div class="flex justify-between text-sm mb-1.5">
+                        <span class="font-medium text-ink">$${cause.raised_amount.toLocaleString()}</span>
+                        <span class="text-stone">$${cause.goal_amount.toLocaleString()}</span>
                       </div>
-                      <p class="mt-2 text-sm text-stone">$${cause.raised_amount.toLocaleString()} raised of $${cause.goal_amount.toLocaleString()}</p>
+                      <div class="w-full bg-hairline rounded-full h-2.5 progress-track">
+                        <div class="bg-accent h-2.5 rounded-full progress-bar" data-progress-width="${Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)}" style="width: 0"></div>
+                      </div>
+                      <p class="mt-1 text-xs text-stone">raised of $${cause.goal_amount.toLocaleString()} goal</p>
                     </div>
                   ` : ''}
+                  <a href="/donate?cause=${encodeURIComponent(cause.name || '')}" class="mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">
+                    Donate Now
+                  </a>
                 </div>
               </div>
             `).join('');
             observeProgressBars();
-            // AOS removed
           }
         }
       } catch (e) {
@@ -221,5 +432,6 @@ import Footer from '../components/Footer.astro';
       }
     }
     fetchHomepageData();
+    setTimeout(observeProgressBars, 500);
   </script>
 </Layout>

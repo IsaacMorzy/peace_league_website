@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/donate', label: 'Donate' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/contact', label: 'Contact' },
+  { href: '/login', label: 'Login' },
 ];
 ---
 
@@ -85,6 +86,13 @@ const navLinks = [
 
       <!-- Desktop Right Side -->
       <div class="hidden lg:flex items-center gap-3">
+        <a
+          href="/login"
+          class="text-sm text-steel hover:text-ink font-medium transition-colors px-2"
+        >
+          Login
+        </a>
+
         <!-- Dark Mode Toggle -->
         <button
           id="theme-toggle"
