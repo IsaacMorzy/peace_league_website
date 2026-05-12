@@ -99,8 +99,6 @@ const pageTitle = `${title} | Peace League Africa`;
     <meta name="theme-color" content="#00d4a4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
 
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col">
     <!-- Skip to main content for accessibility -->
@@ -108,67 +106,26 @@ const pageTitle = `${title} | Peace League Africa`;
       Skip to main content
     </a>
 
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container" aria-live="polite"></div>
-
     <slot />
 
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 600,
-        easing: 'ease-out',
-        once: true,
-        offset: 80,
-      });
-    </script>
-
-    <script is:inline>
-      window.showToast = function(message, type) {
-        type = type || 'success';
-        var container = document.getElementById('toast-container');
-        if (!container) return;
-
-        var toast = document.createElement('div');
-        toast.className = 'toast toast-' + type;
-        toast.innerHTML = '<span class="toast-text">' + message + '</span><button class="toast-close" aria-label="Close">&times;</button>';
-
-        var closeBtn = toast.querySelector('.toast-close');
-        closeBtn.addEventListener('click', function() {
-          toast.style.animation = 'toast-out 0.3s ease forwards';
-          setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
-        });
-
-        container.appendChild(toast);
-
-        if (type === 'success') {
-          setTimeout(function() {
-            if (toast.parentNode) {
-              toast.style.animation = 'toast-out 0.3s ease forwards';
-              setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
+      // AOS-compatible scroll animations (self-contained, no CDN dependency)
+      (function() {
+        var style = document.createElement('style');
+        style.textContent = '[data-aos]{opacity:0;transition:opacity .6s ease-out,transform .6s ease-out}[data-aos].aos-animate{opacity:1;transform:none!important}[data-aos=fade-up]{transform:translateY(24px)}[data-aos=fade-down]{transform:translateY(-24px)}';
+        document.head.appendChild(style);
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('aos-animate');
+              observer.unobserve(entry.target);
             }
-          }, 5000);
-        }
-      };
-
-      window.createConfetti = function(btn) {
-        var colors = ['#00d4a4', '#f59e0b', '#059669'];
-        btn.style.position = 'relative';
-        for (var i = 0; i < 3; i++) {
-          var dot = document.createElement('span');
-          dot.className = 'confetti-dot';
-          dot.style.cssText = 'position:absolute;width:8px;height:8px;border-radius:50%;background:' + colors[i] + ';pointer-events:none;z-index:10;';
-          dot.style.left = (35 + i * 15) + '%';
-          dot.style.top = '30%';
-          dot.style.animation = 'confetti-fall-' + (i + 1) + ' 0.8s ease-out forwards';
-          btn.appendChild(dot);
-        }
-        setTimeout(function() {
-          btn.style.position = '';
-          var dots = btn.querySelectorAll('.confetti-dot');
-          for (var j = 0; j < dots.length; j++) dots[j].remove();
-        }, 1200);
-      };
+          });
+        }, { threshold: 0.1, offset: 50 });
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('[data-aos]').forEach(function(el) { observer.observe(el); });
+        });
+      })();
     </script>
   </body>
 </html>
