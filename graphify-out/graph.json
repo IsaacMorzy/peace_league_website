@@ -1,0 +1,5372 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "astro.config.mjs",
+      "file_type": "code",
+      "source_file": "frontend/astro.config.mjs",
+      "source_location": "L1",
+      "id": "frontend_astro_config_mjs",
+      "community": 13,
+      "norm_label": "astro.config.mjs"
+    },
+    {
+      "label": "api.js",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L1",
+      "id": "frontend_src_lib_api_js",
+      "community": 8,
+      "norm_label": "api.js"
+    },
+    {
+      "label": "apiCall()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L3",
+      "id": "lib_api_apicall",
+      "community": 8,
+      "norm_label": "apicall()"
+    },
+    {
+      "label": "getPrograms()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L33",
+      "id": "lib_api_getprograms",
+      "community": 8,
+      "norm_label": "getprograms()"
+    },
+    {
+      "label": "getHomepageData()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L37",
+      "id": "lib_api_gethomepagedata",
+      "community": 8,
+      "norm_label": "gethomepagedata()"
+    },
+    {
+      "label": "getVolunteers()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L41",
+      "id": "lib_api_getvolunteers",
+      "community": 8,
+      "norm_label": "getvolunteers()"
+    },
+    {
+      "label": "getChapters()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L45",
+      "id": "lib_api_getchapters",
+      "community": 8,
+      "norm_label": "getchapters()"
+    },
+    {
+      "label": "submitVolunteer()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L49",
+      "id": "lib_api_submitvolunteer",
+      "community": 8,
+      "norm_label": "submitvolunteer()"
+    },
+    {
+      "label": "submitDonation()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L56",
+      "id": "lib_api_submitdonation",
+      "community": 8,
+      "norm_label": "submitdonation()"
+    },
+    {
+      "label": "submitContact()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L63",
+      "id": "lib_api_submitcontact",
+      "community": 8,
+      "norm_label": "submitcontact()"
+    },
+    {
+      "label": "getProgramDetails()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L70",
+      "id": "lib_api_getprogramdetails",
+      "community": 8,
+      "norm_label": "getprogramdetails()"
+    },
+    {
+      "label": "api.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L1",
+      "id": "peace_league_website_api_py",
+      "community": 2,
+      "norm_label": "api.py"
+    },
+    {
+      "label": "_log()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L7",
+      "id": "peace_league_website_api_log",
+      "community": 2,
+      "norm_label": "_log()"
+    },
+    {
+      "label": "get_programs()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L17",
+      "id": "peace_league_website_api_get_programs",
+      "community": 2,
+      "norm_label": "get_programs()"
+    },
+    {
+      "label": "get_sample_programs()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L43",
+      "id": "peace_league_website_api_get_sample_programs",
+      "community": 2,
+      "norm_label": "get_sample_programs()"
+    },
+    {
+      "label": "seed_programs()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L95",
+      "id": "peace_league_website_api_seed_programs",
+      "community": 2,
+      "norm_label": "seed_programs()"
+    },
+    {
+      "label": "get_program_details()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L101",
+      "id": "peace_league_website_api_get_program_details",
+      "community": 2,
+      "norm_label": "get_program_details()"
+    },
+    {
+      "label": "create_volunteer()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L129",
+      "id": "peace_league_website_api_create_volunteer",
+      "community": 2,
+      "norm_label": "create_volunteer()"
+    },
+    {
+      "label": "get_volunteers()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L188",
+      "id": "peace_league_website_api_get_volunteers",
+      "community": 2,
+      "norm_label": "get_volunteers()"
+    },
+    {
+      "label": "create_donation()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L206",
+      "id": "peace_league_website_api_create_donation",
+      "community": 2,
+      "norm_label": "create_donation()"
+    },
+    {
+      "label": "submit_contact_form()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L264",
+      "id": "peace_league_website_api_submit_contact_form",
+      "community": 2,
+      "norm_label": "submit_contact_form()"
+    },
+    {
+      "label": "get_chapters()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L301",
+      "id": "peace_league_website_api_get_chapters",
+      "community": 2,
+      "norm_label": "get_chapters()"
+    },
+    {
+      "label": "create_chapter()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L319",
+      "id": "peace_league_website_api_create_chapter",
+      "community": 2,
+      "norm_label": "create_chapter()"
+    },
+    {
+      "label": "get_homepage_data()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L365",
+      "id": "peace_league_website_api_get_homepage_data",
+      "community": 2,
+      "norm_label": "get_homepage_data()"
+    },
+    {
+      "label": "generate_test_data()",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L415",
+      "id": "peace_league_website_api_generate_test_data",
+      "community": 2,
+      "norm_label": "generate_test_data()"
+    },
+    {
+      "label": "Debug logging to frappe's error log.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L8",
+      "id": "peace_league_website_api_rationale_8",
+      "community": 2,
+      "norm_label": "debug logging to frappe's error log."
+    },
+    {
+      "label": "Get list of active programs for the website using Program DocType.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L18",
+      "id": "peace_league_website_api_rationale_18",
+      "community": 2,
+      "norm_label": "get list of active programs for the website using program doctype."
+    },
+    {
+      "label": "Return sample program data for frontend demo.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L44",
+      "id": "peace_league_website_api_rationale_44",
+      "community": 2,
+      "norm_label": "return sample program data for frontend demo."
+    },
+    {
+      "label": "Create sample Email Campaign records for programs.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L96",
+      "id": "peace_league_website_api_rationale_96",
+      "community": 2,
+      "norm_label": "create sample email campaign records for programs."
+    },
+    {
+      "label": "Get detailed program information.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L102",
+      "id": "peace_league_website_api_rationale_102",
+      "community": 2,
+      "norm_label": "get detailed program information."
+    },
+    {
+      "label": "Create a new volunteer application using frappe_npo Volunteer DocType.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L130",
+      "id": "peace_league_website_api_rationale_130",
+      "community": 2,
+      "norm_label": "create a new volunteer application using frappe_npo volunteer doctype."
+    },
+    {
+      "label": "Get list of all volunteers.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L189",
+      "id": "peace_league_website_api_rationale_189",
+      "community": 2,
+      "norm_label": "get list of all volunteers."
+    },
+    {
+      "label": "Create a new donation using frappe_npo Donation DocType.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L207",
+      "id": "peace_league_website_api_rationale_207",
+      "community": 2,
+      "norm_label": "create a new donation using frappe_npo donation doctype."
+    },
+    {
+      "label": "Submit contact form and create a Lead.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L265",
+      "id": "peace_league_website_api_rationale_265",
+      "community": 2,
+      "norm_label": "submit contact form and create a lead."
+    },
+    {
+      "label": "Get list of active chapters using Chapter DocType.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L302",
+      "id": "peace_league_website_api_rationale_302",
+      "community": 2,
+      "norm_label": "get list of active chapters using chapter doctype."
+    },
+    {
+      "label": "Create a new chapter using Chapter DocType.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L320",
+      "id": "peace_league_website_api_rationale_320",
+      "community": 2,
+      "norm_label": "create a new chapter using chapter doctype."
+    },
+    {
+      "label": "Get data for homepage using available DocTypes.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L366",
+      "id": "peace_league_website_api_rationale_366",
+      "community": 2,
+      "norm_label": "get data for homepage using available doctypes."
+    },
+    {
+      "label": "Generate sample test data for frappe_npo doctypes: Members, Donors, Chapters, Vo",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L416",
+      "id": "peace_league_website_api_rationale_416",
+      "community": 2,
+      "norm_label": "generate sample test data for frappe_npo doctypes: members, donors, chapters, vo"
+    },
+    {
+      "label": "hooks.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/hooks.py",
+      "source_location": "L1",
+      "id": "peace_league_website_hooks_py",
+      "community": 14,
+      "norm_label": "hooks.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_init_py",
+      "community": 12,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/doctype/donation/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_doctype_donation_init_py",
+      "community": 15,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/doctype/program/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_doctype_program_init_py",
+      "community": 16,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/doctype/volunteer/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_doctype_volunteer_init_py",
+      "community": 17,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/doctype/chapter/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_doctype_chapter_init_py",
+      "community": 18,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/templates/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_templates_init_py",
+      "community": 19,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/templates/pages/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_templates_pages_init_py",
+      "community": 20,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/config/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_config_init_py",
+      "community": 21,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "community": 5,
+      "norm_label": "contact.astro_astro_type_script_index_0_lang.bl79nrcw.js"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_n",
+      "community": 5,
+      "norm_label": "n"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_e",
+      "community": 5,
+      "norm_label": "e"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_s",
+      "community": 5,
+      "norm_label": "s"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_o",
+      "community": 5,
+      "norm_label": "o"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_r",
+      "community": 5,
+      "norm_label": "r"
+    },
+    {
+      "label": "donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "community": 3,
+      "norm_label": "donate.astro_astro_type_script_index_0_lang.qtsecvic.js"
+    },
+    {
+      "label": "a",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_a",
+      "community": 3,
+      "norm_label": "a"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_n",
+      "community": 3,
+      "norm_label": "n"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_s",
+      "community": 3,
+      "norm_label": "s"
+    },
+    {
+      "label": "d",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_d",
+      "community": 3,
+      "norm_label": "d"
+    },
+    {
+      "label": "i",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_i",
+      "community": 3,
+      "norm_label": "i"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_o",
+      "community": 3,
+      "norm_label": "o"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_e",
+      "community": 3,
+      "norm_label": "e"
+    },
+    {
+      "label": "api.0-r0iysE.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "community": 3,
+      "norm_label": "api.0-r0iyse.js"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "id": "astro_api_0_r0iyse_a",
+      "community": 3,
+      "norm_label": "a()"
+    },
+    {
+      "label": "c()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "id": "astro_api_0_r0iyse_c",
+      "community": 3,
+      "norm_label": "c()"
+    },
+    {
+      "label": "u()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "id": "astro_api_0_r0iyse_u",
+      "community": 3,
+      "norm_label": "u()"
+    },
+    {
+      "label": "d()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "id": "astro_api_0_r0iyse_d",
+      "community": 3,
+      "norm_label": "d()"
+    },
+    {
+      "label": "contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "community": 4,
+      "norm_label": "contact.astro_astro_type_script_index_0_lang.dqyf1taz.js"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_n",
+      "community": 4,
+      "norm_label": "n"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_e",
+      "community": 4,
+      "norm_label": "e"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_s",
+      "community": 4,
+      "norm_label": "s"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_o",
+      "community": 4,
+      "norm_label": "o"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_r",
+      "community": 4,
+      "norm_label": "r"
+    },
+    {
+      "label": "volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "community": 4,
+      "norm_label": "volunteer.astro_astro_type_script_index_0_lang.d4ukhddr.js"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_n",
+      "community": 4,
+      "norm_label": "n"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_e",
+      "community": 4,
+      "norm_label": "e"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_s",
+      "community": 4,
+      "norm_label": "s"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_o",
+      "community": 4,
+      "norm_label": "o"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_r",
+      "community": 4,
+      "norm_label": "r"
+    },
+    {
+      "label": "volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "community": 3,
+      "norm_label": "volunteer.astro_astro_type_script_index_0_lang.cqkxmepq.js"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_n",
+      "community": 3,
+      "norm_label": "n"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_e",
+      "community": 3,
+      "norm_label": "e"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_s",
+      "community": 3,
+      "norm_label": "s"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_o",
+      "community": 3,
+      "norm_label": "o"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_r",
+      "community": 3,
+      "norm_label": "r"
+    },
+    {
+      "label": "volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "community": 5,
+      "norm_label": "volunteer.astro_astro_type_script_index_0_lang.ci4b7ehk.js"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_n",
+      "community": 5,
+      "norm_label": "n"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_e",
+      "community": 5,
+      "norm_label": "e"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_s",
+      "community": 5,
+      "norm_label": "s"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_o",
+      "community": 5,
+      "norm_label": "o"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "id": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_r",
+      "community": 5,
+      "norm_label": "r"
+    },
+    {
+      "label": "api.CNNhiWjF.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "community": 5,
+      "norm_label": "api.cnnhiwjf.js"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "id": "astro_api_cnnhiwjf_a",
+      "community": 5,
+      "norm_label": "a()"
+    },
+    {
+      "label": "u()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "id": "astro_api_cnnhiwjf_u",
+      "community": 5,
+      "norm_label": "u()"
+    },
+    {
+      "label": "p()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "id": "astro_api_cnnhiwjf_p",
+      "community": 5,
+      "norm_label": "p()"
+    },
+    {
+      "label": "d()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "id": "astro_api_cnnhiwjf_d",
+      "community": 5,
+      "norm_label": "d()"
+    },
+    {
+      "label": "api.CccoEwDs.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "community": 4,
+      "norm_label": "api.cccoewds.js"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "id": "astro_api_cccoewds_a",
+      "community": 4,
+      "norm_label": "a()"
+    },
+    {
+      "label": "u()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "id": "astro_api_cccoewds_u",
+      "community": 4,
+      "norm_label": "u()"
+    },
+    {
+      "label": "p()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "id": "astro_api_cccoewds_p",
+      "community": 4,
+      "norm_label": "p()"
+    },
+    {
+      "label": "d()",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "id": "astro_api_cccoewds_d",
+      "community": 4,
+      "norm_label": "d()"
+    },
+    {
+      "label": "donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "community": 4,
+      "norm_label": "donate.astro_astro_type_script_index_0_lang.cgo2ogc5.js"
+    },
+    {
+      "label": "a",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_a",
+      "community": 4,
+      "norm_label": "a"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_n",
+      "community": 4,
+      "norm_label": "n"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_s",
+      "community": 4,
+      "norm_label": "s"
+    },
+    {
+      "label": "d",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_d",
+      "community": 4,
+      "norm_label": "d"
+    },
+    {
+      "label": "i",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_i",
+      "community": 4,
+      "norm_label": "i"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_o",
+      "community": 4,
+      "norm_label": "o"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_e",
+      "community": 4,
+      "norm_label": "e"
+    },
+    {
+      "label": "contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "community": 3,
+      "norm_label": "contact.astro_astro_type_script_index_0_lang.dk_brmfe.js"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_n",
+      "community": 3,
+      "norm_label": "n"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_e",
+      "community": 3,
+      "norm_label": "e"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_s",
+      "community": 3,
+      "norm_label": "s"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_o",
+      "community": 3,
+      "norm_label": "o"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "id": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_r",
+      "community": 3,
+      "norm_label": "r"
+    },
+    {
+      "label": "donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "community": 5,
+      "norm_label": "donate.astro_astro_type_script_index_0_lang.pq_rnsth.js"
+    },
+    {
+      "label": "a",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_a",
+      "community": 5,
+      "norm_label": "a"
+    },
+    {
+      "label": "n",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_n",
+      "community": 5,
+      "norm_label": "n"
+    },
+    {
+      "label": "s",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_s",
+      "community": 5,
+      "norm_label": "s"
+    },
+    {
+      "label": "d",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_d",
+      "community": 5,
+      "norm_label": "d"
+    },
+    {
+      "label": "i",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_i",
+      "community": 5,
+      "norm_label": "i"
+    },
+    {
+      "label": "o",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_o",
+      "community": 5,
+      "norm_label": "o"
+    },
+    {
+      "label": "e",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_e",
+      "community": 5,
+      "norm_label": "e"
+    },
+    {
+      "label": "peace_league_website.bundle.js",
+      "file_type": "code",
+      "source_file": "peace_league_website/public/js/peace_league_website.bundle.js",
+      "source_location": "L1",
+      "id": "peace_league_website_public_js_peace_league_website_bundle_js",
+      "community": 22,
+      "norm_label": "peace_league_website.bundle.js"
+    },
+    {
+      "label": "seed_data.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L1",
+      "id": "peace_league_website_utils_seed_data_py",
+      "community": 9,
+      "norm_label": "seed_data.py"
+    },
+    {
+      "label": "_log()",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L5",
+      "id": "utils_seed_data_log",
+      "community": 9,
+      "norm_label": "_log()"
+    },
+    {
+      "label": "seed_programs()",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L14",
+      "id": "utils_seed_data_seed_programs",
+      "community": 9,
+      "norm_label": "seed_programs()"
+    },
+    {
+      "label": "generate_test_data()",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L48",
+      "id": "utils_seed_data_generate_test_data",
+      "community": 9,
+      "norm_label": "generate_test_data()"
+    },
+    {
+      "label": "Debug logging to frappe's error log.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L6",
+      "id": "utils_seed_data_rationale_6",
+      "community": 9,
+      "norm_label": "debug logging to frappe's error log."
+    },
+    {
+      "label": "Create sample Email Campaign records for programs.",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L15",
+      "id": "utils_seed_data_rationale_15",
+      "community": 9,
+      "norm_label": "create sample email campaign records for programs."
+    },
+    {
+      "label": "Generate sample test data for frappe_npo doctypes: Members, Donors, Chapters, Vo",
+      "file_type": "rationale",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L49",
+      "id": "utils_seed_data_rationale_49",
+      "community": 9,
+      "norm_label": "generate sample test data for frappe_npo doctypes: members, donors, chapters, vo"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_utils_init_py",
+      "community": 23,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "create_doctypes.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": "L1",
+      "id": "peace_league_website_patches_create_doctypes_py",
+      "community": 10,
+      "norm_label": "create_doctypes.py"
+    },
+    {
+      "label": "execute()",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": "L5",
+      "id": "patches_create_doctypes_execute",
+      "community": 10,
+      "norm_label": "execute()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/__init__.py",
+      "source_location": "L1",
+      "id": "peace_league_website_patches_init_py",
+      "community": 24,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "get_programs() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 16,
+      "id": "api__get_programs",
+      "community": 1,
+      "norm_label": "get_programs() api endpoint"
+    },
+    {
+      "label": "get_sample_programs() fallback data",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 43,
+      "id": "api__get_sample_programs",
+      "community": 1,
+      "norm_label": "get_sample_programs() fallback data"
+    },
+    {
+      "label": "seed_programs() wrapper",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 94,
+      "id": "api__seed_programs",
+      "community": 1,
+      "norm_label": "seed_programs() wrapper"
+    },
+    {
+      "label": "get_program_details() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 100,
+      "id": "api__get_program_details",
+      "community": 1,
+      "norm_label": "get_program_details() api endpoint"
+    },
+    {
+      "label": "create_volunteer() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 128,
+      "id": "api__create_volunteer",
+      "community": 1,
+      "norm_label": "create_volunteer() api endpoint"
+    },
+    {
+      "label": "get_volunteers() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 187,
+      "id": "api__get_volunteers",
+      "community": 1,
+      "norm_label": "get_volunteers() api endpoint"
+    },
+    {
+      "label": "create_donation() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 205,
+      "id": "api__create_donation",
+      "community": 1,
+      "norm_label": "create_donation() api endpoint"
+    },
+    {
+      "label": "submit_contact_form() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 263,
+      "id": "api__submit_contact_form",
+      "community": 1,
+      "norm_label": "submit_contact_form() api endpoint"
+    },
+    {
+      "label": "get_chapters() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 300,
+      "id": "api__get_chapters",
+      "community": 1,
+      "norm_label": "get_chapters() api endpoint"
+    },
+    {
+      "label": "create_chapter() API endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 318,
+      "id": "api__create_chapter",
+      "community": 1,
+      "norm_label": "create_chapter() api endpoint"
+    },
+    {
+      "label": "get_homepage_data() aggregated API",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 364,
+      "id": "api__get_homepage_data",
+      "community": 1,
+      "norm_label": "get_homepage_data() aggregated api"
+    },
+    {
+      "label": "generate_test_data() wrapper",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 414,
+      "id": "api__generate_test_data",
+      "community": 1,
+      "norm_label": "generate_test_data() wrapper"
+    },
+    {
+      "label": "_log() debug helper",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 7,
+      "id": "api__log",
+      "community": 1,
+      "norm_label": "_log() debug helper"
+    },
+    {
+      "label": "Program DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 24,
+      "id": "program_doctype",
+      "community": 1,
+      "norm_label": "program doctype"
+    },
+    {
+      "label": "Email Campaign DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 369,
+      "id": "email_campaign_doctype",
+      "community": 1,
+      "norm_label": "email campaign doctype"
+    },
+    {
+      "label": "Volunteer DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 164,
+      "id": "volunteer_doctype",
+      "community": 1,
+      "norm_label": "volunteer doctype"
+    },
+    {
+      "label": "Volunteer Type DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 148,
+      "id": "volunteer_type_doctype",
+      "community": 1,
+      "norm_label": "volunteer type doctype"
+    },
+    {
+      "label": "Donor DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 223,
+      "id": "donor_doctype",
+      "community": 1,
+      "norm_label": "donor doctype"
+    },
+    {
+      "label": "Donation DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 238,
+      "id": "donation_doctype",
+      "community": 1,
+      "norm_label": "donation doctype"
+    },
+    {
+      "label": "Lead DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 276,
+      "id": "lead_doctype",
+      "community": 1,
+      "norm_label": "lead doctype"
+    },
+    {
+      "label": "Chapter DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 305,
+      "id": "chapter_doctype",
+      "community": 1,
+      "norm_label": "chapter doctype"
+    },
+    {
+      "label": "Member DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 333,
+      "id": "member_doctype",
+      "community": 1,
+      "norm_label": "member doctype"
+    },
+    {
+      "label": "Donor Type DocType (autocreate)",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": 91,
+      "id": "donor_type_doctype",
+      "community": 1,
+      "norm_label": "donor type doctype (autocreate)"
+    },
+    {
+      "label": "Membership Type DocType (autocreate)",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": 56,
+      "id": "membership_type_doctype",
+      "community": 1,
+      "norm_label": "membership type doctype (autocreate)"
+    },
+    {
+      "label": "App hooks config (title, publisher, description)",
+      "file_type": "code",
+      "source_file": "peace_league_website/hooks.py",
+      "source_location": 1,
+      "id": "hooks__app_config",
+      "community": 11,
+      "norm_label": "app hooks config (title, publisher, description)"
+    },
+    {
+      "label": "required_apps dependency declaration",
+      "file_type": "code",
+      "source_file": "peace_league_website/hooks.py",
+      "source_location": 8,
+      "id": "hooks__required_apps",
+      "community": 1,
+      "norm_label": "required_apps dependency declaration"
+    },
+    {
+      "label": "website_route_rules for /api/ proxy",
+      "file_type": "code",
+      "source_file": "peace_league_website/hooks.py",
+      "source_location": 10,
+      "id": "hooks__website_routes",
+      "community": 1,
+      "norm_label": "website_route_rules for /api/ proxy"
+    },
+    {
+      "label": "website_context base_template config",
+      "file_type": "code",
+      "source_file": "peace_league_website/hooks.py",
+      "source_location": 14,
+      "id": "hooks__website_context",
+      "community": 25,
+      "norm_label": "website_context base_template config"
+    },
+    {
+      "label": "seed_programs() Email Campaign creator",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": 14,
+      "id": "seed_data__seed_programs",
+      "community": 1,
+      "norm_label": "seed_programs() email campaign creator"
+    },
+    {
+      "label": "generate_test_data() all DocTypes seeder",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": 48,
+      "id": "seed_data__generate_test_data",
+      "community": 1,
+      "norm_label": "generate_test_data() all doctypes seeder"
+    },
+    {
+      "label": "seed_data _log() debug helper",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": 5,
+      "id": "seed_data__log",
+      "community": 1,
+      "norm_label": "seed_data _log() debug helper"
+    },
+    {
+      "label": "Custom Field DocType (runtime schema mods)",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": 100,
+      "id": "custom_field_doctype",
+      "community": 1,
+      "norm_label": "custom field doctype (runtime schema mods)"
+    },
+    {
+      "label": "App __init__ metadata (version, name, title)",
+      "file_type": "code",
+      "source_file": "peace_league_website/__init__.py",
+      "source_location": 1,
+      "id": "init__app_meta",
+      "community": 11,
+      "norm_label": "app __init__ metadata (version, name, title)"
+    },
+    {
+      "label": "utils/__init__.py (empty)",
+      "file_type": "code",
+      "source_file": "peace_league_website/utils/__init__.py",
+      "source_location": 1,
+      "id": "utils__init",
+      "community": 26,
+      "norm_label": "utils/__init__.py (empty)"
+    },
+    {
+      "label": "frappe_npo app (external dependency)",
+      "file_type": "code",
+      "source_file": "peace_league_website/hooks.py",
+      "source_location": 8,
+      "id": "dt_frappe_npo",
+      "community": 1,
+      "norm_label": "frappe_npo app (external dependency)"
+    },
+    {
+      "label": "Debug log file /tmp/gt_debug.log",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": 10,
+      "id": "concept_debug_log",
+      "community": 1,
+      "norm_label": "debug log file /tmp/gt_debug.log"
+    },
+    {
+      "label": "API Client Module",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": null,
+      "id": "frontend_api_js",
+      "community": 0,
+      "norm_label": "api client module"
+    },
+    {
+      "label": "Astro Configuration",
+      "file_type": "code",
+      "source_file": "frontend/astro.config.mjs",
+      "source_location": null,
+      "id": "astro_config_mjs",
+      "community": 0,
+      "norm_label": "astro configuration"
+    },
+    {
+      "label": "Architecture Documentation",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "architecture_md",
+      "community": 0,
+      "norm_label": "architecture documentation"
+    },
+    {
+      "label": "Frontend README",
+      "file_type": "document",
+      "source_file": "frontend/README.md",
+      "source_location": null,
+      "id": "frontend_readme_md",
+      "community": 27,
+      "norm_label": "frontend readme"
+    },
+    {
+      "label": "apiCall Helper",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:3",
+      "id": "api_call_function",
+      "community": 0,
+      "norm_label": "apicall helper"
+    },
+    {
+      "label": "getPrograms Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:33",
+      "id": "get_programs_api_function",
+      "community": 0,
+      "norm_label": "getprograms frontend function"
+    },
+    {
+      "label": "getHomepageData Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:37",
+      "id": "get_homepage_data_api_function",
+      "community": 0,
+      "norm_label": "gethomepagedata frontend function"
+    },
+    {
+      "label": "getVolunteers Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:41",
+      "id": "get_volunteers_api_function",
+      "community": 0,
+      "norm_label": "getvolunteers frontend function"
+    },
+    {
+      "label": "getChapters Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:45",
+      "id": "get_chapters_api_function",
+      "community": 0,
+      "norm_label": "getchapters frontend function"
+    },
+    {
+      "label": "submitVolunteer Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:49",
+      "id": "submit_volunteer_api_function",
+      "community": 0,
+      "norm_label": "submitvolunteer frontend function"
+    },
+    {
+      "label": "submitDonation Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:56",
+      "id": "submit_donation_api_function",
+      "community": 0,
+      "norm_label": "submitdonation frontend function"
+    },
+    {
+      "label": "submitContact Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:63",
+      "id": "submit_contact_api_function",
+      "community": 0,
+      "norm_label": "submitcontact frontend function"
+    },
+    {
+      "label": "getProgramDetails Frontend Function",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "api.js:70",
+      "id": "get_program_details_api_function",
+      "community": 0,
+      "norm_label": "getprogramdetails frontend function"
+    },
+    {
+      "label": "TailwindCSS Vite Plugin",
+      "file_type": "code",
+      "source_file": "frontend/astro.config.mjs",
+      "source_location": "astro.config.mjs:4",
+      "id": "tailwindcss_vite_plugin",
+      "community": 0,
+      "norm_label": "tailwindcss vite plugin"
+    },
+    {
+      "label": "Astro Framework",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "astro_framework",
+      "community": 0,
+      "norm_label": "astro framework"
+    },
+    {
+      "label": "Nginx Web Server",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "nginx_web_server",
+      "community": 0,
+      "norm_label": "nginx web server"
+    },
+    {
+      "label": "Gunicorn App Server",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "gunicorn_app_server",
+      "community": 0,
+      "norm_label": "gunicorn app server"
+    },
+    {
+      "label": "Frappe v16 Backend",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "frappe_backend",
+      "community": 0,
+      "norm_label": "frappe v16 backend"
+    },
+    {
+      "label": "MariaDB Database",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "mariadb_database",
+      "community": 0,
+      "norm_label": "mariadb database"
+    },
+    {
+      "label": "Redis Cache and Queue",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "redis_cache_queue",
+      "community": 0,
+      "norm_label": "redis cache and queue"
+    },
+    {
+      "label": "Supervisor Process Manager",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "supervisor_process_manager",
+      "community": 0,
+      "norm_label": "supervisor process manager"
+    },
+    {
+      "label": "Let's Encrypt SSL",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "letsencrypt_ssl",
+      "community": 0,
+      "norm_label": "let's encrypt ssl"
+    },
+    {
+      "label": "peaceleagueafrica.com",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "site_domain",
+      "community": 0,
+      "norm_label": "peaceleagueafrica.com"
+    },
+    {
+      "label": "Backend API Module (api.py)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "api_py_module",
+      "community": 0,
+      "norm_label": "backend api module (api.py)"
+    },
+    {
+      "label": "App Hooks (hooks.py)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "hooks_py_module",
+      "community": 0,
+      "norm_label": "app hooks (hooks.py)"
+    },
+    {
+      "label": "Seed Data Utilities",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "seed_data_utils",
+      "community": 0,
+      "norm_label": "seed data utilities"
+    },
+    {
+      "label": "GET get_programs API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "get_programs_endpoint",
+      "community": 0,
+      "norm_label": "get get_programs api"
+    },
+    {
+      "label": "GET get_homepage_data API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "get_homepage_data_endpoint",
+      "community": 0,
+      "norm_label": "get get_homepage_data api"
+    },
+    {
+      "label": "GET get_chapters API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "get_chapters_endpoint",
+      "community": 0,
+      "norm_label": "get get_chapters api"
+    },
+    {
+      "label": "GET get_volunteers API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "get_volunteers_endpoint",
+      "community": 1,
+      "norm_label": "get get_volunteers api"
+    },
+    {
+      "label": "GET get_program_details API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "get_program_details_endpoint",
+      "community": 0,
+      "norm_label": "get get_program_details api"
+    },
+    {
+      "label": "POST create_donation API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "create_donation_endpoint",
+      "community": 0,
+      "norm_label": "post create_donation api"
+    },
+    {
+      "label": "POST create_volunteer API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "create_volunteer_endpoint",
+      "community": 0,
+      "norm_label": "post create_volunteer api"
+    },
+    {
+      "label": "POST submit_contact_form API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "submit_contact_form_endpoint",
+      "community": 0,
+      "norm_label": "post submit_contact_form api"
+    },
+    {
+      "label": "POST create_chapter API",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "create_chapter_endpoint",
+      "community": 1,
+      "norm_label": "post create_chapter api"
+    },
+    {
+      "label": "POST seed_programs API (internal)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "seed_programs_endpoint",
+      "community": 0,
+      "norm_label": "post seed_programs api (internal)"
+    },
+    {
+      "label": "POST generate_test_data API (internal)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "generate_test_data_endpoint",
+      "community": 0,
+      "norm_label": "post generate_test_data api (internal)"
+    },
+    {
+      "label": "Home Page (/)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "home_astro_page",
+      "community": 0,
+      "norm_label": "home page (/)"
+    },
+    {
+      "label": "About Page (/about)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "about_astro_page",
+      "community": 0,
+      "norm_label": "about page (/about)"
+    },
+    {
+      "label": "Programs Page (/programs)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "programs_astro_page",
+      "community": 0,
+      "norm_label": "programs page (/programs)"
+    },
+    {
+      "label": "Donate Page (/donate)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "donate_astro_page",
+      "community": 0,
+      "norm_label": "donate page (/donate)"
+    },
+    {
+      "label": "Volunteer Page (/volunteer)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "volunteer_astro_page",
+      "community": 0,
+      "norm_label": "volunteer page (/volunteer)"
+    },
+    {
+      "label": "Contact Page (/contact)",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "contact_astro_page",
+      "community": 0,
+      "norm_label": "contact page (/contact)"
+    },
+    {
+      "label": "Navigation Component",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "navigation_astro",
+      "community": 0,
+      "norm_label": "navigation component"
+    },
+    {
+      "label": "Footer Component",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "footer_astro",
+      "community": 0,
+      "norm_label": "footer component"
+    },
+    {
+      "label": "Layout Component",
+      "file_type": "document",
+      "source_file": "ARCHITECTURE.md",
+      "source_location": null,
+      "id": "layout_astro",
+      "community": 0,
+      "norm_label": "layout component"
+    },
+    {
+      "label": "Home Page",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": null,
+      "id": "index_astro",
+      "community": 6,
+      "norm_label": "home page"
+    },
+    {
+      "label": "About Page",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/about.astro",
+      "source_location": null,
+      "id": "about_astro",
+      "community": 6,
+      "norm_label": "about page"
+    },
+    {
+      "label": "Programs Page",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/programs.astro",
+      "source_location": null,
+      "id": "programs_astro",
+      "community": 6,
+      "norm_label": "programs page"
+    },
+    {
+      "label": "Donate Page",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": null,
+      "id": "donate_astro",
+      "community": 6,
+      "norm_label": "donate page"
+    },
+    {
+      "label": "Volunteer Page",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/volunteer.astro",
+      "source_location": null,
+      "id": "volunteer_astro",
+      "community": 6,
+      "norm_label": "volunteer page"
+    },
+    {
+      "label": "Contact Page",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/contact.astro",
+      "source_location": null,
+      "id": "contact_astro",
+      "community": 6,
+      "norm_label": "contact page"
+    },
+    {
+      "label": "Navigation Component",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": null,
+      "id": "Navigation_astro",
+      "community": 6,
+      "norm_label": "navigation component"
+    },
+    {
+      "label": "Footer Component",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Footer.astro",
+      "source_location": null,
+      "id": "Footer_astro",
+      "community": 6,
+      "norm_label": "footer component"
+    },
+    {
+      "label": "Layout Component",
+      "file_type": "code",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": null,
+      "id": "Layout_astro",
+      "community": 6,
+      "norm_label": "layout component"
+    },
+    {
+      "label": "Global Stylesheet",
+      "file_type": "code",
+      "source_file": "frontend/src/styles/global.css",
+      "source_location": null,
+      "id": "global_css",
+      "community": 6,
+      "norm_label": "global stylesheet"
+    },
+    {
+      "label": "API Client Library",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": null,
+      "id": "api_js",
+      "community": 6,
+      "norm_label": "api client library"
+    },
+    {
+      "label": "Homepage Data API Endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": null,
+      "id": "endpoint_get_homepage_data",
+      "community": 6,
+      "norm_label": "homepage data api endpoint"
+    },
+    {
+      "label": "Chapters API Endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": null,
+      "id": "endpoint_get_chapters",
+      "community": 6,
+      "norm_label": "chapters api endpoint"
+    },
+    {
+      "label": "Programs API Endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": null,
+      "id": "endpoint_get_programs",
+      "community": 6,
+      "norm_label": "programs api endpoint"
+    },
+    {
+      "label": "Submit Donation API Endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": null,
+      "id": "endpoint_submit_donation",
+      "community": 6,
+      "norm_label": "submit donation api endpoint"
+    },
+    {
+      "label": "Submit Volunteer API Endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": null,
+      "id": "endpoint_submit_volunteer",
+      "community": 6,
+      "norm_label": "submit volunteer api endpoint"
+    },
+    {
+      "label": "Submit Contact API Endpoint",
+      "file_type": "code",
+      "source_file": "peace_league_website/api.py",
+      "source_location": null,
+      "id": "endpoint_submit_contact",
+      "community": 6,
+      "norm_label": "submit contact api endpoint"
+    },
+    {
+      "label": "Peace League Africa Organization",
+      "file_type": "document",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": null,
+      "id": "peace_league_africa_org",
+      "community": 6,
+      "norm_label": "peace league africa organization"
+    },
+    {
+      "label": "create_doctypes.py",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": null,
+      "id": "create_doctypes_py",
+      "community": 7,
+      "norm_label": "create_doctypes.py"
+    },
+    {
+      "label": "execute()",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": 5,
+      "id": "execute_function",
+      "community": 7,
+      "norm_label": "execute()"
+    },
+    {
+      "label": "Program DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": 8,
+      "id": "Program_doctype",
+      "community": 7,
+      "norm_label": "program doctype"
+    },
+    {
+      "label": "Chapter DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": 8,
+      "id": "Chapter_doctype",
+      "community": 7,
+      "norm_label": "chapter doctype"
+    },
+    {
+      "label": "Volunteer DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": 8,
+      "id": "Volunteer_doctype",
+      "community": 7,
+      "norm_label": "volunteer doctype"
+    },
+    {
+      "label": "Donation DocType",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": 8,
+      "id": "Donation_doctype",
+      "community": 7,
+      "norm_label": "donation doctype"
+    },
+    {
+      "label": "patches.txt",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches.txt",
+      "source_location": null,
+      "id": "patches_txt",
+      "community": 7,
+      "norm_label": "patches.txt"
+    },
+    {
+      "label": "modules.txt",
+      "file_type": "code",
+      "source_file": "peace_league_website/modules.txt",
+      "source_location": null,
+      "id": "modules_txt",
+      "community": 7,
+      "norm_label": "modules.txt"
+    },
+    {
+      "label": "pyproject.toml",
+      "file_type": "code",
+      "source_file": "pyproject.toml",
+      "source_location": null,
+      "id": "pyproject_toml",
+      "community": 7,
+      "norm_label": "pyproject.toml"
+    },
+    {
+      "label": "peace_league_website app",
+      "file_type": "code",
+      "source_file": "pyproject.toml",
+      "source_location": 2,
+      "id": "peace_league_website_app",
+      "community": 7,
+      "norm_label": "peace_league_website app"
+    },
+    {
+      "label": "frappe_npo dependency",
+      "file_type": "code",
+      "source_file": "pyproject.toml",
+      "source_location": 25,
+      "id": "frappe_npo_dep",
+      "community": 7,
+      "norm_label": "frappe_npo dependency"
+    },
+    {
+      "label": "Peace League Website module",
+      "file_type": "code",
+      "source_file": "peace_league_website/modules.txt",
+      "source_location": 1,
+      "id": "Peace_League_Website_module",
+      "community": 7,
+      "norm_label": "peace league website module"
+    },
+    {
+      "label": "Frappe Framework Library",
+      "file_type": "code",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": 1,
+      "id": "frappe_lib",
+      "community": 7,
+      "norm_label": "frappe framework library"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_getprograms",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_gethomepagedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_getvolunteers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_getchapters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_submitvolunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_submitdonation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_submitcontact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "frontend_src_lib_api_js",
+      "target": "lib_api_getprogramdetails",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "lib_api_getprograms",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "lib_api_gethomepagedata",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "lib_api_getvolunteers",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "lib_api_getchapters",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "lib_api_submitvolunteer",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "lib_api_submitdonation",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "lib_api_submitcontact",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/api.js",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "lib_api_getprogramdetails",
+      "target": "lib_api_apicall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_get_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_get_sample_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_seed_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_get_program_details",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_create_volunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_get_volunteers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_create_donation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L264",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_submit_contact_form",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L301",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_get_chapters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L319",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_create_chapter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L365",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_get_homepage_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L415",
+      "weight": 1.0,
+      "source": "peace_league_website_api_py",
+      "target": "peace_league_website_api_generate_test_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_8",
+      "target": "peace_league_website_api_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "peace_league_website_api_get_programs",
+      "target": "peace_league_website_api_get_sample_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_18",
+      "target": "peace_league_website_api_get_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_44",
+      "target": "peace_league_website_api_get_sample_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_96",
+      "target": "peace_league_website_api_seed_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_102",
+      "target": "peace_league_website_api_get_program_details",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_130",
+      "target": "peace_league_website_api_create_volunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L189",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_189",
+      "target": "peace_league_website_api_get_volunteers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_207",
+      "target": "peace_league_website_api_create_donation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L265",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_265",
+      "target": "peace_league_website_api_submit_contact_form",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_302",
+      "target": "peace_league_website_api_get_chapters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L320",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_320",
+      "target": "peace_league_website_api_create_chapter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L366",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_366",
+      "target": "peace_league_website_api_get_homepage_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/api.py",
+      "source_location": "L416",
+      "weight": 1.0,
+      "source": "peace_league_website_api_rationale_416",
+      "target": "peace_league_website_api_generate_test_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/__init__.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "peace_league_website_init_py",
+      "target": "peace_league_website_init_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.Bl79nrCW.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_bl79nrcw_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_api_0_r0iyse_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_i",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.qTsECVIc.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_qtsecvic_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "target": "astro_api_0_r0iyse_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "target": "astro_api_0_r0iyse_c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "target": "astro_api_0_r0iyse_u",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "target": "astro_api_0_r0iyse_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_0_r0iyse_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_0_r0iyse_c",
+      "target": "astro_api_0_r0iyse_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_0_r0iyse_u",
+      "target": "astro_api_0_r0iyse_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.0-r0iysE.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_0_r0iyse_d",
+      "target": "astro_api_0_r0iyse_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DQYF1Taz.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dqyf1taz_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.D4ukhddr.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_d4ukhddr_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CQKxMePQ.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_cqkxmepq_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.CI4B7eHK.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_js",
+      "target": "astro_volunteer_astro_astro_type_script_index_0_lang_ci4b7ehk_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "target": "astro_api_cnnhiwjf_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "target": "astro_api_cnnhiwjf_u",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "target": "astro_api_cnnhiwjf_p",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "target": "astro_api_cnnhiwjf_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_cnnhiwjf_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_cnnhiwjf_u",
+      "target": "astro_api_cnnhiwjf_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_cnnhiwjf_p",
+      "target": "astro_api_cnnhiwjf_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CNNhiWjF.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_cnnhiwjf_d",
+      "target": "astro_api_cnnhiwjf_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_api_cnnhiwjf_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "target": "astro_api_cccoewds_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "target": "astro_api_cccoewds_u",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "target": "astro_api_cccoewds_p",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "target": "astro_api_cccoewds_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "peace_league_website_public_astro_pages_astro_api_cccoewds_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_cccoewds_u",
+      "target": "astro_api_cccoewds_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_cccoewds_p",
+      "target": "astro_api_cccoewds_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/api.CccoEwDs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "astro_api_cccoewds_d",
+      "target": "astro_api_cccoewds_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_api_cccoewds_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_i",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Cgo2ogc5.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_cgo2ogc5_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DK_Brmfe.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_js",
+      "target": "astro_contact_astro_astro_type_script_index_0_lang_dk_brmfe_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_s",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_i",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.Pq_rnsTH.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_js",
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_pq_rnsth_e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "peace_league_website_utils_seed_data_py",
+      "target": "utils_seed_data_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "peace_league_website_utils_seed_data_py",
+      "target": "utils_seed_data_seed_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "peace_league_website_utils_seed_data_py",
+      "target": "utils_seed_data_generate_test_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "utils_seed_data_generate_test_data",
+      "target": "utils_seed_data_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "utils_seed_data_rationale_6",
+      "target": "utils_seed_data_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "utils_seed_data_rationale_15",
+      "target": "utils_seed_data_seed_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "utils_seed_data_rationale_49",
+      "target": "utils_seed_data_generate_test_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "peace_league_website_patches_create_doctypes_py",
+      "target": "patches_create_doctypes_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_programs",
+      "target": "program_doctype"
+    },
+    {
+      "relation": "falls_back_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_programs",
+      "target": "api__get_sample_programs"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__get_programs"
+    },
+    {
+      "relation": "delegates_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__seed_programs",
+      "target": "seed_data__seed_programs"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_program_details",
+      "target": "program_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__get_program_details"
+    },
+    {
+      "relation": "auto_creates_type",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__create_volunteer",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "creates_if_missing",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__create_volunteer",
+      "target": "volunteer_type_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__create_volunteer"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_volunteers",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__get_volunteers"
+    },
+    {
+      "relation": "looks_up_by_email",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__create_donation",
+      "target": "donor_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__create_donation",
+      "target": "donation_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__create_donation"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__submit_contact_form",
+      "target": "lead_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__submit_contact_form"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_chapters",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__get_chapters"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__create_chapter",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "queries_for_default",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__create_chapter",
+      "target": "member_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__create_chapter"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_homepage_data",
+      "target": "email_campaign_doctype"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_homepage_data",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "aggregates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_homepage_data",
+      "target": "donation_doctype"
+    },
+    {
+      "relation": "aggregates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__get_homepage_data",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "routes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__website_routes",
+      "target": "api__get_homepage_data"
+    },
+    {
+      "relation": "delegates_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__generate_test_data",
+      "target": "seed_data__generate_test_data"
+    },
+    {
+      "relation": "writes_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/api.py",
+      "source": "api__log",
+      "target": "concept_debug_log"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "program_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "program_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_programs_endpoint",
+      "target": "program_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__seed_programs",
+      "target": "email_campaign_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "email_campaign_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "email_campaign_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_homepage_data_endpoint",
+      "target": "email_campaign_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_volunteer_endpoint",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_volunteers_endpoint",
+      "target": "volunteer_doctype"
+    },
+    {
+      "relation": "creates_if_missing",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "volunteer_type_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "volunteer_type_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "volunteer_type_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_volunteer_endpoint",
+      "target": "volunteer_type_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "donor_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "donor_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "donor_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_donation_endpoint",
+      "target": "donor_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "donation_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "donation_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "donation_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_donation_endpoint",
+      "target": "donation_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "lead_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "lead_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "submit_contact_form_endpoint",
+      "target": "lead_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_chapters_endpoint",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_chapter_endpoint",
+      "target": "chapter_doctype"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "member_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "member_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "member_doctype"
+    },
+    {
+      "relation": "creates_if_missing",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "donor_type_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "donor_type_doctype"
+    },
+    {
+      "relation": "creates_if_missing",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "membership_type_doctype"
+    },
+    {
+      "relation": "defines",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "dt_frappe_npo",
+      "target": "membership_type_doctype"
+    },
+    {
+      "relation": "provides_metadata",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/__init__.py",
+      "source": "init__app_meta",
+      "target": "hooks__app_config"
+    },
+    {
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/hooks.py",
+      "source": "hooks__required_apps",
+      "target": "dt_frappe_npo"
+    },
+    {
+      "relation": "creates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "custom_field_doctype"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__generate_test_data",
+      "target": "seed_data__log"
+    },
+    {
+      "relation": "writes_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/utils/seed_data.py",
+      "source": "seed_data__log",
+      "target": "concept_debug_log"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "frontend_api_js",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "api_call_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_programs_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_homepage_data_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_volunteers_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_chapters_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_volunteer_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_donation_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_contact_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_program_details_api_function",
+      "target": "frontend_api_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/astro.config.mjs",
+      "source": "astro_config_mjs",
+      "target": "tailwindcss_vite_plugin"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/astro.config.mjs",
+      "source": "astro_config_mjs",
+      "target": "astro_framework"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "nginx_web_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "gunicorn_app_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "frappe_backend"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "mariadb_database"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "redis_cache_queue"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "supervisor_process_manager"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "letsencrypt_ssl"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "site_domain"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "hooks_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "seed_data_utils"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "astro_framework"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "tailwindcss_vite_plugin"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "home_astro_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "about_astro_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "programs_astro_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "donate_astro_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "volunteer_astro_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "contact_astro_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "navigation_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "footer_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "get_programs_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "get_homepage_data_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "get_chapters_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "get_volunteers_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "get_program_details_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "create_donation_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "create_volunteer_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "submit_contact_form_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "create_chapter_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "seed_programs_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "architecture_md",
+      "target": "generate_test_data_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_programs_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_homepage_data_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_chapters_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_volunteers_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_program_details_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_volunteer_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_donation_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_contact_api_function",
+      "target": "api_call_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_programs_api_function",
+      "target": "get_programs_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "ARCHITECTURE.md",
+      "source": "programs_astro_page",
+      "target": "get_programs_api_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_homepage_data_api_function",
+      "target": "get_homepage_data_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "ARCHITECTURE.md",
+      "source": "home_astro_page",
+      "target": "get_homepage_data_api_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_volunteers_api_function",
+      "target": "get_volunteers_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_chapters_api_function",
+      "target": "get_chapters_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "ARCHITECTURE.md",
+      "source": "about_astro_page",
+      "target": "get_chapters_api_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_volunteer_api_function",
+      "target": "create_volunteer_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "ARCHITECTURE.md",
+      "source": "volunteer_astro_page",
+      "target": "submit_volunteer_api_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_donation_api_function",
+      "target": "create_donation_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "ARCHITECTURE.md",
+      "source": "donate_astro_page",
+      "target": "submit_donation_api_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "submit_contact_api_function",
+      "target": "submit_contact_form_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "ARCHITECTURE.md",
+      "source": "contact_astro_page",
+      "target": "submit_contact_api_function"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/lib/api.js",
+      "source": "get_program_details_api_function",
+      "target": "get_program_details_endpoint"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "nginx_web_server",
+      "target": "astro_framework"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "nginx_web_server",
+      "target": "site_domain"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "nginx_web_server",
+      "target": "gunicorn_app_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "nginx_web_server",
+      "target": "letsencrypt_ssl"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "gunicorn_app_server",
+      "target": "frappe_backend"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "supervisor_process_manager",
+      "target": "gunicorn_app_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "frappe_backend",
+      "target": "mariadb_database"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "frappe_backend",
+      "target": "redis_cache_queue"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "supervisor_process_manager",
+      "target": "redis_cache_queue"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "letsencrypt_ssl",
+      "target": "site_domain"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_programs_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_homepage_data_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_chapters_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_volunteers_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "get_program_details_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_donation_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_volunteer_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "submit_contact_form_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "create_chapter_endpoint",
+      "target": "api_py_module"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "programs_astro_page",
+      "target": "get_programs_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "home_astro_page",
+      "target": "get_homepage_data_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "about_astro_page",
+      "target": "get_chapters_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "donate_astro_page",
+      "target": "create_donation_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "volunteer_astro_page",
+      "target": "create_volunteer_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md",
+      "source": "contact_astro_page",
+      "target": "submit_contact_form_endpoint"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/index.astro",
+      "source": "index_astro",
+      "target": "Layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source": "Navigation_astro",
+      "target": "index_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Footer.astro",
+      "source": "Footer_astro",
+      "target": "index_astro"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/index.astro",
+      "source": "index_astro",
+      "target": "endpoint_get_homepage_data"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/index.astro",
+      "source": "index_astro",
+      "target": "donate_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/index.astro",
+      "source": "index_astro",
+      "target": "programs_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/index.astro",
+      "source": "index_astro",
+      "target": "volunteer_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/index.astro",
+      "source": "index_astro",
+      "target": "contact_astro"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/about.astro",
+      "source": "about_astro",
+      "target": "Layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source": "Navigation_astro",
+      "target": "about_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Footer.astro",
+      "source": "Footer_astro",
+      "target": "about_astro"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/about.astro",
+      "source": "about_astro",
+      "target": "endpoint_get_chapters"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/programs.astro",
+      "source": "programs_astro",
+      "target": "Layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source": "Navigation_astro",
+      "target": "programs_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Footer.astro",
+      "source": "Footer_astro",
+      "target": "programs_astro"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/programs.astro",
+      "source": "programs_astro",
+      "target": "endpoint_get_programs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/programs.astro",
+      "source": "programs_astro",
+      "target": "donate_astro"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/donate.astro",
+      "source": "donate_astro",
+      "target": "Layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source": "Navigation_astro",
+      "target": "donate_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Footer.astro",
+      "source": "Footer_astro",
+      "target": "donate_astro"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/donate.astro",
+      "source": "donate_astro",
+      "target": "api_js"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "frontend/src/pages/donate.astro",
+      "source": "donate_astro",
+      "target": "endpoint_submit_donation"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/volunteer.astro",
+      "source": "volunteer_astro",
+      "target": "Layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source": "Navigation_astro",
+      "target": "volunteer_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Footer.astro",
+      "source": "Footer_astro",
+      "target": "volunteer_astro"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/volunteer.astro",
+      "source": "volunteer_astro",
+      "target": "api_js"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "frontend/src/pages/volunteer.astro",
+      "source": "volunteer_astro",
+      "target": "endpoint_submit_volunteer"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/contact.astro",
+      "source": "contact_astro",
+      "target": "Layout_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source": "Navigation_astro",
+      "target": "contact_astro"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/components/Footer.astro",
+      "source": "Footer_astro",
+      "target": "contact_astro"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/contact.astro",
+      "source": "contact_astro",
+      "target": "api_js"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "frontend/src/pages/contact.astro",
+      "source": "contact_astro",
+      "target": "endpoint_submit_contact"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source": "Layout_astro",
+      "target": "global_css"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source": "Layout_astro",
+      "target": "peace_league_africa_org"
+    },
+    {
+      "relation": "references",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source": "api_js",
+      "target": "endpoint_submit_donation"
+    },
+    {
+      "relation": "references",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source": "api_js",
+      "target": "endpoint_submit_volunteer"
+    },
+    {
+      "relation": "references",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source": "api_js",
+      "target": "endpoint_submit_contact"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": null,
+      "source": "peace_league_africa_org",
+      "target": "endpoint_get_homepage_data"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": null,
+      "source": "peace_league_africa_org",
+      "target": "endpoint_get_chapters"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": null,
+      "source": "peace_league_africa_org",
+      "target": "endpoint_get_programs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches.txt",
+      "source": "patches_txt",
+      "target": "create_doctypes_py"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "create_doctypes_py",
+      "target": "execute_function"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "create_doctypes_py",
+      "target": "Peace_League_Website_module"
+    },
+    {
+      "relation": "part_of",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "create_doctypes_py",
+      "target": "peace_league_website_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "execute_function",
+      "target": "Program_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "execute_function",
+      "target": "Chapter_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "execute_function",
+      "target": "Volunteer_doctype"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "execute_function",
+      "target": "Donation_doctype"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/patches/create_doctypes.py",
+      "source": "execute_function",
+      "target": "frappe_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "peace_league_website/modules.txt",
+      "source": "modules_txt",
+      "target": "Peace_League_Website_module"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pyproject.toml",
+      "source": "pyproject_toml",
+      "target": "peace_league_website_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pyproject.toml",
+      "source": "peace_league_website_app",
+      "target": "frappe_npo_dep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "pyproject.toml",
+      "source": "peace_league_website_app",
+      "target": "Peace_League_Website_module"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "98ba6303817783e385f06f9a215a92065cde5acc"
+}

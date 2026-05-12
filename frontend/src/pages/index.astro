@@ -24,8 +24,8 @@ import Footer from '../components/Footer.astro';
             <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full btn-pulse-glow">
               Donate Now
             </a>
-            <a href="/programs" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium text-sm rounded-full">
-              Our Programs
+            <a href="/causes" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium text-sm rounded-full">
+              Our Causes
             </a>
           </div>
         </div>
@@ -62,13 +62,13 @@ import Footer from '../components/Footer.astro';
 
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12" data-aos="fade-up">Featured Programs</h2>
-        <div id="programs-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 class="text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12" data-aos="fade-up">Our Causes</h2>
+        <div id="causes-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up">
             <div class="h-48 bg-hairline"></div>
             <div class="p-6">
               <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">Education</span>
-              <h3 class="text-xl font-semibold text-ink mt-2">Peace Education Program</h3>
+              <h3 class="text-xl font-semibold text-ink mt-2">Peace Education</h3>
               <p class="mt-2 text-steel line-clamp-3">Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills across East Africa.</p>
             </div>
           </div>
@@ -90,8 +90,8 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="mt-12 text-center" data-aos="fade-up">
-          <a href="/programs" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
-            View All Programs
+          <a href="/causes" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full">
+            View All Causes
           </a>
         </div>
       </div>
@@ -183,7 +183,7 @@ import Footer from '../components/Footer.astro';
         const json = await response.json();
         const data = json.message || json;
         if (data.status === 'success') {
-          const { programs, chapters, stats } = data.data;
+          const { causes, chapters, stats } = data.data;
 
           if (stats) {
             document.getElementById('stat-donations').dataset.countTarget = stats.total_donations || 0;
@@ -192,21 +192,21 @@ import Footer from '../components/Footer.astro';
             animateStats();
           }
 
-          if (programs && programs.length > 0) {
-            const container = document.getElementById('programs-container');
-            container.innerHTML = programs.slice(0, 3).map((program, idx) => `
+          if (causes && causes.length > 0) {
+            const container = document.getElementById('causes-container');
+            container.innerHTML = causes.slice(0, 3).map((cause, idx) => `
               <div class="bg-canvas rounded-lg overflow-hidden border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="${idx * 100}">
-                ${program.image ? `<img src="${program.image}" alt="${program.title}" class="w-full h-48 object-cover"/>` : '<div class="h-48 bg-hairline"></div>'}
+                ${cause.image ? `<img src="${cause.image}" alt="${cause.title}" class="w-full h-48 object-cover"/>` : '<div class="h-48 bg-hairline"></div>'}
                 <div class="p-6">
-                  <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${program.category || 'Program'}</span>
-                  <h3 class="text-xl font-semibold text-ink">${program.title || ''}</h3>
-                  <p class="mt-2 text-steel line-clamp-3">${program.description || ''}</p>
-                  ${program.raised_amount > 0 && program.goal_amount > 0 ? `
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${cause.category || 'Cause'}</span>
+                  <h3 class="text-xl font-semibold text-ink">${cause.title || ''}</h3>
+                  <p class="mt-2 text-steel line-clamp-3">${cause.description || ''}</p>
+                  ${cause.raised_amount > 0 && cause.goal_amount > 0 ? `
                     <div class="mt-4">
                       <div class="w-full bg-hairline rounded-full h-2 progress-track">
-                        <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width="${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}" style="width: 0"></div>
+                        <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width="${Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)}" style="width: 0"></div>
                       </div>
-                      <p class="mt-2 text-sm text-stone">$${program.raised_amount.toLocaleString()} raised of $${program.goal_amount.toLocaleString()}</p>
+                      <p class="mt-2 text-sm text-stone">$${cause.raised_amount.toLocaleString()} raised of $${cause.goal_amount.toLocaleString()}</p>
                     </div>
                   ` : ''}
                 </div>

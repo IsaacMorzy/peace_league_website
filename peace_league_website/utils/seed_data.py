@@ -3,7 +3,6 @@ from frappe.utils import getdate
 
 
 def _log(level, msg):
-    """Debug logging to frappe's error log."""
     try:
         with open("/tmp/gt_debug.log", "a") as f:
             f.write(f"[{level}] {msg}\n")
@@ -11,37 +10,48 @@ def _log(level, msg):
         pass
 
 
-def seed_programs():
-    """Create sample Email Campaign records for programs."""
+def seed_causes():
+    """Create sample Cause records."""
     try:
         frappe.flags.ignore_permissions = True
         created_counts = {}
 
-        sample_programs = [
-            {"campaign_name": "Peace Education Program", "email_campaign_for": "Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills.", "status": "Active", "start_date": "2025-01-15", "end_date": "2025-12-31"},
-            {"campaign_name": "Youth Empowerment Initiative", "email_campaign_for": "Empowering young leaders through mentorship programs, skills training, and community service opportunities.", "status": "Active", "start_date": "2025-03-01", "end_date": "2025-11-30"},
-            {"campaign_name": "Community Reconciliation", "email_campaign_for": "Facilitating dialogue and reconciliation processes in communities affected by conflict and division.", "status": "Active", "start_date": "2025-02-01", "end_date": "2025-10-31"},
-            {"campaign_name": "Peace Leader Training", "email_campaign_for": "Intensive leadership development program for emerging peace leaders and community organizers.", "status": "Active", "start_date": "2025-04-15", "end_date": "2025-08-15"},
-            {"campaign_name": "Global Peace Summit 2025", "email_campaign_for": "Annual international conference bringing together peace advocates, leaders, and organizations from around the world.", "status": "Active", "start_date": "2025-09-20", "end_date": "2025-09-25"},
+        sample_causes = [
+            {"title": "Peace Education", "description": "Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills across East Africa.", "category": "Education", "goal_amount": 50000, "raised_amount": 15000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-01-15", "end_date": "2026-12-31", "donors_count": 45},
+            {"title": "Youth Empowerment Initiative", "description": "Empowering young leaders through mentorship programs, skills training, and community service opportunities in 12 communities across 5 countries.", "category": "Youth", "goal_amount": 75000, "raised_amount": 32000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-03-01", "end_date": "2026-11-30", "donors_count": 78},
+            {"title": "Community Reconciliation", "description": "Facilitating dialogue and reconciliation processes in communities affected by conflict and division across the Great Lakes region.", "category": "Community", "goal_amount": 40000, "raised_amount": 18000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-02-01", "end_date": "2026-10-31", "donors_count": 62},
+            {"title": "Peace Leader Training", "description": "Intensive leadership development program for emerging peace leaders and community organizers from 20 African nations.", "category": "Training", "goal_amount": 60000, "raised_amount": 25000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-04-15", "end_date": "2026-08-15", "donors_count": 34},
+            {"title": "Global Peace Summit 2026", "description": "Annual international conference bringing together peace advocates, leaders, and organizations from around the world in Nairobi.", "category": "Event", "goal_amount": 120000, "raised_amount": 45000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-09-20", "end_date": "2026-09-25", "donors_count": 120},
+            {"title": "Girls Education Initiative", "description": "Breaking barriers to girls' education through scholarships, mentorship programs, and community advocacy in rural communities across 8 regions.", "category": "Education", "goal_amount": 80000, "raised_amount": 28000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-01-01", "end_date": "2026-12-31", "donors_count": 95},
+            {"title": "Clean Water Access", "description": "Building sustainable water wells and purification systems for 50 communities facing water scarcity across Kenya's arid and semi-arid regions.", "category": "Water", "goal_amount": 100000, "raised_amount": 41000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-03-15", "end_date": "2027-03-15", "donors_count": 156},
+            {"title": "Healthcare Outreach", "description": "Mobile health clinics bringing essential healthcare services including vaccinations, maternal care, and health education to remote villages.", "category": "Health", "goal_amount": 90000, "raised_amount": 33000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-02-01", "end_date": "2026-12-31", "donors_count": 112},
+            {"title": "Sustainable Agriculture", "description": "Training farmers in climate-resilient farming techniques, providing improved seeds and tools to 2,000 families across 5 agricultural regions.", "category": "Agriculture", "goal_amount": 65000, "raised_amount": 19000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-04-01", "end_date": "2027-04-01", "donors_count": 87},
+            {"title": "Digital Literacy for All", "description": "Bridging the digital divide by providing computer labs, internet access, and digital skills training to students in 100 underserved schools.", "category": "Education", "goal_amount": 55000, "raised_amount": 12000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-05-01", "end_date": "2027-05-01", "donors_count": 53},
         ]
 
-        for p in sample_programs:
-            if not frappe.db.exists("Email Campaign", {"campaign_name": p["campaign_name"]}):
-                campaign = frappe.get_doc({
-                    "doctype": "Email Campaign",
-                    "campaign_name": p["campaign_name"],
-                    "email_campaign_for": p["email_campaign_for"],
-                    "status": p["status"],
-                    "start_date": p["start_date"],
-                    "end_date": p["end_date"],
+        for c in sample_causes:
+            if not frappe.db.exists("Cause", {"title": c["title"]}):
+                cause = frappe.get_doc({
+                    "doctype": "Cause",
+                    "title": c["title"],
+                    "description": c["description"],
+                    "category": c["category"],
+                    "goal_amount": c["goal_amount"],
+                    "raised_amount": c["raised_amount"],
+                    "status": c["status"],
+                    "is_active": c["is_active"],
+                    "show_on_website": c["show_on_website"],
+                    "start_date": c["start_date"],
+                    "end_date": c["end_date"],
+                    "donors_count": c["donors_count"],
                 })
-                campaign.insert(ignore_permissions=True)
-                created_counts["programs"] = created_counts.get("programs", 0) + 1
+                cause.insert(ignore_permissions=True)
+                created_counts["causes"] = created_counts.get("causes", 0) + 1
 
         frappe.db.commit()
-        return {"status": "success", "message": f"Created {created_counts.get('programs', 0)} programs", "data": created_counts}
+        return {"status": "success", "message": f"Created {created_counts.get('causes', 0)} causes", "data": created_counts}
     except Exception as e:
-        frappe.log_error(f"Error seeding programs: {str(e)}")
+        frappe.log_error(f"Error seeding causes: {str(e)}")
         return {"status": "error", "message": str(e)}
 
 
@@ -52,7 +62,6 @@ def generate_test_data():
         created_counts = {}
         _log("INFO", "=== generate_test_data START ===")
 
-        # First, ensure Membership Type exists
         if not frappe.db.exists("Membership Type", "Individual"):
             membership_type = frappe.get_doc({
                 "doctype": "Membership Type",
@@ -63,7 +72,6 @@ def generate_test_data():
             created_counts["membership_types"] = 1
             _log("INFO", f"Membership Type created")
 
-        # Members - uses naming_series, member_name, email_id, membership_type
         members_data = [
             {"member_name": "Alice Johnson", "email_id": "alice.johnson@email.com", "phone": "+1-555-0101", "membership_type": "Individual"},
             {"member_name": "Robert Smith", "email_id": "robert.smith@email.com", "phone": "+1-555-0102", "membership_type": "Individual"},
@@ -87,16 +95,12 @@ def generate_test_data():
                 created_counts["members"] = created_counts.get("members", 0) + 1
                 _log("INFO", f"Member inserted: {member.name}")
 
-        # First ensure Donor Type exists
         for dt in ["Individual", "Organization"]:
             if not frappe.db.exists("Donor Type", dt):
                 dt_doc = frappe.get_doc({"doctype": "Donor Type", "donor_type": dt})
                 dt_doc.insert(ignore_permissions=True)
                 created_counts["donor_types"] = created_counts.get("donor_types", 0) + 1
 
-        # Donor DocType uses autoname=field:email which can't handle @ symbols
-        # Change it to naming_series so we can use valid email formats
-        # First add naming_series field if it doesn't exist (needed for naming_series autoname)
         if not frappe.db.exists("Custom Field", "Donor-naming_series"):
             cf = frappe.get_doc({
                 "doctype": "Custom Field",
@@ -131,7 +135,6 @@ def generate_test_data():
                 donor.insert(ignore_permissions=True)
                 created_counts["donors"] = created_counts.get("donors", 0) + 1
 
-        # Chapters - uses chapter_name, region, city, address (requires chapter_head link to Member)
         chapters_data = [
             {"chapter_name": "Peace Builders New York", "region": "Northeast", "city": "New York", "address": "123 Peace Avenue, NY 10001"},
             {"chapter_name": "California Peace Alliance", "region": "West", "city": "Los Angeles", "address": "456 Harmony Street, CA 90001"},
@@ -140,7 +143,6 @@ def generate_test_data():
             {"chapter_name": "Peace Council Texas", "region": "South", "city": "Houston", "address": "654 Serenity Blvd, TX 77001"},
         ]
 
-        # Chapter uses autoname=prompt, so we need naming_series + update DocType
         if not frappe.db.exists("Custom Field", "Chapter-naming_series"):
             cf = frappe.get_doc({
                 "doctype": "Custom Field",
@@ -156,7 +158,6 @@ def generate_test_data():
         frappe.db.sql("UPDATE `tabDocType` SET `autoname`='naming_series:' WHERE `name`='Chapter'")
         frappe.clear_cache(doctype="Chapter")
 
-        # Get first member for chapter_head
         first_member_list = frappe.get_all("Member", fields=["name"], order_by="creation asc", limit=1)
         first_member = first_member_list[0].name if first_member_list else None
 
@@ -175,7 +176,6 @@ def generate_test_data():
                 chapter.insert(ignore_permissions=True)
                 created_counts["chapters"] = created_counts.get("chapters", 0) + 1
 
-        # First ensure Volunteer Type exists
         if not frappe.db.exists("Volunteer Type", "Event Volunteer"):
             vt1 = frappe.get_doc({"doctype": "Volunteer Type", "title": "Event Volunteer"})
             vt1.insert(ignore_permissions=True)
@@ -186,7 +186,6 @@ def generate_test_data():
             vt2.insert(ignore_permissions=True)
             created_counts["volunteer_types"] = created_counts.get("volunteer_types", 0) + 1
 
-        # Volunteers - uses volunteer_name, email, phone_number, volunteer_type
         volunteers_data = [
             {"volunteer_name": "Emily Chen", "email": "emily.chen@email.com", "phone_number": "+1-555-0301", "volunteer_type": "Event Volunteer"},
             {"volunteer_name": "David Martinez", "email": "david.martinez@email.com", "phone_number": "+1-555-0302", "volunteer_type": "Community Outreach"},
@@ -207,7 +206,6 @@ def generate_test_data():
                 volunteer.insert(ignore_permissions=True)
                 created_counts["volunteers"] = created_counts.get("volunteers", 0) + 1
 
-        # Donations - uses donor (link), amount, date, mode_of_payment, paid
         donations_data = [
             {"donor": "william.thompson@charity.org", "amount": 250, "mode_of_payment": "Online"},
             {"donor": "elizabeth.davis@charity.org", "amount": 500, "mode_of_payment": "Wire Transfer"},

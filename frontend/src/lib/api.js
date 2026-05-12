@@ -30,8 +30,8 @@ async function apiCall(endpoint, options = {}) {
   }
 }
 
-export async function getPrograms() {
-  return apiCall('/api/method/peace_league_website.api.get_programs');
+export async function getCauses() {
+  return apiCall('/api/method/peace_league_website.api.get_causes');
 }
 
 export async function getHomepageData() {
@@ -65,8 +65,4 @@ export async function submitContact(data) {
     method: 'POST',
     body: data,
   });
-}
-
-export async function getProgramDetails(name) {
-  return apiCall(`/api/method/peace_league_website.api.get_program_details?name=${encodeURIComponent(name)}`);
 }

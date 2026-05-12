@@ -4,20 +4,20 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Our Programs">
+<Layout title="Our Causes">
   <Navigation />
   
   <main>
     <section class="bg-hero-bg text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight" data-aos="fade-down">Our Programs</h1>
+        <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight" data-aos="fade-down">Our Causes</h1>
         <p class="mt-4 text-lg text-on-dark-muted" data-aos="fade-down" data-aos-delay="100">Comprehensive initiatives creating lasting impact</p>
       </div>
     </section>
 
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="programs-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="causes-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
             <div class="h-1 bg-accent"></div>
             <div class="p-6 space-y-3">
@@ -97,33 +97,33 @@ import Footer from '../components/Footer.astro';
       document.querySelectorAll('.progress-bar').forEach(el => progressObserver.observe(el));
     }
 
-    async function fetchPrograms() {
+    async function fetchCauses() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_programs`);
+        const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_causes`);
         if (!response.ok) return;
         const json = await response.json();
         const data = json.message || json;
         if (data.status === 'success' && data.data && data.data.length > 0) {
-          const container = document.getElementById('programs-list');
-          container.innerHTML = data.data.map((program, idx) => `
+          const container = document.getElementById('causes-list');
+          container.innerHTML = data.data.map((cause, idx) => `
             <div class="bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" data-aos="fade-up" data-aos-delay="${idx * 100}">
               <div class="h-1 bg-accent"></div>
-              ${program.image ? `<img src="${program.image}" alt="${program.title}" class="w-full h-48 object-cover"/>` : ''}
+              ${cause.image ? `<img src="${cause.image}" alt="${cause.title}" class="w-full h-48 object-cover"/>` : ''}
               <div class="p-6">
-                <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${program.category || 'Program'}</span>
-                <h3 class="text-xl font-semibold text-ink">${program.title || ''}</h3>
-                <p class="mt-2 text-steel line-clamp-3">${program.description || ''}</p>
-                ${program.start_date ? `<p class="mt-4 text-sm text-stone"><span class="font-medium text-ink">Starts:</span> ${new Date(program.start_date).toLocaleDateString()}</p>` : ''}
-                ${program.raised_amount > 0 && program.goal_amount > 0 ? `
+                <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-semibold mb-3" style="background-color: rgba(55,114,207,0.15); color: #3772cf;">${cause.category || 'Cause'}</span>
+                <h3 class="text-xl font-semibold text-ink">${cause.title || ''}</h3>
+                <p class="mt-2 text-steel line-clamp-3">${cause.description || ''}</p>
+                ${cause.start_date ? `<p class="mt-4 text-sm text-stone"><span class="font-medium text-ink">Starts:</span> ${new Date(cause.start_date).toLocaleDateString()}</p>` : ''}
+                ${cause.raised_amount > 0 && cause.goal_amount > 0 ? `
                   <div class="mt-4">
                     <div class="w-full bg-hairline rounded-full h-2 progress-track">
-                      <div class="bg-accent-deep h-2 rounded-full progress-bar" data-progress-width="${Math.min((program.raised_amount / program.goal_amount) * 100, 100)}" style="width: 0"></div>
+                      <div class="bg-accent-deep h-2 rounded-full progress-bar" data-progress-width="${Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)}" style="width: 0"></div>
                     </div>
-                    <p class="mt-2 text-sm text-stone">$${program.raised_amount.toLocaleString()} raised of $${program.goal_amount.toLocaleString()}</p>
+                    <p class="mt-2 text-sm text-stone">$${cause.raised_amount.toLocaleString()} raised of $${cause.goal_amount.toLocaleString()}</p>
                   </div>
                 ` : ''}
-                <a href="/donate?program=${encodeURIComponent(program.name || '')}" class="mt-4 inline-block text-accent-deep font-medium text-sm hover:text-accent">
-                  Support this program →
+                <a href="/donate?cause=${encodeURIComponent(cause.name || '')}" class="mt-4 inline-block text-accent-deep font-medium text-sm hover:text-accent">
+                  Support this cause →
                 </a>
               </div>
             </div>
@@ -135,6 +135,6 @@ import Footer from '../components/Footer.astro';
         console.log('API not available, using static content');
       }
     }
-    fetchPrograms();
+    fetchCauses();
   </script>
 </Layout>

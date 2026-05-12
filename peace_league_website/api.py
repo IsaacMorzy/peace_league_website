@@ -2,10 +2,10 @@ import frappe
 from frappe import _
 from frappe.utils import getdate, now_datetime
 import json
-from peace_league_website.utils.seed_data import seed_programs as _seed_programs, generate_test_data as _generate_test_data
+from peace_league_website.utils.seed_data import seed_causes as _seed_causes, generate_test_data as _generate_test_data
+
 
 def _log(level, msg):
-    """Debug logging to frappe's error log."""
     try:
         with open("/tmp/gt_debug.log", "a") as f:
             f.write(f"[{level}] {msg}\n")
@@ -14,160 +14,30 @@ def _log(level, msg):
 
 
 @frappe.whitelist(allow_guest=True)
-def get_programs():
-    """Get list of active programs for the website using Program DocType."""
+def get_causes():
+    """Get list of active causes using Cause DocType."""
     try:
         frappe.flags.ignore_permissions = True
 
-        # First try to get from Program DocType
-        programs_list = frappe.get_list(
-            "Program",
+        causes_list = frappe.get_list(
+            "Cause",
             filters={"show_on_website": 1, "is_active": 1},
-            fields=["name", "title", "description", "image", "start_date", "end_date", "goal_amount", "raised_amount"],
+            fields=["name", "title", "description", "image", "category", "goal_amount", "raised_amount", "status", "is_active", "show_on_website", "start_date", "end_date", "donors_count"],
             order_by="start_date desc",
             ignore_permissions=True
         )
 
-        if programs_list:
-            return {"status": "success", "data": programs_list}
-
-        # If no programs exist, return sample programs for frontend demo
-        return {"status": "success", "data": get_sample_programs()}
+        return {"status": "success", "data": causes_list}
 
     except Exception as e:
-        # Return sample data on error for frontend demo
-        frappe.log_error(f"Error fetching programs: {str(e)}")
-        return {"status": "success", "data": get_sample_programs()}
-
-
-def get_sample_programs():
-    """Return sample program data for frontend demo."""
-    return [
-        {
-            "name": "peace-education",
-            "title": "Peace Education Program",
-            "description": "Comprehensive peace education workshops for schools and communities, teaching conflict resolution and peaceful communication skills across East Africa.",
-            "start_date": "2026-01-15",
-            "end_date": "2026-12-31",
-            "category": "Education",
-            "image": "/images/programs/peace-education.jpg"
-        },
-        {
-            "name": "youth-empowerment",
-            "title": "Youth Empowerment Initiative",
-            "description": "Empowering young leaders through mentorship programs, skills training, and community service opportunities in 12 communities across 5 countries.",
-            "start_date": "2026-03-01",
-            "end_date": "2026-11-30",
-            "category": "Youth",
-            "image": "/images/programs/youth-empowerment.jpg"
-        },
-        {
-            "name": "community-reconciliation",
-            "title": "Community Reconciliation",
-            "description": "Facilitating dialogue and reconciliation processes in communities affected by conflict and division across the Great Lakes region.",
-            "start_date": "2026-02-01",
-            "end_date": "2026-10-31",
-            "category": "Community",
-            "image": "/images/programs/reconciliation.jpg"
-        },
-        {
-            "name": "peace-leader-training",
-            "title": "Peace Leader Training",
-            "description": "Intensive leadership development program for emerging peace leaders and community organizers from 20 African nations.",
-            "start_date": "2026-04-15",
-            "end_date": "2026-08-15",
-            "category": "Training",
-            "image": "/images/programs/leadership.jpg"
-        },
-        {
-            "name": "global-peace-summit-2026",
-            "title": "Global Peace Summit 2026",
-            "description": "Annual international conference bringing together peace advocates, leaders, and organizations from around the world in Nairobi.",
-            "start_date": "2026-09-20",
-            "end_date": "2026-09-25",
-            "category": "Event",
-            "image": "/images/programs/summit.jpg"
-        },
-        {
-            "name": "girls-education",
-            "title": "Girls Education Initiative",
-            "description": "Breaking barriers to girls' education through scholarships, mentorship programs, and community advocacy in rural communities across 8 regions.",
-            "start_date": "2026-01-01",
-            "end_date": "2026-12-31",
-            "category": "Education",
-            "image": "/images/programs/girls-education.jpg"
-        },
-        {
-            "name": "clean-water-access",
-            "title": "Clean Water Access",
-            "description": "Building sustainable water wells and purification systems for 50 communities facing water scarcity across Kenya's arid and semi-arid regions.",
-            "start_date": "2026-03-15",
-            "end_date": "2027-03-15",
-            "category": "Water",
-            "image": "/images/programs/clean-water.jpg"
-        },
-        {
-            "name": "healthcare-outreach",
-            "title": "Healthcare Outreach",
-            "description": "Mobile health clinics bringing essential healthcare services including vaccinations, maternal care, and health education to remote villages.",
-            "start_date": "2026-02-01",
-            "end_date": "2026-12-31",
-            "category": "Health",
-            "image": "/images/programs/healthcare.jpg"
-        },
-        {
-            "name": "sustainable-agriculture",
-            "title": "Sustainable Agriculture",
-            "description": "Training farmers in climate-resilient farming techniques, providing improved seeds and tools to 2,000 families across 5 agricultural regions.",
-            "start_date": "2026-04-01",
-            "end_date": "2027-04-01",
-            "category": "Agriculture",
-            "image": "/images/programs/agriculture.jpg"
-        },
-        {
-            "name": "digital-literacy",
-            "title": "Digital Literacy for All",
-            "description": "Bridging the digital divide by providing computer labs, internet access, and digital skills training to students in 100 underserved schools.",
-            "start_date": "2026-05-01",
-            "end_date": "2027-05-01",
-            "category": "Education",
-            "image": "/images/programs/digital-literacy.jpg"
-        }
-    ]
-
-
-@frappe.whitelist()
-def seed_programs():
-    """Create sample Email Campaign records for programs."""
-    return _seed_programs()
+        frappe.log_error(f"Error fetching causes: {str(e)}")
+        return {"status": "success", "data": []}
 
 
 @frappe.whitelist(allow_guest=True)
-def get_program_details(name):
-    """Get detailed program information."""
-    try:
-        frappe.flags.ignore_permissions = True
-        if not frappe.db.exists("Program", name):
-            return {"status": "error", "message": "Program not found"}
-
-        program = frappe.get_doc("Program", name)
-        program.flags.ignore_permissions = True
-        return {
-            "status": "success",
-            "data": {
-                "name": program.name,
-                "title": program.title,
-                "description": program.description,
-                "image": program.image,
-                "start_date": program.start_date,
-                "end_date": program.end_date,
-                "goal_amount": program.goal_amount,
-                "raised_amount": program.raised_amount,
-            }
-        }
-    except Exception as e:
-        frappe.log_error(f"Error fetching program details: {str(e)}")
-        return {"status": "error", "message": str(e)}
+def seed_causes():
+    """Create sample Cause records for development."""
+    return _seed_causes()
 
 
 @frappe.whitelist(allow_guest=True)
@@ -177,17 +47,14 @@ def create_volunteer(**kwargs):
         frappe.flags.ignore_permissions = True
         data = {k: v for k, v in kwargs.items()}
 
-        # Build full name from first/last or use directly
         full_name = data.get("volunteer_name")
         if not full_name:
             first_name = data.get("first_name", "")
             last_name = data.get("last_name", "")
             full_name = f"{first_name} {last_name}".strip() or "Anonymous"
 
-        # Get phone (use phone or phone_number)
         phone = data.get("phone") or data.get("phone_number") or ""
 
-        # Auto-create Volunteer Type if it doesn't exist (requires 'amount' field)
         volunteer_type_value = data.get("volunteer_type")
         if volunteer_type_value:
             if not frappe.db.exists("Volunteer Type", volunteer_type_value):
@@ -199,7 +66,7 @@ def create_volunteer(**kwargs):
                     })
                     vt.insert(ignore_permissions=True)
                 except Exception:
-                    pass  # If creation fails, let the LinkValidationError fire naturally
+                    pass
 
         required_fields = ["email", "volunteer_type"]
         for field in required_fields:
@@ -259,15 +126,12 @@ def create_donation(**kwargs):
             if not data.get(field):
                 return {"status": "error", "message": f"Missing required field: {field}"}
 
-        # First try to find or create donor
         donor_name = data.get("donor_name")
         email = data.get("email")
         phone = data.get("phone") or ""
 
-        # Check if donor exists by email
         existing_donor = frappe.db.get_value("Donor", {"email": email}, "name")
         if not existing_donor:
-            # Create new donor
             donor = frappe.get_doc({
                 "doctype": "Donor",
                 "donor_name": donor_name,
@@ -282,8 +146,8 @@ def create_donation(**kwargs):
 
         donation = frappe.get_doc({
             "doctype": "Donation",
-            "donor": donor_doc_name,  # Link field: use donor document name
-            "donor_name": donor_name,  # Display name: use original input value
+            "donor": donor_doc_name,
+            "donor_name": donor_name,
             "email": email,
             "amount": float(data.get("amount", 0)),
             "currency": data.get("currency", "USD"),
@@ -317,7 +181,6 @@ def submit_contact_form(**kwargs):
             if not data.get(field):
                 return {"status": "error", "message": f"Missing required field: {field}"}
 
-        # Create lead
         lead = frappe.get_doc({
             "doctype": "Lead",
             "lead_name": data.get("name"),
@@ -372,7 +235,6 @@ def create_chapter(**kwargs):
             if not data.get(field):
                 return {"status": "error", "message": f"Missing required field: {field}"}
 
-        # Get chapter_head (Member) if provided, otherwise use first available member
         chapter_head = data.get("chapter_head")
         if not chapter_head:
             members = frappe.get_all("Member", fields=["name"], order_by="creation asc", limit=1, ignore_permissions=True)
@@ -412,7 +274,7 @@ def get_homepage_data():
     try:
         frappe.flags.ignore_permissions = True
 
-        programs = get_programs()["data"] if get_programs()["status"] == "success" else []
+        causes = get_causes()["data"] if get_causes()["status"] == "success" else []
 
         chapters = frappe.get_list(
             "Chapter",
@@ -431,7 +293,7 @@ def get_homepage_data():
         return {
             "status": "success",
             "data": {
-                "programs": programs,
+                "causes": causes,
                 "chapters": chapters,
                 "stats": {
                     "total_donations": float(total_donations) if total_donations else 0,
