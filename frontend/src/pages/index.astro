@@ -109,7 +109,7 @@ import Footer from '../components/Footer.astro';
   <Footer />
 
   <script>
-    const API_BASE_URL = window.ENV?.PUBLIC_API_URL || 'http://localhost:8000';
+    const API_BASE_URL = window.ENV?.PUBLIC_API_URL || '';
     
     async function fetchHomepageData() {
       try {

@@ -70,7 +70,7 @@ import Footer from '../components/Footer.astro';
   <Footer />
 
   <script>
-    const API_BASE_URL = window.ENV?.PUBLIC_API_URL || 'http://localhost:8000';
+    const API_BASE_URL = window.ENV?.PUBLIC_API_URL || '';
     
     async function fetchChapters() {
       try {
@@ -81,9 +81,9 @@ import Footer from '../components/Footer.astro';
           const container = document.getElementById('chapters-list');
           container.innerHTML = data.data.map(chapter => `
             <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-              <h3 class="text-lg font-semibold text-green-800">${chapter.chapter_name || ''}</h3>
-              ${chapter.location ? `<p class="mt-1 text-sm text-gray-500">${chapter.location}</p>` : ''}
-              ${chapter.description ? `<p class="mt-2 text-gray-600 text-sm line-clamp-2">${chapter.description}</p>` : ''}
+              <h3 class="text-lg font-semibold text-green-800">${chapter.introduction || ''}</h3>
+              ${chapter.region ? `<p class="mt-1 text-sm text-gray-500">${chapter.region}</p>` : ''}
+              ${chapter.address ? `<p class="mt-2 text-gray-600 text-sm line-clamp-2">${chapter.address}</p>` : ''}
             </div>
           `).join('');
         }

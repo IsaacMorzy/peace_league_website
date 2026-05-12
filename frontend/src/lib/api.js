@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.PUBLIC_API_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.PUBLIC_API_URL || '';
 
 async function apiCall(endpoint, options = {}) {
   const url = `${API_BASE_URL}${endpoint}`;
@@ -36,6 +36,10 @@ export async function getPrograms() {
 
 export async function getHomepageData() {
   return apiCall('/api/method/peace_league_website.api.get_homepage_data');
+}
+
+export async function getVolunteers() {
+  return apiCall('/api/method/peace_league_website.api.get_volunteers');
 }
 
 export async function getChapters() {
