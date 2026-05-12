@@ -525,6 +525,36 @@
   transform: translateY(-50%) scale(0.95);
 }
 
+/* ── Events Carousel ── */
+
+#events-container {
+  scroll-behavior: smooth;
+}
+#events-container::-webkit-scrollbar {
+  height: 6px;
+}
+#events-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+#events-container::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 3px;
+}
+#events-container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone);
+}
+
+.events-scroll-btn {
+  transition: all 0.2s ease;
+}
+.events-scroll-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.events-scroll-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
 /* ── Partner Logo Animation ── */
 
 @keyframes marquee {
@@ -587,6 +617,65 @@
   -webkit-backdrop-filter: blur(20px);
 }
 
+/* ── Floating Bubble Animation ── */
+
+.bubble {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: bubble-rise 8s ease-in-out infinite;
+}
+
+.footer-bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: bubble-rise 8s ease-in-out infinite;
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  20% { opacity: 0.15; }
+  80% { opacity: 0.08; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes bubble-rise-from-bottom {
+  0% { transform: translateY(0) scale(0); opacity: 0; }
+  20% { opacity: 0.15; }
+  80% { opacity: 0.08; }
+  100% { transform: translateY(-200px) scale(1); opacity: 0; }
+}
+
+@keyframes bubble-rise-from-bottom-slow {
+  0% { transform: translateY(0) scale(0); opacity: 0; }
+  20% { opacity: 0.1; }
+  80% { opacity: 0.06; }
+  100% { transform: translateY(-300px) scale(1); opacity: 0; }
+}
+
+.footer-bubble-up {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: bubble-rise-from-bottom 8s ease-in-out infinite;
+}
+
+.footer-bubble-up-slow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: bubble-rise-from-bottom-slow 10s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -601,4 +690,5 @@
   .social-link:hover { transform: none !important; }
   .parallax-bg { transform: none !important; }
   .animate-marquee { animation: none !important; }
+  .bubble, .footer-bubble, .footer-bubble-up, .footer-bubble-up-slow { display: none !important; }
 }

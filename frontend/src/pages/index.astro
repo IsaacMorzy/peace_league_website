@@ -35,7 +35,7 @@ import Footer from '../components/Footer.astro';
               Donate Now
             </a>
             <a href="/causes" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full glass hover:bg-white/15 hover:border-white/50 transition-all duration-300">
-              Our Programs
+              Our Causes
             </a>
           </div>
         </div>
@@ -231,70 +231,300 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Upcoming Events</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Come build peace with us. From workshops to health fairs, find an event near you.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-1;">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" alt="Peace Education Workshop" class="w-full h-32 object-cover" loading="lazy" />
-            <div class="flex">
-              <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
-                <span class="text-2xl font-bold leading-none">Jun</span>
-                <span class="text-3xl font-bold leading-none mt-1">15</span>
-              </div>
-              <div class="p-5 flex-1">
+        <div class="relative">
+          <button id="events-scroll-left" class="causes-scroll-btn hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -ml-5 w-10 h-10 bg-canvas border border-hairline rounded-full items-center justify-center shadow-md hover:shadow-lg z-10 cursor-pointer hover:border-accent/30" aria-label="Scroll events left">
+            <svg class="w-5 h-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div id="events-container" class="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-thin" style="-webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;">
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 0ms">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" alt="Peace Education Workshop" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Jun 15, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Nairobi, Kenya</span>
+                </div>
                 <h3 class="text-lg font-semibold text-ink">Peace Education Workshop</h3>
-                <div class="mt-2 flex items-center text-stone text-sm">
-                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                  June 15, 2026
-                </div>
-                <div class="mt-1 flex items-center text-stone text-sm">
-                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  Nairobi, Kenya
-                </div>
-                <p class="mt-3 text-steel text-sm leading-relaxed">A day-long workshop training educators in conflict resolution and peace-building curriculum.</p>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">A day-long workshop training educators in conflict resolution and peace-building curriculum.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
               </div>
             </div>
-          </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-2;">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop" alt="Community Health Fair" class="w-full h-32 object-cover" loading="lazy" />
-            <div class="flex">
-              <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
-                <span class="text-2xl font-bold leading-none">Jul</span>
-                <span class="text-3xl font-bold leading-none mt-1">22</span>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 80ms">
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&auto=format&fit=crop" alt="Women Peace Forum" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Jun 28, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Addis Ababa, Ethiopia</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Women Peace Forum</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Bringing together women leaders from across the Horn of Africa to chart a path toward lasting peace and economic empowerment.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
               </div>
-              <div class="p-5 flex-1">
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 160ms">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Youth Leadership Camp" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Jul 5, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Arusha, Tanzania</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Youth Leadership Camp</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">A week-long immersive camp equipping young leaders with conflict resolution, public speaking, and project management skills.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 240ms">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop" alt="Interfaith Dialogue" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Jul 15, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Mombasa, Kenya</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Interfaith Dialogue</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Religious and community leaders gather to foster mutual understanding, bridge divides, and build peace across faith traditions.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 320ms">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop" alt="Community Health Fair" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Jul 22, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Kampala, Uganda</span>
+                </div>
                 <h3 class="text-lg font-semibold text-ink">Community Health Fair</h3>
-                <div class="mt-2 flex items-center text-stone text-sm">
-                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                  July 22, 2026
-                </div>
-                <div class="mt-1 flex items-center text-stone text-sm">
-                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  Kampala, Uganda
-                </div>
-                <p class="mt-3 text-steel text-sm leading-relaxed">Free health screenings, vaccinations, and wellness education for families in underserved communities.</p>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Free health screenings, vaccinations, and wellness education for families in underserved communities across East Africa.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
               </div>
             </div>
-          </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: event-3;">
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80&auto=format&fit=crop" alt="Annual Fundraising Gala" class="w-full h-32 object-cover" loading="lazy" />
-            <div class="flex">
-              <div class="flex flex-col items-center justify-center bg-accent text-white px-5 py-6 min-w-[80px]">
-                <span class="text-2xl font-bold leading-none">Sep</span>
-                <span class="text-3xl font-bold leading-none mt-1">10</span>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 400ms">
+              <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80&auto=format&fit=crop" alt="Teacher Training Workshop" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Aug 1, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Lilongwe, Malawi</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Teacher Training Workshop</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Professional development for educators on peace-building curriculum, trauma-informed teaching, and inclusive classroom practices.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
               </div>
-              <div class="p-5 flex-1">
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 480ms">
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&auto=format&fit=crop" alt="Community Mediation" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Aug 12, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Goma, DRC</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Community Mediation</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Training local mediators to resolve land disputes and community conflicts through dialogue and restorative justice practices.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 560ms">
+              <img src="https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?w=600&q=80&auto=format&fit=crop" alt="Peace Marathon" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Aug 25, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Kigali, Rwanda</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Peace Marathon</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">A 10K run uniting communities across borders to raise awareness and funds for peace-building initiatives in the region.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 640ms">
+              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80&auto=format&fit=crop" alt="Art for Peace Exhibition" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Sep 5, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Kampala, Uganda</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Art for Peace Exhibition</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Local artists showcase works exploring themes of reconciliation, healing, and hope in post-conflict communities.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 720ms">
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop" alt="Annual Fundraising Gala" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Sep 10, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Kigali, Rwanda</span>
+                </div>
                 <h3 class="text-lg font-semibold text-ink">Annual Fundraising Gala</h3>
-                <div class="mt-2 flex items-center text-stone text-sm">
-                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                  September 10, 2026
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">An evening of celebration, storytelling, and fundraising to support our programs across Africa.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 800ms">
+              <img src="https://images.unsplash.com/photo-1524502397800-3605f2cba3a5?w=600&q=80&auto=format&fit=crop" alt="Women in Peacebuilding" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Sep 18, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Nairobi, Kenya</span>
                 </div>
-                <div class="mt-1 flex items-center text-stone text-sm">
-                  <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  Kigali, Rwanda
+                <h3 class="text-lg font-semibold text-ink">Women in Peacebuilding</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">A landmark conference celebrating the role of women in conflict resolution and community reconciliation across Africa.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 880ms">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" alt="Conflict Resolution Course" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Oct 1, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Juba, South Sudan</span>
                 </div>
-                <p class="mt-3 text-steel text-sm leading-relaxed">An evening of celebration, storytelling, and fundraising to support our programs across Africa.</p>
+                <h3 class="text-lg font-semibold text-ink">Conflict Resolution Course</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Intensive training for community leaders in negotiation, mediation, and non-violent communication techniques.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 960ms">
+              <img src="https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?w=600&q=80&auto=format&fit=crop" alt="Youth Sports Tournament" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Oct 12, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Dar es Salaam, Tanzania</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Youth Sports Tournament</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Football and athletics tournament bringing together youth from different communities to build bridges through sport.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 1040ms">
+              <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80&auto=format&fit=crop" alt="Harvest Festival" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Oct 25, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Mbale, Uganda</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Harvest Festival</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Celebrating the fruits of sustainable agriculture programs with local farmers, food security workshops, and community feasting.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 1120ms">
+              <img src="https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=600&q=80&auto=format&fit=crop" alt="Peace Journalism Workshop" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Nov 5, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Addis Ababa, Ethiopia</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Peace Journalism Workshop</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Training media professionals in conflict-sensitive reporting and the role of journalism in peace-building.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 1200ms">
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop" alt="Annual General Meeting" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Nov 18, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Nairobi, Kenya</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Annual General Meeting</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Our yearly gathering of members, partners, and stakeholders to review progress, set priorities, and elect leadership.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 1280ms">
+              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80&auto=format&fit=crop" alt="End of Year Gala" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Dec 1, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Kigali, Rwanda</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">End of Year Gala</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">A celebration of the year's achievements in peace-building, with cultural performances, awards, and community networking.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 1360ms">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop" alt="Peace Awards Ceremony" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Dec 12, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Kampala, Uganda</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Peace Awards Ceremony</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">Honoring individuals and organizations making extraordinary contributions to peace-building across the continent.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+            <div class="flex-none w-[340px] snap-start bg-canvas rounded-2xl overflow-hidden border border-hairline shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style="animation-delay: 1440ms">
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80&auto=format&fit=crop" alt="Community Carols" class="w-full h-40 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-xs text-steel mb-2">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>Dec 20, 2026</span>
+                  <span class="text-hairline">|</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Nairobi, Kenya</span>
+                </div>
+                <h3 class="text-lg font-semibold text-ink">Community Carols</h3>
+                <p class="mt-1.5 text-sm text-steel line-clamp-2">A festive community gathering featuring carol singing, storytelling, and celebrating a year of peace-building achievements together.</p>
+                <a href="/events" class="mt-3 inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors">Learn More <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
               </div>
             </div>
           </div>
+          <button id="events-scroll-right" class="causes-scroll-btn hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 -mr-5 w-10 h-10 bg-canvas border border-hairline rounded-full items-center justify-center shadow-md hover:shadow-lg z-10 cursor-pointer hover:border-accent/30" aria-label="Scroll events right">
+            <svg class="w-5 h-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
         </div>
         <div class="mt-12 text-center">
           <a href="/events" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors">
@@ -309,10 +539,8 @@ import Footer from '../components/Footer.astro';
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Latest News</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Stories of resilience, lessons in reconciliation, and updates from the frontlines of peace-building.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-1;">
-            <div class="h-36 bg-gradient-to-br from-accent/20 to-accent-warm/10 flex items-center justify-center">
-              <svg class="w-12 h-12 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 img-zoom" style="view-transition-name: blog-1;">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=600&q=80" alt="Digital Giving" class="w-full h-36 object-cover" loading="lazy" />
             <div class="p-6">
               <span class="badge-tag mb-3">Technology</span>
               <h3 class="text-xl font-semibold text-ink mt-2">Digital Giving: How Technology is Transforming the Way We Donate</h3>
@@ -323,10 +551,8 @@ import Footer from '../components/Footer.astro';
               </a>
             </div>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-2;">
-            <div class="h-36 bg-gradient-to-tr from-accent-warm/20 to-accent/10 flex items-center justify-center">
-              <svg class="w-12 h-12 text-accent-warm/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-            </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 img-zoom" style="view-transition-name: blog-2;">
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Small Donations Impact" class="w-full h-36 object-cover" loading="lazy" />
             <div class="p-6">
               <span class="badge-tag mb-3">Impact</span>
               <h3 class="text-xl font-semibold text-ink mt-2">The Power of Small Donations: How Every Contribution Makes a Big Impact</h3>
@@ -337,10 +563,8 @@ import Footer from '../components/Footer.astro';
               </a>
             </div>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: blog-3;">
-            <div class="h-36 bg-gradient-to-bl from-accent-deep/20 to-accent/10 flex items-center justify-center">
-              <svg class="w-12 h-12 text-accent-deep/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-canvas rounded-lg border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 img-zoom" style="view-transition-name: blog-3;">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Donation Types" class="w-full h-36 object-cover" loading="lazy" />
             <div class="p-6">
               <span class="badge-tag mb-3">Giving</span>
               <h3 class="text-xl font-semibold text-ink mt-2">One-Time vs. Monthly Donations: Which Is Better for Nonprofits?</h3>
@@ -441,21 +665,28 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-16 bg-canvas border-y border-hairline overflow-hidden">
+    <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="scroll-reveal text-center text-sm font-semibold text-steel uppercase tracking-[0.5px] mb-10">Trusted by leading organizations</p>
-        <div class="relative overflow-hidden">
-          <div class="flex gap-16 items-center animate-marquee" style="width: max-content;">
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">UNICEF</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">WHO</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">RED CROSS</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">SAVE THE CHILDREN</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">AMREF</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">UNICEF</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">WHO</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">RED CROSS</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">SAVE THE CHILDREN</span>
-            <span class="text-xl font-semibold text-stone/60 hover:text-accent transition-colors whitespace-nowrap select-none">AMREF</span>
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Trusted by Leading Organizations</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">We partner with global and local organizations committed to peace and development.</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+          <div class="flex items-center justify-center p-6 bg-canvas rounded-lg border border-hairline hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+            <span class="text-xl font-bold text-steel/60 uppercase tracking-wider">UNICEF</span>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-canvas rounded-lg border border-hairline hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+            <span class="text-xl font-bold text-steel/60 uppercase tracking-wider">WHO</span>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-canvas rounded-lg border border-hairline hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+            <span class="text-xl font-bold text-steel/60 uppercase tracking-wider">Red Cross</span>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-canvas rounded-lg border border-hairline hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+            <span class="text-xl font-bold text-steel/60 uppercase tracking-wider">AMREF</span>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-canvas rounded-lg border border-hairline hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+            <span class="text-xl font-bold text-steel/60 uppercase tracking-wider">Save the Children</span>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-canvas rounded-lg border border-hairline hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+            <span class="text-xl font-bold text-steel/60 uppercase tracking-wider">AU</span>
           </div>
         </div>
       </div>
@@ -640,5 +871,16 @@ import Footer from '../components/Footer.astro';
 
     observeProgressBars();
     fetchHomepageData();
+
+    // Events carousel scroll buttons
+    const eventsContainer = document.getElementById('events-container');
+    const eventsScrollLeft = document.getElementById('events-scroll-left');
+    const eventsScrollRight = document.getElementById('events-scroll-right');
+    if (eventsContainer && eventsScrollLeft) {
+      eventsScrollLeft.addEventListener('click', function() { eventsContainer.scrollBy({ left: -370, behavior: 'smooth' }); });
+    }
+    if (eventsContainer && eventsScrollRight) {
+      eventsScrollRight.addEventListener('click', function() { eventsContainer.scrollBy({ left: 370, behavior: 'smooth' }); });
+    }
   </script>
 </Layout>
