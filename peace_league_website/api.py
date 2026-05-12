@@ -35,9 +35,9 @@ def get_causes():
 
 
 @frappe.whitelist(allow_guest=True)
-def seed_causes():
-    """Create sample Cause records for development."""
-    return _seed_causes()
+def seed_causes(force=0):
+    """Create sample Cause records for development. Use force=1 to delete existing first."""
+    return _seed_causes(force=bool(int(force)))
 
 
 @frappe.whitelist(allow_guest=True)

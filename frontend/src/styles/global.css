@@ -417,6 +417,59 @@ html {
   animation: gradient-sweep 6s ease-in-out infinite;
 }
 
+/* ── Horizontal Scrollbar Styles ── */
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone);
+}
+
+/* ── Scroll Arrow Buttons ── */
+
+.causes-scroll-btn {
+  transition: all 0.2s ease;
+}
+.causes-scroll-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.causes-scroll-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ── Partner Logo Animation ── */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Newsletter ── */
+
+.newsletter-input {
+  transition: all 0.2s ease;
+}
+.newsletter-input:focus {
+  transform: scale(1.01);
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(0, 212, 164, 0.15) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -430,4 +483,5 @@ html {
   #back-to-top { transition: none !important; }
   .social-link:hover { transform: none !important; }
   .parallax-bg { transform: none !important; }
+  .animate-marquee { animation: none !important; }
 }

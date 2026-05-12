@@ -10,10 +10,13 @@ def _log(level, msg):
         pass
 
 
-def seed_causes():
+def seed_causes(force=False):
     """Create sample Cause records."""
     try:
         frappe.flags.ignore_permissions = True
+        if force:
+            frappe.db.delete("Cause", {"is_active": 1})
+            frappe.db.commit()
         created_counts = {}
 
         sample_causes = [
@@ -27,6 +30,11 @@ def seed_causes():
             {"title": "Healthcare Outreach", "description": "Mobile health clinics bringing essential healthcare services including vaccinations, maternal care, and health education to remote villages.", "category": "Health", "goal_amount": 90000, "raised_amount": 33000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-02-01", "end_date": "2026-12-31", "donors_count": 112},
             {"title": "Sustainable Agriculture", "description": "Training farmers in climate-resilient farming techniques, providing improved seeds and tools to 2,000 families across 5 agricultural regions.", "category": "Agriculture", "goal_amount": 65000, "raised_amount": 19000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-04-01", "end_date": "2027-04-01", "donors_count": 87},
             {"title": "Digital Literacy for All", "description": "Bridging the digital divide by providing computer labs, internet access, and digital skills training to students in 100 underserved schools.", "category": "Education", "goal_amount": 55000, "raised_amount": 12000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-05-01", "end_date": "2027-05-01", "donors_count": 53},
+            {"title": "Emergency Relief Fund", "description": "Rapid emergency response providing food, shelter, and medical aid to communities affected by natural disasters and humanitarian crises across East Africa.", "category": "Emergency", "goal_amount": 200000, "raised_amount": 85000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-01-01", "end_date": "2026-12-31", "donors_count": 320},
+            {"title": "Women Empowerment Program", "description": "Empowering women through entrepreneurship training, financial literacy, and leadership development programs in 15 communities across 6 countries.", "category": "Community", "goal_amount": 80000, "raised_amount": 32000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-02-15", "end_date": "2027-02-15", "donors_count": 145},
+            {"title": "Climate Resilience Initiative", "description": "Helping farming communities adapt to climate change through drought-resistant crops, water conservation techniques, and reforestation programs across 5 regions.", "category": "Agriculture", "goal_amount": 150000, "raised_amount": 45000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-03-01", "end_date": "2027-06-30", "donors_count": 98},
+            {"title": "Orphanage Support Program", "description": "Providing nutritious meals, school supplies, and psychosocial support to orphaned children across 25 care centers in Rwanda, DRC, and Burundi.", "category": "Community", "goal_amount": 60000, "raised_amount": 28000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-04-01", "end_date": "2026-12-31", "donors_count": 210},
+            {"title": "Sports for Peace", "description": "Uniting communities through sports tournaments and youth leagues that promote teamwork, mutual respect, and cross-cultural understanding across 30 communities.", "category": "Youth", "goal_amount": 40000, "raised_amount": 12000, "status": "Active", "is_active": 1, "show_on_website": 1, "start_date": "2026-05-01", "end_date": "2026-12-31", "donors_count": 67},
         ]
 
         for c in sample_causes:

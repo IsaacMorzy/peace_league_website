@@ -175,6 +175,77 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </section>
+
+    <!-- Our Impact by the Numbers -->
+    <section class="py-20 bg-gradient-to-br from-accent/5 via-canvas to-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our Impact by the Numbers</h2>
+          <p class="scroll-reveal mt-4 text-lg text-steel">Real results across every program we run.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div class="scroll-reveal text-center">
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="12" data-count-suffix="">0</div>
+            <div class="mt-2 text-ink font-semibold">Countries</div>
+            <p class="mt-1 text-xs text-steel">Across East &amp; Central Africa</p>
+          </div>
+          <div class="scroll-reveal text-center" style="animation-delay: 100ms">
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="500" data-count-suffix="+">0+</div>
+            <div class="mt-2 text-ink font-semibold">Communities</div>
+            <p class="mt-1 text-xs text-steel">Served and growing</p>
+          </div>
+          <div class="scroll-reveal text-center" style="animation-delay: 200ms">
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="50000" data-count-suffix="+">0+</div>
+            <div class="mt-2 text-ink font-semibold">Lives Impacted</div>
+            <p class="mt-1 text-xs text-steel">Through programs and outreach</p>
+          </div>
+          <div class="scroll-reveal text-center" style="animation-delay: 300ms">
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="1200" data-count-suffix="+">0+</div>
+            <div class="mt-2 text-ink font-semibold">Volunteers</div>
+            <p class="mt-1 text-xs text-steel">Active across all programs</p>
+          </div>
+          <div class="scroll-reveal text-center" style="animation-delay: 400ms">
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-prefix="$" data-count-target="500000" data-count-suffix="+">$0+</div>
+            <div class="mt-2 text-ink font-semibold">Funds Raised</div>
+            <p class="mt-1 text-xs text-steel">For community-driven programs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Partners -->
+    <section class="py-16 bg-canvas border-y border-hairline overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-3xl font-semibold text-ink text-center mb-4 leading-[1.20] tracking-tight">Our Partners</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-10">Trusted by leading organizations working towards peace and development across Africa.</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+          <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">UNICEF</span>
+          <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">WHO</span>
+          <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">RED CROSS</span>
+          <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">SAVE THE CHILDREN</span>
+          <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">AMREF</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-hero-bg text-white">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Join the Movement</h2>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-10">Whether you donate, volunteer, or partner with us &mdash; every action builds peace across Africa.</p>
+        <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg shadow-white/20">
+            Donate Now
+          </a>
+          <a href="/volunteer" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+            Volunteer
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -182,9 +253,37 @@ import Footer from '../components/Footer.astro';
   <script>
     const API_BASE_URL = window.ENV?.PUBLIC_API_URL || '';
 
+    function animateCounter(el, target, suffix, prefix) {
+      const duration = 1500;
+      const startTime = performance.now();
+      function tick(now) {
+        const p = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const current = Math.floor(eased * target);
+        el.textContent = current === 0 && target === 0
+          ? '' + prefix + '0' + suffix
+          : '' + prefix + current.toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const bigStatObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.countTarget, 10);
+          animateCounter(el, target, el.dataset.countSuffix || '', el.dataset.countPrefix || '');
+          bigStatObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.big-stat-value').forEach(el => bigStatObserver.observe(el));
+
     async function fetchChapters() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/method/peace_league_website.api.get_chapters`);
+        const response = await fetch(API_BASE_URL + '/api/method/peace_league_website.api.get_chapters');
         if (!response.ok) return;
         const json = await response.json();
         const data = json.message || json;
@@ -193,8 +292,8 @@ import Footer from '../components/Footer.astro';
           container.innerHTML = data.data.map((chapter, idx) => `
             <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-accent-deep">${chapter.introduction || ''}</h3>
-              ${chapter.region ? `<p class="mt-1 text-sm text-stone">${chapter.region}</p>` : ''}
-              ${chapter.address ? `<p class="mt-2 text-steel text-sm line-clamp-2">${chapter.address}</p>` : ''}
+              ${chapter.region ? '<p class="mt-1 text-sm text-stone">' + chapter.region + '</p>' : ''}
+              ${chapter.address ? '<p class="mt-2 text-steel text-sm line-clamp-2">' + chapter.address + '</p>' : ''}
             </div>
           `).join('');
         }
