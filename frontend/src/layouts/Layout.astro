@@ -109,23 +109,27 @@ const pageTitle = `${title} | Peace League Africa`;
     <slot />
 
     <script>
-      // AOS-compatible scroll animations (self-contained, no CDN dependency)
-      (function() {
-        var style = document.createElement('style');
-        style.textContent = '[data-aos]{opacity:0;transition:opacity .6s ease-out,transform .6s ease-out}[data-aos].aos-animate{opacity:1;transform:none!important}[data-aos=fade-up]{transform:translateY(24px)}[data-aos=fade-down]{transform:translateY(-24px)}';
-        document.head.appendChild(style);
-        var observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('aos-animate');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1, offset: 50 });
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelectorAll('[data-aos]').forEach(function(el) { observer.observe(el); });
+      // Scroll reveal — subtle fade-up when elements enter viewport
+      const srObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-4');
+            entry.target.style.opacity = '1';
+            srObserver.unobserve(entry.target);
+          }
         });
-      })();
+      }, { rootMargin: '80px', threshold: 0.05 });
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        el.style.opacity = '0';
+        srObserver.observe(el);
+      });
+      const srMo = new MutationObserver(() => {
+        document.querySelectorAll('.scroll-reveal:not(.animate-in)').forEach(el => {
+          el.style.opacity = '0';
+          srObserver.observe(el);
+        });
+      });
+      srMo.observe(document.body, { childList: true, subtree: true });
     </script>
   </body>
 </html>
