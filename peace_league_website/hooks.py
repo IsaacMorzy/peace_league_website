@@ -8,28 +8,17 @@ app_license = "AGPL-3.0"
 required_apps = ["frappe_npo"]
 
 website_route_rules = [
-    {"from_route": "/api/<path:api_path>", "to_route": "api"},
+	{"from_route": "/api/<path:api_path>", "to_route": "api"},
 ]
 
 website_context = {
-    "base_template": "web.html",
+	"base_template": "web.html",
 }
-
-doc_events = {}
 
 scheduler_events = {}
 
-fixtures = [
-    "Program",
-    "Chapter",
-    "Volunteer",
-    "Donation",
-]
+fixtures = []
 
 permission_query_conditions = {}
 
 has_permission = {}
-
-override_whitelisted_methods = {
-    "frappe.boot.get_boot_data": "peace_league_website.api.boot.get_boot_data",
-}

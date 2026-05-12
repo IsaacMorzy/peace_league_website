@@ -169,11 +169,11 @@
    "default": null
   },
   {
-   "label": "Volunteer Type",
-   "fieldname": "volunteer_type",
-   "fieldtype": "Select",
-   "options": "On-site\nRemote\nBoth",
-   "reqd": 1,
+"label": "Volunteer Type",
+    "fieldname": "volunteer_type",
+    "fieldtype": "Select",
+    "options": "Teaching & Education\nHealthcare & Wellness\nAdministration\nFundraising & Outreach\nTechnical (Legal, Tech, Marketing)\nOther",
+    "reqd": 1,
    "search_index": 0,
    "show_dashboard": 0,
    "hidden": 0,
