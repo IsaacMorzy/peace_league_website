@@ -57,7 +57,7 @@ const navItems = [
       <div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-[min(100vw,20rem)] max-w-full bg-canvas/95 backdrop-blur-2xl border-l border-hairline shadow-2xl translate-x-full invisible transition-all duration-300 ease-out overflow-y-auto">
         <div class="flex justify-between items-center p-4 border-b border-hairline">
           <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
-          <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
+          <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Close menu">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
@@ -104,7 +104,7 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center gap-1">
+      <div class="max-lg:hidden lg:flex items-center gap-1">
         {navItems.map((item, idx) => (
           <>{item.dropdown ? (
             <div class="relative group">
@@ -131,9 +131,9 @@ const navItems = [
       </div>
 
       <!-- Desktop Right Side -->
-      <div class="hidden lg:flex items-center gap-3 shrink-0">
+      <div class="max-lg:hidden lg:flex items-center gap-3 shrink-0">
         <a href={portalAppUrl} class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 px-2">Log in</a>
-        <button id="theme-toggle" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
+        <button id="theme-toggle" type="button" class="w-8 h-8 min-w-[44px] min-h-[44px] flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="theme-moon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
@@ -144,11 +144,11 @@ const navItems = [
 
       <!-- Mobile buttons -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button id="theme-toggle-mobile" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
+        <button id="theme-toggle-mobile" type="button" class="w-8 h-8 min-w-[44px] min-h-[44px] flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun-mobile" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="theme-moon-mobile" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
-        <button type="button" id="mobile-menu-btn" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+        <button type="button" id="mobile-menu-btn" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px] min-w-[44px] flex items-center justify-center" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -171,6 +171,10 @@ const navItems = [
   .dropdown-menu-2 { transform: translateY(-4px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; }
   .group:hover .dropdown-menu-2,
   .dropdown-menu-2.active { transform: translateY(0); opacity: 1 !important; visibility: visible !important; }
+  #mobile-drawer.open .drawer-item {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
 </style>
 
 <script>
@@ -190,9 +194,11 @@ const navItems = [
     // Staggered animation for drawer items
     drawer?.querySelectorAll('.drawer-item').forEach(function(el, idx) {
       el.style.transition = 'all 0.3s ease-out ' + (idx * 60) + 'ms';
-      el.style.transform = 'translateX(0)';
-      el.style.opacity = '1';
+      el.style.setProperty('transform', 'translateX(0)', 'important');
+      el.style.setProperty('opacity', '1', 'important');
     });
+    // Focus close button
+    setTimeout(function() { closeBtn?.focus(); }, 100);
   }
   function closeDrawer() {
     menuBtn.setAttribute('aria-expanded', 'false');
@@ -202,8 +208,8 @@ const navItems = [
     drawer?.classList.remove('open');
     document.body.classList.remove('overflow-hidden');
     drawer?.querySelectorAll('.drawer-item').forEach(function(el) {
-      el.style.transform = 'translateX(16px)';
-      el.style.opacity = '0';
+      el.style.setProperty('transform', 'translateX(16px)', 'important');
+      el.style.setProperty('opacity', '0', 'important');
     });
   }
   function toggleDrawer() {
@@ -217,7 +223,18 @@ const navItems = [
   menuBtn?.addEventListener('click', toggleDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer?.classList.contains('open')) closeDrawer(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('open')) { closeDrawer(); menuBtn?.focus(); }
+    // Focus trap: keep focus inside drawer while open
+    if (e.key === 'Tab' && drawer?.classList.contains('open')) {
+      const focusable = drawer.querySelectorAll('button:not([disabled]), a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
   drawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDrawer));
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 1024 && drawer?.classList.contains('open')) {

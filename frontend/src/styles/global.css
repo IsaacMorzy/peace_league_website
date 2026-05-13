@@ -51,6 +51,30 @@
   --radius-full: 9999px;
 }
 
+/* ── Global Defaults ── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-dark);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+.transition-base {
+  transition: all 0.2s ease-out;
+}
+
 .dark {
   --color-canvas: #0a0a0a;
   --color-canvas-dark: #000000;
@@ -97,6 +121,18 @@
 
 .dark #mobile-drawer {
   background: rgba(10, 10, 10, 0.96);
+}
+
+.dark a.bg-white.text-primary,
+.dark button.bg-white.text-primary {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  border-color: var(--color-hairline);
+}
+
+.dark a.bg-white.text-primary:hover,
+.dark button.bg-white.text-primary:hover {
+  background-color: var(--color-surface-soft);
 }
 
 .dark .dropdown-menu {
@@ -147,8 +183,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-carousel-slide { animation: none; opacity: 0.15; }
-  .hero-img-1 { opacity: 0.15; }
+  .hero-carousel-slide { animation: none; }
+  .hero-img-1,
+  .hero-img-2,
+  .hero-img-3,
+  .hero-img-4,
+  .hero-img-5 { opacity: 0.15; }
 }
 
 /* ── Scroll-Aware Navigation ── */
@@ -188,8 +228,8 @@
   transition: transform 0.3s ease-out, visibility 0.3s ease;
 }
 #mobile-drawer.open {
-  transform: translateX(0);
-  visibility: visible;
+  transform: translateX(0) !important;
+  visibility: visible !important;
 }
 
 .drawer-item {
@@ -556,6 +596,9 @@
 
 /* ── Horizontal Scrollbar Styles ── */
 
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
 .scrollbar-thin::-webkit-scrollbar {
   height: 6px;
 }
