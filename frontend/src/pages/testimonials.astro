@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 const testimonials = [
-  { name: 'Amina Osei', role: 'Teacher, Accra, Ghana', image: 'photo-1524502397800-3605f2cba3a5', quote: 'Peace League Africa transformed how I teach conflict resolution in my classroom. The curriculum gave my students tools to resolve disagreements peacefully, and I have seen bullying drop by more than half in just one term.' },
+  { name: 'Amina Osei', role: 'Teacher, Accra, Ghana', image: 'photo-1507003211169-0a1dd7228f2d', quote: 'Peace League Africa transformed how I teach conflict resolution in my classroom. The curriculum gave my students tools to resolve disagreements peacefully, and I have seen bullying drop by more than half in just one term.' },
   { name: 'Joseph Kiprop', role: 'Community Leader, Turkana, Kenya', image: 'photo-1531123897727-8f129e1688ce', quote: 'Before the clean water project, our women walked 12 kilometers each day for water. Now my daughter has time to attend school, and our community is healthier than ever. Peace League did not just bring water — they brought hope.' },
   { name: 'Grace Mukamana', role: 'Youth Program Graduate, Kigali, Rwanda', image: 'photo-1529626455594-4ff0802cfb7e', quote: 'The youth leadership workshop gave me the confidence to start a peace club at my university. We now have 200 members from 15 different countries, all committed to building bridges instead of walls.' },
   { name: 'Dr. Samuel Tadesse', role: 'Healthcare Partner, Addis Ababa, Ethiopia', image: 'photo-1472099645785-15c8c6b8c5e0', quote: 'Partnering with Peace League on community health initiatives has been remarkable. Their understanding of local contexts and genuine community engagement sets them apart from other organizations I have worked with.' },
@@ -25,11 +25,11 @@ const starIcons = [1, 2, 3, 4, 5];
 <Layout title="Testimonials — Peace League Africa">
   <Navigation />
 
-  <main>
+  <main id="main-content">
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
-          <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">What People Say</h1>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">What People Say</h1>
           <p class="mt-4 text-lg text-white/80 max-w-2xl">Hear from the communities, partners, and supporters whose lives have been touched by peace-building across Africa.</p>
         </div>
       </div>
@@ -39,7 +39,7 @@ const starIcons = [1, 2, 3, 4, 5];
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((t, idx) => (
-            <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-lg border border-hairline p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col" style={`animation-delay: ${idx * 80}ms`}>
+            <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col" style={`animation-delay: ${idx * 80}ms`}>
               <div class="flex items-center gap-1 mb-4">
                 {starIcons.map(() => (
                   <svg class="w-4 h-4 text-accent-warm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -64,7 +64,7 @@ const starIcons = [1, 2, 3, 4, 5];
 
     <section class="py-16 bg-gradient-to-br from-accent/5 via-canvas to-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-14">Our Impact by the Numbers</h2>
+        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-14">Our Impact by the Numbers</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, idx) => (
             <div class="scroll-reveal text-center" style={`animation-delay: ${idx * 100}ms`}>
@@ -78,9 +78,9 @@ const starIcons = [1, 2, 3, 4, 5];
 
     <section class="py-16 hero-gradient text-white hero-pattern">
       <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Share Your Experience</h2>
+        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Share Your Experience</h2>
         <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Your story could inspire others to join the peace-building movement.</p>
-        <a href="/contact" class="scroll-reveal inline-flex items-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
+        <a href="/contact" class="scroll-reveal inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
           Leave a Review
         </a>
       </div>

@@ -7,11 +7,11 @@ import Footer from '../components/Footer.astro';
 <Layout title="Donate">
   <Navigation />
   
-  <main>
-    <section class="hero-pattern bg-hero-bg text-white py-16 lg:py-20">
+  <main id="main-content">
+    <section class="hero-gradient hero-pattern text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-5xl font-semibold leading-[1.10] tracking-tight">Give. Restore. Rebuild.</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">$50 can train a peace teacher. $25 can provide clean water for a family. Every dollar rebuilds a community.</p>
+        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Give. Restore. Rebuild.</h1>
+        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">$50 can train a peace teacher. $25 can provide clean water for a family. Every dollar rebuilds a community.</p>
       </div>
     </section>
 
@@ -35,18 +35,22 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+        <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-2xl border border-hairline p-6 md:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
           <h2 class="text-2xl font-bold text-ink mb-4">Donate to Peace League Africa</h2>
           <p class="text-steel mb-6 text-sm">
             Your gift — whatever the size — goes directly to peace-building programs across East Africa. 
             Choose an amount below and join the movement to restore hope, one community at a time.
           </p>
           
-          <form id="donation-form" class="space-y-5">
+          <form id="donation-form" class="space-y-5" novalidate>
+            <div id="form-error" class="bg-red-50 text-red-700 p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
+            <div id="form-success" class="bg-green-50 text-green-700 p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
+            
             <div>
               <label for="donor_name" class="block text-sm font-medium text-ink mb-1.5">Full Name *</label>
               <input type="text" id="donor_name" name="donor_name" required 
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+              <p id="donor_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your full name.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -54,6 +58,7 @@ import Footer from '../components/Footer.astro';
                 <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
                 <input type="email" id="email" name="email" required 
                   class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone</label>
@@ -64,13 +69,13 @@ import Footer from '../components/Footer.astro';
             
             <div>
               <label class="block text-sm font-medium text-ink mb-2">Select Amount</label>
-              <div class="grid grid-cols-3 gap-3">
-                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm" data-amount="10">$10</button>
-                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm" data-amount="25">$25</button>
-                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm" data-amount="50">$50</button>
-                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm" data-amount="100">$100</button>
-                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm" data-amount="250">$250</button>
-                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm" data-amount="500">$500</button>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm min-h-[44px]" data-amount="10">$10</button>
+                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm min-h-[44px]" data-amount="25">$25</button>
+                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm min-h-[44px]" data-amount="50">$50</button>
+                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm min-h-[44px]" data-amount="100">$100</button>
+                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm min-h-[44px]" data-amount="250">$250</button>
+                <button type="button" class="amount-btn py-3 px-4 border border-hairline rounded-full font-medium text-ink text-sm min-h-[44px]" data-amount="500">$500</button>
               </div>
             </div>
             
@@ -78,6 +83,7 @@ import Footer from '../components/Footer.astro';
               <label for="amount" class="block text-sm font-medium text-ink mb-1.5">Or enter custom amount ($) *</label>
               <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="e.g. 50"
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+              <p id="amount-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid donation amount.</p>
             </div>
             
             <div>
@@ -90,6 +96,7 @@ import Footer from '../components/Footer.astro';
                 <option value="PayPal">PayPal</option>
                 <option value="Mobile Money">Mobile Money</option>
               </select>
+              <p id="payment_method-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please select a payment method.</p>
             </div>
             
             <div>
@@ -130,11 +137,38 @@ import Footer from '../components/Footer.astro';
   const amountInputs = document.querySelectorAll('.amount-btn');
   const amountField = document.getElementById('amount');
   const originalBtnHtml = submitBtn.innerHTML;
+  const formError = document.getElementById('form-error');
+  const formSuccess = document.getElementById('form-success');
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function showFieldError(id) {
+    const field = document.getElementById(id);
+    const errEl = document.getElementById(id + '-error');
+    if (field) field.setAttribute('aria-invalid', 'true');
+    if (errEl) errEl.classList.remove('hidden');
+  }
+
+  function clearFieldError(id) {
+    const field = document.getElementById(id);
+    const errEl = document.getElementById(id + '-error');
+    if (field) field.removeAttribute('aria-invalid');
+    if (errEl) errEl.classList.add('hidden');
+  }
+
+  function clearAllErrors() {
+    formError.classList.add('hidden');
+    formError.textContent = '';
+    formSuccess.classList.add('hidden');
+    formSuccess.textContent = '';
+    ['donor_name', 'email', 'amount', 'payment_method'].forEach(clearFieldError);
+  }
 
   amountInputs.forEach(btn => {
     btn.addEventListener('click', () => {
       const amount = btn.dataset.amount;
       amountField.value = amount;
+      clearFieldError('amount');
 
       amountInputs.forEach(b => {
         b.classList.remove('selected');
@@ -147,8 +181,64 @@ import Footer from '../components/Footer.astro';
     });
   });
 
+  amountField.addEventListener('input', () => clearFieldError('amount'));
+  document.getElementById('donor_name').addEventListener('input', () => clearFieldError('donor_name'));
+  document.getElementById('email').addEventListener('input', () => clearFieldError('email'));
+  document.getElementById('payment_method').addEventListener('change', () => clearFieldError('payment_method'));
+
+  function validate() {
+    let valid = true;
+    clearAllErrors();
+    const errors = [];
+
+    const name = document.getElementById('donor_name').value.trim();
+    if (!name) {
+      showFieldError('donor_name');
+      errors.push('Please enter your full name.');
+      valid = false;
+    }
+
+    const email = document.getElementById('email').value.trim();
+    if (!email) {
+      showFieldError('email');
+      document.getElementById('email-error').textContent = 'Please enter your email address.';
+      errors.push('Please enter your email address.');
+      valid = false;
+    } else if (!EMAIL_RE.test(email)) {
+      showFieldError('email');
+      document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+      errors.push('Please enter a valid email address.');
+      valid = false;
+    }
+
+    const amount = parseFloat(amountField.value);
+    if (!amount || amount <= 0) {
+      showFieldError('amount');
+      errors.push('Please enter a valid donation amount.');
+      valid = false;
+    }
+
+    const paymentMethod = document.getElementById('payment_method').value;
+    if (!paymentMethod) {
+      showFieldError('payment_method');
+      errors.push('Please select a payment method.');
+      valid = false;
+    }
+
+    if (!valid) {
+      formError.textContent = errors.join(' ');
+      formError.classList.remove('hidden');
+      formError.setAttribute('tabindex', '-1');
+      formError.focus();
+    }
+
+    return valid;
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!validate()) return;
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
@@ -162,7 +252,9 @@ import Footer from '../components/Footer.astro';
       const response = await submitDonation(data);
 
       if (response.status === 'success') {
-        window.showToast('Thank you! Your donation has been received and will go directly to peace-building programs. Watch your inbox for a confirmation and the story of the life you have touched.', 'success');
+        formSuccess.textContent = 'Thank you! Your donation has been received. Watch your inbox for confirmation.';
+        formSuccess.classList.remove('hidden');
+        setTimeout(() => { formSuccess.classList.add('hidden'); }, 8000);
         submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
         window.createConfetti(submitBtn);
         form.reset();
@@ -178,7 +270,8 @@ import Footer from '../components/Footer.astro';
         throw new Error(response.message || 'Failed to process donation');
       }
     } catch (error) {
-      window.showToast('Error: ' + error.message + '. Please try again.', 'error');
+      formError.textContent = 'Error: ' + error.message + '. Please try again.';
+      formError.classList.remove('hidden');
       submitBtn.innerHTML = originalBtnHtml;
       submitBtn.disabled = false;
     }

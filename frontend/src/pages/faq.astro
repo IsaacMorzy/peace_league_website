@@ -22,11 +22,11 @@ const faqs = [
 <Layout title="FAQ — Peace League Africa">
   <Navigation />
 
-  <main>
+  <main id="main-content">
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
-          <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">Frequently Asked Questions</h1>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Frequently Asked Questions</h1>
           <p class="mt-4 text-lg text-white/80 max-w-2xl">Everything you need to know about Peace League Africa, our programs, and how to get involved.</p>
         </div>
       </div>
@@ -36,8 +36,8 @@ const faqs = [
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="space-y-3" id="faq-container">
           {faqs.map((faq, idx) => (
-            <div class="scroll-reveal faq-item bg-canvas rounded-lg border border-hairline transition-all duration-300 hover:shadow-md" style={`animation-delay: ${idx * 40}ms`}>
-              <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-surface/50 transition-colors rounded-lg" aria-expanded="false">
+            <div class="scroll-reveal faq-item bg-canvas rounded-2xl border border-hairline transition-all duration-300 hover:shadow-md" style={`animation-delay: ${idx * 40}ms`}>
+              <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-surface/50 transition-colors rounded-lg min-h-[44px]" aria-expanded="false">
                 <span class="text-base font-semibold text-ink pr-4">{faq.q}</span>
                 <svg class="faq-chevron w-5 h-5 text-steel shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
@@ -54,14 +54,14 @@ const faqs = [
 
     <section class="py-16 hero-gradient text-white hero-pattern">
       <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Still Have Questions?</h2>
+        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Still Have Questions?</h2>
         <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">We are here to help. Reach out to our team and we will get back to you within 48 hours.</p>
         <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
+          <a href="/contact" class="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
             Contact Us
           </a>
-          <a href="mailto:info@peaceleagueafrica.org" class="inline-flex items-center justify-center gap-2 px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+          <a href="mailto:info@peaceleagueafrica.org" class="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Email Us
           </a>

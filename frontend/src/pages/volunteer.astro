@@ -7,10 +7,10 @@ import Footer from '../components/Footer.astro';
 <Layout title="Volunteer">
   <Navigation />
   
-  <main>
-    <section class="hero-pattern bg-hero-bg text-white py-16 lg:py-20">
+  <main id="main-content">
+    <section class="hero-gradient hero-pattern text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-5xl font-semibold leading-[1.10] tracking-tight">Lend Your Hands to Peace</h1>
+        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Lend Your Hands to Peace</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Your time is the most powerful gift you can give. Join 1,200+ volunteers across Africa.</p>
       </div>
     </section>
@@ -36,7 +36,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-          <div class="lg:col-span-3 scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-lg border border-hairline p-6 md:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+          <div class="lg:col-span-3 scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-2xl border border-hairline p-6 md:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
             <h2 class="text-2xl font-bold text-ink mb-4">Become a Peace Volunteer</h2>
             
             <div class="mb-6 text-steel leading-relaxed space-y-4 text-sm">
@@ -64,17 +64,22 @@ import Footer from '../components/Footer.astro';
               </ul>
             </div>
             
-            <form id="volunteer-form" class="space-y-5">
+            <form id="volunteer-form" class="space-y-5" novalidate>
+              <div id="form-error" class="bg-red-50 text-red-700 p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
+              <div id="form-success" class="bg-green-50 text-green-700 p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
+              
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label for="first_name" class="block text-sm font-medium text-ink mb-1.5">First Name *</label>
                   <input type="text" id="first_name" name="first_name" required 
                     class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  <p id="first_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your first name.</p>
                 </div>
                 <div>
                   <label for="last_name" class="block text-sm font-medium text-ink mb-1.5">Last Name *</label>
                   <input type="text" id="last_name" name="last_name" required 
                     class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  <p id="last_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your last name.</p>
                 </div>
               </div>
               
@@ -83,11 +88,13 @@ import Footer from '../components/Footer.astro';
                   <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
                   <input type="email" id="email" name="email" required 
                     class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
                 </div>
                 <div>
                   <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone *</label>
                   <input type="tel" id="phone" name="phone" required 
                     class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  <p id="phone-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid phone number.</p>
                 </div>
               </div>
               
@@ -103,6 +110,7 @@ import Footer from '../components/Footer.astro';
                   <option value="Technical">Technical (Legal, Tech, Marketing)</option>
                   <option value="Other">Other</option>
                 </select>
+                <p id="volunteer_type-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please select a volunteer type.</p>
               </div>
               
               <div>
@@ -133,7 +141,7 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <div class="lg:col-span-2 hidden lg:block">
-            <div class="sticky top-24 bg-surface rounded-lg border border-hairline p-6">
+            <div class="sticky top-24 bg-surface rounded-2xl border border-hairline p-6">
               <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" class="w-full h-auto text-accent mb-6">
                 <circle cx="100" cy="100" r="80" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.25"/>
                 <circle cx="100" cy="100" r="55" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
@@ -218,9 +226,105 @@ import Footer from '../components/Footer.astro';
   const form = document.getElementById('volunteer-form');
   const submitBtn = document.getElementById('submit-btn');
   const originalBtnHtml = submitBtn.innerHTML;
+  const formError = document.getElementById('form-error');
+  const formSuccess = document.getElementById('form-success');
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const PHONE_RE = /^[\d\s\-\+\(\)]{7,20}$/;
+
+  function showFieldError(id) {
+    const field = document.getElementById(id);
+    const errEl = document.getElementById(id + '-error');
+    if (field) field.setAttribute('aria-invalid', 'true');
+    if (errEl) errEl.classList.remove('hidden');
+  }
+
+  function clearFieldError(id) {
+    const field = document.getElementById(id);
+    const errEl = document.getElementById(id + '-error');
+    if (field) field.removeAttribute('aria-invalid');
+    if (errEl) errEl.classList.add('hidden');
+  }
+
+  function clearAllErrors() {
+    formError.classList.add('hidden');
+    formError.textContent = '';
+    formSuccess.classList.add('hidden');
+    formSuccess.textContent = '';
+    ['first_name', 'last_name', 'email', 'phone', 'volunteer_type'].forEach(clearFieldError);
+  }
+
+  ['first_name', 'last_name', 'email', 'phone'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => clearFieldError(id));
+  });
+  document.getElementById('volunteer_type').addEventListener('change', () => clearFieldError('volunteer_type'));
+
+  function validate() {
+    let valid = true;
+    clearAllErrors();
+    const errors = [];
+
+    const firstName = document.getElementById('first_name').value.trim();
+    if (!firstName) {
+      showFieldError('first_name');
+      errors.push('Please enter your first name.');
+      valid = false;
+    }
+
+    const lastName = document.getElementById('last_name').value.trim();
+    if (!lastName) {
+      showFieldError('last_name');
+      errors.push('Please enter your last name.');
+      valid = false;
+    }
+
+    const email = document.getElementById('email').value.trim();
+    if (!email) {
+      showFieldError('email');
+      document.getElementById('email-error').textContent = 'Please enter your email address.';
+      errors.push('Please enter your email address.');
+      valid = false;
+    } else if (!EMAIL_RE.test(email)) {
+      showFieldError('email');
+      document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+      errors.push('Please enter a valid email address.');
+      valid = false;
+    }
+
+    const phone = document.getElementById('phone').value.trim();
+    if (!phone) {
+      showFieldError('phone');
+      document.getElementById('phone-error').textContent = 'Please enter your phone number.';
+      errors.push('Please enter your phone number.');
+      valid = false;
+    } else if (!PHONE_RE.test(phone)) {
+      showFieldError('phone');
+      document.getElementById('phone-error').textContent = 'Please enter a valid phone number (numbers, +, - allowed).';
+      errors.push('Please enter a valid phone number.');
+      valid = false;
+    }
+
+    const volunteerType = document.getElementById('volunteer_type').value;
+    if (!volunteerType) {
+      showFieldError('volunteer_type');
+      errors.push('Please select a volunteer type.');
+      valid = false;
+    }
+
+    if (!valid) {
+      formError.textContent = errors.join(' ');
+      formError.classList.remove('hidden');
+      formError.setAttribute('tabindex', '-1');
+      formError.focus();
+    }
+
+    return valid;
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!validate()) return;
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
@@ -232,7 +336,9 @@ import Footer from '../components/Footer.astro';
       const response = await submitVolunteer(data);
 
       if (response.status === 'success') {
-        window.showToast('Welcome to the Peace League Africa volunteer family! We have received your application and will be in touch within 48 hours.', 'success');
+        formSuccess.textContent = 'Welcome to Peace League Africa! We have received your application and will be in touch within 48 hours.';
+        formSuccess.classList.remove('hidden');
+        setTimeout(() => { formSuccess.classList.add('hidden'); }, 8000);
         submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
         window.createConfetti(submitBtn);
         form.reset();
@@ -244,7 +350,8 @@ import Footer from '../components/Footer.astro';
         throw new Error(response.message || 'Failed to submit application');
       }
     } catch (error) {
-      window.showToast('Error: ' + error.message + '. Please try again.', 'error');
+      formError.textContent = 'Error: ' + error.message + '. Please try again.';
+      formError.classList.remove('hidden');
       submitBtn.innerHTML = originalBtnHtml;
       submitBtn.disabled = false;
     }

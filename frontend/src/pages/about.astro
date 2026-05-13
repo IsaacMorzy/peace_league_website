@@ -7,10 +7,10 @@ import Footer from '../components/Footer.astro';
 <Layout title="About Us">
   <Navigation />
   
-  <main>
-    <section class="bg-hero-bg text-white py-16 lg:py-20">
+  <main id="main-content">
+    <section class="hero-gradient text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-5xl font-semibold leading-[1.10] tracking-tight">About Peace League Africa</h1>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">About Peace League Africa</h1>
       </div>
     </section>
 
@@ -18,7 +18,7 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
           <div>
-            <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our Mission</h2>
+            <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our Mission</h2>
             <p class="mt-4 text-steel leading-relaxed">
               Peace League Africa exists because conflict steals futures — and peace can restore them. 
               We work alongside communities in East Africa and the Great Lakes region to replace 
@@ -26,13 +26,13 @@ import Footer from '../components/Footer.astro';
             </p>
           </div>
           <div class="scroll-reveal relative">
-            <img src="https://images.unsplash.com/photo-1573163713675?w=600&q=80&auto=format&fit=crop" alt="Peace League Africa community gathering" class="rounded-lg w-full h-auto object-cover shadow-lg" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&auto=format&fit=crop" alt="Peace League Africa community gathering" class="rounded-lg w-full h-auto object-cover shadow-lg" loading="lazy" />
             <div class="absolute -bottom-3 -right-3 w-full h-full border-2 border-accent/20 rounded-lg -z-10"></div>
           </div>
         </div>
 
         <div class="max-w-4xl mx-auto space-y-4 mb-16">
-          <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our History</h2>
+          <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our History</h2>
           <p class="text-steel leading-relaxed">
             What began in 2015 as a single peace workshop in a Nairobi community hall has grown into 
             a movement spanning 12 African countries. Today, our programs reach more than 50,000 
@@ -42,37 +42,37 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="max-w-5xl mx-auto">
-          <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center">Our Values</h2>
+          <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Values</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div class="scroll-reveal bg-surface rounded-2xl p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
                 <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               </div>
               <h3 class="font-semibold text-ink">Compassion</h3>
               <p class="text-steel text-sm mt-1 leading-relaxed">Every child, every mother, every elder we serve deserves to be seen, heard, and valued — not as a beneficiary, but as family.</p>
             </div>
-            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 50ms">
+            <div class="scroll-reveal bg-surface rounded-2xl p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 50ms">
               <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
                 <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               </div>
               <h3 class="font-semibold text-ink">Integrity</h3>
               <p class="text-steel text-sm mt-1 leading-relaxed">95% of donations go directly to programs. Our books are open, our decisions are transparent, and our promises are kept.</p>
             </div>
-            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 100ms">
+            <div class="scroll-reveal bg-surface rounded-2xl p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 100ms">
               <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
                 <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
               </div>
               <h3 class="font-semibold text-ink">Innovation</h3>
               <p class="text-steel text-sm mt-1 leading-relaxed">From mobile-money giving platforms to community radio peace programs, we meet challenges with African creativity — not imported templates.</p>
             </div>
-            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 150ms">
+            <div class="scroll-reveal bg-surface rounded-2xl p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="animation-delay: 150ms">
               <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
                 <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
               </div>
               <h3 class="font-semibold text-ink">Sustainability</h3>
               <p class="text-steel text-sm mt-1 leading-relaxed">We do not just build wells; we train local water committees. We do not just teach peace; we train teachers to carry the work forward.</p>
             </div>
-            <div class="scroll-reveal bg-surface rounded-lg p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:col-span-2 max-w-md mx-auto w-full" style="animation-delay: 200ms">
+            <div class="scroll-reveal bg-surface rounded-2xl p-6 border border-hairline transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:col-span-2 max-w-md mx-auto w-full" style="animation-delay: 200ms">
               <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-3">
                 <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
               </div>
@@ -86,25 +86,25 @@ import Footer from '../components/Footer.astro';
 
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-12">Our Chapters</h2>
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Chapters</h2>
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
           <div class="lg:col-span-3">
             <div id="chapters-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div class="bg-canvas rounded-2xl border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div class="space-y-2">
                   <div class="skeleton-shimmer h-5 w-40"></div>
                   <div class="skeleton-shimmer h-3 w-24"></div>
                   <div class="skeleton-shimmer h-3 w-full"></div>
                 </div>
               </div>
-              <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div class="bg-canvas rounded-2xl border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div class="space-y-2">
                   <div class="skeleton-shimmer h-5 w-40"></div>
                   <div class="skeleton-shimmer h-3 w-24"></div>
                   <div class="skeleton-shimmer h-3 w-full"></div>
                 </div>
               </div>
-              <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div class="bg-canvas rounded-2xl border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div class="space-y-2">
                   <div class="skeleton-shimmer h-5 w-40"></div>
                   <div class="skeleton-shimmer h-3 w-24"></div>
@@ -151,21 +151,21 @@ import Footer from '../components/Footer.astro';
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Why Peace League Africa</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Four reasons our partners trust us to deliver lasting change in some of Africa's most challenging communities.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-surface rounded-lg p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: why-1;">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-0 bg-surface rounded-2xl p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: why-1;">
             <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5">
               <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
             <h3 class="text-xl font-semibold text-ink">Proven Impact</h3>
             <p class="mt-3 text-steel text-sm leading-relaxed">Over a decade of measurable results across 12 African countries, with 95% of donations going directly to program delivery.</p>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-surface rounded-lg p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: why-2;">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 bg-surface rounded-2xl p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: why-2;">
             <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5">
               <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <h3 class="text-xl font-semibold text-ink">Community-Led Approach</h3>
             <p class="mt-3 text-steel text-sm leading-relaxed">We work hand-in-hand with local leaders to design programs that respect cultural context and empower communities to lead their own development.</p>
           </div>
-          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-surface rounded-lg p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: why-3;">
+          <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 bg-surface rounded-2xl p-6 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="view-transition-name: why-3;">
             <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5">
               <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
             </div>
@@ -179,8 +179,8 @@ import Footer from '../components/Footer.astro';
     <section class="py-16 bg-gradient-to-br from-accent/5 via-canvas to-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-14">
-          <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink">Our Impact by the Numbers</h2>
-          <p class="scroll-reveal mt-4 text-lg text-steel">Real results across every program we run.</p>
+          <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact by the Numbers</h2>
+          <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-12">Real results across every program we run.</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div class="scroll-reveal text-center">
@@ -215,7 +215,7 @@ import Footer from '../components/Footer.astro';
     <section class="py-16 bg-canvas border-y border-hairline overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Partners</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-10">Trusted by leading organizations working towards peace and development across Africa.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Trusted by leading organizations working towards peace and development across Africa.</p>
         <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
           <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">UNICEF</span>
           <span class="text-lg md:text-xl font-semibold text-stone/60 hover:text-accent transition-colors">WHO</span>
@@ -228,16 +228,16 @@ import Footer from '../components/Footer.astro';
 
     <section class="py-16 hero-gradient text-white">
       <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Join the Movement</h2>
+        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Join the Movement</h2>
         <p class="scroll-reveal mt-4 text-lg text-white/80 mb-10">Whether you donate, volunteer, or partner with us &mdash; every action builds peace across Africa.</p>
         <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg shadow-white/20">
+          <a href="/donate" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg shadow-white/20">
             Donate Now
           </a>
-          <a href="/volunteer" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+          <a href="/volunteer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
             Volunteer
           </a>
-          <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
+          <a href="/contact" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-white/30 text-white font-medium text-sm rounded-full hover:bg-white/15 hover:border-white/50 transition-all duration-300">
             Contact Us
           </a>
         </div>
@@ -287,7 +287,7 @@ import Footer from '../components/Footer.astro';
         if (data.status === 'success' && data.data && data.data.length > 0) {
           const container = document.getElementById('chapters-list');
           container.innerHTML = data.data.map((chapter, idx) => `
-            <div class="bg-canvas rounded-lg border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="bg-canvas rounded-2xl border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-accent-deep">${chapter.introduction || ''}</h3>
               ${chapter.region ? '<p class="mt-1 text-sm text-stone">' + chapter.region + '</p>' : ''}
               ${chapter.address ? '<p class="mt-2 text-steel text-sm line-clamp-2">' + chapter.address + '</p>' : ''}

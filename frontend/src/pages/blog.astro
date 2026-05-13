@@ -2,31 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import posts from '../lib/blog-data.json';
 
-const posts = [
-  { category: 'Education', title: 'How Peace Education is Transforming Schools in Rural Kenya', excerpt: 'Across rural Kenya, a quiet revolution is unfolding in classrooms where conflict resolution and empathy training are becoming as fundamental as math and reading.', date: 'May 12, 2026', image: 'photo-1504711434969-e33886168d6c', author: 'Grace Mwangi' },
-  { category: 'Peace', title: 'Meet the Women Leading Reconciliation Efforts in Rwanda', excerpt: 'From village cooperatives to national dialogues, women across Rwanda are healing communities torn apart by genocide with courage, compassion, and unwavering hope.', date: 'May 8, 2026', image: 'photo-1559027615-cd4628902d4a', author: 'Annonciata Mukamana' },
-  { category: 'Water', title: 'Clean Water Access: A Village Journey from Crisis to Hope', excerpt: 'For generations, the women of Lodwar walked six hours for water. Today, a single borehole has rewritten the future of an entire community.', date: 'Apr 28, 2026', image: 'photo-1488521787991-ed7bbaae773c', author: 'David Ochieng' },
-  { category: 'Youth', title: 'Youth Leadership: The Next Generation of Peacebuilders in Africa', excerpt: 'A new generation of young leaders is stepping up across Africa, bringing fresh energy, digital savvy, and an unshakeable commitment to building peace.', date: 'Apr 22, 2026', image: 'photo-1486312338219-ce68d2c6f44d', author: 'James Njoroge' },
-  { category: 'Health', title: 'Healthcare Outreach: Reaching the Last Mile in Rural Uganda', excerpt: 'Mobile clinics and community health workers are bringing life-saving care to some of the most remote villages in eastern Uganda.', date: 'Apr 15, 2026', image: 'photo-1571019613454-1cb2f99b2d8b', author: 'Dr. Amina Hassan' },
-  { category: 'Community', title: 'From Conflict to Community: A Story of Healing in South Sudan', excerpt: 'After years of civil war, a small town in South Sudan shows the world what reconciliation looks like when communities choose peace over revenge.', date: 'Apr 8, 2026', image: 'photo-1500937386664-56d1dfef3854', author: 'Samuel Garang' },
-  { category: 'Technology', title: 'Digital Literacy: Bridging the Technology Gap in African Schools', excerpt: 'With solar-powered computer labs and offline digital libraries, students in off-grid communities are accessing the same educational resources as their urban peers.', date: 'Mar 30, 2026', image: 'photo-1524178232363-1fb2b075b655', author: 'Wanjiru Kimani' },
-  { category: 'Peace', title: 'Annual Report 2025: Impact Across 12 African Countries', excerpt: 'Our 2025 annual report showcases measurable progress across education, health, water, and peace-building programs serving communities in 12 countries.', date: 'Mar 22, 2026', image: 'photo-1540575467063-178a50c2df87', author: 'Peace League Team' },
-  { category: 'Community', title: 'Sports for Peace: How Football United Divided Communities', excerpt: 'In a region where ethnic divisions once ran deep, a community football league is bridging divides and teaching young people the value of teamwork across lines of difference.', date: 'Mar 15, 2026', image: 'photo-1461896836934-bd45ba8fcf9b', author: 'Peter Lokol' },
-  { category: 'Impact', title: 'Emergency Relief: Responding to Crisis in the Horn of Africa', excerpt: 'When drought threatened millions, Peace League Africa mobilized emergency food, water, and medical supplies to the hardest-hit communities across the Horn.', date: 'Mar 5, 2026', image: 'photo-1511795409834-ef04bbd61622', author: 'Fatima Ahmed' },
-  { category: 'Youth', title: 'Girls Education: Breaking Barriers, Building Futures', excerpt: 'From classrooms in Nairobi to village schools in Malawi, girls are overcoming poverty, tradition, and conflict to claim their right to an education.', date: 'Feb 25, 2026', image: 'photo-1529156069898-49953e39b3ac', author: 'Mary Akinyi' },
-  { category: 'Impact', title: 'The Power of Small Donations: Micro Giving, Macro Impact', excerpt: 'A thousand small acts of generosity add up to something extraordinary. Discover how micro-donors are funding big changes across Africa.', date: 'Feb 18, 2026', image: 'photo-1534274988757-a28bf1a57c17', author: 'Sarah Kimani' },
-  { category: 'Community', title: 'Volunteer Stories: Why I Choose to Build Peace in Africa', excerpt: 'Meet the volunteers who spend their days building peace across Africa from a retired teacher in Kenya to a young engineer from Nigeria.', date: 'Feb 10, 2026', image: 'photo-1507003211169-0a1dd7228f2d', author: 'Volunteer Corps' },
-  { category: 'Impact', title: 'Partnership Spotlight: Working with Local Communities', excerpt: 'Real change happens when outside support meets local leadership. Our partnership model puts community voices at the center of every decision.', date: 'Feb 2, 2026', image: 'photo-1524502397800-3605f2cba3a5', author: 'Daniel Mugisha' },
-  { category: 'Peace', title: 'Mental Health and Peacebuilding: An Overlooked Connection', excerpt: 'Untreated trauma fuels cycles of violence. A growing movement of peace-builders is recognizing mental health as essential to lasting reconciliation.', date: 'Jan 25, 2026', image: 'photo-1472099645785-15c8c6b8c5e0', author: 'Dr. Amina Hassan' },
-  { category: 'Technology', title: 'Sustainable Agriculture: Climate Resilient Farming Takes Root', excerpt: 'Smallholder farmers across East Africa are adopting drought-resistant crops and regenerative techniques that are transforming food security in the region.', date: 'Jan 18, 2026', image: 'photo-1517486808906-6ca8b3c8e1c1', author: 'Grace Mwangi' },
-  { category: 'Community', title: 'Music, Art and Peace: Creative Expression as a Tool for Healing', excerpt: 'In post-conflict communities, music and art programs are giving young people a voice and a path forward where words alone fall short.', date: 'Jan 10, 2026', image: 'photo-1531123897727-8f129e1688ce', author: 'Kofi Mensah' },
-  { category: 'Education', title: 'Climate Change and Conflict: Building Resilience in the Sahel', excerpt: 'As resources grow scarce, competition for water and grazing land is rising. Communities across the Sahel are learning to adapt together.', date: 'Jan 5, 2026', image: 'photo-1500648767791-49c5b4f88f56', author: 'Dr. James Ochieng' },
-  { category: 'Health', title: 'Food Security: Community Gardens Feeding Thousands', excerpt: 'A network of community gardens across Kenya and Uganda is putting fresh food on the table for thousands of families while teaching sustainable farming.', date: 'Dec 20, 2025', image: 'photo-1529626455594-4ff0802cfb7e', author: 'Peace League Team' },
-  { category: 'Peace', title: 'Looking Ahead: Our Vision for Peace in Africa 2027', excerpt: 'As we look toward 2027, we are scaling our most effective programs, deepening community partnerships, and investing in the next generation of peace-builders.', date: 'Dec 12, 2025', image: 'photo-1494790108377-be3c2b3b1c0b', author: 'Sarah Kimani' },
-];
-
-const categories = ['All', 'Education', 'Peace', 'Health', 'Water', 'Youth', 'Community', 'Technology', 'Impact'];
+const categories = ['All', ...new Set(posts.map(p => p.category))];
 const featured = posts[0];
 const perPage = 6;
 const totalPages = Math.ceil(posts.length / perPage);
@@ -35,16 +13,17 @@ const paginatedPosts = posts.slice(0, perPage);
 const p = 1;
 ---
 
-<Layout title="Blog — Peace League Africa">
+<Layout title="Blog — Peace League Africa" description="Stories of hope, impact, and the people building peace across Africa. Read Peace League's latest news, field reports, and community voices from 12 African countries.">
   <Navigation />
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
-    <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="hero-gradient text-white py-20 lg:py-28 hero-pattern relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="scroll-reveal">
-          <h1 class="text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">Latest News & Stories</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl">Stories of hope, impact, and the people building peace across Africa.</p>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight">Latest News & Stories</h1>
+          <p class="mt-5 text-xl text-white/80 max-w-2xl">Stories of hope, impact, and the people building peace across Africa.</p>
         </div>
       </div>
     </section>
@@ -52,20 +31,23 @@ const p = 1;
     <!-- Featured Post -->
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative rounded-2xl overflow-hidden group">
-          <img src={`https://images.unsplash.com/${featured.image}?w=1400&q=80&auto=format&fit=crop`} alt={featured.title} class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+        <a href={`/blog/${featured.slug}`} class="block relative rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="absolute top-6 left-6 z-10 inline-block px-4 py-1.5 text-xs font-bold bg-warm text-white rounded-full uppercase tracking-wider shadow-lg">Featured</span>
+          <img src={featured.image.replace('?w=800&q=80&auto=format&fit=crop', '?w=1400&q=80&auto=format&fit=crop')} alt={featured.title} class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-            <span class="inline-block px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full mb-4">{featured.category}</span>
+            <span class="inline-block px-3 py-1 text-xs font-semibold bg-accent text-on-dark rounded-full mb-4">{featured.category}</span>
             <h2 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight">{featured.title}</h2>
-            <p class="text-white/70 text-sm md:text-base max-w-2xl mb-4">{featured.excerpt.substring(0, 120)}...</p>
+            <p class="text-white/70 text-sm md:text-base max-w-2xl mb-4">{featured.description.substring(0, 120)}...</p>
             <div class="flex items-center gap-4 text-sm text-white/60">
-              <span>{featured.date}</span>
+              <span>{new Date(featured.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <span>&middot;</span>
+              <span>{featured.readTime}</span>
               <span>&middot;</span>
               <span>{featured.author}</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -73,32 +55,37 @@ const p = 1;
     <section class="pb-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap gap-2 mb-10">
-          {categories.map((cat, idx) => (
-            <span class={`px-4 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer hover:-translate-y-0.5 ${idx === 0 ? 'bg-primary text-on-primary border-primary' : 'bg-canvas text-steel border-hairline hover:border-accent hover:text-accent'}`}>
-              {cat}
-            </span>
-          ))}
+          {categories.map((cat, idx) => {
+            const href = cat === 'All' ? '/blog' : `/blog?category=${cat.toLowerCase()}`;
+            return (
+              <a href={href} class={`px-4 py-2 text-sm rounded-full border transition-all duration-300 hover:-translate-y-0.5 min-h-[44px] inline-flex items-center ${idx === 0 ? 'bg-primary text-on-primary border-primary shadow-sm' : 'bg-canvas text-steel border-hairline hover:border-accent hover:text-accent hover:shadow-sm'}`}>
+                {cat}
+              </a>
+            );
+          })}
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
           <!-- Main Grid -->
           <div class="lg:col-span-3">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-children">
               {paginatedPosts.map((post, idx) => (
-                <article class="scroll-reveal bg-canvas rounded-xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/20 group" style={`animation-delay: ${idx * 80}ms`}>
+                <article class="scroll-reveal-animate bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 hover:shadow-accent/5 group" style={`animation-delay: ${idx * 80}ms`}>
                   <div class="relative overflow-hidden h-52">
-                    <img src={`https://images.unsplash.com/${post.image}?w=600&q=80&auto=format&fit=crop`} alt={post.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                    <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent text-primary rounded-full shadow-lg backdrop-blur-sm">{post.category}</span>
+                    <img src={post.image} alt={post.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                    <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent text-on-dark rounded-full shadow-lg backdrop-blur-sm">{post.category}</span>
                   </div>
                   <div class="p-6">
                     <div class="flex items-center gap-3 text-xs text-steel mb-3">
-                      <span>{post.date}</span>
+                      <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                      <span class="w-1 h-1 rounded-full bg-hairline"></span>
+                      <span>{post.readTime}</span>
                       <span class="w-1 h-1 rounded-full bg-hairline"></span>
                       <span>{post.author}</span>
                     </div>
                     <h3 class="text-lg font-semibold text-ink mb-2 leading-snug line-clamp-2">{post.title}</h3>
-                    <p class="text-sm text-steel leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
-                    <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors group/link">
+                    <p class="text-sm text-steel leading-relaxed mb-4 line-clamp-3">{post.description}</p>
+                    <a href={`/blog/${post.slug}`} class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors group/link">
                       Read Article
                       <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
@@ -109,16 +96,16 @@ const p = 1;
 
             <!-- Pagination -->
             <div class="mt-12 flex items-center justify-center gap-3">
-              <button class="px-4 py-2 text-sm font-medium text-steel bg-canvas border border-hairline rounded-full hover:text-ink hover:border-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed" disabled={p <= 1}>
+              <button class="px-4 py-2 text-sm font-medium text-steel bg-canvas border border-hairline rounded-full hover:text-ink hover:border-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px]" disabled={p <= 1}>
                 <svg class="w-4 h-4 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 Previous
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
-                <button class={`w-10 h-10 text-sm font-medium rounded-full transition-all duration-200 ${pageNum === p ? 'bg-primary text-on-primary shadow-md' : 'text-steel bg-canvas border border-hairline hover:border-accent hover:text-accent'}`}>
+                <button class={`w-10 h-10 min-w-[44px] min-h-[44px] text-sm font-medium rounded-full transition-all duration-200 ${pageNum === p ? 'bg-primary text-on-primary shadow-md' : 'text-steel bg-canvas border border-hairline hover:border-accent hover:text-accent'}`}>
                   {pageNum}
                 </button>
               ))}
-              <button class="px-4 py-2 text-sm font-medium text-steel bg-canvas border border-hairline rounded-full hover:text-ink hover:border-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed" disabled={p >= totalPages}>
+              <button class="px-4 py-2 text-sm font-medium text-steel bg-canvas border border-hairline rounded-full hover:text-ink hover:border-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px]" disabled={p >= totalPages}>
                 Next
                 <svg class="w-4 h-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </button>
@@ -127,7 +114,7 @@ const p = 1;
 
           <!-- Sidebar -->
           <aside class="lg:col-span-1 space-y-8">
-            <div class="bg-canvas rounded-xl border border-hairline p-6 hover:shadow-md transition-shadow">
+            <div class="bg-canvas rounded-2xl border border-hairline p-6 hover:shadow-md transition-shadow">
               <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
                 <span class="w-1 h-4 bg-accent rounded-full"></span>Categories
               </h3>
@@ -142,29 +129,30 @@ const p = 1;
               </div>
             </div>
 
-            <div class="bg-canvas rounded-xl border border-hairline p-6 hover:shadow-md transition-shadow">
+            <div class="bg-canvas rounded-2xl border border-hairline p-6 hover:shadow-md transition-shadow">
               <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4 flex items-center gap-2">
                 <span class="w-1 h-4 bg-accent rounded-full"></span>Recent Posts
               </h3>
               <div class="space-y-4">
                 {posts.slice(0, 4).map((post, idx) => (
-                  <a href="/blog" class="group flex gap-3 transition-all duration-200 hover:-translate-x-0.5" style={`animation-delay: ${idx * 40}ms`}>
-                    <img src={`https://images.unsplash.com/${post.image}?w=80&q=80&auto=format&fit=crop&h=80`} alt={post.title} class="w-14 h-14 rounded-lg object-cover shrink-0" loading="lazy" />
+                  <a href={`/blog/${post.slug}`} class="group flex gap-3 transition-all duration-200 hover:-translate-x-0.5" style={`animation-delay: ${idx * 40}ms`}>
+                    <img src={post.image} alt={post.title} class="w-14 h-14 rounded-xl object-cover shrink-0 transition-transform duration-300 group-hover:scale-110" loading="lazy" />
                     <div class="min-w-0">
                       <p class="text-sm font-medium text-ink truncate group-hover:text-accent transition-colors">{post.title}</p>
-                      <p class="text-xs text-steel mt-1">{post.date}</p>
+                      <p class="text-xs text-steel mt-1">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                     </div>
                   </a>
                 ))}
               </div>
             </div>
 
-            <div class="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl border border-accent/20 p-6">
-              <h3 class="text-sm font-semibold text-ink mb-2">Stay Connected</h3>
-              <p class="text-xs text-steel mb-4">Get our latest stories delivered to your inbox.</p>
-              <div class="flex flex-col gap-2">
-                <input type="email" placeholder="Your email" class="w-full px-3 py-2 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
-                <button class="w-full px-4 py-2 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors cursor-pointer">Subscribe</button>
+            <div class="bg-gradient-to-br from-accent/15 via-accent/8 to-accent/0 rounded-2xl border border-accent/25 p-6 shadow-sm relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+              <h3 class="text-sm font-semibold text-ink mb-2 relative z-10">Stay Connected</h3>
+              <p class="text-xs text-steel mb-4 relative z-10">Get our latest stories delivered to your inbox.</p>
+              <div class="flex flex-col gap-2 relative z-10">
+                <input type="email" placeholder="Your email" aria-label="Email for newsletter" class="w-full px-3 py-2 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+                <button class="w-full px-4 py-2 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors cursor-pointer min-h-[44px]">Subscribe</button>
               </div>
             </div>
           </aside>
@@ -175,9 +163,9 @@ const p = 1;
     <!-- Newsletter CTA -->
     <section class="py-16 bg-surface">
       <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="scroll-reveal text-3xl font-semibold text-ink">Have a Story to Share?</h2>
-        <p class="scroll-reveal mt-3 text-steel mb-8">We love featuring voices from our community. Pitch us your peace-building story.</p>
-        <a href="/contact" class="scroll-reveal inline-flex items-center px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors shadow-md">
+        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Have a Story to Share?</h2>
+        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-12">We love featuring voices from our community. Pitch us your peace-building story.</p>
+        <a href="/contact" class="scroll-reveal inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors shadow-md">
           Submit Your Story
         </a>
       </div>
