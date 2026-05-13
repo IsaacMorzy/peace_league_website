@@ -54,7 +54,7 @@ const navItems = [
       <div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300"></div>
 
       <!-- Mobile drawer panel -->
-      <div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-80 bg-canvas/95 backdrop-blur-2xl border-l border-hairline shadow-2xl translate-x-full invisible transition-all duration-300 ease-out overflow-y-auto">
+      <div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-[min(100vw,20rem)] max-w-full bg-canvas/95 backdrop-blur-2xl border-l border-hairline shadow-2xl translate-x-full invisible transition-all duration-300 ease-out overflow-y-auto">
         <div class="flex justify-between items-center p-4 border-b border-hairline">
           <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
           <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
@@ -104,7 +104,7 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-1">
         {navItems.map((item, idx) => (
           <>{item.dropdown ? (
             <div class="relative group">
@@ -131,7 +131,7 @@ const navItems = [
       </div>
 
       <!-- Desktop Right Side -->
-      <div class="flex items-center gap-3 shrink-0">
+      <div class="hidden lg:flex items-center gap-3 shrink-0">
         <a href={portalAppUrl} class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 px-2">Log in</a>
         <button id="theme-toggle" type="button" class="w-8 h-8 flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
