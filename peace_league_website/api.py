@@ -144,6 +144,14 @@ def create_donation(**kwargs):
         else:
             donor_doc_name = existing_donor
 
+        mode_of_payment = data.get("payment_method") or data.get("mode_of_payment", "Cash")
+        if mode_of_payment and not frappe.db.exists("Mode of Payment", mode_of_payment):
+            try:
+                mop = frappe.get_doc({"doctype": "Mode of Payment", "mode_of_payment": mode_of_payment, "type": "General"})
+                mop.insert(ignore_permissions=True)
+            except Exception:
+                mode_of_payment = "Cash"
+
         donation = frappe.get_doc({
             "doctype": "Donation",
             "donor": donor_doc_name,
@@ -151,7 +159,7 @@ def create_donation(**kwargs):
             "email": email,
             "amount": float(data.get("amount", 0)),
             "currency": data.get("currency", "USD"),
-            "mode_of_payment": data.get("payment_method") or data.get("mode_of_payment", "Online"),
+            "mode_of_payment": mode_of_payment,
             "date": getdate(),
             "paid": 1,
         })
