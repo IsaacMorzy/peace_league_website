@@ -1,4 +1,1 @@
 # Patches for Peace League Website
-
-patches:
-  - peace_league_website.patches.create_doctypes.create_doctypes

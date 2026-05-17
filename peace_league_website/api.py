@@ -1,8 +1,10 @@
 import frappe
 from frappe import _
-from frappe.utils import getdate, now_datetime
+from frappe.utils import getdate, now_datetime, get_request_site_address
 import json
 from peace_league_website.utils.seed_data import seed_causes as _seed_causes, generate_test_data as _generate_test_data
+from payments.payment_gateways.doctype.mpesa_settings.mpesa_connector import MpesaConnector
+from payments.payment_gateways.doctype.mpesa_settings.mpesa_settings import sanitize_mobile_number
 
 
 def _log(level, msg):
@@ -116,7 +118,7 @@ def get_volunteers():
 
 @frappe.whitelist(allow_guest=True)
 def create_donation(**kwargs):
-    """Create a new donation using frappe_npo Donation DocType."""
+    """Create a new donation. For M-Pesa, initiates STK Push and returns checkout_request_id."""
     try:
         frappe.flags.ignore_permissions = True
         data = {k: v for k, v in kwargs.items()}
@@ -129,6 +131,11 @@ def create_donation(**kwargs):
         donor_name = data.get("donor_name")
         email = data.get("email")
         phone = data.get("phone") or ""
+        payment_method = data.get("payment_method") or "Cash"
+        is_mpesa = payment_method in ("MPesa", "Mobile Money")
+
+        if is_mpesa and not phone:
+            return {"status": "error", "message": "Phone number is required for M-Pesa payments"}
 
         existing_donor = frappe.db.get_value("Donor", {"email": email}, "name")
         if not existing_donor:
@@ -144,26 +151,52 @@ def create_donation(**kwargs):
         else:
             donor_doc_name = existing_donor
 
-        mode_of_payment = data.get("payment_method") or data.get("mode_of_payment", "Cash")
-        if mode_of_payment and not frappe.db.exists("Mode of Payment", mode_of_payment):
+        mop_value = "MPesa" if is_mpesa else payment_method
+        if mop_value and not frappe.db.exists("Mode of Payment", mop_value):
             try:
-                mop = frappe.get_doc({"doctype": "Mode of Payment", "mode_of_payment": mode_of_payment, "type": "General"})
+                mop = frappe.get_doc({"doctype": "Mode of Payment", "mode_of_payment": mop_value, "type": "General"})
                 mop.insert(ignore_permissions=True)
             except Exception:
-                mode_of_payment = "Cash"
+                mop_value = "Cash"
 
         donation = frappe.get_doc({
             "doctype": "Donation",
             "donor": donor_doc_name,
             "donor_name": donor_name,
             "email": email,
+            "phone": phone,
             "amount": float(data.get("amount", 0)),
             "currency": data.get("currency", "USD"),
-            "mode_of_payment": mode_of_payment,
+            "mode_of_payment": mop_value,
+            "payment_method": "MPesa" if is_mpesa else payment_method,
             "date": getdate(),
-            "paid": 1,
+            "paid": 0 if is_mpesa else 1,
+            "status": "Pending" if is_mpesa else "Received",
+            "message": data.get("message", ""),
+            "anonymous": 1 if str(data.get("anonymous", "0")) == "1" else 0,
         })
         donation.insert(ignore_permissions=True)
+
+        if is_mpesa:
+            result = initiate_mpesa_payment(donation, phone, float(data.get("amount", 0)))
+            if result.get("error"):
+                frappe.db.commit()
+                return {"status": "error", "message": result["error"]}
+
+            donation.checkout_request_id = result["checkout_request_id"]
+            donation.save(ignore_permissions=True)
+            frappe.db.commit()
+
+            return {
+                "status": "success",
+                "message": "M-Pesa prompt sent to your phone. Complete payment on your phone.",
+                "data": {
+                    "name": donation.name,
+                    "donor": donor_name,
+                    "checkout_request_id": result["checkout_request_id"],
+                    "mpesa_pending": True,
+                }
+            }
 
         frappe.db.commit()
 
@@ -311,6 +344,147 @@ def get_homepage_data():
         }
     except Exception as e:
         frappe.log_error(f"Error fetching homepage data: {str(e)}")
+        return {"status": "error", "message": str(e)}
+
+
+def initiate_mpesa_payment(donation, phone, amount):
+    """Initiate M-Pesa STK Push for a donation."""
+    try:
+        mpesa_settings_name = frappe.db.get_value("Mpesa Settings", {}, "name")
+        if not mpesa_settings_name:
+            return {"error": "M-Pesa is not configured. Please contact the site administrator."}
+
+        mpesa_settings = frappe.get_doc("Mpesa Settings", mpesa_settings_name)
+        env = "production" if not mpesa_settings.sandbox else "sandbox"
+        business_shortcode = (
+            mpesa_settings.business_shortcode if env == "production" else mpesa_settings.till_number
+        )
+
+        callback_url = (
+            get_request_site_address(True)
+            + "/api/method/peace_league_website.api.mpesa_donation_callback"
+        )
+
+        connector = MpesaConnector(
+            env=env,
+            app_key=mpesa_settings.consumer_key,
+            app_secret=mpesa_settings.get_password("consumer_secret"),
+        )
+
+        mobile_number = sanitize_mobile_number(phone)
+
+        response = connector.stk_push(
+            business_shortcode=business_shortcode,
+            amount=int(amount),
+            passcode=mpesa_settings.get_password("online_passkey"),
+            callback_url=callback_url,
+            reference_code=mpesa_settings.till_number,
+            phone_number=mobile_number,
+            description="Donation",
+        )
+
+        if response.get("ResponseCode") == "0":
+            return {"checkout_request_id": response["CheckoutRequestID"]}
+        else:
+            error_msg = response.get("ResponseDescription", "M-Pesa request failed")
+            frappe.log_error(f"M-Pesa STK Push failed: {error_msg}", "M-Pesa Donation")
+            return {"error": error_msg}
+
+    except Exception as e:
+        frappe.log_error(f"M-Pesa initiation error: {str(e)}", "M-Pesa Donation")
+        return {"error": str(e)}
+
+
+@frappe.whitelist(allow_guest=True)
+def mpesa_donation_callback(**kwargs):
+    """Callback endpoint for Safaricom M-Pesa STK Push results."""
+    try:
+        frappe.flags.ignore_permissions = True
+        body = frappe._dict(kwargs.get("Body", {}))
+        stk_callback = frappe._dict(body.get("stkCallback", {}))
+
+        checkout_request_id = stk_callback.get("CheckoutRequestID")
+        result_code = stk_callback.get("ResultCode", 1)
+
+        if not checkout_request_id:
+            frappe.log_error("M-Pesa callback missing CheckoutRequestID", "M-Pesa Donation")
+            return {"ResultCode": 1, "ResultDesc": "Missing CheckoutRequestID"}
+
+        donation_name = frappe.db.get_value("Donation", {"checkout_request_id": checkout_request_id}, "name")
+        if not donation_name:
+            frappe.log_error(f"No donation found for CheckoutRequestID: {checkout_request_id}", "M-Pesa Donation")
+            return {"ResultCode": 1, "ResultDesc": "Donation not found"}
+
+        donation = frappe.get_doc("Donation", donation_name)
+
+        if result_code == 0:
+            metadata = stk_callback.get("CallbackMetadata", {}).get("Item", [])
+            mpesa_receipt = None
+            for item in metadata:
+                if item.get("Name") == "MpesaReceiptNumber":
+                    mpesa_receipt = item.get("Value")
+                    break
+
+            donation.paid = 1
+            donation.status = "Received"
+            if mpesa_receipt:
+                donation.mpesa_receipt = mpesa_receipt
+            donation.save(ignore_permissions=True)
+            frappe.db.commit()
+
+            frappe.log_error(
+                f"M-Pesa donation {donation_name} completed. Receipt: {mpesa_receipt}",
+                "M-Pesa Donation"
+            )
+        else:
+            result_desc = stk_callback.get("ResultDesc", "Payment failed")
+            donation.status = "Failed"
+            donation.save(ignore_permissions=True)
+            frappe.db.commit()
+
+            frappe.log_error(
+                f"M-Pesa donation {donation_name} failed: {result_desc}",
+                "M-Pesa Donation"
+            )
+
+        return {"ResultCode": 0, "ResultDesc": "Success"}
+
+    except Exception as e:
+        frappe.log_error(f"M-Pesa callback error: {str(e)}", "M-Pesa Donation")
+        return {"ResultCode": 1, "ResultDesc": "Internal error"}
+
+
+@frappe.whitelist(allow_guest=True)
+def donation_status(checkout_request_id):
+    """Check the status of an M-Pesa donation by checkout_request_id."""
+    try:
+        frappe.flags.ignore_permissions = True
+
+        if not checkout_request_id:
+            return {"status": "error", "message": "Missing checkout_request_id"}
+
+        donation_name = frappe.db.get_value(
+            "Donation",
+            {"checkout_request_id": checkout_request_id},
+            "name"
+        )
+        if not donation_name:
+            return {"status": "error", "message": "Donation not found"}
+
+        donation = frappe.get_doc("Donation", donation_name)
+
+        return {
+            "status": "success",
+            "data": {
+                "paid": bool(donation.paid),
+                "status": donation.status,
+                "receipt": donation.mpesa_receipt or "",
+                "donor_name": donation.donor_name,
+                "amount": donation.amount,
+            }
+        }
+    except Exception as e:
+        frappe.log_error(f"Donation status error: {str(e)}")
         return {"status": "error", "message": str(e)}
 
 

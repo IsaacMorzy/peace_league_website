@@ -4,20 +4,33 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Donate">
+<Layout title="Donate" description="Support peace-building across Africa. Your tax-deductible donation funds peace education, clean water, healthcare, and youth programs in 12 countries. Donate now.">
   <Navigation />
   
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://peaceleagueafrica.org/donate" }
+      ]
+    })} />
     <section class="hero-gradient hero-pattern text-white py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Give. Restore. Rebuild.</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">$50 can train a peace teacher. $25 can provide clean water for a family. Every dollar rebuilds a community.</p>
+      <div class="parallax-layer" aria-hidden="true">
+        <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+        <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
+      </div>
       </div>
     </section>
 
-    <section class="py-16 bg-surface">
+    <section class="py-16 lg:py-20 bg-surface">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <div class="section-divider mb-6"></div>
         <div class="flex items-center gap-2 mb-8 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div class="flex items-center gap-2">
             <div class="progress-step-circle active">1</div>
@@ -38,13 +51,13 @@ import Footer from '../components/Footer.astro';
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 duration-700 bg-canvas/80 backdrop-blur-xl rounded-2xl border border-hairline p-6 md:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
           <h2 class="text-2xl font-bold text-ink mb-4">Donate to Peace League Africa</h2>
           <p class="text-steel mb-6 text-sm">
-            Your gift — whatever the size — goes directly to peace-building programs across East Africa. 
-            Choose an amount below and join the movement to restore hope, one community at a time.
+            $25 provides clean water for a family. $50 trains a peace teacher. $500 launches a youth mentorship program. 
+            Every dollar goes directly to peace-building across 12 countries. Choose an amount below.
           </p>
           
           <form id="donation-form" class="space-y-5" novalidate>
-            <div id="form-error" class="bg-red-50 text-red-700 p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
-            <div id="form-success" class="bg-green-50 text-green-700 p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
+          <div id="form-error" class="bg-error-bg text-error p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
+          <div id="form-success" class="bg-success-bg text-success p-3 rounded-md text-sm mb-4 hidden" role="alert"></div>
             
             <div>
               <label for="donor_name" class="block text-sm font-medium text-ink mb-1.5">Full Name *</label>
@@ -61,9 +74,10 @@ import Footer from '../components/Footer.astro';
                 <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone</label>
+                <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone <span id="phone-required-label" class="text-red-500 hidden">*</span></label>
                 <input type="tel" id="phone" name="phone" 
                   class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-[16px] text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                <p id="phone-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Phone number is required for M-Pesa payments.</p>
               </div>
             </div>
             
@@ -113,11 +127,34 @@ import Footer from '../components/Footer.astro';
             <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
               <button type="submit" id="submit-btn"
                 class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
-                Complete My Donation
+                Complete My Gift
               </button>
             </div>
           </form>
           
+          <div id="mpesa-waiting" class="hidden text-center py-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
+              <svg class="animate-spin h-8 w-8 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-ink mb-2">Check Your Phone</h3>
+            <p class="text-steel text-sm mb-4">An M-Pesa prompt has been sent to your phone. Enter your PIN to complete the donation.</p>
+            <p id="mpesa-poll-status" class="text-xs text-steel">Waiting for payment confirmation...</p>
+            <p id="mpesa-retry" class="hidden mt-4">
+              <button type="button" id="mpesa-retry-btn" class="text-accent hover:underline text-sm font-medium">Didn't receive the prompt? Try again.</button>
+            </p>
+          </div>
+          <div id="mpesa-success" class="hidden text-center py-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success-bg mb-4">
+              <svg class="h-8 w-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-ink mb-2">Payment Received!</h3>
+            <p id="mpesa-receipt-info" class="text-steel text-sm">Thank you for your donation.</p>
+          </div>
           <p class="mt-6 text-sm text-stone text-center">
             All donations are tax-deductible. You will receive a receipt and a story of impact via email.
           </p>
@@ -130,7 +167,7 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  import { submitDonation } from '../lib/api.js';
+  import { submitDonation, donationStatus } from '../lib/api.js';
 
   const form = document.getElementById('donation-form');
   const submitBtn = document.getElementById('submit-btn');
@@ -141,6 +178,13 @@ import Footer from '../components/Footer.astro';
   const formSuccess = document.getElementById('form-success');
 
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const PHONE_RE = /^\+?\d{7,15}$/;
+  const mpesaWaiting = document.getElementById('mpesa-waiting');
+  const mpesaSuccess = document.getElementById('mpesa-success');
+  const mpesaPollStatus = document.getElementById('mpesa-poll-status');
+  const mpesaRetry = document.getElementById('mpesa-retry');
+  const mpesaReceiptInfo = document.getElementById('mpesa-receipt-info');
+  const phoneRequiredLabel = document.getElementById('phone-required-label');
 
   function showFieldError(id) {
     const field = document.getElementById(id);
@@ -161,8 +205,22 @@ import Footer from '../components/Footer.astro';
     formError.textContent = '';
     formSuccess.classList.add('hidden');
     formSuccess.textContent = '';
-    ['donor_name', 'email', 'amount', 'payment_method'].forEach(clearFieldError);
+    ['donor_name', 'email', 'amount', 'payment_method', 'phone'].forEach(clearFieldError);
   }
+
+  function updatePhoneRequirement() {
+    const method = document.getElementById('payment_method').value;
+    const isMpesa = method === 'Mobile Money';
+    document.getElementById('phone').required = isMpesa;
+    if (phoneRequiredLabel) {
+      phoneRequiredLabel.classList.toggle('hidden', !isMpesa);
+    }
+  }
+
+  document.getElementById('payment_method').addEventListener('change', () => {
+    clearFieldError('payment_method');
+    updatePhoneRequirement();
+  });
 
   amountInputs.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -176,7 +234,7 @@ import Footer from '../components/Footer.astro';
       });
       btn.classList.add('selected');
       btn.innerHTML = '\u2713 $' + amount;
-      btn.style.animation = 'scale-pulse 0.3s ease';
+      btn.style.animation = 'scale-pulse 0.6s ease';
       setTimeout(() => { btn.style.animation = ''; }, 300);
     });
   });
@@ -184,7 +242,7 @@ import Footer from '../components/Footer.astro';
   amountField.addEventListener('input', () => clearFieldError('amount'));
   document.getElementById('donor_name').addEventListener('input', () => clearFieldError('donor_name'));
   document.getElementById('email').addEventListener('input', () => clearFieldError('email'));
-  document.getElementById('payment_method').addEventListener('change', () => clearFieldError('payment_method'));
+  document.getElementById('phone').addEventListener('input', () => clearFieldError('phone'));
 
   function validate() {
     let valid = true;
@@ -225,6 +283,20 @@ import Footer from '../components/Footer.astro';
       valid = false;
     }
 
+    if (paymentMethod === 'Mobile Money') {
+      const phone = document.getElementById('phone').value.trim();
+      if (!phone) {
+        showFieldError('phone');
+        errors.push('Phone number is required for M-Pesa payments.');
+        valid = false;
+      } else if (!PHONE_RE.test(phone)) {
+        showFieldError('phone');
+        document.getElementById('phone-error').textContent = 'Please enter a valid phone number (e.g. 254712345678).';
+        errors.push('Please enter a valid phone number.');
+        valid = false;
+      }
+    }
+
     if (!valid) {
       formError.textContent = errors.join(' ');
       formError.classList.remove('hidden');
@@ -235,15 +307,71 @@ import Footer from '../components/Footer.astro';
     return valid;
   }
 
+  function showMpesaForm(show) {
+    form.classList.toggle('hidden', show);
+    mpesaWaiting.classList.toggle('hidden', !show);
+  }
+
+  function showMpesaSuccess(receipt) {
+    mpesaWaiting.classList.add('hidden');
+    mpesaSuccess.classList.remove('hidden');
+    if (receipt) {
+      mpesaReceiptInfo.textContent = `M-Pesa Receipt: ${receipt}. Thank you for your donation!`;
+    } else {
+      mpesaReceiptInfo.textContent = 'Thank you for your donation! A receipt will be sent to your email.';
+    }
+  }
+
+  function showMpesaError(msg) {
+    mpesaWaiting.classList.add('hidden');
+    form.classList.remove('hidden');
+    formError.textContent = msg + '. Please try again.';
+    formError.classList.remove('hidden');
+    submitBtn.innerHTML = originalBtnHtml;
+    submitBtn.disabled = false;
+  }
+
+  async function pollMpesaStatus(checkoutRequestId) {
+    let attempts = 0;
+    const maxAttempts = 40;
+
+    while (attempts < maxAttempts) {
+      attempts++;
+      mpesaPollStatus.textContent = `Waiting for payment confirmation (${attempts})...`;
+
+      try {
+        const result = await donationStatus(checkoutRequestId);
+        if (result.status === 'success' && result.data) {
+          if (result.data.paid) {
+            showMpesaSuccess(result.data.receipt);
+            return;
+          }
+          if (result.data.status === 'Failed') {
+            showMpesaError('Payment was declined');
+            return;
+          }
+        }
+      } catch (e) {
+        mpesaPollStatus.textContent = 'Checking payment status...';
+      }
+
+      await new Promise(r => setTimeout(r, 3000));
+    }
+
+    showMpesaError('Payment confirmation timed out. Check your M-Pesa messages for the receipt.');
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!validate()) return;
 
+    updatePhoneRequirement();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     data.anonymous = data.anonymous === '1' ? 1 : 0;
     data.currency = 'USD';
+    data.payment_method = data.payment_method === 'Mobile Money' ? 'MPesa' : data.payment_method;
 
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
@@ -252,20 +380,25 @@ import Footer from '../components/Footer.astro';
       const response = await submitDonation(data);
 
       if (response.status === 'success') {
-        formSuccess.textContent = 'Thank you! Your donation has been received. Watch your inbox for confirmation.';
-        formSuccess.classList.remove('hidden');
-        setTimeout(() => { formSuccess.classList.add('hidden'); }, 8000);
-        submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
-        window.createConfetti(submitBtn);
-        form.reset();
-        amountInputs.forEach(b => {
-          b.classList.remove('selected');
-          b.innerHTML = '$' + b.dataset.amount;
-        });
-        setTimeout(() => {
-          submitBtn.innerHTML = originalBtnHtml;
-          submitBtn.disabled = false;
-        }, 2000);
+        if (response.data && response.data.mpesa_pending) {
+          showMpesaForm(true);
+          pollMpesaStatus(response.data.checkout_request_id);
+        } else {
+          formSuccess.textContent = 'Thank you! Your donation has been received. Watch your inbox for confirmation.';
+          formSuccess.classList.remove('hidden');
+          setTimeout(() => { formSuccess.classList.add('hidden'); }, 8000);
+          submitBtn.innerHTML = '<span class="success-checkmark">\u2713</span> Done!';
+          window.createConfetti(submitBtn);
+          form.reset();
+          amountInputs.forEach(b => {
+            b.classList.remove('selected');
+            b.innerHTML = '$' + b.dataset.amount;
+          });
+          setTimeout(() => {
+            submitBtn.innerHTML = originalBtnHtml;
+            submitBtn.disabled = false;
+          }, 2000);
+        }
       } else {
         throw new Error(response.message || 'Failed to process donation');
       }

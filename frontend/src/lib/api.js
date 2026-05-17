@@ -66,3 +66,7 @@ export async function submitContact(data) {
     body: data,
   });
 }
+
+export async function donationStatus(checkoutRequestId) {
+  return apiCall(`/api/method/peace_league_website.api.donation_status?checkout_request_id=${encodeURIComponent(checkoutRequestId)}`);
+}
