@@ -6,9 +6,10 @@ const normalizedFrappeBase = (import.meta.env.PUBLIC_FRAPPE_BASE_URL || import.m
 const portalAppUrl = normalizedFrappeBase ? `${normalizedFrappeBase}/app` : '/app';
 
 const navItems = [
-  { href: '/', label: 'Home' },
+  { href: '/', label: 'Home', icon: 'home' },
   {
-    label: 'About',
+    label: 'About Us',
+    icon: 'info',
     dropdown: [
       { href: '/about', label: 'Our Story' },
       { href: '/about#mission', label: 'Mission & Vision' },
@@ -18,18 +19,20 @@ const navItems = [
     ],
   },
   {
-    label: 'Causes',
+    label: 'Our Causes',
+    icon: 'heart',
     dropdown: [
       { href: '/causes', label: 'All Causes' },
       { href: '/causes?category=Education', label: 'Education' },
       { href: '/causes?category=Health', label: 'Health' },
       { href: '/causes?category=Water', label: 'Clean Water' },
-      { href: '/causes?category=Youth', label: 'Youth' },
+      { href: '/causes?category=Youth', label: 'Youth Development' },
       { href: '/causes?category=Agriculture', label: 'Agriculture' },
     ],
   },
   {
     label: 'Get Involved',
+    icon: 'hand',
     dropdown: [
       { href: '/donate', label: 'Donate' },
       { href: '/volunteer', label: 'Volunteer' },
@@ -39,6 +42,7 @@ const navItems = [
   },
   {
     label: 'Community',
+    icon: 'group',
     dropdown: [
       { href: '/events', label: 'Events' },
       { href: '/blog', label: 'Blog' },
@@ -46,65 +50,120 @@ const navItems = [
       { href: '/gallery', label: 'Gallery' },
     ],
   },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact', icon: 'chat' },
 ];
+
+const iconPaths = {
+  home: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+  info: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  heart: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+  hand: 'M17 20h5v-9a2 2 0 00-2-2h-2V8a2 2 0 00-2-2h-2V4a2 2 0 00-2-2H9a2 2 0 00-2 2v4l-3.5 2.5a2 2 0 00-1 1.73V18a2 2 0 002 2h3m7 0H9m7 0a2 2 0 002-2v-4h-4m-5 6H9',
+  group: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+  chat: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+  search: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+  login: 'M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1',
+  external: 'M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14',
+  dollar: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+};
 ---
 
-      <!-- Mobile drawer backdrop -->
-      <div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300"></div>
+<!-- Mobile drawer backdrop -->
+<div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 invisible pointer-events-none transition-all duration-300 lg:hidden"></div>
 
-      <!-- Mobile drawer panel -->
-      <div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-[min(100vw,20rem)] max-w-full bg-canvas/95 backdrop-blur-2xl border-l border-hairline shadow-2xl translate-x-full invisible transition-all duration-300 ease-out overflow-y-auto">
-        <div class="flex justify-between items-center p-4 border-b border-hairline">
-          <span class="text-sm font-semibold text-ink tracking-tight">Menu</span>
-          <button id="mobile-close-btn" type="button" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Close menu">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-        <nav class="px-4 py-4" aria-label="Mobile navigation">
-          <div class="flex flex-col gap-1">
-            {navItems.map((item, i) => (
-              item.dropdown ? (
-                <div class="mobile-dropdown-group">
-                  <button data-mobile-dropdown class="flex items-center justify-between w-full px-4 py-3 text-sm text-ink font-medium hover:bg-surface rounded-full transition-all duration-200 translate-x-4 opacity-0 drawer-item" aria-expanded="false">
-                    <span>{item.label}</span>
-                    <svg class="mobile-chevron w-4 h-4 text-steel transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                  </button>
-                  <div class="mobile-dropdown-children overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-                    <div class="flex flex-col gap-0.5 pl-4 pr-2 pb-2 pt-1">
-                      {item.dropdown.map((child) => (
-                        <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors rounded-full ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
-                          {child.label}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <a href={item.href} class={`px-4 py-3 text-sm transition-colors rounded-full translate-x-4 opacity-0 drawer-item ${currentPath === item.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
-                  {item.label}
-                </a>
-              )
-            ))}
-          </div>
-          <div class="mt-6 pt-6 border-t border-hairline flex flex-col gap-3">
-            <a href={portalAppUrl} class="flex items-center justify-center w-full px-5 py-3 text-sm text-steel hover:text-ink font-medium rounded-full hover:bg-surface transition-colors">Log in</a>
-            <a href="/donate" class="flex items-center justify-center w-full px-5 py-3 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-colors">Donate</a>
-          </div>
-        </nav>
+<!-- Mobile drawer panel -->
+<div id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-[min(100vw,20rem)] max-w-full shadow-2xl overflow-y-auto bg-canvas lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <!-- Drawer Header -->
+  <div class="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-hairline bg-canvas">
+    <a href="/" class="flex items-center gap-2 shrink-0 group/logo">
+      <div class="relative">
+        <div class="absolute -inset-2 bg-accent/20 rounded-full blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+        <img src="/earth.webp" alt="" width="20" height="20" class="rounded-full flex-shrink-0 globe-glow relative" aria-hidden="true" />
       </div>
+      <span class="text-base font-bold tracking-tight text-ink">PLA</span>
+    </a>
+    <button id="mobile-close-btn" type="button" class="flex items-center justify-center w-10 h-10 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Close menu">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="px-4 pt-3 pb-2">
+    <div class="relative">
+      <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths.search}/></svg>
+      <input type="search" id="mobile-search" placeholder="Search pages..." class="w-full pl-9 pr-3 py-2.5 text-sm bg-surface text-ink placeholder:text-muted rounded-full border border-hairline focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-200" aria-label="Search pages" autocomplete="off" />
+    </div>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="px-3 py-2" aria-label="Mobile navigation">
+    <div class="flex flex-col gap-0.5">
+      {navItems.map((item, i) => (
+        item.dropdown ? (
+          <div class="mobile-dropdown-group">
+            <button data-mobile-dropdown class="drawer-item flex items-center justify-between w-full px-3 py-2.5 min-h-[44px] text-sm text-ink font-medium hover:bg-surface rounded-xl transition-all duration-200" aria-expanded="false">
+              <span class="flex items-center gap-3">
+                <svg class="w-[18px] h-[18px] text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[item.icon]}/></svg>
+                <span>{item.label}</span>
+              </span>
+              <svg class="mobile-chevron w-4 h-4 text-steel transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="mobile-dropdown-children overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+              <div class="flex flex-col gap-0.5 pl-3 pr-2 pb-2 pt-0.5">
+                {item.dropdown.map((child) => (
+                  <a href={child.href} class={`drawer-child flex items-center gap-3 px-3 py-2 min-h-[40px] text-sm rounded-lg transition-colors ${currentPath === child.href ? 'text-accent bg-accent/8 font-semibold' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
+                    <span class="w-1 h-1 rounded-full shrink-0 ${currentPath === child.href ? 'bg-accent' : 'bg-transparent'}"></span>
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a href={item.href} class={`drawer-item flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-sm rounded-xl transition-all duration-200 ${currentPath === item.href ? 'text-accent bg-accent/8 font-semibold' : 'text-ink hover:bg-surface hover:text-ink'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
+            <svg class="w-[18px] h-[18px] ${currentPath === item.href ? 'text-accent' : 'text-steel'} shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths[item.icon]}/></svg>
+            {item.label}
+          </a>
+        )
+      ))}
+    </div>
+  </nav>
+
+  <!-- Bottom Section -->
+  <div class="px-3 pb-4">
+    <!-- Donate CTA -->
+    <div class="px-3 pt-4 pb-3">
+      <a href="/donate" class="flex items-center justify-center gap-2 w-full px-5 py-3 min-h-[48px] bg-primary text-on-dark text-sm font-semibold rounded-full btn-pulse-glow hover:bg-charcoal transition-all duration-300 shadow-sm">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths.dollar}/></svg>
+        Donate Now
+      </a>
+    </div>
+
+    <!-- Portal Login -->
+    <div class="px-3 py-2 border-t border-hairline">
+      <a href={portalAppUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-3 py-2.5 min-h-[44px] text-sm text-steel hover:text-ink hover:bg-surface rounded-xl transition-all duration-200">
+        <svg class="w-[18px] h-[18px] text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={iconPaths.login}/></svg>
+        <span>Partner Portal</span>
+        <svg class="w-3.5 h-3.5 text-muted ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths.external}/></svg>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- Site header -->
 <header id="site-header" class="sticky top-0 z-30 nav-visible border-b border-hairline">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-1.5 shrink-0" aria-label="Peace League Africa Home">
+      <a href="/" class="flex items-center gap-2 shrink-0 group/logo" aria-label="Peace League Africa Home">
+        <div class="relative">
+          <div class="absolute -inset-2 bg-accent/20 rounded-full blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+          <img src="/earth.webp" alt="" width="20" height="20" class="rounded-full flex-shrink-0 globe-glow relative" aria-hidden="true" />
+        </div>
         <span class="text-lg font-bold tracking-tight text-ink">PLA</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="max-lg:hidden lg:flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-1">
         {navItems.map((item, idx) => (
           <>{item.dropdown ? (
             <div class="relative group">
@@ -113,7 +172,7 @@ const navItems = [
                 <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
               <div class="dropdown-menu-2 absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-52 dropdown-glass border border-hairline rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
-                <div class="py-1.5">
+                <div class="py-1">
                   {item.dropdown.map((child, cidx) => (
                     <a href={child.href} class={`block px-4 py-2.5 text-sm transition-colors ${cidx === 0 ? 'rounded-t-xl' : ''} ${cidx === item.dropdown.length - 1 ? 'rounded-b-xl' : ''} ${currentPath === child.href ? 'text-ink bg-surface font-medium' : 'text-steel hover:text-ink hover:bg-surface'}`} aria-current={currentPath === child.href ? 'page' : undefined}>
                       {child.label}
@@ -123,33 +182,32 @@ const navItems = [
               </div>
             </div>
           ) : (
-            <a href={item.href} class={`nav-link-underline px-3 py-2 text-sm transition-colors whitespace-nowrap ${currentPath === item.href ? 'text-ink bg-surface font-medium rounded-full' : 'text-steel hover:text-ink hover:bg-surface rounded-full'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
+            <a href={item.href} class={`nav-link-underline px-3 py-2 text-sm transition-all duration-200 whitespace-nowrap ${currentPath === item.href ? 'text-ink bg-surface font-medium rounded-full' : 'text-steel hover:text-ink hover:bg-surface rounded-full'}`} aria-current={currentPath === item.href ? 'page' : undefined}>
               {item.label}
             </a>
-          )}{idx < navItems.length - 1 ? <span class="text-hairline">|</span> : ''}</>
+          )}{idx < navItems.length - 1 ? <span class="w-px h-5 bg-hairline mx-0.5 shrink-0" aria-hidden="true"></span> : ''}</>
         ))}
       </div>
 
       <!-- Desktop Right Side -->
-      <div class="max-lg:hidden lg:flex items-center gap-3 shrink-0">
-        <a href={portalAppUrl} class="login-link text-sm text-steel hover:text-ink font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 px-2">Log in</a>
-        <button id="theme-toggle" type="button" class="w-8 h-8 min-w-[44px] min-h-[44px] flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
+      <div class="hidden lg:flex items-center gap-3 shrink-0">
+        <button id="theme-toggle" type="button" class="w-9 h-9 min-w-[44px] min-h-[44px] flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="theme-moon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
-        <a href="/donate" class="inline-flex items-center px-5 py-2 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 whitespace-nowrap">
+        <a href="/donate" class="inline-flex items-center px-5 py-2 min-h-[44px] bg-primary text-on-dark text-sm font-medium rounded-full btn-pulse-glow hover:bg-charcoal transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 whitespace-nowrap">
           Donate Now
         </a>
       </div>
 
       <!-- Mobile buttons -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button id="theme-toggle-mobile" type="button" class="w-8 h-8 min-w-[44px] min-h-[44px] flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
+        <button id="theme-toggle-mobile" type="button" class="w-9 h-9 min-w-[44px] min-h-[44px] flex items-center justify-center text-steel hover:text-ink hover:bg-surface rounded-full border border-hairline transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Switch to dark mode">
           <svg id="theme-sun-mobile" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="theme-moon-mobile" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
-        <button type="button" id="mobile-menu-btn" class="p-2 text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px] min-w-[44px] flex items-center justify-center" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button type="button" id="mobile-menu-btn" class="flex items-center justify-center w-10 h-10 min-w-[44px] min-h-[44px] text-steel hover:text-ink hover:bg-surface rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
@@ -171,10 +229,8 @@ const navItems = [
   .dropdown-menu-2 { transform: translateY(-4px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; }
   .group:hover .dropdown-menu-2,
   .dropdown-menu-2.active { transform: translateY(0); opacity: 1 !important; visibility: visible !important; }
-  #mobile-drawer.open .drawer-item {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
-  }
+  #mobile-drawer { transform: translateX(100%); }
+  #mobile-drawer.open { transform: translateX(0); }
 </style>
 
 <script>
@@ -183,6 +239,7 @@ const navItems = [
   const drawer = document.getElementById('mobile-drawer');
   const backdrop = document.getElementById('mobile-backdrop');
   const closeBtn = document.getElementById('mobile-close-btn');
+  const searchInput = document.getElementById('mobile-search');
 
   function openDrawer() {
     menuBtn.setAttribute('aria-expanded', 'true');
@@ -191,15 +248,25 @@ const navItems = [
     backdrop?.classList.add('opacity-100', 'visible', 'pointer-events-auto');
     drawer?.classList.add('open');
     document.body.classList.add('overflow-hidden');
+
     // Staggered animation for drawer items
-    drawer?.querySelectorAll('.drawer-item').forEach(function(el, idx) {
-      el.style.transition = 'all 0.3s ease-out ' + (idx * 60) + 'ms';
-      el.style.setProperty('transform', 'translateX(0)', 'important');
-      el.style.setProperty('opacity', '1', 'important');
+    const items = drawer?.querySelectorAll('.drawer-item');
+    items?.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateX(16px)';
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          el.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+          el.style.opacity = '1';
+          el.style.transform = 'translateX(0)';
+        }, 60 + i * 50);
+      });
     });
+
     // Focus close button
-    setTimeout(function() { closeBtn?.focus(); }, 100);
+    setTimeout(() => closeBtn?.focus(), 100);
   }
+
   function closeDrawer() {
     menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.setAttribute('aria-label', 'Open menu');
@@ -207,11 +274,18 @@ const navItems = [
     backdrop?.classList.add('opacity-0', 'invisible', 'pointer-events-none');
     drawer?.classList.remove('open');
     document.body.classList.remove('overflow-hidden');
-    drawer?.querySelectorAll('.drawer-item').forEach(function(el) {
-      el.style.setProperty('transform', 'translateX(16px)', 'important');
-      el.style.setProperty('opacity', '0', 'important');
+
+    // Reset staggered items
+    drawer?.querySelectorAll('.drawer-item').forEach(el => {
+      el.style.opacity = '';
+      el.style.transform = '';
+      el.style.transition = '';
     });
+
+    // Return focus to menu button
+    menuBtn?.focus();
   }
+
   function toggleDrawer() {
     if (drawer?.classList.contains('open')) {
       closeDrawer();
@@ -223,18 +297,27 @@ const navItems = [
   menuBtn?.addEventListener('click', toggleDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
+
+  // Escape closes drawer, Trap focus inside drawer
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer?.classList.contains('open')) { closeDrawer(); menuBtn?.focus(); }
-    // Focus trap: keep focus inside drawer while open
+    if (e.key === 'Escape' && drawer?.classList.contains('open')) {
+      closeDrawer();
+    }
     if (e.key === 'Tab' && drawer?.classList.contains('open')) {
-      const focusable = drawer.querySelectorAll('button:not([disabled]), a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if (focusable.length === 0) return;
+      const focusable = drawer?.querySelectorAll('button, a, input, [tabindex]:not([tabindex="-1"])');
+      if (!focusable || focusable.length === 0) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last?.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first?.focus();
+      }
     }
   });
+
   drawer?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDrawer));
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 1024 && drawer?.classList.contains('open')) {

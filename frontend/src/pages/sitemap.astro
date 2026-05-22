@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const pages = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us', desc: 'Mission, history, values, and impact' },
+  { href: '/team', label: 'Our Team' },
+  { href: '/causes', label: 'All Causes' },
+  { href: '/causes?category=Education', label: 'Peace Education' },
+  { href: '/causes?category=Health', label: 'Healthcare' },
+  { href: '/causes?category=Water', label: 'Clean Water' },
+  { href: '/causes?category=Youth', label: 'Youth Programs' },
+  { href: '/causes?category=Agriculture', label: 'Agriculture' },
+  { href: '/donate', label: 'Donate' },
+  { href: '/volunteer', label: 'Volunteer' },
+  { href: '/partner', label: 'Partner With Us' },
+  { href: '/careers', label: 'Careers' },
+  { href: '/events', label: 'Events' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact Us' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms of Service' },
+];
+---
+
+<Layout title="Sitemap" description="Complete sitemap of Peace League Africa — find every page on our website.">
+  <Navigation />
+  
+  <main id="main-content">
+    <section class="hero-gradient hero-pattern text-white py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Sitemap</h1>
+        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">Everything on Peace League Africa, all in one place.</p>
+      <div class="parallax-layer" aria-hidden="true">
+        <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+        <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
+      </div>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="scroll-reveal bg-canvas/80 backdrop-blur-xl rounded-2xl border border-hairline p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {pages.map((page, i) => (
+              <a href={page.href} class="group flex items-center gap-3 p-4 rounded-xl border border-hairline hover:border-accent/30 hover:bg-accent/5 transition-all duration-200">
+                <span class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent text-sm font-semibold shrink-0 group-hover:bg-accent/20 transition-colors">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <span class="text-sm font-medium text-ink group-hover:text-accent transition-colors">{page.label}</span>
+                  {page.desc && <p class="text-xs text-steel mt-0.5">{page.desc}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

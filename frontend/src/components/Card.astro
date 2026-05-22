@@ -1,0 +1,51 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  icon?: string;
+  href?: string;
+  variant?: "default" | "surface" | "bordered";
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  icon,
+  href,
+  variant = "default",
+  class: className = "",
+} = Astro.props;
+
+const variantClasses: Record<string, string> = {
+  default: "bg-canvas border border-hairline shadow-sm hover:border-accent/30 hover:shadow-lg",
+  surface: "bg-surface border border-hairline",
+  bordered: "bg-canvas border-2 border-hairline hover:border-accent/40 hover:shadow-lg",
+};
+
+const Tag = href ? "a" : "div";
+const linkProps = href ? { href } : {};
+---
+
+<Tag
+  {...linkProps}
+  class={`group block rounded-lg p-6 transition-micro hover:scale-[1.02] hover:shadow-xl ${variantClasses[variant]} press-effect ${className}`}
+>
+  {icon && (
+    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent text-2xl group-hover:bg-accent/20 group-hover:scale-105 transition-all duration-200">
+      {icon}
+    </div>
+  )}
+  <h3 class="text-lg font-semibold text-ink mb-2 group-hover:text-accent transition-colors">
+    {title}
+  </h3>
+  {description && (
+    <p class="text-sm text-steel leading-relaxed">{description}</p>
+  )}
+  {href && (
+    <span class="mt-3 inline-flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      Learn more
+      <svg class="ml-1 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </span>
+  )}
+</Tag>

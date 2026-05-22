@@ -1,0 +1,258 @@
+---
+const { width = "100%", height = "auto" } = Astro.props;
+
+const hubX = 305;
+const hubY = 335;
+
+const countries = [
+  { code: "KE", name: "Kenya", x: 305, y: 335, delay: 0 },
+  { code: "UG", name: "Uganda", x: 285, y: 325, delay: 0.3 },
+  { code: "TZ", name: "Tanzania", x: 310, y: 370, delay: 0.6 },
+  { code: "RW", name: "Rwanda", x: 280, y: 345, delay: 0.9 },
+  { code: "BI", name: "Burundi", x: 276, y: 358, delay: 1.2 },
+  { code: "SS", name: "South Sudan", x: 290, y: 290, delay: 1.5 },
+  { code: "ET", name: "Ethiopia", x: 318, y: 265, delay: 1.8 },
+  { code: "SO", name: "Somalia", x: 358, y: 270, delay: 2.1 },
+  { code: "CD", name: "DR Congo", x: 248, y: 350, delay: 2.4 },
+  { code: "SD", name: "Sudan", x: 296, y: 236, delay: 2.7 },
+  { code: "ER", name: "Eritrea", x: 334, y: 230, delay: 3.0 },
+  { code: "DJ", name: "Djibouti", x: 352, y: 242, delay: 3.3 },
+];
+
+const lines = countries.filter(c => c.code !== "KE");
+const countryDots = countries.filter(c => c.code !== "KE");
+---
+
+<div class="africa-map-wrapper" style={{ width, height }}>
+  <svg viewBox="0 0 600 600" class="africa-map-svg" role="img" aria-label="Map of Africa showing Peace League's 12 countries of operation">
+    <defs>
+      <radialGradient id="hub-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#00d4a4" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#00d4a4" stop-opacity="0" />
+      </radialGradient>
+      <filter id="dot-glow">
+        <feGaussianBlur stdDeviation="2" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <path class="continent-fill" d="M 200,112 Q 192,118 188,126 Q 184,134 180,142 Q 176,150 174,158 Q 172,166 170,174 Q 168,182 166,188 Q 164,194 165,200 Q 168,206 172,212 Q 176,218 180,224 Q 184,230 188,236 Q 184,240 180,244 Q 176,248 178,252 Q 182,256 188,260 Q 194,264 200,268 Q 206,272 210,278 Q 214,284 216,292 Q 218,300 220,310 Q 222,320 224,330 Q 226,340 228,350 Q 230,360 232,370 Q 234,380 236,390 Q 238,400 240,410 Q 242,420 246,430 Q 250,438 256,444 Q 262,450 268,454 Q 274,456 280,452 Q 286,446 292,438 Q 296,428 300,418 Q 304,408 308,396 Q 312,384 316,372 Q 320,358 322,346 Q 324,334 326,322 Q 328,310 332,298 Q 336,288 340,278 Q 344,268 350,260 Q 356,252 362,246 Q 366,240 370,234 Q 374,226 372,218 Q 368,210 362,204 Q 356,198 350,192 Q 344,186 338,182 Q 332,178 326,176 Q 320,174 314,172 Q 308,170 302,168 Q 296,166 288,164 Q 280,162 272,160 Q 264,158 256,156 Q 248,154 240,152 Q 232,150 224,148 Q 216,146 208,144 Q 200,140 194,134 Q 190,128 196,122 Q 198,116 200,112 Z" />
+    <path class="continent-stroke" d="M 200,112 Q 192,118 188,126 Q 184,134 180,142 Q 176,150 174,158 Q 172,166 170,174 Q 168,182 166,188 Q 164,194 165,200 Q 168,206 172,212 Q 176,218 180,224 Q 184,230 188,236 Q 184,240 180,244 Q 176,248 178,252 Q 182,256 188,260 Q 194,264 200,268 Q 206,272 210,278 Q 214,284 216,292 Q 218,300 220,310 Q 222,320 224,330 Q 226,340 228,350 Q 230,360 232,370 Q 234,380 236,390 Q 238,400 240,410 Q 242,420 246,430 Q 250,438 256,444 Q 262,450 268,454 Q 274,456 280,452 Q 286,446 292,438 Q 296,428 300,418 Q 304,408 308,396 Q 312,384 316,372 Q 320,358 322,346 Q 324,334 326,322 Q 328,310 332,298 Q 336,288 340,278 Q 344,268 350,260 Q 356,252 362,246 Q 366,240 370,234 Q 374,226 372,218 Q 368,210 362,204 Q 356,198 350,192 Q 344,186 338,182 Q 332,178 326,176 Q 320,174 314,172 Q 308,170 302,168 Q 296,166 288,164 Q 280,162 272,160 Q 264,158 256,156 Q 248,154 240,152 Q 232,150 224,148 Q 216,146 208,144 Q 200,140 194,134 Q 190,128 196,122 Q 198,116 200,112 Z" />
+    <!-- Madagascar -->
+    <path class="continent-fill" d="M 348,406 Q 354,400 356,414 Q 358,428 352,436 Q 346,442 342,430 Q 340,416 348,406 Z" />
+    <path class="continent-stroke" d="M 348,406 Q 354,400 356,414 Q 358,428 352,436 Q 346,442 342,430 Q 340,416 348,406 Z" />
+
+    {lines.map((c, i) => (
+      <line
+        class="connection-line"
+        x1={hubX}
+        y1={hubY}
+        x2={c.x}
+        y2={c.y}
+        style={{ animationDelay: `${0.5 + i * 0.15}s` }}
+      />
+    ))}
+
+    <circle cx={hubX} cy={hubY} r="36" fill="url(#hub-glow)" class="hub-glow-pulse" />
+
+    <g class="hub-dot" data-name="Nairobi, Kenya">
+      <circle cx={hubX} cy={hubY} r="7" fill="#00d4a4" filter="url(#dot-glow)" />
+      <circle cx={hubX} cy={hubY} r="7" fill="none" stroke="#00d4a4" stroke-width="2" class="hub-ring" />
+    </g>
+
+    {countryDots.map(c => (
+      <g class="country-dot" data-name={c.name} style={{ '--pulse-delay': `${c.delay}s`, '--pulse-duration': `${2.5 + (c.delay % 1.5)}s` }}>
+        <circle cx={c.x} cy={c.y} r="4" fill="#00d4a4" class="dot-ring" />
+        <circle cx={c.x} cy={c.y} r="4" fill="#00d4a4" filter="url(#dot-glow)" class="dot-core" />
+      </g>
+    ))}
+  </svg>
+
+  <div class="map-tooltip" id="map-tooltip" role="tooltip">
+    <span id="map-tooltip-text"></span>
+  </div>
+</div>
+
+<style>
+  .africa-map-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .africa-map-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .continent-fill {
+    fill: rgba(0, 212, 164, 0.06);
+    transition: fill 0.3s ease;
+  }
+
+  .continent-stroke {
+    fill: none;
+    stroke: rgba(0, 212, 164, 0.25);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .connection-line {
+    stroke: rgba(0, 212, 164, 0.35);
+    stroke-width: 1;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw-line 1.8s ease-out forwards;
+  }
+
+  @keyframes draw-line {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .hub-glow-pulse {
+    animation: hub-glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes hub-glow-pulse {
+    0%, 100% {
+      opacity: 0.6;
+      r: 36;
+    }
+    50% {
+      opacity: 1;
+      r: 45;
+    }
+  }
+
+  .hub-ring {
+    animation: hub-ring-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes hub-ring-pulse {
+    0%, 100% {
+      r: 7;
+      opacity: 0.6;
+    }
+    50% {
+      r: 14;
+      opacity: 0;
+    }
+  }
+
+  .country-dot {
+    cursor: pointer;
+  }
+
+  .dot-core {
+    animation: dot-pulse var(--pulse-duration, 3s) ease-in-out infinite;
+    animation-delay: var(--pulse-delay, 0s);
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% {
+      r: 4;
+      opacity: 1;
+    }
+    50% {
+      r: 6.5;
+      opacity: 0.75;
+    }
+  }
+
+  .dot-ring {
+    animation: dot-ring-pulse var(--pulse-duration, 3s) ease-in-out infinite;
+    animation-delay: var(--pulse-delay, 0s);
+  }
+
+  @keyframes dot-ring-pulse {
+    0%, 100% {
+      r: 4;
+      opacity: 0.4;
+    }
+    50% {
+      r: 11;
+      opacity: 0;
+    }
+  }
+
+  .map-tooltip {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -100%);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    background: #1a1a2e;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 20;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .map-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #1a1a2e;
+  }
+</style>
+
+<script>
+  (function () {
+    var tooltip = document.getElementById("map-tooltip");
+    var tooltipText = document.getElementById("map-tooltip-text");
+    if (!tooltip || !tooltipText) return;
+
+    var wrapper = tooltip.closest(".africa-map-wrapper");
+    if (!wrapper) return;
+
+    function showTooltip(e, name) {
+      var dot = e.currentTarget;
+      var circle = dot.querySelector("circle");
+      if (!circle) return;
+
+      var dotRect = circle.getBoundingClientRect();
+      var wrapperRect = wrapper.getBoundingClientRect();
+
+      tooltipText.textContent = name;
+      tooltip.style.display = "block";
+      tooltip.style.left = dotRect.left - wrapperRect.left + dotRect.width / 2 + "px";
+      tooltip.style.top = dotRect.top - wrapperRect.top - 6 + "px";
+    }
+
+    function hideTooltip() {
+      tooltip.style.display = "none";
+    }
+
+    document.querySelectorAll(".country-dot, .hub-dot").forEach(function (el) {
+      el.addEventListener("mouseenter", function (e) {
+        showTooltip(e, el.dataset.name);
+      });
+      el.addEventListener("mouseleave", hideTooltip);
+      el.addEventListener("mousemove", function (e) {
+        var dotRect = el.querySelector("circle").getBoundingClientRect();
+        var wrapperRect = wrapper.getBoundingClientRect();
+        tooltip.style.left = dotRect.left - wrapperRect.left + dotRect.width / 2 + "px";
+        tooltip.style.top = dotRect.top - wrapperRect.top - 6 + "px";
+      });
+      el.addEventListener("focus", function (e) {
+        showTooltip(e, el.dataset.name);
+      });
+      el.addEventListener("blur", hideTooltip);
+      el.setAttribute("tabindex", "0");
+      el.setAttribute("role", "button");
+    });
+  })();
+</script>

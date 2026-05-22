@@ -5,7 +5,7 @@ import os
 def execute():
     app_path = frappe.get_app_path("peace_league_website")
 
-    DOC_TYPES = ["Program", "Chapter", "Volunteer", "Donation"]
+    DOC_TYPES = ["Program", "Chapter", "Volunteer"]
 
     for doctype in DOC_TYPES:
         json_path = os.path.join(app_path, "doctype", doctype.lower(), f"{doctype.lower()}.json")

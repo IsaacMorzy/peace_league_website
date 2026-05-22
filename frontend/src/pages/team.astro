@@ -19,15 +19,27 @@ const boardMembers = [
 ];
 ---
 
-<Layout title="Our Team — Peace League Africa">
+<Layout title="Our Team" description="Meet the dedicated team behind Peace League Africa. Our leadership and board are committed to building lasting peace across 12 African countries.">
   <Navigation />
 
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Our Team", "item": "https://peaceleagueafrica.org/team" }
+      ]
+    })} />
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Team</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl">Meet the dedicated individuals working tirelessly to build peace across Africa.</p>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">Six passionate leaders, decades of combined experience, one relentless mission: turning conflict into lasting peace across 12 African countries.</p>
+        </div>
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+          <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
         </div>
       </div>
     </section>
@@ -35,7 +47,7 @@ const boardMembers = [
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Leadership Team</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">A passionate group of professionals committed to our mission.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Experienced professionals united by a single purpose: building a more peaceful Africa for every child, every family, every community.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, idx) => (
             <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group" style={`animation-delay: ${idx * 80}ms`}>
@@ -93,7 +105,7 @@ const boardMembers = [
     <section class="py-16 hero-gradient text-white hero-pattern">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Join Our Team</h2>
-        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Passionate about building peace? We are always looking for dedicated individuals to join our mission.</p>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Your next chapter starts here. Join a team that turns passion into purpose across 12 countries and 500+ communities.</p>
         <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/careers" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
             View Openings

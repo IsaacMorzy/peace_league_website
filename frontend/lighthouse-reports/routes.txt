@@ -1,0 +1,17 @@
+/
+/about
+/blog
+/careers
+/causes
+/contact
+/donate
+/events
+/faq
+/gallery
+/partner
+/privacy
+/sitemap
+/team
+/terms
+/testimonials
+/volunteer

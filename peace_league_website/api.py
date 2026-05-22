@@ -400,7 +400,8 @@ def mpesa_donation_callback(**kwargs):
     """Callback endpoint for Safaricom M-Pesa STK Push results."""
     try:
         frappe.flags.ignore_permissions = True
-        body = frappe._dict(kwargs.get("Body", {}))
+        raw = frappe.get_json()
+        body = frappe._dict(raw.get("Body", {}))
         stk_callback = frappe._dict(body.get("stkCallback", {}))
 
         checkout_request_id = stk_callback.get("CheckoutRequestID")

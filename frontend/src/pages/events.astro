@@ -19,15 +19,42 @@ const pastEvents = [
 ];
 ---
 
-<Layout title="Events — Peace League Africa">
+<Layout title="Events" description="Join Peace League Africa for peace-building events, community gatherings, and fundraisers across East Africa. Upcoming workshops, health fairs, and more.">
   <Navigation />
 
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://peaceleagueafrica.org/events" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "EventSeries",
+      "name": "Peace League Africa Events",
+      "description": "Peace-building events, community gatherings, and fundraising initiatives across Africa and beyond.",
+      "event": upcomingEvents.map(e => ({
+        "@type": "Event",
+        "name": e.title,
+        "description": e.desc,
+        "location": { "@type": "Place", "name": e.location },
+        "startDate": "2026-" + ({
+          "Jun": "06", "Jul": "07", "Aug": "08", "Sep": "09", "Oct": "10", "Nov": "11"
+        }[e.month] || "06") + "-" + e.day
+      }))
+    })} />
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Events</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl">Join us for peace-building events, community gatherings, and fundraising initiatives across Africa and beyond.</p>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">From peace summits in Nairobi to health fairs in Kampala — find an event near you and be part of the change across 12 countries.</p>
+        </div>
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+          <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
         </div>
       </div>
     </section>
@@ -48,7 +75,7 @@ const pastEvents = [
 
         <div id="events-upcoming">
           <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Upcoming Events</h2>
-          <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Mark your calendar and be part of the change.</p>
+          <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Mark your calendar. Bring your passion. Be part of building lasting peace across East Africa.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {upcomingEvents.map((event, idx) => (
               <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group" style={`animation-delay: ${idx * 80}ms`}>
@@ -67,7 +94,7 @@ const pastEvents = [
                   <h3 class="text-lg font-semibold text-ink mb-2">{event.title}</h3>
                   <p class="text-sm text-steel leading-relaxed mb-4">{event.desc}</p>
                   <a href="/contact" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep transition-colors py-2">
-                    Register
+                    Register Now
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </a>
                 </div>
@@ -101,11 +128,11 @@ const pastEvents = [
     <section class="py-16 hero-gradient text-white hero-pattern">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Stay Updated</h2>
-        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Get notified about upcoming events and peace-building opportunities.</p>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Never miss a chance to build peace. Get notified about upcoming events, workshops, and volunteer opportunities in your region.</p>
         <form class="scroll-reveal max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-          <input type="email" placeholder="Your email address" class="w-full sm:flex-1 min-w-0 px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-md text-white placeholder:text-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+          <input type="email" placeholder="Your email address" aria-label="Email address" class="w-full sm:flex-1 min-w-0 px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-md text-white placeholder:text-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
           <button type="submit" class="w-full sm:w-auto px-5 py-2.5 text-sm font-medium bg-accent text-on-dark rounded-full hover:bg-accent-deep transition-colors whitespace-nowrap cursor-pointer">
-            Subscribe
+            Get Event Updates
           </button>
         </form>
       </div>

@@ -24,15 +24,27 @@ const whyStats = [
 ];
 ---
 
-<Layout title="Careers — Peace League Africa">
+<Layout title="Careers" description="Join Peace League Africa's team and turn your passion for peace into a career. View open positions in programs, health, communications, and operations.">
   <Navigation />
 
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Careers", "item": "https://peaceleagueafrica.org/careers" }
+      ]
+    })} />
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Join Our Team</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl">Turn your passion for peace into a career. Work alongside dedicated people making a real difference across Africa.</p>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">Turn your passion into a paycheck with purpose. Join 50+ team members working across 12 countries to build peace, one community at a time.</p>
+        </div>
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+          <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
         </div>
       </div>
     </section>
@@ -40,7 +52,7 @@ const whyStats = [
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Why Work With Us</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-4">More than a job — an opportunity to build peace every day.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-4">Every role directly contributes to transforming lives. More than a job — a calling.</p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-3xl mx-auto">
           {whyStats.map((s, idx) => (
             <div class="scroll-reveal text-center bg-surface rounded-2xl border border-hairline p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style={`animation-delay: ${idx * 60}ms`}>
@@ -74,7 +86,7 @@ const whyStats = [
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Open Positions</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Join us in building peace across Africa.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Find a role where your skills meet Africa's greatest needs — peace, health, education, and opportunity.</p>
         <div class="max-w-4xl mx-auto space-y-6">
           {jobs.map((job, idx) => (
             <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-accent/20" style={`animation-delay: ${idx * 80}ms`}>
@@ -108,8 +120,8 @@ const whyStats = [
     <section class="py-16 hero-gradient text-white hero-pattern">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Volunteer Opportunities</h2>
-        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-4">Not looking for a full-time role? You can still make a difference.</p>
-        <p class="scroll-reveal text-white/70 text-sm max-w-xl mx-auto mb-8">We welcome volunteers with skills in teaching, healthcare, communications, IT, logistics, and more. Whether you can give a few hours a week or join a field mission, your time creates peace.</p>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-4">Not ready for a full-time role? Your impact can start this weekend.</p>
+        <p class="scroll-reveal text-white/70 text-sm max-w-xl mx-auto mb-8">We welcome volunteers with skills in teaching, healthcare, communications, IT, logistics, and more. Whether you can give 2 hours a week or join a 2-month field mission, your time creates peace.</p>
         <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/volunteer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
             View Volunteer Opportunities

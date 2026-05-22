@@ -18,15 +18,27 @@ const galleryImages = [
 ];
 ---
 
-<Layout title="Gallery — Peace League Africa">
+<Layout title="Gallery" description="Browse Peace League Africa's photo gallery featuring peace education, community health, clean water, and youth empowerment moments from across Africa.">
   <Navigation />
 
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://peaceleagueafrica.org/gallery" }
+      ]
+    })} />
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Gallery</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl">Moments of impact, joy, and peace-building captured across Africa.</p>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">From a child's first day at school to a community's first clean water well — see the faces and places behind 10 years of peace-building across Africa.</p>
+        </div>
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+          <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
         </div>
       </div>
     </section>
@@ -63,7 +75,7 @@ const galleryImages = [
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Follow Us</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">See more stories and updates from the field on social media.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Follow our journey across 12 countries — daily stories of hope, resilience, and peace-building from the field.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <div class="scroll-reveal bg-canvas rounded-2xl border border-hairline p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -96,7 +108,7 @@ const galleryImages = [
     <section class="py-16 hero-gradient text-white hero-pattern">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Share Your Photos</h2>
-        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Tag us in your peace-building moments. Use <span class="text-accent font-semibold">#PeaceBuiltHere</span> to be featured.</p>
+        <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Your peace-building moments deserve to be seen. Tag us and use <span class="text-accent font-semibold">#PeaceBuiltHere</span> to be featured across our channels.</p>
         <div class="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
             Follow on Instagram

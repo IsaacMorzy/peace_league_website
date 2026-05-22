@@ -1,0 +1,215 @@
+{
+  "generatedAt": "2026-05-15T13:38:37.766Z",
+  "baseUrl": "http://127.0.0.1:4321",
+  "routes": [
+    "/",
+    "/about",
+    "/blog",
+    "/careers",
+    "/causes",
+    "/contact",
+    "/donate",
+    "/events",
+    "/faq",
+    "/gallery",
+    "/partner",
+    "/privacy",
+    "/sitemap",
+    "/team",
+    "/terms",
+    "/testimonials",
+    "/volunteer"
+  ],
+  "results": {
+    "mobile": {
+      "/": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/about": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/blog": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/careers": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/causes": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/contact": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/donate": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/events": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/faq": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/gallery": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/partner": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/privacy": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/sitemap": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/team": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/terms": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/testimonials": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      },
+      "/volunteer": {
+        "performance": 0,
+        "accessibility": 0,
+        "bestPractices": 0,
+        "seo": 0,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "inp": null,
+        "networkRequests": null
+      }
+    },
+    "desktop": {}
+  }
+}

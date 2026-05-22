@@ -37,6 +37,20 @@ const footerLinks = {
     { label: 'Sitemap', href: '/sitemap' },
   ],
 };
+
+const FLAG_COUNTRIES = [
+  { code: "dz", name: "Algeria" }, { code: "ao", name: "Angola" }, { code: "bj", name: "Benin" }, { code: "bw", name: "Botswana" }, { code: "bf", name: "Burkina Faso" },
+  { code: "bi", name: "Burundi" }, { code: "cv", name: "Cape Verde" }, { code: "cm", name: "Cameroon" }, { code: "cf", name: "Central African Republic" }, { code: "td", name: "Chad" },
+  { code: "km", name: "Comoros" }, { code: "cg", name: "Congo" }, { code: "cd", name: "Democratic Republic of the Congo" }, { code: "ci", name: "Côte d'Ivoire" }, { code: "dj", name: "Djibouti" },
+  { code: "eg", name: "Egypt" }, { code: "gq", name: "Equatorial Guinea" }, { code: "er", name: "Eritrea" }, { code: "sz", name: "Eswatini" }, { code: "et", name: "Ethiopia" },
+  { code: "ga", name: "Gabon" }, { code: "gm", name: "Gambia" }, { code: "gh", name: "Ghana" }, { code: "gn", name: "Guinea" }, { code: "gw", name: "Guinea-Bissau" },
+  { code: "ke", name: "Kenya" }, { code: "ls", name: "Lesotho" }, { code: "lr", name: "Liberia" }, { code: "ly", name: "Libya" }, { code: "mg", name: "Madagascar" },
+  { code: "mw", name: "Malawi" }, { code: "ml", name: "Mali" }, { code: "mr", name: "Mauritania" }, { code: "mu", name: "Mauritius" }, { code: "ma", name: "Morocco" },
+  { code: "mz", name: "Mozambique" }, { code: "na", name: "Namibia" }, { code: "ne", name: "Niger" }, { code: "ng", name: "Nigeria" }, { code: "rw", name: "Rwanda" },
+  { code: "st", name: "São Tomé and Príncipe" }, { code: "sn", name: "Senegal" }, { code: "sc", name: "Seychelles" }, { code: "sl", name: "Sierra Leone" }, { code: "so", name: "Somalia" },
+  { code: "za", name: "South Africa" }, { code: "ss", name: "South Sudan" }, { code: "sd", name: "Sudan" }, { code: "tz", name: "Tanzania" }, { code: "tg", name: "Togo" },
+  { code: "tn", name: "Tunisia" }, { code: "ug", name: "Uganda" }, { code: "zm", name: "Zambia" }, { code: "zw", name: "Zimbabwe" },
+];
 ---
 
 <footer class="bg-canvas mt-auto relative overflow-hidden">
@@ -49,7 +63,7 @@ const footerLinks = {
   <button
     id="footer-back-to-top"
     type="button"
-    class="w-full text-center py-3 cursor-pointer"
+    class="w-full text-center py-3 min-h-[44px] cursor-pointer"
     aria-label="Back to top"
   >
     <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-hairline text-steel hover:text-accent hover:border-accent/30 transition-all shadow-sm">
@@ -62,7 +76,11 @@ const footerLinks = {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
       <!-- Brand column -->
       <div class="lg:col-span-4 scroll-reveal">
-        <a href="/" class="inline-flex items-baseline gap-2 mb-6" aria-label="Peace League Africa Home">
+        <a href="/" class="inline-flex items-center gap-2 mb-6 group/logo" aria-label="Peace League Africa Home">
+          <div class="relative">
+            <div class="absolute -inset-3 bg-accent/20 rounded-full blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+            <img src="/earth.webp" alt="" width="32" height="32" class="rounded-full flex-shrink-0 globe-glow relative" aria-hidden="true" />
+          </div>
           <span class="text-lg font-semibold tracking-tight text-ink">Peace League</span>
           <span class="text-sm text-steel font-medium">Africa</span>
         </a>
@@ -108,9 +126,9 @@ const footerLinks = {
           <ul class="flex flex-col gap-1">
             {footerLinks.about.map(link => (
               <li>
-                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
-                  {link.label}
-                </a>
+        <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1.5 inline-block">
+          {link.label}
+        </a>
               </li>
             ))}
           </ul>
@@ -121,9 +139,9 @@ const footerLinks = {
           <ul class="flex flex-col gap-1">
             {footerLinks.causes.map(link => (
               <li>
-                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
-                  {link.label}
-                </a>
+        <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1.5 inline-block">
+          {link.label}
+        </a>
               </li>
             ))}
           </ul>
@@ -134,9 +152,9 @@ const footerLinks = {
           <ul class="flex flex-col gap-1">
             {footerLinks.getInvolved.map(link => (
               <li>
-                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
-                  {link.label}
-                </a>
+        <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1.5 inline-block">
+          {link.label}
+        </a>
               </li>
             ))}
           </ul>
@@ -147,9 +165,9 @@ const footerLinks = {
           <ul class="flex flex-col gap-1">
             {footerLinks.community.map(link => (
               <li>
-                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
-                  {link.label}
-                </a>
+        <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1.5 inline-block">
+          {link.label}
+        </a>
               </li>
             ))}
           </ul>
@@ -160,9 +178,9 @@ const footerLinks = {
           <ul class="flex flex-col gap-1">
             {footerLinks.support.map(link => (
               <li>
-                <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1 inline-block">
-                  {link.label}
-                </a>
+        <a href={link.href} class="footer-link-underline text-sm text-steel hover:text-ink transition-colors py-1.5 inline-block">
+          {link.label}
+        </a>
               </li>
             ))}
           </ul>
@@ -173,12 +191,20 @@ const footerLinks = {
 
   <!-- Copyright bar -->
   <div class="border-t border-hairline">
+    <!-- Country flags row -->
+    <div class="overflow-hidden relative h-12 flex items-center">
+      <div class="flex gap-8 animate-marquee whitespace-nowrap items-center opacity-30">
+        {FLAG_COUNTRIES.map(({ code, name }) => (
+          <img src={`https://flagcdn.com/w40/${code}.png`} alt={`Flag of ${name}`} width="28" height="21" class="inline-block rounded-sm" loading="lazy" />
+        ))}
+      </div>
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-steel">
         <p>&copy; {currentYear} Peace League Africa. All rights reserved.</p>
         <p class="inline-flex items-center gap-2">
           <span class="inline-block w-2 h-2 rounded-full bg-accent animate-heartbeat"></span>
-          <span class="bg-gradient-to-r from-accent to-accent-warm bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-text">Peace Built Here</span>
+          <span class="text-accent font-semibold">Peace Built Here</span>
         </p>
       </div>
     </div>
@@ -190,6 +216,12 @@ const footerLinks = {
   <div class="footer-bubble-up-slow" style="width:12px;height:12px;left:60%;bottom:8%;background:var(--color-accent);animation-delay:4s;animation-duration:11s"></div>
   <div class="footer-bubble-up" style="width:8px;height:8px;left:78%;bottom:12%;background:var(--color-accent-warm);animation-delay:2s;animation-duration:9s"></div>
   <div class="footer-bubble-up-slow" style="width:16px;height:16px;left:92%;bottom:6%;background:var(--color-accent-soft);animation-delay:5s;animation-duration:12s"></div>
+  <!-- Footer floating hearts -->
+  <span class="footer-heart-float" style="left:15%;bottom:5%;animation-delay:1.5s;font-size:1rem;">&#x2764;</span>
+  <span class="footer-heart-float" style="left:35%;bottom:12%;animation-delay:4s;font-size:0.875rem;">&#x2764;</span>
+  <span class="footer-heart-float" style="left:50%;bottom:8%;animation-delay:2.5s;font-size:1.125rem;">&#x2764;</span>
+  <span class="footer-heart-float" style="left:70%;bottom:3%;animation-delay:5.5s;font-size:0.95rem;">&#x2764;</span>
+  <span class="footer-heart-float" style="left:85%;bottom:10%;animation-delay:3.5s;font-size:0.8rem;">&#x2764;</span>
 </footer>
 
 <script>
@@ -213,3 +245,20 @@ const footerLinks = {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+
+<style>
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.footer-heart-float {
+  position: absolute;
+  pointer-events: none;
+  animation: footer-heart-rise 9s ease-in-out infinite;
+  color: rgba(245,158,11,0.3);
+  z-index: 0;
+}
+@keyframes footer-heart-rise {
+  0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 0; }
+  15% { opacity: 0.7; }
+  85% { opacity: 0.5; }
+  100% { transform: translateY(-120vh) rotate(360deg) scale(1); opacity: 0; }
+}
+</style>

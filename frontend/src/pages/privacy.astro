@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy" description="Peace League Africa Privacy Policy. How we collect, use, and protect your personal information.">
+  <Navigation />
+  
+  <main id="main-content">
+    <section class="hero-gradient hero-pattern text-white py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Privacy Policy</h1>
+        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">Last updated: January 2026</p>
+      <div class="parallax-layer" aria-hidden="true">
+        <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+        <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
+      </div>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="scroll-reveal bg-canvas/80 backdrop-blur-xl rounded-2xl border border-hairline p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.06)] prose prose-sm max-w-none text-steel">
+          <h2 class="text-2xl font-bold text-ink mt-0">1. Information We Collect</h2>
+          <p>We collect personal information you voluntarily provide when you donate, volunteer, subscribe to our newsletter, or contact us. This may include your name, email address, phone number, billing information, and any messages you send us.</p>
+
+          <h2 class="text-2xl font-bold text-ink">2. How We Use Your Information</h2>
+          <p>We use your information to process donations, communicate about our programs, send receipts and impact updates, respond to inquiries, and improve our services. We never sell your personal data to third parties.</p>
+
+          <h2 class="text-2xl font-bold text-ink">3. Payment Processing</h2>
+          <p>Donation payments are processed securely through third-party payment providers. We do not store full credit card numbers or M-Pesa credentials on our servers. Payment data is handled directly by our payment partners in compliance with PCI security standards.</p>
+
+          <h2 class="text-2xl font-bold text-ink">4. Data Retention</h2>
+          <p>We retain your personal information only as long as necessary to fulfill the purposes described in this policy, or as required by law. Donation records are retained for financial reporting and tax purposes.</p>
+
+          <h2 class="text-2xl font-bold text-ink">5. Your Rights</h2>
+          <p>You have the right to access, correct, or request deletion of your personal data. To exercise these rights, please <a href="/contact" class="text-accent hover:text-accent-deep underline">contact us</a>. We will respond within 30 days.</p>
+
+          <h2 class="text-2xl font-bold text-ink">6. Cookies</h2>
+          <p>Our website uses minimal cookies for essential functionality and analytics. We do not use tracking cookies for advertising. You can disable cookies in your browser settings.</p>
+
+          <h2 class="text-2xl font-bold text-ink">7. Changes to This Policy</h2>
+          <p>We may update this policy periodically. Changes will be posted on this page with an updated revision date.</p>
+
+          <h2 class="text-2xl font-bold text-ink">8. Contact Us</h2>
+          <p>If you have questions about this privacy policy, please <a href="/contact" class="text-accent hover:text-accent-deep underline">contact us</a> at info@peaceleagueafrica.org.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

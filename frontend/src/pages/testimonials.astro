@@ -22,42 +22,71 @@ const stats = [
 const starIcons = [1, 2, 3, 4, 5];
 ---
 
-<Layout title="Testimonials — Peace League Africa">
+<Layout title="Testimonials" description="Read inspiring testimonials from communities, partners, and volunteers whose lives have been transformed by Peace League Africa's peace-building programs.">
   <Navigation />
 
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Testimonials", "item": "https://peaceleagueafrica.org/testimonials" }
+      ]
+    })} />
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">What People Say</h1>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl">Hear from the communities, partners, and supporters whose lives have been touched by peace-building across Africa.</p>
+          <p class="mt-4 text-lg text-white/80 max-w-2xl">Real stories from real people — teachers, farmers, health workers, and students — whose lives have been transformed by peace-building across 12 African countries.</p>
+        </div>
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+          <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
         </div>
       </div>
     </section>
 
     <section class="py-16 bg-surface">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((t, idx) => (
-            <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col" style={`animation-delay: ${idx * 80}ms`}>
-              <div class="flex items-center gap-1 mb-4">
-                {starIcons.map(() => (
-                  <svg class="w-4 h-4 text-accent-warm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                ))}
-              </div>
-              <div class="mb-4 text-accent">
-                <svg class="w-6 h-6 opacity-40" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C2.433 6.068.87 8.789.87 11H4.87v10H0z"/></svg>
-              </div>
-              <p class="text-sm text-steel leading-relaxed flex-1">"{t.quote}"</p>
-              <div class="flex items-center gap-3 mt-6 pt-4 border-t border-hairline">
-                <img src={`https://images.unsplash.com/${t.image}?w=100&h=100&fit=crop&crop=face&q=80`} alt={t.name} class="w-12 h-12 rounded-full object-cover ring-2 ring-accent/20" loading="lazy" />
-                <div>
-                  <p class="text-sm font-semibold text-ink">{t.name}</p>
-                  <p class="text-xs text-steel">{t.role}</p>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative" id="testimonial-carousel">
+          <div class="overflow-hidden rounded-2xl" id="carousel-track-container">
+            <div class="flex" id="carousel-track">
+              {testimonials.map((t, idx) => (
+                <div class="min-w-0 w-full flex-shrink-0 flex-grow-0 bg-canvas rounded-2xl border border-hairline p-8 md:p-10 flex flex-col relative" style="flex-basis: 100%">
+                  <div class="flex items-center gap-1 mb-4">
+                    {starIcons.map(() => (
+                      <svg class="w-4 h-4 text-accent-warm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    ))}
+                  </div>
+                  <div class="mb-4 text-accent">
+                    <svg class="w-8 h-8 opacity-30" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C2.433 6.068.87 8.789.87 11H4.87v10H0z"/></svg>
+                  </div>
+                  <p class="text-base md:text-lg text-steel leading-relaxed flex-1 italic">"{t.quote}"</p>
+                  <div class="flex items-center gap-3 mt-8 pt-5 border-t border-hairline">
+                    <img src={`https://images.unsplash.com/${t.image}?w=100&h=100&fit=crop&crop=face&q=80`} alt={t.name} class="w-12 h-12 rounded-full object-cover ring-2 ring-accent/20" loading="lazy" />
+                    <div>
+                      <p class="text-sm font-semibold text-ink">{t.name}</p>
+                      <p class="text-xs text-steel">{t.role}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button class="carousel-arrow" id="carousel-prev" type="button" aria-label="Previous testimonial">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="carousel-arrow" id="carousel-next" type="button" aria-label="Next testimonial">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+
+          <div class="flex items-center justify-center gap-2 mt-6">
+            {testimonials.map((_, idx) => (
+              <button class={`carousel-dot ${idx === 0 ? 'active' : ''}`} data-index={idx} type="button" aria-label={`Go to testimonial ${idx + 1}`}></button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -81,7 +110,7 @@ const starIcons = [1, 2, 3, 4, 5];
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px]">Share Your Experience</h2>
         <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Your story could inspire others to join the peace-building movement.</p>
         <a href="/contact" class="scroll-reveal inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-white text-primary font-medium text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg">
-          Leave a Review
+          Share Your Experience
         </a>
       </div>
     </section>
@@ -89,3 +118,38 @@ const starIcons = [1, 2, 3, 4, 5];
 
   <Footer />
 </Layout>
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const slides = track?.children;
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const dots = document.querySelectorAll('.carousel-dot');
+  let current = 0;
+  let autoplay = setInterval(next, 5000);
+
+  function goTo(index) {
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+  function prev() {
+    goTo((current - 1 + slides.length) % slides.length);
+  }
+
+  nextBtn?.addEventListener('click', () => { next(); resetAutoplay(); });
+  prevBtn?.addEventListener('click', () => { prev(); resetAutoplay(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); resetAutoplay(); }));
+
+  const carousel = document.getElementById('testimonial-carousel');
+  carousel?.addEventListener('mouseenter', () => clearInterval(autoplay));
+  carousel?.addEventListener('mouseleave', () => { autoplay = setInterval(next, 5000); });
+
+  function resetAutoplay() {
+    clearInterval(autoplay);
+    autoplay = setInterval(next, 5000);
+  }
+</script>

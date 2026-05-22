@@ -1,0 +1,58 @@
+---
+export interface Props {
+  headline: string;
+  body?: string;
+  buttonLabel?: string;
+  buttonHref?: string;
+  variant?: "primary" | "accent" | "dark";
+  class?: string;
+}
+
+const {
+  headline,
+  body,
+  buttonLabel,
+  buttonHref = "/donate",
+  variant = "primary",
+  class: className = "",
+} = Astro.props;
+
+const bgClasses: Record<string, string> = {
+  primary: "bg-accent/10 border-accent/20",
+  accent: "bg-accent-warm/10 border-accent-warm/20",
+  dark: "bg-ink border-steel/20 text-on-dark",
+};
+
+const btnClasses: Record<string, string> = {
+  primary: "bg-accent text-white hover:bg-accent/90",
+  accent: "bg-accent-warm text-white hover:bg-accent-warm/90",
+  dark: "bg-white text-ink hover:bg-white/90",
+};
+---
+
+<div
+  class={`relative overflow-hidden rounded-xl border ${bgClasses[variant]} p-8 md:p-12 ${className}`}
+>
+  <div class="relative z-10 max-w-2xl mx-auto text-center">
+    <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4">
+      {headline}
+    </h3>
+    {body && (
+      <p class="text-steel text-lg leading-relaxed mb-8">{body}</p>
+    )}
+    {buttonLabel && (
+      <a
+        href={buttonHref}
+        class={`inline-flex items-center px-6 py-3 rounded-full font-semibold text-sm transition-micro shadow-sm hover:shadow-lg hover:scale-[1.02] ${btnClasses[variant]} press-effect`}
+      >
+        {buttonLabel}
+        <svg
+          class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        ><path
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M17 8l4 4m0 0l-4 4m4-4H3"
+        /></svg>
+      </a>
+    )}
+  </div>
+</div>

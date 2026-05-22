@@ -36,10 +36,8 @@ const pageTitle = `${title} | Peace League Africa`;
       })();
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- Fonts (system font stack — no downloads needed) -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 
     <!-- Primary Meta Tags -->
     <title>{pageTitle}</title>
@@ -70,7 +68,7 @@ const pageTitle = `${title} | Peace League Africa`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.org')} />
 
-    <!-- Structured Data -->
+    <!-- Structured Data: Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "NGO",
@@ -95,72 +93,133 @@ const pageTitle = `${title} | Peace League Africa`;
       }
     })} />
 
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Peace League Africa",
+      "url": "https://peaceleagueafrica.org",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://peaceleagueafrica.org/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#00d4a4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
 
+    <!-- Speculation Rules (desktop only, skip on save-data) -->
+    <script is:inline>
+      (function() {
+        if (window.matchMedia('(max-width: 768px)').matches) return;
+        if (navigator.connection && navigator.connection.saveData) return;
+        const spec = {
+          prerender: [{
+            where: { href_matches: '/*' },
+            eagerness: 'moderate'
+          }]
+        };
+        const el = document.createElement('script');
+        el.type = 'speculationrules';
+        el.textContent = JSON.stringify(spec);
+        document.head.appendChild(el);
+      })();
+    </script>
+
   </head>
   <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col overflow-x-hidden">
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded-lg">
+    <a href="#main-content" class="skip-nav" id="skip-nav">
       Skip to main content
     </a>
 
     <slot />
 
-    <!-- Floating particles container -->
-    <div id="particles" class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true"></div>
-
-    <!-- Floating bubbles -->
-    <div class="bubble" style="width:12px;height:12px;left:5%;background:var(--color-accent);animation-delay:0s;animation-duration:9s"></div>
-    <div class="bubble" style="width:8px;height:8px;left:15%;background:var(--color-accent-warm);animation-delay:2s;animation-duration:7s"></div>
-    <div class="bubble" style="width:16px;height:16px;left:30%;background:var(--color-accent-soft);animation-delay:4s;animation-duration:11s"></div>
-    <div class="bubble" style="width:6px;height:6px;left:45%;background:var(--color-accent);animation-delay:1s;animation-duration:8s"></div>
-    <div class="bubble" style="width:14px;height:14px;left:55%;background:var(--color-accent-warm);animation-delay:3s;animation-duration:10s"></div>
-    <div class="bubble" style="width:10px;height:10px;left:65%;background:var(--color-accent-soft);animation-delay:5s;animation-duration:7s"></div>
-    <div class="bubble" style="width:7px;height:7px;left:75%;background:var(--color-accent);animation-delay:0s;animation-duration:9s"></div>
-    <div class="bubble" style="width:18px;height:18px;left:85%;background:var(--color-accent-warm);animation-delay:2s;animation-duration:12s"></div>
-    <div class="bubble" style="width:9px;height:9px;left:92%;background:var(--color-accent-soft);animation-delay:4s;animation-duration:8s"></div>
-    <div class="bubble" style="width:11px;height:11px;left:35%;background:var(--color-accent);animation-delay:6s;animation-duration:10s"></div>
+    <!-- Subtle ambient vignette (keeps the depth without AI-aesthetic orbs) -->
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_theme(colors.ink/0.03)_0%,_transparent_60%)]"></div>
 
     <script>
-      // Scroll reveal — subtle fade-up when elements enter viewport
-      const srObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-4');
-            entry.target.style.opacity = '1';
-            srObserver.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '80px', threshold: 0.05 });
-      document.querySelectorAll('.scroll-reveal').forEach(el => {
-        el.style.opacity = '0';
-        srObserver.observe(el);
-      });
-      const srMo = new MutationObserver(() => {
-        document.querySelectorAll('.scroll-reveal:not(.animate-in)').forEach(el => {
+      // Scroll reveal — guarded: only query DOM lazily and observe existing elements
+      const revealTargets = document.querySelectorAll('.scroll-reveal');
+      if (revealTargets.length) {
+        const srObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-4');
+              entry.target.style.opacity = '1';
+              srObserver.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '80px', threshold: 0.05 });
+
+        revealTargets.forEach(el => {
           el.style.opacity = '0';
           srObserver.observe(el);
         });
-      });
-      srMo.observe(document.body, { childList: true, subtree: true });
+
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(() => {
+            const srMo = new MutationObserver(() => {
+              document.querySelectorAll('.scroll-reveal:not(.animate-in)').forEach(el => {
+                el.style.opacity = '0';
+                srObserver.observe(el);
+              });
+            });
+            srMo.observe(document.body, { childList: true, subtree: true });
+          }, { timeout: 2000 });
+        }
+      }
+
+      // Defer parallax init until idle — guard against missing elements
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          const parallaxTargets = document.querySelectorAll('.hero-gradient');
+          const hasParallaxLayer = document.querySelector('.parallax-layer');
+          if (!parallaxTargets.length || !hasParallaxLayer) return;
+
+          let parallaxTicking = false;
+          window.addEventListener('scroll', () => {
+            if (!parallaxTicking) {
+              requestAnimationFrame(() => {
+                parallaxTargets.forEach(section => {
+                  const speed = 0.15;
+                  const y = section.getBoundingClientRect().top;
+                  const shapes = section.querySelectorAll('.parallax-bg-shape');
+                  const dots = section.querySelectorAll('.parallax-dot-grid');
+                  shapes.forEach(s => { s.style.transform = `translateY(${y * speed}px)`; });
+                  dots.forEach(d => { d.style.transform = `translateY(${y * speed * 0.5}px)`; });
+                });
+                parallaxTicking = false;
+              });
+              parallaxTicking = true;
+            }
+          }, { passive: true });
+        });
+      }
+
+      window.createConfetti = (element) => {
+        const colors = ['#10b981', '#f59e0b', '#ef4444', '#3b82f6', '#8b5cf6', '#ec4899'];
+        const rect = element.getBoundingClientRect();
+        for (let i = 0; i < 40; i++) {
+          const c = document.createElement('div');
+          c.style.cssText = `
+            position: fixed; z-index: 9999; pointer-events: none;
+            width: 8px; height: 8px; background: ${colors[i % colors.length]};
+            border-radius: 50%; left: ${rect.left + rect.width / 2 + (Math.random() - 0.5) * 120}px;
+            top: ${rect.top}px;
+            animation: confetti-fall ${1 + Math.random() * 1.5}s ease-out forwards;
+          `;
+          document.body.appendChild(c);
+          setTimeout(() => c.remove(), 3000);
+        }
+      };
     </script>
 
-    <script is:inline>
-      (function() {
-        var container = document.createElement('div');
-        container.className = 'fixed inset-0 pointer-events-none z-0 overflow-hidden';
-        container.id = 'particles';
-        container.setAttribute('aria-hidden', 'true');
-        document.body.prepend(container);
-        for (var i = 0; i < 15; i++) {
-          var dot = document.createElement('div');
-          dot.className = 'absolute w-1 h-1 rounded-full';
-          dot.style.cssText = 'background:' + (i % 3 === 0 ? '#00d4a4' : i % 3 === 1 ? '#f59e0b' : '#7cebcb') + ';left:' + Math.random() * 100 + '%;top:' + (70 + Math.random() * 30) + '%;animation:float-up ' + (3 + Math.random() * 4) + 's ease-out ' + (Math.random() * 5) + 's infinite;opacity:' + (0.2 + Math.random() * 0.3);
-          container.appendChild(dot);
-        }
-      })();
-    </script>
+
   </body>
 </html>

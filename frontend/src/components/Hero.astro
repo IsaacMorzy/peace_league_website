@@ -1,0 +1,71 @@
+---
+export interface Props {
+  headline: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  variant?: "default" | "center" | "compact";
+  class?: string;
+}
+
+const {
+  headline,
+  subtitle,
+  ctaLabel,
+  ctaHref = "/donate",
+  secondaryLabel,
+  secondaryHref = "/about",
+  variant = "default",
+  class: className = "",
+} = Astro.props;
+
+const alignClass = variant === "center" ? "text-center items-center" : "items-start";
+const sizeClass = variant === "compact" ? "py-16 md:py-24" : "py-20 md:py-36";
+---
+
+<section
+  class={`relative overflow-hidden ${sizeClass} ${className}`}
+>
+  <div
+    class={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col ${alignClass}`}
+  >
+    <div class={variant === "center" ? "max-w-3xl" : "max-w-2xl"}>
+      <h1
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink leading-[1.1] mb-6"
+      >
+        {headline}
+      </h1>
+      {subtitle && (
+        <p class="text-lg sm:text-xl text-steel leading-relaxed mb-10 max-w-xl">
+          {subtitle}
+        </p>
+      )}
+      <div class="flex flex-wrap gap-4">
+        {ctaLabel && (
+          <a
+            href={ctaHref}
+            class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md hover:bg-accent/90"
+          >
+            {ctaLabel}
+            <svg
+              class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            ><path
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            /></svg>
+          </a>
+        )}
+        {secondaryLabel && (
+          <a
+            href={secondaryHref}
+            class="inline-flex items-center px-6 py-3 text-steel hover:text-ink border border-hairline rounded-lg font-semibold text-sm transition-all duration-200 hover:border-steel/30"
+          >
+            {secondaryLabel}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

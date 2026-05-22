@@ -4,15 +4,27 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Partner With Us — Peace League Africa">
+<Layout title="Partner With Us" description="Partner with Peace League Africa. Corporate, NGO, foundation, and community partnerships that build lasting peace across 12 African countries. Start the conversation.">
   <Navigation />
 
   <main id="main-content">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+        { "@type": "ListItem", "position": 2, "name": "Partner With Us", "item": "https://peaceleagueafrica.org/partner" }
+      ]
+    })} />
     <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Partner With Us</h1>
           <p class="mt-4 text-lg text-white/80 max-w-2xl">Together, we can build peace across Africa. Join a growing network of organizations committed to lasting change.</p>
+        </div>
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+          <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
         </div>
       </div>
     </section>
@@ -161,7 +173,7 @@ import Footer from '../components/Footer.astro';
             <p class="text-xs text-brand-error mt-1 hidden" data-error="message">Please enter a message.</p>
           </div>
           <button type="submit" id="partner-submit" class="w-full px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]">
-            Send Inquiry
+            Start the Conversation
           </button>
           <p id="partner-success" class="text-sm text-success bg-success-bg px-4 py-3 rounded-lg text-center hidden">
             Thank you! Your inquiry has been submitted. We will get back to you within 48 hours.
