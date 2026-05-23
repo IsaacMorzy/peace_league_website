@@ -576,11 +576,7 @@ import Footer from '../components/Footer.astro';
     document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I just donated to Peace League Africa! Join me in building peace across Africa. ' + shareUrl);
     document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
 
-    document.querySelectorAll('.confetti-source').forEach(el => {
-      if (typeof window.createConfetti === 'function') {
-        window.createConfetti(el);
-      }
-    });
+
   }
 
   function showMpesaError(msg) {
@@ -680,9 +676,7 @@ import Footer from '../components/Footer.astro';
           submitBtnText.textContent = '\u2713 Done!';
           submitBtnArrow.classList.add('hidden');
           submitSpinner.classList.add('hidden');
-          if (typeof window.createConfetti === 'function') {
-            window.createConfetti(submitBtn);
-          }
+
           form.reset();
           amountInputs.forEach(b => {
             b.classList.remove('selected');

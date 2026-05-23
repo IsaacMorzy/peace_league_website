@@ -38,13 +38,13 @@ const milestones = [
         </div>
       </div>
       <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <span class="about-float-heart" style="left:8%;bottom:-10%;animation-delay:0s;font-size:1.25rem;">&#x2764;</span>
-        <span class="about-float-heart" style="left:18%;bottom:-20%;animation-delay:1.2s;font-size:1rem;">&#x1F54A;</span>
-        <span class="about-float-heart" style="left:30%;bottom:-5%;animation-delay:2.4s;font-size:1.5rem;">&#x2764;</span>
-        <span class="about-float-heart" style="left:55%;bottom:-15%;animation-delay:0.6s;font-size:1.125rem;">&#x1F54A;</span>
-        <span class="about-float-heart" style="left:70%;bottom:-8%;animation-delay:1.8s;font-size:1.375rem;">&#x2764;</span>
-        <span class="about-float-heart" style="left:85%;bottom:-25%;animation-delay:3s;font-size:1rem;">&#x1F54A;</span>
-        <span class="about-float-heart" style="left:92%;bottom:-12%;animation-delay:0.3s;font-size:0.875rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:8%;bottom:-10%;animation-delay:0s;font-size:1.25rem;">&#x2764;</span>
+        <span class="animate-dove-drift" style="left:18%;bottom:-20%;animation-delay:1.2s;font-size:1rem;">&#x1F54A;</span>
+        <span class="animate-heart-rise" style="left:30%;bottom:-5%;animation-delay:2.4s;font-size:1.5rem;">&#x2764;</span>
+        <span class="animate-dove-drift" style="left:55%;bottom:-15%;animation-delay:0.6s;font-size:1.125rem;">&#x1F54A;</span>
+        <span class="animate-heart-rise" style="left:70%;bottom:-8%;animation-delay:1.8s;font-size:1.375rem;">&#x2764;</span>
+        <span class="animate-dove-drift" style="left:85%;bottom:-25%;animation-delay:3s;font-size:1rem;">&#x1F54A;</span>
+        <span class="animate-heart-rise" style="left:92%;bottom:-12%;animation-delay:0.3s;font-size:0.875rem;">&#x2764;</span>
       </div>
     </section>
 
@@ -162,7 +162,7 @@ const milestones = [
                     </feMerge>
                   </filter>
                 </defs>
-                <circle cx="100" cy="100" r="85" stroke-width="1" stroke-dasharray="4 4" opacity="0.35" filter="url(#ring-glow)" class="animate-ring-glow"/>
+                <circle cx="100" cy="100" r="85" stroke-width="1" stroke-dasharray="4 4" opacity="0.35" filter="url(#ring-glow)"/>
                 <circle cx="100" cy="100" r="65" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
                 <circle cx="100" cy="100" r="45" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
                 <g opacity="0.3">
@@ -377,15 +377,11 @@ const milestones = [
     document.querySelectorAll('.timeline-item').forEach(el => tlObserver.observe(el));
   </script>
   <style>
-    @keyframes about-float-up {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.6; }
-      100% { transform: translateY(-110vh) rotate(720deg); opacity: 0; }
-    }
-    .about-float-heart {
+    .animate-dove-drift, .animate-heart-rise {
       position: absolute;
-      animation: about-float-up 12s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
       color: rgba(255,255,255,0.25);
     }
   </style>

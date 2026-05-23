@@ -175,25 +175,22 @@ const pageTitle = `${title} | Peace League Africa`;
         }
       }
 
-      // Defer parallax init until idle — guard against missing elements
+      // Defer parallax init until idle — scoped to #hero-section
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
-          const parallaxTargets = document.querySelectorAll('.hero-gradient');
-          const hasParallaxLayer = document.querySelector('.parallax-layer');
-          if (!parallaxTargets.length || !hasParallaxLayer) return;
+          const heroSection = document.querySelector('#hero-section');
+          if (!heroSection) return;
 
           let parallaxTicking = false;
           window.addEventListener('scroll', () => {
             if (!parallaxTicking) {
               requestAnimationFrame(() => {
-                parallaxTargets.forEach(section => {
-                  const speed = 0.15;
-                  const y = section.getBoundingClientRect().top;
-                  const shapes = section.querySelectorAll('.parallax-bg-shape');
-                  const dots = section.querySelectorAll('.parallax-dot-grid');
-                  shapes.forEach(s => { s.style.transform = `translateY(${y * speed}px)`; });
-                  dots.forEach(d => { d.style.transform = `translateY(${y * speed * 0.5}px)`; });
-                });
+                const speed = 0.15;
+                const y = heroSection.getBoundingClientRect().top;
+                const shapes = heroSection.querySelectorAll('.parallax-bg-shape');
+                const dots = heroSection.querySelectorAll('.parallax-dot-grid');
+                shapes.forEach(s => { s.style.transform = `translateY(${y * speed}px)`; });
+                dots.forEach(d => { d.style.transform = `translateY(${y * speed * 0.5}px)`; });
                 parallaxTicking = false;
               });
               parallaxTicking = true;
@@ -202,22 +199,6 @@ const pageTitle = `${title} | Peace League Africa`;
         });
       }
 
-      window.createConfetti = (element) => {
-        const colors = ['#10b981', '#f59e0b', '#ef4444', '#3b82f6', '#8b5cf6', '#ec4899'];
-        const rect = element.getBoundingClientRect();
-        for (let i = 0; i < 40; i++) {
-          const c = document.createElement('div');
-          c.style.cssText = `
-            position: fixed; z-index: 9999; pointer-events: none;
-            width: 8px; height: 8px; background: ${colors[i % colors.length]};
-            border-radius: 50%; left: ${rect.left + rect.width / 2 + (Math.random() - 0.5) * 120}px;
-            top: ${rect.top}px;
-            animation: confetti-fall ${1 + Math.random() * 1.5}s ease-out forwards;
-          `;
-          document.body.appendChild(c);
-          setTimeout(() => c.remove(), 3000);
-        }
-      };
     </script>
 
 

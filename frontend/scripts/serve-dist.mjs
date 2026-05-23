@@ -33,10 +33,12 @@ const server = http.createServer((req, res) => {
   let filePath = path.join(distDir, req.url === '/' ? 'index.html' : req.url);
   if (!filePath.startsWith(distDir)) { res.writeHead(403); res.end(); return; }
   
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  }
+
   if (!fs.existsSync(filePath)) {
-    const htmlPath = path.join(filePath, 'index.html');
-    if (fs.existsSync(htmlPath)) filePath = htmlPath;
-    else if (fs.existsSync(filePath + '.html')) filePath = filePath + '.html';
+    if (fs.existsSync(filePath + '.html')) filePath = filePath + '.html';
   }
   
   if (!fs.existsSync(filePath)) {
