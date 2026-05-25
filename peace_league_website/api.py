@@ -132,6 +132,7 @@ def create_donation(**kwargs):
         email = data.get("email")
         phone = data.get("phone") or ""
         payment_method = data.get("payment_method") or "Cash"
+        cause = data.get("cause")  # New cause parameter
         is_mpesa = payment_method in ("MPesa", "Mobile Money")
 
         if is_mpesa and not phone:
@@ -174,6 +175,7 @@ def create_donation(**kwargs):
             "status": "Pending" if is_mpesa else "Received",
             "message": data.get("message", ""),
             "anonymous": 1 if str(data.get("anonymous", "0")) == "1" else 0,
+            "cause": cause,  # Add cause field
         })
         donation.insert(ignore_permissions=True)
 

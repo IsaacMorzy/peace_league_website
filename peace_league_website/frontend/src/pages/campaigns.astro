@@ -1,0 +1,74 @@
+---
+title: "Campaigns"
+layout: layout
+---
+
+<div class="pt-10 lg:pt-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold mb-4">Our Campaigns</h1>
+      <p class="text-lg text-gray-600">
+        Support our ongoing projects and help us reach our goals. Every donation makes a difference.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {#! for each cause in causes }
+      <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition">
+        <div class="relative h-48 rounded-lg overflow-hidden mb-4">
+          <img src={cause.image ? `/private/files/${cause.image}` : "/images/campaign-placeholder.jpg"} 
+               alt={cause.title} 
+               class="w-full h-full object-cover">
+          <div class="absolute top-2 right-2">
+            <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+              {cause.status}
+            </span>
+          </div>
+        </div>
+        
+        <h3 class="text-xl font-bold mb-2">{cause.title}</h3>
+        <p class="text-gray-600 mb-4">{cause.description.substring(0, 100)}...</p>
+        
+        <div class="mb-4">
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-semibold">Goal: ${cause.goal_amount.toLocaleString()}</span>
+            <span class="text-sm font-semibold">Raised: ${cause.raised_amount.toLocaleString()}</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" 
+                 style="width: {Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)}%">
+            </div>
+          </div>
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>{(cause.raised_amount / cause.goal_amount * 100).toFixed(1)}% funded</span>
+            <span>{cause.donors_count} donors</span>
+          </div>
+        </div>
+        
+        <a href="/donate?cause={cause.name}" 
+           class="block w-full text-center py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+          Donate Now
+        </a>
+      </div>
+      {#! end for }
+    </div>
+  </div>
+</div>
+
+<script>
+export async function getStaticProps() {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/method/peace_league_website.plw_portal.doctype.cause.cause.get_active_causes`);
+    const causes = await response.json();
+    
+    return { props: { causes } };
+  } catch (error) {
+    console.error("Error fetching causes:", error);
+    return { props: { causes: [] } };
+  }
+}
+</script>
+
+<style>
+/* Custom styles if needed */
+</style>
