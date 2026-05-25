@@ -14,7 +14,7 @@ import causes from '../lib/causes-data.json';
       <div class="absolute inset-0 z-[1] opacity-[0.04] bg-[image:radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-hero-bg/60 via-transparent to-hero-bg/20 z-[2]"></div>
       <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-hero-bg to-transparent z-[2]"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 z-[3] w-full">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 z-[3] w-full">
         <div class="max-w-3xl">
           <div class="scroll-reveal mb-6">
             <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-accent-soft border border-white/10">
@@ -55,7 +55,7 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-surface overflow-hidden">
+    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
@@ -65,31 +65,31 @@ import causes from '../lib/causes-data.json';
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent/5 rounded-full blur-2xl"></div>
             <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent block leading-none" data-count-target="45" data-count-suffix="+">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">Schools</span>
-            <p class="mt-3 text-xs text-stone leading-relaxed">Peace education programs in 8 countries equipping the next generation of leaders.</p>
+            <p class="mt-3 text-xs text-steel leading-relaxed">Peace education programs in 8 countries equipping the next generation of leaders.</p>
           </div>
           <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent-warm/20" style="animation-delay: 80ms">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent-warm/5 rounded-full blur-2xl"></div>
             <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-warm block leading-none" data-count-target="12" data-count-suffix="">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">Countries</span>
-            <p class="mt-3 text-xs text-stone leading-relaxed">From Kenya to DRC, we operate where conflict is deepest and hope is scarcest.</p>
+            <p class="mt-3 text-xs text-steel leading-relaxed">From Kenya to DRC, we operate where conflict is deepest and hope is scarcest.</p>
           </div>
           <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20" style="animation-delay: 150ms">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent/5 rounded-full blur-2xl"></div>
             <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent block leading-none" data-count-target="1200" data-count-suffix="+">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">Volunteers</span>
-            <p class="mt-3 text-xs text-stone leading-relaxed">Teachers, medics, engineers &mdash; everyday Africans building peace in their communities.</p>
+            <p class="mt-3 text-xs text-steel leading-relaxed">Teachers, medics, engineers &mdash; everyday Africans building peace in their communities.</p>
           </div>
           <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent-warm/20" style="animation-delay: 220ms">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent-warm/5 rounded-full blur-2xl"></div>
             <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-warm block leading-none" data-count-target="95" data-count-suffix="%">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">To Programs</span>
-            <p class="mt-3 text-xs text-stone leading-relaxed">Every dollar donated goes directly to community-driven peacebuilding work.</p>
+            <p class="mt-3 text-xs text-steel leading-relaxed">Every dollar donated goes directly to community-driven peacebuilding work.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-gradient-to-b from-canvas to-surface overflow-hidden">
+    <section class="py-10 lg:py-14 bg-gradient-to-b from-canvas to-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
@@ -108,12 +108,12 @@ import causes from '../lib/causes-data.json';
                 <div class="mt-4">
                   <div class="flex justify-between text-sm mb-1.5">
                     <span class="font-semibold text-ink">${cause.raised_amount.toLocaleString()}</span>
-                    <span class="text-stone">${cause.goal_amount.toLocaleString()}</span>
+                    <span class="text-steel">${cause.goal_amount.toLocaleString()}</span>
                   </div>
-                  <div class="w-full bg-hairline rounded-full h-2 progress-track">
+                  <div class="w-full bg-hairline rounded-full h-2 progress-track" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100" aria-label={`${cause.title} fundraising progress`}>
                     <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="width: 0"></div>
                   </div>
-                  <p class="mt-1 text-xs text-stone">{cause.donors_count} donors &middot; {Math.round((cause.raised_amount / cause.goal_amount) * 100)}% funded</p>
+                  <p class="mt-1 text-xs text-steel">{cause.donors_count} donors &middot; {Math.round((cause.raised_amount / cause.goal_amount) * 100)}% funded</p>
                 </div>
                 <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="mt-4 inline-flex items-center justify-center w-full min-h-[44px] px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-300">
                   Donate to This Cause
@@ -130,14 +130,12 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-surface overflow-hidden">
+    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">How We Work</h2>
-        <div class="section-divider mb-6"></div>
+        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">How We Work</h2>
+        <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
         <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-14">A proven process rooted in listening, local leadership, and lasting change.</p>
-        <div class="relative">
-          <div class="hidden lg:block absolute top-24 left-[calc(16.66%+1.5rem)] right-[calc(16.66%+1.5rem)] h-0.5 bg-gradient-to-r from-accent/40 via-accent-warm/40 to-accent/40"></div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
             <div class="scroll-reveal relative text-center md:text-left">
               <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-5">
                 <div class="flex-none w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto md:mx-0">
@@ -188,60 +186,72 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-canvas overflow-hidden">
+    <section class="py-10 lg:py-14 bg-canvas overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <div class="text-center max-w-3xl mx-auto mb-14">
           <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Your Donation Changes Lives</h2>
           <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto">Every dollar goes directly to community-driven programs. Here is what your generosity makes possible.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="25" data-count-prefix="$">$25</div>
-            <h3 class="text-lg font-semibold text-ink mb-2">Clean Water for a Family</h3>
-            <p class="text-sm text-steel leading-relaxed mb-4">Provides clean water for a family of five for one month, reducing waterborne disease and ending long walks to distant wells.</p>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="5" data-count-prefix="$">$0</div>
+            <h3 class="text-lg font-semibold text-ink mb-2">Provide a Nutritious Meal</h3>
+            <p class="text-sm text-steel leading-relaxed mb-4">Provides a warm, nutritious meal for a child in need, supporting their health and ability to learn.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
-                <div class="bg-accent h-1.5 rounded-full" style="width: 62%"></div>
+                <div class="bg-accent h-1.5 rounded-full" style="width: 30%"></div>
               </div>
-              <a href="/donate?amount=25" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=5" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
-          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 80ms">
+          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 60ms">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent-warm/5 rounded-full blur-xl"></div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="50" data-count-prefix="$">$50</div>
-            <h3 class="text-lg font-semibold text-ink mb-2">Train a Peace Teacher</h3>
-            <p class="text-sm text-steel leading-relaxed mb-4">Equips an educator with conflict resolution curriculum and materials, reaching 100+ students with peace-building skills.</p>
+            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="10" data-count-prefix="$">$0</div>
+            <h3 class="text-lg font-semibold text-ink mb-2">School Supplies for a Student</h3>
+            <p class="text-sm text-steel leading-relaxed mb-4">Equips a student with pens, books, and a uniform for one term, removing barriers to education.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
-                <div class="bg-accent-warm h-1.5 rounded-full" style="width: 48%"></div>
+                <div class="bg-accent-warm h-1.5 rounded-full" style="width: 45%"></div>
               </div>
-              <a href="/donate?amount=50" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=10" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
-          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 150ms">
+          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 120ms">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="100" data-count-prefix="$">$100</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="20" data-count-prefix="$">$0</div>
+            <h3 class="text-lg font-semibold text-ink mb-2">Emergency Food Package</h3>
+            <p class="text-sm text-steel leading-relaxed mb-4">Delivers a week's worth of emergency food supplies to a family displaced by conflict or disaster.</p>
+            <div class="mt-auto">
+              <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
+                <div class="bg-accent h-1.5 rounded-full" style="width: 55%"></div>
+              </div>
+              <a href="/donate?amount=20" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 180ms">
+            <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent-warm/5 rounded-full blur-xl"></div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="100" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Sponsor a Child's Education</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Covers school fees, books, and a uniform for one term, giving a child from a conflict-affected community a chance to learn and thrive.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
-                <div class="bg-accent h-1.5 rounded-full" style="width: 72%"></div>
+                <div class="bg-accent-warm h-1.5 rounded-full" style="width: 72%"></div>
               </div>
-              <a href="/donate?amount=100" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=100" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
-          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 220ms">
-            <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent-warm/5 rounded-full blur-xl"></div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="500" data-count-prefix="$">$500</div>
+          <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 240ms">
+            <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="500" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Community Reconciliation</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Funds a multi-day reconciliation workshop bringing together divided communities for dialogue, healing, and sustainable peace.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
-                <div class="bg-accent-warm h-1.5 rounded-full" style="width: 35%"></div>
+                <div class="bg-accent h-1.5 rounded-full" style="width: 35%"></div>
               </div>
-              <a href="/donate?amount=500" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=500" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </div>
@@ -254,7 +264,7 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-surface overflow-hidden">
+    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Trusted by Leading Organizations</h2>
@@ -266,48 +276,48 @@ import causes from '../lib/causes-data.json';
               <img src="/logo-unicef.svg" alt="UNICEF" class="max-w-full max-h-full" loading="lazy" />
             </div>
             <span class="text-xs font-semibold text-steel group-hover:text-ink transition-colors">UNICEF</span>
-            <span class="text-[10px] text-stone mt-0.5">Partner since 2020</span>
+            <span class="text-[10px] text-steel mt-0.5">Partner since 2020</span>
           </div>
           <div class="flex flex-col items-center justify-center p-5 bg-canvas rounded-xl border border-hairline hover:border-accent/30 transition-all duration-300 group">
             <div class="w-20 h-14 flex items-center justify-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
               <img src="/logo-who.svg" alt="World Health Organization" class="max-w-full max-h-full" loading="lazy" />
             </div>
             <span class="text-xs font-semibold text-steel group-hover:text-ink transition-colors">WHO</span>
-            <span class="text-[10px] text-stone mt-0.5">Partner since 2021</span>
+            <span class="text-[10px] text-steel mt-0.5">Partner since 2021</span>
           </div>
           <div class="flex flex-col items-center justify-center p-5 bg-canvas rounded-xl border border-hairline hover:border-accent/30 transition-all duration-300 group">
             <div class="w-20 h-14 flex items-center justify-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
               <img src="/logo-red-cross.svg" alt="Red Cross" class="max-w-full max-h-full" loading="lazy" />
             </div>
             <span class="text-xs font-semibold text-steel group-hover:text-ink transition-colors">Red Cross</span>
-            <span class="text-[10px] text-stone mt-0.5">Partner since 2019</span>
+            <span class="text-[10px] text-steel mt-0.5">Partner since 2019</span>
           </div>
           <div class="flex flex-col items-center justify-center p-5 bg-canvas rounded-xl border border-hairline hover:border-accent/30 transition-all duration-300 group">
             <div class="w-20 h-14 flex items-center justify-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
               <img src="/logo-amref.png" alt="AMREF Health Africa" class="max-w-full max-h-full" loading="lazy" />
             </div>
             <span class="text-xs font-semibold text-steel group-hover:text-ink transition-colors">AMREF</span>
-            <span class="text-[10px] text-stone mt-0.5">Partner since 2020</span>
+            <span class="text-[10px] text-steel mt-0.5">Partner since 2020</span>
           </div>
           <div class="flex flex-col items-center justify-center p-5 bg-canvas rounded-xl border border-hairline hover:border-accent/30 transition-all duration-300 group">
             <div class="w-20 h-14 flex items-center justify-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
               <img src="/logo-save-children.svg" alt="Save the Children" class="max-w-full max-h-full" loading="lazy" />
             </div>
             <span class="text-xs font-semibold text-steel group-hover:text-ink transition-colors">Save the Children</span>
-            <span class="text-[10px] text-stone mt-0.5">Partner since 2018</span>
+            <span class="text-[10px] text-steel mt-0.5">Partner since 2018</span>
           </div>
           <div class="flex flex-col items-center justify-center p-5 bg-canvas rounded-xl border border-hairline hover:border-accent/30 transition-all duration-300 group">
             <div class="w-20 h-14 flex items-center justify-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
               <img src="/logo-african-union.svg" alt="African Union" class="max-w-full max-h-full" loading="lazy" />
             </div>
             <span class="text-xs font-semibold text-steel group-hover:text-ink transition-colors">African Union</span>
-            <span class="text-[10px] text-stone mt-0.5">Partner since 2021</span>
+            <span class="text-[10px] text-steel mt-0.5">Partner since 2021</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-canvas overflow-hidden">
+    <section class="py-10 lg:py-14 bg-canvas overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Latest from Our Blog</h2>
@@ -352,7 +362,7 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-surface overflow-hidden">
+    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-3xl sm:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Voices of Peace</h2>
@@ -502,7 +512,6 @@ import causes from '../lib/causes-data.json';
           const el = entry.target;
           const target = parseInt(el.dataset.countTarget, 10);
           if (target > 0) {
-            el.textContent = '$0';
             animateCounter(el, target, '', '$');
           }
           donationObserver.unobserve(el);

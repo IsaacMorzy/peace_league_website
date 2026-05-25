@@ -30,7 +30,7 @@ const galleryImages = [
         { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://peaceleagueafrica.org/gallery" }
       ]
     })} />
-    <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
+    <section class="hero-gradient text-white py-10 lg:py-14 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Gallery</h1>
@@ -47,7 +47,7 @@ const galleryImages = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap gap-2 mb-12 justify-center" id="gallery-filters">
           {categories.map((cat, idx) => (
-            <button data-category={cat.toLowerCase()} class={`gallery-filter px-5 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer hover:-translate-y-0.5 min-h-[44px] ${idx === 0 ? 'bg-primary text-on-primary border-primary' : 'bg-canvas text-steel border-hairline hover:border-accent hover:text-accent'}`}>
+            <button data-category={cat.toLowerCase()} aria-pressed={idx === 0 ? 'true' : 'false'} class={`gallery-filter px-5 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer hover:-translate-y-0.5 min-h-[44px] ${idx === 0 ? 'bg-primary text-on-primary border-primary' : 'bg-canvas text-steel border-hairline hover:border-accent hover:text-accent'}`}>
               {cat}
             </button>
           ))}
@@ -128,8 +128,10 @@ const galleryImages = [
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => {
           b.className = 'gallery-filter px-5 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer bg-canvas text-steel border-hairline hover:border-accent hover:text-accent';
+          b.setAttribute('aria-pressed', 'false');
         });
         btn.className = 'gallery-filter px-5 py-2 text-sm rounded-full border transition-all duration-300 cursor-pointer bg-primary text-on-primary border-primary';
+        btn.setAttribute('aria-pressed', 'true');
 
         const cat = btn.dataset.category;
         items.forEach(item => {

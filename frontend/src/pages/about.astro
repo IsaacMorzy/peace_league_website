@@ -28,7 +28,7 @@ const milestones = [
         { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://peaceleagueafrica.org/about" }
       ]
     })} />
-    <section class="hero-gradient text-white py-16 lg:py-20 relative overflow-hidden">
+    <section class="hero-gradient text-white py-10 lg:py-14 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">About Peace League Africa</h1>
         <p class="mt-4 text-lg text-white/80 max-w-2xl">From a single peace workshop in 2015 to a movement spanning 12 countries — we replace division with dialogue, poverty with opportunity, and despair with hope.</p>
@@ -272,21 +272,21 @@ const milestones = [
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Partners</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Trusted by leading organizations working towards peace and development across Africa.</p>
         <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-          <a href="#" class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="UNICEF partner">
+          <span class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="UNICEF partner">
             <img src="/logo-unicef.svg" alt="UNICEF" width="96" height="48" class="h-10 md:h-12 w-auto" loading="lazy" />
-          </a>
-          <a href="#" class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="World Health Organization partner">
+          </span>
+          <span class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="World Health Organization partner">
             <img src="/logo-who.svg" alt="WHO" width="120" height="48" class="h-10 md:h-12 w-auto" loading="lazy" />
-          </a>
-          <a href="#" class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="Red Cross partner">
+          </span>
+          <span class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="Red Cross partner">
             <img src="/logo-red-cross.svg" alt="Red Cross" width="96" height="48" class="h-10 md:h-12 w-auto" loading="lazy" />
-          </a>
-          <a href="#" class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="Save the Children partner">
+          </span>
+          <span class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="Save the Children partner">
             <img src="/logo-save-children.svg" alt="Save the Children" width="140" height="48" class="h-10 md:h-12 w-auto" loading="lazy" />
-          </a>
-          <a href="#" class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="Amref Health Africa partner">
+          </span>
+          <span class="opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0" aria-label="Amref Health Africa partner">
             <img src="/logo-amref.png" alt="Amref Health Africa" width="80" height="48" class="h-10 md:h-12 w-auto" loading="lazy" />
-          </a>
+          </span>
         </div>
       </div>
     </section>
@@ -354,7 +354,7 @@ const milestones = [
           container.innerHTML = data.data.map((chapter, idx) => `
             <div class="bg-canvas rounded-2xl border border-hairline p-6 border-l-4 border-l-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-accent-deep">${chapter.introduction || ''}</h3>
-              ${chapter.region ? '<p class="mt-1 text-sm text-stone">' + chapter.region + '</p>' : ''}
+              ${chapter.region ? '<p class="mt-1 text-sm text-steel">' + chapter.region + '</p>' : ''}
               ${chapter.address ? '<p class="mt-2 text-steel text-sm line-clamp-2">' + chapter.address + '</p>' : ''}
             </div>
           `).join('');

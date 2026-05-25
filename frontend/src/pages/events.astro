@@ -46,7 +46,7 @@ const pastEvents = [
         }[e.month] || "06") + "-" + e.day
       }))
     })} />
-    <section class="hero-gradient text-white py-16 lg:py-20 hero-pattern">
+    <section class="hero-gradient text-white py-10 lg:py-14 hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Events</h1>
@@ -62,9 +62,9 @@ const pastEvents = [
     <section class="py-16 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap gap-3 mb-12" id="event-filters">
-          <button data-filter="all" class="filter-btn px-5 py-2 text-sm font-medium bg-primary text-on-primary rounded-full transition-all duration-300 cursor-pointer min-h-[44px]">All Events</button>
-          <button data-filter="upcoming" class="filter-btn px-5 py-2 text-sm font-medium bg-canvas text-steel border border-hairline rounded-full hover:border-accent hover:text-accent transition-all duration-300 cursor-pointer min-h-[44px]">Upcoming</button>
-          <button data-filter="past" class="filter-btn px-5 py-2 text-sm font-medium bg-canvas text-steel border border-hairline rounded-full hover:border-accent hover:text-accent transition-all duration-300 cursor-pointer min-h-[44px]">Past</button>
+          <button data-filter="all" aria-pressed="true" class="filter-btn px-5 py-2 text-sm font-medium bg-primary text-on-primary rounded-full transition-all duration-300 cursor-pointer min-h-[44px]">All Events</button>
+          <button data-filter="upcoming" aria-pressed="false" class="filter-btn px-5 py-2 text-sm font-medium bg-canvas text-steel border border-hairline rounded-full hover:border-accent hover:text-accent transition-all duration-300 cursor-pointer min-h-[44px]">Upcoming</button>
+          <button data-filter="past" aria-pressed="false" class="filter-btn px-5 py-2 text-sm font-medium bg-canvas text-steel border border-hairline rounded-full hover:border-accent hover:text-accent transition-all duration-300 cursor-pointer min-h-[44px]">Past</button>
         </div>
 
         <div id="events-empty" class="hidden text-center py-16">
@@ -117,7 +117,7 @@ const pastEvents = [
                   <p class="text-xs text-steel mt-0.5">{event.location}</p>
                   <p class="text-sm text-steel/70 mt-1 leading-relaxed">{event.desc}</p>
                 </div>
-                <span class="text-xs text-stone bg-surface px-3 py-1 rounded-full shrink-0">Completed</span>
+                <span class="text-xs text-steel bg-surface px-3 py-1 rounded-full shrink-0">Completed</span>
               </div>
             ))}
           </div>
@@ -151,13 +151,11 @@ const pastEvents = [
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => {
           b.className = 'filter-btn px-5 py-2 text-sm font-medium bg-canvas text-steel border border-hairline rounded-full hover:border-accent hover:text-accent transition-all duration-300 cursor-pointer';
+          b.setAttribute('aria-pressed', 'false');
         });
+        btn.className = 'filter-btn px-5 py-2 text-sm font-medium bg-primary text-on-primary rounded-full transition-all duration-300 cursor-pointer';
+        btn.setAttribute('aria-pressed', 'true');
         const filter = btn.dataset.filter;
-        if (filter === 'all') {
-          btn.className = 'filter-btn px-5 py-2 text-sm font-medium bg-primary text-on-primary rounded-full transition-all duration-300 cursor-pointer';
-        } else {
-          btn.className = 'filter-btn px-5 py-2 text-sm font-medium bg-primary text-on-primary rounded-full transition-all duration-300 cursor-pointer';
-        }
         if (filter === 'all') {
           upcoming.classList.remove('hidden');
           past.classList.remove('hidden');

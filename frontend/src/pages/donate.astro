@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
         { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://peaceleagueafrica.org/donate" }
       ]
     })} />
-    <section class="hero-gradient hero-pattern text-white py-16 lg:py-20">
+    <section class="hero-gradient hero-pattern text-white py-10 lg:py-14">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Your Gift Rebuilds Communities</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70 max-w-2xl">$50 trains a peace teacher. $25 provides clean water for a family. $500 launches a youth mentorship program. Every dollar goes to peace-building across 12 African countries.</p>
@@ -27,10 +27,12 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-16 lg:py-20 bg-surface">
+    <section class="py-10 lg:py-14 bg-surface">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="section-divider mb-6"></div>
+
+        <h2 class="sr-only">Donation Form</h2>
 
         <div class="step-indicator flex items-center justify-center gap-0 mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Donation progress">
           <div class="step-item active" data-step="1">
@@ -145,7 +147,7 @@ import Footer from '../components/Footer.astro';
               <label for="amount" class="block text-sm font-medium text-ink mb-1.5">Or enter custom amount *</label>
               <div class="relative">
                 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-steel text-base pointer-events-none">$</span>
-                <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="0.00"
+                <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="50.00"
                   class="input-focus-ring w-full pl-8 pr-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
               </div>
               <p id="amount-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid donation amount.</p>
@@ -163,9 +165,18 @@ import Footer from '../components/Footer.astro';
               </select>
               <p id="payment_method-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please select a payment method.</p>
             </div>
+
+            <div class="relative">
+              <label for="cause" class="block text-sm font-medium text-ink mb-1.5">Campaign (Optional)</label>
+              <select id="cause" name="cause" class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none">
+                <option value="">Select a campaign (optional)</option>
+                <!-- Populated via JavaScript -->
+              </select>
+              <p id="cause-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please select a campaign.</p>
+            </div>
             
             <div class="relative">
-              <label for="message" class="block text-sm font-medium text-ink mb-1.5">Message <span class="text-stone font-normal">(Optional)</span></label>
+              <label for="message" class="block text-sm font-medium text-ink mb-1.5">Message <span class="text-steel font-normal">(Optional)</span></label>
               <textarea id="message" name="message" rows="2" placeholder="What inspires you to give today?"
                 class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
             </div>
@@ -234,7 +245,7 @@ import Footer from '../components/Footer.astro';
               <p class="text-steel text-sm mb-1">An M-Pesa prompt has been sent to <span id="mpesa-display-phone" class="font-medium text-ink">your phone</span>.</p>
               <p class="text-steel text-sm mb-4">Enter your M-Pesa PIN to complete your gift.</p>
               
-              <p id="mpesa-timer-text" class="text-xs text-stone mb-1">Waiting for confirmation</p>
+              <p id="mpesa-timer-text" class="text-xs text-steel mb-1">Waiting for confirmation</p>
               <div class="w-full bg-hairline rounded-full h-1.5 mb-4 max-w-xs mx-auto overflow-hidden">
                 <div id="mpesa-progress-bar" class="bg-accent h-full rounded-full transition-all duration-1000 ease-linear"></div>
               </div>
@@ -272,7 +283,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
-          <p class="mt-6 text-sm text-stone text-center">
+          <p class="mt-6 text-sm text-steel text-center">
             All donations are tax-deductible. You will receive a receipt and a story of impact via email.
           </p>
         </div>
@@ -284,16 +295,37 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  import { submitDonation, donationStatus } from '../lib/api.js';
-
-  const form = document.getElementById('donation-form');
-  const skeleton = document.getElementById('form-skeleton');
-  const submitBtn = document.getElementById('submit-btn');
-  const submitBtnText = document.getElementById('submit-btn-text');
-  const submitBtnArrow = document.getElementById('submit-btn-arrow');
-  const submitSpinner = document.getElementById('submit-spinner');
-  const amountInputs = document.querySelectorAll('.amount-btn');
-  const amountField = document.getElementById('amount');
+   import { submitDonation, donationStatus } from '../lib/api.js';
+   import confetti from 'canvas-confetti';
+   
+   // Fetch active causes on page load
+   document.addEventListener('DOMContentLoaded', async () => {
+     try {
+       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/method/peace_league_website.plw_portal.doctype.cause.cause.get_active_causes`);
+       const result = await response.json();
+       
+       if (result.status === 'success' && result.data) {
+         const causeSelect = document.getElementById('cause');
+         result.data.forEach(cause => {
+           const option = document.createElement('option');
+           option.value = cause.name;
+           option.textContent = cause.title;
+           causeSelect.appendChild(option);
+         });
+       }
+     } catch (error) {
+       console.error('Error fetching causes:', error);
+     }
+   });
+   
+   const form = document.getElementById('donation-form');
+   const skeleton = document.getElementById('form-skeleton');
+   const submitBtn = document.getElementById('submit-btn');
+   const submitBtnText = document.getElementById('submit-btn-text');
+   const submitBtnArrow = document.getElementById('submit-btn-arrow');
+   const submitSpinner = document.getElementById('submit-spinner');
+   const amountInputs = document.querySelectorAll('.amount-btn');
+   const amountField = document.getElementById('amount');
   const formError = document.getElementById('form-error');
   const formSuccess = document.getElementById('form-success');
 
@@ -546,6 +578,8 @@ import Footer from '../components/Footer.astro';
     mpesaWaiting.classList.add('hidden');
     mpesaSuccess.classList.remove('hidden');
     goToStep(3);
+    confetti({ particleCount: 150, spread: 90, origin: { y: 0.6 } });
+    setTimeout(() => confetti({ particleCount: 80, spread: 120, origin: { y: 0.5 } }), 300);
 
     if (amount) {
       mpesaSuccessAmount.textContent = '$' + (parseFloat(amount).toFixed(2));
