@@ -422,10 +422,7 @@ body {
 }
 
 /* ── Pulse-Glow 3-beat then stop ── */
-
-.btn-pulse-glow {
-  animation: pulse-glow 3s ease-in-out 3;
-}
+/* Note: full .btn-pulse-glow definition is below with @keyframes pulse-glow */
 
 /* ── Additional Animations ── */
 
@@ -538,6 +535,7 @@ body {
 }
 
 .animate-heart-rise {
+  color: var(--color-accent);
   animation: heart-rise 14s ease-in-out infinite;
 }
 @keyframes heart-rise {
@@ -1153,14 +1151,14 @@ body {
 
 .heart-rise {
   animation: heart-rise 30s ease-in-out infinite;
-  color: rgba(245, 158, 11, 0.28);
+  color: var(--color-accent);
+  opacity: 0.28;
 }
 
 .soft-glow {
   border-radius: 999px;
   background: radial-gradient(circle, rgba(0, 212, 164, 0.18) 0%, rgba(0, 212, 164, 0) 70%);
   animation: soft-glow 12s ease-in-out infinite;
-  filter: blur(2px);
 }
 
 .section-band {
@@ -1187,6 +1185,156 @@ body {
   50% { opacity: 0.55; }
 }
 
+/* ── Floating decor all pages ── */
+.floating-bubble {
+  position: fixed;
+  bottom: -60px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: bubble-float 20s ease-in-out infinite;
+}
+
+.floating-dot {
+  position: fixed;
+  bottom: -40px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: dot-float 22s ease-in-out infinite;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -20px;
+  color: var(--color-accent);
+  pointer-events: none;
+  animation: heart-float 28s ease-in-out infinite;
+}
+
+.floating-dove {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: dove-float 35s ease-in-out infinite;
+}
+
+@keyframes bubble-float {
+  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
+  8% { opacity: 0.2; }
+  25% { transform: translateY(-20vh) translateX(15px) scale(1.15); opacity: 0.18; }
+  50% { transform: translateY(-50vh) translateX(-10px) scale(0.9); opacity: 0.15; }
+  75% { transform: translateY(-80vh) translateX(10px) scale(1.05); opacity: 0.1; }
+  100% { transform: translateY(-105vh) translateX(-20px) scale(0.6); opacity: 0; }
+}
+
+@keyframes dot-float {
+  0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+  12% { opacity: 0.25; }
+  30% { transform: translateY(-25vh) translateX(-15px) scale(1.2); opacity: 0.22; }
+  55% { transform: translateY(-55vh) translateX(10px) scale(0.85); opacity: 0.18; }
+  80% { transform: translateY(-85vh) translateX(-5px) scale(1.1); opacity: 0.1; }
+  100% { transform: translateY(-110vh) translateX(15px) scale(0.5); opacity: 0; }
+}
+
+@keyframes heart-float {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  15% { opacity: 0.4; }
+  35% { transform: translateY(-30vh) scale(1.3); opacity: 0.35; }
+  55% { transform: translateY(-50vh) scale(0.8); opacity: 0.25; }
+  75% { transform: translateY(-70vh) scale(1.1); opacity: 0.15; }
+  100% { transform: translateY(-90vh) scale(1.2); opacity: 0; }
+}
+
+@keyframes dove-float {
+  0% { transform: translate3d(-60px, 0, 0) scale(0.8); opacity: 0; }
+  15% { opacity: 0.12; }
+  35% { transform: translate3d(15vw, -15vh, 0) scale(1.1); opacity: 0.1; }
+  55% { transform: translate3d(45vw, -35vh, 0) scale(0.85); opacity: 0.08; }
+  75% { transform: translate3d(75vw, -45vh, 0) scale(1.05); opacity: 0.06; }
+  100% { transform: translate3d(100vw, -60vh, 0) scale(0.9); opacity: 0; }
+}
+
+/* ── Flag & heartbeat keyframes ── */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  56% { transform: scale(1); }
+}
+
+/* ── Contextual / theme animations ── */
+.pulse-ring {
+  animation: pulse-ring 3s ease-out infinite;
+}
+
+.peace-pulse {
+  animation: peace-pulse 4s ease-in-out infinite;
+}
+
+.sway-leaf {
+  display: inline-block;
+  animation: sway-leaf 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.rise-glow {
+  animation: rise-glow 1.8s ease-out forwards;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(0, 212, 164, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 212, 164, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 212, 164, 0); }
+}
+
+@keyframes peace-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes sway-leaf {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(3deg) translateX(4px); }
+  50% { transform: rotate(0deg) translateX(0); }
+  75% { transform: rotate(-3deg) translateX(-4px); }
+}
+
+@keyframes rise-glow {
+  0% { transform: translateY(12px); opacity: 0; filter: blur(4px); }
+  60% { transform: translateY(0); opacity: 1; filter: blur(0); }
+  100% { opacity: 1; }
+}
+
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(0deg) scaleX(1) translateY(0); }
+  25% { transform: rotate(2deg) scaleX(1.04) translateY(-2px); }
+  50% { transform: rotate(0deg) scaleX(1) translateY(0); }
+  75% { transform: rotate(-2deg) scaleX(0.96) translateY(-1px); }
+}
+
+.flag-wave {
+  animation: flag-wave 2.5s ease-in-out infinite;
+  transform-origin: left center;
+  display: inline-block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -1201,6 +1349,7 @@ body {
   .social-link:hover { transform: none !important; }
   .parallax-bg { transform: none !important; }
   .animate-marquee { animation: none !important; }
+  .floating-bubble, .floating-dot, .floating-heart, .floating-dove { display: none !important; }
   .motion-decor, .soft-glow { display: none !important; }
 }
 
