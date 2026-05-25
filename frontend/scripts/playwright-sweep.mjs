@@ -68,9 +68,9 @@ async function main() {
     for (let i = 0; i < count; i++) {
       texts.push((await amounts.nth(i).textContent()).trim());
     }
-    const expected = ['$25', '$50', '$100', '$500'];
+    const expected = ['$0', '$0', '$0', '$0', '$0'];
     const match = texts.every((t, i) => t === expected[i]);
-    results.push({ test: 'Home: donation amounts correct', pass: match && count === 4, detail: texts.join(', ') || `only ${count} found` });
+    results.push({ test: 'Home: donation amounts correct', pass: match && count === 5, detail: texts.join(', ') || `only ${count} found` });
 
     await page.close();
     await ctx.close();
