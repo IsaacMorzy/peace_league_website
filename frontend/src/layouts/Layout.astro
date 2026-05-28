@@ -283,6 +283,51 @@ const pageTitle = `${title} | Peace League Africa`;
         }, { passive: true });
       }
 
+      // ── MOUSE-RESPONSIVE PARTICLES ──
+      // Gently attract floating particles toward cursor
+      if (heroSection && window.matchMedia('(pointer: fine)').matches) {
+        const particles = heroSection.querySelectorAll('.animate-particle, .animate-particle--fast, .animate-particle--glow');
+        if (particles.length) {
+          let pMouseX = window.innerWidth / 2;
+          let pMouseY = window.innerHeight / 2;
+
+          document.addEventListener('mousemove', (e) => {
+            pMouseX = e.clientX;
+            pMouseY = e.clientY;
+          }, { passive: true });
+
+          // Store original positions
+          const origPositions = [];
+          particles.forEach((p, i) => {
+            const rect = p.getBoundingClientRect();
+            origPositions[i] = {
+              x: rect.left + rect.width / 2,
+              y: rect.top + rect.height / 2,
+            };
+          });
+
+          // Subtle attraction - move particles slightly toward cursor
+          function animateParticles() {
+            particles.forEach((p, i) => {
+              if (!origPositions[i]) return;
+              const rect = p.getBoundingClientRect();
+              const cx = rect.left + rect.width / 2;
+              const cy = rect.top + rect.height / 2;
+              const dx = (pMouseX - cx) * 0.0005;
+              const dy = (pMouseY - cy) * 0.0005;
+              // Clamp to tiny movement
+              const moveX = Math.max(-3, Math.min(3, dx));
+              const moveY = Math.max(-3, Math.min(3, dy));
+              // Use margin to avoid conflicting with keyframe transform
+              p.style.marginLeft = `${moveX}px`;
+              p.style.marginTop = `${moveY}px`;
+            });
+            requestAnimationFrame(animateParticles);
+          }
+          animateParticles();
+        }
+      }
+
       // ── MAGNETIC BUTTONS ──
       const magneticBtns = document.querySelectorAll('.magnetic-btn');
       if (magneticBtns.length && window.matchMedia('(pointer: fine)').matches) {

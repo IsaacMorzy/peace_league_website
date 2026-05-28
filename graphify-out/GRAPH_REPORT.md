@@ -1,7 +1,7 @@
 # Graph Report - peace_league_website  (2026-05-28)
 
 ## Corpus Check
-- 95 files · ~449,636 words
+- 95 files · ~449,632 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7827f497`
+- Built from commit: `c63a33ab`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -70,8 +70,8 @@
 - [[_COMMUNITY_Community 78|Community 78]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `../layouts/Layout.astro` - 29 edges
-2. `../components/Navigation.astro` - 29 edges
+1. `../components/Navigation.astro` - 29 edges
+2. `../layouts/Layout.astro` - 28 edges
 3. `../components/Footer.astro` - 22 edges
 4. `../components/Navigation.astro` - 20 edges
 5. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
@@ -197,15 +197,15 @@ Nodes (9): relatedPosts, ../../lib/blog-data.json, ../lib/blog-data.json, allPos
 
 ### Community 34 - "Community 34"
 Cohesion: 0.20
-Nodes (8): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../components/Navigation.astro, ../lib/api.js, pages, boardMembers, teamMembers
+Nodes (8): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../components/Navigation.astro, ../lib/api.js, milestones, target, pages
 
 ### Community 35 - "Community 35"
 Cohesion: 0.18
 Nodes (11): 2. Directory Structure, 6. Database Schema, 8.1 API Security, 8.2 Frontend Security, 8.3 Infrastructure Security, 8. Security, Appendix: Key Ports, code:block10 (tabMember) (+3 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.23
-Nodes (9): ../lib/causes-data.json, ../components/Footer.astro, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay(), stopAutoplay() (+1 more)
+Cohesion: 0.21
+Nodes (10): ../lib/causes-data.json, ../components/Footer.astro, ../layouts/Layout.astro, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay() (+2 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.22
@@ -252,8 +252,8 @@ Cohesion: 0.50
 Nodes (3): benefits, jobs, whyStats
 
 ### Community 49 - "Community 49"
-Cohesion: 0.15
-Nodes (12): ../layouts/Layout.astro, ../styles/global.css, canonicalURL, dots, heroSection, mo, rect, shapes (+4 more)
+Cohesion: 0.17
+Nodes (11): ../layouts/Layout.astro, canonicalURL, dots, heroSection, mo, rect, shapes, sheen (+3 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -280,18 +280,18 @@ Cohesion: 0.15
 Nodes (12): e, f, g, h, m, n, o, p (+4 more)
 
 ## Knowledge Gaps
-- **424 isolated node(s):** `canonicalURL`, `srMo`, `sheen`, `rect`, `mo` (+419 more)
+- **424 isolated node(s):** `target`, `../layouts/Layout.astro`, `../components/Footer.astro`, `canonicalURL`, `srMo` (+419 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../layouts/Layout.astro` connect `Community 49` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 54`, `Community 55`, `Community 31`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 54`, `Community 55`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `canonicalURL`, `srMo`, `sheen` to the rest of the system?**
+- **Why does `../layouts/Layout.astro` connect `Community 49` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 54`, `Community 55`, `Community 31`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **What connects `target`, `../layouts/Layout.astro`, `../components/Footer.astro` to the rest of the system?**
   _459 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._

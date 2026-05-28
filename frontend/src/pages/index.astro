@@ -52,6 +52,14 @@ import causes from '../lib/causes-data.json';
         <div class="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-hero-bg to-transparent"></div>
       </div>
 
+      <!-- ── SWEEPING LIGHT BEAM (hope ray) ── -->
+      <div class="light-beam" aria-hidden="true"></div>
+
+      <!-- ── PEACE RINGS (expanding ripples) ── -->
+      <div class="peace-ring hidden md:block" aria-hidden="true"></div>
+      <div class="peace-ring hidden md:block" aria-hidden="true"></div>
+      <div class="peace-ring hidden md:block" aria-hidden="true"></div>
+
       <!-- ── HERO CONTENT (foreground) ── -->
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28 z-10 w-full">
         <div class="max-w-3xl">
@@ -91,16 +99,16 @@ import causes from '../lib/causes-data.json';
 
           <!-- Social Proof - compact grid on mobile -->
           <div class="hero-social mt-8 sm:mt-16 flex flex-wrap items-center gap-x-6 gap-y-2 sm:gap-12 text-white/60" style="animation-delay: 0.8s;">
-            <div class="flex -space-x-3">
+            <div class="flex -space-x-3 stat-badge-float">
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face&q=80" alt="" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-hero-bg" loading="lazy" />
               <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=48&h=48&fit=crop&crop=face&q=80" alt="" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-hero-bg" loading="lazy" />
               <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=48&h=48&fit=crop&crop=face&q=80" alt="" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-hero-bg" loading="lazy" />
               <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-hero-bg bg-accent/20 flex items-center justify-center text-[10px] sm:text-xs font-semibold text-accent-soft">1.2k+</div>
             </div>
             <div class="hidden sm:block w-px h-8 bg-white/10"></div>
-            <p class="text-xs sm:text-base"><span class="text-white font-semibold">95%</span> of donations fund programs</p>
+            <p class="text-xs sm:text-base stat-badge-float" style="animation-delay: -1.5s;"><span class="text-white font-semibold">95%</span> of donations fund programs</p>
             <div class="hidden sm:block w-px h-8 bg-white/10"></div>
-            <p class="text-xs sm:text-base"><span class="text-white font-semibold">45+</span> school programs</p>
+            <p class="text-xs sm:text-base stat-badge-float" style="animation-delay: -3s;"><span class="text-white font-semibold">45+</span> school programs</p>
           </div>
         </div>
       </div>
