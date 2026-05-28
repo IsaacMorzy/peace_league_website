@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-28)
 
 ## Corpus Check
-- 94 files · ~449,380 words
+- 94 files · ~449,168 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 768 nodes · 907 edges · 77 communities (70 shown, 7 thin omitted)
+- 767 nodes · 887 edges · 77 communities (70 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9654261a`
+- Built from commit: `dd371589`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,13 +54,13 @@
 - [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
 - [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
-- [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 59|Community 59]]
@@ -72,12 +72,12 @@
 2. `../layouts/Layout.astro` - 26 edges
 3. `../components/Footer.astro` - 22 edges
 4. `../components/Navigation.astro` - 20 edges
-5. `../components/Footer.astro` - 20 edges
-6. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
-7. `Peace League Africa — Architecture Documentation` - 12 edges
-8. `Lighthouse Sweep Design (All Pages)` - 12 edges
-9. `File Structure` - 11 edges
-10. `Components` - 10 edges
+5. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
+6. `Peace League Africa — Architecture Documentation` - 12 edges
+7. `Lighthouse Sweep Design (All Pages)` - 12 edges
+8. `File Structure` - 11 edges
+9. `Components` - 10 edges
+10. `Backend API Module (api.py)` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Donation` --uses--> `Donation`  [INFERRED]
@@ -194,8 +194,8 @@ Cohesion: 0.18
 Nodes (9): relatedPosts, ../../lib/blog-data.json, ../lib/blog-data.json, allPostsJson, categories, end, pages, start (+1 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.19
-Nodes (11): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../components/Footer.astro, ../components/Navigation.astro, ../lib/api.js, categories, galleryImages (+3 more)
+Cohesion: 0.20
+Nodes (8): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../components/Navigation.astro, ../lib/api.js, categories, galleryImages, pages
 
 ### Community 35 - "Community 35"
 Cohesion: 0.18
@@ -245,9 +245,13 @@ Nodes (3): countries, countryDots, lines
 Cohesion: 0.67
 Nodes (3): main(), pageStatus(), ROUTES
 
+### Community 48 - "Community 48"
+Cohesion: 0.50
+Nodes (3): benefits, jobs, whyStats
+
 ### Community 49 - "Community 49"
-Cohesion: 0.18
-Nodes (10): ../layouts/Layout.astro, ../styles/global.css, canonicalURL, dots, heroSection, shapes, srMo, benefits (+2 more)
+Cohesion: 0.14
+Nodes (12): ../layouts/Layout.astro, ../styles/global.css, canonicalURL, dots, heroSection, shapes, srMo, milestones (+4 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -261,25 +265,21 @@ Nodes (4): 4.1 GET Endpoints, 4.2 POST Endpoints, 4.3 Internal Endpoints (requir
 Cohesion: 0.33
 Nodes (5): ../components/CTA.astro, btn, data, ideas, steps
 
-### Community 55 - "Community 55"
-Cohesion: 0.50
-Nodes (3): error, submitBtn, successMsg
-
 ### Community 57 - "Community 57"
 Cohesion: 0.67
 Nodes (3): 1. High-Level Architecture, code:block1 (┌──────────────────────────────────────────────────────────┐), Key Technologies
 
 ## Knowledge Gaps
-- **408 isolated node(s):** `canonicalURL`, `srMo`, `heroSection`, `shapes`, `dots` (+403 more)
+- **408 isolated node(s):** `footerLinks`, `FLAG_COUNTRIES`, `canonicalURL`, `srMo`, `heroSection` (+403 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 49`, `Community 54`, `Community 55`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **What connects `canonicalURL`, `srMo`, `heroSection` to the rest of the system?**
+- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 54`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **What connects `footerLinks`, `FLAG_COUNTRIES`, `canonicalURL` to the rest of the system?**
   _443 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._

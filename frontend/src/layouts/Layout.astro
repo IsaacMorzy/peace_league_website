@@ -197,6 +197,60 @@ const pageTitle = `${title} | Peace League Africa`;
         }
       }
 
+      // ── TREND 1: 3D TILT CARDS ──
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      if (tiltCards.length && window.matchMedia('(pointer: fine)').matches) {
+        tiltCards.forEach(card => {
+          const sheen = card.querySelector('.tilt-sheen');
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
+            if (sheen) {
+              sheen.style.setProperty('--sheen-x', `${(x / rect.width) * 100}%`);
+              sheen.style.setProperty('--sheen-y', `${(y / rect.height) * 100}%`);
+            }
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+          });
+        });
+      }
+
+      // ── TREND 2: ENHANCED SCROLL REVEALS ──
+      // Handle .img-reveal, .reveal-scale, .reveal-scale, .img-reveal-left
+      if ('IntersectionObserver' in window) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '60px', threshold: 0.1 });
+
+        document.querySelectorAll('.img-reveal, .reveal-scale, .img-reveal-left, .stat-number').forEach(el => {
+          scrollObserver.observe(el);
+        });
+
+        // Also set up mutation observer for dynamically added elements
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(() => {
+            const mo = new MutationObserver(() => {
+              document.querySelectorAll('.img-reveal:not(.revealed), .reveal-scale:not(.revealed), .img-reveal-left:not(.revealed), .stat-number:not(.revealed)').forEach(el => {
+                scrollObserver.observe(el);
+              });
+            });
+            mo.observe(document.body, { childList: true, subtree: true });
+          }, { timeout: 2000 });
+        }
+      }
+
       // Cursor glow effect
       const cursorGlow = document.getElementById('cursor-glow');
       if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {

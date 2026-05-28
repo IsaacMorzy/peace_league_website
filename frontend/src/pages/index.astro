@@ -148,30 +148,34 @@ import causes from '../lib/causes-data.json';
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Grassroots peacebuilding measured in lives changed, communities rebuilt, and futures restored.</p>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-          <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 tilt-container">
+          <div class="scroll-reveal tilt-card group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center" style="animation-delay: 0ms; transform-style: preserve-3d;">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent/5 rounded-full blur-2xl"></div>
-            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent block leading-none" data-count-target="45" data-count-suffix="+">0</span>
+            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent block leading-none stat-number" data-count-target="45" data-count-suffix="+">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">Schools</span>
             <p class="mt-3 text-xs text-steel leading-relaxed">Peace education programs in 8 countries equipping the next generation of leaders.</p>
+            <div class="tilt-sheen"></div>
           </div>
-          <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent-warm/20" style="animation-delay: 80ms">
+          <div class="scroll-reveal tilt-card group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center" style="animation-delay: 80ms; transform-style: preserve-3d;">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent-warm/5 rounded-full blur-2xl"></div>
-            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-warm block leading-none" data-count-target="12" data-count-suffix="">0</span>
+            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-warm block leading-none stat-number" data-count-target="12" data-count-suffix="">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">Countries</span>
             <p class="mt-3 text-xs text-steel leading-relaxed">From Kenya to DRC, we operate where conflict is deepest and hope is scarcest.</p>
+            <div class="tilt-sheen"></div>
           </div>
-          <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20" style="animation-delay: 150ms">
+          <div class="scroll-reveal tilt-card group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center" style="animation-delay: 150ms; transform-style: preserve-3d;">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent/5 rounded-full blur-2xl"></div>
-            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent block leading-none" data-count-target="1200" data-count-suffix="+">0</span>
+            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent block leading-none stat-number" data-count-target="1200" data-count-suffix="+">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">Volunteers</span>
             <p class="mt-3 text-xs text-steel leading-relaxed">Teachers, medics, engineers &mdash; everyday Africans building peace in their communities.</p>
+            <div class="tilt-sheen"></div>
           </div>
-          <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent-warm/20" style="animation-delay: 220ms">
+          <div class="scroll-reveal tilt-card group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center" style="animation-delay: 220ms; transform-style: preserve-3d;">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent-warm/5 rounded-full blur-2xl"></div>
-            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-warm block leading-none" data-count-target="95" data-count-suffix="%">0</span>
+            <span class="big-stat-value text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-warm block leading-none stat-number" data-count-target="95" data-count-suffix="%">0</span>
             <span class="block mt-2 text-sm text-steel font-medium">To Programs</span>
             <p class="mt-3 text-xs text-steel leading-relaxed">Every dollar donated goes directly to community-driven peacebuilding work.</p>
+            <div class="tilt-sheen"></div>
           </div>
         </div>
       </div>
@@ -182,15 +186,15 @@ import causes from '../lib/causes-data.json';
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Every cause is community-driven, locally led, and fully transparent. Here is where your support goes.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 tilt-container">
           {causes.slice(0, 6).map((cause, idx) => (
-            <div class="scroll-reveal group bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-accent/20" style={`animation-delay: ${idx * 80}ms`}>
-              <div class="h-44 relative overflow-hidden">
+            <div class="scroll-reveal tilt-card group bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm transition-all duration-300 hover:-translate-y-0 hover:shadow-xl hover:border-accent/20" style={`animation-delay: ${idx * 80}ms; transform-style: preserve-3d;`}>
+              <div class="h-44 relative overflow-hidden tilt-card-content">
                 <img src={cause.image} alt={cause.title} width="400" height="220" class="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105" loading="lazy" decoding="async" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <span class="absolute bottom-3 left-3 badge-tag">{cause.category}</span>
               </div>
-              <div class="p-5">
+              <div class="p-5 tilt-card-content">
                 <h3 class="text-lg font-semibold text-ink leading-snug">{cause.title}</h3>
                 <p class="mt-2 text-sm text-steel line-clamp-2 leading-relaxed">{cause.description}</p>
                 <div class="mt-4">
@@ -207,6 +211,7 @@ import causes from '../lib/causes-data.json';
                   Donate to This Cause
                 </a>
               </div>
+              <div class="tilt-sheen"></div>
             </div>
           ))}
         </div>
@@ -224,9 +229,9 @@ import causes from '../lib/causes-data.json';
         <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
         <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-8">A proven process rooted in listening, local leadership, and lasting change.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
-            <div class="scroll-reveal relative text-center md:text-left">
+            <div class="scroll-reveal group relative text-center md:text-left">
               <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-5">
-                <div class="flex-none w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto md:mx-0">
+                <div class="flex-none w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto md:mx-0 icon-pulse">
                   <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 </div>
                 <div>
@@ -234,14 +239,14 @@ import causes from '../lib/causes-data.json';
                     <span class="text-xs font-semibold tracking-widest uppercase text-accent">Step 01</span>
                     <span class="hidden md:block w-8 h-px bg-accent/30"></span>
                   </div>
-                  <h3 class="text-xl font-semibold text-ink">Assess &amp; Listen</h3>
+                  <h3 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors duration-300">Assess &amp; Listen</h3>
                   <p class="mt-2 text-sm text-steel leading-relaxed">We spend months listening to communities before writing a single proposal. Local elders, teachers, and youth tell us what they actually need.</p>
                 </div>
               </div>
             </div>
-            <div class="scroll-reveal relative text-center md:text-left" style="animation-delay: 100ms">
+            <div class="scroll-reveal group relative text-center md:text-left" style="animation-delay: 100ms">
               <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-5">
-                <div class="flex-none w-14 h-14 bg-accent-warm/10 rounded-2xl flex items-center justify-center mx-auto md:mx-0">
+                <div class="flex-none w-14 h-14 bg-accent-warm/10 rounded-2xl flex items-center justify-center mx-auto md:mx-0 icon-float">
                   <svg class="w-7 h-7 text-accent-warm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
@@ -249,14 +254,14 @@ import causes from '../lib/causes-data.json';
                     <span class="text-xs font-semibold tracking-widest uppercase text-accent-warm">Step 02</span>
                     <span class="hidden md:block w-8 h-px bg-accent-warm/30"></span>
                   </div>
-                  <h3 class="text-xl font-semibold text-ink">Act Together</h3>
+                  <h3 class="text-xl font-semibold text-ink group-hover:text-accent-warm transition-colors duration-300">Act Together</h3>
                   <p class="mt-2 text-sm text-steel leading-relaxed">We deploy resources directly &mdash; no middlemen, no overhead bloat. Local contractors, local materials, local pride in every well built and classroom furnished.</p>
                 </div>
               </div>
             </div>
-            <div class="scroll-reveal relative text-center md:text-left" style="animation-delay: 200ms">
+            <div class="scroll-reveal group relative text-center md:text-left" style="animation-delay: 200ms">
               <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-5">
-                <div class="flex-none w-14 h-14 bg-accent-soft/20 rounded-2xl flex items-center justify-center mx-auto md:mx-0">
+                <div class="flex-none w-14 h-14 bg-accent-soft/20 rounded-2xl flex items-center justify-center mx-auto md:mx-0 icon-pulse" style="animation-delay: 0.5s">
                   <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                 </div>
                 <div>
@@ -264,7 +269,7 @@ import causes from '../lib/causes-data.json';
                     <span class="text-xs font-semibold tracking-widest uppercase text-accent">Step 03</span>
                     <span class="hidden md:block w-8 h-px bg-accent/30"></span>
                   </div>
-                  <h3 class="text-xl font-semibold text-ink">Sustain &amp; Hand Over</h3>
+                  <h3 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors duration-300">Sustain &amp; Hand Over</h3>
                   <p class="mt-2 text-sm text-steel leading-relaxed">We train local leaders to run every program themselves within 3 years. The best solutions come from within &mdash; we just help unlock them.</p>
                 </div>
               </div>
