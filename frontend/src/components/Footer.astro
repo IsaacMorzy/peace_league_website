@@ -59,6 +59,36 @@ const FLAG_COUNTRIES = [
 
 
 
+  <!-- Newsletter Section -->
+  <div class="border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-lg font-semibold text-ink">Stay Connected</h3>
+          <p class="text-sm text-steel mt-1">Get monthly updates from the field — stories of hope, impact reports, and ways to help.</p>
+        </div>
+        <form class="flex w-full lg:w-auto gap-3" data-astro-reload>
+          <label for="footer-email" class="sr-only">Email address</label>
+          <input
+            id="footer-email"
+            type="email"
+            required
+            placeholder="your@email.com"
+            class="newsletter-input flex-1 lg:w-64 px-4 py-2.5 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-stone text-sm focus:outline-none"
+            autocomplete="email"
+          />
+          <button
+            type="submit"
+            class="inline-flex items-center px-5 py-2.5 bg-accent text-white rounded-xl font-semibold text-sm hover:bg-accent-deep transition-colors shrink-0 btn-ripple"
+          >
+            Subscribe
+            <svg class="ml-1.5 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Back to top -->
   <button
     id="footer-back-to-top"

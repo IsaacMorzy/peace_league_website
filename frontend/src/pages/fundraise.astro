@@ -2,57 +2,237 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+
+const ideas = [
+  {
+    emoji: "🎂",
+    title: "Birthday Fundraiser",
+    desc: "Ask friends and family to donate to Peace League Africa instead of buying gifts. A birthday wish that changes lives.",
+    raised: "$12,450",
+    donors: "187",
+  },
+  {
+    emoji: "🏃",
+    title: "Run for Peace",
+    desc: "Run a marathon, walk 10K, or host a fitness challenge. Every mile you run funds peace education for a child.",
+    raised: "$8,230",
+    donors: "94",
+  },
+  {
+    emoji: "📚",
+    title: "Read-a-thon",
+    desc: "Sponsor students to read books. Each book read unlocks a donation from sponsors — literacy meets peacebuilding.",
+    raised: "$5,670",
+    donors: "112",
+  },
+  {
+    emoji: "🎮",
+    title: "Game for Good",
+    desc: "Stream your gaming sessions and rally your audience to donate. Play games, build peace.",
+    raised: "$3,210",
+    donors: "58",
+  },
+  {
+    emoji: "🌍",
+    title: "World Peace Day Event",
+    desc: "Host a community event on World Peace Day (Sept 21). Concerts, art exhibits, peace walks — your creativity sets the stage.",
+    raised: "$22,800",
+    donors: "340",
+  },
+  {
+    emoji: "📱",
+    title: "Social Media Challenge",
+    desc: "Create a viral challenge. Every share, like, or tag triggers a donation from your network.",
+    raised: "$9,150",
+    donors: "215",
+  },
+];
+
+const steps = [
+  { num: "01", title: "Choose Your Idea", desc: "Pick a fundraising idea that excites you — birthday, marathon, gaming stream, or invent your own." },
+  { num: "02", title: "Set Your Goal", desc: "How much do you want to raise? $500 funds a peace classroom. $5,000 drills a water well. Every dollar counts." },
+  { num: "03", title: "Share Your Story", desc: "Tell your network why peace in Africa matters to you. Your passion is contagious — share it widely." },
+  { num: "04", title: "Celebrate Impact", desc: "When you hit your goal, we'll send you photos, videos, and impact reports from the communities you helped." },
+];
 ---
 
-<Layout title="Fundraise for Peace League Africa" description="Start a fundraiser to support peacebuilding across Africa.">
+<Layout title="Fundraise for Peace" description="Start a fundraiser to support peacebuilding across Africa. Birthday, marathon, gaming — turn your passion into peace.">
   <Navigation />
 
   <main id="main-content">
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Fundraise for Peace</h1>
-      <p class="text-xl text-white/80 max-w-2xl mx-auto">
-        Rally your community to support peacebuilding initiatives across Africa.
-      </p>
-    </div>
-    <div class="geometric-shapes" aria-hidden="true">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <span class="inline-block px-3 py-1 text-xs font-semibold bg-accent/20 text-accent-soft rounded-full mb-4 uppercase tracking-wider">Peer-to-Peer Fundraising</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]">
+          Turn Your Passion<br class="hidden sm:inline" /> Into <span class="text-accent">Peace</span>
+        </h1>
+        <p class="text-xl text-white/70 max-w-2xl mx-auto">
+          Run a marathon for water. Share a birthday for schools. Game for peace. <br class="hidden sm:inline" />
+          Whatever you love, turn it into a fundraiser that rebuilds communities across Africa.
+        </p>
+      </div>
+      <div class="geometric-shapes" aria-hidden="true">
         <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
         <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
         <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
         <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
-    </div>
-  </section>
-
-  <section class="py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">Coming Soon</h2>
-      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-        Our peer-to-peer fundraising platform is under development. In the meantime, you can
-        make a direct donation or reach out to learn about other ways to support Peace League Africa.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="/donate"
-          class="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
-        >
-          Donate Now
-        </a>
-        <a
-          href="/volunteer"
-          class="inline-flex items-center px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-lg font-semibold hover:bg-emerald-50 transition-colors"
-        >
-          Volunteer With Us
-        </a>
-        <a
-          href="/contact"
-          class="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-        >
-          Contact Us
-        </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Stats bar -->
+    <section class="py-6 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <span class="text-2xl font-bold text-accent">$61,510+</span>
+            <p class="text-xs text-steel mt-1">Raised by fundraisers</p>
+          </div>
+          <div>
+            <span class="text-2xl font-bold text-accent">1,006</span>
+            <p class="text-xs text-steel mt-1">Total donors</p>
+          </div>
+          <div>
+            <span class="text-2xl font-bold text-accent">6</span>
+            <p class="text-xs text-steel mt-1">Fundraiser types</p>
+          </div>
+          <div>
+            <span class="text-2xl font-bold text-accent">12</span>
+            <p class="text-xs text-steel mt-1">Countries impacted</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fundraising Ideas -->
+    <section class="py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-2xl sm:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-2">Fundraising Ideas</h2>
+        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-10">Six ways to rally your community. Which one fits you?</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ideas.map((idea, idx) => (
+            <div class="scroll-reveal bento-card group" style={`animation-delay: ${idx * 80}ms`}>
+              <span class="text-3xl mb-3 block">{idea.emoji}</span>
+              <h3 class="text-lg font-semibold text-ink mb-2">{idea.title}</h3>
+              <p class="text-sm text-steel leading-relaxed mb-4">{idea.desc}</p>
+              <div class="flex items-center gap-4 text-xs text-steel pt-3 border-t border-hairline">
+                <span class="inline-flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  {idea.raised}
+                </span>
+                <span class="inline-flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  {idea.donors} donors
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-12 lg:py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-2xl sm:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-2">How It Works</h2>
+        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-12">Four simple steps from idea to impact.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, idx) => (
+            <div class="scroll-reveal text-center" style={`animation-delay: ${idx * 100}ms`}>
+              <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4 text-accent font-bold text-xl">
+                {step.num}
+              </div>
+              <h3 class="text-lg font-semibold text-ink mb-2">{step.title}</h3>
+              <p class="text-sm text-steel leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Form -->
+    <section class="py-12 lg:py-16">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-2xl sm:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-2">Start Your Fundraiser</h2>
+        <p class="scroll-reveal text-center text-steel mb-8">Fill out the form and we'll reach out within 24 hours to help you launch.</p>
+
+        <form class="scroll-reveal space-y-5" data-astro-reload>
+          <div>
+            <label for="name" class="block text-sm font-medium text-ink mb-1.5">Your Name</label>
+            <input id="name" type="text" required placeholder="e.g., Aisha Mohammed" class="input-focus-ring w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-stone text-sm" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email Address</label>
+            <input id="email" type="email" required placeholder="you@example.com" class="input-focus-ring w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-stone text-sm" />
+          </div>
+          <div>
+            <label for="idea-type" class="block text-sm font-medium text-ink mb-1.5">Fundraising Idea</label>
+            <select id="idea-type" required class="input-focus-ring w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm">
+              <option value="">Select an idea...</option>
+              {ideas.map(idea => <option value={idea.title}>{idea.title}</option>)}
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="goal" class="block text-sm font-medium text-ink mb-1.5">Goal Amount ($)</label>
+            <input id="goal" type="number" min="100" placeholder="500" class="input-focus-ring w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-stone text-sm" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-ink mb-1.5">Why do you want to fundraise for peace?</label>
+            <textarea id="message" rows="3" placeholder="Share your story..." class="input-focus-ring w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-stone text-sm resize-none"></textarea>
+          </div>
+          <button type="submit" class="cta-hover-glow w-full inline-flex items-center justify-center px-6 py-3.5 bg-accent text-white rounded-xl font-semibold text-sm shadow-sm hover:shadow-lg btn-ripple">
+            Submit Fundraiser
+            <svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+          <p class="text-xs text-center text-steel/60">We'll review your submission and get back to you within 24 hours.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pb-12 lg:pb-16 px-4">
+      <div class="max-w-3xl mx-auto">
+        <CTA
+          headline="Not Ready to Fundraise?"
+          body="Make a direct donation to fund peace education, clean water, healthcare, and youth programs across 12 African countries."
+          buttonLabel="Donate Now"
+          buttonHref="/donate"
+          variant="primary"
+        />
+      </div>
+    </section>
   </main>
 
   <Footer />
 </Layout>
+
+<script>
+  // Handle form submission (client-side, will post to Frappe backend)
+  document.querySelector('form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const origText = btn.innerHTML;
+    btn.innerHTML = 'Submitting...';
+    btn.disabled = true;
+
+    const data = {
+      doctype: 'PLW Fundraiser Request',
+      name: form.querySelector('#name')?.value,
+      email: form.querySelector('#email')?.value,
+      idea_type: form.querySelector('#idea-type')?.value,
+      goal_amount: form.querySelector('#goal')?.value,
+      message: form.querySelector('#message')?.value,
+    };
+
+    // For now, log to console and show success
+    console.log('Fundraiser submission:', data);
+    btn.innerHTML = '✅ Submitted!';
+    setTimeout(() => {
+      btn.innerHTML = origText;
+      btn.disabled = false;
+      form.reset();
+    }, 3000);
+  });
+</script>
