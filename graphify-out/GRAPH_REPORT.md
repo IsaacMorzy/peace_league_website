@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-28)
 
 ## Corpus Check
-- 93 files · ~436,576 words
+- 93 files · ~437,140 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 759 nodes · 861 edges · 76 communities (69 shown, 7 thin omitted)
+- 761 nodes · 863 edges · 76 communities (69 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e3e9f238`
+- Built from commit: `6e9737bb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,6 +43,7 @@
 - [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
 - [[_COMMUNITY_Community 39|Community 39]]
 - [[_COMMUNITY_Community 40|Community 40]]
@@ -59,7 +60,6 @@
 - [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
-- [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 59|Community 59]]
@@ -201,8 +201,8 @@ Cohesion: 0.18
 Nodes (11): 2. Directory Structure, 6. Database Schema, 8.1 API Security, 8.2 Frontend Security, 8.3 Infrastructure Security, 8. Security, Appendix: Key Ports, code:block10 (tabMember) (+3 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.25
-Nodes (8): ../lib/causes-data.json, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay(), stopAutoplay(), target
+Cohesion: 0.21
+Nodes (10): ../lib/causes-data.json, ../components/Footer.astro, ../components/Navigation.astro, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay() (+2 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.22
@@ -265,19 +265,19 @@ Cohesion: 0.67
 Nodes (3): 1. High-Level Architecture, code:block1 (┌──────────────────────────────────────────────────────────┐), Key Technologies
 
 ## Knowledge Gaps
-- **402 isolated node(s):** `footerLinks`, `FLAG_COUNTRIES`, `normalizedFrappeBase`, `navItems`, `iconPaths` (+397 more)
+- **404 isolated node(s):** `string`, `string`, `canonicalURL`, `srMo`, `heroSection` (+399 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 54`?**
+- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 37`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `../layouts/Layout.astro` connect `Community 34` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 54`, `Community 31`?**
+- **Why does `../layouts/Layout.astro` connect `Community 34` to `Community 33`, `Community 3`, `Community 36`, `Community 37`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 31`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `footerLinks`, `FLAG_COUNTRIES`, `normalizedFrappeBase` to the rest of the system?**
-  _437 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `string`, `string`, `canonicalURL` to the rest of the system?**
+  _439 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

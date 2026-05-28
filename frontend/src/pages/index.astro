@@ -10,10 +10,17 @@ import causes from '../lib/causes-data.json';
   <Navigation />
 
   <main id="main-content">
-    <section id="hero-section" class="relative text-white hero-gradient overflow-hidden min-h-[70vh] flex items-center">
+    <section id="hero-section" class="relative text-white hero-gradient overflow-hidden min-h-[70vh] flex items-center grain-overlay">
       <div class="absolute inset-0 z-[1] opacity-[0.04] bg-[image:radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-hero-bg/60 via-transparent to-hero-bg/20 z-[2]"></div>
       <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-hero-bg to-transparent z-[2]"></div>
+      <!-- Geometric shapes -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <span class="float-shape float-shape--a" style="width:300px;height:300px;top:5%;left:0;background:radial-gradient(circle,rgba(0,212,164,0.12),transparent 70%);"></span>
+        <span class="float-shape float-shape--b" style="width:180px;height:180px;top:20%;right:5%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);"></span>
+        <span class="float-shape--diamond float-shape--a" style="width:100px;height:100px;bottom:25%;left:8%;border:2px solid rgba(0,212,164,0.1);background:transparent;border-radius:0;transform:rotate(45deg);"></span>
+        <span class="float-shape float-shape--c" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);filter:blur(60px);"></span>
+      </div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 z-[3] w-full">
         <div class="max-w-3xl">
           <div class="scroll-reveal mb-6">
@@ -60,34 +67,61 @@ import causes from '../lib/causes-data.json';
         <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">Why Peace League Africa</h2>
         <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
         <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-8">Four reasons to trust us with your support</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden">
-            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        
+        <!-- Bento grid layout -->
+        <div class="bento-grid md:bento-grid--4">
+          <div class="scroll-reveal bento-card md:col-span-2 md:row-span-2 bg-gradient-to-br from-accent/10 via-canvas to-accent/5 border-accent/10" style="animation-delay: 0ms">
+            <div class="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3 class="heading-sm mb-2">Locally Led, African Owned</h3>
-            <p class="text-body-sm text-steel leading-relaxed">We are not a foreign NGO. Peace League Africa is led by Africans, for Africans. Our teams live in the communities they serve.</p>
+            <h3 class="heading-md mb-3">Locally Led, African Owned</h3>
+            <p class="text-body text-steel leading-relaxed max-w-md">We are not a foreign NGO. Peace League Africa is led by Africans, for Africans. Our teams live in the communities they serve, ensuring every program is culturally rooted and community-owned from day one.</p>
+            <div class="mt-6 flex items-center gap-4 text-sm">
+              <span class="inline-flex items-center gap-1.5 text-accent font-medium">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                12 Countries
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-accent font-medium">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                500+ Communities
+              </span>
+            </div>
           </div>
-          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 60ms">
-            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+
+          <div class="scroll-reveal bento-card bento-card--accent" style="animation-delay: 60ms">
+            <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
             </div>
-            <h3 class="heading-sm mb-2">95% to Programs</h3>
-            <p class="text-body-sm text-steel leading-relaxed">Radical transparency. We keep overhead under 5% so your donation goes where it matters most: on the ground.</p>
+            <h3 class="text-lg font-bold mb-2">95% to Programs</h3>
+            <p class="text-sm text-white/80 leading-relaxed">Radical transparency. We keep overhead under 5% so your donation goes where it matters most: on the ground.</p>
+            <div class="mt-4 pt-4 border-t border-white/10">
+              <span class="text-3xl font-bold">95%</span>
+              <span class="text-white/60 text-sm ml-2">program funding</span>
+            </div>
           </div>
-          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 120ms">
-            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+
+          <div class="scroll-reveal bento-card bento-card--warm" style="animation-delay: 120ms">
+            <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
             </div>
-            <h3 class="heading-sm mb-2">Pan-African, Local Impact</h3>
-            <p class="text-body-sm text-steel leading-relaxed">Operating in 12 countries, 500+ communities. Every program is hyper-local, designed by and for the community it serves.</p>
+            <h3 class="text-lg font-bold mb-2">Pan-African Impact</h3>
+            <p class="text-sm text-white/80 leading-relaxed">Operating in 12 countries, 500+ communities. Every program is hyper-local, designed by and for the community it serves.</p>
           </div>
-          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 180ms">
-            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+
+          <div class="scroll-reveal bento-card bento-card--surface md:col-span-2" style="animation-delay: 180ms">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-accent-warm/10 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7 text-accent-warm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <div>
+                <h3 class="heading-sm mb-2">Sustainable, Not Dependent</h3>
+                <p class="text-body-sm text-steel leading-relaxed">Our 3-year handover model trains local leaders to run every program independently. We don't create dependency — we build self-sufficiency.</p>
+                <a href="/about" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-deep transition-colors">
+                  Learn about our model
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
             </div>
-            <h3 class="heading-sm mb-2">Sustainable, Not Dependent</h3>
-            <p class="text-body-sm text-steel leading-relaxed">Our 3-year handover model trains local leaders to run every program independently. We don't create dependency. <a href="/about" class="text-accent hover:text-accent-deep underline underline-offset-2 transition-colors">Learn more</a></p>
           </div>
         </div>
       </div>

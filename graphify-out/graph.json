@@ -4,132 +4,49 @@
   "graph": {},
   "nodes": [
     {
-      "label": "../components/Footer.astro",
+      "label": "CTA.astro",
       "file_type": "code",
-      "source_file": "frontend/src/components/Footer.astro",
+      "source_file": "frontend/src/components/CTA.astro",
       "source_location": "L1",
-      "confidence": "EXTRACTED",
-      "id": "frontend_src_components_footer_astro",
-      "community": 34,
-      "norm_label": "../components/footer.astro"
+      "id": "frontend_src_components_cta_astro",
+      "community": 60,
+      "norm_label": "cta.astro"
     },
     {
-      "label": "footerLinks",
+      "label": "string",
       "file_type": "code",
-      "source_file": "frontend/src/components/Footer.astro",
-      "source_location": "L4",
-      "id": "components_footer_footerlinks",
-      "community": 34,
-      "norm_label": "footerlinks"
+      "source_file": "frontend/src/components/CTA.astro",
+      "source_location": "L20",
+      "id": "components_cta_string",
+      "community": 60,
+      "norm_label": "string"
     },
     {
-      "label": "FLAG_COUNTRIES",
+      "label": "Card.astro",
       "file_type": "code",
-      "source_file": "frontend/src/components/Footer.astro",
-      "source_location": "L41",
-      "id": "components_footer_flag_countries",
-      "community": 34,
-      "norm_label": "flag_countries"
-    },
-    {
-      "label": "LetTalkPeace.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/components/LetTalkPeace.astro",
+      "source_file": "frontend/src/components/Card.astro",
       "source_location": "L1",
-      "id": "frontend_src_components_lettalkpeace_astro",
-      "community": 67,
-      "norm_label": "lettalkpeace.astro"
+      "id": "frontend_src_components_card_astro",
+      "community": 59,
+      "norm_label": "card.astro"
     },
     {
-      "label": "../components/Navigation.astro",
+      "label": "string",
       "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
+      "source_file": "frontend/src/components/Card.astro",
+      "source_location": "L20",
+      "id": "components_card_string",
+      "community": 59,
+      "norm_label": "string"
+    },
+    {
+      "label": "Hero.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Hero.astro",
       "source_location": "L1",
-      "confidence": "EXTRACTED",
-      "id": "frontend_src_components_navigation_astro",
-      "community": 31,
-      "norm_label": "../components/navigation.astro"
-    },
-    {
-      "label": "normalizedFrappeBase",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L3",
-      "id": "components_navigation_normalizedfrappebase",
-      "community": 31,
-      "norm_label": "normalizedfrappebase"
-    },
-    {
-      "label": "navItems",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L8",
-      "id": "components_navigation_navitems",
-      "community": 31,
-      "norm_label": "navitems"
-    },
-    {
-      "label": "iconPaths",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L56",
-      "id": "components_navigation_iconpaths",
-      "community": 31,
-      "norm_label": "iconpaths"
-    },
-    {
-      "label": "items",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L253",
-      "id": "components_navigation_items",
-      "community": 31,
-      "norm_label": "items"
-    },
-    {
-      "label": "focusable",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L307",
-      "id": "components_navigation_focusable",
-      "community": 31,
-      "norm_label": "focusable"
-    },
-    {
-      "label": "group",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L335",
-      "id": "components_navigation_group",
-      "community": 31,
-      "norm_label": "group"
-    },
-    {
-      "label": "children",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L336",
-      "id": "components_navigation_children",
-      "community": 31,
-      "norm_label": "children"
-    },
-    {
-      "label": "chevron",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L337",
-      "id": "components_navigation_chevron",
-      "community": 31,
-      "norm_label": "chevron"
-    },
-    {
-      "label": "d",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Navigation.astro",
-      "source_location": "L363",
-      "id": "components_navigation_d",
-      "community": 31,
-      "norm_label": "d"
+      "id": "frontend_src_components_hero_astro",
+      "community": 66,
+      "norm_label": "hero.astro"
     },
     {
       "label": "../layouts/Layout.astro",
@@ -154,7 +71,7 @@
       "label": "srMo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L185",
+      "source_location": "L188",
       "id": "layouts_layout_srmo",
       "community": 34,
       "norm_label": "srmo"
@@ -163,7 +80,7 @@
       "label": "heroSection",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L199",
+      "source_location": "L220",
       "id": "layouts_layout_herosection",
       "community": 34,
       "norm_label": "herosection"
@@ -172,7 +89,7 @@
       "label": "shapes",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L208",
+      "source_location": "L229",
       "id": "layouts_layout_shapes",
       "community": 34,
       "norm_label": "shapes"
@@ -181,7 +98,7 @@
       "label": "dots",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L209",
+      "source_location": "L230",
       "id": "layouts_layout_dots",
       "community": 34,
       "norm_label": "dots"
@@ -194,798 +111,6 @@
       "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css",
       "community": 34,
       "norm_label": "../styles/global.css"
-    },
-    {
-      "label": "404.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/404.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_404_astro",
-      "community": 34,
-      "norm_label": "404.astro"
-    },
-    {
-      "label": "about.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/about.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_about_astro",
-      "community": 54,
-      "norm_label": "about.astro"
-    },
-    {
-      "label": "milestones",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/about.astro",
-      "source_location": "L7",
-      "id": "pages_about_milestones",
-      "community": 54,
-      "norm_label": "milestones"
-    },
-    {
-      "label": "target",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/about.astro",
-      "source_location": "L367",
-      "id": "pages_about_target",
-      "community": 54,
-      "norm_label": "target"
-    },
-    {
-      "label": "blog.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_blog_astro",
-      "community": 33,
-      "norm_label": "blog.astro"
-    },
-    {
-      "label": "categories",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L7",
-      "id": "pages_blog_categories",
-      "community": 33,
-      "norm_label": "categories"
-    },
-    {
-      "label": "totalPages",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L10",
-      "id": "pages_blog_totalpages",
-      "community": 33,
-      "norm_label": "totalpages"
-    },
-    {
-      "label": "allPostsJson",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L11",
-      "id": "pages_blog_allpostsjson",
-      "community": 33,
-      "norm_label": "allpostsjson"
-    },
-    {
-      "label": "pages",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L213",
-      "id": "pages_blog_pages",
-      "community": 33,
-      "norm_label": "pages"
-    },
-    {
-      "label": "start",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L218",
-      "id": "pages_blog_start",
-      "community": 33,
-      "norm_label": "start"
-    },
-    {
-      "label": "end",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L219",
-      "id": "pages_blog_end",
-      "community": 33,
-      "norm_label": "end"
-    },
-    {
-      "label": "../lib/blog-data.json",
-      "file_type": "code",
-      "source_file": "frontend/src/lib/blog-data.json",
-      "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
-      "community": 33,
-      "norm_label": "../lib/blog-data.json"
-    },
-    {
-      "label": "[slug].astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog/[slug].astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_blog_slug_astro",
-      "community": 33,
-      "norm_label": "[slug].astro"
-    },
-    {
-      "label": "getStaticPaths()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog/[slug].astro",
-      "source_location": "L7",
-      "id": "blog_slug_getstaticpaths",
-      "community": 33,
-      "norm_label": "getstaticpaths()"
-    },
-    {
-      "label": "relatedPosts",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/blog/[slug].astro",
-      "source_location": "L16",
-      "id": "blog_slug_relatedposts",
-      "community": 33,
-      "norm_label": "relatedposts"
-    },
-    {
-      "label": "careers.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/careers.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_careers_astro",
-      "community": 48,
-      "norm_label": "careers.astro"
-    },
-    {
-      "label": "jobs",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/careers.astro",
-      "source_location": "L6",
-      "id": "pages_careers_jobs",
-      "community": 48,
-      "norm_label": "jobs"
-    },
-    {
-      "label": "benefits",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/careers.astro",
-      "source_location": "L13",
-      "id": "pages_careers_benefits",
-      "community": 48,
-      "norm_label": "benefits"
-    },
-    {
-      "label": "whyStats",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/careers.astro",
-      "source_location": "L19",
-      "id": "pages_careers_whystats",
-      "community": 48,
-      "norm_label": "whystats"
-    },
-    {
-      "label": "causes.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/causes.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_causes_astro",
-      "community": 36,
-      "norm_label": "causes.astro"
-    },
-    {
-      "label": "step()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/causes.astro",
-      "source_location": "L80",
-      "id": "pages_causes_step",
-      "community": 36,
-      "norm_label": "step()"
-    },
-    {
-      "label": "../lib/causes-data.json",
-      "file_type": "code",
-      "source_file": "frontend/src/lib/causes-data.json",
-      "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json",
-      "community": 36,
-      "norm_label": "../lib/causes-data.json"
-    },
-    {
-      "label": "contact.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/contact.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_contact_astro",
-      "community": 34,
-      "norm_label": "contact.astro"
-    },
-    {
-      "label": "../lib/api.js",
-      "file_type": "code",
-      "source_file": "frontend/src/lib/api.ts",
-      "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_api_ts",
-      "community": 34,
-      "norm_label": "../lib/api.js"
-    },
-    {
-      "label": "donate.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_donate_astro",
-      "community": 3,
-      "norm_label": "donate.astro"
-    },
-    {
-      "label": "causeSelect",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L308",
-      "id": "pages_donate_causeselect",
-      "community": 3,
-      "norm_label": "causeselect"
-    },
-    {
-      "label": "option",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L310",
-      "id": "pages_donate_option",
-      "community": 3,
-      "norm_label": "option"
-    },
-    {
-      "label": "form",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L321",
-      "id": "pages_donate_form",
-      "community": 3,
-      "norm_label": "form"
-    },
-    {
-      "label": "skeleton",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L322",
-      "id": "pages_donate_skeleton",
-      "community": 3,
-      "norm_label": "skeleton"
-    },
-    {
-      "label": "submitBtn",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L323",
-      "id": "pages_donate_submitbtn",
-      "community": 3,
-      "norm_label": "submitbtn"
-    },
-    {
-      "label": "submitBtnText",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L324",
-      "id": "pages_donate_submitbtntext",
-      "community": 3,
-      "norm_label": "submitbtntext"
-    },
-    {
-      "label": "submitBtnArrow",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L325",
-      "id": "pages_donate_submitbtnarrow",
-      "community": 3,
-      "norm_label": "submitbtnarrow"
-    },
-    {
-      "label": "submitSpinner",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L326",
-      "id": "pages_donate_submitspinner",
-      "community": 3,
-      "norm_label": "submitspinner"
-    },
-    {
-      "label": "amountInputs",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L327",
-      "id": "pages_donate_amountinputs",
-      "community": 3,
-      "norm_label": "amountinputs"
-    },
-    {
-      "label": "amountField",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L328",
-      "id": "pages_donate_amountfield",
-      "community": 3,
-      "norm_label": "amountfield"
-    },
-    {
-      "label": "formError",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L329",
-      "id": "pages_donate_formerror",
-      "community": 3,
-      "norm_label": "formerror"
-    },
-    {
-      "label": "formSuccess",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L330",
-      "id": "pages_donate_formsuccess",
-      "community": 3,
-      "norm_label": "formsuccess"
-    },
-    {
-      "label": "mpesaWaiting",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L334",
-      "id": "pages_donate_mpesawaiting",
-      "community": 3,
-      "norm_label": "mpesawaiting"
-    },
-    {
-      "label": "mpesaSuccess",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L335",
-      "id": "pages_donate_mpesasuccess",
-      "community": 3,
-      "norm_label": "mpesasuccess"
-    },
-    {
-      "label": "mpesaPollStatus",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L336",
-      "id": "pages_donate_mpesapollstatus",
-      "community": 3,
-      "norm_label": "mpesapollstatus"
-    },
-    {
-      "label": "mpesaRetry",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L337",
-      "id": "pages_donate_mpesaretry",
-      "community": 3,
-      "norm_label": "mpesaretry"
-    },
-    {
-      "label": "mpesaReceiptInfo",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L338",
-      "id": "pages_donate_mpesareceiptinfo",
-      "community": 3,
-      "norm_label": "mpesareceiptinfo"
-    },
-    {
-      "label": "phoneRequiredLabel",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L339",
-      "id": "pages_donate_phonerequiredlabel",
-      "community": 3,
-      "norm_label": "phonerequiredlabel"
-    },
-    {
-      "label": "mpesaTimerRing",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L340",
-      "id": "pages_donate_mpesatimerring",
-      "community": 3,
-      "norm_label": "mpesatimerring"
-    },
-    {
-      "label": "mpesaTimerText",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L341",
-      "id": "pages_donate_mpesatimertext",
-      "community": 3,
-      "norm_label": "mpesatimertext"
-    },
-    {
-      "label": "mpesaProgressBar",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L342",
-      "id": "pages_donate_mpesaprogressbar",
-      "community": 3,
-      "norm_label": "mpesaprogressbar"
-    },
-    {
-      "label": "mpesaDisplayPhone",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L343",
-      "id": "pages_donate_mpesadisplayphone",
-      "community": 3,
-      "norm_label": "mpesadisplayphone"
-    },
-    {
-      "label": "mpesaSuccessAmount",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L344",
-      "id": "pages_donate_mpesasuccessamount",
-      "community": 3,
-      "norm_label": "mpesasuccessamount"
-    },
-    {
-      "label": "mpesaImpactMessage",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L345",
-      "id": "pages_donate_mpesaimpactmessage",
-      "community": 3,
-      "norm_label": "mpesaimpactmessage"
-    },
-    {
-      "label": "stepItems",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L347",
-      "id": "pages_donate_stepitems",
-      "community": 3,
-      "norm_label": "stepitems"
-    },
-    {
-      "label": "stepConnectors",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L348",
-      "id": "pages_donate_stepconnectors",
-      "community": 3,
-      "norm_label": "stepconnectors"
-    },
-    {
-      "label": "stepIndicator",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L349",
-      "id": "pages_donate_stepindicator",
-      "community": 3,
-      "norm_label": "stepindicator"
-    },
-    {
-      "label": "fieldChecks",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L351",
-      "id": "pages_donate_fieldchecks",
-      "community": 3,
-      "norm_label": "fieldchecks"
-    },
-    {
-      "label": "goToStep()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L358",
-      "id": "pages_donate_gotostep",
-      "community": 3,
-      "norm_label": "gotostep()"
-    },
-    {
-      "label": "showFieldCheck()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L383",
-      "id": "pages_donate_showfieldcheck",
-      "community": 3,
-      "norm_label": "showfieldcheck()"
-    },
-    {
-      "label": "hideFieldCheck()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L387",
-      "id": "pages_donate_hidefieldcheck",
-      "community": 3,
-      "norm_label": "hidefieldcheck()"
-    },
-    {
-      "label": "showFieldError()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L392",
-      "id": "pages_donate_showfielderror",
-      "community": 3,
-      "norm_label": "showfielderror()"
-    },
-    {
-      "label": "clearFieldError()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L400",
-      "id": "pages_donate_clearfielderror",
-      "community": 3,
-      "norm_label": "clearfielderror()"
-    },
-    {
-      "label": "clearAllErrors()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L407",
-      "id": "pages_donate_clearallerrors",
-      "community": 3,
-      "norm_label": "clearallerrors()"
-    },
-    {
-      "label": "updatePhoneRequirement()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L418",
-      "id": "pages_donate_updatephonerequirement",
-      "community": 3,
-      "norm_label": "updatephonerequirement()"
-    },
-    {
-      "label": "span",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L439",
-      "id": "pages_donate_span",
-      "community": 3,
-      "norm_label": "span"
-    },
-    {
-      "label": "validateField()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L459",
-      "id": "pages_donate_validatefield",
-      "community": 3,
-      "norm_label": "validatefield()"
-    },
-    {
-      "label": "validate()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L500",
-      "id": "pages_donate_validate",
-      "community": 3,
-      "norm_label": "validate()"
-    },
-    {
-      "label": "showMpesaForm()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L571",
-      "id": "pages_donate_showmpesaform",
-      "community": 3,
-      "norm_label": "showmpesaform()"
-    },
-    {
-      "label": "showMpesaSuccess()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L577",
-      "id": "pages_donate_showmpesasuccess",
-      "community": 3,
-      "norm_label": "showmpesasuccess()"
-    },
-    {
-      "label": "showMpesaError()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L616",
-      "id": "pages_donate_showmpesaerror",
-      "community": 3,
-      "norm_label": "showmpesaerror()"
-    },
-    {
-      "label": "pollMpesaStatus()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L628",
-      "id": "pages_donate_pollmpesastatus",
-      "community": 3,
-      "norm_label": "pollmpesastatus()"
-    },
-    {
-      "label": "formData",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L685",
-      "id": "pages_donate_formdata",
-      "community": 3,
-      "norm_label": "formdata"
-    },
-    {
-      "label": "data",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L686",
-      "id": "pages_donate_data",
-      "community": 3,
-      "norm_label": "data"
-    },
-    {
-      "label": "phone",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/donate.astro",
-      "source_location": "L701",
-      "id": "pages_donate_phone",
-      "community": 3,
-      "norm_label": "phone"
-    },
-    {
-      "label": "canvas-confetti",
-      "file_type": "code",
-      "source_file": "canvas-confetti",
-      "confidence": "EXTRACTED",
-      "id": "canvas_confetti",
-      "community": 18,
-      "norm_label": "canvas-confetti"
-    },
-    {
-      "label": "events.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/events.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_events_astro",
-      "community": 44,
-      "norm_label": "events.astro"
-    },
-    {
-      "label": "upcomingEvents",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/events.astro",
-      "source_location": "L6",
-      "id": "pages_events_upcomingevents",
-      "community": 44,
-      "norm_label": "upcomingevents"
-    },
-    {
-      "label": "pastEvents",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/events.astro",
-      "source_location": "L15",
-      "id": "pages_events_pastevents",
-      "community": 44,
-      "norm_label": "pastevents"
-    },
-    {
-      "label": "past",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/events.astro",
-      "source_location": "L147",
-      "id": "pages_events_past",
-      "community": 44,
-      "norm_label": "past"
-    },
-    {
-      "label": "empty",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/events.astro",
-      "source_location": "L148",
-      "id": "pages_events_empty",
-      "community": 44,
-      "norm_label": "empty"
-    },
-    {
-      "label": "faq.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_faq_astro",
-      "community": 40,
-      "norm_label": "faq.astro"
-    },
-    {
-      "label": "faqs",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L6",
-      "id": "pages_faq_faqs",
-      "community": 40,
-      "norm_label": "faqs"
-    },
-    {
-      "label": "item",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L99",
-      "id": "pages_faq_item",
-      "community": 40,
-      "norm_label": "item"
-    },
-    {
-      "label": "answer",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L100",
-      "id": "pages_faq_answer",
-      "community": 40,
-      "norm_label": "answer"
-    },
-    {
-      "label": "chevron",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L101",
-      "id": "pages_faq_chevron",
-      "community": 40,
-      "norm_label": "chevron"
-    },
-    {
-      "label": "otherItem",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L106",
-      "id": "pages_faq_otheritem",
-      "community": 40,
-      "norm_label": "otheritem"
-    },
-    {
-      "label": "otherAnswer",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L107",
-      "id": "pages_faq_otheranswer",
-      "community": 40,
-      "norm_label": "otheranswer"
-    },
-    {
-      "label": "otherChevron",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/faq.astro",
-      "source_location": "L108",
-      "id": "pages_faq_otherchevron",
-      "community": 40,
-      "norm_label": "otherchevron"
-    },
-    {
-      "label": "fundraise.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/fundraise.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_fundraise_astro",
-      "community": 34,
-      "norm_label": "fundraise.astro"
-    },
-    {
-      "label": "gallery.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/gallery.astro",
-      "source_location": "L1",
-      "id": "frontend_src_pages_gallery_astro",
-      "community": 31,
-      "norm_label": "gallery.astro"
-    },
-    {
-      "label": "categories",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/gallery.astro",
-      "source_location": "L6",
-      "id": "pages_gallery_categories",
-      "community": 31,
-      "norm_label": "categories"
-    },
-    {
-      "label": "galleryImages",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/gallery.astro",
-      "source_location": "L8",
-      "id": "pages_gallery_galleryimages",
-      "community": 31,
-      "norm_label": "galleryimages"
     },
     {
       "label": "index.astro",
@@ -1051,1318 +176,2256 @@
       "norm_label": "target"
     },
     {
+      "label": "../components/Navigation.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_navigation_astro",
+      "community": 36,
+      "norm_label": "../components/navigation.astro"
+    },
+    {
+      "label": "../components/Footer.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Footer.astro",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro",
+      "community": 36,
+      "norm_label": "../components/footer.astro"
+    },
+    {
+      "label": "../lib/blog-data.json",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/blog-data.json",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
+      "community": 33,
+      "norm_label": "../lib/blog-data.json"
+    },
+    {
+      "label": "../lib/causes-data.json",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/causes-data.json",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json",
+      "community": 36,
+      "norm_label": "../lib/causes-data.json"
+    },
+    {
+      "label": "../components/Footer.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Footer.astro",
+      "source_location": "L1",
+      "confidence": "EXTRACTED",
+      "community": 34,
+      "norm_label": "../components/footer.astro",
+      "id": "frontend_src_components_footer_astro"
+    },
+    {
+      "label": "footerLinks",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Footer.astro",
+      "source_location": "L4",
+      "community": 34,
+      "norm_label": "footerlinks",
+      "id": "components_footer_footerlinks"
+    },
+    {
+      "label": "FLAG_COUNTRIES",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Footer.astro",
+      "source_location": "L41",
+      "community": 34,
+      "norm_label": "flag_countries",
+      "id": "components_footer_flag_countries"
+    },
+    {
+      "label": "LetTalkPeace.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/LetTalkPeace.astro",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "lettalkpeace.astro",
+      "id": "frontend_src_components_lettalkpeace_astro"
+    },
+    {
+      "label": "../components/Navigation.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L1",
+      "confidence": "EXTRACTED",
+      "community": 31,
+      "norm_label": "../components/navigation.astro",
+      "id": "frontend_src_components_navigation_astro"
+    },
+    {
+      "label": "normalizedFrappeBase",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L3",
+      "community": 31,
+      "norm_label": "normalizedfrappebase",
+      "id": "components_navigation_normalizedfrappebase"
+    },
+    {
+      "label": "navItems",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L8",
+      "community": 31,
+      "norm_label": "navitems",
+      "id": "components_navigation_navitems"
+    },
+    {
+      "label": "iconPaths",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L56",
+      "community": 31,
+      "norm_label": "iconpaths",
+      "id": "components_navigation_iconpaths"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L253",
+      "community": 31,
+      "norm_label": "items",
+      "id": "components_navigation_items"
+    },
+    {
+      "label": "focusable",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L307",
+      "community": 31,
+      "norm_label": "focusable",
+      "id": "components_navigation_focusable"
+    },
+    {
+      "label": "group",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L335",
+      "community": 31,
+      "norm_label": "group",
+      "id": "components_navigation_group"
+    },
+    {
+      "label": "children",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L336",
+      "community": 31,
+      "norm_label": "children",
+      "id": "components_navigation_children"
+    },
+    {
+      "label": "chevron",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L337",
+      "community": 31,
+      "norm_label": "chevron",
+      "id": "components_navigation_chevron"
+    },
+    {
+      "label": "d",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "source_location": "L363",
+      "community": 31,
+      "norm_label": "d",
+      "id": "components_navigation_d"
+    },
+    {
+      "label": "404.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/404.astro",
+      "source_location": "L1",
+      "community": 34,
+      "norm_label": "404.astro",
+      "id": "frontend_src_pages_404_astro"
+    },
+    {
+      "label": "about.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/about.astro",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "about.astro",
+      "id": "frontend_src_pages_about_astro"
+    },
+    {
+      "label": "milestones",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/about.astro",
+      "source_location": "L7",
+      "community": 31,
+      "norm_label": "milestones",
+      "id": "pages_about_milestones"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/about.astro",
+      "source_location": "L367",
+      "community": 31,
+      "norm_label": "target",
+      "id": "pages_about_target"
+    },
+    {
+      "label": "blog.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L1",
+      "community": 33,
+      "norm_label": "blog.astro",
+      "id": "frontend_src_pages_blog_astro"
+    },
+    {
+      "label": "categories",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L7",
+      "community": 33,
+      "norm_label": "categories",
+      "id": "pages_blog_categories"
+    },
+    {
+      "label": "totalPages",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L10",
+      "community": 33,
+      "norm_label": "totalpages",
+      "id": "pages_blog_totalpages"
+    },
+    {
+      "label": "allPostsJson",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L11",
+      "community": 33,
+      "norm_label": "allpostsjson",
+      "id": "pages_blog_allpostsjson"
+    },
+    {
+      "label": "pages",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L213",
+      "community": 33,
+      "norm_label": "pages",
+      "id": "pages_blog_pages"
+    },
+    {
+      "label": "start",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L218",
+      "community": 33,
+      "norm_label": "start",
+      "id": "pages_blog_start"
+    },
+    {
+      "label": "end",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L219",
+      "community": 33,
+      "norm_label": "end",
+      "id": "pages_blog_end"
+    },
+    {
+      "label": "[slug].astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog/[slug].astro",
+      "source_location": "L1",
+      "community": 33,
+      "norm_label": "[slug].astro",
+      "id": "frontend_src_pages_blog_slug_astro"
+    },
+    {
+      "label": "getStaticPaths()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog/[slug].astro",
+      "source_location": "L7",
+      "community": 33,
+      "norm_label": "getstaticpaths()",
+      "id": "blog_slug_getstaticpaths"
+    },
+    {
+      "label": "relatedPosts",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/blog/[slug].astro",
+      "source_location": "L16",
+      "community": 33,
+      "norm_label": "relatedposts",
+      "id": "blog_slug_relatedposts"
+    },
+    {
+      "label": "careers.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/careers.astro",
+      "source_location": "L1",
+      "community": 48,
+      "norm_label": "careers.astro",
+      "id": "frontend_src_pages_careers_astro"
+    },
+    {
+      "label": "jobs",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/careers.astro",
+      "source_location": "L6",
+      "community": 48,
+      "norm_label": "jobs",
+      "id": "pages_careers_jobs"
+    },
+    {
+      "label": "benefits",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/careers.astro",
+      "source_location": "L13",
+      "community": 48,
+      "norm_label": "benefits",
+      "id": "pages_careers_benefits"
+    },
+    {
+      "label": "whyStats",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/careers.astro",
+      "source_location": "L19",
+      "community": 48,
+      "norm_label": "whystats",
+      "id": "pages_careers_whystats"
+    },
+    {
+      "label": "causes.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/causes.astro",
+      "source_location": "L1",
+      "community": 36,
+      "norm_label": "causes.astro",
+      "id": "frontend_src_pages_causes_astro"
+    },
+    {
+      "label": "step()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/causes.astro",
+      "source_location": "L80",
+      "community": 36,
+      "norm_label": "step()",
+      "id": "pages_causes_step"
+    },
+    {
+      "label": "contact.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/contact.astro",
+      "source_location": "L1",
+      "community": 34,
+      "norm_label": "contact.astro",
+      "id": "frontend_src_pages_contact_astro"
+    },
+    {
+      "label": "../lib/api.js",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/api.ts",
+      "confidence": "EXTRACTED",
+      "community": 34,
+      "norm_label": "../lib/api.js",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_api_ts"
+    },
+    {
+      "label": "donate.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "donate.astro",
+      "id": "frontend_src_pages_donate_astro"
+    },
+    {
+      "label": "causeSelect",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L308",
+      "community": 3,
+      "norm_label": "causeselect",
+      "id": "pages_donate_causeselect"
+    },
+    {
+      "label": "option",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L310",
+      "community": 3,
+      "norm_label": "option",
+      "id": "pages_donate_option"
+    },
+    {
+      "label": "form",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L321",
+      "community": 3,
+      "norm_label": "form",
+      "id": "pages_donate_form"
+    },
+    {
+      "label": "skeleton",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L322",
+      "community": 3,
+      "norm_label": "skeleton",
+      "id": "pages_donate_skeleton"
+    },
+    {
+      "label": "submitBtn",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L323",
+      "community": 3,
+      "norm_label": "submitbtn",
+      "id": "pages_donate_submitbtn"
+    },
+    {
+      "label": "submitBtnText",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L324",
+      "community": 3,
+      "norm_label": "submitbtntext",
+      "id": "pages_donate_submitbtntext"
+    },
+    {
+      "label": "submitBtnArrow",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L325",
+      "community": 3,
+      "norm_label": "submitbtnarrow",
+      "id": "pages_donate_submitbtnarrow"
+    },
+    {
+      "label": "submitSpinner",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L326",
+      "community": 3,
+      "norm_label": "submitspinner",
+      "id": "pages_donate_submitspinner"
+    },
+    {
+      "label": "amountInputs",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L327",
+      "community": 3,
+      "norm_label": "amountinputs",
+      "id": "pages_donate_amountinputs"
+    },
+    {
+      "label": "amountField",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L328",
+      "community": 3,
+      "norm_label": "amountfield",
+      "id": "pages_donate_amountfield"
+    },
+    {
+      "label": "formError",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L329",
+      "community": 3,
+      "norm_label": "formerror",
+      "id": "pages_donate_formerror"
+    },
+    {
+      "label": "formSuccess",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L330",
+      "community": 3,
+      "norm_label": "formsuccess",
+      "id": "pages_donate_formsuccess"
+    },
+    {
+      "label": "mpesaWaiting",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L334",
+      "community": 3,
+      "norm_label": "mpesawaiting",
+      "id": "pages_donate_mpesawaiting"
+    },
+    {
+      "label": "mpesaSuccess",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L335",
+      "community": 3,
+      "norm_label": "mpesasuccess",
+      "id": "pages_donate_mpesasuccess"
+    },
+    {
+      "label": "mpesaPollStatus",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L336",
+      "community": 3,
+      "norm_label": "mpesapollstatus",
+      "id": "pages_donate_mpesapollstatus"
+    },
+    {
+      "label": "mpesaRetry",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L337",
+      "community": 3,
+      "norm_label": "mpesaretry",
+      "id": "pages_donate_mpesaretry"
+    },
+    {
+      "label": "mpesaReceiptInfo",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L338",
+      "community": 3,
+      "norm_label": "mpesareceiptinfo",
+      "id": "pages_donate_mpesareceiptinfo"
+    },
+    {
+      "label": "phoneRequiredLabel",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L339",
+      "community": 3,
+      "norm_label": "phonerequiredlabel",
+      "id": "pages_donate_phonerequiredlabel"
+    },
+    {
+      "label": "mpesaTimerRing",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L340",
+      "community": 3,
+      "norm_label": "mpesatimerring",
+      "id": "pages_donate_mpesatimerring"
+    },
+    {
+      "label": "mpesaTimerText",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L341",
+      "community": 3,
+      "norm_label": "mpesatimertext",
+      "id": "pages_donate_mpesatimertext"
+    },
+    {
+      "label": "mpesaProgressBar",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L342",
+      "community": 3,
+      "norm_label": "mpesaprogressbar",
+      "id": "pages_donate_mpesaprogressbar"
+    },
+    {
+      "label": "mpesaDisplayPhone",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L343",
+      "community": 3,
+      "norm_label": "mpesadisplayphone",
+      "id": "pages_donate_mpesadisplayphone"
+    },
+    {
+      "label": "mpesaSuccessAmount",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L344",
+      "community": 3,
+      "norm_label": "mpesasuccessamount",
+      "id": "pages_donate_mpesasuccessamount"
+    },
+    {
+      "label": "mpesaImpactMessage",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L345",
+      "community": 3,
+      "norm_label": "mpesaimpactmessage",
+      "id": "pages_donate_mpesaimpactmessage"
+    },
+    {
+      "label": "stepItems",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L347",
+      "community": 3,
+      "norm_label": "stepitems",
+      "id": "pages_donate_stepitems"
+    },
+    {
+      "label": "stepConnectors",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L348",
+      "community": 3,
+      "norm_label": "stepconnectors",
+      "id": "pages_donate_stepconnectors"
+    },
+    {
+      "label": "stepIndicator",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L349",
+      "community": 3,
+      "norm_label": "stepindicator",
+      "id": "pages_donate_stepindicator"
+    },
+    {
+      "label": "fieldChecks",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L351",
+      "community": 3,
+      "norm_label": "fieldchecks",
+      "id": "pages_donate_fieldchecks"
+    },
+    {
+      "label": "goToStep()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L358",
+      "community": 3,
+      "norm_label": "gotostep()",
+      "id": "pages_donate_gotostep"
+    },
+    {
+      "label": "showFieldCheck()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L383",
+      "community": 3,
+      "norm_label": "showfieldcheck()",
+      "id": "pages_donate_showfieldcheck"
+    },
+    {
+      "label": "hideFieldCheck()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L387",
+      "community": 3,
+      "norm_label": "hidefieldcheck()",
+      "id": "pages_donate_hidefieldcheck"
+    },
+    {
+      "label": "showFieldError()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L392",
+      "community": 3,
+      "norm_label": "showfielderror()",
+      "id": "pages_donate_showfielderror"
+    },
+    {
+      "label": "clearFieldError()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L400",
+      "community": 3,
+      "norm_label": "clearfielderror()",
+      "id": "pages_donate_clearfielderror"
+    },
+    {
+      "label": "clearAllErrors()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L407",
+      "community": 3,
+      "norm_label": "clearallerrors()",
+      "id": "pages_donate_clearallerrors"
+    },
+    {
+      "label": "updatePhoneRequirement()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L418",
+      "community": 3,
+      "norm_label": "updatephonerequirement()",
+      "id": "pages_donate_updatephonerequirement"
+    },
+    {
+      "label": "span",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L439",
+      "community": 3,
+      "norm_label": "span",
+      "id": "pages_donate_span"
+    },
+    {
+      "label": "validateField()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L459",
+      "community": 3,
+      "norm_label": "validatefield()",
+      "id": "pages_donate_validatefield"
+    },
+    {
+      "label": "validate()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L500",
+      "community": 3,
+      "norm_label": "validate()",
+      "id": "pages_donate_validate"
+    },
+    {
+      "label": "showMpesaForm()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L571",
+      "community": 3,
+      "norm_label": "showmpesaform()",
+      "id": "pages_donate_showmpesaform"
+    },
+    {
+      "label": "showMpesaSuccess()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L577",
+      "community": 3,
+      "norm_label": "showmpesasuccess()",
+      "id": "pages_donate_showmpesasuccess"
+    },
+    {
+      "label": "showMpesaError()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L616",
+      "community": 3,
+      "norm_label": "showmpesaerror()",
+      "id": "pages_donate_showmpesaerror"
+    },
+    {
+      "label": "pollMpesaStatus()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L628",
+      "community": 3,
+      "norm_label": "pollmpesastatus()",
+      "id": "pages_donate_pollmpesastatus"
+    },
+    {
+      "label": "formData",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L685",
+      "community": 3,
+      "norm_label": "formdata",
+      "id": "pages_donate_formdata"
+    },
+    {
+      "label": "data",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L686",
+      "community": 3,
+      "norm_label": "data",
+      "id": "pages_donate_data"
+    },
+    {
+      "label": "phone",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/donate.astro",
+      "source_location": "L701",
+      "community": 3,
+      "norm_label": "phone",
+      "id": "pages_donate_phone"
+    },
+    {
+      "label": "canvas-confetti",
+      "file_type": "code",
+      "source_file": "canvas-confetti",
+      "confidence": "EXTRACTED",
+      "community": 18,
+      "norm_label": "canvas-confetti",
+      "id": "canvas_confetti"
+    },
+    {
+      "label": "events.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/events.astro",
+      "source_location": "L1",
+      "community": 44,
+      "norm_label": "events.astro",
+      "id": "frontend_src_pages_events_astro"
+    },
+    {
+      "label": "upcomingEvents",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/events.astro",
+      "source_location": "L6",
+      "community": 44,
+      "norm_label": "upcomingevents",
+      "id": "pages_events_upcomingevents"
+    },
+    {
+      "label": "pastEvents",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/events.astro",
+      "source_location": "L15",
+      "community": 44,
+      "norm_label": "pastevents",
+      "id": "pages_events_pastevents"
+    },
+    {
+      "label": "past",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/events.astro",
+      "source_location": "L147",
+      "community": 44,
+      "norm_label": "past",
+      "id": "pages_events_past"
+    },
+    {
+      "label": "empty",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/events.astro",
+      "source_location": "L148",
+      "community": 44,
+      "norm_label": "empty",
+      "id": "pages_events_empty"
+    },
+    {
+      "label": "faq.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L1",
+      "community": 40,
+      "norm_label": "faq.astro",
+      "id": "frontend_src_pages_faq_astro"
+    },
+    {
+      "label": "faqs",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L6",
+      "community": 40,
+      "norm_label": "faqs",
+      "id": "pages_faq_faqs"
+    },
+    {
+      "label": "item",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L99",
+      "community": 40,
+      "norm_label": "item",
+      "id": "pages_faq_item"
+    },
+    {
+      "label": "answer",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L100",
+      "community": 40,
+      "norm_label": "answer",
+      "id": "pages_faq_answer"
+    },
+    {
+      "label": "chevron",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L101",
+      "community": 40,
+      "norm_label": "chevron",
+      "id": "pages_faq_chevron"
+    },
+    {
+      "label": "otherItem",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L106",
+      "community": 40,
+      "norm_label": "otheritem",
+      "id": "pages_faq_otheritem"
+    },
+    {
+      "label": "otherAnswer",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L107",
+      "community": 40,
+      "norm_label": "otheranswer",
+      "id": "pages_faq_otheranswer"
+    },
+    {
+      "label": "otherChevron",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/faq.astro",
+      "source_location": "L108",
+      "community": 40,
+      "norm_label": "otherchevron",
+      "id": "pages_faq_otherchevron"
+    },
+    {
+      "label": "fundraise.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/fundraise.astro",
+      "source_location": "L1",
+      "community": 34,
+      "norm_label": "fundraise.astro",
+      "id": "frontend_src_pages_fundraise_astro"
+    },
+    {
+      "label": "gallery.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/gallery.astro",
+      "source_location": "L1",
+      "community": 34,
+      "norm_label": "gallery.astro",
+      "id": "frontend_src_pages_gallery_astro"
+    },
+    {
+      "label": "categories",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/gallery.astro",
+      "source_location": "L6",
+      "community": 34,
+      "norm_label": "categories",
+      "id": "pages_gallery_categories"
+    },
+    {
+      "label": "galleryImages",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/gallery.astro",
+      "source_location": "L8",
+      "community": 34,
+      "norm_label": "galleryimages",
+      "id": "pages_gallery_galleryimages"
+    },
+    {
       "label": "partner.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_partner_astro",
       "community": 49,
-      "norm_label": "partner.astro"
+      "norm_label": "partner.astro",
+      "id": "frontend_src_pages_partner_astro"
     },
     {
       "label": "submitBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L190",
-      "id": "pages_partner_submitbtn",
       "community": 49,
-      "norm_label": "submitbtn"
+      "norm_label": "submitbtn",
+      "id": "pages_partner_submitbtn"
     },
     {
       "label": "successMsg",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L191",
-      "id": "pages_partner_successmsg",
       "community": 49,
-      "norm_label": "successmsg"
+      "norm_label": "successmsg",
+      "id": "pages_partner_successmsg"
     },
     {
       "label": "error",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L199",
-      "id": "pages_partner_error",
       "community": 49,
-      "norm_label": "error"
+      "norm_label": "error",
+      "id": "pages_partner_error"
     },
     {
       "label": "privacy.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/privacy.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_privacy_astro",
       "community": 34,
-      "norm_label": "privacy.astro"
+      "norm_label": "privacy.astro",
+      "id": "frontend_src_pages_privacy_astro"
     },
     {
       "label": "sitemap.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/sitemap.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_sitemap_astro",
       "community": 34,
-      "norm_label": "sitemap.astro"
+      "norm_label": "sitemap.astro",
+      "id": "frontend_src_pages_sitemap_astro"
     },
     {
       "label": "pages",
       "file_type": "code",
       "source_file": "frontend/src/pages/sitemap.astro",
       "source_location": "L6",
-      "id": "pages_sitemap_pages",
       "community": 34,
-      "norm_label": "pages"
+      "norm_label": "pages",
+      "id": "pages_sitemap_pages"
     },
     {
       "label": "team.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/team.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_team_astro",
-      "community": 34,
-      "norm_label": "team.astro"
+      "community": 37,
+      "norm_label": "team.astro",
+      "id": "frontend_src_pages_team_astro"
     },
     {
       "label": "teamMembers",
       "file_type": "code",
       "source_file": "frontend/src/pages/team.astro",
       "source_location": "L6",
-      "id": "pages_team_teammembers",
-      "community": 34,
-      "norm_label": "teammembers"
+      "community": 37,
+      "norm_label": "teammembers",
+      "id": "pages_team_teammembers"
     },
     {
       "label": "boardMembers",
       "file_type": "code",
       "source_file": "frontend/src/pages/team.astro",
       "source_location": "L15",
-      "id": "pages_team_boardmembers",
-      "community": 34,
-      "norm_label": "boardmembers"
+      "community": 37,
+      "norm_label": "boardmembers",
+      "id": "pages_team_boardmembers"
     },
     {
       "label": "terms.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/terms.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_terms_astro",
       "community": 34,
-      "norm_label": "terms.astro"
+      "norm_label": "terms.astro",
+      "id": "frontend_src_pages_terms_astro"
     },
     {
       "label": "testimonials.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_testimonials_astro",
       "community": 45,
-      "norm_label": "testimonials.astro"
+      "norm_label": "testimonials.astro",
+      "id": "frontend_src_pages_testimonials_astro"
     },
     {
       "label": "testimonials",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L6",
-      "id": "pages_testimonials_testimonials",
       "community": 45,
-      "norm_label": "testimonials"
+      "norm_label": "testimonials",
+      "id": "pages_testimonials_testimonials"
     },
     {
       "label": "stats",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L15",
-      "id": "pages_testimonials_stats",
       "community": 45,
-      "norm_label": "stats"
+      "norm_label": "stats",
+      "id": "pages_testimonials_stats"
     },
     {
       "label": "starIcons",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L22",
-      "id": "pages_testimonials_staricons",
       "community": 45,
-      "norm_label": "staricons"
+      "norm_label": "staricons",
+      "id": "pages_testimonials_staricons"
     },
     {
       "label": "resetAutoplay()",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L151",
-      "id": "pages_testimonials_resetautoplay",
       "community": 45,
-      "norm_label": "resetautoplay()"
+      "norm_label": "resetautoplay()",
+      "id": "pages_testimonials_resetautoplay"
     },
     {
       "label": "volunteer.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/volunteer.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_volunteer_astro",
       "community": 34,
-      "norm_label": "volunteer.astro"
+      "norm_label": "volunteer.astro",
+      "id": "frontend_src_pages_volunteer_astro"
     },
     {
       "label": "api.py",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L1",
-      "id": "peace_league_website_api_py",
       "community": 2,
-      "norm_label": "api.py"
+      "norm_label": "api.py",
+      "id": "peace_league_website_api_py"
     },
     {
       "label": "_validate_email()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L13",
-      "id": "peace_league_website_api_validate_email",
       "community": 2,
-      "norm_label": "_validate_email()"
+      "norm_label": "_validate_email()",
+      "id": "peace_league_website_api_validate_email"
     },
     {
       "label": "_validate_phone()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L20",
-      "id": "peace_league_website_api_validate_phone",
       "community": 2,
-      "norm_label": "_validate_phone()"
+      "norm_label": "_validate_phone()",
+      "id": "peace_league_website_api_validate_phone"
     },
     {
       "label": "_validate_amount()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L28",
-      "id": "peace_league_website_api_validate_amount",
       "community": 2,
-      "norm_label": "_validate_amount()"
+      "norm_label": "_validate_amount()",
+      "id": "peace_league_website_api_validate_amount"
     },
     {
       "label": "get_causes()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L38",
-      "id": "peace_league_website_api_get_causes",
       "community": 2,
-      "norm_label": "get_causes()"
+      "norm_label": "get_causes()",
+      "id": "peace_league_website_api_get_causes"
     },
     {
       "label": "seed_causes()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L65",
-      "id": "peace_league_website_api_seed_causes",
       "community": 2,
-      "norm_label": "seed_causes()"
+      "norm_label": "seed_causes()",
+      "id": "peace_league_website_api_seed_causes"
     },
     {
       "label": "create_volunteer()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L71",
-      "id": "peace_league_website_api_create_volunteer",
       "community": 2,
-      "norm_label": "create_volunteer()"
+      "norm_label": "create_volunteer()",
+      "id": "peace_league_website_api_create_volunteer"
     },
     {
       "label": "get_volunteers()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L137",
-      "id": "peace_league_website_api_get_volunteers",
       "community": 2,
-      "norm_label": "get_volunteers()"
+      "norm_label": "get_volunteers()",
+      "id": "peace_league_website_api_get_volunteers"
     },
     {
       "label": "create_donation()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L161",
-      "id": "peace_league_website_api_create_donation",
       "community": 2,
-      "norm_label": "create_donation()"
+      "norm_label": "create_donation()",
+      "id": "peace_league_website_api_create_donation"
     },
     {
       "label": "submit_contact_form()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L277",
-      "id": "peace_league_website_api_submit_contact_form",
       "community": 2,
-      "norm_label": "submit_contact_form()"
+      "norm_label": "submit_contact_form()",
+      "id": "peace_league_website_api_submit_contact_form"
     },
     {
       "label": "get_chapters()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L331",
-      "id": "peace_league_website_api_get_chapters",
       "community": 2,
-      "norm_label": "get_chapters()"
+      "norm_label": "get_chapters()",
+      "id": "peace_league_website_api_get_chapters"
     },
     {
       "label": "create_chapter()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L355",
-      "id": "peace_league_website_api_create_chapter",
       "community": 2,
-      "norm_label": "create_chapter()"
+      "norm_label": "create_chapter()",
+      "id": "peace_league_website_api_create_chapter"
     },
     {
       "label": "get_homepage_data()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L413",
-      "id": "peace_league_website_api_get_homepage_data",
       "community": 2,
-      "norm_label": "get_homepage_data()"
+      "norm_label": "get_homepage_data()",
+      "id": "peace_league_website_api_get_homepage_data"
     },
     {
       "label": "initiate_mpesa_payment()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L456",
-      "id": "peace_league_website_api_initiate_mpesa_payment",
       "community": 2,
-      "norm_label": "initiate_mpesa_payment()"
+      "norm_label": "initiate_mpesa_payment()",
+      "id": "peace_league_website_api_initiate_mpesa_payment"
     },
     {
       "label": "mpesa_donation_callback()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L510",
-      "id": "peace_league_website_api_mpesa_donation_callback",
       "community": 2,
-      "norm_label": "mpesa_donation_callback()"
+      "norm_label": "mpesa_donation_callback()",
+      "id": "peace_league_website_api_mpesa_donation_callback"
     },
     {
       "label": "donation_status()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L570",
-      "id": "peace_league_website_api_donation_status",
       "community": 2,
-      "norm_label": "donation_status()"
+      "norm_label": "donation_status()",
+      "id": "peace_league_website_api_donation_status"
     },
     {
       "label": "generate_test_data()",
       "file_type": "code",
       "source_file": "peace_league_website/api.py",
       "source_location": "L610",
-      "id": "peace_league_website_api_generate_test_data",
       "community": 2,
-      "norm_label": "generate_test_data()"
+      "norm_label": "generate_test_data()",
+      "id": "peace_league_website_api_generate_test_data"
     },
     {
       "label": "Basic email format validation.",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L14",
-      "id": "peace_league_website_api_rationale_14",
       "community": 2,
-      "norm_label": "basic email format validation."
+      "norm_label": "basic email format validation.",
+      "id": "peace_league_website_api_rationale_14"
     },
     {
       "label": "Validate phone number is in a reasonable format.",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L21",
-      "id": "peace_league_website_api_rationale_21",
       "community": 2,
-      "norm_label": "validate phone number is in a reasonable format."
+      "norm_label": "validate phone number is in a reasonable format.",
+      "id": "peace_league_website_api_rationale_21"
     },
     {
       "label": "Validate donation amount is positive and within limits.",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L29",
-      "id": "peace_league_website_api_rationale_29",
       "community": 2,
-      "norm_label": "validate donation amount is positive and within limits."
+      "norm_label": "validate donation amount is positive and within limits.",
+      "id": "peace_league_website_api_rationale_29"
     },
     {
       "label": "GET /api/method/peace_league_website.api.get_causes      Returns active causes/c",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L39",
-      "id": "peace_league_website_api_rationale_39",
       "community": 2,
-      "norm_label": "get /api/method/peace_league_website.api.get_causes      returns active causes/c"
+      "norm_label": "get /api/method/peace_league_website.api.get_causes      returns active causes/c",
+      "id": "peace_league_website_api_rationale_39"
     },
     {
       "label": "Create sample Cause records for development. Use force=1 to delete existing firs",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L66",
-      "id": "peace_league_website_api_rationale_66",
       "community": 2,
-      "norm_label": "create sample cause records for development. use force=1 to delete existing firs"
+      "norm_label": "create sample cause records for development. use force=1 to delete existing firs",
+      "id": "peace_league_website_api_rationale_66"
     },
     {
       "label": "POST /api/method/peace_league_website.api.create_volunteer      Create a new vol",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L72",
-      "id": "peace_league_website_api_rationale_72",
       "community": 2,
-      "norm_label": "post /api/method/peace_league_website.api.create_volunteer      create a new vol"
+      "norm_label": "post /api/method/peace_league_website.api.create_volunteer      create a new vol",
+      "id": "peace_league_website_api_rationale_72"
     },
     {
       "label": "GET /api/method/peace_league_website.api.get_volunteers      Get list of all vol",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L138",
-      "id": "peace_league_website_api_rationale_138",
       "community": 2,
-      "norm_label": "get /api/method/peace_league_website.api.get_volunteers      get list of all vol"
+      "norm_label": "get /api/method/peace_league_website.api.get_volunteers      get list of all vol",
+      "id": "peace_league_website_api_rationale_138"
     },
     {
       "label": "POST /api/method/peace_league_website.api.create_donation      Create a new dona",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L162",
-      "id": "peace_league_website_api_rationale_162",
       "community": 2,
-      "norm_label": "post /api/method/peace_league_website.api.create_donation      create a new dona"
+      "norm_label": "post /api/method/peace_league_website.api.create_donation      create a new dona",
+      "id": "peace_league_website_api_rationale_162"
     },
     {
       "label": "POST /api/method/peace_league_website.api.submit_contact_form      Submit contac",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L278",
-      "id": "peace_league_website_api_rationale_278",
       "community": 2,
-      "norm_label": "post /api/method/peace_league_website.api.submit_contact_form      submit contac"
+      "norm_label": "post /api/method/peace_league_website.api.submit_contact_form      submit contac",
+      "id": "peace_league_website_api_rationale_278"
     },
     {
       "label": "GET /api/method/peace_league_website.api.get_chapters      Get list of active ch",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L332",
-      "id": "peace_league_website_api_rationale_332",
       "community": 2,
-      "norm_label": "get /api/method/peace_league_website.api.get_chapters      get list of active ch"
+      "norm_label": "get /api/method/peace_league_website.api.get_chapters      get list of active ch",
+      "id": "peace_league_website_api_rationale_332"
     },
     {
       "label": "POST /api/method/peace_league_website.api.create_chapter      Create a new chapt",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L356",
-      "id": "peace_league_website_api_rationale_356",
       "community": 2,
-      "norm_label": "post /api/method/peace_league_website.api.create_chapter      create a new chapt"
+      "norm_label": "post /api/method/peace_league_website.api.create_chapter      create a new chapt",
+      "id": "peace_league_website_api_rationale_356"
     },
     {
       "label": "GET /api/method/peace_league_website.api.get_homepage_data      Aggregate homepa",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L414",
-      "id": "peace_league_website_api_rationale_414",
       "community": 2,
-      "norm_label": "get /api/method/peace_league_website.api.get_homepage_data      aggregate homepa"
+      "norm_label": "get /api/method/peace_league_website.api.get_homepage_data      aggregate homepa",
+      "id": "peace_league_website_api_rationale_414"
     },
     {
       "label": "Initiate M-Pesa STK Push for a donation.      Graph edges: calls: Mpesa Settings",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L457",
-      "id": "peace_league_website_api_rationale_457",
       "community": 2,
-      "norm_label": "initiate m-pesa stk push for a donation.      graph edges: calls: mpesa settings"
+      "norm_label": "initiate m-pesa stk push for a donation.      graph edges: calls: mpesa settings",
+      "id": "peace_league_website_api_rationale_457"
     },
     {
       "label": "POST callback from Safaricom M-Pesa STK Push results.      Called by: Safaricom",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L511",
-      "id": "peace_league_website_api_rationale_511",
       "community": 2,
-      "norm_label": "post callback from safaricom m-pesa stk push results.      called by: safaricom"
+      "norm_label": "post callback from safaricom m-pesa stk push results.      called by: safaricom",
+      "id": "peace_league_website_api_rationale_511"
     },
     {
       "label": "GET /api/method/peace_league_website.api.donation_status      Check the status o",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L571",
-      "id": "peace_league_website_api_rationale_571",
       "community": 2,
-      "norm_label": "get /api/method/peace_league_website.api.donation_status      check the status o"
+      "norm_label": "get /api/method/peace_league_website.api.donation_status      check the status o",
+      "id": "peace_league_website_api_rationale_571"
     },
     {
       "label": "POST /api/method/peace_league_website.api.generate_test_data      Generate sampl",
       "file_type": "rationale",
       "source_file": "peace_league_website/api.py",
       "source_location": "L611",
-      "id": "peace_league_website_api_rationale_611",
       "community": 2,
-      "norm_label": "post /api/method/peace_league_website.api.generate_test_data      generate sampl"
+      "norm_label": "post /api/method/peace_league_website.api.generate_test_data      generate sampl",
+      "id": "peace_league_website_api_rationale_611"
     },
     {
       "label": "donation.py",
       "file_type": "code",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L1",
-      "id": "peace_league_website_doctype_plw_donation_donation_py",
       "community": 22,
-      "norm_label": "donation.py"
+      "norm_label": "donation.py",
+      "id": "peace_league_website_doctype_plw_donation_donation_py"
     },
     {
       "label": "Donation",
       "file_type": "code",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L6",
-      "id": "plw_donation_donation_donation",
       "community": 22,
-      "norm_label": "donation"
+      "norm_label": "donation",
+      "id": "plw_donation_donation_donation"
     },
     {
       "label": "Document",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "document",
       "community": 22,
-      "norm_label": "document"
+      "norm_label": "document",
+      "id": "document"
     },
     {
       "label": ".before_insert()",
       "file_type": "code",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L20",
-      "id": "plw_donation_donation_donation_before_insert",
       "community": 22,
-      "norm_label": ".before_insert()"
+      "norm_label": ".before_insert()",
+      "id": "plw_donation_donation_donation_before_insert"
     },
     {
       "label": ".validate()",
       "file_type": "code",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L24",
-      "id": "plw_donation_donation_donation_validate",
       "community": 22,
-      "norm_label": ".validate()"
+      "norm_label": ".validate()",
+      "id": "plw_donation_donation_donation_validate"
     },
     {
       "label": ".before_update_after_submit()",
       "file_type": "code",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L34",
-      "id": "plw_donation_donation_donation_before_update_after_submit",
       "community": 22,
-      "norm_label": ".before_update_after_submit()"
+      "norm_label": ".before_update_after_submit()",
+      "id": "plw_donation_donation_donation_before_update_after_submit"
     },
     {
       "label": "Peace League Donation DocType.      Extends the base Donation with:     - Automa",
       "file_type": "rationale",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L7",
-      "id": "plw_donation_donation_rationale_7",
       "community": 22,
-      "norm_label": "peace league donation doctype.      extends the base donation with:     - automa"
+      "norm_label": "peace league donation doctype.      extends the base donation with:     - automa",
+      "id": "plw_donation_donation_rationale_7"
     },
     {
       "label": "Validate donation before saving.",
       "file_type": "rationale",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L25",
-      "id": "plw_donation_donation_rationale_25",
       "community": 22,
-      "norm_label": "validate donation before saving."
+      "norm_label": "validate donation before saving.",
+      "id": "plw_donation_donation_rationale_25"
     },
     {
       "label": "Re-validate cause on update after submit.",
       "file_type": "rationale",
       "source_file": "peace_league_website/doctype/plw_donation/donation.py",
       "source_location": "L35",
-      "id": "plw_donation_donation_rationale_35",
       "community": 22,
-      "norm_label": "re-validate cause on update after submit."
+      "norm_label": "re-validate cause on update after submit.",
+      "id": "plw_donation_donation_rationale_35"
     },
     {
       "label": "hooks.py",
       "file_type": "code",
       "source_file": "peace_league_website/hooks.py",
       "source_location": "L1",
-      "id": "peace_league_website_hooks_py",
       "community": 14,
-      "norm_label": "hooks.py"
+      "norm_label": "hooks.py",
+      "id": "peace_league_website_hooks_py"
     },
     {
       "label": "hooks.py",
       "file_type": "code",
       "source_file": "peace_league_website/peace_league_custom/hooks.py",
       "source_location": "L1",
-      "id": "peace_league_website_peace_league_custom_hooks_py",
       "community": 74,
-      "norm_label": "hooks.py"
+      "norm_label": "hooks.py",
+      "id": "peace_league_website_peace_league_custom_hooks_py"
     },
     {
       "label": "cause.py",
       "file_type": "code",
       "source_file": "peace_league_website/plw_portal/doctype/cause/cause.py",
       "source_location": "L1",
-      "id": "peace_league_website_plw_portal_doctype_cause_cause_py",
       "community": 22,
-      "norm_label": "cause.py"
+      "norm_label": "cause.py",
+      "id": "peace_league_website_plw_portal_doctype_cause_cause_py"
     },
     {
       "label": "Cause",
       "file_type": "code",
       "source_file": "peace_league_website/plw_portal/doctype/cause/cause.py",
       "source_location": "L6",
-      "id": "cause_cause_cause",
       "community": 22,
-      "norm_label": "cause"
+      "norm_label": "cause",
+      "id": "cause_cause_cause"
     },
     {
       "label": ".validate()",
       "file_type": "code",
       "source_file": "peace_league_website/plw_portal/doctype/cause/cause.py",
       "source_location": "L19",
-      "id": "cause_cause_cause_validate",
       "community": 22,
-      "norm_label": ".validate()"
+      "norm_label": ".validate()",
+      "id": "cause_cause_cause_validate"
     },
     {
       "label": "Peace League Cause/Campaign DocType.      Represents a fundraising campaign or c",
       "file_type": "rationale",
       "source_file": "peace_league_website/plw_portal/doctype/cause/cause.py",
       "source_location": "L7",
-      "id": "cause_cause_rationale_7",
       "community": 22,
-      "norm_label": "peace league cause/campaign doctype.      represents a fundraising campaign or c"
+      "norm_label": "peace league cause/campaign doctype.      represents a fundraising campaign or c",
+      "id": "cause_cause_rationale_7"
     },
     {
       "label": "Validate cause fields before saving.",
       "file_type": "rationale",
       "source_file": "peace_league_website/plw_portal/doctype/cause/cause.py",
       "source_location": "L20",
-      "id": "cause_cause_rationale_20",
       "community": 22,
-      "norm_label": "validate cause fields before saving."
+      "norm_label": "validate cause fields before saving.",
+      "id": "cause_cause_rationale_20"
     },
     {
       "label": "donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
-      "id": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
       "community": 6,
-      "norm_label": "donate.astro_astro_type_script_index_0_lang.vdkjbhsi.js"
+      "norm_label": "donate.astro_astro_type_script_index_0_lang.vdkjbhsi.js",
+      "id": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js"
     },
     {
       "label": "W()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_w",
       "community": 6,
-      "norm_label": "w()"
+      "norm_label": "w()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_w"
     },
     {
       "label": "I()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i",
       "community": 6,
-      "norm_label": "i()"
+      "norm_label": "i()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i"
     },
     {
       "label": "l()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_l",
       "community": 6,
-      "norm_label": "l()"
+      "norm_label": "l()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_l"
     },
     {
       "label": "Me()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_me",
       "community": 6,
-      "norm_label": "me()"
+      "norm_label": "me()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_me"
     },
     {
       "label": "Ee()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ee",
       "community": 6,
-      "norm_label": "ee()"
+      "norm_label": "ee()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ee"
     },
     {
       "label": "b()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b",
       "community": 6,
-      "norm_label": "b()"
+      "norm_label": "b()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b"
     },
     {
       "label": "we()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_we",
       "community": 6,
-      "norm_label": "we()"
+      "norm_label": "we()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_we"
     },
     {
       "label": "Ie()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ie",
       "community": 6,
-      "norm_label": "ie()"
+      "norm_label": "ie()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ie"
     },
     {
       "label": "H()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_h",
       "community": 6,
-      "norm_label": "h()"
+      "norm_label": "h()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_h"
     },
     {
       "label": "Ce()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ce",
       "community": 6,
-      "norm_label": "ce()"
+      "norm_label": "ce()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ce"
     },
     {
       "label": "xe()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_xe",
       "community": 6,
-      "norm_label": "xe()"
+      "norm_label": "xe()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_xe"
     },
     {
       "label": "Be()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_be",
       "community": 6,
-      "norm_label": "be()"
+      "norm_label": "be()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_be"
     },
     {
       "label": "Le()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_le",
       "community": 6,
-      "norm_label": "le()"
+      "norm_label": "le()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_le"
     },
     {
       "label": "Pe()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_pe",
       "community": 6,
-      "norm_label": "pe()"
+      "norm_label": "pe()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_pe"
     },
     {
       "label": "Fe()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_fe",
       "community": 6,
-      "norm_label": "fe()"
+      "norm_label": "fe()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_fe"
     },
     {
       "label": "Se()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_se",
       "community": 6,
-      "norm_label": "se()"
+      "norm_label": "se()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_se"
     },
     {
       "label": "Te()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_te",
       "community": 6,
-      "norm_label": "te()"
+      "norm_label": "te()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_te"
     },
     {
       "label": "ke()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ke",
       "community": 6,
-      "norm_label": "ke()"
+      "norm_label": "ke()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ke"
     },
     {
       "label": "_e()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_e",
       "community": 6,
-      "norm_label": "_e()"
+      "norm_label": "_e()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_e"
     },
     {
       "label": "ne()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ne",
       "community": 6,
-      "norm_label": "ne()"
+      "norm_label": "ne()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ne"
     },
     {
       "label": "Ae()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ae",
       "community": 6,
-      "norm_label": "ae()"
+      "norm_label": "ae()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ae"
     },
     {
       "label": "Re()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_re",
       "community": 6,
-      "norm_label": "re()"
+      "norm_label": "re()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_re"
     },
     {
       "label": "Oe()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_oe",
       "community": 6,
-      "norm_label": "oe()"
+      "norm_label": "oe()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_oe"
     },
     {
       "label": "a",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_a",
       "community": 6,
-      "norm_label": "a"
+      "norm_label": "a",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_a"
     },
     {
       "label": "o",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_o",
       "community": 6,
-      "norm_label": "o"
+      "norm_label": "o",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_o"
     },
     {
       "label": "u",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_u",
       "community": 6,
-      "norm_label": "u"
+      "norm_label": "u",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_u"
     },
     {
       "label": "Ze",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ze",
       "community": 6,
-      "norm_label": "ze"
+      "norm_label": "ze",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ze"
     },
     {
       "label": "$",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi",
       "community": 6,
-      "norm_label": "$"
+      "norm_label": "$",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi"
     },
     {
       "label": "q",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_q",
       "community": 6,
-      "norm_label": "q"
+      "norm_label": "q",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_q"
     },
     {
       "label": "D",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_d",
       "community": 6,
-      "norm_label": "d"
+      "norm_label": "d",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_d"
     },
     {
       "label": "z",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_z",
       "community": 6,
-      "norm_label": "z"
+      "norm_label": "z",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_z"
     },
     {
       "label": "j",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_j",
       "community": 6,
-      "norm_label": "j"
+      "norm_label": "j",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_j"
     },
     {
       "label": "He",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_he",
       "community": 6,
-      "norm_label": "he"
+      "norm_label": "he",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_he"
     },
     {
       "label": "de",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_de",
       "community": 6,
-      "norm_label": "de"
+      "norm_label": "de",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_de"
     },
     {
       "label": "K",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_k",
       "community": 6,
-      "norm_label": "k"
+      "norm_label": "k",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_k"
     },
     {
       "label": "ue",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ue",
       "community": 6,
-      "norm_label": "ue"
+      "norm_label": "ue",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ue"
     },
     {
       "label": "Ge",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ge",
       "community": 6,
-      "norm_label": "ge"
+      "norm_label": "ge",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ge"
     },
     {
       "label": "Je",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_je",
       "community": 6,
-      "norm_label": "je"
+      "norm_label": "je",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_je"
     },
     {
       "label": "Qe",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_qe",
       "community": 6,
-      "norm_label": "qe"
+      "norm_label": "qe",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_qe"
     },
     {
       "label": "N()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n",
       "community": 6,
-      "norm_label": "n()"
+      "norm_label": "n()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n"
     },
     {
       "label": "F()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f",
       "community": 6,
-      "norm_label": "f()"
+      "norm_label": "f()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f"
     },
     {
       "label": "S()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_s",
       "community": 6,
-      "norm_label": "s()"
+      "norm_label": "s()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_s"
     },
     {
       "label": "et()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_et",
       "community": 6,
-      "norm_label": "et()"
+      "norm_label": "et()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_et"
     },
     {
       "label": "ve()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ve",
       "community": 6,
-      "norm_label": "ve()"
+      "norm_label": "ve()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ve"
     },
     {
       "label": "Y()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y",
       "community": 6,
-      "norm_label": "y()"
+      "norm_label": "y()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y"
     },
     {
       "label": "tt()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt",
       "community": 6,
-      "norm_label": "tt()"
+      "norm_label": "tt()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt"
     },
     {
       "label": "nt()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_nt",
       "community": 6,
-      "norm_label": "nt()"
+      "norm_label": "nt()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_nt"
     },
     {
       "label": "at()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_at",
       "community": 6,
-      "norm_label": "at()"
+      "norm_label": "at()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_at"
     },
     {
       "label": "rt()",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_rt",
       "community": 6,
-      "norm_label": "rt()"
+      "norm_label": "rt()",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_rt"
     },
     {
       "label": "M",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
-      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_m",
       "community": 6,
-      "norm_label": "m"
+      "norm_label": "m",
+      "id": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_m"
     },
     {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/__init__.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_init_py",
       "community": 77,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "peace_league_website_utils_seed_init_py"
     },
     {
       "label": "seed_causes.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_causes.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_seed_causes_py",
       "community": 9,
-      "norm_label": "seed_causes.py"
+      "norm_label": "seed_causes.py",
+      "id": "peace_league_website_utils_seed_seed_causes_py"
     },
     {
       "label": "seed_causes()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_causes.py",
       "source_location": "L53",
-      "id": "seed_seed_causes_seed_causes",
       "community": 9,
-      "norm_label": "seed_causes()"
+      "norm_label": "seed_causes()",
+      "id": "seed_seed_causes_seed_causes"
     },
     {
       "label": "Seed causes/campaigns for development.  Graph edges: creates: Cause, references:",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_causes.py",
       "source_location": "L1",
-      "id": "seed_seed_causes_rationale_1",
       "community": 9,
-      "norm_label": "seed causes/campaigns for development.  graph edges: creates: cause, references:"
+      "norm_label": "seed causes/campaigns for development.  graph edges: creates: cause, references:",
+      "id": "seed_seed_causes_rationale_1"
     },
     {
       "label": "Create sample Cause records for development.      Args:         force: If True,",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_causes.py",
       "source_location": "L54",
-      "id": "seed_seed_causes_rationale_54",
       "community": 9,
-      "norm_label": "create sample cause records for development.      args:         force: if true,"
+      "norm_label": "create sample cause records for development.      args:         force: if true,",
+      "id": "seed_seed_causes_rationale_54"
     },
     {
       "label": "seed_chapters.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_chapters.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_seed_chapters_py",
       "community": 9,
-      "norm_label": "seed_chapters.py"
+      "norm_label": "seed_chapters.py",
+      "id": "peace_league_website_utils_seed_seed_chapters_py"
     },
     {
       "label": "seed_chapters()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_chapters.py",
       "source_location": "L21",
-      "id": "seed_seed_chapters_seed_chapters",
       "community": 9,
-      "norm_label": "seed_chapters()"
+      "norm_label": "seed_chapters()",
+      "id": "seed_seed_chapters_seed_chapters"
     },
     {
       "label": "Seed chapter records for development.  Graph edges: creates: Chapter, Custom Fie",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_chapters.py",
       "source_location": "L1",
-      "id": "seed_seed_chapters_rationale_1",
       "community": 9,
-      "norm_label": "seed chapter records for development.  graph edges: creates: chapter, custom fie"
+      "norm_label": "seed chapter records for development.  graph edges: creates: chapter, custom fie",
+      "id": "seed_seed_chapters_rationale_1"
     },
     {
       "label": "Create sample Chapter records.      Graph edges: creates: Chapter     Graph edge",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_chapters.py",
       "source_location": "L22",
-      "id": "seed_seed_chapters_rationale_22",
       "community": 9,
-      "norm_label": "create sample chapter records.      graph edges: creates: chapter     graph edge"
+      "norm_label": "create sample chapter records.      graph edges: creates: chapter     graph edge",
+      "id": "seed_seed_chapters_rationale_22"
     },
     {
       "label": "seed_donations.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_donations.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_seed_donations_py",
       "community": 9,
-      "norm_label": "seed_donations.py"
+      "norm_label": "seed_donations.py",
+      "id": "peace_league_website_utils_seed_seed_donations_py"
     },
     {
       "label": "seed_donations()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_donations.py",
       "source_location": "L21",
-      "id": "seed_seed_donations_seed_donations",
       "community": 9,
-      "norm_label": "seed_donations()"
+      "norm_label": "seed_donations()",
+      "id": "seed_seed_donations_seed_donations"
     },
     {
       "label": "Seed donation records for development.  Graph edges: creates: Donation Graph edg",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_donations.py",
       "source_location": "L1",
-      "id": "seed_seed_donations_rationale_1",
       "community": 9,
-      "norm_label": "seed donation records for development.  graph edges: creates: donation graph edg"
+      "norm_label": "seed donation records for development.  graph edges: creates: donation graph edg",
+      "id": "seed_seed_donations_rationale_1"
     },
     {
       "label": "Create sample Donation records linked to existing Donors.      Graph edges: crea",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_donations.py",
       "source_location": "L22",
-      "id": "seed_seed_donations_rationale_22",
       "community": 9,
-      "norm_label": "create sample donation records linked to existing donors.      graph edges: crea"
+      "norm_label": "create sample donation records linked to existing donors.      graph edges: crea",
+      "id": "seed_seed_donations_rationale_22"
     },
     {
       "label": "seed_donors.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_donors.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_seed_donors_py",
       "community": 9,
-      "norm_label": "seed_donors.py"
+      "norm_label": "seed_donors.py",
+      "id": "peace_league_website_utils_seed_seed_donors_py"
     },
     {
       "label": "seed_donors()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_donors.py",
       "source_location": "L20",
-      "id": "seed_seed_donors_seed_donors",
       "community": 9,
-      "norm_label": "seed_donors()"
+      "norm_label": "seed_donors()",
+      "id": "seed_seed_donors_seed_donors"
     },
     {
       "label": "Seed donor records for development.  Graph edges: creates: Donor, Donor Type, Cu",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_donors.py",
       "source_location": "L1",
-      "id": "seed_seed_donors_rationale_1",
       "community": 9,
-      "norm_label": "seed donor records for development.  graph edges: creates: donor, donor type, cu"
+      "norm_label": "seed donor records for development.  graph edges: creates: donor, donor type, cu",
+      "id": "seed_seed_donors_rationale_1"
     },
     {
       "label": "Create sample Donor records and ensure Donor Type exists.      Graph edges: crea",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_donors.py",
       "source_location": "L21",
-      "id": "seed_seed_donors_rationale_21",
       "community": 9,
-      "norm_label": "create sample donor records and ensure donor type exists.      graph edges: crea"
+      "norm_label": "create sample donor records and ensure donor type exists.      graph edges: crea",
+      "id": "seed_seed_donors_rationale_21"
     },
     {
       "label": "seed_members.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_members.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_seed_members_py",
       "community": 9,
-      "norm_label": "seed_members.py"
+      "norm_label": "seed_members.py",
+      "id": "peace_league_website_utils_seed_seed_members_py"
     },
     {
       "label": "seed_members()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_members.py",
       "source_location": "L20",
-      "id": "seed_seed_members_seed_members",
       "community": 9,
-      "norm_label": "seed_members()"
+      "norm_label": "seed_members()",
+      "id": "seed_seed_members_seed_members"
     },
     {
       "label": "Seed member records for development.  Graph edges: creates: Member, Membership T",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_members.py",
       "source_location": "L1",
-      "id": "seed_seed_members_rationale_1",
       "community": 9,
-      "norm_label": "seed member records for development.  graph edges: creates: member, membership t"
+      "norm_label": "seed member records for development.  graph edges: creates: member, membership t",
+      "id": "seed_seed_members_rationale_1"
     },
     {
       "label": "Create sample Member records.      Graph edges: creates: Member, Membership Type",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_members.py",
       "source_location": "L21",
-      "id": "seed_seed_members_rationale_21",
       "community": 9,
-      "norm_label": "create sample member records.      graph edges: creates: member, membership type"
+      "norm_label": "create sample member records.      graph edges: creates: member, membership type",
+      "id": "seed_seed_members_rationale_21"
     },
     {
       "label": "seed_volunteers.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_volunteers.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_seed_volunteers_py",
       "community": 9,
-      "norm_label": "seed_volunteers.py"
+      "norm_label": "seed_volunteers.py",
+      "id": "peace_league_website_utils_seed_seed_volunteers_py"
     },
     {
       "label": "seed_volunteers()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed/seed_volunteers.py",
       "source_location": "L20",
-      "id": "seed_seed_volunteers_seed_volunteers",
       "community": 9,
-      "norm_label": "seed_volunteers()"
+      "norm_label": "seed_volunteers()",
+      "id": "seed_seed_volunteers_seed_volunteers"
     },
     {
       "label": "Seed volunteer records for development.  Graph edges: creates: Volunteer, Volunt",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_volunteers.py",
       "source_location": "L1",
-      "id": "seed_seed_volunteers_rationale_1",
       "community": 9,
-      "norm_label": "seed volunteer records for development.  graph edges: creates: volunteer, volunt"
+      "norm_label": "seed volunteer records for development.  graph edges: creates: volunteer, volunt",
+      "id": "seed_seed_volunteers_rationale_1"
     },
     {
       "label": "Create sample Volunteer records and Volunteer Types.      Graph edges: creates:",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed/seed_volunteers.py",
       "source_location": "L21",
-      "id": "seed_seed_volunteers_rationale_21",
       "community": 9,
-      "norm_label": "create sample volunteer records and volunteer types.      graph edges: creates:"
+      "norm_label": "create sample volunteer records and volunteer types.      graph edges: creates:",
+      "id": "seed_seed_volunteers_rationale_21"
     },
     {
       "label": "seed_data.py",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed_data.py",
       "source_location": "L1",
-      "id": "peace_league_website_utils_seed_data_py",
       "community": 9,
-      "norm_label": "seed_data.py"
+      "norm_label": "seed_data.py",
+      "id": "peace_league_website_utils_seed_data_py"
     },
     {
       "label": "generate_test_data()",
       "file_type": "code",
       "source_file": "peace_league_website/utils/seed_data.py",
       "source_location": "L24",
-      "id": "utils_seed_data_generate_test_data",
       "community": 9,
-      "norm_label": "generate_test_data()"
+      "norm_label": "generate_test_data()",
+      "id": "utils_seed_data_generate_test_data"
     },
     {
       "label": "Seed data utilities for Peace League Website.  This module delegates to domain-s",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed_data.py",
       "source_location": "L1",
-      "id": "utils_seed_data_rationale_1",
       "community": 9,
-      "norm_label": "seed data utilities for peace league website.  this module delegates to domain-s"
+      "norm_label": "seed data utilities for peace league website.  this module delegates to domain-s",
+      "id": "utils_seed_data_rationale_1"
     },
     {
       "label": "Generate sample test data for all DocTypes.      Calls each domain seeder in dep",
       "file_type": "rationale",
       "source_file": "peace_league_website/utils/seed_data.py",
       "source_location": "L25",
-      "id": "utils_seed_data_rationale_25",
       "community": 9,
-      "norm_label": "generate sample test data for all doctypes.      calls each domain seeder in dep"
+      "norm_label": "generate sample test data for all doctypes.      calls each domain seeder in dep",
+      "id": "utils_seed_data_rationale_25"
     },
     {
       "label": "package.json",
@@ -3231,33 +3294,6 @@
       "id": "frontend_src_lib_blog_data_json"
     },
     {
-      "label": "Card.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Card.astro",
-      "source_location": "L1",
-      "community": 59,
-      "norm_label": "card.astro",
-      "id": "frontend_src_components_card_astro"
-    },
-    {
-      "label": "string",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Card.astro",
-      "source_location": "L20",
-      "community": 59,
-      "norm_label": "string",
-      "id": "components_card_string"
-    },
-    {
-      "label": "Hero.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Hero.astro",
-      "source_location": "L1",
-      "community": 66,
-      "norm_label": "hero.astro",
-      "id": "frontend_src_components_hero_astro"
-    },
-    {
       "label": "AfricaMap.astro",
       "file_type": "code",
       "source_file": "frontend/src/components/AfricaMap.astro",
@@ -3319,24 +3355,6 @@
       "community": 65,
       "norm_label": "formfield.astro",
       "id": "frontend_src_components_formfield_astro"
-    },
-    {
-      "label": "CTA.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/components/CTA.astro",
-      "source_location": "L1",
-      "community": 60,
-      "norm_label": "cta.astro",
-      "id": "frontend_src_components_cta_astro"
-    },
-    {
-      "label": "string",
-      "file_type": "code",
-      "source_file": "frontend/src/components/CTA.astro",
-      "source_location": "L20",
-      "community": 60,
-      "norm_label": "string",
-      "id": "components_cta_string"
     },
     {
       "label": ".last-run.json",
@@ -6844,6 +6862,458 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CTA.astro",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_cta_astro",
+      "target": "components_cta_string"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/Card.astro",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_card_astro",
+      "target": "components_card_string"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_canonicalurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L209",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_dots"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L199",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_herosection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L208",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_shapes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L185",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_srmo"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/404.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_404_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/about.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_about_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/blog.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_blog_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/blog/[slug].astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_blog_slug_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/careers.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_careers_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/causes.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_causes_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/contact.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_contact_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/donate.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_donate_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/events.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_events_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/faq.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_faq_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/fundraise.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_fundraise_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/gallery.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_gallery_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/partner.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_partner_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/privacy.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_privacy_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/sitemap.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_sitemap_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/team.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_team_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/terms.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_terms_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/testimonials.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_testimonials_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/volunteer.astro",
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_volunteer_astro",
+      "target": "frontend_src_layouts_layout_astro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_components_footer_astro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_components_navigation_astro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_lib_blog_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_lib_causes_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_navigation_astro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L567",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_goto"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L581",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_next"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L582",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_prev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L584",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_startautoplay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L591",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_stopautoplay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L659",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_target"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L581",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_index_next",
+      "target": "pages_index_goto"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L582",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_index_prev",
+      "target": "pages_index_goto"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L585",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_index_startautoplay",
+      "target": "pages_index_stopautoplay"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/blog.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_blog_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/blog/[slug].astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_blog_slug_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/causes.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_causes_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/Footer.astro",
       "source_location": "L41",
       "weight": 1.0,
@@ -6991,17 +7461,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "frontend_src_pages_gallery_astro",
-      "target": "frontend_src_components_footer_astro"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
       "target": "frontend_src_components_footer_astro"
     },
     {
@@ -7307,17 +7766,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_components_navigation_astro"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L3",
       "weight": 1.0,
@@ -7390,224 +7838,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_volunteer_astro",
       "target": "frontend_src_components_navigation_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_canonicalurl"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L209",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_dots"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L199",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_herosection"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L208",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_shapes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L185",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_srmo"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/404.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_404_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/about.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_about_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/blog.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_blog_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/blog/[slug].astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_blog_slug_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/careers.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_careers_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/causes.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_causes_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/contact.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_contact_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/donate.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_donate_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/events.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_events_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/faq.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_faq_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/fundraise.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_fundraise_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/gallery.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_gallery_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/partner.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_partner_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/privacy.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_privacy_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/sitemap.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_sitemap_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/team.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_team_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/terms.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_terms_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/testimonials.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_testimonials_astro",
-      "target": "frontend_src_layouts_layout_astro"
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/volunteer.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_volunteer_astro",
-      "target": "frontend_src_layouts_layout_astro"
     },
     {
       "relation": "contains",
@@ -7639,17 +7869,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
       "target": "frontend_src_lib_blog_data_json"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/blog.astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "frontend_src_pages_blog_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7710,28 +7929,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
       "target": "pages_blog_totalpages"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/blog/[slug].astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "frontend_src_pages_blog_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7806,17 +8003,6 @@
       "target": "frontend_src_lib_causes_data_json"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/causes.astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "frontend_src_pages_causes_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/causes.astro",
@@ -7825,17 +8011,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_causes_astro",
       "target": "pages_causes_step"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json",
-      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -8607,121 +8782,6 @@
       "target": "pages_gallery_galleryimages"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_lib_blog_data_json"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_lib_causes_data_json"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L567",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_goto"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L581",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_next"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L582",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_prev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L584",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_startautoplay"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L591",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_stopautoplay"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L659",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_target"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L581",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pages_index_next",
-      "target": "pages_index_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L582",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pages_index_prev",
-      "target": "pages_index_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L585",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pages_index_startautoplay",
-      "target": "pages_index_stopautoplay"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/partner.astro",
@@ -9398,9 +9458,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_api_dpposhfz_d",
-      "confidence_score": 1.0
+      "target": "astro_api_dpposhfz_d"
     },
     {
       "relation": "contains",
@@ -9408,9 +9468,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi"
     },
     {
       "relation": "contains",
@@ -9418,9 +9478,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_a",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_a"
     },
     {
       "relation": "contains",
@@ -9428,9 +9488,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ae",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ae"
     },
     {
       "relation": "contains",
@@ -9438,9 +9498,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_at",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_at"
     },
     {
       "relation": "contains",
@@ -9448,9 +9508,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b"
     },
     {
       "relation": "contains",
@@ -9458,9 +9518,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_be",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_be"
     },
     {
       "relation": "contains",
@@ -9468,9 +9528,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ce",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ce"
     },
     {
       "relation": "contains",
@@ -9478,9 +9538,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_d",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_d"
     },
     {
       "relation": "contains",
@@ -9488,9 +9548,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_de",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_de"
     },
     {
       "relation": "contains",
@@ -9498,9 +9558,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_e",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_e"
     },
     {
       "relation": "contains",
@@ -9508,9 +9568,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ee",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ee"
     },
     {
       "relation": "contains",
@@ -9518,9 +9578,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_et",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_et"
     },
     {
       "relation": "contains",
@@ -9528,9 +9588,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f"
     },
     {
       "relation": "contains",
@@ -9538,9 +9598,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_fe",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_fe"
     },
     {
       "relation": "contains",
@@ -9548,9 +9608,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ge",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ge"
     },
     {
       "relation": "contains",
@@ -9558,9 +9618,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_h",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_h"
     },
     {
       "relation": "contains",
@@ -9568,9 +9628,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_he",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_he"
     },
     {
       "relation": "contains",
@@ -9578,9 +9638,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i"
     },
     {
       "relation": "contains",
@@ -9588,9 +9648,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ie",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ie"
     },
     {
       "relation": "contains",
@@ -9598,9 +9658,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_j",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_j"
     },
     {
       "relation": "contains",
@@ -9608,9 +9668,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_je",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_je"
     },
     {
       "relation": "contains",
@@ -9618,9 +9678,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_k",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_k"
     },
     {
       "relation": "contains",
@@ -9628,9 +9688,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ke",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ke"
     },
     {
       "relation": "contains",
@@ -9638,9 +9698,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_l",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_l"
     },
     {
       "relation": "contains",
@@ -9648,9 +9708,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_le",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_le"
     },
     {
       "relation": "contains",
@@ -9658,9 +9718,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_m",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_m"
     },
     {
       "relation": "contains",
@@ -9668,9 +9728,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_me",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_me"
     },
     {
       "relation": "contains",
@@ -9678,9 +9738,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n"
     },
     {
       "relation": "contains",
@@ -9688,9 +9748,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ne",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ne"
     },
     {
       "relation": "contains",
@@ -9698,9 +9758,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_nt",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_nt"
     },
     {
       "relation": "contains",
@@ -9708,9 +9768,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_o",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_o"
     },
     {
       "relation": "contains",
@@ -9718,9 +9778,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_oe",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_oe"
     },
     {
       "relation": "contains",
@@ -9728,9 +9788,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_pe",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_pe"
     },
     {
       "relation": "contains",
@@ -9738,9 +9798,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_q",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_q"
     },
     {
       "relation": "contains",
@@ -9748,9 +9808,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_qe",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_qe"
     },
     {
       "relation": "contains",
@@ -9758,9 +9818,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_re",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_re"
     },
     {
       "relation": "contains",
@@ -9768,9 +9828,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_rt",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_rt"
     },
     {
       "relation": "contains",
@@ -9778,9 +9838,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_s",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_s"
     },
     {
       "relation": "contains",
@@ -9788,9 +9848,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_se",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_se"
     },
     {
       "relation": "contains",
@@ -9798,9 +9858,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_te",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_te"
     },
     {
       "relation": "contains",
@@ -9808,9 +9868,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt"
     },
     {
       "relation": "contains",
@@ -9818,9 +9878,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_u",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_u"
     },
     {
       "relation": "contains",
@@ -9828,9 +9888,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ue",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ue"
     },
     {
       "relation": "contains",
@@ -9838,9 +9898,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ve",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ve"
     },
     {
       "relation": "contains",
@@ -9848,9 +9908,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_w",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_w"
     },
     {
       "relation": "contains",
@@ -9858,9 +9918,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_we",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_we"
     },
     {
       "relation": "contains",
@@ -9868,9 +9928,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_xe",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_xe"
     },
     {
       "relation": "contains",
@@ -9878,9 +9938,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y"
     },
     {
       "relation": "contains",
@@ -9888,9 +9948,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_z",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_z"
     },
     {
       "relation": "contains",
@@ -9898,9 +9958,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_js",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ze",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ze"
     },
     {
       "relation": "calls",
@@ -9909,9 +9969,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_e",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i"
     },
     {
       "relation": "calls",
@@ -9920,9 +9980,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_l",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_i"
     },
     {
       "relation": "calls",
@@ -9931,9 +9991,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_me",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_me"
     },
     {
       "relation": "calls",
@@ -9942,9 +10002,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ee",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ee"
     },
     {
       "relation": "calls",
@@ -9953,9 +10013,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_be",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b"
     },
     {
       "relation": "calls",
@@ -9964,9 +10024,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_te",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_b"
     },
     {
       "relation": "calls",
@@ -9997,9 +10057,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_xe",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_h",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_h"
     },
     {
       "relation": "calls",
@@ -10008,9 +10068,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ke",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_se",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_se"
     },
     {
       "relation": "calls",
@@ -10030,9 +10090,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ke",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ae",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_ae"
     },
     {
       "relation": "calls",
@@ -10107,9 +10167,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n"
     },
     {
       "relation": "calls",
@@ -10118,9 +10178,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_n"
     },
     {
       "relation": "calls",
@@ -10129,9 +10189,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f"
     },
     {
       "relation": "calls",
@@ -10140,9 +10200,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_f"
     },
     {
       "relation": "calls",
@@ -10151,9 +10211,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_y",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_s",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_s"
     },
     {
       "relation": "calls",
@@ -10162,9 +10222,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_tt",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_et",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_et"
     },
     {
       "relation": "calls",
@@ -10184,9 +10244,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.vDkjBhsi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_rt",
-      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_at",
-      "confidence_score": 1.0
+      "target": "astro_donate_astro_astro_type_script_index_0_lang_vdkjbhsi_at"
     },
     {
       "relation": "contains",
@@ -11554,16 +11614,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/Card.astro",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_card_astro",
-      "target": "components_card_string"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/AfricaMap.astro",
       "source_location": "L7",
       "weight": 1.0,
@@ -11600,16 +11650,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_components_section_astro",
       "target": "components_section_string"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/CTA.astro",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_components_cta_astro",
-      "target": "components_cta_string"
     },
     {
       "relation": "contains",
@@ -15434,5 +15474,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e3e9f238b5e458b6ab5e094c5efced5ad9f106c0"
+  "built_at_commit": "6e9737bb0712f8f989f4b3e7175987da0ad09c50"
 }

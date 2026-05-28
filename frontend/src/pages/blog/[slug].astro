@@ -28,8 +28,8 @@ const relatedPosts = posts
 
   <main id="main-content">
     <!-- Hero -->
-    <section class="hero-gradient text-white py-4 lg:py-8 hero-pattern">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="scroll-reveal">
           <a href="/blog" class="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white transition-colors mb-6">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -53,6 +53,12 @@ const relatedPosts = posts
             <span>{post.readTime}</span>
           </div>
         </div>
+      </div>
+      <div class="geometric-shapes" aria-hidden="true">
+        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
+        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
+        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
+        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
       </div>
     </section>
 
