@@ -189,7 +189,7 @@ const milestones = [
                 </div>
               </div>
             </div>
-            <p id="chapters-error" role="status" class="mt-4 text-sm text-accent-warm hidden">Unable to load chapters right now. Showing saved content.</p>
+            <p id="chapters-error" role="status" class="mt-4 text-sm text-accent-warm-link hidden">Unable to load chapters right now. Showing saved content.</p>
           </div>
           <div class="lg:col-span-1 hidden lg:block">
             <div class="sticky top-24">
@@ -242,27 +242,27 @@ const milestones = [
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div class="scroll-reveal text-center">
-            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="12" data-count-suffix="">0</div>
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent-glow" data-count-target="12" data-count-suffix="">0</div>
             <div class="mt-2 text-ink font-semibold">Countries</div>
             <p class="mt-1 text-xs text-steel">Across East &amp; Central Africa</p>
           </div>
           <div class="scroll-reveal text-center" style="animation-delay: 100ms">
-            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="500" data-count-suffix="+">0+</div>
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent-glow" data-count-target="500" data-count-suffix="+">0+</div>
             <div class="mt-2 text-ink font-semibold">Communities</div>
             <p class="mt-1 text-xs text-steel">Served and growing</p>
           </div>
           <div class="scroll-reveal text-center" style="animation-delay: 200ms">
-            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="50000" data-count-suffix="+">0+</div>
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent-glow" data-count-target="50000" data-count-suffix="+">0+</div>
             <div class="mt-2 text-ink font-semibold">Lives Impacted</div>
             <p class="mt-1 text-xs text-steel">Through programs and outreach</p>
           </div>
           <div class="scroll-reveal text-center" style="animation-delay: 300ms">
-            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-target="1200" data-count-suffix="+">0+</div>
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent-glow" data-count-target="1200" data-count-suffix="+">0+</div>
             <div class="mt-2 text-ink font-semibold">Volunteers</div>
             <p class="mt-1 text-xs text-steel">Active across all programs</p>
           </div>
           <div class="scroll-reveal text-center" style="animation-delay: 400ms">
-            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent" data-count-prefix="$" data-count-target="500000" data-count-suffix="+">$0+</div>
+            <div class="big-stat-value text-4xl md:text-5xl font-bold text-accent-glow" data-count-prefix="$" data-count-target="500000" data-count-suffix="+">$0+</div>
             <div class="mt-2 text-ink font-semibold">Funds Raised</div>
             <p class="mt-1 text-xs text-steel">For community-driven programs</p>
           </div>
@@ -281,7 +281,7 @@ const milestones = [
             <div class={`relative mb-12 md:mb-16 last:mb-0 timeline-item ${i % 2 === 0 ? 'md:pr-[50%] md:text-right' : 'md:pl-[50%]'}`} style={`--tl-delay: ${i * 0.15}s`}>
               <div class={`absolute left-4 md:left-1/2 top-1 w-4 h-4 rounded-full border-2 border-accent bg-canvas z-10 ${i % 2 === 0 ? 'md:-translate-x-1/2' : 'md:-translate-x-1/2'}`}></div>
               <div class="ml-10 md:ml-0 md:mr-0 md:px-8">
-                <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full mb-2">{m.year}</span>
+                <span class="inline-block px-3 py-1 bg-accent/10 text-accent-link text-xs font-semibold rounded-full mb-2">{m.year}</span>
                 <h3 class="text-xl font-semibold text-ink">{m.title}</h3>
                 <p class="text-sm text-steel mt-1 leading-relaxed">{m.desc}</p>
               </div>

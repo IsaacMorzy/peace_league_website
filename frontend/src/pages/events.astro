@@ -99,7 +99,7 @@ const pastEvents = [
               <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group" style={`animation-delay: ${idx * 80}ms`}>
                 <div class="relative overflow-hidden img-zoom">
                   <img src={`https://images.unsplash.com/${event.image}?w=600&q=80&auto=format&fit=crop`} alt={event.title} class="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-108" loading="lazy" />
-                  <div class="absolute top-4 left-4 bg-accent text-on-dark text-center rounded-lg px-3 py-2 leading-tight shadow-lg">
+                  <div class="absolute top-4 left-4 bg-accent btn-text-contrast text-center rounded-lg px-3 py-2 leading-tight shadow-lg">
                     <span class="block text-xl font-bold leading-none">{event.day}</span>
                     <span class="block text-xs font-semibold mt-0.5 uppercase">{event.month}</span>
                   </div>
@@ -149,7 +149,7 @@ const pastEvents = [
         <p class="scroll-reveal mt-4 text-lg text-white/80 mb-8">Never miss a chance to build peace. Get notified about upcoming events, workshops, and volunteer opportunities in your region.</p>
         <form class="scroll-reveal max-w-md mx-auto flex flex-col sm:flex-row gap-3">
           <input type="email" placeholder="Your email address" aria-label="Email address" class="w-full sm:flex-1 min-w-0 px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-md text-white placeholder:text-white/50 outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
-          <button type="submit" class="w-full sm:w-auto px-5 py-2.5 text-sm font-medium bg-accent text-on-dark rounded-full hover:bg-accent-deep transition-colors whitespace-nowrap cursor-pointer">
+          <button type="submit" class="w-full sm:w-auto px-5 py-2.5 text-sm font-medium bg-accent btn-text-contrast rounded-full hover:bg-accent-deep transition-colors whitespace-nowrap cursor-pointer">
             Get Event Updates
           </button>
         </form>

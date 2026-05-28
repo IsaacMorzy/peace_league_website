@@ -26,9 +26,9 @@ html { overflow-x: hidden; }
   --color-ink: #0a0a0a;
   --color-charcoal: #1c1c1e;
   --color-slate: #3a3a3c;
-  --color-steel: #5a5a5c;
-  --color-stone: #888888;
-  --color-muted: #a8a8aa;
+  --color-steel: #454548;
+  --color-stone: #6e6e72;
+  --color-muted: #8e8e92;
   --color-on-dark: #ffffff;
   --color-on-dark-muted: #b3b3b3;
   --color-brand-tag: #3772cf;
@@ -224,6 +224,89 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Text contrast & readability improvements ── */
+
+/* Text shadow utility for low-contrast text on bright backgrounds */
+.text-shadow-soft {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.dark .text-shadow-soft {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* Text with subtle glow for emphasis on dark backgrounds */
+.text-glow-subtle {
+  text-shadow: 0 0 12px rgba(0,212,164,0.15);
+}
+
+.dark .text-glow-subtle {
+  text-shadow: 0 0 12px rgba(0,212,164,0.25);
+}
+
+/* Accent text in links - darker teal that passes WCAG AA on white */
+.text-accent-link {
+  color: #007a60;
+}
+
+.dark .text-accent-link {
+  color: var(--color-accent-soft);
+}
+
+/* Accent text with subtle glow for stat values */
+.text-accent-glow {
+  color: var(--color-accent);
+  text-shadow: 0 0 20px rgba(0,212,164,0.15);
+}
+
+.dark .text-accent-glow {
+  color: var(--color-accent);
+  text-shadow: 0 0 20px rgba(0,212,164,0.25);
+}
+
+.text-accent-warm-glow {
+  color: var(--color-accent-warm);
+  text-shadow: 0 0 20px rgba(245,158,11,0.15);
+}
+
+.dark .text-accent-warm-glow {
+  color: var(--color-accent-warm);
+  text-shadow: 0 0 20px rgba(245,158,11,0.25);
+}
+
+.text-accent-warm-link {
+  color: #b45309;
+}
+
+.dark .text-accent-warm-link {
+  color: var(--color-accent-warm);
+}
+
+/* Accent text as bold color should be large enough to meet contrast */
+.text-accent-emphasis {
+  color: var(--color-accent-deep);
+}
+
+.dark .text-accent-emphasis {
+  color: var(--color-accent-soft);
+}
+
+/* Ensure body text is always readable */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* CTA button text contrast fix: dark text on accent backgrounds */
+.btn-text-contrast {
+  color: #0a0a0a;
+}
+
+.dark .btn-text-contrast {
+  color: #0a0a0a;
+}
+
 /* ── Image Loading Fade ── */
 img {
   transition: opacity 0.3s ease;
@@ -254,9 +337,9 @@ a:active {
   --color-ink-soft: #e8e8ed;
   --color-charcoal: #e5e5e5;
   --color-slate: #c7c7cc;
-  --color-steel: #a8a8aa;
-  --color-stone: #888888;
-  --color-muted: #666666;
+  --color-steel: #bcbcc0;
+  --color-stone: #949498;
+  --color-muted: #7a7a7e;
   --color-primary: #ffffff;
   --color-on-primary: #0a0a0a;
   --color-on-dark: #0a0a0a;
