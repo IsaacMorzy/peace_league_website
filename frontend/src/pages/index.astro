@@ -11,6 +11,11 @@ import causes from '../lib/causes-data.json';
 
   <main id="main-content">
     <section id="hero-section" class="relative text-white hero-gradient overflow-hidden min-h-[70vh] flex items-center grain-overlay">
+      <!-- Ambient orbs -->
+      <div class="orb-float orb-float--1" style="top:-150px;right:-100px;z-index:0;" aria-hidden="true"></div>
+      <div class="orb-float orb-float--2" style="bottom:-100px;left:-100px;z-index:0;" aria-hidden="true"></div>
+      <div class="orb-float orb-float--3" style="top:40%;left:50%;z-index:0;" aria-hidden="true"></div>
+
       <div class="absolute inset-0 z-[1] opacity-[0.04] bg-[image:radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-hero-bg/60 via-transparent to-hero-bg/20 z-[2]"></div>
       <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-hero-bg to-transparent z-[2]"></div>
@@ -20,6 +25,21 @@ import causes from '../lib/causes-data.json';
         <span class="float-shape float-shape--b" style="width:180px;height:180px;top:20%;right:5%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);"></span>
         <span class="float-shape--diamond float-shape--a" style="width:100px;height:100px;bottom:25%;left:8%;border:2px solid rgba(0,212,164,0.1);background:transparent;border-radius:0;transform:rotate(45deg);"></span>
         <span class="float-shape float-shape--c" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);filter:blur(60px);"></span>
+        <!-- Doves flying over the hero -->
+        <span class="animate-dove-drift" style="left:15%;bottom:-20%;animation-delay:0s;font-size:1.5rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
+        <span class="animate-dove-drift--slow" style="left:50%;bottom:-30%;animation-delay:2.5s;font-size:1.75rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
+        <span class="animate-dove-drift" style="left:80%;bottom:-15%;animation-delay:4s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
+        <!-- Hearts -->
+        <span class="animate-heart-rise" style="left:5%;bottom:-10%;animation-delay:1s;font-size:1.5rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:35%;bottom:-5%;animation-delay:3s;font-size:1.75rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:65%;bottom:-8%;animation-delay:2s;font-size:1.25rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:90%;bottom:-12%;animation-delay:4.5s;font-size:1rem;">&#x2764;</span>
+        <!-- Sparkle particles -->
+        <span class="animate-particle" style="left:8%;bottom:5%;width:5px;height:5px;border-radius:50%;background:var(--color-accent);animation-delay:0.5s;"></span>
+        <span class="animate-particle--fast" style="left:22%;bottom:10%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-soft);animation-delay:1.2s;"></span>
+        <span class="animate-particle--glow" style="left:45%;bottom:2%;color:var(--color-accent);animation-delay:2s;font-size:1.5rem;">&#x2726;</span>
+        <span class="animate-particle" style="left:70%;bottom:15%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
+        <span class="animate-particle--fast" style="left:85%;bottom:8%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:3s;"></span>
       </div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 z-[3] w-full">
         <div class="max-w-3xl">

@@ -134,6 +134,9 @@ const pageTitle = `${title} | Peace League Africa`;
 
   </head>
   <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col overflow-x-hidden">
+    <!-- Cursor glow ring -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
     <!-- Scroll progress bar -->
     <div id="scroll-progress-bar" aria-hidden="true"></div>
 
@@ -194,6 +197,26 @@ const pageTitle = `${title} | Peace League Africa`;
             srMo.observe(document.body, { childList: true, subtree: true });
           }, { timeout: 2000 });
         }
+      }
+
+      // Cursor glow effect
+      const cursorGlow = document.getElementById('cursor-glow');
+      if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+        let glowX = window.innerWidth / 2, glowY = window.innerHeight / 2;
+        let currentX = glowX, currentY = glowY;
+
+        document.addEventListener('mousemove', (e) => {
+          glowX = e.clientX;
+          glowY = e.clientY;
+        }, { passive: true });
+
+        function animateGlow() {
+          currentX += (glowX - currentX) * 0.08;
+          currentY += (glowY - currentY) * 0.08;
+          cursorGlow.style.transform = `translate(${currentX - 150}px, ${currentY - 150}px)`;
+          requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
       }
 
       // Scroll progress bar

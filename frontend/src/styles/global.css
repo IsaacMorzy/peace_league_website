@@ -587,28 +587,95 @@ a:active {
   pointer-events: none;
 }
 
-/* ── Animations ── */
+/* ════════════════════════════════════════════
+   ── ANIMATIONS: FLIGHT & RISE ──
+   ════════════════════════════════════════════ */
 
+/* ── DOVE: Natural swooping flight ──
+   The dove arcs upward, banks, glides, then swoops again.
+   Multiple keyframes create a figure-8 flight path with
+   varying speed for an organic, bird-like feel. */
 .animate-dove-drift {
-  animation: dove-drift 16s ease-in-out infinite;
+  animation: dove-flight 18s ease-in-out infinite;
 }
-@keyframes dove-drift {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  10% { opacity: 0.35; }
-  50% { transform: translateY(-50vh) translateX(20px); opacity: 0.3; }
-  100% { transform: translateY(-110vh) translateX(-10px); opacity: 0; }
+@keyframes dove-flight {
+  0%   { transform: translate3d(-30px, 0, 0) scale(0.7) rotate(-5deg); opacity: 0; }
+  5%   { opacity: 0.3; transform: translate3d(-15px, -8vh, 0) scale(0.85) rotate(-3deg); }
+  15%  { opacity: 0.45; transform: translate3d(15px, -25vh, 0) scale(1) rotate(2deg); }
+  25%  { opacity: 0.5; transform: translate3d(40px, -38vh, 0) scale(1.05) rotate(6deg); }
+  35%  { opacity: 0.45; transform: translate3d(55px, -48vh, 0) scale(1) rotate(3deg); }
+  45%  { opacity: 0.4; transform: translate3d(60px, -55vh, 0) scale(0.95) rotate(-2deg); }
+  55%  { opacity: 0.35; transform: translate3d(50px, -60vh, 0) scale(0.9) rotate(-6deg); }
+  65%  { opacity: 0.3; transform: translate3d(35px, -65vh, 0) scale(0.85) rotate(-3deg); }
+  80%  { opacity: 0.2; transform: translate3d(15px, -75vh, 0) scale(0.8) rotate(0deg); }
+  100% { transform: translate3d(-20px, -90vh, 0) scale(0.7) rotate(5deg); opacity: 0; }
 }
 
+/* ── Alternate dove (slower, wider arc) ── */
+.animate-dove-drift--slow {
+  animation: dove-flight-slow 24s ease-in-out infinite;
+}
+@keyframes dove-flight-slow {
+  0%   { transform: translate3d(-40px, 0, 0) scale(0.6) rotate(-8deg); opacity: 0; }
+  8%   { opacity: 0.25; transform: translate3d(-20px, -10vh, 0) scale(0.8) rotate(-4deg); }
+  20%  { opacity: 0.4; transform: translate3d(25px, -30vh, 0) scale(0.95) rotate(3deg); }
+  35%  { opacity: 0.45; transform: translate3d(55px, -45vh, 0) scale(1.1) rotate(8deg); }
+  50%  { opacity: 0.35; transform: translate3d(70px, -55vh, 0) scale(1) rotate(5deg); }
+  65%  { opacity: 0.25; transform: translate3d(50px, -65vh, 0) scale(0.85) rotate(-4deg); }
+  85%  { opacity: 0.15; transform: translate3d(20px, -80vh, 0) scale(0.7) rotate(-2deg); }
+  100% { transform: translate3d(-30px, -95vh, 0) scale(0.55) rotate(6deg); opacity: 0; }
+}
+
+/* ── HEART: Pulsing rise with shimmer ── */
 .animate-heart-rise {
   color: var(--color-accent);
-  animation: heart-rise 14s ease-in-out infinite;
+  animation: heart-flight 14s ease-in-out infinite;
 }
-@keyframes heart-rise {
-  0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.5; }
-  50% { transform: translateY(-55vh) scale(1) rotate(5deg); opacity: 0.4; }
-  100% { transform: translateY(-110vh) scale(0.8) rotate(10deg); opacity: 0; }
+@keyframes heart-flight {
+  0%   { transform: translate3d(0, 0, 0) scale(0.4) rotate(0deg); opacity: 0; filter: blur(2px); }
+  8%   { opacity: 0.4; transform: translate3d(-8px, -8vh, 0) scale(0.7) rotate(-6deg); filter: blur(0); }
+  20%  { opacity: 0.55; transform: translate3d(12px, -20vh, 0) scale(0.95) rotate(8deg); filter: blur(0); text-shadow: 0 0 10px rgba(0,212,164,0.4); }
+  35%  { opacity: 0.5; transform: translate3d(-5px, -35vh, 0) scale(1.05) rotate(-4deg); }
+  50%  { opacity: 0.45; transform: translate3d(18px, -50vh, 0) scale(1) rotate(10deg); text-shadow: 0 0 15px rgba(0,212,164,0.3); }
+  65%  { opacity: 0.35; transform: translate3d(-10px, -65vh, 0) scale(0.85) rotate(-8deg); }
+  80%  { opacity: 0.2; transform: translate3d(8px, -80vh, 0) scale(0.7) rotate(4deg); filter: blur(1px); }
+  100% { transform: translate3d(-15px, -100vh, 0) scale(0.5) rotate(-12deg); opacity: 0; filter: blur(3px); }
 }
+
+/* ── SPARKLE / SHIMMER PARTICLES ── */
+.animate-particle {
+  animation: particle-rise 12s ease-in-out infinite;
+}
+@keyframes particle-rise {
+  0%   { transform: translate3d(0, 0, 0) scale(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.6; transform: translate3d(-10px, -5vh, 0) scale(0.6) rotate(30deg); }
+  30%  { opacity: 0.4; transform: translate3d(15px, -20vh, 0) scale(0.4) rotate(120deg); }
+  50%  { opacity: 0.5; transform: translate3d(-5px, -35vh, 0) scale(0.8) rotate(210deg); box-shadow: 0 0 6px currentColor; }
+  70%  { opacity: 0.3; transform: translate3d(10px, -55vh, 0) scale(0.3) rotate(300deg); }
+  100% { transform: translate3d(-20px, -80vh, 0) scale(0) rotate(400deg); opacity: 0; }
+}
+
+.animate-particle--fast {
+  animation: particle-rise 8s ease-in-out infinite;
+}
+
+.animate-particle--glow {
+  animation: particle-glow-rise 15s ease-in-out infinite;
+}
+@keyframes particle-glow-rise {
+  0%   { transform: translate3d(0, 0, 0) scale(0); opacity: 0; }
+  8%   { opacity: 0.3; transform: translate3d(-15px, -5vh, 0) scale(0.8); filter: blur(0); }
+  25%  { opacity: 0.5; transform: translate3d(20px, -18vh, 0) scale(1.2); filter: blur(0); box-shadow: 0 0 20px currentColor; }
+  45%  { opacity: 0.35; transform: translate3d(-10px, -35vh, 0) scale(0.7); filter: blur(1px); }
+  65%  { opacity: 0.2; transform: translate3d(15px, -55vh, 0) scale(0.5); filter: blur(2px); }
+  100% { transform: translate3d(-25px, -85vh, 0) scale(0); opacity: 0; filter: blur(4px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,212,164,0.4); }
+  50% { box-shadow: 0 0 20px rgba(0,212,164,0.8); }
+}
+.animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
 
 @keyframes glow-pulse {
   0%, 100% { box-shadow: 0 0 8px rgba(0,212,164,0.4); }
@@ -1927,6 +1994,129 @@ a:active {
 .hero-inner .geometric-shapes span {
   position: absolute;
   display: block;
+}
+
+/* ════════════════════════════════════════════
+   ── CURSOR GLOW ──
+   ════════════════════════════════════════════ */
+
+/* Cursor glow ring that follows the mouse */
+#cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,212,164,0.06) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.dark #cursor-glow {
+  background: radial-gradient(circle, rgba(0,212,164,0.08) 0%, transparent 70%);
+}
+
+/* ── SHIMMER TEXT REVEAL (for stats and headlines) ── */
+.shimmer-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.shimmer-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SCALE-UP REVEAL (for images and cards) ── */
+.scale-reveal {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+
+.scale-reveal.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── HERO PARALLAX DEPTH LAYERS ── */
+
+.hero-depth-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-depth-layer img,
+.hero-depth-layer .parallax-element {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Slow parallax (background) */
+.parallax-slow {
+  will-change: transform;
+}
+
+/* ── FLOATING ACCENT ORBS ── */
+
+.orb-float {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  opacity: 0.12;
+}
+
+.orb-float--1 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-accent);
+  animation: orb-drift-1 25s ease-in-out infinite;
+}
+
+.orb-float--2 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-accent-warm);
+  animation: orb-drift-2 20s ease-in-out infinite;
+}
+
+.orb-float--3 {
+  width: 250px;
+  height: 250px;
+  background: var(--color-accent);
+  animation: orb-drift-3 18s ease-in-out infinite;
+  opacity: 0.08;
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(40px, -30px) scale(1.1); }
+  50% { transform: translate(-20px, -60px) scale(0.9); }
+  75% { transform: translate(-50px, -20px) scale(1.05); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, -40px) scale(1.15); }
+  66% { transform: translate(35px, -20px) scale(0.85); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(20px, -25px) scale(1.2); }
+  40% { transform: translate(-30px, -40px) scale(0.8); }
+  60% { transform: translate(15px, -15px) scale(1.1); }
+  80% { transform: translate(-25px, -30px) scale(0.9); }
+}
+
+.dark .orb-float {
+  opacity: 0.08;
 }
 
 @media (prefers-reduced-motion: reduce) {

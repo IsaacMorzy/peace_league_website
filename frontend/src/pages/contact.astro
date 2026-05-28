@@ -17,53 +17,37 @@ import Footer from '../components/Footer.astro';
       ]
     })} />
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
+      <!-- Ambient orbs -->
+      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
+      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Let's Talk Peace</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Have a question, an idea, or a story to share? We're listening.</p>
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          <a href="mailto:partnerships@peaceleagueafrica.org" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
-            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-            </div>
-            <div class="text-left">
-              <p class="text-sm font-medium text-white">Partnership Inquiries</p>
-              <p class="text-xs text-white/60">Collaborate with us</p>
-            </div>
-          </a>
-          <a href="mailto:media@peaceleagueafrica.org" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
-            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <div class="text-left">
-              <p class="text-sm font-medium text-white">Media &amp; Press</p>
-              <p class="text-xs text-white/60">Press inquiries &amp; interviews</p>
-            </div>
-          </a>
-          <a href="/volunteer" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
-            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            </div>
-            <div class="text-left">
-              <p class="text-sm font-medium text-white">Volunteer Opportunities</p>
-              <p class="text-xs text-white/60">Join our team</p>
-            </div>
-          </a>
-          <a href="/faq" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
-            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-            </div>
-            <div class="text-left">
-              <p class="text-sm font-medium text-white">General Questions</p>
-              <p class="text-xs text-white/60">FAQs &amp; quick answers</p>
-            </div>
-          </a>
-        </div>
       </div>
       <div class="geometric-shapes" aria-hidden="true">
         <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
         <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
         <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
         <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
+      </div>
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <!-- Doves flying (natural swooping arcs) -->
+        <span class="animate-dove-drift" style="left:18%;bottom:-20%;animation-delay:0.5s;font-size:1.125rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
+        <span class="animate-dove-drift--slow" style="left:55%;bottom:-25%;animation-delay:2s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
+        <span class="animate-dove-drift" style="left:82%;bottom:-15%;animation-delay:3.5s;font-size:1rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
+        <!-- Hearts pulsing -->
+        <span class="animate-heart-rise" style="left:8%;bottom:-10%;animation-delay:0s;font-size:1.25rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:30%;bottom:-5%;animation-delay:2.4s;font-size:1.5rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:70%;bottom:-8%;animation-delay:1.8s;font-size:1.375rem;">&#x2764;</span>
+        <span class="animate-heart-rise" style="left:92%;bottom:-12%;animation-delay:0.3s;font-size:0.875rem;">&#x2764;</span>
+        <!-- Sparkle particles -->
+        <span class="animate-particle" style="left:10%;bottom:5%;width:4px;height:4px;border-radius:50%;background:var(--color-accent);animation-delay:1s;"></span>
+        <span class="animate-particle--fast" style="left:25%;bottom:10%;width:3px;height:3px;border-radius:50%;background:var(--color-accent-soft);animation-delay:0.3s;"></span>
+        <span class="animate-particle" style="left:40%;bottom:8%;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);animation-delay:2s;"></span>
+        <span class="animate-particle--glow" style="left:60%;bottom:0;color:var(--color-accent);animation-delay:1.5s;font-size:1.2rem;">&#x2726;</span>
+        <span class="animate-particle--fast" style="left:75%;bottom:15%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:2.5s;"></span>
+        <span class="animate-particle" style="left:90%;bottom:5%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
       </div>
     </section>
 
