@@ -31,8 +31,11 @@ const btnClasses: Record<string, string> = {
 ---
 
 <div
-  class={`relative overflow-hidden rounded-xl border ${bgClasses[variant]} p-8 md:p-12 ${className}`}
+  class={`relative overflow-hidden rounded-2xl border ${bgClasses[variant]} p-8 md:p-12 ${className} group/cta`}
 >
+  <!-- Subtle gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
   <div class="relative z-10 max-w-2xl mx-auto text-center">
     <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4">
       {headline}
@@ -43,11 +46,11 @@ const btnClasses: Record<string, string> = {
     {buttonLabel && (
       <a
         href={buttonHref}
-        class={`inline-flex items-center px-6 py-3 rounded-full font-semibold text-sm transition-micro shadow-sm hover:shadow-lg hover:scale-[1.02] ${btnClasses[variant]} press-effect`}
+        class={`cta-hover-glow inline-flex items-center px-6 py-3 rounded-full font-semibold text-sm shadow-sm hover:shadow-lg ${btnClasses[variant]} press-effect btn-ripple`}
       >
         {buttonLabel}
         <svg
-          class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          class="ml-2 w-4 h-4 transition-transform duration-200 group-hover/cta:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
         ><path
           stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M17 8l4 4m0 0l-4 4m4-4H3"
