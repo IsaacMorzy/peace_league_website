@@ -2319,12 +2319,6 @@ a:active {
 
 /* ── Mobile hero optimizations ── */
 @media (max-width: 640px) {
-  #hero-section {
-    min-height: 80dvh;
-  }
-  #hero-section .hero-word {
-    font-size: clamp(1.75rem, 8.5vw, 2.5rem);
-  }
   #hero-section .hero-badge {
     font-size: 0.7rem;
   }

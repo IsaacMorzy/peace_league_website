@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-28)
 
 ## Corpus Check
-- 94 files · ~450,298 words
+- 95 files · ~449,636 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 771 nodes · 891 edges · 78 communities (71 shown, 7 thin omitted)
+- 784 nodes · 903 edges · 79 communities (72 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e7d39faa`
+- Built from commit: `7827f497`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -67,6 +67,7 @@
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 78|Community 78]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `../layouts/Layout.astro` - 29 edges
@@ -92,7 +93,7 @@
 - `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (78 total, 7 thin omitted)
+## Communities (79 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -274,8 +275,12 @@ Nodes (3): error, submitBtn, successMsg
 Cohesion: 0.67
 Nodes (3): 1. High-Level Architecture, code:block1 (┌──────────────────────────────────────────────────────────┐), Key Technologies
 
+### Community 78 - "Community 78"
+Cohesion: 0.15
+Nodes (12): e, f, g, h, m, n, o, p (+4 more)
+
 ## Knowledge Gaps
-- **412 isolated node(s):** `canonicalURL`, `srMo`, `sheen`, `rect`, `mo` (+407 more)
+- **424 isolated node(s):** `canonicalURL`, `srMo`, `sheen`, `rect`, `mo` (+419 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -287,7 +292,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 54`, `Community 55`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `canonicalURL`, `srMo`, `sheen` to the rest of the system?**
-  _447 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _459 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
