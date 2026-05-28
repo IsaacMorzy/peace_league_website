@@ -16,10 +16,48 @@ import Footer from '../components/Footer.astro';
         { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://peaceleagueafrica.org/contact" }
       ]
     })} />
-    <section class="hero-gradient hero-pattern text-white py-10 lg:py-14">
+    <section class="hero-gradient hero-pattern text-white py-4 lg:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Let's Talk Peace</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Have a question, an idea, or a story to share? We're listening.</p>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+          <a href="mailto:partnerships@peaceleagueafrica.org" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
+            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="text-sm font-medium text-white">Partnership Inquiries</p>
+              <p class="text-xs text-white/60">Collaborate with us</p>
+            </div>
+          </a>
+          <a href="mailto:media@peaceleagueafrica.org" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
+            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="text-sm font-medium text-white">Media &amp; Press</p>
+              <p class="text-xs text-white/60">Press inquiries &amp; interviews</p>
+            </div>
+          </a>
+          <a href="/volunteer" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
+            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="text-sm font-medium text-white">Volunteer Opportunities</p>
+              <p class="text-xs text-white/60">Join our team</p>
+            </div>
+          </a>
+          <a href="/faq" class="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group">
+            <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="text-sm font-medium text-white">General Questions</p>
+              <p class="text-xs text-white/60">FAQs &amp; quick answers</p>
+            </div>
+          </a>
+        </div>
       <div class="parallax-layer" aria-hidden="true">
         <div class="parallax-bg-shape" style="width:300px;height:300px;top:-50px;right:-80px;background:radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
         <div class="parallax-bg-shape" style="width:200px;height:200px;bottom:-40px;left:-60px;background:radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%);"></div>
@@ -27,7 +65,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-16 bg-surface">
+    <section class="py-12 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex items-center gap-2 mb-8 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -58,40 +96,40 @@ import Footer from '../components/Footer.astro';
               <div>
                 <label for="name" class="block text-sm font-medium text-ink mb-1.5">Name *</label>
                 <input type="text" id="name" name="name" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                 <p id="name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your name.</p>
               </div>
               
               <div>
                 <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
                 <input type="email" id="email" name="email" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                 <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
               </div>
               
               <div>
                 <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone</label>
                 <input type="tel" id="phone" name="phone" 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
               </div>
               
               <div>
                 <label for="subject" class="block text-sm font-medium text-ink mb-1.5">Subject *</label>
                 <input type="text" id="subject" name="subject" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                 <p id="subject-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a subject.</p>
               </div>
               
               <div>
                 <label for="message" class="block text-sm font-medium text-ink mb-1.5">Message *</label>
                 <textarea id="message" name="message" rows="5" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
                 <p id="message-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your message.</p>
               </div>
               
-              <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
+              <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-0.5">
                 <button type="submit" id="submit-btn"
-                  class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
+                  class="submit-btn w-full bg-primary text-on-dark py-2.5 rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
                 Send Message
               </button>
               </div>
@@ -125,9 +163,9 @@ import Footer from '../components/Footer.astro';
                 <div class="bg-surface rounded-2xl p-5 border border-hairline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
                   <h3 class="font-semibold text-ink">Follow Us</h3>
                   <div class="flex gap-4 mt-3">
-                    <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors min-h-[44px]">Twitter</a>
-                    <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors min-h-[44px]">Facebook</a>
-                    <a href="#" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors min-h-[44px]">LinkedIn</a>
+                    <a href="https://twitter.com/peaceleagueafrica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors min-h-[44px]">Twitter</a>
+                    <a href="https://facebook.com/peaceleagueafrica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors min-h-[44px]">Facebook</a>
+                    <a href="https://linkedin.com/company/peaceleagueafrica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-1.5 bg-accent/10 text-accent-deep text-sm font-medium rounded-full hover:bg-accent/20 transition-colors min-h-[44px]">LinkedIn</a>
                   </div>
                 </div>
               </div>

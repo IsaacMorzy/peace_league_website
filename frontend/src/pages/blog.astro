@@ -163,8 +163,9 @@ const allPostsJson = JSON.stringify(posts);
               <p class="text-xs text-steel mb-5 relative z-10 leading-relaxed">Get our latest stories delivered to your inbox.</p>
               <div class="flex flex-col gap-2.5 relative z-10">
                 <input type="email" placeholder="Your email address" aria-label="Email for newsletter" class="w-full px-3.5 py-2.5 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
-                <button class="w-full px-4 py-2.5 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-all duration-300 cursor-pointer min-h-[44px] hover:shadow-md active:scale-[0.98]">Get Updates</button>
+                <button type="submit" class="w-full px-4 py-2.5 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-all duration-300 cursor-pointer min-h-[44px] hover:shadow-md active:scale-[0.98]">Get Updates</button>
               </div>
+              <p id="newsletter-status-sidebar" role="status" aria-live="polite" class="mt-2 text-xs text-steel hidden"></p>
             </div>
           </aside>
         </div>

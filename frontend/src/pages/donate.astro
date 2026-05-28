@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
         { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://peaceleagueafrica.org/donate" }
       ]
     })} />
-    <section class="hero-gradient hero-pattern text-white py-10 lg:py-14">
+    <section class="hero-gradient hero-pattern text-white py-4 lg:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Your Gift Rebuilds Communities</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70 max-w-2xl">$50 trains a peace teacher. $25 provides clean water for a family. $500 launches a youth mentorship program. Every dollar goes to peace-building across 12 African countries.</p>
@@ -83,7 +83,7 @@ import Footer from '../components/Footer.astro';
               <label for="donor_name" class="block text-sm font-medium text-ink mb-1.5">Full Name *</label>
               <div class="relative">
                 <input type="text" id="donor_name" name="donor_name" required autocomplete="name"
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                 <svg class="field-check hidden absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
               <p id="donor_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your full name.</p>
@@ -94,7 +94,7 @@ import Footer from '../components/Footer.astro';
                 <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
                 <div class="relative">
                   <input type="email" id="email" name="email" required autocomplete="email"
-                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                    class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <svg class="field-check hidden absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
                 <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
@@ -103,7 +103,7 @@ import Footer from '../components/Footer.astro';
                 <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone <span id="phone-required-label" class="text-red-500 hidden">*</span></label>
                 <div class="relative">
                   <input type="tel" id="phone" name="phone" autocomplete="tel"
-                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                    class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <svg class="field-check hidden absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
                 <p id="phone-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Phone number is required for M-Pesa payments.</p>
@@ -148,7 +148,7 @@ import Footer from '../components/Footer.astro';
               <div class="relative">
                 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-steel text-base pointer-events-none">$</span>
                 <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="50.00"
-                  class="input-focus-ring w-full pl-8 pr-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full pl-8 pr-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
               </div>
               <p id="amount-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid donation amount.</p>
             </div>
@@ -156,7 +156,7 @@ import Footer from '../components/Footer.astro';
             <div class="relative">
               <label for="payment_method" class="block text-sm font-medium text-ink mb-1.5">Payment Method *</label>
               <select id="payment_method" name="payment_method" required 
-                class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none">
+                class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent">
                 <option value="">Select payment method</option>
                 <option value="Credit Card">Credit Card</option>
                 <option value="Bank Transfer">Bank Transfer</option>
@@ -168,7 +168,7 @@ import Footer from '../components/Footer.astro';
 
             <div class="relative">
               <label for="cause" class="block text-sm font-medium text-ink mb-1.5">Campaign (Optional)</label>
-              <select id="cause" name="cause" class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none">
+              <select id="cause" name="cause" class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent">
                 <option value="">Select a campaign (optional)</option>
                 <!-- Populated via JavaScript -->
               </select>
@@ -178,7 +178,7 @@ import Footer from '../components/Footer.astro';
             <div class="relative">
               <label for="message" class="block text-sm font-medium text-ink mb-1.5">Message <span class="text-steel font-normal">(Optional)</span></label>
               <textarea id="message" name="message" rows="2" placeholder="What inspires you to give today?"
-                class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
+                class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
             </div>
             
             <label class="flex items-start gap-3 cursor-pointer group">
@@ -201,9 +201,9 @@ import Footer from '../components/Footer.astro';
               </span>
             </div>
             
-            <div class="btn-pulse-glow rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px] shadow-lg shadow-accent/20">
+            <div class="btn-pulse-glow rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-0.5 shadow-lg shadow-accent/20">
               <button type="submit" id="submit-btn"
-                class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-all duration-200 disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed disabled:shadow-none disabled:scale-100 inline-flex items-center justify-center gap-2">
+                class="submit-btn w-full bg-primary text-on-dark py-2.5 rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-all duration-200 disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed disabled:shadow-none disabled:scale-100 inline-flex items-center justify-center gap-2">
                 <span id="submit-btn-text">Complete My Gift</span>
                 <svg id="submit-btn-arrow" class="w-4 h-4 transition-transform group-hover/submit:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 <svg id="submit-spinner" class="hidden w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">

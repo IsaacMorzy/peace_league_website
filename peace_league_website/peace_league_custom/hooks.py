@@ -1,21 +1,14 @@
 # Copyright (c) 2021, Peace League and contributors
 # For license information, please see license.txt
+#
+# 🚧 DEPRECATED: This module has been consolidated into peace_league_website/hooks.py
+# and peace_league_website/doctype/plw_donation/donation.py
+#
+# All custom fields and DocType extensions are now managed from:
+#   - apps/peace_league_website/peace_league_website/hooks.py  (custom_fields, extend_doctype_class)
+#   - apps/peace_league_website/peace_league_website/doctype/plw_donation/donation.py  (Donation class)
+#
+# This file kept for backward compatibility during migration.
+# Remove after confirming all sites have migrated.
 
-app_include_js = "assets/js/peace_league_custom.min.js"
-app_include_css = "assets/css/peace_league_custom.min.css"
-
-# Custom Fields
-custom_fields = [
-    {"doctype": "Donation", "fieldname": "cause", "label": "Campaign/Cause", "fieldtype": "Link", "options": "Cause", "insert_after": "project", "in_list_view": 1, "in_standard_filter": 1, "search_index": 1}
-]
-
-# Custom Scripts
-custom_scripts = {
-    "Donation": "donation_custom.js"
-}
-
-# Override Controllers
-override_whitelisted_methods = {
-    "frappe_npo.non_profit.doctype.donation.donation.validate": "peace_league_custom.doctype.donation.donation.validate",
-    "frappe_npo.non_profit.doctype.donation.donation.before_update_after_submit": "peace_league_custom.doctype.donation.donation.before_update_after_submit"
-}
+from peace_league_website.hooks import custom_fields  # Re-export consolidated custom fields

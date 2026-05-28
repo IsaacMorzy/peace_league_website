@@ -28,7 +28,7 @@ const relatedPosts = posts
 
   <main id="main-content">
     <!-- Hero -->
-    <section class="hero-gradient text-white py-10 lg:py-14 hero-pattern">
+    <section class="hero-gradient text-white py-4 lg:py-8 hero-pattern">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="scroll-reveal">
           <a href="/blog" class="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white transition-colors mb-6">
@@ -109,7 +109,7 @@ const relatedPosts = posts
 
     <!-- Related Posts -->
     {relatedPosts.length > 0 && (
-      <section class="py-16">
+      <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="scroll-reveal text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink mb-8">Related Articles</h2>
           <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin -mx-4 px-4">
@@ -138,14 +138,15 @@ const relatedPosts = posts
     </div>
 
     <!-- Newsletter CTA -->
-    <section class="py-16 bg-accent/5">
+    <section class="py-12 bg-accent/5">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Never Miss a Story</h2>
         <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-12">Subscribe to our newsletter and get stories of hope and impact delivered to your inbox every month.</p>
-        <form class="scroll-reveal flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST">
+        <form class="scroll-reveal flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST" aria-describedby="newsletter-status-post">
           <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter" class="flex-1 px-4 py-3 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
           <button type="submit" class="px-6 py-3 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors shadow-md whitespace-nowrap min-h-[44px]">Get Updates</button>
         </form>
+        <p id="newsletter-status-post" role="status" aria-live="polite" class="mt-3 text-sm text-steel hidden"></p>
       </div>
     </section>
   </main>

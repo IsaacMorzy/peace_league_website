@@ -18,6 +18,12 @@ frontend/.astro/
 
 # Python
 __pycache__/
+
+# Graphify knowledge graph artifacts
+graphify-out/
+
+# Test artifacts
+frontend/test-results/
 *.pyc
 *.pyo
 .eggs/

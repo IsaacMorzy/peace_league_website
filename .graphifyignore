@@ -1,0 +1,20 @@
+# Graphify: exclude noisy/auto-generated files from the knowledge graph
+#
+# These files add graph noise without contributing meaningful structure.
+
+# Lighthouse performance reports (auto-generated JSON, ~40+ files)
+**/lighthouse-reports/**
+
+# Build/dist artifacts
+**/dist/**
+**/__pycache__/**
+*.pyc
+*.min.js
+*.min.css
+*.bundle.js
+
+# Node dependencies
+**/node_modules/**
+
+# Version control
+.git/

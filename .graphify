@@ -1,0 +1,15 @@
+# Graphify config for Peace League Website
+# Auto-rebuilds graph on git commit via .git/hooks/post-commit
+
+[build]
+# AST-only extraction, no LLM needed for code changes
+semantic = false
+# Exclude patterns (extends .graphifyignore)
+ignore = [
+    "**/lighthouse-reports/**",
+    "**/dist/**",
+    "**/__pycache__/**",
+    "*.min.js",
+    "*.min.css",
+    "*.bundle.js",
+]

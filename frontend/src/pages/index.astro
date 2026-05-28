@@ -10,11 +10,11 @@ import causes from '../lib/causes-data.json';
   <Navigation />
 
   <main id="main-content">
-    <section id="hero-section" class="relative text-white hero-gradient overflow-hidden min-h-[85vh] flex items-center">
+    <section id="hero-section" class="relative text-white hero-gradient overflow-hidden min-h-[70vh] flex items-center">
       <div class="absolute inset-0 z-[1] opacity-[0.04] bg-[image:radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-hero-bg/60 via-transparent to-hero-bg/20 z-[2]"></div>
       <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-hero-bg to-transparent z-[2]"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 z-[3] w-full">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 z-[3] w-full">
         <div class="max-w-3xl">
           <div class="scroll-reveal mb-6">
             <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-accent-soft border border-white/10">
@@ -55,11 +55,49 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
+    <section class="py-8 lg:py-10 bg-gradient-to-br from-accent-soft/10 via-canvas to-accent-warm-soft/10 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">Why Peace League Africa</h2>
+        <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
+        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-8">Four reasons to trust us with your support</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden">
+            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="heading-sm mb-2">Locally Led, African Owned</h3>
+            <p class="text-body-sm text-steel leading-relaxed">We are not a foreign NGO. Peace League Africa is led by Africans, for Africans. Our teams live in the communities they serve.</p>
+          </div>
+          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 60ms">
+            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h3 class="heading-sm mb-2">95% to Programs</h3>
+            <p class="text-body-sm text-steel leading-relaxed">Radical transparency. We keep overhead under 5% so your donation goes where it matters most: on the ground.</p>
+          </div>
+          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 120ms">
+            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            </div>
+            <h3 class="heading-sm mb-2">Pan-African, Local Impact</h3>
+            <p class="text-body-sm text-steel leading-relaxed">Operating in 12 countries, 500+ communities. Every program is hyper-local, designed by and for the community it serves.</p>
+          </div>
+          <div class="scroll-reveal card-shadow-shift group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 180ms">
+            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <h3 class="heading-sm mb-2">Sustainable, Not Dependent</h3>
+            <p class="text-body-sm text-steel leading-relaxed">Our 3-year handover model trains local leaders to run every program independently. We don't create dependency. <a href="/about" class="text-accent hover:text-accent-deep underline underline-offset-2 transition-colors">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-14">Grassroots peacebuilding measured in lives changed, communities rebuilt, and futures restored.</p>
+        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Grassroots peacebuilding measured in lives changed, communities rebuilt, and futures restored.</p>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           <div class="scroll-reveal group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20">
             <div class="absolute -top-3 -right-3 w-20 h-20 bg-accent/5 rounded-full blur-2xl"></div>
@@ -89,11 +127,11 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-gradient-to-b from-canvas to-surface overflow-hidden">
+    <section class="py-6 lg:py-10 bg-gradient-to-b from-canvas to-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-14">Every cause is community-driven, locally led, and fully transparent. Here is where your support goes.</p>
+        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Every cause is community-driven, locally led, and fully transparent. Here is where your support goes.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {causes.slice(0, 6).map((cause, idx) => (
             <div class="scroll-reveal group bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-accent/20" style={`animation-delay: ${idx * 80}ms`}>
@@ -130,11 +168,11 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
+    <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">How We Work</h2>
+        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">How We Work</h2>
         <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
-        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-14">A proven process rooted in listening, local leadership, and lasting change.</p>
+        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-8">A proven process rooted in listening, local leadership, and lasting change.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
             <div class="scroll-reveal relative text-center md:text-left">
               <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-5">
@@ -186,16 +224,19 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-canvas overflow-hidden">
+    <section class="py-6 lg:py-10 bg-canvas overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <div class="text-center max-w-3xl mx-auto mb-14">
-          <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Your Donation Changes Lives</h2>
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Your Donation Changes Lives</h2>
           <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto">Every dollar goes directly to community-driven programs. Here is what your generosity makes possible.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
+            <div class="floating-bubble-card" style="width:16px;height:16px;bottom:-10px;left:8%;animation-delay:0s;animation-duration:16s"></div>
+            <div class="floating-bubble-card" style="width:11px;height:11px;bottom:-10px;left:40%;animation-delay:5s;animation-duration:20s"></div>
+            <div class="floating-heart-card" style="bottom:-10px;left:72%;font-size:14px;animation-delay:3s;animation-duration:22s">♥</div>
             <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="5" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Provide a Nutritious Meal</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Provides a warm, nutritious meal for a child in need, supporting their health and ability to learn.</p>
@@ -208,6 +249,9 @@ import causes from '../lib/causes-data.json';
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 60ms">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent-warm/5 rounded-full blur-xl"></div>
+            <div class="floating-bubble-warm" style="width:16px;height:16px;bottom:-10px;left:12%;animation-delay:1s;animation-duration:17s"></div>
+            <div class="floating-bubble-warm" style="width:10px;height:10px;bottom:-10px;left:50%;animation-delay:6s;animation-duration:19s"></div>
+            <div class="floating-heart-warm" style="bottom:-10px;left:78%;font-size:15px;animation-delay:4s;animation-duration:23s">♥</div>
             <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="10" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">School Supplies for a Student</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Equips a student with pens, books, and a uniform for one term, removing barriers to education.</p>
@@ -220,6 +264,9 @@ import causes from '../lib/causes-data.json';
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 120ms">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
+            <div class="floating-bubble-card" style="width:20px;height:20px;bottom:-10px;left:14%;animation-delay:2s;animation-duration:15s"></div>
+            <div class="floating-bubble-card" style="width:13px;height:13px;bottom:-10px;left:60%;animation-delay:7s;animation-duration:21s"></div>
+            <div class="floating-heart-card" style="bottom:-10px;left:30%;font-size:16px;animation-delay:1s;animation-duration:20s">♥</div>
             <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="20" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Emergency Food Package</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Delivers a week's worth of emergency food supplies to a family displaced by conflict or disaster.</p>
@@ -232,7 +279,12 @@ import causes from '../lib/causes-data.json';
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 180ms">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent-warm/5 rounded-full blur-xl"></div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="100" data-count-prefix="$">$0</div>
+            <div class="floating-bubble-card" style="width:18px;height:18px;bottom:-10px;left:10%;animation-delay:0s;animation-duration:16s"></div>
+            <div class="floating-bubble-card" style="width:12px;height:12px;bottom:-10px;left:35%;animation-delay:4s;animation-duration:20s"></div>
+            <div class="floating-bubble-card" style="width:22px;height:22px;bottom:-10px;left:65%;animation-delay:8s;animation-duration:18s"></div>
+            <div class="floating-heart-card" style="bottom:-10px;left:20%;font-size:16px;animation-delay:2s;animation-duration:22s">♥</div>
+            <div class="floating-heart-card" style="bottom:-10px;left:78%;font-size:13px;animation-delay:6s;animation-duration:24s">♥</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="100" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Sponsor a Child's Education</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Covers school fees, books, and a uniform for one term, giving a child from a conflict-affected community a chance to learn and thrive.</p>
             <div class="mt-auto">
@@ -244,6 +296,9 @@ import causes from '../lib/causes-data.json';
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 240ms">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
+            <div class="floating-bubble-card" style="width:22px;height:22px;bottom:-10px;left:20%;animation-delay:3s;animation-duration:18s"></div>
+            <div class="floating-bubble-card" style="width:14px;height:14px;bottom:-10px;left:70%;animation-delay:9s;animation-duration:22s"></div>
+            <div class="floating-heart-card" style="bottom:-10px;left:50%;font-size:18px;animation-delay:5s;animation-duration:25s">♥</div>
             <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="500" data-count-prefix="$">$0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Community Reconciliation</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Funds a multi-day reconciliation workshop bringing together divided communities for dialogue, healing, and sustainable peace.</p>
@@ -264,10 +319,10 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
+    <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Trusted by Leading Organizations</h2>
+        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Trusted by Leading Organizations</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-4">We are proud to collaborate with these global and regional organizations committed to peace and sustainable development.</p>
         <p class="scroll-reveal text-center text-sm text-steel max-w-xl mx-auto mb-12">Together, we amplify our reach, share expertise, and ensure that every initiative is grounded in proven best practices.</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
@@ -317,11 +372,11 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-canvas overflow-hidden">
+    <section class="py-6 lg:py-10 bg-canvas overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Latest from Our Blog</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-14">Stories of hope, progress, and the people making peace possible.</p>
+        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Latest from Our Blog</h2>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Stories of hope, progress, and the people making peace possible.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="scroll-reveal bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&auto=format&fit=crop" alt="Peace Education" class="w-full h-40 object-cover" loading="lazy" />
@@ -362,11 +417,11 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-10 lg:py-14 bg-surface overflow-hidden">
+    <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <h2 class="scroll-reveal text-3xl sm:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Voices of Peace</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-14">Real stories from the communities we serve.</p>
+        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Real stories from the communities we serve.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="scroll-reveal bg-canvas rounded-2xl border border-hairline p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative">
             <div class="absolute -top-3 left-6 text-5xl text-accent/10 font-serif leading-none select-none">"</div>
@@ -423,38 +478,72 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="relative py-20 lg:py-28 hero-gradient text-white overflow-hidden soft-glow">
-      <div class="absolute inset-0 z-[1]">
-        <div class="hero-cta-bg"></div>
+    <section class="relative w-full overflow-hidden bg-canvas" aria-label="Our impact gallery" style="aspect-ratio: 21/9; min-height: 360px; max-height: 640px">
+      <div id="carousel" class="relative w-full h-full" data-active="0">
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700" data-index="0">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=900&fit=crop&q=80" alt="Community gathering for peace dialogue in Sub-Saharan Africa" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 md:p-14 lg:p-20">
+            <p class="text-white text-xl md:text-3xl lg:text-4xl font-medium max-w-3xl leading-tight">Bringing communities together for dialogue and lasting reconciliation</p>
+          </div>
+        </div>
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0" data-index="1">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&h=900&fit=crop&q=80" alt="Women farmers in a community agricultural program" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 md:p-14 lg:p-20">
+            <p class="text-white text-xl md:text-3xl lg:text-4xl font-medium max-w-3xl leading-tight">Empowering women through sustainable agriculture and economic opportunity</p>
+          </div>
+        </div>
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0" data-index="2">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&h=900&fit=crop&q=80" alt="Children in a Peace League supported school" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 md:p-14 lg:p-20">
+            <p class="text-white text-xl md:text-3xl lg:text-4xl font-medium max-w-3xl leading-tight">Educating the next generation of peacebuilders across 12 African nations</p>
+          </div>
+        </div>
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0" data-index="3">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600&h=900&fit=crop&q=80" alt="Volunteers distributing clean water supplies" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 md:p-14 lg:p-20">
+            <p class="text-white text-xl md:text-3xl lg:text-4xl font-medium max-w-3xl leading-tight">Delivering clean water access to communities in need</p>
+          </div>
+        </div>
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0" data-index="4">
+          <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?w=1600&h=900&fit=crop&q=80" alt="Youth volunteering and community service" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 md:p-14 lg:p-20">
+            <p class="text-white text-xl md:text-3xl lg:text-4xl font-medium max-w-3xl leading-tight">Mobilizing 1,200+ youth volunteers to transform conflict into hope</p>
+          </div>
+        </div>
+        <button class="carousel-btn absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center hover:bg-white/40 transition-all duration-200 cursor-pointer" aria-label="Previous slide" data-carousel-prev>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="carousel-btn absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center hover:bg-white/40 transition-all duration-200 cursor-pointer" aria-label="Next slide" data-carousel-next>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2 md:gap-3" role="tablist" aria-label="Slide indicators">
+          {[0,1,2,3,4].map((i) => (
+            <button class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300 cursor-pointer" role="tab" aria-selected={i === 0} aria-label={`Slide ${i + 1}`} data-carousel-dot={i}></button>
+          ))}
+        </div>
       </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-hero-bg/70 via-hero-bg/40 to-hero-bg/60 z-[2]"></div>
-      <div class="absolute inset-0 bg-pattern opacity-[0.08] z-[2]"></div>
-      <div class="relative max-w-4xl mx-auto text-center px-4 z-[3]">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-[-1px] text-white mb-6">Peace Begins With You</h2>
-        <p class="text-lg text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Whether you donate, volunteer, or simply share our mission, you become part of something bigger than yourself.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-          <a href="/donate" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 bg-accent text-on-dark font-medium text-sm rounded-full shadow-lg shadow-accent/25 hover:bg-accent-deep transition-all duration-300">
+    </section>
+
+    <section class="relative w-full bg-gradient-to-r from-accent/10 via-accent-warm/10 to-accent/10 border-y border-hairline overflow-hidden" aria-label="Call to action">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between gap-6 relative">
+        <div class="floating-bubble-warm" style="width:60px;height:60px;bottom:-30px;left:5%;animation-delay:0s;animation-duration:20s"></div>
+        <div class="floating-heart-warm" style="bottom:-20px;right:12%;font-size:24px;animation-delay:3s;animation-duration:25s">♥</div>
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl md:text-3xl font-bold text-ink mb-2">Your donation creates lasting change</h2>
+          <p class="text-sm md:text-base text-steel max-w-xl">Every contribution, whether $5 or $500, brings clean water, education, and peace to communities across Africa.</p>
+        </div>
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="/donate" class="btn-pulse-glow inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-lg shadow-accent/20">
             Donate Now
           </a>
-          <a href="/volunteer" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 border border-white/40 text-white font-medium text-sm rounded-full glass hover:bg-white/15 hover:border-white/60 transition-all duration-300">
-            Volunteer
+          <a href="/volunteer" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 border border-hairline text-ink font-medium text-sm rounded-full hover:bg-surface transition-all duration-300">
+            Get Involved
           </a>
-          <a href="/partner" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 border border-white/40 text-white font-medium text-sm rounded-full glass hover:bg-white/15 hover:border-white/60 transition-all duration-300">
-            Partner With Us
-          </a>
-        </div>
-        <div class="max-w-md mx-auto">
-          <p class="text-sm text-white/60 mb-3">Get monthly stories of hope, impact reports, and ways to get involved.</p>
-          <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3">
-            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter" class="newsletter-input flex-1 min-h-[44px] px-4 py-2.5 bg-white/10 border border-white/20 rounded-full text-white placeholder:text-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40 backdrop-blur-sm" />
-            <button type="submit" class="min-h-[44px] px-6 py-2.5 bg-accent text-on-dark font-medium text-sm rounded-full hover:bg-accent-deep transition-colors whitespace-nowrap">
-              Subscribe
-            </button>
-          </form>
-          <p id="newsletter-status" class="mt-3 text-sm text-white/60 hidden"></p>
-          <p class="mt-2 text-xs text-white/40">No spam, ever. Unsubscribe anytime.</p>
         </div>
       </div>
     </section>
@@ -463,6 +552,63 @@ import causes from '../lib/causes-data.json';
   <Footer />
 
   <script>
+    (function(){
+      var carousel = document.getElementById('carousel');
+      if (!carousel) return;
+      var slides = carousel.querySelectorAll('.carousel-slide');
+      var dots = carousel.querySelectorAll('.carousel-dot');
+      var prevBtn = carousel.querySelector('[data-carousel-prev]');
+      var nextBtn = carousel.querySelector('[data-carousel-next]');
+      var active = 0;
+      var total = slides.length;
+      var interval;
+      var isPaused = false;
+
+      function goTo(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        slides.forEach(function(s, i) {
+          s.classList.toggle('opacity-0', i !== index);
+        });
+        dots.forEach(function(d, i) {
+          d.classList.toggle('bg-white/70', i === index);
+          d.classList.toggle('bg-white/40', i !== index);
+          d.setAttribute('aria-selected', i === index);
+        });
+        active = index;
+      }
+
+      function next() { goTo(active + 1); }
+      function prev() { goTo(active - 1); }
+
+      function startAutoplay() {
+        stopAutoplay();
+        interval = setInterval(function(){
+          if (!isPaused) next();
+        }, 5000);
+      }
+
+      function stopAutoplay() {
+        if (interval) { clearInterval(interval); interval = null; }
+      }
+
+      prevBtn.addEventListener('click', function(){ prev(); startAutoplay(); });
+      nextBtn.addEventListener('click', function(){ next(); startAutoplay(); });
+
+      dots.forEach(function(dot){
+        dot.addEventListener('click', function(){
+          goTo(parseInt(this.dataset.carouselDot));
+          startAutoplay();
+        });
+      });
+
+      carousel.addEventListener('mouseenter', function(){ isPaused = true; });
+      carousel.addEventListener('mouseleave', function(){ isPaused = false; });
+
+      goTo(0);
+      startAutoplay();
+    })();
+
     const API_BASE_URL = window.ENV?.PUBLIC_API_URL || '';
 
     function animateCounter(el, target, suffix, prefix) {

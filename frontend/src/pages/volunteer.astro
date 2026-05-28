@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
         { "@type": "ListItem", "position": 2, "name": "Volunteer", "item": "https://peaceleagueafrica.org/volunteer" }
       ]
     })} />
-    <section class="hero-gradient hero-pattern text-white py-10 lg:py-14">
+    <section class="hero-gradient hero-pattern text-white py-4 lg:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Lend Your Hands to Peace</h1>
         <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Your time is the most powerful gift you can give. Join 1,200+ volunteers across Africa.</p>
@@ -27,7 +27,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-16 bg-surface">
+    <section class="py-12 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex items-center gap-2 mb-8 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -84,13 +84,13 @@ import Footer from '../components/Footer.astro';
                 <div>
                   <label for="first_name" class="block text-sm font-medium text-ink mb-1.5">First Name *</label>
                   <input type="text" id="first_name" name="first_name" required 
-                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                    class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="first_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your first name.</p>
                 </div>
                 <div>
                   <label for="last_name" class="block text-sm font-medium text-ink mb-1.5">Last Name *</label>
                   <input type="text" id="last_name" name="last_name" required 
-                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                    class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="last_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your last name.</p>
                 </div>
               </div>
@@ -99,13 +99,13 @@ import Footer from '../components/Footer.astro';
                 <div>
                   <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
                   <input type="email" id="email" name="email" required 
-                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                    class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
                 </div>
                 <div>
                   <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone *</label>
                   <input type="tel" id="phone" name="phone" required 
-                    class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                    class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="phone-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid phone number.</p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ import Footer from '../components/Footer.astro';
               <div>
                 <label for="volunteer_type" class="block text-sm font-medium text-ink mb-1.5">Volunteer Type *</label>
                 <select id="volunteer_type" name="volunteer_type" required 
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none">
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent">
                   <option value="">Select a type</option>
                   <option value="Teaching">Teaching & Education</option>
                   <option value="Healthcare">Healthcare & Wellness</option>
@@ -128,24 +128,24 @@ import Footer from '../components/Footer.astro';
               <div>
                 <label for="availability" class="block text-sm font-medium text-ink mb-1.5">Availability</label>
                 <input type="text" id="availability" name="availability" placeholder="e.g., Weekends — 5 hours per week"
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none" />
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
               </div>
               
               <div>
                 <label for="skills" class="block text-sm font-medium text-ink mb-1.5">Skills</label>
                 <textarea id="skills" name="skills" rows="2" placeholder="e.g., Teaching, first aid, social media, carpentry..."
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
               </div>
               
               <div>
                 <label for="motivation" class="block text-sm font-medium text-ink mb-1.5">Why do you want to volunteer?</label>
                 <textarea id="motivation" name="motivation" rows="4" placeholder="What draws you to peace-building in Africa?"
-                  class="input-focus-ring w-full px-3 py-[10px] border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"></textarea>
+                  class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
               </div>
               
-              <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-[2px]">
+              <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-0.5">
                 <button type="submit" id="submit-btn"
-                  class="submit-btn w-full bg-primary text-on-dark py-[10px] rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
+                  class="submit-btn w-full bg-primary text-on-dark py-2.5 rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-colors disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center justify-center gap-2">
                   Submit Application
                 </button>
               </div>
