@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-28)
 
 ## Corpus Check
-- 93 files · ~437,140 words
+- 93 files · ~438,369 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 761 nodes · 863 edges · 76 communities (69 shown, 7 thin omitted)
+- 761 nodes · 920 edges · 75 communities (69 shown, 6 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6e9737bb`
+- Built from commit: `56bea0b2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,7 +43,6 @@
 - [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
-- [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
 - [[_COMMUNITY_Community 39|Community 39]]
 - [[_COMMUNITY_Community 40|Community 40]]
@@ -68,15 +67,15 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `../components/Navigation.astro` - 29 edges
-2. `../layouts/Layout.astro` - 26 edges
+2. `../layouts/Layout.astro` - 25 edges
 3. `../components/Footer.astro` - 22 edges
-4. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
-5. `Peace League Africa — Architecture Documentation` - 12 edges
-6. `Lighthouse Sweep Design (All Pages)` - 12 edges
-7. `File Structure` - 11 edges
-8. `Components` - 10 edges
-9. `Backend API Module (api.py)` - 10 edges
-10. `apiCall()` - 9 edges
+4. `../layouts/Layout.astro` - 20 edges
+5. `../components/Navigation.astro` - 20 edges
+6. `../components/Footer.astro` - 20 edges
+7. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
+8. `Peace League Africa — Architecture Documentation` - 12 edges
+9. `Lighthouse Sweep Design (All Pages)` - 12 edges
+10. `File Structure` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Donation` --uses--> `Donation`  [INFERRED]
@@ -90,7 +89,7 @@
 - `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (76 total, 7 thin omitted)
+## Communities (75 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -181,8 +180,8 @@ Cohesion: 0.15
 Nodes (12): Approach (Shared-Asset-First), Candidate Shared Fixes (Ordered by Likely Impact), Goals, Lighthouse Sweep Design (All Pages), Non-Goals, Outputs, Overview, Results (+4 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.15
-Nodes (12): chevron, children, d, focusable, group, iconPaths, items, navItems (+4 more)
+Cohesion: 0.20
+Nodes (10): chevron, children, d, focusable, group, iconPaths, items, navItems (+2 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.27
@@ -193,16 +192,16 @@ Cohesion: 0.18
 Nodes (9): relatedPosts, ../../lib/blog-data.json, ../lib/blog-data.json, allPostsJson, categories, end, pages, start (+1 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.13
-Nodes (14): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../layouts/Layout.astro, ../lib/api.js, ../styles/global.css, canonicalURL, dots (+6 more)
+Cohesion: 0.18
+Nodes (14): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../components/Footer.astro, ../components/Navigation.astro, ../layouts/Layout.astro, ../lib/api.js, milestones (+6 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.18
 Nodes (11): 2. Directory Structure, 6. Database Schema, 8.1 API Security, 8.2 Frontend Security, 8.3 Infrastructure Security, 8. Security, Appendix: Key Ports, code:block10 (tabMember) (+3 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.21
-Nodes (10): ../lib/causes-data.json, ../components/Footer.astro, ../components/Navigation.astro, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay() (+2 more)
+Cohesion: 0.25
+Nodes (8): ../lib/causes-data.json, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay(), stopAutoplay(), target
 
 ### Community 38 - "Community 38"
 Cohesion: 0.22
@@ -249,8 +248,8 @@ Cohesion: 0.50
 Nodes (3): benefits, jobs, whyStats
 
 ### Community 49 - "Community 49"
-Cohesion: 0.50
-Nodes (3): error, submitBtn, successMsg
+Cohesion: 0.20
+Nodes (9): ../layouts/Layout.astro, canonicalURL, dots, heroSection, shapes, srMo, error, submitBtn (+1 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -265,19 +264,17 @@ Cohesion: 0.67
 Nodes (3): 1. High-Level Architecture, code:block1 (┌──────────────────────────────────────────────────────────┐), Key Technologies
 
 ## Knowledge Gaps
-- **404 isolated node(s):** `string`, `string`, `canonicalURL`, `srMo`, `heroSection` (+399 more)
+- **401 isolated node(s):** `milestones`, `target`, `categories`, `totalPages`, `allPostsJson` (+396 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 37`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `../layouts/Layout.astro` connect `Community 34` to `Community 33`, `Community 3`, `Community 36`, `Community 37`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 49`, `Community 31`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `string`, `string`, `canonicalURL` to the rest of the system?**
-  _439 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Peace League Africa — Architecture Documentation` connect `Community 35` to `Community 0`, `Community 38`, `Community 39`, `Community 41`, `Community 42`, `Community 51`, `Community 57`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **What connects `milestones`, `target`, `categories` to the rest of the system?**
+  _436 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
@@ -286,3 +283,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.07765151515151515 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.05603864734299517 - nodes in this community are weakly interconnected._
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
