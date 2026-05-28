@@ -48,7 +48,34 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <section class="py-10 lg:py-14 bg-surface">
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- ── CAMPAIGN PROGRESS ── -->
+        <div class="campaign-progress-card mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div class="flex items-center gap-6">
+            <div class="campaign-goal-ring">
+              <div class="campaign-goal-ring-inner">
+                <span class="campaign-goal-ring-value text-accent text-sm">$61K</span>
+                <span class="campaign-goal-ring-label" style="font-size:0.45rem;">raised</span>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-semibold text-ink mb-1">Clean Water for 10,000 Families</h3>
+              <div class="w-full bg-hairline rounded-full h-2 mb-2">
+                <div class="bg-accent h-2 rounded-full animate-in fade-in" style="width: 61%"></div>
+              </div>
+              <div class="flex justify-between text-xs text-steel">
+                <span><strong class="text-ink">$61,280</strong> raised</span>
+                <span>Goal: <strong class="text-ink">$100,000</strong></span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-hairline flex items-center gap-4 text-xs text-steel">
+            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-accent"></span> 1,006 donors</span>
+            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-accent-warm"></span> 30 days remaining</span>
+            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-accent/50"></span> 342 monthly donors</span>
+          </div>
+        </div>
 
         <div class="section-divider mb-6"></div>
 
@@ -130,6 +157,18 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
             
+            <!-- ── MONTHLY GIVING EMPHASIS ── -->
+            <div class="mb-5">
+              <label class="block text-sm font-medium text-ink mb-2">Frequency</label>
+              <div class="frequency-toggle">
+                <button type="button" id="freq-once" class="active" data-frequency="once">Give Once</button>
+                <button type="button" id="freq-monthly" data-frequency="monthly">
+                  Monthly 
+                  <span class="monthly-badge ml-1" style="font-size:0.55rem;padding:1px 6px;">Save 10%</span>
+                </button>
+              </div>
+            </div>
+
             <div>
               <label class="block text-sm font-medium text-ink mb-3">Select Amount</label>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -757,4 +796,23 @@ import Footer from '../components/Footer.astro';
       submitBtn.disabled = false;
     }
   });
+
+  // ── FREQUENCY TOGGLE ──
+  const freqOnce = document.getElementById('freq-once');
+  const freqMonthly = document.getElementById('freq-monthly');
+  if (freqOnce && freqMonthly) {
+    freqOnce.addEventListener('click', () => {
+      freqOnce.classList.add('active');
+      freqMonthly.classList.remove('active');
+      // Update submit button text
+      const submitText = document.querySelector('#submit-btn-text');
+      if (submitText) submitText.textContent = 'Complete My Gift';
+    });
+    freqMonthly.addEventListener('click', () => {
+      freqMonthly.classList.add('active');
+      freqOnce.classList.remove('active');
+      const submitText = document.querySelector('#submit-btn-text');
+      if (submitText) submitText.textContent = 'Become a Monthly Donor';
+    });
+  }
 </script>

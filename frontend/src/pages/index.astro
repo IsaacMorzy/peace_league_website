@@ -147,14 +147,24 @@ import causes from '../lib/causes-data.json';
           </div>
 
           <div class="scroll-reveal bento-card bento-card--accent" style="animation-delay: 60ms">
-            <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            <div class="flex items-start gap-4">
+              <div class="trust-donut shrink-0" style="width:80px;height:80px;">
+                <div class="trust-donut-inner" style="inset:8px;">
+                  <span class="trust-donut-value text-lg">95%</span>
+                  <span class="trust-donut-label text-[9px]">to programs</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-1">Radically Transparent</h3>
+                <p class="text-sm text-white/80 leading-relaxed">We keep overhead under 5% so your donation goes where it matters most: on the ground. No bureaucracy, no bloat.</p>
+              </div>
             </div>
-            <h3 class="text-lg font-bold mb-2">95% to Programs</h3>
-            <p class="text-sm text-white/80 leading-relaxed">Radical transparency. We keep overhead under 5% so your donation goes where it matters most: on the ground.</p>
-            <div class="mt-4 pt-4 border-t border-white/10">
-              <span class="text-3xl font-bold">95%</span>
-              <span class="text-white/60 text-sm ml-2">program funding</span>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-4">
+              <span class="text-2xl font-bold">95%</span>
+              <span class="text-white/60 text-sm">program funding</span>
+              <span class="w-px h-6 bg-white/10"></span>
+              <span class="text-2xl font-bold text-white/50">5%</span>
+              <span class="text-white/40 text-sm">overhead</span>
             </div>
           </div>
 

@@ -2400,6 +2400,278 @@ a:active {
   animation: hero-slide-up 0.6s var(--ease-out-expo) forwards;
 }
 
+/* ════════════════════════════════════════════════════════════
+   ── TREND 7: CHARITY SITE CONVERSION PATTERNS ──
+   ════════════════════════════════════════════════════════════ */
+
+/* ── 7a. STICKY DONATE BUTTON ──
+   Floats at bottom of viewport, follows scroll.
+   Hidden at the very bottom of the page to avoid overlapping footer. */
+#sticky-donate-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.95);
+  transition: opacity 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo),
+    visibility 0.3s var(--ease-out-expo), bottom 0.3s var(--ease-out-expo);
+  box-shadow: 0 4px 24px rgba(0,212,164,0.3), 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+#sticky-donate-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+#sticky-donate-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,212,164,0.4), 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#sticky-donate-btn.hide-on-footer {
+  bottom: 80px; /* move up out of way when near footer */
+}
+
+/* ── 7b. VISUAL FINANCIAL TRANSPARENCY (Donut Chart) ──
+   Pure CSS conic-gradient donut showing 95% to programs, 5% overhead. */
+.trust-donut {
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--color-accent) 0deg 342deg,
+    var(--color-hairline) 342deg 360deg
+  );
+  position: relative;
+  flex-shrink: 0;
+}
+
+.bento-card--accent .trust-donut {
+  background: conic-gradient(
+    rgba(255,255,255,0.9) 0deg 342deg,
+    rgba(255,255,255,0.15) 342deg 360deg
+  );
+}
+
+.trust-donut-inner {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--color-canvas);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .trust-donut-inner {
+  background: var(--color-canvas);
+}
+
+.bento-card--accent .trust-donut-inner {
+  background: transparent;
+}
+
+.trust-donut-label {
+  font-size: 0.6rem;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-steel);
+}
+
+.bento-card--accent .trust-donut-label {
+  color: rgba(255,255,255,0.6);
+}
+
+.trust-donut-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.bento-card--accent .trust-donut-value {
+  color: white;
+}
+
+/* ── 7c. LIVE DONATION TOAST ── */
+#donation-toast {
+  position: fixed;
+  bottom: 88px;
+  left: 24px;
+  z-index: 9998;
+  max-width: 320px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo),
+    visibility 0.5s ease;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dark #donation-toast {
+  background: var(--color-surface);
+  border-color: var(--color-hairline);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+#donation-toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+#donation-toast .toast-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-soft));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.toast-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.toast-text {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-steel);
+}
+
+.toast-text strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* ── 7d. URGENCY / MATCHING BANNER ── */
+#urgency-banner {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+  color: white;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+#urgency-banner .banner-text {
+  animation: banner-scroll 20s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@keyframes banner-scroll {
+  0% { transform: translateX(100%); }
+  10% { transform: translateX(0); }
+  90% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ── 7e. MONTHLY GIVING EMPHASIS ── */
+.monthly-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-accent);
+  color: #0a0a0a;
+}
+
+/* Monthly toggle pill */
+.frequency-toggle {
+  display: inline-flex;
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-hairline);
+  padding: 3px;
+}
+
+.frequency-toggle button {
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: var(--color-steel);
+  cursor: pointer;
+}
+
+.frequency-toggle button.active {
+  background: var(--color-accent);
+  color: #0a0a0a;
+  box-shadow: 0 2px 8px rgba(0,212,164,0.2);
+}
+
+/* ── 7f. CAMPAIGN PROGRESS WITH GOAL ── */
+.campaign-progress-card {
+  background: linear-gradient(135deg, rgba(0,212,164,0.05), rgba(0,212,164,0.02));
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+}
+
+.campaign-goal-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-accent) 0deg 216deg, var(--color-hairline) 216deg 360deg);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.campaign-goal-ring-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: var(--color-canvas);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .campaign-goal-ring-inner {
+  background: var(--color-surface);
+}
+
+.campaign-goal-ring-value {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.campaign-goal-ring-label {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* ── Mobile hero optimizations ── */
 @media (max-width: 640px) {
   #hero-section .hero-badge {

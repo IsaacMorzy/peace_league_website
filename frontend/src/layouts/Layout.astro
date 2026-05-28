@@ -145,6 +145,13 @@ const pageTitle = `${title} | Peace League Africa`;
       Skip to main content
     </a>
 
+    <!-- ── URGENCY / MATCHING BANNER ── -->
+    <div id="urgency-banner" class="hidden md:block" role="banner">
+      <span class="banner-text">
+        &#x2728; Your gift goes further &mdash; all donations are being matched 2× until midnight. Double your impact now. &#x2728;
+      </span>
+    </div>
+
     <slot />
 
     <!-- Subtle ambient vignette (keeps the depth without AI-aesthetic orbs) -->
@@ -163,6 +170,26 @@ const pageTitle = `${title} | Peace League Africa`;
 
       <div class="floating-dove" style="animation-delay:2s;">&#x1F54A;</div>
       <div class="floating-dove" style="animation-delay:20s;">&#x1F54A;</div>
+    </div>
+
+    <!-- ── STICKY DONATE BUTTON ── -->
+    <a href="/donate" id="sticky-donate-btn" class="btn-text-contrast inline-flex items-center gap-2 px-5 py-3 bg-accent rounded-full text-sm font-semibold shadow-lg" aria-label="Donate now">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      <span>Donate Now</span>
+    </a>
+
+    <!-- ── LIVE DONATION TOAST ── -->
+    <div id="donation-toast" aria-live="polite">
+      <div class="toast-avatar">
+        <span id="toast-initials">AK</span>
+      </div>
+      <div class="toast-text">
+        <strong id="toast-name">Someone</strong>
+        <span id="toast-action">just donated</span>
+        <strong id="toast-amount">$50</strong>
+        <span id="toast-location"></span>
+      </div>
+      <svg class="toast-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
     </div>
 
     <script>
@@ -405,6 +432,84 @@ const pageTitle = `${title} | Peace League Africa`;
             }
           }, { passive: true });
         });
+      }
+
+      // ── STICKY DONATE BUTTON ──
+      const stickyBtn = document.getElementById('sticky-donate-btn');
+      if (stickyBtn) {
+        let lastScrollY = window.scrollY;
+        let tickingSticky = false;
+
+        window.addEventListener('scroll', () => {
+          if (!tickingSticky) {
+            requestAnimationFrame(() => {
+              const scrollY = window.scrollY;
+              const docHeight = document.documentElement.scrollHeight;
+              const winHeight = window.innerHeight;
+              const scrolledToBottom = (scrollY + winHeight) >= (docHeight - 200);
+
+              // Show after scrolling past 600px
+              if (scrollY > 600 && !scrolledToBottom) {
+                stickyBtn.classList.add('visible');
+              } else {
+                stickyBtn.classList.remove('visible');
+              }
+
+              // Move up when near footer
+              if (scrolledToBottom) {
+                stickyBtn.classList.add('hide-on-footer');
+              } else {
+                stickyBtn.classList.remove('hide-on-footer');
+              }
+
+              tickingSticky = false;
+            });
+            tickingSticky = true;
+          }
+        }, { passive: true });
+      }
+
+      // ── LIVE DONATION TOAST ──
+      const toast = document.getElementById('donation-toast');
+      if (toast) {
+        const mockDonations = [
+          { name: 'Amara K.', initials: 'AK', amount: '$50', location: ' from Nairobi', action: 'just donated' },
+          { name: 'James M.', initials: 'JM', amount: '$25', location: ' from London', action: 'just donated' },
+          { name: 'Sarah W.', initials: 'SW', amount: '$100', location: '', action: 'became a monthly donor' },
+          { name: 'David O.', initials: 'DO', amount: '$30', location: ' from Lagos', action: 'just donated' },
+          { name: 'Grace N.', initials: 'GN', amount: '$500', location: '', action: 'funded a clean water well' },
+          { name: 'Peter K.', initials: 'PK', amount: '$20', location: ' from Kampala', action: 'just donated' },
+        ];
+
+        let toastIdx = 0;
+        let toastTimeout = null;
+        let toastVisible = false;
+
+        function showDonationToast() {
+          const d = mockDonations[toastIdx % mockDonations.length];
+          document.getElementById('toast-initials').textContent = d.initials;
+          document.getElementById('toast-name').textContent = d.name;
+          document.getElementById('toast-amount').textContent = d.amount;
+          document.getElementById('toast-location').textContent = d.location;
+          document.getElementById('toast-action').textContent = d.action;
+
+          toast.classList.remove('visible');
+          void toast.offsetWidth; // force reflow
+          toast.classList.add('visible');
+          toastVisible = true;
+
+          clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => {
+            toast.classList.remove('visible');
+            toastVisible = false;
+            toastIdx++;
+            // Schedule next
+            setTimeout(showDonationToast, 15000 + Math.random() * 15000);
+          }, 5000);
+        }
+
+        // Start first toast after 8s delay
+        setTimeout(showDonationToast, 8000);
       }
 
     </script>
