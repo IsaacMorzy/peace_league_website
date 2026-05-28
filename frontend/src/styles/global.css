@@ -2246,6 +2246,144 @@ a:active {
 }
 
 /* ════════════════════════════════════════════════════════════
+   ── TREND 5: HERO DEPTH PARALLAX (Mouse + Scroll) ──
+   ════════════════════════════════════════════════════════════ */
+
+/* Depth layer z-index classes for mouse parallax */
+.hero-depth-0 { z-index: 0; } /* orbs, farthest */
+.hero-depth-1 { z-index: 1; } /* geometric shapes */
+.hero-depth-2 { z-index: 2; } /* doves + particles */
+.hero-depth-3 { z-index: 3; } /* overlay gradients */
+
+/* ── Hero headline word-by-word entrance ── */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px) rotateX(-15deg);
+  filter: blur(6px);
+  animation: hero-word-in 0.8s var(--ease-out-expo) forwards;
+}
+
+@keyframes hero-word-in {
+  0%   { opacity: 0; transform: translateY(30px) rotateX(-15deg); filter: blur(6px); }
+  60%  { opacity: 1; transform: translateY(-2px) rotateX(0deg); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0deg); filter: blur(0); }
+}
+
+.hero-word--accent {
+  color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), #7cebcb, var(--color-accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-word-in 0.8s var(--ease-out-expo) forwards, gradient-shimmer 3s ease-in-out infinite 1s;
+}
+
+@keyframes gradient-shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ── Hero badge entrance ── */
+.hero-badge {
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  animation: hero-badge-in 0.6s var(--ease-spring) forwards;
+}
+
+@keyframes hero-badge-in {
+  0%   { opacity: 0; transform: translateY(10px) scale(0.95); }
+  70%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Magnetic buttons ── */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  will-change: transform;
+}
+
+.magnetic-btn:hover {
+  /* transforms are set inline by JS */
+}
+
+/* ── Hero social proof row entrance ── */
+.hero-social {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-slide-up 0.6s var(--ease-out-expo) forwards;
+}
+
+/* ── Mobile hero optimizations ── */
+@media (max-width: 640px) {
+  #hero-section {
+    min-height: 80dvh;
+  }
+  #hero-section .hero-word {
+    font-size: clamp(1.75rem, 8.5vw, 2.5rem);
+  }
+  #hero-section .hero-badge {
+    font-size: 0.7rem;
+  }
+  #hero-section .orb-float {
+    opacity: 0.05;
+  }
+  /* Faster hero entrance on mobile */
+  .hero-word {
+    animation-duration: 0.5s !important;
+  }
+  .hero-badge {
+    animation-duration: 0.4s !important;
+  }
+  .hero-social {
+    animation-duration: 0.4s !important;
+  }
+  /* Reduce decorative complexity on mobile */
+  .float-shape--c {
+    filter: blur(80px) !important;
+    opacity: 0.03 !important;
+  }
+}
+
+@keyframes hero-slide-up {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Hero scroll indicator bounce ── */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  animation: hero-scroll-in 1s ease-out 2s forwards, hero-scroll-bounce 2s ease-in-out 3s infinite;
+  z-index: 10;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@keyframes hero-scroll-in {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ════════════════════════════════════════════════════════════
    ── CURSOR GLOW ──
    ════════════════════════════════════════════════════════════ */
 

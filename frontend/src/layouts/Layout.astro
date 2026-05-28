@@ -251,6 +251,55 @@ const pageTitle = `${title} | Peace League Africa`;
         }
       }
 
+      // ── TREND 5: HERO MOUSE DEPTH PARALLAX ──
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection && window.matchMedia('(pointer: fine)').matches) {
+        const heroLayers = heroSection.querySelectorAll('.hero-depth-layer');
+        const speeds = [0.02, 0.04, 0.06, 0.01]; // L0→L3
+        let heroCenterX = window.innerWidth / 2;
+        let heroCenterY = window.innerHeight / 2;
+        let mouseX = heroCenterX;
+        let mouseY = heroCenterY;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        }, { passive: true });
+
+        function animateHeroDepth() {
+          const dx = (mouseX - heroCenterX) / heroCenterX;
+          const dy = (mouseY - heroCenterY) / heroCenterY;
+          heroLayers.forEach((layer, i) => {
+            const s = speeds[i] || 0.02;
+            layer.style.transform = `translate(${dx * s * 40}px, ${dy * s * 40}px)`;
+          });
+          requestAnimationFrame(animateHeroDepth);
+        }
+        animateHeroDepth();
+
+        window.addEventListener('resize', () => {
+          heroCenterX = window.innerWidth / 2;
+          heroCenterY = window.innerHeight / 2;
+        }, { passive: true });
+      }
+
+      // ── MAGNETIC BUTTONS ──
+      const magneticBtns = document.querySelectorAll('.magnetic-btn');
+      if (magneticBtns.length && window.matchMedia('(pointer: fine)').matches) {
+        magneticBtns.forEach(btn => {
+          const strength = parseFloat(btn.dataset.magnetStrength) || 0.3;
+          btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * strength * 0.4}px, ${y * strength * 0.4}px) scale(1.03)`;
+          });
+          btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0) scale(1)';
+          });
+        });
+      }
+
       // Cursor glow effect
       const cursorGlow = document.getElementById('cursor-glow');
       if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
