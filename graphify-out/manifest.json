@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Navigation.astro": {
-    "mtime": 1780087351.2515976,
-    "ast_hash": "83206a1ca8ca4f553a20502f3d1dbaf9",
+    "mtime": 1780104139.611327,
+    "ast_hash": "51ed6e060a4981cafa163e217fa5e1ff",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/layouts/Layout.astro": {
@@ -350,7 +350,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/types.d.ts": {
-    "mtime": 1780103780.119109,
+    "mtime": 1780104176.9709356,
     "ast_hash": "f3d48b2aa569815a445d3509aa161559",
     "semantic_hash": ""
   },
@@ -360,7 +360,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/content.d.ts": {
-    "mtime": 1780103780.119109,
+    "mtime": 1780104176.9709356,
     "ast_hash": "242c41d20fcda532f17f55cd1a0217bc",
     "semantic_hash": ""
   },

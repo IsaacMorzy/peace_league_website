@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 98 files · ~517,993 words
+- 98 files · ~517,999 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 906 nodes · 1010 edges · 81 communities (74 shown, 7 thin omitted)
+- 905 nodes · 1009 edges · 81 communities (74 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a44bd854`
+- Built from commit: `37546039`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -73,15 +73,15 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `../layouts/Layout.astro` - 47 edges
-2. `../components/Navigation.astro` - 30 edges
-3. `../components/Footer.astro` - 23 edges
-4. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
-5. `Peace League Africa — Architecture Documentation` - 12 edges
-6. `Lighthouse Sweep Design (All Pages)` - 12 edges
-7. `File Structure` - 11 edges
-8. `Components` - 10 edges
-9. `Backend API Module (api.py)` - 10 edges
-10. `../components/EventMap.astro` - 9 edges
+2. `../components/Footer.astro` - 23 edges
+3. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
+4. `Peace League Africa — Architecture Documentation` - 12 edges
+5. `Lighthouse Sweep Design (All Pages)` - 12 edges
+6. `File Structure` - 11 edges
+7. `Components` - 10 edges
+8. `Backend API Module (api.py)` - 10 edges
+9. `../components/EventMap.astro` - 9 edges
+10. `apiCall()` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Donation` --uses--> `Donation`  [INFERRED]
@@ -187,7 +187,7 @@ Nodes (12): Approach (Shared-Asset-First), Candidate Shared Fixes (Ordered by Li
 
 ### Community 31 - "Community 31"
 Cohesion: 0.17
-Nodes (11): chevron, children, d, focusable, group, iconPaths, items, navItems (+3 more)
+Nodes (10): chevron, children, d, focusable, group, iconPaths, items, navItems (+2 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.27
@@ -278,8 +278,8 @@ Cohesion: 0.67
 Nodes (3): 1. High-Level Architecture, code:block1 (┌──────────────────────────────────────────────────────────┐), Key Technologies
 
 ### Community 60 - "Community 60"
-Cohesion: 0.06
-Nodes (29): consent, data, dayNum, days, details, dist, err, firstErr (+21 more)
+Cohesion: 0.07
+Nodes (28): consent, data, dayNum, days, details, dist, err, firstErr (+20 more)
 
 ### Community 78 - "Community 78"
 Cohesion: 0.11
@@ -290,7 +290,7 @@ Cohesion: 0.15
 Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (+3 more)
 
 ## Knowledge Gaps
-- **536 isolated node(s):** `monthMap`, `fullDate`, `formattedDate`, `pastEvents`, `now` (+531 more)
+- **535 isolated node(s):** `normalizedFrappeBase`, `navItems`, `iconPaths`, `items`, `focusable` (+530 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -298,16 +298,16 @@ Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `../layouts/Layout.astro` connect `Community 49` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
-- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **Why does `../components/Footer.astro` connect `Community 34` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **What connects `monthMap`, `fullDate`, `formattedDate` to the rest of the system?**
-  _571 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `normalizedFrappeBase`, `navItems`, `iconPaths` to the rest of the system?**
+  _570 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.09788359788359788 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.07765151515151515 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.05187074829931973 - nodes in this community are weakly interconnected._
