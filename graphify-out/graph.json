@@ -4,14 +4,922 @@
   "graph": {},
   "nodes": [
     {
-      "label": "../components/Libredesk.astro",
+      "label": "astro.config.mjs",
+      "file_type": "code",
+      "source_file": "frontend/astro.config.mjs",
+      "source_location": "L1",
+      "id": "frontend_astro_config_mjs",
+      "community": 13,
+      "norm_label": "astro.config.mjs"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L1",
+      "id": "frontend_package_json",
+      "community": 18,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L2",
+      "id": "frontend_package_name",
+      "community": 18,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L3",
+      "id": "frontend_package_type",
+      "community": 18,
+      "norm_label": "type"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L4",
+      "id": "frontend_package_version",
+      "community": 18,
+      "norm_label": "version"
+    },
+    {
+      "label": "engines",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L5",
+      "id": "frontend_package_engines",
+      "community": 18,
+      "norm_label": "engines"
+    },
+    {
+      "label": "node",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L6",
+      "id": "frontend_package_engines_node",
+      "community": 18,
+      "norm_label": "node"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L8",
+      "id": "frontend_package_scripts",
+      "community": 18,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L9",
+      "id": "frontend_package_scripts_dev",
+      "community": 18,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L10",
+      "id": "frontend_package_scripts_build",
+      "community": 18,
+      "norm_label": "build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L11",
+      "id": "frontend_package_scripts_preview",
+      "community": 18,
+      "norm_label": "preview"
+    },
+    {
+      "label": "astro",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L12",
+      "id": "frontend_package_scripts_astro",
+      "community": 18,
+      "norm_label": "astro"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L14",
+      "id": "frontend_package_dependencies",
+      "community": 18,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@astrojs/node",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L15",
+      "id": "frontend_package_dependencies_astrojs_node",
+      "community": 18,
+      "norm_label": "@astrojs/node"
+    },
+    {
+      "label": "@astrojs/sitemap",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L16",
+      "id": "frontend_package_dependencies_astrojs_sitemap",
+      "community": 18,
+      "norm_label": "@astrojs/sitemap"
+    },
+    {
+      "label": "@tailwindcss/vite",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L17",
+      "id": "frontend_package_dependencies_tailwindcss_vite",
+      "community": 18,
+      "norm_label": "@tailwindcss/vite"
+    },
+    {
+      "label": "astro",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L18",
+      "id": "frontend_package_dependencies_astro",
+      "community": 18,
+      "norm_label": "astro"
+    },
+    {
+      "label": "canvas-confetti",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L19",
+      "id": "frontend_package_dependencies_canvas_confetti",
+      "community": 18,
+      "norm_label": "canvas-confetti"
+    },
+    {
+      "label": "leaflet",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L20",
+      "id": "frontend_package_dependencies_leaflet",
+      "community": 18,
+      "norm_label": "leaflet"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L21",
+      "id": "frontend_package_dependencies_tailwindcss",
+      "community": 18,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "tailwindcss-animate",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L22",
+      "id": "frontend_package_dependencies_tailwindcss_animate",
+      "community": 18,
+      "norm_label": "tailwindcss-animate"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L24",
+      "id": "frontend_package_devdependencies",
+      "community": 18,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@types/leaflet",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L25",
+      "id": "frontend_package_devdependencies_types_leaflet",
+      "community": 18,
+      "norm_label": "@types/leaflet"
+    },
+    {
+      "label": "lighthouse",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L26",
+      "id": "frontend_package_devdependencies_lighthouse",
+      "community": 18,
+      "norm_label": "lighthouse"
+    },
+    {
+      "label": "playwright",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L27",
+      "id": "frontend_package_devdependencies_playwright",
+      "community": 18,
+      "norm_label": "playwright"
+    },
+    {
+      "label": "libredesk-agent.json",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L1",
+      "id": "frontend_public_libredesk_agent_json",
+      "community": 80,
+      "norm_label": "libredesk-agent.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L2",
+      "id": "public_libredesk_agent_name",
+      "community": 80,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L3",
+      "id": "public_libredesk_agent_version",
+      "community": 80,
+      "norm_label": "version"
+    },
+    {
+      "label": "organization",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L4",
+      "id": "public_libredesk_agent_organization",
+      "community": 80,
+      "norm_label": "organization"
+    },
+    {
+      "label": "greeting",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L5",
+      "id": "public_libredesk_agent_greeting",
+      "community": 80,
+      "norm_label": "greeting"
+    },
+    {
+      "label": "fallback",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L6",
+      "id": "public_libredesk_agent_fallback",
+      "community": 80,
+      "norm_label": "fallback"
+    },
+    {
+      "label": "handoff_message",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L7",
+      "id": "public_libredesk_agent_handoff_message",
+      "community": 80,
+      "norm_label": "handoff_message"
+    },
+    {
+      "label": "responses",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L8",
+      "id": "public_libredesk_agent_responses",
+      "community": 82,
+      "norm_label": "responses"
+    },
+    {
+      "label": "donate",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L9",
+      "id": "public_libredesk_agent_responses_donate",
+      "community": 82,
+      "norm_label": "donate"
+    },
+    {
+      "label": "volunteer",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L10",
+      "id": "public_libredesk_agent_responses_volunteer",
+      "community": 82,
+      "norm_label": "volunteer"
+    },
+    {
+      "label": "partner",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L11",
+      "id": "public_libredesk_agent_responses_partner",
+      "community": 82,
+      "norm_label": "partner"
+    },
+    {
+      "label": "events",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L12",
+      "id": "public_libredesk_agent_responses_events",
+      "community": 82,
+      "norm_label": "events"
+    },
+    {
+      "label": "countries",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L13",
+      "id": "public_libredesk_agent_responses_countries",
+      "community": 82,
+      "norm_label": "countries"
+    },
+    {
+      "label": "mission",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L14",
+      "id": "public_libredesk_agent_responses_mission",
+      "community": 82,
+      "norm_label": "mission"
+    },
+    {
+      "label": "contact",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L15",
+      "id": "public_libredesk_agent_responses_contact",
+      "community": 82,
+      "norm_label": "contact"
+    },
+    {
+      "label": "programs",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L16",
+      "id": "public_libredesk_agent_responses_programs",
+      "community": 82,
+      "norm_label": "programs"
+    },
+    {
+      "label": "impact",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L17",
+      "id": "public_libredesk_agent_responses_impact",
+      "community": 82,
+      "norm_label": "impact"
+    },
+    {
+      "label": "hello",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L18",
+      "id": "public_libredesk_agent_responses_hello",
+      "community": 82,
+      "norm_label": "hello"
+    },
+    {
+      "label": "thanks",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L19",
+      "id": "public_libredesk_agent_responses_thanks",
+      "community": 82,
+      "norm_label": "thanks"
+    },
+    {
+      "label": "goodbye",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L20",
+      "id": "public_libredesk_agent_responses_goodbye",
+      "community": 82,
+      "norm_label": "goodbye"
+    },
+    {
+      "label": "price",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L21",
+      "id": "public_libredesk_agent_responses_price",
+      "community": 82,
+      "norm_label": "price"
+    },
+    {
+      "label": "schedule",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L22",
+      "id": "public_libredesk_agent_responses_schedule",
+      "community": 82,
+      "norm_label": "schedule"
+    },
+    {
+      "label": "age",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L23",
+      "id": "public_libredesk_agent_responses_age",
+      "community": 82,
+      "norm_label": "age"
+    },
+    {
+      "label": "safety",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L24",
+      "id": "public_libredesk_agent_responses_safety",
+      "community": 82,
+      "norm_label": "safety"
+    },
+    {
+      "label": "donate_amount",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L25",
+      "id": "public_libredesk_agent_responses_donate_amount",
+      "community": 82,
+      "norm_label": "donate_amount"
+    },
+    {
+      "label": "mpesa",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L26",
+      "id": "public_libredesk_agent_responses_mpesa",
+      "community": 82,
+      "norm_label": "mpesa"
+    },
+    {
+      "label": "tax",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L27",
+      "id": "public_libredesk_agent_responses_tax",
+      "community": 82,
+      "norm_label": "tax"
+    },
+    {
+      "label": "refund",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L28",
+      "id": "public_libredesk_agent_responses_refund",
+      "community": 82,
+      "norm_label": "refund"
+    },
+    {
+      "label": "sponsor",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L29",
+      "id": "public_libredesk_agent_responses_sponsor",
+      "community": 82,
+      "norm_label": "sponsor"
+    },
+    {
+      "label": "corporate",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L30",
+      "id": "public_libredesk_agent_responses_corporate",
+      "community": 82,
+      "norm_label": "corporate"
+    },
+    {
+      "label": "school",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L31",
+      "id": "public_libredesk_agent_responses_school",
+      "community": 82,
+      "norm_label": "school"
+    },
+    {
+      "label": "healthcare",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L32",
+      "id": "public_libredesk_agent_responses_healthcare",
+      "community": 82,
+      "norm_label": "healthcare"
+    },
+    {
+      "label": "water",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L33",
+      "id": "public_libredesk_agent_responses_water",
+      "community": 82,
+      "norm_label": "water"
+    },
+    {
+      "label": "women",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L34",
+      "id": "public_libredesk_agent_responses_women",
+      "community": 82,
+      "norm_label": "women"
+    },
+    {
+      "label": "youth",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L35",
+      "id": "public_libredesk_agent_responses_youth",
+      "community": 82,
+      "norm_label": "youth"
+    },
+    {
+      "label": "keywords",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L37",
+      "id": "public_libredesk_agent_keywords",
+      "community": 80,
+      "norm_label": "keywords"
+    },
+    {
+      "label": "donate",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L38",
+      "id": "public_libredesk_agent_keywords_donate",
+      "community": 80,
+      "norm_label": "donate"
+    },
+    {
+      "label": "volunteer",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L39",
+      "id": "public_libredesk_agent_keywords_volunteer",
+      "community": 80,
+      "norm_label": "volunteer"
+    },
+    {
+      "label": "partner",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L40",
+      "id": "public_libredesk_agent_keywords_partner",
+      "community": 80,
+      "norm_label": "partner"
+    },
+    {
+      "label": "events",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L41",
+      "id": "public_libredesk_agent_keywords_events",
+      "community": 80,
+      "norm_label": "events"
+    },
+    {
+      "label": "countries",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L42",
+      "id": "public_libredesk_agent_keywords_countries",
+      "community": 80,
+      "norm_label": "countries"
+    },
+    {
+      "label": "mission",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L43",
+      "id": "public_libredesk_agent_keywords_mission",
+      "community": 80,
+      "norm_label": "mission"
+    },
+    {
+      "label": "contact",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L44",
+      "id": "public_libredesk_agent_keywords_contact",
+      "community": 80,
+      "norm_label": "contact"
+    },
+    {
+      "label": "programs",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L45",
+      "id": "public_libredesk_agent_keywords_programs",
+      "community": 80,
+      "norm_label": "programs"
+    },
+    {
+      "label": "impact",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L46",
+      "id": "public_libredesk_agent_keywords_impact",
+      "community": 80,
+      "norm_label": "impact"
+    },
+    {
+      "label": "hello",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L47",
+      "id": "public_libredesk_agent_keywords_hello",
+      "community": 80,
+      "norm_label": "hello"
+    },
+    {
+      "label": "thanks",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L48",
+      "id": "public_libredesk_agent_keywords_thanks",
+      "community": 80,
+      "norm_label": "thanks"
+    },
+    {
+      "label": "goodbye",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L49",
+      "id": "public_libredesk_agent_keywords_goodbye",
+      "community": 80,
+      "norm_label": "goodbye"
+    },
+    {
+      "label": "price",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L50",
+      "id": "public_libredesk_agent_keywords_price",
+      "community": 80,
+      "norm_label": "price"
+    },
+    {
+      "label": "schedule",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L51",
+      "id": "public_libredesk_agent_keywords_schedule",
+      "community": 80,
+      "norm_label": "schedule"
+    },
+    {
+      "label": "age",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L52",
+      "id": "public_libredesk_agent_keywords_age",
+      "community": 80,
+      "norm_label": "age"
+    },
+    {
+      "label": "safety",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L53",
+      "id": "public_libredesk_agent_keywords_safety",
+      "community": 80,
+      "norm_label": "safety"
+    },
+    {
+      "label": "donate_amount",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L54",
+      "id": "public_libredesk_agent_keywords_donate_amount",
+      "community": 80,
+      "norm_label": "donate_amount"
+    },
+    {
+      "label": "mpesa",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L55",
+      "id": "public_libredesk_agent_keywords_mpesa",
+      "community": 80,
+      "norm_label": "mpesa"
+    },
+    {
+      "label": "tax",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L56",
+      "id": "public_libredesk_agent_keywords_tax",
+      "community": 80,
+      "norm_label": "tax"
+    },
+    {
+      "label": "refund",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L57",
+      "id": "public_libredesk_agent_keywords_refund",
+      "community": 80,
+      "norm_label": "refund"
+    },
+    {
+      "label": "sponsor",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L58",
+      "id": "public_libredesk_agent_keywords_sponsor",
+      "community": 80,
+      "norm_label": "sponsor"
+    },
+    {
+      "label": "corporate",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L59",
+      "id": "public_libredesk_agent_keywords_corporate",
+      "community": 80,
+      "norm_label": "corporate"
+    },
+    {
+      "label": "school",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L60",
+      "id": "public_libredesk_agent_keywords_school",
+      "community": 80,
+      "norm_label": "school"
+    },
+    {
+      "label": "healthcare",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L61",
+      "id": "public_libredesk_agent_keywords_healthcare",
+      "community": 80,
+      "norm_label": "healthcare"
+    },
+    {
+      "label": "water",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L62",
+      "id": "public_libredesk_agent_keywords_water",
+      "community": 80,
+      "norm_label": "water"
+    },
+    {
+      "label": "women",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L63",
+      "id": "public_libredesk_agent_keywords_women",
+      "community": 80,
+      "norm_label": "women"
+    },
+    {
+      "label": "youth",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L64",
+      "id": "public_libredesk_agent_keywords_youth",
+      "community": 80,
+      "norm_label": "youth"
+    },
+    {
+      "label": "department_routing",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L66",
+      "id": "public_libredesk_agent_department_routing",
+      "community": 80,
+      "norm_label": "department_routing"
+    },
+    {
+      "label": "donate",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L67",
+      "id": "public_libredesk_agent_department_routing_donate",
+      "community": 80,
+      "norm_label": "donate"
+    },
+    {
+      "label": "volunteer",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L68",
+      "id": "public_libredesk_agent_department_routing_volunteer",
+      "community": 80,
+      "norm_label": "volunteer"
+    },
+    {
+      "label": "partner",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L69",
+      "id": "public_libredesk_agent_department_routing_partner",
+      "community": 80,
+      "norm_label": "partner"
+    },
+    {
+      "label": "events",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L70",
+      "id": "public_libredesk_agent_department_routing_events",
+      "community": 80,
+      "norm_label": "events"
+    },
+    {
+      "label": "corporate",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L71",
+      "id": "public_libredesk_agent_department_routing_corporate",
+      "community": 80,
+      "norm_label": "corporate"
+    },
+    {
+      "label": "sponsor",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L72",
+      "id": "public_libredesk_agent_department_routing_sponsor",
+      "community": 80,
+      "norm_label": "sponsor"
+    },
+    {
+      "label": "handoff_triggers",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L74",
+      "id": "public_libredesk_agent_handoff_triggers",
+      "community": 80,
+      "norm_label": "handoff_triggers"
+    },
+    {
+      "label": "agent_personality",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L90",
+      "id": "public_libredesk_agent_agent_personality",
+      "community": 80,
+      "norm_label": "agent_personality"
+    },
+    {
+      "label": "tone",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L91",
+      "id": "public_libredesk_agent_agent_personality_tone",
+      "community": 80,
+      "norm_label": "tone"
+    },
+    {
+      "label": "emoji_usage",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L92",
+      "id": "public_libredesk_agent_agent_personality_emoji_usage",
+      "community": 80,
+      "norm_label": "emoji_usage"
+    },
+    {
+      "label": "response_length",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L93",
+      "id": "public_libredesk_agent_agent_personality_response_length",
+      "community": 80,
+      "norm_label": "response_length"
+    },
+    {
+      "label": "max_handoff_wait",
+      "file_type": "code",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L94",
+      "id": "public_libredesk_agent_agent_personality_max_handoff_wait",
+      "community": 80,
+      "norm_label": "max_handoff_wait"
+    },
+    {
+      "label": "Libredesk.astro",
       "file_type": "code",
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L1",
-      "confidence": "EXTRACTED",
       "id": "frontend_src_components_libredesk_astro",
       "community": 34,
-      "norm_label": "../components/libredesk.astro"
+      "norm_label": "libredesk.astro"
     },
     {
       "label": "check()",
@@ -32,328 +940,751 @@
       "norm_label": "trackevent()"
     },
     {
+      "label": "knowledge-base.json",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L1",
+      "id": "frontend_src_lib_knowledge_base_json",
+      "community": 81,
+      "norm_label": "knowledge-base.json"
+    },
+    {
+      "label": "organization",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L2",
+      "id": "lib_knowledge_base_organization",
+      "community": 81,
+      "norm_label": "organization"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L3",
+      "id": "lib_knowledge_base_organization_name",
+      "community": 81,
+      "norm_label": "name"
+    },
+    {
+      "label": "tagline",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L4",
+      "id": "lib_knowledge_base_organization_tagline",
+      "community": 81,
+      "norm_label": "tagline"
+    },
+    {
+      "label": "website",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L5",
+      "id": "lib_knowledge_base_organization_website",
+      "community": 81,
+      "norm_label": "website"
+    },
+    {
+      "label": "email",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L6",
+      "id": "lib_knowledge_base_organization_email",
+      "community": 81,
+      "norm_label": "email"
+    },
+    {
+      "label": "phone",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L7",
+      "id": "lib_knowledge_base_organization_phone",
+      "community": 81,
+      "norm_label": "phone"
+    },
+    {
+      "label": "address",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L8",
+      "id": "lib_knowledge_base_organization_address",
+      "community": 81,
+      "norm_label": "address"
+    },
+    {
+      "label": "founded",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L9",
+      "id": "lib_knowledge_base_organization_founded",
+      "community": 81,
+      "norm_label": "founded"
+    },
+    {
+      "label": "countries",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L10",
+      "id": "lib_knowledge_base_organization_countries",
+      "community": 81,
+      "norm_label": "countries"
+    },
+    {
+      "label": "mission",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L11",
+      "id": "lib_knowledge_base_organization_mission",
+      "community": 81,
+      "norm_label": "mission"
+    },
+    {
+      "label": "values",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L12",
+      "id": "lib_knowledge_base_organization_values",
+      "community": 81,
+      "norm_label": "values"
+    },
+    {
+      "label": "impact",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L14",
+      "id": "lib_knowledge_base_impact",
+      "community": 81,
+      "norm_label": "impact"
+    },
+    {
+      "label": "schools",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L15",
+      "id": "lib_knowledge_base_impact_schools",
+      "community": 81,
+      "norm_label": "schools"
+    },
+    {
+      "label": "countries",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L16",
+      "id": "lib_knowledge_base_impact_countries",
+      "community": 81,
+      "norm_label": "countries"
+    },
+    {
+      "label": "volunteers",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L17",
+      "id": "lib_knowledge_base_impact_volunteers",
+      "community": 81,
+      "norm_label": "volunteers"
+    },
+    {
+      "label": "donationEfficiency",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L18",
+      "id": "lib_knowledge_base_impact_donationefficiency",
+      "community": 81,
+      "norm_label": "donationefficiency"
+    },
+    {
+      "label": "livesChanged",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L19",
+      "id": "lib_knowledge_base_impact_liveschanged",
+      "community": 81,
+      "norm_label": "liveschanged"
+    },
+    {
+      "label": "programs",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L21",
+      "id": "lib_knowledge_base_programs",
+      "community": 81,
+      "norm_label": "programs"
+    },
+    {
+      "label": "events",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L59",
+      "id": "lib_knowledge_base_events",
+      "community": 81,
+      "norm_label": "events"
+    },
+    {
+      "label": "types",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L60",
+      "id": "lib_knowledge_base_events_types",
+      "community": 81,
+      "norm_label": "types"
+    },
+    {
+      "label": "frequency",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L61",
+      "id": "lib_knowledge_base_events_frequency",
+      "community": 81,
+      "norm_label": "frequency"
+    },
+    {
+      "label": "registration",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L62",
+      "id": "lib_knowledge_base_events_registration",
+      "community": 81,
+      "norm_label": "registration"
+    },
+    {
+      "label": "donation",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L64",
+      "id": "lib_knowledge_base_donation",
+      "community": 81,
+      "norm_label": "donation"
+    },
+    {
+      "label": "methods",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L65",
+      "id": "lib_knowledge_base_donation_methods",
+      "community": 81,
+      "norm_label": "methods"
+    },
+    {
+      "label": "minimum",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L66",
+      "id": "lib_knowledge_base_donation_minimum",
+      "community": 81,
+      "norm_label": "minimum"
+    },
+    {
+      "label": "taxDeductible",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L67",
+      "id": "lib_knowledge_base_donation_taxdeductible",
+      "community": 81,
+      "norm_label": "taxdeductible"
+    },
+    {
+      "label": "whereMoneyGoes",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L68",
+      "id": "lib_knowledge_base_donation_wheremoneygoes",
+      "community": 81,
+      "norm_label": "wheremoneygoes"
+    },
+    {
+      "label": "contact",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L70",
+      "id": "lib_knowledge_base_contact",
+      "community": 81,
+      "norm_label": "contact"
+    },
+    {
+      "label": "general",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L71",
+      "id": "lib_knowledge_base_contact_general",
+      "community": 81,
+      "norm_label": "general"
+    },
+    {
+      "label": "volunteer",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L72",
+      "id": "lib_knowledge_base_contact_volunteer",
+      "community": 81,
+      "norm_label": "volunteer"
+    },
+    {
+      "label": "partnerships",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L73",
+      "id": "lib_knowledge_base_contact_partnerships",
+      "community": 81,
+      "norm_label": "partnerships"
+    },
+    {
+      "label": "media",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L74",
+      "id": "lib_knowledge_base_contact_media",
+      "community": 81,
+      "norm_label": "media"
+    },
+    {
+      "label": "emergency",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L75",
+      "id": "lib_knowledge_base_contact_emergency",
+      "community": 81,
+      "norm_label": "emergency"
+    },
+    {
+      "label": "team",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L77",
+      "id": "lib_knowledge_base_team",
+      "community": 81,
+      "norm_label": "team"
+    },
+    {
+      "label": "executiveDirector",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L78",
+      "id": "lib_knowledge_base_team_executivedirector",
+      "community": 81,
+      "norm_label": "executivedirector"
+    },
+    {
+      "label": "board",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L79",
+      "id": "lib_knowledge_base_team_board",
+      "community": 81,
+      "norm_label": "board"
+    },
+    {
+      "label": "staff",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L80",
+      "id": "lib_knowledge_base_team_staff",
+      "community": 81,
+      "norm_label": "staff"
+    },
+    {
+      "label": "faq",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L82",
+      "id": "lib_knowledge_base_faq",
+      "community": 81,
+      "norm_label": "faq"
+    },
+    {
+      "label": "handoff_triggers",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L108",
+      "id": "lib_knowledge_base_handoff_triggers",
+      "community": 81,
+      "norm_label": "handoff_triggers"
+    },
+    {
+      "label": "agent_personality",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L117",
+      "id": "lib_knowledge_base_agent_personality",
+      "community": 81,
+      "norm_label": "agent_personality"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L118",
+      "id": "lib_knowledge_base_agent_personality_name",
+      "community": 81,
+      "norm_label": "name"
+    },
+    {
+      "label": "role",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L119",
+      "id": "lib_knowledge_base_agent_personality_role",
+      "community": 81,
+      "norm_label": "role"
+    },
+    {
+      "label": "tone",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L120",
+      "id": "lib_knowledge_base_agent_personality_tone",
+      "community": 81,
+      "norm_label": "tone"
+    },
+    {
+      "label": "greeting",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L121",
+      "id": "lib_knowledge_base_agent_personality_greeting",
+      "community": 81,
+      "norm_label": "greeting"
+    },
+    {
+      "label": "fallback",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L122",
+      "id": "lib_knowledge_base_agent_personality_fallback",
+      "community": 81,
+      "norm_label": "fallback"
+    },
+    {
+      "label": "handoff_message",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L123",
+      "id": "lib_knowledge_base_agent_personality_handoff_message",
+      "community": 81,
+      "norm_label": "handoff_message"
+    },
+    {
       "label": "Layout.astro",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L1",
-      "id": "frontend_src_layouts_layout_astro",
       "community": 49,
-      "norm_label": "layout.astro"
+      "norm_label": "layout.astro",
+      "id": "frontend_src_layouts_layout_astro"
     },
     {
       "label": "canonicalURL",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L20",
-      "id": "layouts_layout_canonicalurl",
       "community": 49,
-      "norm_label": "canonicalurl"
+      "norm_label": "canonicalurl",
+      "id": "layouts_layout_canonicalurl"
     },
     {
       "label": "srObserver",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L323",
-      "id": "layouts_layout_srobserver",
       "community": 49,
-      "norm_label": "srobserver"
+      "norm_label": "srobserver",
+      "id": "layouts_layout_srobserver"
     },
     {
       "label": "srMo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L340",
-      "id": "layouts_layout_srmo",
       "community": 49,
-      "norm_label": "srmo"
+      "norm_label": "srmo",
+      "id": "layouts_layout_srmo"
     },
     {
       "label": "tiltCards",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L352",
-      "id": "layouts_layout_tiltcards",
       "community": 49,
-      "norm_label": "tiltcards"
+      "norm_label": "tiltcards",
+      "id": "layouts_layout_tiltcards"
     },
     {
       "label": "sheen",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L355",
-      "id": "layouts_layout_sheen",
       "community": 49,
-      "norm_label": "sheen"
+      "norm_label": "sheen",
+      "id": "layouts_layout_sheen"
     },
     {
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L357",
-      "id": "layouts_layout_rect",
       "community": 49,
-      "norm_label": "rect"
+      "norm_label": "rect",
+      "id": "layouts_layout_rect"
     },
     {
       "label": "scrollObserver",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L379",
-      "id": "layouts_layout_scrollobserver",
       "community": 49,
-      "norm_label": "scrollobserver"
+      "norm_label": "scrollobserver",
+      "id": "layouts_layout_scrollobserver"
     },
     {
       "label": "mo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L395",
-      "id": "layouts_layout_mo",
       "community": 49,
-      "norm_label": "mo"
+      "norm_label": "mo",
+      "id": "layouts_layout_mo"
     },
     {
       "label": "heroSection",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L406",
-      "id": "layouts_layout_herosection",
       "community": 49,
-      "norm_label": "herosection"
+      "norm_label": "herosection",
+      "id": "layouts_layout_herosection"
     },
     {
       "label": "heroLayers",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L408",
-      "id": "layouts_layout_herolayers",
       "community": 49,
-      "norm_label": "herolayers"
+      "norm_label": "herolayers",
+      "id": "layouts_layout_herolayers"
     },
     {
       "label": "speeds",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L409",
-      "id": "layouts_layout_speeds",
       "community": 49,
-      "norm_label": "speeds"
+      "norm_label": "speeds",
+      "id": "layouts_layout_speeds"
     },
     {
       "label": "animateHeroDepth()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L420",
-      "id": "layouts_layout_animateherodepth",
       "community": 49,
-      "norm_label": "animateherodepth()"
+      "norm_label": "animateherodepth()",
+      "id": "layouts_layout_animateherodepth"
     },
     {
       "label": "particles",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L440",
-      "id": "layouts_layout_particles",
       "community": 49,
-      "norm_label": "particles"
+      "norm_label": "particles",
+      "id": "layouts_layout_particles"
     },
     {
       "label": "origPositions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L451",
-      "id": "layouts_layout_origpositions",
       "community": 49,
-      "norm_label": "origpositions"
+      "norm_label": "origpositions",
+      "id": "layouts_layout_origpositions"
     },
     {
       "label": "animateParticles()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L461",
-      "id": "layouts_layout_animateparticles",
       "community": 49,
-      "norm_label": "animateparticles()"
+      "norm_label": "animateparticles()",
+      "id": "layouts_layout_animateparticles"
     },
     {
       "label": "magneticBtns",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L483",
-      "id": "layouts_layout_magneticbtns",
       "community": 49,
-      "norm_label": "magneticbtns"
+      "norm_label": "magneticbtns",
+      "id": "layouts_layout_magneticbtns"
     },
     {
       "label": "cursorGlow",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L500",
-      "id": "layouts_layout_cursorglow",
       "community": 49,
-      "norm_label": "cursorglow"
+      "norm_label": "cursorglow",
+      "id": "layouts_layout_cursorglow"
     },
     {
       "label": "animateGlow()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L510",
-      "id": "layouts_layout_animateglow",
       "community": 49,
-      "norm_label": "animateglow()"
+      "norm_label": "animateglow()",
+      "id": "layouts_layout_animateglow"
     },
     {
       "label": "progressBar",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L520",
-      "id": "layouts_layout_progressbar",
       "community": 49,
-      "norm_label": "progressbar"
+      "norm_label": "progressbar",
+      "id": "layouts_layout_progressbar"
     },
     {
       "label": "shapes",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L549",
-      "id": "layouts_layout_shapes",
       "community": 49,
-      "norm_label": "shapes"
+      "norm_label": "shapes",
+      "id": "layouts_layout_shapes"
     },
     {
       "label": "dots",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L550",
-      "id": "layouts_layout_dots",
       "community": 49,
-      "norm_label": "dots"
+      "norm_label": "dots",
+      "id": "layouts_layout_dots"
     },
     {
       "label": "stickyBtn",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L562",
-      "id": "layouts_layout_stickybtn",
       "community": 49,
-      "norm_label": "stickybtn"
+      "norm_label": "stickybtn",
+      "id": "layouts_layout_stickybtn"
     },
     {
       "label": "toast",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L597",
-      "id": "layouts_layout_toast",
       "community": 49,
-      "norm_label": "toast"
+      "norm_label": "toast",
+      "id": "layouts_layout_toast"
     },
     {
       "label": "people",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L599",
-      "id": "layouts_layout_people",
       "community": 49,
-      "norm_label": "people"
+      "norm_label": "people",
+      "id": "layouts_layout_people"
     },
     {
       "label": "locations",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L612",
-      "id": "layouts_layout_locations",
       "community": 49,
-      "norm_label": "locations"
+      "norm_label": "locations",
+      "id": "layouts_layout_locations"
     },
     {
       "label": "donationActions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L616",
-      "id": "layouts_layout_donationactions",
       "community": 49,
-      "norm_label": "donationactions"
+      "norm_label": "donationactions",
+      "id": "layouts_layout_donationactions"
     },
     {
       "label": "volunteerActions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L622",
-      "id": "layouts_layout_volunteeractions",
       "community": 49,
-      "norm_label": "volunteeractions"
+      "norm_label": "volunteeractions",
+      "id": "layouts_layout_volunteeractions"
     },
     {
       "label": "amounts",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L628",
-      "id": "layouts_layout_amounts",
       "community": 49,
-      "norm_label": "amounts"
+      "norm_label": "amounts",
+      "id": "layouts_layout_amounts"
     },
     {
       "label": "pick()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L633",
-      "id": "layouts_layout_pick",
       "community": 49,
-      "norm_label": "pick()"
+      "norm_label": "pick()",
+      "id": "layouts_layout_pick"
     },
     {
       "label": "generateToastData()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L635",
-      "id": "layouts_layout_generatetoastdata",
       "community": 49,
-      "norm_label": "generatetoastdata()"
+      "norm_label": "generatetoastdata()",
+      "id": "layouts_layout_generatetoastdata"
     },
     {
       "label": "showToast()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L652",
-      "id": "layouts_layout_showtoast",
       "community": 49,
-      "norm_label": "showtoast()"
+      "norm_label": "showtoast()",
+      "id": "layouts_layout_showtoast"
     },
     {
       "label": "dist",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L714",
-      "id": "layouts_layout_dist",
       "community": 49,
-      "norm_label": "dist"
+      "norm_label": "dist",
+      "id": "layouts_layout_dist"
     },
     {
       "label": "strength",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L716",
-      "id": "layouts_layout_strength",
       "community": 49,
-      "norm_label": "strength"
+      "norm_label": "strength",
+      "id": "layouts_layout_strength"
     },
     {
       "label": "icon",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L807",
-      "id": "layouts_layout_icon",
       "community": 49,
-      "norm_label": "icon"
+      "norm_label": "icon",
+      "id": "layouts_layout_icon"
     },
     {
       "label": "../styles/global.css",
       "file_type": "code",
       "source_file": "frontend/src/styles/global.css",
       "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css",
       "community": 49,
-      "norm_label": "../styles/global.css"
+      "norm_label": "../styles/global.css",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css"
     },
     {
       "label": "index.astro",
@@ -858,213 +2189,6 @@
       "community": 60,
       "norm_label": "details",
       "id": "events_slug_details"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L1",
-      "community": 18,
-      "norm_label": "package.json",
-      "id": "frontend_package_json"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L2",
-      "community": 18,
-      "norm_label": "name",
-      "id": "frontend_package_name"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L3",
-      "community": 18,
-      "norm_label": "type",
-      "id": "frontend_package_type"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L4",
-      "community": 18,
-      "norm_label": "version",
-      "id": "frontend_package_version"
-    },
-    {
-      "label": "engines",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L5",
-      "community": 18,
-      "norm_label": "engines",
-      "id": "frontend_package_engines"
-    },
-    {
-      "label": "node",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L6",
-      "community": 18,
-      "norm_label": "node",
-      "id": "frontend_package_engines_node"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L8",
-      "community": 18,
-      "norm_label": "scripts",
-      "id": "frontend_package_scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L9",
-      "community": 18,
-      "norm_label": "dev",
-      "id": "frontend_package_scripts_dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L10",
-      "community": 18,
-      "norm_label": "build",
-      "id": "frontend_package_scripts_build"
-    },
-    {
-      "label": "preview",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L11",
-      "community": 18,
-      "norm_label": "preview",
-      "id": "frontend_package_scripts_preview"
-    },
-    {
-      "label": "astro",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L12",
-      "community": 18,
-      "norm_label": "astro",
-      "id": "frontend_package_scripts_astro"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L14",
-      "community": 18,
-      "norm_label": "dependencies",
-      "id": "frontend_package_dependencies"
-    },
-    {
-      "label": "@astrojs/sitemap",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L15",
-      "community": 18,
-      "norm_label": "@astrojs/sitemap",
-      "id": "frontend_package_dependencies_astrojs_sitemap"
-    },
-    {
-      "label": "@tailwindcss/vite",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L16",
-      "community": 18,
-      "norm_label": "@tailwindcss/vite",
-      "id": "frontend_package_dependencies_tailwindcss_vite"
-    },
-    {
-      "label": "astro",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L17",
-      "community": 18,
-      "norm_label": "astro",
-      "id": "frontend_package_dependencies_astro"
-    },
-    {
-      "label": "canvas-confetti",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L18",
-      "community": 18,
-      "norm_label": "canvas-confetti",
-      "id": "frontend_package_dependencies_canvas_confetti"
-    },
-    {
-      "label": "leaflet",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L19",
-      "community": 18,
-      "norm_label": "leaflet",
-      "id": "frontend_package_dependencies_leaflet"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L20",
-      "community": 18,
-      "norm_label": "tailwindcss",
-      "id": "frontend_package_dependencies_tailwindcss"
-    },
-    {
-      "label": "tailwindcss-animate",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L21",
-      "community": 18,
-      "norm_label": "tailwindcss-animate",
-      "id": "frontend_package_dependencies_tailwindcss_animate"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L23",
-      "community": 18,
-      "norm_label": "devdependencies",
-      "id": "frontend_package_devdependencies"
-    },
-    {
-      "label": "@types/leaflet",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L24",
-      "community": 18,
-      "norm_label": "@types/leaflet",
-      "id": "frontend_package_devdependencies_types_leaflet"
-    },
-    {
-      "label": "lighthouse",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L25",
-      "community": 18,
-      "norm_label": "lighthouse",
-      "id": "frontend_package_devdependencies_lighthouse"
-    },
-    {
-      "label": "playwright",
-      "file_type": "code",
-      "source_file": "frontend/package.json",
-      "source_location": "L26",
-      "community": 18,
-      "norm_label": "playwright",
-      "id": "frontend_package_devdependencies_playwright"
     },
     {
       "label": "../components/EventMap.astro",
@@ -4048,15 +5172,6 @@
       "community": 9,
       "norm_label": "generate sample test data for all doctypes.      calls each domain seeder in dep",
       "id": "utils_seed_data_rationale_25"
-    },
-    {
-      "label": "astro.config.mjs",
-      "file_type": "code",
-      "source_file": "frontend/astro.config.mjs",
-      "source_location": "L1",
-      "community": 13,
-      "norm_label": "astro.config.mjs",
-      "id": "frontend_astro_config_mjs"
     },
     {
       "label": "tsconfig.json",
@@ -8285,12 +9400,1003 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_engines"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_engines",
+      "target": "frontend_package_engines_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_astro"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_astro"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_astrojs_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_astrojs_sitemap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_canvas_confetti"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_leaflet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_tailwindcss_animate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_tailwindcss_vite"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies_canvas_confetti",
+      "target": "canvas_confetti"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_lighthouse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_playwright"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_types_leaflet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_agent_personality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_department_routing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_fallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_greeting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_handoff_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_handoff_triggers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_keywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_organization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_responses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_public_libredesk_agent_json",
+      "target": "public_libredesk_agent_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_age",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_corporate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_countries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_donate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_donate_amount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_events",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_goodbye",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_healthcare",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_hello",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_impact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_mission",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_mpesa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_partner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_price",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_refund",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_safety",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_schedule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_school",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_sponsor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_tax",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_thanks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_volunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_water",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_women",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_responses",
+      "target": "public_libredesk_agent_responses_youth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_age",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_corporate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_countries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_donate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_donate_amount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_events",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_goodbye",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_healthcare",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_hello",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_impact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_mission",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_mpesa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_partner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_price",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_refund",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_safety",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_schedule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_school",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_sponsor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_tax",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_thanks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_volunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_water",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_women",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_keywords",
+      "target": "public_libredesk_agent_keywords_youth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_department_routing",
+      "target": "public_libredesk_agent_department_routing_corporate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_department_routing",
+      "target": "public_libredesk_agent_department_routing_donate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_department_routing",
+      "target": "public_libredesk_agent_department_routing_events",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_department_routing",
+      "target": "public_libredesk_agent_department_routing_partner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_department_routing",
+      "target": "public_libredesk_agent_department_routing_sponsor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_department_routing",
+      "target": "public_libredesk_agent_department_routing_volunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_agent_personality",
+      "target": "public_libredesk_agent_agent_personality_emoji_usage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_agent_personality",
+      "target": "public_libredesk_agent_agent_personality_max_handoff_wait",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_agent_personality",
+      "target": "public_libredesk_agent_agent_personality_response_length",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/public/libredesk-agent.json",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "public_libredesk_agent_agent_personality",
+      "target": "public_libredesk_agent_agent_personality_tone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_libredesk_astro",
-      "target": "components_libredesk_check",
-      "confidence_score": 1.0
+      "target": "components_libredesk_check"
     },
     {
       "relation": "contains",
@@ -8298,9 +10404,9 @@
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_libredesk_astro",
-      "target": "components_libredesk_trackevent",
-      "confidence_score": 1.0
+      "target": "components_libredesk_trackevent"
     },
     {
       "relation": "imports_from",
@@ -8309,8 +10415,468 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "frontend_src_components_libredesk_astro",
+      "target": "frontend_src_components_libredesk_astro"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_agent_personality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_donation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_events",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_faq",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_handoff_triggers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_impact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_organization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_programs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "frontend_src_lib_knowledge_base_json",
+      "target": "lib_knowledge_base_team",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_address",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_countries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_email",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_founded",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_mission",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_phone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_tagline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_values",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_organization",
+      "target": "lib_knowledge_base_organization_website",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_impact",
+      "target": "lib_knowledge_base_impact_countries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_impact",
+      "target": "lib_knowledge_base_impact_donationefficiency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_impact",
+      "target": "lib_knowledge_base_impact_liveschanged",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_impact",
+      "target": "lib_knowledge_base_impact_schools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_impact",
+      "target": "lib_knowledge_base_impact_volunteers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_events",
+      "target": "lib_knowledge_base_events_frequency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_events",
+      "target": "lib_knowledge_base_events_registration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_events",
+      "target": "lib_knowledge_base_events_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_donation",
+      "target": "lib_knowledge_base_donation_methods",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_donation",
+      "target": "lib_knowledge_base_donation_minimum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_donation",
+      "target": "lib_knowledge_base_donation_taxdeductible",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_donation",
+      "target": "lib_knowledge_base_donation_wheremoneygoes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_contact",
+      "target": "lib_knowledge_base_contact_emergency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_contact",
+      "target": "lib_knowledge_base_contact_general",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_contact",
+      "target": "lib_knowledge_base_contact_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_contact",
+      "target": "lib_knowledge_base_contact_partnerships",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_contact",
+      "target": "lib_knowledge_base_contact_volunteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_team",
+      "target": "lib_knowledge_base_team_board",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_team",
+      "target": "lib_knowledge_base_team_executivedirector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_team",
+      "target": "lib_knowledge_base_team_staff",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_agent_personality",
+      "target": "lib_knowledge_base_agent_personality_fallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_agent_personality",
+      "target": "lib_knowledge_base_agent_personality_greeting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_agent_personality",
+      "target": "lib_knowledge_base_agent_personality_handoff_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_agent_personality",
+      "target": "lib_knowledge_base_agent_personality_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_agent_personality",
+      "target": "lib_knowledge_base_agent_personality_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/knowledge-base.json",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "lib_knowledge_base_agent_personality",
+      "target": "lib_knowledge_base_agent_personality_tone",
       "confidence_score": 1.0
     },
     {
@@ -9748,237 +12314,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
       "target": "frontend_src_lib_events_data_json"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_devdependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_engines"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_scripts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_type"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_json",
-      "target": "frontend_package_version"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_engines",
-      "target": "frontend_package_engines_node"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_scripts",
-      "target": "frontend_package_scripts_astro"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_scripts",
-      "target": "frontend_package_scripts_build"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_scripts",
-      "target": "frontend_package_scripts_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_scripts",
-      "target": "frontend_package_scripts_preview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_astro"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_astrojs_sitemap"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_canvas_confetti"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_leaflet"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_tailwindcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_tailwindcss_animate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_tailwindcss_vite"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "frontend_package_dependencies_canvas_confetti",
-      "target": "canvas_confetti"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_lighthouse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_playwright"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_types_leaflet"
     },
     {
       "relation": "contains",
@@ -18515,5 +20850,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "23fea5b485833f9ef03d64273c6254fd1f0b191b"
+  "built_at_commit": "8e507985df0f6597ab52de09741064aa10ef43a5"
 }

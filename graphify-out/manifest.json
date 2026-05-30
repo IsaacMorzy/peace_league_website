@@ -1,7 +1,7 @@
 {
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/astro.config.mjs": {
-    "mtime": 1779534709.1342068,
-    "ast_hash": "034a784712f9080413fe694636b53352",
+    "mtime": 1780108185.5744128,
+    "ast_hash": "d7748795a47fd54047fd62bef544d5a7",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/lib/api.js": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/package.json": {
-    "mtime": 1780093184.2223854,
-    "ast_hash": "3a8b0bb4ae2ea76da68c9b10ca6e72ac",
+    "mtime": 1780107996.8954303,
+    "ast_hash": "257c2fb6bdf4f2f491120bbe239eecd9",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/tsconfig.json": {
@@ -350,7 +350,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/types.d.ts": {
-    "mtime": 1780107529.1306307,
+    "mtime": 1780108964.6122816,
     "ast_hash": "f3d48b2aa569815a445d3509aa161559",
     "semantic_hash": ""
   },
@@ -360,7 +360,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/content.d.ts": {
-    "mtime": 1780107529.1306307,
+    "mtime": 1780108964.6122816,
     "ast_hash": "242c41d20fcda532f17f55cd1a0217bc",
     "semantic_hash": ""
   },
@@ -850,8 +850,18 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Libredesk.astro": {
-    "mtime": 1780107444.838616,
-    "ast_hash": "be689dd6ab4bf05dcf0b3689890e90b6",
+    "mtime": 1780108950.8894234,
+    "ast_hash": "08b964b23ca9f8780c8d77c8eef25303",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/libredesk-agent.json": {
+    "mtime": 1780107946.0659797,
+    "ast_hash": "882a8d57614962adb389ff17ab18689f",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/lib/knowledge-base.json": {
+    "mtime": 1780107634.995419,
+    "ast_hash": "3e54ebc5077d4790db6d198582cdc957",
     "semantic_hash": ""
   }
 }

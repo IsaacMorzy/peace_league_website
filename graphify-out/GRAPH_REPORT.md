@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 99 files · ~519,386 words
+- 101 files · ~521,494 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 918 nodes · 1024 edges · 80 communities (72 shown, 8 thin omitted)
+- 1042 nodes · 1146 edges · 83 communities (76 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `23fea5b4`
+- Built from commit: `8e507985`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,7 +40,6 @@
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
-- [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
@@ -69,18 +68,21 @@
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
+- [[_COMMUNITY_Community 81|Community 81]]
+- [[_COMMUNITY_Community 82|Community 82]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `../components/Footer.astro` - 23 edges
-2. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
-3. `Peace League Africa — Architecture Documentation` - 12 edges
-4. `Lighthouse Sweep Design (All Pages)` - 12 edges
-5. `File Structure` - 11 edges
-6. `Components` - 10 edges
-7. `Backend API Module (api.py)` - 10 edges
-8. `../components/EventMap.astro` - 9 edges
-9. `apiCall()` - 9 edges
-10. `generate_test_data()` - 8 edges
+1. `responses` - 28 edges
+2. `keywords` - 28 edges
+3. `../components/Footer.astro` - 23 edges
+4. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
+5. `Peace League Africa — Architecture Documentation` - 12 edges
+6. `Lighthouse Sweep Design (All Pages)` - 12 edges
+7. `organization` - 11 edges
+8. `File Structure` - 11 edges
+9. `Components` - 10 edges
+10. `Backend API Module (api.py)` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Donation` --uses--> `Donation`  [INFERRED]
@@ -94,7 +96,7 @@
 - `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (80 total, 8 thin omitted)
+## Communities (83 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -154,7 +156,7 @@ Nodes (23): AllValuesOf, CollectionEntry, CollectionKey, ContentConfig, DataEntr
 
 ### Community 18 - "Community 18"
 Cohesion: 0.08
-Nodes (22): dependencies, astro, @astrojs/sitemap, canvas-confetti, leaflet, tailwindcss, tailwindcss-animate, @tailwindcss/vite (+14 more)
+Nodes (23): dependencies, astro, @astrojs/node, @astrojs/sitemap, canvas-confetti, leaflet, tailwindcss, tailwindcss-animate (+15 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.11
@@ -280,18 +282,30 @@ Nodes (18): a, b, e, f, g, h, i, l (+10 more)
 Cohesion: 0.15
 Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (+3 more)
 
+### Community 80 - "Community 80"
+Cohesion: 0.04
+Nodes (47): agent_personality, emoji_usage, max_handoff_wait, response_length, tone, department_routing, corporate, donate (+39 more)
+
+### Community 81 - "Community 81"
+Cohesion: 0.04
+Nodes (46): agent_personality, fallback, greeting, handoff_message, name, role, tone, contact (+38 more)
+
+### Community 82 - "Community 82"
+Cohesion: 0.07
+Nodes (28): responses, age, contact, corporate, countries, donate, donate_amount, events (+20 more)
+
 ## Knowledge Gaps
-- **541 isolated node(s):** `canonicalURL`, `srObserver`, `srMo`, `tiltCards`, `sheen` (+536 more)
+- **652 isolated node(s):** `name`, `type`, `version`, `node`, `dev` (+647 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `../components/Footer.astro` connect `Community 31` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 54`, `Community 55`, `Community 60`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
-- **What connects `canonicalURL`, `srObserver`, `srMo` to the rest of the system?**
-  _576 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **What connects `name`, `type`, `version` to the rest of the system?**
+  _687 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
