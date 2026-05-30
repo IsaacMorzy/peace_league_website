@@ -2428,8 +2428,9 @@ a:active {
    Hidden at the very bottom of the page to avoid overlapping footer. */
 #sticky-donate-btn {
   position: fixed;
-  bottom: 90px;
-  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  right: auto;
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -2452,7 +2453,9 @@ a:active {
 }
 
 #sticky-donate-btn.hide-on-footer {
-  bottom: 140px; /* move up out of way when near footer */
+  bottom: 80px;
+  left: 24px;
+  right: auto;
 }
 
 /* ── 7b. VISUAL FINANCIAL TRANSPARENCY (Donut Chart) ──
@@ -3332,5 +3335,183 @@ a:active {
 @media (prefers-reduced-motion: reduce) {
   .blog-card:hover {
     transform: none;
+  }
+}
+
+/* ── Libredesk Chat Widget Custom Styling ── */
+/* Trigger button */
+#libredesk-widget,
+.libredesk-widget,
+[data-libredesk] {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Chat window container */
+.libredesk-chat-window,
+.libredesk-popup,
+.libredesk-modal {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08) !important;
+  border: 1px solid rgba(0,212,164,0.15) !important;
+}
+
+/* Chat header */
+.libredesk-header,
+.libredesk-chat-header {
+  background: linear-gradient(135deg, #00d4a4, #00b894) !important;
+  color: white !important;
+  padding: 16px 20px !important;
+}
+
+/* Messages area */
+.libredesk-messages,
+.libredesk-chat-body {
+  background: #fafafa !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.dark .libredesk-messages,
+.dark .libredesk-chat-body {
+  background: #1a1a1a !important;
+}
+
+/* User message bubbles */
+.libredesk-message-user,
+.libredesk-msg-outgoing {
+  background: linear-gradient(135deg, #00d4a4, #00b894) !important;
+  color: white !important;
+  border-radius: 18px 18px 4px 18px !important;
+  padding: 10px 16px !important;
+  max-width: 80% !important;
+}
+
+/* Agent message bubbles */
+.libredesk-message-agent,
+.libredesk-msg-incoming {
+  background: white !important;
+  color: #1a1a1a !important;
+  border-radius: 18px 18px 18px 4px !important;
+  padding: 10px 16px !important;
+  max-width: 80% !important;
+  border: 1px solid #e5e5e5 !important;
+}
+
+.dark .libredesk-message-agent,
+.dark .libredesk-msg-incoming {
+  background: #2a2a2a !important;
+  color: #e5e5e5 !important;
+  border-color: #3a3a3a !important;
+}
+
+/* Input area */
+.libredesk-input-area,
+.libredesk-chat-input {
+  border-top: 1px solid #e5e5e5 !important;
+  padding: 12px 16px !important;
+  background: white !important;
+}
+
+.dark .libredesk-input-area,
+.dark .libredesk-chat-input {
+  background: #1a1a1a !important;
+  border-color: #3a3a3a !important;
+}
+
+/* Input field */
+.libredesk-input,
+.libredesk-chat-input input,
+.libredesk-chat-input textarea {
+  border-radius: 24px !important;
+  border: 1.5px solid #e5e5e5 !important;
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.libredesk-input:focus,
+.libredesk-chat-input input:focus,
+.libredesk-chat-input textarea:focus {
+  border-color: #00d4a4 !important;
+  box-shadow: 0 0 0 3px rgba(0,212,164,0.15) !important;
+  outline: none !important;
+}
+
+/* Send button */
+.libredesk-send-btn,
+.libredesk-chat-send {
+  background: linear-gradient(135deg, #00d4a4, #00b894) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.libredesk-send-btn:hover,
+.libredesk-chat-send:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(0,212,164,0.4) !important;
+}
+
+/* Typing indicator */
+.libredesk-typing,
+.libredesk-chat-typing {
+  color: #6b7280 !important;
+  font-size: 13px !important;
+  font-style: italic !important;
+}
+
+/* Pre-chat form */
+.libredesk-prechat,
+.libredesk-pre-chat-form input {
+  border-radius: 12px !important;
+  border: 1.5px solid #e5e5e5 !important;
+  padding: 12px 16px !important;
+  width: 100% !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.libredesk-prechat input:focus,
+.libredesk-pre-chat-form input:focus {
+  border-color: #00d4a4 !important;
+  box-shadow: 0 0 0 3px rgba(0,212,164,0.15) !important;
+  outline: none !important;
+}
+
+/* Unread badge */
+.libredesk-unread-badge,
+.libredesk-badge {
+  background: #f59e0b !important;
+  color: white !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 6px !important;
+}
+
+/* Smooth animations */
+.libredesk-chat-window,
+.libredesk-popup,
+.libredesk-modal {
+  animation: libredesk-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes libredesk-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 905 nodes · 1009 edges · 81 communities (74 shown, 7 thin omitted)
+- 904 nodes · 1008 edges · 81 communities (74 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1917044a`
+- Built from commit: `77416b02`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -186,8 +186,8 @@ Cohesion: 0.15
 Nodes (12): Approach (Shared-Asset-First), Candidate Shared Fixes (Ordered by Likely Impact), Goals, Lighthouse Sweep Design (All Pages), Non-Goals, Outputs, Overview, Results (+4 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.15
-Nodes (11): chevron, children, d, focusable, group, iconPaths, items, navItems (+3 more)
+Cohesion: 0.17
+Nodes (10): chevron, children, d, focusable, group, iconPaths, items, navItems (+2 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.27
@@ -198,8 +198,8 @@ Cohesion: 0.06
 Nodes (29): bar, btn, id, relatedPosts, text, tocEntries, tocPercent, tocProgress (+21 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.18
-Nodes (6): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, milestones, target, pages
+Cohesion: 0.17
+Nodes (7): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, milestones, target, boardMembers, teamMembers
 
 ### Community 35 - "Community 35"
 Cohesion: 0.18
@@ -255,7 +255,7 @@ Nodes (3): benefits, jobs, whyStats
 
 ### Community 49 - "Community 49"
 Cohesion: 0.08
-Nodes (26): ../styles/global.css, amounts, canonicalURL, cursorGlow, dist, donationActions, dots, generateToastData() (+18 more)
+Nodes (25): amounts, canonicalURL, cursorGlow, dist, donationActions, dots, generateToastData(), heroSection (+17 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -290,7 +290,7 @@ Cohesion: 0.15
 Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (+3 more)
 
 ## Knowledge Gaps
-- **535 isolated node(s):** `canonicalURL`, `srMo`, `sheen`, `rect`, `mo` (+530 more)
+- **534 isolated node(s):** `canonicalURL`, `srMo`, `sheen`, `rect`, `mo` (+529 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -300,7 +300,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `../components/Footer.astro` connect `Community 34` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **What connects `canonicalURL`, `srMo`, `sheen` to the rest of the system?**
-  _570 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _569 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
