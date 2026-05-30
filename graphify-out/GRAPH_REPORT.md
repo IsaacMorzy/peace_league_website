@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 98 files · ~519,117 words
+- 99 files · ~519,386 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 916 nodes · 1022 edges · 79 communities (72 shown, 7 thin omitted)
+- 918 nodes · 1024 edges · 80 communities (72 shown, 8 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e505b68e`
+- Built from commit: `23fea5b4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,6 +40,7 @@
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
@@ -70,16 +71,16 @@
 - [[_COMMUNITY_Community 79|Community 79]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `../layouts/Layout.astro` - 57 edges
-2. `../components/Footer.astro` - 23 edges
-3. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
-4. `Peace League Africa — Architecture Documentation` - 12 edges
-5. `Lighthouse Sweep Design (All Pages)` - 12 edges
-6. `File Structure` - 11 edges
-7. `Components` - 10 edges
-8. `Backend API Module (api.py)` - 10 edges
-9. `../components/EventMap.astro` - 9 edges
-10. `apiCall()` - 9 edges
+1. `../components/Footer.astro` - 23 edges
+2. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
+3. `Peace League Africa — Architecture Documentation` - 12 edges
+4. `Lighthouse Sweep Design (All Pages)` - 12 edges
+5. `File Structure` - 11 edges
+6. `Components` - 10 edges
+7. `Backend API Module (api.py)` - 10 edges
+8. `../components/EventMap.astro` - 9 edges
+9. `apiCall()` - 9 edges
+10. `generate_test_data()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Donation` --uses--> `Donation`  [INFERRED]
@@ -93,7 +94,7 @@
 - `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (79 total, 7 thin omitted)
+## Communities (80 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -245,7 +246,7 @@ Nodes (3): benefits, jobs, whyStats
 
 ### Community 49 - "Community 49"
 Cohesion: 0.06
-Nodes (33): ../layouts/Layout.astro, ../styles/global.css, amounts, canonicalURL, cursorGlow, dist, donationActions, dots (+25 more)
+Nodes (32): ../styles/global.css, amounts, canonicalURL, cursorGlow, dist, donationActions, dots, generateToastData() (+24 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -282,13 +283,11 @@ Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (
 ## Knowledge Gaps
 - **541 isolated node(s):** `canonicalURL`, `srObserver`, `srMo`, `tiltCards`, `sheen` (+536 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../layouts/Layout.astro` connect `Community 49` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
 - **Why does `../components/Footer.astro` connect `Community 31` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 54`, `Community 55`, `Community 60`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `canonicalURL`, `srObserver`, `srMo` to the rest of the system?**
@@ -301,3 +300,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.07765151515151515 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.05187074829931973 - nodes in this community are weakly interconnected._
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._

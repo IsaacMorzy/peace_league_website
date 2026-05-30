@@ -182,9 +182,102 @@
     });
 
     // ══════════════════════════════════════════
-    // 6. HANDOFF LOGIC
-    // When user asks about specific topics, route to right agent
+    // 6. SMART AGENT RESPONSES
+    // Client-side AI agent with knowledge base
     // ══════════════════════════════════════════
+    var agentKnowledge = {
+      responses: {
+        donate: 'You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.com/donate. All donations are tax-deductible and 95% go directly to programs across 12 African countries.',
+        volunteer: 'Visit peaceleagueafrica.com/volunteer to apply. We welcome volunteers with skills in teaching, healthcare, communications, IT, and logistics across 12 countries.',
+        partner: 'We love partnerships! Visit peaceleagueafrica.com/partner or email partner@peaceleagueafrica.com. We work with NGOs, governments, corporates, and community organizations.',
+        events: 'Check out peaceleagueafrica.com/events for upcoming summits, workshops, and community gatherings. Most events are free or low-cost.',
+        countries: 'We operate in 12 African countries: Kenya, Uganda, Rwanda, Tanzania, Ethiopia, DRC, South Sudan, Somalia, Burundi, Mozambique, Madagascar, and Malawi.',
+        mission: 'Peace League Africa transforms conflict into hope across East Africa through peace education in 45+ schools, youth mentorship across 12 countries, and community reconciliation.',
+        contact: 'Reach us at: info@peaceleagueafrica.com, +254 700 000 000, Kenda House, Tom Mboya Street, Nairobi, Kenya.',
+        programs: 'Our programs: Peace Education (45+ schools), Youth Mentorship (1,200+ volunteers), Community Reconciliation, Healthcare Outreach, Clean Water Projects, Women Empowerment.',
+        impact: 'Our impact: 45+ schools, 12 countries, 1,200+ volunteers, 50,000+ lives transformed, 95% of donations go to programs.',
+        price: 'Events are typically free or low-cost. Special galas may have ticket prices. Check the specific event page.',
+        schedule: 'Events happen on weekends. Workshops 1-2 days, summits 2-3 days, community events single-day.',
+        age: 'Open to all ages! Youth programs target 12-25, community programs welcome everyone. Volunteers must be 18+.',
+        safety: 'Safety is our priority. We provide safety training, emergency contacts, and insurance for volunteers.',
+        donate_amount: 'Any amount helps! $50 trains a teacher, $25 provides clean water for a family, $500 launches a youth program.',
+        mpesa: 'M-Pesa: Lipa na M-Pesa, Business: 123456, Account: Your Phone, Amount: Your donation, Enter PIN.',
+        tax: 'All donations are tax-deductible. We are a registered nonprofit in Kenya. Receipts sent via email.',
+        corporate: 'Corporate packages: CSR programs, team building volunteer days, impact reports. Email partner@peaceleagueafrica.com.',
+        school: 'Peace Education works with 45+ schools across 8 countries. We train teachers, provide curriculum, facilitate peace clubs.',
+        healthcare: 'Healthcare Outreach provides medical camps, health education, emergency response in remote areas.',
+        water: 'Clean Water Projects: 100+ wells built, water purification systems, community training.',
+        women: 'Women Empowerment: microfinance, vocational training, leadership development for rural women.',
+        youth: 'Youth Mentorship: 12-month program focusing on leadership, conflict resolution, community service.',
+        hello: "Hello! I'm Peace Bot from Peace League Africa. How can I help you today?",
+        thanks: "You're welcome! Anything else I can help with?",
+        goodbye: "Thank you for your interest! Together we can build peace. Have a wonderful day!"
+      },
+      keywords: {
+        donate: 'donate|donation|give|giving|money|fund|mpesa|payment|contribute',
+        volunteer: 'volunteer|help|join|contribute|skills|opportunity',
+        partner: 'partner|partnership|collaborate|corporate|csr',
+        events: 'event|events|attend|register|upcoming|workshop|summit|conference',
+        countries: 'country|countries|where|operate|location',
+        mission: 'mission|vision|about|purpose|why|goal',
+        contact: 'contact|email|phone|reach|talk|speak|office',
+        programs: 'program|programs|what do you do|activities|initiatives',
+        impact: 'impact|results|achieve|difference|outcomes',
+        price: 'price|cost|ticket|fee|how much|expensive',
+        schedule: 'schedule|time|when|duration|how long|date',
+        age: 'age|old|young|children|kids|youth',
+        safety: 'safe|safety|security|health|emergency',
+        donate_amount: 'how much|amount|minimum|maximum',
+        mpesa: 'mpesa|lipa|m-pesa|mobile money',
+        tax: 'tax|receipt|deductible|deduction',
+        corporate: 'corporate|company|business|team building',
+        school: 'school|schools|education|teacher|curriculum',
+        healthcare: 'health|medical|hospital|clinic|doctor',
+        water: 'water|well|wells|clean water|sanitation',
+        women: 'women|woman|gender|empowerment|microfinance',
+        youth: 'youth|young|mentor|mentorship|leadership',
+        hello: 'hello|hi|hey|good morning|good afternoon',
+        thanks: 'thank|thanks|appreciate|grateful',
+        goodbye: 'bye|goodbye|see you|take care'
+      },
+      handoffTriggers: ['speak with a human', 'complicated', 'upset', 'frustrated', 'job', 'legal', 'complaint', 'refund']
+    };
+
+    window.Libredesk.onMessage && window.Libredesk.onMessage(function(msg) {
+      if (msg.sender === 'user') {
+        var text = msg.text.toLowerCase();
+        var response = null;
+        var shouldHandoff = false;
+
+        // Check handoff triggers
+        for (var i = 0; i < agentKnowledge.handoffTriggers.length; i++) {
+          if (text.includes(agentKnowledge.handoffTriggers[i])) {
+            shouldHandoff = true;
+            break;
+          }
+        }
+
+        // Find matching response
+        for (var key in agentKnowledge.keywords) {
+          if (new RegExp(agentKnowledge.keywords[key], 'i').test(text)) {
+            response = agentKnowledge.responses[key];
+            break;
+          }
+        }
+
+        if (!response) {
+          response = shouldHandoff ? "Let me connect you with a specialist who can help." : "I can help with donations, volunteering, events, and more. What would you like to know?";
+        }
+
+        if (shouldHandoff) {
+          window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+            type: 'handoff',
+            department: 'general',
+            reason: 'User needs human assistance'
+          });
+        }
+      }
+    });
     window.Libredesk.onUnreadCountChange && window.Libredesk.onUnreadCountChange(function(count) {
       // Update unread badge
       var badge = document.getElementById('chat-unread-badge');

@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/layouts/Layout.astro": {
-    "mtime": 1780107347.7827775,
-    "ast_hash": "15bf3f32132396cd95a60e149f178fae",
+    "mtime": 1780107512.4758239,
+    "ast_hash": "7e648597bb85c413f642181edaefe8c9",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/careers.astro": {
@@ -350,7 +350,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/types.d.ts": {
-    "mtime": 1780107369.4235158,
+    "mtime": 1780107529.1306307,
     "ast_hash": "f3d48b2aa569815a445d3509aa161559",
     "semantic_hash": ""
   },
@@ -360,7 +360,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/content.d.ts": {
-    "mtime": 1780107369.4225159,
+    "mtime": 1780107529.1306307,
     "ast_hash": "242c41d20fcda532f17f55cd1a0217bc",
     "semantic_hash": ""
   },
@@ -847,6 +847,11 @@
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/utumishi-fire.jpg": {
     "mtime": 1780088572.5130627,
     "ast_hash": "44782555d157cccc6bb1b69e1f54238c",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Libredesk.astro": {
+    "mtime": 1780107444.838616,
+    "ast_hash": "be689dd6ab4bf05dcf0b3689890e90b6",
     "semantic_hash": ""
   }
 }

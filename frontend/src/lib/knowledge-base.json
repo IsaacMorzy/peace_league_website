@@ -1,0 +1,125 @@
+{
+  "organization": {
+    "name": "Peace League Africa",
+    "tagline": "Building Peace Across Africa",
+    "website": "https://peaceleagueafrica.com",
+    "email": "info@peaceleagueafrica.com",
+    "phone": "+254 700 000 000",
+    "address": "Kenda House, Tom Mboya Street, Nairobi, Kenya",
+    "founded": "2015",
+    "countries": ["Kenya", "Uganda", "Rwanda", "Tanzania", "Ethiopia", "DRC", "South Sudan", "Somalia", "Burundi", "Mozambique", "Madagascar", "Malawi"],
+    "mission": "Transform conflict into hope across East Africa and the Great Lakes region through peace education, youth mentorship, and community reconciliation.",
+    "values": ["Peace", "Unity", "Hope", "Community", "Education", "Sustainability"]
+  },
+  "impact": {
+    "schools": "45+ school programs",
+    "countries": "12 countries",
+    "volunteers": "1,200+ volunteers",
+    "donationEfficiency": "95% of donations go to programs",
+    "livesChanged": "50,000+ lives transformed"
+  },
+  "programs": [
+    {
+      "name": "Peace Education",
+      "description": "Teaching conflict resolution and peace-building skills in schools across Africa.",
+      "icon": "📚",
+      "reach": "45+ schools in 8 countries"
+    },
+    {
+      "name": "Youth Mentorship",
+      "description": "Empowering young leaders with skills to build peace in their communities.",
+      "icon": "👥",
+      "reach": "1,200+ volunteers across 12 countries"
+    },
+    {
+      "name": "Community Reconciliation",
+      "description": "Bringing divided communities together through dialogue and understanding.",
+      "icon": "🤝",
+      "reach": "Active in 12 countries"
+    },
+    {
+      "name": "Healthcare Outreach",
+      "description": "Providing medical services to remote and conflict-affected areas.",
+      "icon": "🏥",
+      "reach": "50,000+ people served"
+    },
+    {
+      "name": "Clean Water Projects",
+      "description": "Building water wells and sanitation facilities in underserved communities.",
+      "icon": "💧",
+      "reach": "100+ wells built"
+    },
+    {
+      "name": "Women Empowerment",
+      "description": "Supporting women as peacebuilders and leaders in their communities.",
+      "icon": "👩",
+      "reach": "5,000+ women empowered"
+    }
+  ],
+  "events": {
+    "types": ["Summit", "Workshop", "Conference", "Community Event", "Gala", "Forum", "Dialogue"],
+    "frequency": "Monthly events across Africa",
+    "registration": "Free or low-cost, register at peaceleagueafrica.com/events"
+  },
+  "donation": {
+    "methods": ["M-Pesa", "Credit Card", "Bank Transfer", "PayPal"],
+    "minimum": "No minimum donation",
+    "taxDeductible": "Yes, in most countries",
+    "whereMoneyGoes": "95% directly to programs, 5% administration"
+  },
+  "contact": {
+    "general": "info@peaceleagueafrica.com",
+    "volunteer": "volunteer@peaceleagueafrica.com",
+    "partnerships": "partner@peaceleagueafrica.com",
+    "media": "press@peaceleagueafrica.com",
+    "emergency": "+254 700 000 000"
+  },
+  "team": {
+    "executiveDirector": "Available via contact form",
+    "board": "12 members from across Africa",
+    "staff": "50+ full-time staff"
+  },
+  "faq": [
+    {
+      "question": "How can I donate?",
+      "answer": "You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.com/donate. All donations are tax-deductible."
+    },
+    {
+      "question": "How can I volunteer?",
+      "answer": "Visit peaceleagueafrica.com/volunteer to apply. We welcome volunteers with skills in teaching, healthcare, communications, IT, and logistics."
+    },
+    {
+      "question": "Where does my money go?",
+      "answer": "95% of donations go directly to our programs across 12 African countries. Only 5% covers administrative costs."
+    },
+    {
+      "question": "Can I partner with Peace League Africa?",
+      "answer": "Yes! Visit peaceleagueafrica.com/partner or email partner@peaceleagueafrica.com to discuss partnership opportunities."
+    },
+    {
+      "question": "How can I attend an event?",
+      "answer": "Visit peaceleagueafrica.com/events to see upcoming events and register. Most events are free or low-cost."
+    },
+    {
+      "question": "What countries do you operate in?",
+      "answer": "We operate in 12 African countries: Kenya, Uganda, Rwanda, Tanzania, Ethiopia, DRC, South Sudan, Somalia, Burundi, Mozambique, Madagascar, and Malawi."
+    }
+  ],
+  "handoff_triggers": [
+    "user asks for specific financial details",
+    "user wants to speak with a human",
+    "conversation becomes complex",
+    "user is upset or frustrated",
+    "user asks about job applications",
+    "user wants custom partnership terms",
+    "user asks about legal or compliance issues"
+  ],
+  "agent_personality": {
+    "name": "Peace Bot",
+    "role": "Peace League Africa Virtual Assistant",
+    "tone": "Warm, helpful, professional, passionate about peace",
+    "greeting": "Hello! I'm Peace Bot, here to help you learn about Peace League Africa and how you can join our mission to build peace across Africa. How can I assist you today?",
+    "fallback": "I'd love to help with that! For more detailed information, let me connect you with one of our team members who can provide specific guidance.",
+    "handoff_message": "Let me connect you with a specialist who can help you better. Please hold for a moment while I transfer you."
+  }
+}
