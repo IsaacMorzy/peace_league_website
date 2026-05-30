@@ -239,12 +239,16 @@ const FLAG_COUNTRIES = [
       </div>
     </div>
   </div>
-  <!-- Footer hearts - two colors, small and subtle -->
-  <span class="motion-decor heart-rise" style="left:12%;bottom:5%;animation-delay:0.5s;font-size:0.65rem;color:var(--color-accent);opacity:0.35;">&#x2764;</span>
-  <span class="motion-decor heart-rise" style="left:30%;bottom:8%;animation-delay:1.5s;font-size:0.55rem;color:var(--color-accent-warm);opacity:0.3;">&#x2764;</span>
-  <span class="motion-decor heart-rise" style="left:50%;bottom:3%;animation-delay:2.5s;font-size:0.7rem;color:var(--color-accent);opacity:0.4;">&#x2764;</span>
-  <span class="motion-decor heart-rise" style="left:70%;bottom:9%;animation-delay:3.5s;font-size:0.5rem;color:var(--color-accent-warm);opacity:0.25;">&#x2764;</span>
-  <span class="motion-decor heart-rise" style="left:88%;bottom:6%;animation-delay:4.5s;font-size:0.6rem;color:var(--color-accent);opacity:0.35;">&#x2764;</span>
+  <!-- ── HYPNOTIC HEARTS: Two colors floating from footer to top ──
+       These hearts emerge from the footer and rise all the way to the
+       page header, swaying gently like autumn leaves on a thermal draft.
+       Warm amber ♥ and cool teal ♥ — meditation in motion. -->
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:0;">
+    <span class="footer-hypnotic-heart footer-hypnotic-heart--warm" style="left:10%;bottom:8%;font-size:0.65rem;--heart-dur:34s;animation-delay:0.5s;">&#x2764;</span>
+    <span class="footer-hypnotic-heart footer-hypnotic-heart--cool" style="left:35%;bottom:12%;font-size:0.55rem;--heart-dur:42s;animation-delay:2s;">&#x2764;</span>
+    <span class="footer-hypnotic-heart footer-hypnotic-heart--warm" style="left:65%;bottom:6%;font-size:0.6rem;--heart-dur:38s;animation-delay:1s;">&#x2764;</span>
+    <span class="footer-hypnotic-heart footer-hypnotic-heart--cool" style="left:88%;bottom:10%;font-size:0.5rem;--heart-dur:46s;animation-delay:3s;">&#x2764;</span>
+  </div>
 </footer>
 
 <script>

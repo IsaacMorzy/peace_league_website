@@ -13,133 +13,269 @@ export function getStaticPaths() {
 
 const { post } = Astro.props;
 
+// ── Parse table of contents from HTML content ──
+const headingRegex = /<h(?<level>[23])\s*[^>]*?id="(?<id>[^"]*)"[^>]*>(?<text>.*?)<\/h\1>/gs;
+const tocFallback = /<h(?<level>[23])[^>]*>(?<text>.*?)<\/h\1>/gs;
+
+// First try with IDs, then fallback
+let tocEntries = [];
+let match;
+const idRegex = /<h(?<level>[23])\s*[^>]*?id="([^"]*)"[^>]*>(.*?)<\/h\1>/gs;
+
+while ((match = idRegex.exec(post.content)) !== null) {
+  tocEntries.push({
+    level: parseInt(match[1]),
+    id: match[2],
+    text: match[3].replace(/<[^>]*>/g, ''),
+  });
+}
+
+// Fallback: no IDs found, generate from text
+if (tocEntries.length === 0) {
+  const fallbackRegex = /<h(?<level>[23])[^>]*>(?<text>.*?)<\/h\1>/gs;
+  while ((match = fallbackRegex.exec(post.content)) !== null) {
+    const text = match.groups.text.replace(/<[^>]*>/g, '');
+    const id = text
+      .toLowerCase()
+      .replace(/<[^>]*>/g, '')
+      .replace(/&[^;]+;/g, '')
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+    tocEntries.push({ level: parseInt(match.groups.level), id, text });
+  }
+}
+
+const hasToc = tocEntries.length >= 2;
+
 const relatedPosts = posts
   .filter((p) => p.category === post.category && p.slug !== post.slug)
-  .slice(0, 6);
+  .slice(0, 3);
 ---
 
 <Layout title={post.title} description={post.description} image={post.image}>
   <Navigation />
 
-  <!-- Reading Progress Bar -->
-  <div id="reading-progress" class="fixed top-0 left-0 w-full h-1 bg-hairline z-[999]">
-    <div id="reading-bar" class="h-full bg-accent transition-all duration-150" style="width: 0%"></div>
-  </div>
-
   <main id="main-content">
-    <!-- Hero -->
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
+    <!-- ── HERO: Image-As-Background ── -->
+    <section class="relative pt-20 pb-12 md:pb-16 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={post.image} alt="" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20"></div>
+      </div>
+      <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E&quot;); background-size: 256px 256px;"></div>
 
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="scroll-reveal">
-          <a href="/blog" class="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white transition-colors mb-6">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            Back to Blog
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-20">
+        <div>
+          <a href="/blog" class="inline-flex items-center gap-1.5 text-sm text-white/60 hover:text-white transition-colors mb-6 group">
+            <svg class="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Back to all articles
           </a>
-          <span class="inline-block px-3 py-1 text-xs font-semibold bg-accent btn-text-contrast rounded-full mb-4">{post.category}</span>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight">{post.title}</h1>
-          <div class="flex flex-wrap items-center gap-4 text-sm text-white/70 mt-6">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-semibold text-sm">
-                {post.author.split(' ').map(n => n[0]).join('').slice(0, 2)}
-              </div>
-              <div>
-                <p class="text-white font-medium">{post.author}</p>
-                <p class="text-white/60 text-xs">{post.authorRole}</p>
-              </div>
-            </div>
-            <span class="hidden sm:inline text-white/30">&middot;</span>
+          <div class="flex flex-wrap items-center gap-3 text-xs font-medium text-white/70 mb-4">
+            <span class="px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-white font-semibold border border-white/10">{post.category}</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
             <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-            <span class="text-white/30">&middot;</span>
-            <span>{post.readTime}</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              {post.readTime}
+            </span>
           </div>
-        </div>
-      </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
-      </div>
-          <!-- Sparkle particles -->
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <span class="animate-particle" style="left:10%;bottom:5%;width:4px;height:4px;border-radius:50%;background:var(--color-accent);animation-delay:1s;"></span>
-        <span class="animate-particle--fast" style="left:25%;bottom:10%;width:3px;height:3px;border-radius:50%;background:var(--color-accent-soft);animation-delay:0.3s;"></span>
-        <span class="animate-particle--glow" style="left:50%;bottom:0;color:var(--color-accent);animation-delay:2s;font-size:1.2rem;">&#x2726;</span>
-        <span class="animate-particle" style="left:75%;bottom:8%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:1.5s;opacity:0.3;"></span>
-        <span class="animate-particle--fast" style="left:90%;bottom:5%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:2.5s;"></span>
-      </div>
-</section>
-
-    <!-- Featured Image -->
-    <section class="py-8">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="scroll-reveal rounded-2xl overflow-hidden shadow-lg">
-          <img src={post.image.replace('?w=800&q=80&auto=format&fit=crop', '?w=1400&q=85&auto=format&fit=crop')} alt={post.title} class="w-full h-[400px] md:h-[500px] object-cover" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Article Content -->
-    <section class="py-8 pb-16">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <article set:html={post.content} class="scroll-reveal article-content"></article>
-
-        <!-- Share & Tags -->
-        <div class="mt-12 pt-8 border-t border-hairline">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div class="flex items-center gap-3">
-              <span class="text-sm font-medium text-ink">Share:</span>
-              <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://peaceleagueafrica.org/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-surface text-steel hover:bg-accent hover:text-on-dark transition-colors flex items-center justify-center" aria-label="Share on Twitter">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://peaceleagueafrica.org/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-surface text-steel hover:bg-accent hover:text-on-dark transition-colors flex items-center justify-center" aria-label="Share on Facebook">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </a>
-              <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://peaceleagueafrica.org/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-surface text-steel hover:bg-accent hover:text-on-dark transition-colors flex items-center justify-center" aria-label="Share on LinkedIn">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </a>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight max-w-4xl">
+            {post.title}
+          </h1>
+          {post.description && (
+            <p class="mt-4 text-lg text-white/70 max-w-2xl leading-relaxed">{post.description}</p>
+          )}
+          <div class="flex items-center gap-4 mt-8 pt-6 border-t border-white/10">
+            <div class="w-11 h-11 rounded-full bg-white/15 flex items-center justify-center text-white font-bold text-sm backdrop-blur-sm border border-white/10">
+              {post.author.split(' ').map(n => n[0]).join('').slice(0, 2)}
             </div>
-            <span class="text-xs text-steel">#{post.category.toLowerCase().replace(/\s+/g, '')}</span>
+            <div>
+              <p class="text-white font-semibold text-sm">{post.author}</p>
+              <p class="text-white/50 text-xs">{post.authorRole}</p>
+            </div>
+            <div class="ml-auto flex items-center gap-2">
+              <button id="tts-btn" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white/80 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/20 hover:text-white transition-all duration-300 active:scale-[0.97]" aria-label="Listen to this article">
+                <svg id="tts-icon-play" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg id="tts-icon-pause" class="w-3.5 h-3.5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span id="tts-label">Listen</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Author Bio -->
-    <section class="py-12 bg-surface border-t-2 border-transparent" style="border-image: linear-gradient(90deg, var(--color-accent), transparent) 1;">
+    <!-- ── READING PROGRESS BAR ── -->
+    <div id="reading-progress" class="fixed top-0 left-0 w-full h-[3px] z-[999] pointer-events-none">
+      <div id="reading-bar" class="h-full bg-gradient-to-r from-accent via-accent-soft to-accent-warm transition-all duration-100 ease-out" style="width: 0%"></div>
+    </div>
+
+    <!-- ── FLOATING SHARE BAR (desktop) ── -->
+    <div id="share-bar" class="hidden xl:flex fixed left-[max(0px,calc(50%-720px))] top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-3 transition-all duration-500" style="margin-left: -60px;">
+      <span class="text-[10px] font-semibold text-muted uppercase tracking-[0.2em] mb-4">Share</span>
+      <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://peaceleagueafrica.com/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-canvas border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md" aria-label="Share on X">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://peaceleagueafrica.com/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-canvas border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md" aria-label="Share on Facebook">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://peaceleagueafrica.com/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-canvas border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md" aria-label="Share on LinkedIn">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <button id="copy-link-btn" class="w-9 h-9 rounded-full bg-canvas border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md cursor-pointer" aria-label="Copy link">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+      </button>
+    </div>
+
+    <!-- ── ARTICLE LAYOUT (with optional TOC) ── -->
+    <section class="py-10 md:py-14" id="article-section">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="flex gap-10 lg:gap-14 xl:gap-16">
+          <!-- ── TABLE OF CONTENTS (left sidebar, desktop) ── -->
+          {hasToc && (
+            <aside id="toc-column" class="hidden lg:block w-[220px] xl:w-[260px] shrink-0">
+              <div id="toc-sticky" class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+                <nav class="border-l-2 border-hairline pl-5 py-2">
+                  <p class="text-[11px] font-bold text-muted uppercase tracking-[0.15em] mb-4">On this page</p>
+                  <ul class="space-y-1.5">
+                    {tocEntries.map((entry, i) => (
+                      <li style={`padding-left: ${(entry.level - 2) * 12}px`}>
+                        <a
+                          href={`#${entry.id}`}
+                          class="toc-link block text-sm leading-snug py-1 text-muted hover:text-accent transition-colors duration-200 border-l-2 -ml-[21px] pl-4 border-transparent hover:border-accent/50"
+                          data-toc-id={entry.id}
+                        >
+                          {entry.level === 3 ? (
+                            <span class="text-xs font-normal">{entry.text}</span>
+                          ) : (
+                            <span class="text-sm font-medium text-ink/70 hover:text-ink">{entry.text}</span>
+                          )}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+                <!-- Progress indicator -->
+                <div class="mt-6 ml-5">
+                  <div class="text-[11px] font-bold text-muted uppercase tracking-[0.15em] mb-2">Reading</div>
+                  <div class="w-full h-1.5 bg-surface rounded-full overflow-hidden">
+                    <div id="toc-progress" class="h-full bg-accent rounded-full transition-all duration-150" style="width: 0%"></div>
+                  </div>
+                  <p id="toc-percent" class="text-xs text-muted mt-1">0%</p>
+                </div>
+              </div>
+            </aside>
+          )}
+
+          <!-- ── MAIN ARTICLE ── -->
+          <div class={`min-w-0 flex-1 ${hasToc ? '' : 'max-w-3xl mx-auto'}`}>
+            <article set:html={post.content} class="article-content"></article>
+
+            <!-- ── BOTTOM METADATA ── -->
+            <div class="mt-14 pt-8 border-t border-hairline flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-semibold text-muted uppercase tracking-wider">Topic:</span>
+                <span class="px-3 py-1 text-xs font-semibold bg-accent/10 text-accent rounded-full">{post.category}</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-muted">
+                <span>Published {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <span class="w-1 h-1 rounded-full bg-hairline"></span>
+                <span>{post.readTime}</span>
+              </div>
+            </div>
+
+            <!-- ── MOBILE SHARE (below article) ── -->
+            <div class="mt-8 pt-6 border-t border-hairline lg:hidden">
+              <span class="text-xs font-semibold text-muted uppercase tracking-wider block mb-3">Share this article</span>
+              <div class="flex items-center gap-2.5">
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://peaceleagueafrica.com/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-surface border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white transition-colors" aria-label="Share on X">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://peaceleagueafrica.com/blog/${post.slug}`)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-surface border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white transition-colors" aria-label="Share on Facebook">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://peaceleagueafrica.com/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-surface border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white transition-colors" aria-label="Share on LinkedIn">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <button id="copy-link-mobile" class="w-9 h-9 rounded-full bg-surface border border-hairline flex items-center justify-center text-steel hover:bg-accent hover:text-white transition-colors cursor-pointer" aria-label="Copy link">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ── MOBILE TOC ── -->
+            {hasToc && (
+              <div class="mt-8 pt-6 border-t border-hairline lg:hidden">
+                <details class="group">
+                  <summary class="flex items-center gap-2 text-sm font-bold text-ink cursor-pointer list-none">
+                    <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    On this page
+                    <svg class="w-4 h-4 ml-auto transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  </summary>
+                  <ul class="mt-3 space-y-1.5 pl-2">
+                    {tocEntries.map((entry) => (
+                      <li style={`padding-left: ${(entry.level - 2) * 12}px`}>
+                        <a href={`#${entry.id}`} class="block text-sm text-steel hover:text-accent py-1 transition-colors">
+                          {entry.level === 3 ? <span class="text-xs">{entry.text}</span> : <span>{entry.text}</span>}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AUTHOR SECTION ── -->
+    <section class="py-12 bg-surface border-y border-hairline">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="scroll-reveal flex items-start gap-6">
-          <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-xl shrink-0 ring-2 ring-accent/20">
+        <div class="flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center text-accent font-bold text-xl shrink-0 ring-2 ring-accent/10">
             {post.author.split(' ').map(n => n[0]).join('').slice(0, 2)}
           </div>
-          <div>
-            <h3 class="text-xl font-semibold text-ink">{post.author}</h3>
-            <p class="text-sm text-steel mb-3">{post.authorRole}</p>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <h3 class="text-lg font-bold text-ink">{post.author}</h3>
+              <span class="text-xs text-muted bg-canvas px-2.5 py-0.5 rounded-full border border-hairline">{post.authorRole}</span>
+            </div>
             <p class="text-sm text-steel leading-relaxed">Peace League Africa correspondent with years of experience covering peace-building, community development, and humanitarian efforts across the African continent.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Related Posts -->
+    <!-- ── RELATED POSTS ── -->
     {relatedPosts.length > 0 && (
-      <section class="py-12">
+      <section class="py-14 md:py-18">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="scroll-reveal text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink mb-8">Related Articles</h2>
-          <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin -mx-4 px-4">
-            {relatedPosts.map((rp, idx) => (
-              <a href={`/blog/${rp.slug}`} class="scroll-reveal group block bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg snap-start min-w-[280px] w-[300px] shrink-0" style={`animation-delay: ${idx * 80}ms`}>
-                <div class="relative overflow-hidden h-44">
-                  <img src={rp.image} alt={rp.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                  <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold bg-accent btn-text-contrast rounded-full shadow-lg backdrop-blur-sm">{rp.category}</span>
+          <div class="mb-8">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-2">
+              <span class="w-6 h-px bg-accent"></span> Continue Reading
+            </span>
+            <h2 class="text-2xl md:text-3xl font-bold text-ink leading-tight">More in {post.category}</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {relatedPosts.slice(0, 3).map((rp) => (
+              <a href={`/blog/${rp.slug}`} class="group relative bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-accent/25">
+                <div class="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-accent/0 to-transparent group-hover:via-accent/60 transition-all duration-700"></div>
+                <div class="relative overflow-hidden aspect-[16/9]">
+                  <img src={rp.image} alt={rp.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                  <span class="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-bold bg-white/90 text-ink rounded-full shadow-lg backdrop-blur-sm border border-white/20">{rp.category}</span>
                 </div>
                 <div class="p-5">
-                  <h3 class="text-base font-semibold text-ink mb-2 leading-snug line-clamp-2 group-hover:text-accent transition-colors">{rp.title}</h3>
-                  <p class="text-xs text-steel">{new Date(rp.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  <div class="flex items-center gap-2 text-xs text-steel mb-2.5">
+                    <span>{new Date(rp.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                    <span class="w-1 h-1 rounded-full bg-hairline"></span>
+                    <span>{rp.readTime}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-ink leading-snug line-clamp-2 group-hover:text-accent transition-colors duration-300">{rp.title}</h3>
                 </div>
               </a>
             ))}
@@ -148,167 +284,305 @@ const relatedPosts = posts
       </section>
     )}
 
+    <!-- ── NEWSLETTER ── -->
+    <section class="py-16 md:py-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-accent/[0.03] via-transparent to-transparent pointer-events-none"></div>
+      <div class="max-w-2xl mx-auto text-center px-4 relative">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-3">
+          <span class="w-6 h-px bg-accent"></span> Stay Inspired
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-ink leading-tight mb-3">Never Miss a Story</h2>
+        <p class="text-base text-steel max-w-lg mx-auto mb-8 leading-relaxed">Subscribe to our newsletter and get stories of hope and impact delivered to your inbox every month.</p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter" class="flex-1 px-4 py-3 text-sm bg-canvas border border-hairline rounded-xl text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all" />
+          <button type="submit" class="px-7 py-3 text-sm font-semibold bg-primary text-on-primary rounded-xl hover:bg-charcoal transition-all duration-300 shadow-md whitespace-nowrap active:scale-[0.98] cursor-pointer">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
     <!-- Back to Top -->
-    <div class="flex justify-center pb-8">
-      <button id="back-to-top" class="w-12 h-12 rounded-full bg-primary text-on-dark shadow-lg hover:bg-charcoal transition-all duration-300 hover:-translate-y-1 flex items-center justify-center" aria-label="Back to top">
+    <div class="flex justify-center pb-8 pt-4">
+      <button id="back-to-top" class="w-11 h-11 rounded-full bg-canvas border border-hairline text-steel hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 hover:-translate-y-1 shadow-sm flex items-center justify-center cursor-pointer" aria-label="Back to top">
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
       </button>
     </div>
-
-    <!-- Newsletter CTA -->
-    <section class="py-12 bg-accent/5">
-      <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="scroll-reveal text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Never Miss a Story</h2>
-        <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-12">Subscribe to our newsletter and get stories of hope and impact delivered to your inbox every month.</p>
-        <form class="scroll-reveal flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST" aria-describedby="newsletter-status-post">
-          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter" class="flex-1 px-4 py-3 text-sm bg-canvas border border-hairline rounded-lg text-ink placeholder:text-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
-          <button type="submit" class="px-6 py-3 text-sm font-medium bg-primary text-on-dark rounded-full hover:bg-charcoal transition-colors shadow-md whitespace-nowrap min-h-[44px]">Get Updates</button>
-        </form>
-        <p id="newsletter-status-post" role="status" aria-live="polite" class="mt-3 text-sm text-steel hidden"></p>
-      </div>
-    </section>
   </main>
 
   <Footer />
 </Layout>
 
-<style>
+<style is:global>
+  /* ════════════════════════════════════════════
+     MODERN READABILITY-FIRST TYPOGRAPHY
+     ════════════════════════════════════════════ */
+
   .article-content {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--color-ink);
+    font-size: 1.2rem;        /* 19.2px — generous base */
+    line-height: 1.85;
+    color: #2c2c2e;           /* slightly softer than pure black */
     max-width: none;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
+  .dark .article-content {
+    color: #f0ece4;
+    font-weight: 420;
+  }
+
+  .dark #article-section {
+    background: #000000;
+  }
+
+  /* ── Elegant drop cap ── */
   .article-content > p:first-of-type::first-letter {
-    font-size: 4em;
+    font-size: 4.8em;
     float: left;
     line-height: 0.8;
-    padding-right: 12px;
-    padding-top: 4px;
-    font-weight: 700;
+    padding-right: 16px;
+    padding-top: 8px;
+    font-weight: 800;
     color: var(--color-accent);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    letter-spacing: -0.03em;
   }
 
+  /* ── Section headings ── */
   .article-content h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-top: 2.5rem;
+    font-size: 1.85rem;
+    font-weight: 750;
+    margin-top: 3rem;
     margin-bottom: 1rem;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
     color: var(--color-ink);
+    scroll-margin-top: 80px;
+  }
+
+  .dark .article-content h2 {
+    color: #fffcf5;
+    font-weight: 800;
+  }
+
+  .dark .article-content h3 {
+    color: #fffcf5;
+    font-weight: 700;
   }
 
   .article-content h3 {
-    font-size: 1.375rem;
-    font-weight: 600;
-    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 650;
+    margin-top: 2.5rem;
     margin-bottom: 0.75rem;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
     color: var(--color-ink);
+    scroll-margin-top: 80px;
   }
 
+  /* ── Paragraphs ── */
   .article-content p {
-    margin-bottom: 1.5rem;
-    color: var(--color-steel);
-    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    color: inherit;
+    line-height: 1.85;
+  }
+
+  .dark .article-content p {
+    font-weight: 440;
+    letter-spacing: 0.01em;
+    color: #f2ede5;
+  }
+
+  /* Paragraph spacing — clean spacing only */
+  .article-content p + p {
+    margin-top: -0.2rem;
   }
 
   .article-content strong {
     color: var(--color-ink);
-    font-weight: 600;
+    font-weight: 650;
+  }
+
+  .dark .article-content strong {
+    color: #fffaf0;
+    font-weight: 700;
   }
 
   .article-content em {
-    color: var(--color-accent);
+    color: var(--color-accent-deep);
+    font-style: italic;
   }
 
+  .dark .article-content em {
+    color: #7df0d0;
+  }
+
+  /* ── Links ── */
   .article-content a {
-    color: var(--color-accent);
+    color: var(--color-accent-deep);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+    font-weight: 500;
   }
 
   .article-content a:hover {
     border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
+  .dark .article-content a {
+    color: #7df0d0;
+    font-weight: 550;
+  }
+
+  .dark .article-content a:hover {
+    color: #5cebc5;
+    border-bottom-color: #7df0d0;
+  }
+
+  /* ── Lists ── */
   .article-content ul,
   .article-content ol {
-    color: var(--color-steel);
+    color: inherit;
     margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
   }
 
   .article-content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.75;
+  }
+
+  .dark .article-content li {
+    color: #f2ede5;
   }
 
   .article-content ul li::marker {
     color: var(--color-accent);
   }
 
-  .article-content blockquote {
-    border-left: 4px solid var(--color-accent);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    font-style: italic;
-    font-size: 1.125rem;
-    color: var(--color-ink);
-    background: var(--color-surface);
-    border-radius: 0 12px 12px 0;
+  .dark .article-content ul,
+  .dark .article-content ol {
+    color: #f2ede5;
   }
 
+  /* ── Blockquotes ── */
+  .article-content blockquote {
+    border-left: 4px solid var(--color-accent);
+    padding: 1.5rem 2rem;
+    margin: 2.25rem 0;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--color-ink);
+    background: var(--color-surface);
+    border-radius: 0 16px 16px 0;
+    font-weight: 420;
+    position: relative;
+  }
+
+  .dark .article-content blockquote {
+    background: rgba(0, 212, 164, 0.08);
+    border-left-color: #7df0d0;
+    color: #f2ede5;
+  }
+
+  .article-content blockquote::before {
+    content: '“';
+    position: absolute;
+    top: -4px;
+    left: 12px;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-accent);
+    opacity: 0.25;
+    font-family: Georgia, serif;
+  }
+
+  .article-content blockquote p {
+    margin-bottom: 0;
+    color: inherit;
+  }
+
+  /* ── Images ── */
   .article-content img {
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin: 2rem 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin: 2.5rem 0;
     width: 100%;
     height: auto;
+  }
+
+  .dark .article-content img {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ── Image caption override (handles hardcoded inline color: #666) ── */
+  .dark .article-content div[style*="border-radius: 12px"] {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .dark .article-content p[style*="color: #666"] {
+    color: #c8c0b0 !important;
   }
 
   .article-content img + em {
     display: block;
     text-align: center;
-    font-size: 0.875rem;
-    color: var(--color-steel);
-    margin-top: -1rem;
-    margin-bottom: 2rem;
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin-top: -1.5rem;
+    margin-bottom: 2.5rem;
     font-style: italic;
   }
 
+  /* ── Code ── */
   .article-content pre {
-    background: var(--color-surface);
+    background: #1c1c1e;
     border: 1px solid var(--color-hairline);
-    border-radius: 12px;
-    padding: 1.25rem;
+    border-radius: 14px;
+    padding: 1.5rem;
     overflow-x: auto;
     margin: 1.5rem 0;
     font-size: 0.875rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: #e5e5e5;
+  }
+
+  .dark .article-content pre {
+    background: #1a1a1a;
+    border-color: rgba(255,255,255,0.06);
+    color: #e8e4dc;
   }
 
   .article-content code {
-    font-size: 0.875em;
+    font-size: 0.85em;
     background: var(--color-surface);
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-    font-family: 'Geist Mono', 'Fira Code', monospace;
+    padding: 0.2em 0.5em;
+    border-radius: 6px;
+    font-family: 'Geist Mono', 'Fira Code', 'Consolas', monospace;
+    color: var(--color-ink);
+  }
+
+  .dark .article-content code {
+    background: rgba(255,255,255,0.08);
+    color: #e8e4dc;
   }
 
   .article-content pre code {
     background: none;
     padding: 0;
     border-radius: 0;
+    color: inherit;
   }
 
   .article-content hr {
     border: none;
     border-top: 1px solid var(--color-hairline);
-    margin: 2.5rem 0;
+    margin: 3rem 0;
   }
 
   .article-content table {
@@ -332,37 +606,207 @@ const relatedPosts = posts
   }
 
   .article-content td {
-    color: var(--color-steel);
+    color: inherit;
   }
 
-  .scrollbar-thin::-webkit-scrollbar {
-    height: 6px;
+  /* ── TOC active link style ── */
+  .toc-link.active {
+    color: var(--color-accent) !important;
+    border-left-color: var(--color-accent) !important;
+    font-weight: 600;
   }
 
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
+  .toc-link.active span {
+    color: var(--color-accent-deep) !important;
   }
 
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: var(--color-hairline);
-    border-radius: 3px;
+  .dark .toc-link {
+    color: #9e9ea2;
   }
 
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: var(--color-steel);
+  .dark .toc-link:hover {
+    color: #6ee6c4 !important;
+  }
+
+  .dark .toc-link.active {
+    color: #6ee6c4 !important;
+    border-left-color: #6ee6c4 !important;
+  }
+
+  .dark .toc-link.active span {
+    color: #6ee6c4 !important;
+  }
+
+  .dark .toc-link span {
+    color: #7e7e82 !important;
+  }
+
+  .dark .toc-link.active span {
+    color: #ffffff !important;
+  }
+
+  /* ── Scrollbar for TOC ── */
+  #toc-sticky::-webkit-scrollbar { width: 3px; }
+  #toc-sticky::-webkit-scrollbar-track { background: transparent; }
+  #toc-sticky::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 3px; }
+
+  /* ── Responsive adjustments ── */
+  @media (max-width: 1023px) {
+    .article-content { font-size: 1.125rem; }
+  }
+
+  @media (max-width: 639px) {
+    .article-content { font-size: 1rem; }
+    .article-content > p:first-of-type::first-letter {
+      font-size: 3.4em;
+      padding-right: 10px;
+      padding-top: 4px;
+    }
+    .article-content h2 { font-size: 1.5rem; }
+    .article-content h3 { font-size: 1.2rem; }
   }
 </style>
 
 <script>
+  // ── READING PROGRESS ──
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     const bar = document.getElementById('reading-bar');
-    if (bar) bar.style.width = progress + '%';
-  });
+    if (bar) bar.style.width = Math.min(progress, 100) + '%';
 
+    // TOC progress indicator
+    const tocProgress = document.getElementById('toc-progress');
+    const tocPercent = document.getElementById('toc-percent');
+    if (tocProgress) tocProgress.style.width = Math.min(progress, 100) + '%';
+    if (tocPercent) tocPercent.textContent = Math.round(progress) + '%';
+  }, { passive: true });
+
+  // ── SCROLLSPY: Highlight current TOC section ──
+  const tocLinks = document.querySelectorAll('.toc-link');
+  if (tocLinks.length > 0) {
+    const headings = [...tocLinks].map(link => {
+      const id = link.getAttribute('data-toc-id');
+      return id ? document.getElementById(id) : null;
+    }).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tocLinks.forEach(link => {
+            const isActive = link.getAttribute('data-toc-id') === id;
+            link.classList.toggle('active', isActive);
+          });
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // ── BACK TO TOP ──
   document.getElementById('back-to-top')?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // ── COPY LINK ──
+  function setupCopy(btnId) {
+    document.getElementById(btnId)?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const btn = document.getElementById(btnId);
+        const original = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        btn.style.borderColor = 'var(--color-accent)';
+        setTimeout(() => { btn.innerHTML = original; btn.style.borderColor = ''; }, 2000);
+      } catch { /* ignore */ }
+    });
+  }
+  setupCopy('copy-link-btn');
+  setupCopy('copy-link-mobile');
+
+  // ── SHARE BAR FADE ──
+  const shareBar = document.getElementById('share-bar');
+  if (shareBar) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          shareBar.classList.toggle('opacity-0', scrollY < 400);
+          shareBar.classList.toggle('pointer-events-none', scrollY < 400);
+          shareBar.classList.toggle('opacity-100', scrollY >= 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+    shareBar.classList.add('opacity-0', 'pointer-events-none');
+  }
+</script>
+
+<script>
+  // ── TEXT-TO-SPEECH (Listen button) ──
+  var ttsBtn = document.getElementById('tts-btn');
+  if (ttsBtn && 'speechSynthesis' in window) {
+    var ttsPlay = document.getElementById('tts-icon-play');
+    var ttsPause = document.getElementById('tts-icon-pause');
+    var ttsLabel = document.getElementById('tts-label');
+
+    if (ttsPlay && ttsPause && ttsLabel) {
+      ttsBtn.addEventListener('click', function ttsToggle() {
+        if (window.speechSynthesis.speaking) {
+          if (window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+            ttsPlay.classList.add('hidden');
+            ttsPause.classList.remove('hidden');
+            ttsLabel.textContent = 'Pause';
+          } else {
+            window.speechSynthesis.pause();
+            ttsPlay.classList.remove('hidden');
+            ttsPause.classList.add('hidden');
+            ttsLabel.textContent = 'Resume';
+          }
+          return;
+        }
+
+        // Extract article text
+        var art = document.querySelector('.article-content');
+        if (!art) return;
+        var clone = art.cloneNode(true);
+        clone.querySelectorAll('pre, code, img, svg, [style]').forEach(function(el) { el.remove(); });
+        var text = (clone.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!text) return;
+
+        window.speechSynthesis.cancel();
+
+        var utter = new SpeechSynthesisUtterance(text);
+        utter.rate = 0.92;
+        utter.pitch = 1;
+        utter.volume = 1;
+
+        utter.onstart = function() {
+          ttsPlay.classList.add('hidden');
+          ttsPause.classList.remove('hidden');
+          ttsLabel.textContent = 'Pause';
+        };
+        utter.onend = function() {
+          ttsPlay.classList.remove('hidden');
+          ttsPause.classList.add('hidden');
+          ttsLabel.textContent = 'Listen';
+        };
+        utter.onerror = function(e) {
+          if (e.error !== 'canceled' && e.error !== 'interrupted') {
+            ttsPlay.classList.remove('hidden');
+            ttsPause.classList.add('hidden');
+            ttsLabel.textContent = 'Listen';
+          }
+        };
+
+        window.speechSynthesis.speak(utter);
+      });
+    }
+  }
 </script>

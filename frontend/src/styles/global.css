@@ -1618,12 +1618,17 @@ a:active {
 }
 
 @keyframes dove-float {
-  0% { transform: translate3d(-60px, 0, 0) scale(0.8); opacity: 0; }
-  15% { opacity: 0.12; }
-  35% { transform: translate3d(15vw, -15vh, 0) scale(1.1); opacity: 0.1; }
-  55% { transform: translate3d(45vw, -35vh, 0) scale(0.85); opacity: 0.08; }
-  75% { transform: translate3d(75vw, -45vh, 0) scale(1.05); opacity: 0.06; }
-  100% { transform: translate3d(100vw, -60vh, 0) scale(0.9); opacity: 0; }
+  0%   { transform: translate3d(-80px, 10vh, 0) scale(0.6) rotate(-8deg);  opacity: 0; }
+  8%   { opacity: 0.15; transform: translate3d(-30px, 8vh, 0) scale(0.75) rotate(-5deg); }
+  18%  { opacity: 0.25; transform: translate3d(20px, 2vh, 0) scale(0.9) rotate(0deg); }
+  28%  { opacity: 0.3;  transform: translate3d(60px, -5vh, 0) scale(1.0) rotate(4deg); }
+  38%  { opacity: 0.28; transform: translate3d(90px, -10vh, 0) scale(1.05) rotate(7deg); }
+  48%  { opacity: 0.25; transform: translate3d(40vw, -8vh, 0) scale(1.0) rotate(3deg); }
+  58%  { opacity: 0.22; transform: translate3d(55vw, -15vh, 0) scale(0.9) rotate(-3deg); }
+  68%  { opacity: 0.18; transform: translate3d(70vw, -22vh, 0) scale(0.85) rotate(-6deg); }
+  78%  { opacity: 0.15; transform: translate3d(82vw, -30vh, 0) scale(0.8) rotate(-2deg); }
+  88%  { opacity: 0.1;  transform: translate3d(92vw, -38vh, 0) scale(0.75) rotate(3deg); }
+  100% { transform: translate3d(105vw, -50vh, 0) scale(0.65) rotate(6deg);  opacity: 0; }
 }
 
 /* ── Flag & heartbeat keyframes ── */
@@ -2990,6 +2995,10 @@ a:active {
   .float-shape, .float-shape--a, .float-shape--b, .float-shape--c,
   .float-shape--diamond, .morph-blob { animation: none !important; display: none !important; }
   .grain-overlay::after, .grain-light::after { display: none !important; }
+  .hypnotic-heart, .meditative-breath, .meditative-mandala,
+  .meditative-particle, .meditative-wave, .hypnotic-particle {
+    display: none !important;
+  }
 }
 
 /* ── Sticky footer: main content fills remaining viewport height ── */
@@ -3001,4 +3010,313 @@ a:active {
 @media (max-width: 640px) {
   .parallax-bg { transform: none !important; }
   #hero-section { background-attachment: scroll !important; }
+  .meditative-mandala, .meditative-wave { display: none !important; }
+  .hypnotic-heart { font-size: 0.5rem !important; }
+  .hypnotic-particle { width: 3px !important; height: 3px !important; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   ── HYPNOTIC MEDITATIVE EFFECTS ──
+   ════════════════════════════════════════════════════════════ */
+
+/* ── SACRED GEOMETRY / MANDALA ──
+   A very subtle rotating concentric pattern in the background.
+   Like a slow-turning meditation wheel — barely perceptible,
+   yet profoundly calming. */
+.meditative-mandala {
+  position: fixed;
+  inset: -100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.025;
+  will-change: transform;
+  contain: layout style paint;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 18%, rgba(0,212,164,0.04) 18.5%, transparent 19.5%),
+    radial-gradient(circle at 50% 50%, transparent 28%, rgba(245,158,11,0.03) 28.5%, transparent 29.5%),
+    radial-gradient(circle at 50% 50%, transparent 38%, rgba(0,212,164,0.03) 38.5%, transparent 39.5%),
+    radial-gradient(circle at 50% 50%, transparent 48%, rgba(245,158,11,0.025) 48.5%, transparent 49.5%),
+    radial-gradient(circle at 50% 50%, transparent 58%, rgba(0,212,164,0.02) 58.5%, transparent 59.5%),
+    repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(0,212,164,0.008) 50px, rgba(0,212,164,0.008) 51px),
+    repeating-linear-gradient(-60deg, transparent, transparent 50px, rgba(245,158,11,0.008) 50px, rgba(245,158,11,0.008) 51px);
+  animation: mandala-spin 180s linear infinite;
+}
+
+@keyframes mandala-spin {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+.dark .meditative-mandala {
+  opacity: 0.035;
+}
+
+/* ── BREATHING OVERLAY ──
+   A full-page subtle overlay that gently pulses like a peaceful breath.
+   Inhale… exhale… — creates a rhythmic meditative anchor. */
+.meditative-breath {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 35%,
+    rgba(0, 212, 164, 0.015) 55%,
+    transparent 75%
+  );
+  animation: meditative-breath 12s ease-in-out infinite;
+}
+
+.dark .meditative-breath {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 35%,
+    rgba(0, 212, 164, 0.02) 55%,
+    transparent 75%
+  );
+}
+
+@keyframes meditative-breath {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.03);
+  }
+}
+
+/* ── MEDITATIVE PARTICLES ──
+   Tiny glowing embers that drift upward like fireflies
+   in a dusk meditation garden. Gold, teal, and white specks. */
+.hypnotic-particle {
+  position: fixed;
+  bottom: -10px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9996;
+  animation: hypnotic-particle-rise var(--particle-dur, 28s) ease-in-out infinite;
+  will-change: transform;
+}
+
+.hypnotic-particle--gold {
+  background: radial-gradient(circle, rgba(245,158,11,0.7), rgba(245,158,11,0));
+  box-shadow: 0 0 6px rgba(245,158,11,0.25);
+}
+
+.hypnotic-particle--teal {
+  background: radial-gradient(circle, rgba(0,212,164,0.6), rgba(0,212,164,0));
+  box-shadow: 0 0 6px rgba(0,212,164,0.2);
+}
+
+.hypnotic-particle--white {
+  background: radial-gradient(circle, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  box-shadow: 0 0 4px rgba(255,255,255,0.15);
+}
+
+@keyframes hypnotic-particle-rise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.2);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.5;
+    transform: translateY(-8vh) translateX(10px) scale(0.5);
+  }
+  25% {
+    transform: translateY(-25vh) translateX(-15px) scale(0.7);
+    opacity: 0.4;
+  }
+  45% {
+    transform: translateY(-45vh) translateX(12px) scale(0.9);
+    opacity: 0.35;
+  }
+  65% {
+    transform: translateY(-65vh) translateX(-8px) scale(0.6);
+    opacity: 0.2;
+  }
+  85% {
+    transform: translateY(-85vh) translateX(15px) scale(0.4);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-105vh) translateX(-5px) scale(0.15);
+    opacity: 0;
+  }
+}
+
+/* ── HYPNOTIC HEART RISE (full page) ──
+   Two-color hearts that emerge from the bottom and float all the way
+   to the top of the page with a gentle, swaying, hypnotic motion.
+   Warm amber ♥ and cool teal ♥ — two hearts, one rhythm. */
+.hypnotic-heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 9996;
+  will-change: transform;
+  animation: hypnotic-heart-rise var(--heart-dur, 45s) ease-in-out infinite;
+  will-change: transform;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+/* Two distinct color palettes */
+.hypnotic-heart--warm {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 8px rgba(245,158,11,0.25)) drop-shadow(0 0 20px rgba(245,158,11,0.1));
+}
+
+.hypnotic-heart--cool {
+  color: #00d4a4;
+  filter: drop-shadow(0 0 8px rgba(0,212,164,0.25)) drop-shadow(0 0 20px rgba(0,212,164,0.1));
+}
+
+.hypnotic-heart--pale {
+  color: rgba(255,255,255,0.2);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.08));
+}
+
+/* The keyframe that carries hearts from page-bottom to page-top
+   with a gentle figure-8 sway — hypnotic and calming. */
+@keyframes hypnotic-heart-rise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.15) rotate(0deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  5% {
+    opacity: 0.25;
+    filter: blur(1px);
+  }
+  12% {
+    transform: translateY(-12vh) translateX(-6px) scale(0.35) rotate(-4deg);
+    opacity: 0.4;
+    filter: blur(0);
+  }
+  25% {
+    transform: translateY(-28vh) translateX(14px) scale(0.55) rotate(6deg);
+    opacity: 0.5;
+  }
+  38% {
+    transform: translateY(-42vh) translateX(-10px) scale(0.7) rotate(-3deg);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-55vh) translateX(18px) scale(0.82) rotate(5deg);
+    opacity: 0.4;
+  }
+  63% {
+    transform: translateY(-68vh) translateX(-12px) scale(0.72) rotate(-5deg);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translateY(-80vh) translateX(8px) scale(0.55) rotate(3deg);
+    opacity: 0.2;
+    filter: blur(0.5px);
+  }
+  88% {
+    transform: translateY(-92vh) translateX(-6px) scale(0.35) rotate(-2deg);
+    opacity: 0.1;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateY(-108vh) translateX(4px) scale(0.15) rotate(4deg);
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+/* ── MEDITATIVE WAVE OVERLAY ──
+   An extremely subtle horizontal wave that drifts across the page,
+   like light reflecting off still water in a meditation hall. */
+.meditative-wave {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9995;
+  opacity: 0.012;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 120px,
+    rgba(0,212,164,0.4) 120px,
+    rgba(0,212,164,0.4) 121px,
+    transparent 121px,
+    transparent 240px
+  );
+  background-size: 240px 100%;
+  animation: meditative-wave-slide 40s linear infinite;
+}
+
+@keyframes meditative-wave-slide {
+  from { background-position: 0 0; }
+  to { background-position: 240px 0; }
+}
+
+.dark .meditative-wave {
+  opacity: 0.018;
+}
+
+/* ── Footer-specific hypnotic hearts (positioned inside footer) ──
+   These use fixed positioning and match the hypnotic animation
+   so they float from the footer area all the way up. */
+.footer-hypnotic-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9996;
+  animation: hypnotic-heart-rise var(--heart-dur, 45s) ease-in-out infinite;
+  will-change: transform;
+  line-height: 1;
+  opacity: 0;
+}
+
+.footer-hypnotic-heart--warm {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 8px rgba(245,158,11,0.2));
+}
+
+.footer-hypnotic-heart--cool {
+  color: #00d4a4;
+  filter: drop-shadow(0 0 8px rgba(0,212,164,0.2));
+}
+
+/* ── Reduced motion gating for all meditative effects ── */
+@media (prefers-reduced-motion: reduce) {
+  .hypnotic-heart, .meditative-breath, .meditative-mandala,
+  .meditative-particle, .meditative-wave, .hypnotic-particle,
+  .footer-hypnotic-heart {
+    display: none !important;
+  }
+}
+
+/* ── Blog Card Dance Animation ── */
+.blog-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
+}
+
+.blog-card:active {
+  transform: translateY(-4px) scale(0.98);
+  transition-duration: 0.15s;
+}
+
+.blog-card .line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-card:hover {
+    transform: none;
+  }
 }

@@ -4,13 +4,29 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import posts from '../lib/blog-data.json';
 import causes from '../lib/causes-data.json';
+import events from '../lib/events-data.json';
+
+const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+const latestPosts = sortedPosts.slice(0, 3);
+
+const upcomingEvents = events.filter(e => e.status === "upcoming");
+const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const upcomingWithDate = upcomingEvents.map(e => {
+  const monthIndex = monthNames.indexOf(e.month);
+  const d = new Date(parseInt(e.year), monthIndex, parseInt(e.day));
+  return { ...e, dateObj: d };
+});
+const nextEvent = upcomingWithDate.sort((a, b) => a.dateObj - b.dateObj)[0];
+const monthMap = { "Jan":"01","Feb":"02","Mar":"03","Apr":"04","May":"05","Jun":"06","Jul":"07","Aug":"08","Sep":"09","Oct":"10","Nov":"11","Dec":"12" };
+const nextIsoDate = nextEvent ? `${nextEvent.year}-${monthMap[nextEvent.month]}-${nextEvent.day.padStart(2,"0")}` : "2026-12-31";
+const nextStartTime = nextEvent?.startTime || "09:00";
 ---
 
 <Layout title="Home" description="Peace League Africa is building peace across 12 African countries through education, healthcare, clean water &amp; youth empowerment. Join 1,200+ volunteers. Donate today to transform conflict into lasting hope.">
   <Navigation />
 
   <main id="main-content">
-    <section id="hero-section" class="relative text-white hero-gradient overflow-hidden flex items-center grain-overlay">
+    <section id="hero-section" data-hero-parallax class="relative text-white hero-gradient overflow-hidden flex items-center grain-overlay min-h-[70vh] md:min-h-[80vh]">
       <!-- ── DEPTH LAYER 0: Orbs (farthest, slowest) ── -->
       <div class="hero-depth-layer hero-depth-0 hidden sm:block" aria-hidden="true">
         <div class="orb-float orb-float--1" style="top:-150px;right:-100px;"></div>
@@ -120,7 +136,7 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-8 lg:py-10 bg-gradient-to-br from-accent-soft/10 via-canvas to-accent-warm-soft/10 overflow-hidden">
+    <section data-reveal class="py-8 lg:py-10 bg-gradient-to-br from-accent-soft/10 via-canvas to-accent-warm-soft/10 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">Why Peace League Africa</h2>
         <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
@@ -195,10 +211,10 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-6 lg:py-10 bg-surface overflow-hidden">
+    <section data-reveal class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Grassroots peacebuilding measured in lives changed, communities rebuilt, and futures restored.</p>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 tilt-container">
           <div class="scroll-reveal tilt-card group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center" style="animation-delay: 0ms; transform-style: preserve-3d;">
@@ -233,14 +249,14 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-6 lg:py-10 bg-gradient-to-b from-canvas to-surface overflow-hidden">
+    <section data-reveal class="py-6 lg:py-10 bg-gradient-to-b from-canvas to-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Every cause is community-driven, locally led, and fully transparent. Here is where your support goes.</p>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
+        <p class="text-center text-lg text-steel max-w-2xl mx-auto mb-8">Every cause is community-driven, locally led, and fully transparent. Here is where your support goes.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 tilt-container">
           {causes.slice(0, 6).map((cause, idx) => (
-            <div class="scroll-reveal tilt-card group bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm transition-all duration-300 hover:-translate-y-0 hover:shadow-xl hover:border-accent/20" style={`animation-delay: ${idx * 80}ms; transform-style: preserve-3d;`}>
+            <div class="data-gradient-border data-reveal data-reveal-delay={idx * 80} tilt-card group bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm transition-all duration-300 hover:-translate-y-0 hover:shadow-xl hover:border-accent/20" style={`transform-style: preserve-3d;`}>
               <div class="h-44 relative overflow-hidden tilt-card-content">
                 <img src={cause.image} alt={cause.title} width="400" height="220" class="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105" loading="lazy" decoding="async" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -274,6 +290,125 @@ import causes from '../lib/causes-data.json';
         </div>
       </div>
     </section>
+
+    <!-- ════════════════════════════════════════════════════════
+         UPCOMING EVENT — Next featured event with countdown
+         ════════════════════════════════════════════════════════ -->
+    {nextEvent && (
+    <section class="py-16 lg:py-24 bg-gradient-to-br from-accent/5 via-canvas to-accent-warm/5 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-reveal>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent uppercase tracking-wider mb-4">Next Event</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Join Us Soon</h2>
+          <p class="text-lg text-steel max-w-xl mx-auto">Be part of the change. Register for our next peace-building event.</p>
+        </div>
+
+        <a href={`/events/${nextEvent.slug}`} class="group block" data-reveal>
+          <div class="relative bg-canvas rounded-3xl border border-hairline overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-2">
+            <div class="grid md:grid-cols-5 gap-0">
+              <!-- Image -->
+              <div class="md:col-span-2 relative overflow-hidden min-h-[280px] md:min-h-[340px]">
+                <img src={`https://images.unsplash.com/${nextEvent.image}?w=600&q=80&auto=format&fit=crop`} alt={nextEvent.title} class="w-full h-full absolute inset-0 object-cover transition-all duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+
+                <!-- Date badge -->
+                <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-md text-center rounded-2xl px-4 py-3 leading-tight shadow-xl">
+                  <span class="block text-2xl font-bold text-ink leading-none">{nextEvent.day}</span>
+                  <span class="block text-xs font-bold text-accent mt-1 uppercase tracking-wider">{nextEvent.month}</span>
+                </div>
+
+                <!-- Type badge -->
+                <div class="absolute top-5 right-5">
+                  <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-accent/90 text-white backdrop-blur-sm shadow-lg">
+                    {nextEvent.type}
+                  </span>
+                </div>
+
+                <!-- Countdown overlay -->
+                <div class="absolute bottom-5 left-5 right-5">
+                  <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/10">
+                    <p class="text-[10px] text-white/60 uppercase tracking-widest font-semibold mb-2">Event Starts In</p>
+                    <div class="flex gap-2" id="home-countdown-timer" data-target-date={`${nextIsoDate}T${nextStartTime}:00`}>>
+                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[56px]">
+                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-days">--</span>
+                        <span class="text-[9px] text-white/50 uppercase tracking-wider">days</span>
+                      </div>
+                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[52px]">
+                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-hours">--</span>
+                        <span class="text-[9px] text-white/50 uppercase tracking-wider">hrs</span>
+                      </div>
+                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[52px]">
+                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-mins">--</span>
+                        <span class="text-[9px] text-white/50 uppercase tracking-wider">min</span>
+                      </div>
+                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[52px]">
+                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-secs">--</span>
+                        <span class="text-[9px] text-white/50 uppercase tracking-wider">sec</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="md:col-span-3 p-7 md:p-9 flex flex-col justify-center">
+                <div class="flex items-center gap-2 text-xs text-steel mb-3">
+                  <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                  <span>{nextEvent.venue}, {nextEvent.location}</span>
+                  <span class="mx-1 text-hairline">&middot;</span>
+                  <span>{nextEvent.startTime} &ndash; {nextEvent.endTime} {nextEvent.timezone}</span>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-bold text-ink mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
+                  {nextEvent.title}
+                </h3>
+
+                <p class="text-sm text-steel leading-relaxed mb-6 line-clamp-2 max-w-lg">
+                  {nextEvent.description}
+                </p>
+
+                <!-- Registration progress -->
+                {nextEvent.capacity > 0 && (
+                <div class="mb-6">
+                  <div class="flex justify-between text-xs mb-2">
+                    <span class="text-steel font-medium">{nextEvent.registered} registered</span>
+                    <span class="font-bold text-ink">{Math.round((nextEvent.registered / nextEvent.capacity) * 100)}% full</span>
+                  </div>
+                  <div class="w-full bg-hairline rounded-full h-2 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-accent to-accent-warm transition-all duration-1000" style={`width:${Math.round((nextEvent.registered / nextEvent.capacity) * 100)}%`}></div>
+                  </div>
+                </div>
+                )}
+
+                <!-- CTA -->
+                <div class="flex items-center gap-4">
+                  <span class="inline-flex items-center gap-2 px-6 py-3 bg-accent btn-text-contrast font-semibold rounded-full shadow-xl shadow-accent/25 group-hover:shadow-2xl group-hover:shadow-accent/40 group-hover:bg-accent-deep transition-all duration-300">
+                    Register Now
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </span>
+                  <span class="text-sm font-semibold text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                    View Details →
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Animated gradient border on hover -->
+            <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #f59e0b, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
+            </div>
+          </div>
+        </a>
+
+        <div class="mt-10 text-center">
+          <a href="/events" class="magnetic-btn group inline-flex items-center gap-2 px-8 py-3.5 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all shadow-xl shadow-accent/25 btn-ripple" data-magnet-strength="0.35">
+            View All Events
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    )}
 
     <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -479,46 +614,90 @@ import causes from '../lib/causes-data.json';
       </div>
     </section>
 
-    <section class="py-6 lg:py-10 bg-canvas overflow-hidden">
+    <section class="py-16 lg:py-24 bg-canvas overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Latest from Our Blog</h2>
-        <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Stories of hope, progress, and the people making peace possible.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="scroll-reveal bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&auto=format&fit=crop" alt="Peace Education" class="w-full h-40 object-cover" loading="lazy" />
-            <div class="p-5">
-              <span class="badge-tag mb-3">Education</span>
-              <h3 class="text-lg font-semibold text-ink leading-snug">How Peace Education Transformed 500 Communities</h3>
-              <p class="mt-2 text-sm text-steel line-clamp-2">Across Kenya and Uganda, peace education programs are rebuilding communities divided by conflict, one classroom at a time.</p>
-              <a href="/blog" class="mt-3 inline-flex text-sm font-medium text-accent hover:text-accent-deep transition-colors">Read More →</a>
-            </div>
-          </div>
-          <div class="scroll-reveal bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300" style="animation-delay: 80ms">
-            <div class="h-40 relative overflow-hidden img-zoom">
-              <img src="https://images.unsplash.com/photo-1650523616477-c0b945a43c1c?w=600&q=80&auto=format&fit=crop" alt="Young Peacebuilders" class="w-full h-full object-cover" loading="lazy" decoding="async" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              <span class="absolute bottom-3 left-3 badge-tag">Youth</span>
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-ink leading-snug">Young Peacebuilders: Africa's Next Generation of Leaders</h3>
-              <p class="mt-2 text-sm text-steel line-clamp-2">From Nairobi to Kigali, youth-led initiatives are proving that the next generation is ready to lead the charge for peace.</p>
-              <a href="/blog" class="mt-3 inline-flex text-sm font-medium text-accent hover:text-accent-deep transition-colors">Read More →</a>
-            </div>
-          </div>
-          <div class="scroll-reveal bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300" style="animation-delay: 150ms">
-            <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80&auto=format&fit=crop" alt="Clean Water" class="w-full h-40 object-cover" loading="lazy" />
-            <div class="p-5">
-              <span class="badge-tag mb-3">Water</span>
-              <h3 class="text-lg font-semibold text-ink leading-snug">Clean Water Brings Peace to 30 Rural Villages</h3>
-              <p class="mt-2 text-sm text-steel line-clamp-2">Boreholes and rainwater harvesting systems are ending water conflicts and transforming health outcomes across East Africa.</p>
-              <a href="/blog" class="mt-3 inline-flex text-sm font-medium text-accent hover:text-accent-deep transition-colors">Read More →</a>
-            </div>
-          </div>
+        <div class="text-center mb-14" data-reveal>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent uppercase tracking-wider mb-4">Latest News & Stories</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Stories of Hope</h2>
+          <p class="text-lg text-steel max-w-xl mx-auto">Stories of hope, impact, and the people building peace across Africa.</p>
         </div>
-        <div class="mt-12 text-center">
-          <a href="/blog" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-colors">
-            View All Posts
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          {latestPosts.map((post, idx) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group relative bg-canvas rounded-2xl overflow-hidden border border-hairline transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 block blog-card"
+              style={`animation-delay: ${idx * 100}ms`} data-reveal
+            >
+              <!-- Image -->
+              <div class="relative h-52 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+                <!-- Category badge -->
+                <div class="absolute top-4 left-4">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-sm text-ink shadow-lg">
+                    {post.category}
+                  </span>
+                </div>
+
+                <!-- Read time -->
+                <div class="absolute top-4 right-4">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/40 backdrop-blur-sm text-white/90">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {post.readTime}
+                  </span>
+                </div>
+
+                <!-- Hover arrow -->
+                <div class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-accent flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-ink leading-snug mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                  {post.title}
+                </h3>
+                <p class="text-sm text-steel leading-relaxed mb-4 line-clamp-2">
+                  {post.description}
+                </p>
+
+                <!-- Author + Date -->
+                <div class="flex items-center justify-between pt-4 border-t border-hairline">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-soft flex items-center justify-center text-white text-[10px] font-bold shadow-sm">
+                      PL
+                    </div>
+                    <div>
+                      <p class="text-xs font-semibold text-ink">{post.author || 'Peace League Africa'}</p>
+                      <p class="text-[10px] text-steel">{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-semibold text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                    Read →
+                  </span>
+                </div>
+              </div>
+
+              <!-- Animated gradient border on hover -->
+              <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #f59e0b, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-14 text-center">
+          <a href="/blog" class="magnetic-btn group inline-flex items-center gap-2 px-8 py-3.5 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all shadow-xl shadow-accent/25 btn-ripple" data-magnet-strength="0.35">
+            View All Stories
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
       </div>
@@ -772,5 +951,34 @@ import causes from '../lib/causes-data.json';
       });
     }, { threshold: 0.4 });
     document.querySelectorAll('.donation-amount').forEach(el => donationObserver.observe(el));
+
+    // ── Homepage Countdown Timer for Next Event ──
+    (function() {
+      var cdEl = document.getElementById('home-countdown-timer');
+      if (!cdEl) return;
+      var eventDate = new Date(cdEl.dataset.targetDate).getTime();
+      if (isNaN(eventDate)) return;
+      var daysEl = document.getElementById('home-cd-days');
+      var hoursEl = document.getElementById('home-cd-hours');
+      var minsEl = document.getElementById('home-cd-mins');
+      var secsEl = document.getElementById('home-cd-secs');
+      function tick() {
+        var now = new Date().getTime();
+        var diff = eventDate - now;
+        if (diff <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          secsEl.textContent = '00';
+          return;
+        }
+        daysEl.textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+        hoursEl.textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+        minsEl.textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+        secsEl.textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
   </script>
 </Layout>

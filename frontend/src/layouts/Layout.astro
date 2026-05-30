@@ -16,7 +16,7 @@ const {
   noIndex = false
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://peaceleagueafrica.org');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://peaceleagueafrica.com');
 const pageTitle = `${title} | Peace League Africa`;
 ---
 
@@ -58,7 +58,7 @@ const pageTitle = `${title} | Peace League Africa`;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.org')} />
+    <meta property="og:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.com')} />
     <meta property="og:site_name" content="Peace League Africa" />
     <meta property="og:locale" content="en_US" />
 
@@ -67,7 +67,7 @@ const pageTitle = `${title} | Peace League Africa`;
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.org')} />
+    <meta name="twitter:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.com')} />
 
     <!-- Structured Data: Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -75,8 +75,8 @@ const pageTitle = `${title} | Peace League Africa`;
       "@type": "NGO",
       "name": "Peace League Africa",
       "description": description,
-      "url": "https://peaceleagueafrica.org",
-      "logo": "https://peaceleagueafrica.org/favicon.svg",
+      "url": "https://peaceleagueafrica.com",
+      "logo": "https://peaceleagueafrica.com/favicon.svg",
       "sameAs": [
         "https://twitter.com/peaceleagueafrica",
         "https://facebook.com/peaceleagueafrica",
@@ -84,7 +84,7 @@ const pageTitle = `${title} | Peace League Africa`;
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "info@peaceleagueafrica.org",
+        "email": "info@peaceleagueafrica.com",
         "telephone": "+1-555-123-4567",
         "address": {
           "@type": "PostalAddress",
@@ -99,12 +99,12 @@ const pageTitle = `${title} | Peace League Africa`;
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Peace League Africa",
-      "url": "https://peaceleagueafrica.org",
+      "url": "https://peaceleagueafrica.com",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://peaceleagueafrica.org/search?q={search_term_string}"
+          "urlTemplate": "https://peaceleagueafrica.com/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
@@ -133,7 +133,7 @@ const pageTitle = `${title} | Peace League Africa`;
     </script>
 
   </head>
-  <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col overflow-x-hidden">
+  <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col overflow-x-hidden" data-js-listeners>
     <!-- Cursor glow ring -->
     <div id="cursor-glow" aria-hidden="true"></div>
 
@@ -157,19 +157,53 @@ const pageTitle = `${title} | Peace League Africa`;
     <!-- Subtle ambient vignette (keeps the depth without AI-aesthetic orbs) -->
     <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_theme(colors.ink/0.03)_0%,_transparent_60%)]"></div>
 
-    <!-- Floating decorative elements (across all pages) -->
-    <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-      <div class="floating-bubble" style="width:18px;height:18px;left:8%;animation-delay:0s;"></div>
-      <div class="floating-bubble" style="width:12px;height:12px;left:25%;animation-delay:6s;"></div>
-      <div class="floating-bubble" style="width:22px;height:22px;left:72%;animation-delay:12s;"></div>
-      <div class="floating-bubble" style="width:14px;height:14px;left:90%;animation-delay:4s;"></div>
-      <div class="floating-dot" style="width:10px;height:10px;left:15%;animation-delay:3s;"></div>
-      <div class="floating-dot" style="width:8px;height:8px;left:42%;animation-delay:9s;"></div>
-      <div class="floating-dot" style="width:14px;height:14px;left:60%;animation-delay:15s;"></div>
-      <div class="floating-dot" style="width:6px;height:6px;left:78%;animation-delay:1s;"></div>
+    <!-- ═════════════════════════════════════════════════════
+         HYPNOTIC MEDITATIVE AMBIENT EFFECTS
+         Slow-spinning mandala · Breathing light · Rising hearts
+         Floating embers · Gentle wave — all across every page
+         ═════════════════════════════════════════════════════ -->
 
-      <div class="floating-dove" style="animation-delay:2s;">&#x1F54A;</div>
-      <div class="floating-dove" style="animation-delay:20s;">&#x1F54A;</div>
+    <!-- Sacred Geometry Mandala (background, barely visible, slow rotation) -->
+    <div class="meditative-mandala" aria-hidden="true"></div>
+
+    <!-- Breathing overlay (gentle radial pulse like peaceful breath) -->
+    <div class="meditative-breath" aria-hidden="true"></div>
+
+    <!-- Subtle horizontal wave (like light on still water) -->
+    <div class="meditative-wave" aria-hidden="true"></div>
+
+    <!-- Floating decorative elements (across all pages) -->
+    <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true" style="contain:layout style paint;">
+      <div class="floating-bubble" style="width:14px;height:14px;left:12%;animation-delay:0s;"></div>
+      <div class="floating-bubble" style="width:10px;height:10px;left:68%;animation-delay:8s;"></div>
+      <div class="floating-dot" style="width:8px;height:8px;left:35%;animation-delay:4s;"></div>
+      <div class="floating-dot" style="width:6px;height:6px;left:82%;animation-delay:12s;"></div>
+    </div>
+
+    <!-- ── HYPNOTIC FLOATING HEARTS (two colors: warm amber + cool teal) ──
+         They emerge from the bottom of the viewport and float all the way
+         to the top with a gentle swaying motion — like leaves on a breeze.
+         Each heart has its own size, lateral position, timing, and duration
+         creating an organic, ever-changing constellation of love rising. -->
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:9995;contain:layout style paint;">
+      <span class="hypnotic-heart hypnotic-heart--warm" style="left:8%;font-size:0.55rem;--heart-dur:38s;animation-delay:0s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--cool" style="left:22%;font-size:0.6rem;--heart-dur:48s;animation-delay:4s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--warm" style="left:45%;font-size:0.5rem;--heart-dur:42s;animation-delay:8s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--cool" style="left:65%;font-size:0.55rem;--heart-dur:40s;animation-delay:2s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--warm" style="left:80%;font-size:0.45rem;--heart-dur:50s;animation-delay:12s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--cool" style="left:92%;font-size:0.5rem;--heart-dur:44s;animation-delay:6s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--pale" style="left:35%;font-size:0.35rem;--heart-dur:58s;animation-delay:16s;">&#x2764;</span>
+      <span class="hypnotic-heart hypnotic-heart--pale" style="left:72%;font-size:0.3rem;--heart-dur:60s;animation-delay:20s;">&#x2764;</span>
+    </div>
+
+    <!-- ── HYPNOTIC FLOATING PARTICLES (glowing embers) ──
+         Tiny gold, teal, and white specks that drift upward
+         like fireflies in a meditation garden. -->
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:9994;contain:layout style paint;">
+      <span class="hypnotic-particle hypnotic-particle--gold" style="left:15%;width:4px;height:4px;--particle-dur:28s;animation-delay:0s;"></span>
+      <span class="hypnotic-particle hypnotic-particle--teal" style="left:55%;width:4px;height:4px;--particle-dur:32s;animation-delay:6s;"></span>
+      <span class="hypnotic-particle hypnotic-particle--gold" style="left:78%;width:3px;height:3px;--particle-dur:26s;animation-delay:12s;"></span>
+      <span class="hypnotic-particle hypnotic-particle--teal" style="left:38%;width:3px;height:3px;--particle-dur:34s;animation-delay:18s;"></span>
     </div>
 
     <!-- ── STICKY DONATE BUTTON ── -->
@@ -469,32 +503,96 @@ const pageTitle = `${title} | Peace League Africa`;
         }, { passive: true });
       }
 
-      // ── LIVE DONATION TOAST ──
+      // ── LIVE DONATION & VOLUNTEER TOASTS ──
       const toast = document.getElementById('donation-toast');
       if (toast) {
-        const mockDonations = [
-          { name: 'Amara K.', initials: 'AK', amount: '$50', location: ' from Nairobi', action: 'just donated' },
-          { name: 'James M.', initials: 'JM', amount: '$25', location: ' from London', action: 'just donated' },
-          { name: 'Sarah W.', initials: 'SW', amount: '$100', location: '', action: 'became a monthly donor' },
-          { name: 'David O.', initials: 'DO', amount: '$30', location: ' from Lagos', action: 'just donated' },
-          { name: 'Grace N.', initials: 'GN', amount: '$500', location: '', action: 'funded a clean water well' },
-          { name: 'Peter K.', initials: 'PK', amount: '$20', location: ' from Kampala', action: 'just donated' },
+        const people = [
+          { name: 'Amara K.', initials: 'AK' }, { name: 'James M.', initials: 'JM' },
+          { name: 'Sarah W.', initials: 'SW' }, { name: 'David O.', initials: 'DO' },
+          { name: 'Grace N.', initials: 'GN' }, { name: 'Peter K.', initials: 'PK' },
+          { name: 'Makena T.', initials: 'MT' }, { name: 'Kwame A.', initials: 'KA' },
+          { name: 'Fatima Z.', initials: 'FZ' }, { name: 'Emeka O.', initials: 'EO' },
+          { name: 'Amina S.', initials: 'AS' }, { name: 'Joseph M.', initials: 'JM' },
+          { name: 'Nadia A.', initials: 'NA' }, { name: 'Tendai M.', initials: 'TM' },
+          { name: 'Zuri K.', initials: 'ZK' }, { name: 'Chidi N.', initials: 'CN' },
+          { name: 'Nyokabi W.', initials: 'NW' }, { name: 'Olu S.', initials: 'OS' },
+          { name: 'Thandiwe B.', initials: 'TB' }, { name: 'Kofi A.', initials: 'KA' },
+          { name: 'Adaeze O.', initials: 'AO' }, { name: 'Musa D.', initials: 'MD' },
         ];
+        const locations = [' from Nairobi', ' from London', ' from Lagos', ' from Kampala',
+          ' from Accra', ' from Kigali', ' from Dar es Salaam', ' from Addis Ababa',
+          ' from Cape Town', ' from Johannesburg', ' from Mombasa', ' from Kisumu',
+          ' from Abuja', ' from Dakar', '', '', '', ''];
+        const donationActions = [
+          { text: 'just donated', icon: 'donate' },
+          { text: 'became a monthly donor', icon: 'donate' },
+          { text: 'funded a clean water well', icon: 'donate' },
+          { text: 'sponsored a child\'s education', icon: 'donate' },
+        ];
+        const volunteerActions = [
+          { text: 'signed up to volunteer', icon: 'volunteer' },
+          { text: 'joined as a peace educator', icon: 'volunteer' },
+          { text: 'registered for community outreach', icon: 'volunteer' },
+          { text: 'committed to weekly mentoring', icon: 'volunteer' },
+        ];
+        const amounts = ['$25', '$50', '$75', '$100', '$150', '$200', '$500', '$1,000'];
 
-        let toastIdx = 0;
         let toastTimeout = null;
         let toastVisible = false;
 
-        function showDonationToast() {
-          const d = mockDonations[toastIdx % mockDonations.length];
+        function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+        function generateToastData() {
+          const person = pick(people);
+          const isVolunteer = Math.random() < 0.35; // 35% volunteer actions
+          const amount = isVolunteer ? '' : pick(amounts);
+          const location = pick(locations);
+          return {
+            initials: person.initials,
+            name: person.name,
+            amount: amount,
+            location: location,
+            action: pick(isVolunteer ? volunteerActions : donationActions).text,
+            isVolunteer: isVolunteer,
+            showAmount: !isVolunteer,
+            showLocation: !!location
+          };
+        }
+
+        function showToast() {
+          const d = generateToastData();
           document.getElementById('toast-initials').textContent = d.initials;
           document.getElementById('toast-name').textContent = d.name;
           document.getElementById('toast-amount').textContent = d.amount;
           document.getElementById('toast-location').textContent = d.location;
           document.getElementById('toast-action').textContent = d.action;
+          // Swap icon based on action type
+          var icon = toast.querySelector('.toast-icon');
+          if (icon) {
+            icon.setAttribute('stroke', 'currentColor');
+            icon.innerHTML = d.isVolunteer
+              ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>'
+              : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>';
+          }
+
+          // Hide amount element if volunteer action
+          var amtEl = document.getElementById('toast-amount');
+          if (amtEl) {
+            if (d.isVolunteer) {
+              amtEl.style.display = 'none';
+            } else {
+              amtEl.style.display = 'inline';
+            }
+          }
+
+          // Show/hide location dot
+          var locEl = document.getElementById('toast-location');
+          if (locEl) {
+            locEl.style.display = d.showLocation ? 'inline' : 'none';
+          }
 
           toast.classList.remove('visible');
-          void toast.offsetWidth; // force reflow
+          void toast.offsetWidth;
           toast.classList.add('visible');
           toastVisible = true;
 
@@ -502,18 +600,129 @@ const pageTitle = `${title} | Peace League Africa`;
           toastTimeout = setTimeout(() => {
             toast.classList.remove('visible');
             toastVisible = false;
-            toastIdx++;
-            // Schedule next
-            setTimeout(showDonationToast, 15000 + Math.random() * 15000);
-          }, 5000);
+            // Schedule next: 20–50 seconds from now
+            setTimeout(showToast, 20000 + Math.random() * 30000);
+          }, 4500 + Math.random() * 1500);
         }
 
-        // Start first toast after 8s delay
-        setTimeout(showDonationToast, 8000);
+        // First toast after 5–15 seconds (random per visitor)
+        setTimeout(showToast, 5000 + Math.random() * 10000);
       }
 
     </script>
 
+    <!-- ══════════════════════════════════════
+         WOW FACTOR: Magnetic hover + Parallax + Gradient Borders
+         ══════════════════════════════════════ -->
+    <script>
+      // ── 1. Magnetic Hover on CTA buttons ──
+      document.querySelectorAll('[data-magnetic]').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          const dist = Math.sqrt(x * x + y * y);
+          const maxDist = 120;
+          const strength = Math.min(dist / maxDist, 1);
+          btn.style.transform = `translate3d(${x * 0.2 * strength}px, ${y * 0.2 * strength}px, 0)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = 'translate3d(0, 0, 0)';
+          btn.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          setTimeout(() => { btn.style.transition = ''; }, 400);
+        });
+      });
+
+      // ── 2. Hero Parallax ──
+      const heroParallax = () => {
+        const hero = document.querySelector('[data-hero-parallax]');
+        if (!hero) return;
+        const img = hero.querySelector('img');
+        if (!img) return;
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const rect = hero.getBoundingClientRect();
+              if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                const speed = 0.15;
+                const y = rect.top * speed;
+                img.style.transform = `translate3d(0, ${y}px, 0) scale(1.05)`;
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+      };
+      heroParallax();
+
+      // ── 3. Animated Gradient Border on cards with [data-gradient-border] ──
+      const gradientCards = document.querySelectorAll('[data-gradient-border]');
+      gradientCards.forEach(card => {
+        const border = document.createElement('div');
+        border.className = 'pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-500';
+        border.style.cssText = 'border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #f59e0b, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite; z-index: 1;';
+        card.style.position = 'relative';
+        card.appendChild(border);
+      });
+
+      // ── 4. Enhanced Scroll-Reveal (stagger + direction variants) ──
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const delay = el.dataset.revealDelay || 0;
+            const direction = el.dataset.reveal || 'up';
+            setTimeout(() => {
+              el.classList.add('revealed');
+              if (direction === 'left') {
+                el.style.transform = 'translateX(0)';
+                el.style.opacity = '1';
+              } else if (direction === 'right') {
+                el.style.transform = 'translateX(0)';
+                el.style.opacity = '1';
+              } else if (direction === 'scale') {
+                el.style.transform = 'scale(1)';
+                el.style.opacity = '1';
+              } else {
+                el.style.transform = 'translateY(0)';
+                el.style.opacity = '1';
+              }
+            }, delay);
+            revealObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        const direction = el.dataset.reveal || 'up';
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+        if (direction === 'left') {
+          el.style.transform = 'translateX(-30px)';
+        } else if (direction === 'right') {
+          el.style.transform = 'translateX(30px)';
+        } else if (direction === 'scale') {
+          el.style.transform = 'scale(0.85)';
+        } else {
+          el.style.transform = 'translateY(30px)';
+        }
+        revealObserver.observe(el);
+      });
+
+      // ── 5. Theme Toggle Rotation Animation ──
+      document.querySelectorAll('[id^="theme-toggle"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const icon = this.querySelector('svg:not(.hidden)');
+          if (icon) {
+            icon.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            icon.style.transform = 'rotate(360deg)';
+            setTimeout(() => { icon.style.transform = ''; icon.style.transition = ''; }, 500);
+          }
+        });
+      });
+    </script>
 
   </body>
 </html>
