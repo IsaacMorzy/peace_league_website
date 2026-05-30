@@ -733,5 +733,108 @@ const pageTitle = `${title} | Peace League Africa`;
     </script>
     <script async src="https://libredesk-production-d083.up.railway.app/widget.js"></script>
 
+    <!-- Libredesk Enhancements: auto-open, user data, event tracking -->
+    <script>
+      (function() {
+        // Wait for Libredesk to load
+        function waitForLibredesk(callback, maxWait) {
+          maxWait = maxWait || 10000;
+          var start = Date.now();
+          function check() {
+            if (window.Libredesk && window.Libredesk.show) {
+              callback();
+            } else if (Date.now() - start < maxWait) {
+              setTimeout(check, 200);
+            }
+          }
+          check();
+        }
+
+        waitForLibredesk(function() {
+
+          // ── 1. Auto-open chat after 30 seconds ──
+          setTimeout(function() {
+            // Only auto-open if user hasn't closed it before in this session
+            if (!sessionStorage.getItem('libredesk-dismissed')) {
+              window.Libredesk.show();
+            }
+          }, 30000);
+
+          // Track when user closes chat (don't auto-open again)
+          window.Libredesk.onHide(function() {
+            sessionStorage.setItem('libredesk-dismissed', '1');
+          });
+
+          // ── 3. Pass user data from booking forms ──
+          document.querySelectorAll('form[id*="booking"], form[id*="reg-"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+              var formData = new FormData(form);
+              var name = formData.get('name') || '';
+              var email = formData.get('email') || '';
+              var phone = formData.get('phone') || '';
+              var org = formData.get('organization') || '';
+
+              if (name || email) {
+                // Store user data for Libredesk
+                window.Libredesk.setUser && window.Libredesk.setUser({
+                  name: name,
+                  email: email,
+                  phone: phone,
+                  company: org
+                });
+
+                // Store in localStorage for persistence
+                localStorage.setItem('pleague-user', JSON.stringify({
+                  name: name,
+                  email: email,
+                  phone: phone,
+                  company: org
+                }));
+              }
+            });
+          });
+
+          // ── 5. Event tracking: donation, volunteer signup, contact form ──
+          // Track donation page visits
+          if (window.location.pathname === '/donate') {
+            setTimeout(function() {
+              window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+                type: 'event',
+                event: 'donate_page_view',
+                data: { url: window.location.href }
+              });
+            }, 3000);
+          }
+
+          // Track volunteer signups
+          document.querySelectorAll('form[id*="volunteer"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+              setTimeout(function() {
+                window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+                  type: 'event',
+                  event: 'volunteer_signup',
+                  data: { url: window.location.href }
+                });
+              }, 500);
+            });
+          });
+
+          // Track contact form submissions
+          document.querySelectorAll('form[id*="contact"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+              setTimeout(function() {
+                window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+                  type: 'event',
+                  event: 'contact_form_submit',
+                  data: { url: window.location.href }
+                });
+              }, 500);
+            });
+          });
+
+        });
+      })();
+    </script>
+
   </body>
 </html>
