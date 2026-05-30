@@ -350,7 +350,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/types.d.ts": {
-    "mtime": 1780109415.881666,
+    "mtime": 1780109590.4079123,
     "ast_hash": "f3d48b2aa569815a445d3509aa161559",
     "semantic_hash": ""
   },
@@ -360,7 +360,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/content.d.ts": {
-    "mtime": 1780109415.881666,
+    "mtime": 1780109590.4069123,
     "ast_hash": "242c41d20fcda532f17f55cd1a0217bc",
     "semantic_hash": ""
   },
@@ -850,8 +850,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Libredesk.astro": {
-    "mtime": 1780109403.1227937,
-    "ast_hash": "746f5c54fcbd66c7b4d784f134906d71",
+    "mtime": 1780109575.1580658,
+    "ast_hash": "93a67dad8b53ba5e27bc71fb53539b69",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/libredesk-agent.json": {

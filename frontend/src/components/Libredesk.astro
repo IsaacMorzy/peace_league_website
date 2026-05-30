@@ -528,22 +528,42 @@ HANDOFF TRIGGERS:
   var translations = {
     en: { greeting: "Hello! I'm Peace Bot. How can I help you today?", fallback: "I can help with donations, volunteering, events, and more." },
     fr: { greeting: "Bonjour! Je suis Peace Bot. Comment puis-je vous aider aujourd'hui?", fallback: "Je peux aider avec les dons, le bénévolat, les événements et plus encore." },
+    es: { greeting: "¡Hola! Soy Peace Bot. ¿Cómo puedo ayudarte hoy?", fallback: "Puedo ayudar con donaciones, voluntariado, eventos y más." },
+    pt: { greeting: "Olá! Sou o Peace Bot. Como posso ajudá-lo hoje?", fallback: "Posso ajudar com doações, voluntariado, eventos e mais." },
+    de: { greeting: "Hallo! Ich bin Peace Bot. Wie kann ich Ihnen heute helfen?", fallback: "Ich kann bei Spenden, Freiwilligenarbeit, Veranstaltungen und mehr helfen." },
+    it: { greeting: "Ciao! Sono Peace Bot. Come posso aiutarti oggi?", fallback: "Posso aiutare con donazioni, volontariato, eventi e altro." },
+    ar: { greeting: "مرحباً! أنا Peace Bot. كيف يمكنني مساعدتك اليوم؟", fallback: "يمكنني المساعدة في التبرعات والتطوع والفعاليات والمزيد." },
+    zh: { greeting: "你好！我是 Peace Bot。今天我能帮你什么？", fallback: "我可以帮助您了解捐赠、志愿服务、活动等信息。" },
+    ja: { greeting: "こんにちは！Peace Botです。今日はどのようにお手伝いできますか？", fallback: "寄付、ボランティア、イベントなどについてお手伝いできます。" },
+    ko: { greeting: "안녕하세요! Peace Bot입니다. 오늘 무엇을 도와드릴까요?", fallback: "기부, 봉사활동, 이벤트 등에 대해 도움을 드릴 수 있습니다." },
+    hi: { greeting: "नमस्ते! मैं Peace Bot हूँ। आज मैं आपकी कैसे मदद कर सकता हूँ?", fallback: "मैं दान, स्वयंसेवा, कार्यक्रमों और बहुत कुछ में मदद कर सकता हूँ।" },
+    ru: { greeting: "Здравствуйте! Я Peace Bot. Чем я могу помочь вам сегодня?", fallback: "Я могу помочь с пожертвованиями, волонтерством, мероприятиями и многим другим." },
     sw: { greeting: "Habari! Mimi ni Peace Bot. Nikisaidiaje leo?", fallback: "Ninaweza kusaidia na michango, kujitolea, matukio, na mengi zaidi." },
     am: { greeting: "ሰላም! እኔ ፒስ ቦት ነኝ. ዛሬ እንዴት ልረዳዎ?", fallback: "በ捐助፣ በ voluntarism፣ በክስተቶች እና በተጨማሪ ነገሮች ልረዳዎ ይችላል።" },
     rw: { greeting: "Amakuru! Ndi Peace Bot. Nshobora kukugira iki uyu munsi?", fallback: "Nshobora gufasha mu buryo bwo gutanga, gukorerabushake, nibindi." },
-    lg: { greeting: "Nkulamisa! Nze Peace Bot. Njogera n'akiiki lero?", fallback: "Njogera okuyamba ku mpano, okuwumulira, n'ebintu ebirala." }
+    lg: { greeting: "Nkulamisa! Nze Peace Bot. Njogera n'akiiki lero?", fallback: "Njogera okuyamba ku mpano, okuwumulira, n'ebintu ebirala." },
+    ha: { greeting: "Sannu! Ni Peace Bot. Yaya zan taimaka a yau?", fallback: "Zan iya taimaka da bayar da gudummawa, aikin yi, tarurruwa, da ƙari." },
+    yo: { greeting: "Bawo ni! Mi ni Peace Bot. Bawo ni le mo le ran se?", fallback: "Mo le ran se pẹlu awọn奉献, iṣura, iṣẹlẹ, ati bii bee loke." },
+    ig: { greeting: "Ndewo! Abụ m Peace Bot. Kedu ka m nyere gị aka taa?", fallback: "Enwere m ike inyere gị aka n'ntụgo, ochikwa, mbibi, na ọzọ." }
   };
 
   function detectLanguage(text) {
+    if (text.match(/[ሀ-፿]/)) return 'am'; // Amharic
+    if (text.match(/[Ѐ-ӿ]/)) return 'ru'; // Russian
+    if (text.match(/[؀-ۿ]/)) return 'ar'; // Arabic
+    if (text.match(/[一-鿿]/)) return 'zh'; // Chinese
+    if (text.match(/[぀-ゟ゠-ヿ]/)) return 'ja'; // Japanese
+    if (text.match(/[가-힯]/)) return 'ko'; // Korean
+    if (text.match(/[ऀ-ॿ]/)) return 'hi'; // Hindi
     if (text.match(/[ñáéíóúü]/i)) return 'es';
     if (text.match(/[àâçéèêëîïôùûüÿœæ]/i)) return 'fr';
     if (text.match(/[äöüß]/i)) return 'de';
-    if (text.match(/[\u1200-\u137F]/)) return 'am'; // Amharic
-    if (text.match(/[\u0400-\u04FF]/)) return 'ru';
-    if (text.match(/[\u0400-\u04FF]/)) return 'uk';
     if (text.match(/\b(ndi|nshobora|amakuru)\b/i)) return 'rw'; // Kinyarwanda
     if (text.match(/\b(nkulamisa|njogera|kiiki)\b/i)) return 'lg'; // Luganda
     if (text.match(/\b(habari|nikisaidia|pole)\b/i)) return 'sw'; // Swahili
+    if (text.match(/\b(sannu|yaya|taimaka)\b/i)) return 'ha'; // Hausa
+    if (text.match(/\b(bawo|ranse|isele)\b/i)) return 'yo'; // Yoruba
+    if (text.match(/\b(ndewo|ochikwa|mbibi)\b/i)) return 'ig'; // Igbo
     return 'en';
   }
 

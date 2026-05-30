@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 101 files · ~522,164 words
+- 101 files · ~524,508 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1044 nodes · 1149 edges · 85 communities (75 shown, 10 thin omitted)
+- 1045 nodes · 1151 edges · 85 communities (76 shown, 9 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4f016f7f`
+- Built from commit: `6ec5047b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -99,7 +99,7 @@
 - `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (85 total, 10 thin omitted)
+## Communities (85 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -201,6 +201,10 @@ Nodes (10): __dirname, ensureDir(), extractMetrics(), __filename, getArgValue(),
 Cohesion: 0.06
 Nodes (29): bar, btn, id, relatedPosts, text, tocEntries, tocPercent, tocProgress (+21 more)
 
+### Community 34 - "Community 34"
+Cohesion: 0.47
+Nodes (3): callGemini(), getResponse(), getSystemPrompt()
+
 ### Community 35 - "Community 35"
 Cohesion: 0.18
 Nodes (11): 2. Directory Structure, 6. Database Schema, 8.1 API Security, 8.2 Frontend Security, 8.3 Infrastructure Security, 8. Security, Appendix: Key Ports, code:block10 (tabMember) (+3 more)
@@ -286,27 +290,27 @@ Cohesion: 0.15
 Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (+3 more)
 
 ### Community 80 - "Community 80"
-Cohesion: 0.04
-Nodes (47): agent_personality, emoji_usage, max_handoff_wait, response_length, tone, department_routing, corporate, donate (+39 more)
+Cohesion: 0.07
+Nodes (28): keywords, age, contact, corporate, countries, donate, donate_amount, events (+20 more)
 
 ### Community 81 - "Community 81"
 Cohesion: 0.04
 Nodes (46): agent_personality, fallback, greeting, handoff_message, name, role, tone, contact (+38 more)
 
 ### Community 82 - "Community 82"
-Cohesion: 0.07
-Nodes (28): responses, age, contact, corporate, countries, donate, donate_amount, events (+20 more)
+Cohesion: 0.04
+Nodes (47): agent_personality, emoji_usage, max_handoff_wait, response_length, tone, department_routing, corporate, donate (+39 more)
 
 ## Knowledge Gaps
 - **652 isolated node(s):** `name`, `type`, `version`, `node`, `dev` (+647 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `../components/Footer.astro` connect `Community 48` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 83`, `Community 84`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **What connects `name`, `type`, `version` to the rest of the system?**
   _687 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
