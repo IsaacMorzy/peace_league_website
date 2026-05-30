@@ -1,16 +1,16 @@
-# Graph Report - peace_league_website  (2026-05-28)
+# Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 95 files · ~456,323 words
+- 98 files · ~518,107 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 799 nodes · 919 edges · 78 communities (72 shown, 6 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.78)
+- 904 nodes · 1008 edges · 81 communities (74 shown, 7 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ca03f61a`
+- Built from commit: `22dc3a25`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -67,32 +67,35 @@
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 78|Community 78]]
+- [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `../layouts/Layout.astro` - 38 edges
-2. `../components/Navigation.astro` - 29 edges
-3. `../components/Footer.astro` - 22 edges
-4. `../components/Navigation.astro` - 20 edges
-5. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
-6. `Peace League Africa — Architecture Documentation` - 12 edges
-7. `Lighthouse Sweep Design (All Pages)` - 12 edges
-8. `File Structure` - 11 edges
-9. `Components` - 10 edges
-10. `Backend API Module (api.py)` - 10 edges
+1. `../layouts/Layout.astro` - 48 edges
+2. `../components/Navigation.astro` - 30 edges
+3. `../components/Footer.astro` - 23 edges
+4. `Meditative Motion + Persuasive Layout Refinements (Peace League Website)` - 13 edges
+5. `Peace League Africa — Architecture Documentation` - 12 edges
+6. `Lighthouse Sweep Design (All Pages)` - 12 edges
+7. `File Structure` - 11 edges
+8. `Components` - 10 edges
+9. `Backend API Module (api.py)` - 10 edges
+10. `../components/EventMap.astro` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `we()` --calls--> `e`  [INFERRED]
-  peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.BFpEbOzg.js → peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.DyfxE33W.js
-- `Re()` --calls--> `h`  [INFERRED]
-  peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.BFpEbOzg.js → peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.DyfxE33W.js
 - `Donation` --uses--> `Donation`  [INFERRED]
   peace_league_website/peace_league_custom/doctype/donation/donation.py → peace_league_website/doctype/plw_donation/donation.py
 - `generate_test_data()` --calls--> `seed_chapters()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_chapters.py
 - `generate_test_data()` --calls--> `seed_donations()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_donations.py
+- `generate_test_data()` --calls--> `seed_donors()`  [EXTRACTED]
+  peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_donors.py
+- `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
+  peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (78 total, 6 thin omitted)
+## Communities (81 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -119,8 +122,8 @@ Cohesion: 0.05
 Nodes (39): code:css (/* ── Meditative Decorative Motion ── */), code:astro (<h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl fo), code:astro (<div class="absolute inset-0 pointer-events-none" aria-hidde), code:astro (<div class="flex gap-6 whitespace-nowrap items-center opacit), code:astro (<div class="absolute inset-0 pointer-events-none z-[2]" aria), code:bash (git add frontend/src/pages/index.astro), code:astro (<section class="hero-gradient text-white py-16 lg:py-20 rela), code:astro (<section class="py-16 bg-surface section-band">) (+31 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.05
-Nodes (43): _, a, Ae(), at(), b(), Be(), Ce(), D (+35 more)
+Cohesion: 0.06
+Nodes (41): _, a, Ae(), at(), b(), Be(), Ce(), D (+33 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.40
@@ -151,8 +154,8 @@ Cohesion: 0.08
 Nodes (23): AllValuesOf, CollectionEntry, CollectionKey, ContentConfig, DataEntryMap, ExtractCollectionFilterType, ExtractEntryFilterType, ExtractErrorType (+15 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.09
-Nodes (20): dependencies, astro, @astrojs/sitemap, canvas-confetti, tailwindcss, tailwindcss-animate, @tailwindcss/vite, devDependencies (+12 more)
+Cohesion: 0.08
+Nodes (22): dependencies, astro, @astrojs/sitemap, canvas-confetti, leaflet, tailwindcss, tailwindcss-animate, @tailwindcss/vite (+14 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.11
@@ -191,20 +194,20 @@ Cohesion: 0.27
 Nodes (10): __dirname, ensureDir(), extractMetrics(), __filename, getArgValue(), main(), readRoutesFile(), repoRoot (+2 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.18
-Nodes (9): relatedPosts, ../../lib/blog-data.json, ../lib/blog-data.json, allPostsJson, categories, end, pages, start (+1 more)
+Cohesion: 0.06
+Nodes (29): bar, btn, id, relatedPosts, text, tocEntries, tocPercent, tocProgress (+21 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.16
-Nodes (10): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, ../components/Navigation.astro, ../lib/api.js, milestones, target, pages (+2 more)
+Cohesion: 0.18
+Nodes (6): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, milestones, target, pages
 
 ### Community 35 - "Community 35"
 Cohesion: 0.18
 Nodes (11): 2. Directory Structure, 6. Database Schema, 8.1 API Security, 8.2 Frontend Security, 8.3 Infrastructure Security, 8. Security, Appendix: Key Ports, code:block10 (tabMember) (+3 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.23
-Nodes (9): ../lib/causes-data.json, ../components/Footer.astro, ../lib/causes-data.json, goTo(), next(), prev(), startAutoplay(), stopAutoplay() (+1 more)
+Cohesion: 0.13
+Nodes (15): ../lib/causes-data.json, ../lib/events-data.json, ../lib/causes-data.json, goTo(), latestPosts, monthMap, monthNames, next() (+7 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.22
@@ -231,8 +234,8 @@ Cohesion: 0.33
 Nodes (5): __dirname, distDir, MIME, port, server
 
 ### Community 44 - "Community 44"
-Cohesion: 0.40
-Nodes (4): empty, past, pastEvents, upcomingEvents
+Cohesion: 0.06
+Nodes (28): data, dataEl, mapEl, parsed, ../components/EventMap.astro, emptyEl, featuredEvents, featuredEventsWithDate (+20 more)
 
 ### Community 45 - "Community 45"
 Cohesion: 0.40
@@ -251,8 +254,8 @@ Cohesion: 0.50
 Nodes (3): benefits, jobs, whyStats
 
 ### Community 49 - "Community 49"
-Cohesion: 0.11
-Nodes (17): ../layouts/Layout.astro, ../styles/global.css, canonicalURL, cursorGlow, dots, heroSection, mo, mockDonations (+9 more)
+Cohesion: 0.08
+Nodes (27): ../layouts/Layout.astro, ../styles/global.css, amounts, canonicalURL, cursorGlow, dist, donationActions, dots (+19 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -275,28 +278,36 @@ Cohesion: 0.67
 Nodes (3): 1. High-Level Architecture, code:block1 (┌──────────────────────────────────────────────────────────┐), Key Technologies
 
 ### Community 60 - "Community 60"
-Cohesion: 0.13
-Nodes (14): a, b, d, f, i, m, n, o (+6 more)
+Cohesion: 0.07
+Nodes (25): blob, consent, data, days, description, dist, err, firstErr (+17 more)
+
+### Community 78 - "Community 78"
+Cohesion: 0.11
+Nodes (18): a, b, e, f, g, h, i, l (+10 more)
+
+### Community 79 - "Community 79"
+Cohesion: 0.15
+Nodes (11): ../lib/api.js, data, email, errEl, errors, field, formData, hqJson (+3 more)
 
 ## Knowledge Gaps
-- **437 isolated node(s):** `canonicalURL`, `srMo`, `sheen`, `rect`, `mo` (+432 more)
+- **533 isolated node(s):** `name`, `type`, `version`, `node`, `dev` (+528 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../layouts/Layout.astro` connect `Community 49` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 54`, `Community 55`, `Community 31`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 48`, `Community 54`, `Community 55`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `canonicalURL`, `srMo`, `sheen` to the rest of the system?**
-  _472 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `../layouts/Layout.astro` connect `Community 49` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+- **Why does `../components/Navigation.astro` connect `Community 31` to `Community 33`, `Community 34`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Why does `../components/Footer.astro` connect `Community 34` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 80`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **What connects `name`, `type`, `version` to the rest of the system?**
+  _568 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.09788359788359788 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.07765151515151515 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.05187074829931973 - nodes in this community are weakly interconnected._

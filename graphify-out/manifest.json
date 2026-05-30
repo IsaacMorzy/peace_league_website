@@ -85,43 +85,43 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/index.html": {
-    "mtime": 1779982629.6375072,
-    "ast_hash": "cd03bd89161893759d680b2457135aff",
+    "mtime": 1780088572.5080626,
+    "ast_hash": "42d540841977aaea4de794b0f77fb129",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/about/index.html": {
-    "mtime": 1779982629.6215074,
-    "ast_hash": "77e7cccfb963569e124328847293412e",
+    "mtime": 1780088572.486063,
+    "ast_hash": "1b01d259cb49fe65c36c7e44efdc3532",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/contact/index.html": {
-    "mtime": 1779982629.6345074,
-    "ast_hash": "3016198429c7dc839afb796b9e7235a7",
+    "mtime": 1780088572.5050628,
+    "ast_hash": "fd37d054b998464d76cbc930b01e9d02",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/volunteer/index.html": {
-    "mtime": 1779982629.6415074,
-    "ast_hash": "f32cc03b15f21db1d8d43b9a60159b2d",
+    "mtime": 1780088572.5130627,
+    "ast_hash": "9d2ddefc5053ffb59257a32f6fb39d22",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/donate/index.html": {
-    "mtime": 1779982629.6345074,
-    "ast_hash": "488f51d51e8169dc87e81e2caa404a89",
+    "mtime": 1780088572.5050628,
+    "ast_hash": "c580cb980da4f332d72bb00ab54d1191",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/favicon.svg": {
-    "mtime": 1778518663.0887425,
-    "ast_hash": "8c13f40658976ea1dfb8ba37a8be0e8d",
+    "mtime": 1780102799.2055,
+    "ast_hash": "a7db843f54b1397bc226801751a59288",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/favicon.svg": {
-    "mtime": 1779982629.6365073,
+    "mtime": 1780088572.5070627,
     "ast_hash": "8c13f40658976ea1dfb8ba37a8be0e8d",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/package.json": {
-    "mtime": 1779534775.3134444,
-    "ast_hash": "55182e34079b500507a4063bae4c4d9b",
+    "mtime": 1780093184.2223854,
+    "ast_hash": "3a8b0bb4ae2ea76da68c9b10ca6e72ac",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/tsconfig.json": {
@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/lib/blog-data.json": {
-    "mtime": 1778785903.0828714,
-    "ast_hash": "6759e6bcf5ea440ea30b780cf4b7aa5d",
+    "mtime": 1780084856.5195606,
+    "ast_hash": "0106bce10b88de8c0877ffa94cb7e4ae",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Card.astro": {
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Footer.astro": {
-    "mtime": 1779981969.9351244,
-    "ast_hash": "8e4629c5fb24023532579d1683d1d61e",
+    "mtime": 1780101821.8694682,
+    "ast_hash": "3c051bb8e8739e51af74caef9275d321",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Hero.astro": {
@@ -235,23 +235,23 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/Navigation.astro": {
-    "mtime": 1779794172.2307246,
-    "ast_hash": "0f92dc82d1d223d1205f57b558417bcf",
+    "mtime": 1780087351.2515976,
+    "ast_hash": "83206a1ca8ca4f553a20502f3d1dbaf9",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/layouts/Layout.astro": {
-    "mtime": 1779982565.215089,
-    "ast_hash": "1c39b2641e561f5654c6141c42243f45",
+    "mtime": 1780102482.2407506,
+    "ast_hash": "598be4191bf9f31be9e1ab61d936f744",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/careers.astro": {
-    "mtime": 1779982045.170537,
-    "ast_hash": "ca7353d9584738aae3655177c58c34f0",
+    "mtime": 1780102482.2447505,
+    "ast_hash": "7fa84a0646257dcce8a7c251cce78725",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/privacy.astro": {
-    "mtime": 1779982045.167537,
-    "ast_hash": "53b5723d6017abf954a087263aeaec44",
+    "mtime": 1780102482.2517505,
+    "ast_hash": "e0f8121ab046994bd84d80cb1c2bc4e5",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/404.astro": {
@@ -260,33 +260,33 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/faq.astro": {
-    "mtime": 1779980479.2064154,
-    "ast_hash": "1d9c8e24de102c4d08ea4888af42e234",
+    "mtime": 1780102482.2567503,
+    "ast_hash": "3d6d88fa802dda6a944f03594f552aed",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/testimonials.astro": {
-    "mtime": 1779982045.1645372,
-    "ast_hash": "503732c52ce7538783e7554c70eb1a5b",
+    "mtime": 1780102482.2617502,
+    "ast_hash": "00a56552c2c73b97b35b1a2e4e702061",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/about.astro": {
-    "mtime": 1779982126.4658818,
-    "ast_hash": "d3d2b165188117d924c80c2d27160f7e",
+    "mtime": 1780102482.2667503,
+    "ast_hash": "95dff11562757c0e1572d00f8296e6eb",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/partner.astro": {
-    "mtime": 1779980479.2084155,
-    "ast_hash": "7c7927fd81cf43588fd1c443dccebbb2",
+    "mtime": 1780102482.2727501,
+    "ast_hash": "cdbe945efe35b2161fc6f07b78d12675",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/donate.astro": {
-    "mtime": 1779982614.2916462,
-    "ast_hash": "14cf3e0bed039c6d95f9dc1fa4bb2d52",
+    "mtime": 1780102482.2777503,
+    "ast_hash": "9b81ac69fff6f0915fdc9c18542de3b0",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/index.astro": {
-    "mtime": 1779982534.4503653,
-    "ast_hash": "db07b8b4b971e571cec97a2de85d677b",
+    "mtime": 1780103021.6492145,
+    "ast_hash": "8cd1a99b67c4dcc7f0ddb2d670b6c49c",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/terms.astro": {
@@ -295,8 +295,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/gallery.astro": {
-    "mtime": 1779980479.2114153,
-    "ast_hash": "37d355c54b9aaad81a56e213a5bc6224",
+    "mtime": 1780102482.2817502,
+    "ast_hash": "88c2a2f8b20aed279bed0414d18720fc",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/fundraise.astro": {
@@ -305,8 +305,8 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/team.astro": {
-    "mtime": 1779982126.467882,
-    "ast_hash": "6f1d2475dddb6f21242ee39547ab4dbd",
+    "mtime": 1780102482.28675,
+    "ast_hash": "97ff141df2b2b973249a777bc7a0cfae",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/sitemap.astro": {
@@ -315,33 +315,33 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/causes.astro": {
-    "mtime": 1779980479.2124155,
-    "ast_hash": "7949821ecd52fa0185e32d6605d13ad7",
+    "mtime": 1780102482.29175,
+    "ast_hash": "b9aff3d7615eb4481a7615798059f31a",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/events.astro": {
-    "mtime": 1779981942.9693298,
-    "ast_hash": "1c415a11b72ccb501e2848da25abb9f5",
+    "mtime": 1780102444.3281386,
+    "ast_hash": "3d7a324aa96727441ec74191fb6dff82",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/contact.astro": {
-    "mtime": 1779980479.2134154,
-    "ast_hash": "41ca8b1591c79d73cb3cea078f785e1d",
+    "mtime": 1780102482.29775,
+    "ast_hash": "8c9ddc8f874d911b75ac9cad90868124",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/blog.astro": {
-    "mtime": 1779981954.9952385,
-    "ast_hash": "cde8f7c03e7180e03227a1c3b31d4d90",
+    "mtime": 1780085894.0415962,
+    "ast_hash": "bd6c90302c705a1bb85503b0a0d96fef",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/volunteer.astro": {
-    "mtime": 1779980479.2134154,
-    "ast_hash": "474d87d547bc46e56b2852c17d3c2c36",
+    "mtime": 1780102482.30875,
+    "ast_hash": "0892cdfcdee904f5ad2128684abb0fb5",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/blog/[slug].astro": {
-    "mtime": 1779981960.3801975,
-    "ast_hash": "fcccce3898074bdcff488192519ea090",
+    "mtime": 1780102482.3157496,
+    "ast_hash": "4f1f19363f5167c83485a723df8510e8",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/test-results/.last-run.json": {
@@ -350,7 +350,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/types.d.ts": {
-    "mtime": 1779982621.4185817,
+    "mtime": 1780103031.5921123,
     "ast_hash": "f3d48b2aa569815a445d3509aa161559",
     "semantic_hash": ""
   },
@@ -360,7 +360,7 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/.astro/content.d.ts": {
-    "mtime": 1779982621.4175818,
+    "mtime": 1780103031.5911121,
     "ast_hash": "242c41d20fcda532f17f55cd1a0217bc",
     "semantic_hash": ""
   },
@@ -420,17 +420,17 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/_astro/volunteer.astro_astro_type_script_index_0_lang.BuZsEaqq.js": {
-    "mtime": 1779982629.6215074,
+    "mtime": 1780088572.4850628,
     "ast_hash": "fb068bdaeffd158fee74319a1255be3f",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/_astro/contact.astro_astro_type_script_index_0_lang.DNkWBXOw.js": {
-    "mtime": 1779982629.6215074,
+    "mtime": 1780088572.4850628,
     "ast_hash": "98124769efd15680d03e52d3388df21d",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/_astro/api.DpPosHfZ.js": {
-    "mtime": 1779982629.6215074,
+    "mtime": 1780088572.4850628,
     "ast_hash": "17871ba67804bc6015b88201904d12dc",
     "semantic_hash": ""
   },
@@ -515,168 +515,168 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/404.html": {
-    "mtime": 1779982629.6205075,
-    "ast_hash": "dfd4d78b5c38d1a383ae8a0edd86ccbb",
+    "mtime": 1780088572.483063,
+    "ast_hash": "96e159160769f99379635870c227fb89",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/gallery/index.html": {
-    "mtime": 1779982629.6365073,
-    "ast_hash": "84d7efd1f5f8d4b93ce05b668f0e9e96",
+    "mtime": 1780088572.5080626,
+    "ast_hash": "7af537bec9ba87fcc00d61b3f44b3c77",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/team/index.html": {
-    "mtime": 1779982629.6405072,
-    "ast_hash": "9c1d02f8a1a4803b52f0815a8e16978e",
+    "mtime": 1780088572.5110626,
+    "ast_hash": "a82f92b8610f9542bc2124fc77ac4957",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/sitemap/index.html": {
-    "mtime": 1779982629.6395073,
-    "ast_hash": "3c711eb5174486c8668ac61a76ed650c",
+    "mtime": 1780088572.5100627,
+    "ast_hash": "a30e3514a457404a1ef77a0f20fa97df",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/faq/index.html": {
-    "mtime": 1779982629.6355073,
-    "ast_hash": "32c8bfdce2cd017d776c944dde061336",
+    "mtime": 1780088572.5060627,
+    "ast_hash": "8e74e0ffb3ed1dd157983f971f0aee58",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/careers/index.html": {
-    "mtime": 1779982629.6335073,
-    "ast_hash": "87b22dc75657746089da359d2445b12b",
+    "mtime": 1780088572.5040627,
+    "ast_hash": "e2ba9d954c5dd0583f8c31c8c11ee069",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/testimonials/index.html": {
-    "mtime": 1779982629.6415074,
-    "ast_hash": "4a466e749d4c226f1f3d2c06789e5aeb",
+    "mtime": 1780088572.5120628,
+    "ast_hash": "39f3bc51169e864051947b21d4299621",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/terms/index.html": {
-    "mtime": 1779982629.6405072,
-    "ast_hash": "4cb4cde45863d54e274ecbdc9f05cb40",
+    "mtime": 1780088572.5120628,
+    "ast_hash": "15ff7338924fe2776e0a61a5a60aeb38",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/privacy/index.html": {
-    "mtime": 1779982629.6395073,
-    "ast_hash": "a213742a62579d1f1892041bc3403089",
+    "mtime": 1780088572.5100627,
+    "ast_hash": "e3b2c4802a2dd5dc48696b0fd0acf25a",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/events/index.html": {
-    "mtime": 1779982629.6355073,
-    "ast_hash": "79259f1d9a78b3600841e6437bf3ac36",
+    "mtime": 1780088572.5060627,
+    "ast_hash": "71aeacd3ece2b78320b3b878ebee923f",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/causes/index.html": {
-    "mtime": 1779982629.6335073,
-    "ast_hash": "6d60b60b3ed1a16c7cc3a0f93b43d5d8",
+    "mtime": 1780088572.5040627,
+    "ast_hash": "dcd4fb0e92357c4e641f3a56642ed6f1",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/partner/index.html": {
-    "mtime": 1779982629.6385074,
-    "ast_hash": "c0eca1d4ede350148519ddd5bba352e0",
+    "mtime": 1780088572.5100627,
+    "ast_hash": "bcb584d2f437af2f0150267f8e8639e0",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/index.html": {
-    "mtime": 1779982629.6335073,
-    "ast_hash": "bd4c593cbcf7896c2be92a8e415412ea",
+    "mtime": 1780088572.5030627,
+    "ast_hash": "ecd303b514208279a64e6c9b7ed30c17",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/sustainable-agriculture-fighting-hunger/index.html": {
-    "mtime": 1779982629.6275074,
-    "ast_hash": "ebeb2415ab0c31d7f66c598c0678b893",
+    "mtime": 1780088572.4950628,
+    "ast_hash": "ad6f46afaf0287c89750197aba748700",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/healthcare-outreach-remote-villages/index.html": {
-    "mtime": 1779982629.6275074,
-    "ast_hash": "c84a6dcd88cf51144c7bb1f9361f1775",
+    "mtime": 1780088572.494063,
+    "ast_hash": "8dc577dc7085609dadbb06af2754fcd0",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/orphanage-support-program-update/index.html": {
-    "mtime": 1779982629.6315074,
-    "ast_hash": "0b0f0a3ec17121bb0898513a70191232",
+    "mtime": 1780088572.5010629,
+    "ast_hash": "6078fb8140a570537bb90bff2ff5e981",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/community-reconciliation-after-conflict/index.html": {
-    "mtime": 1779982629.6305075,
-    "ast_hash": "a987a167da371bffd83e0ab983e3b7a5",
+    "mtime": 1780088572.5000627,
+    "ast_hash": "1d8e700de14a33d9f7cf4dde2a9a4548",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/how-25-dollars-changes-a-childs-future/index.html": {
-    "mtime": 1779982629.6285074,
-    "ast_hash": "ce2b853b9699c7050dd830f86f08f9b2",
+    "mtime": 1780088572.4960628,
+    "ast_hash": "e1d10a545de2650fd19e93dde1070817",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/partnership-african-union-peace/index.html": {
-    "mtime": 1779982629.6285074,
-    "ast_hash": "d4e7d5b84aff4eda12e0f6dae2790449",
+    "mtime": 1780088572.497063,
+    "ast_hash": "7b6e420a2575bc3dc368273a5c64128b",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/digital-literacy-empowering-girls/index.html": {
-    "mtime": 1779982629.6305075,
-    "ast_hash": "743abd5994642d1255d383d42c70f99d",
+    "mtime": 1780088572.4990628,
+    "ast_hash": "8077bef921de456f23ca36516197984a",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/youth-mentorship-changing-lives/index.html": {
-    "mtime": 1779982629.6265075,
-    "ast_hash": "54e5c8a4b51eb7575fdb80d4a42bcb02",
+    "mtime": 1780088572.493063,
+    "ast_hash": "1619e62f6753f648bb9c9f4e650d63e2",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/mental-health-support-conflict-zones/index.html": {
-    "mtime": 1779982629.6305075,
-    "ast_hash": "fe4bae9c5ed00ce53f06a463a6b0bfd0",
+    "mtime": 1780088572.4990628,
+    "ast_hash": "16e570bfed57bb59f8d63fef104dc412",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/how-to-sponsor-a-childs-education/index.html": {
-    "mtime": 1779982629.6325073,
-    "ast_hash": "fb470c1708e0a773e5dd15ff0ad6cf22",
+    "mtime": 1780088572.5020628,
+    "ast_hash": "f062ce485c9c7b58b23293b0a353991c",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/women-peacebuilders-rural-africa/index.html": {
-    "mtime": 1779982629.6265075,
-    "ast_hash": "feac415fe90c83256b952d6f9f3745d9",
+    "mtime": 1780088572.4920628,
+    "ast_hash": "5707c861d0e3709a976d7ca864985416",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/day-in-life-peace-educator/index.html": {
-    "mtime": 1779982629.6285074,
-    "ast_hash": "a21161ec2937bc4944cec61e7d9db2f5",
+    "mtime": 1780088572.4960628,
+    "ast_hash": "43b6105fd235672bb77792418f34f759",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/tree-planting-climate-resilience/index.html": {
-    "mtime": 1779982629.6315074,
-    "ast_hash": "57563441762be58dd08617daf63f13e3",
+    "mtime": 1780088572.5000627,
+    "ast_hash": "994ccbe78fe507f1033808b60dbf282e",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/emergency-relief-climate-disasters/index.html": {
-    "mtime": 1779982629.6275074,
-    "ast_hash": "6eb5d0344660f6607a17800163393975",
+    "mtime": 1780088572.4950628,
+    "ast_hash": "c4a7562d41ede2bd5c343f0b11642996",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/microfinance-empowering-women/index.html": {
-    "mtime": 1779982629.6315074,
-    "ast_hash": "af154bf334e1067d308731878ed8b147",
+    "mtime": 1780088572.5010629,
+    "ast_hash": "51b6e26c06a36787a7fd1867073b87f2",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/clean-water-access-success/index.html": {
-    "mtime": 1779982629.6265075,
-    "ast_hash": "501916fdecd8672aefe2a86cb7da8dc1",
+    "mtime": 1780088572.493063,
+    "ast_hash": "2d2da8d4a90830c569a579ebeefd5b10",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/peace-league-2025-impact-report/index.html": {
-    "mtime": 1779982629.6325073,
-    "ast_hash": "3ca2fb8cf62cb040acb796f76c6f9571",
+    "mtime": 1780088572.5020628,
+    "ast_hash": "981b46d85e560cd825c90da041e3873d",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/sports-for-peace-initiative/index.html": {
-    "mtime": 1779982629.6295073,
-    "ast_hash": "d41a467167a36c0c9037a90017a3af71",
+    "mtime": 1780088572.4980628,
+    "ast_hash": "458a17ef4c26ad30d2a45cc2a2a4d9c1",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/peace-education-transforms-communities/index.html": {
-    "mtime": 1779982629.6255074,
-    "ast_hash": "4308f31f7f370241f0203385be8657a3",
+    "mtime": 1780088572.4920628,
+    "ast_hash": "c700ea0c7fce3ba15da9947f0e1a6bed",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/refugee-reintegration-success/index.html": {
-    "mtime": 1779982629.6295073,
-    "ast_hash": "cb2981a236b352a8b00f31240ccc3297",
+    "mtime": 1780088572.497063,
+    "ast_hash": "a6bd1fbdb9bdf164b29781e54b20afda",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/globe.webp": {
@@ -735,63 +735,63 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/globe.webp": {
-    "mtime": 1779982629.6375072,
+    "mtime": 1780088572.5080626,
     "ast_hash": "d9bcf8eddbd8d253b56358bd78f24fd4",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/earth.webp": {
-    "mtime": 1779982629.6355073,
+    "mtime": 1780088572.5050628,
     "ast_hash": "d9bcf8eddbd8d253b56358bd78f24fd4",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/logo-african-union.svg": {
-    "mtime": 1779982629.6375072,
+    "mtime": 1780088572.5090628,
     "ast_hash": "0d12c7537acbd1011bcc1b68cc0eda36",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/logo-red-cross.svg": {
-    "mtime": 1779982629.6385074,
+    "mtime": 1780088572.5090628,
     "ast_hash": "a648316ce53fbafd42546d45c859a366",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/africa-map.gif": {
-    "mtime": 1779982629.6235075,
+    "mtime": 1780088572.4880629,
     "ast_hash": "1963e5c6db7d609ad3986bb4fc97896c",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/logo-unicef.svg": {
-    "mtime": 1779982629.6385074,
+    "mtime": 1780088572.5090628,
     "ast_hash": "5e92d891737b0911330eea23de911b29",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/logo-who.svg": {
-    "mtime": 1779982629.6385074,
+    "mtime": 1780088572.5090628,
     "ast_hash": "4dc134bff2729dc63834d5c550276dca",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/logo-amref.png": {
-    "mtime": 1779982629.6385074,
+    "mtime": 1780088572.5090628,
     "ast_hash": "ec0efe4de1b1347907c2fd08e86f2061",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/apple-touch-icon.png": {
-    "mtime": 1779982629.6255074,
+    "mtime": 1780088572.4910629,
     "ast_hash": "e93cd62f694c99685dc47018b36e7705",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/logo-save-children.svg": {
-    "mtime": 1779982629.6385074,
+    "mtime": 1780088572.5090628,
     "ast_hash": "11055c2ace476084fe8e82c6e8de8c9e",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/africa-map.webp": {
-    "mtime": 1779982629.6255074,
+    "mtime": 1780088572.490063,
     "ast_hash": "3cbcbb6057953e3b595981741df5db6b",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/fundraise/index.html": {
-    "mtime": 1779982629.6365073,
-    "ast_hash": "392e4282919b86b1fd2a0d7551297fa6",
+    "mtime": 1780088572.5070627,
+    "ast_hash": "f34279d835b078d946b421c1aedf6a22",
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/frontend/deploy.sh": {
@@ -800,13 +800,53 @@
     "semantic_hash": ""
   },
   "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/_astro/donate.astro_astro_type_script_index_0_lang.BFpEbOzg.js": {
-    "mtime": 1779982629.6215074,
+    "mtime": 1780088572.4850628,
     "ast_hash": "9d4722e3c6f8a56fa4ec0d1da18486fa",
     "semantic_hash": ""
   },
-  "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.DyfxE33W.js": {
-    "mtime": 1779982629.6215074,
-    "ast_hash": "db4dbe6744fc0c1d27b8d48a0f9a86fb",
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/lib/events-data.json": {
+    "mtime": 1780095459.2814214,
+    "ast_hash": "7869a2ee68b023a7ca947eb740a7bbdf",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/components/EventMap.astro": {
+    "mtime": 1780102482.2367506,
+    "ast_hash": "36baec8f9aa63ef226bf46334cb9aa59",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/src/pages/events/[slug].astro": {
+    "mtime": 1780102482.3037498,
+    "ast_hash": "aba5a090218e58d98d382938a02d72e9",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js": {
+    "mtime": 1780088572.484063,
+    "ast_hash": "0ff426b43a7e415377d3026f2c03ff93",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/blog/standing-with-utumishi-girls-in-mourning/index.html": {
+    "mtime": 1780088572.4910629,
+    "ast_hash": "79f228014ab3fd7ff3693c21edc46717",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/utumishi-fire.jpg": {
+    "mtime": 1780084300.6400168,
+    "ast_hash": "44782555d157cccc6bb1b69e1f54238c",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/speaker-hassan-kinyua-thumb.jpg": {
+    "mtime": 1780094896.2813842,
+    "ast_hash": "55abde2e7fcac0e312cddae667a724b7",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/frontend/public/speaker-hassan-kinyua.jpg": {
+    "mtime": 1780094891.5424335,
+    "ast_hash": "f3e3053c10708b501eece5796f640256",
+    "semantic_hash": ""
+  },
+  "/home/crowd/frappe-bench/apps/peace_league_website/peace_league_website/public/astro_pages/utumishi-fire.jpg": {
+    "mtime": 1780088572.5130627,
+    "ast_hash": "44782555d157cccc6bb1b69e1f54238c",
     "semantic_hash": ""
   }
 }

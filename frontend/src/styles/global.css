@@ -342,8 +342,8 @@ a:active {
   --color-muted: #7a7a7e;
   --color-primary: #ffffff;
   --color-on-primary: #0a0a0a;
-  --color-on-dark: #0a0a0a;
-  --color-on-dark-muted: #3a3a3c;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #d1d1d6;
   --color-hero-bg: #0d2530;
   --color-success-bg: #064e3b;
   --color-error-bg: #7f1d1d;
@@ -356,6 +356,15 @@ a:active {
   background: rgba(10, 10, 10, 0.7);
   border-color: rgba(255, 255, 255, 0.08);
 }
+
+/* ── Dark Mode Text Visibility Safety Net ── */
+.dark .text-on-dark { color: #ffffff !important; }
+.dark .text-on-dark-muted { color: #d1d1d6 !important; }
+.dark .hero-gradient p,
+.dark .hero-gradient span,
+.dark .hero-gradient a { color: rgba(255,255,255,0.85); }
+.dark .section--band-dark p,
+.dark .section--band-dark span { color: #d1d1d6; }
 
 .dark .hero-gradient {
   background: linear-gradient(135deg, #0d1a1a 0%, #1a2d25 30%, #0d1a15 60%, #0a1210 100%);
