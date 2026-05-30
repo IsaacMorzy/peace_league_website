@@ -8,8 +8,8 @@
 <!-- Libredesk Widget Configuration -->
 <script>
   window.LibredeskSettings = {
-    baseURL: 'https://libredesk-production-d083.up.railway.app',
-    inboxID: '4a127926-e6cd-426b-afc9-b2b9ccd38b6f'
+    baseURL: import.meta.env.PUBLIC_LIBREDESK_BASE_URL || 'https://libredesk-production-d083.up.railway.app',
+    inboxID: import.meta.env.PUBLIC_LIBREDESK_INBOX_ID || '4a127926-e6cd-426b-afc9-b2b9ccd38b6f'
   };
 </script>
 <script async src="https://libredesk-production-d083.up.railway.app/widget.js"></script>
@@ -23,8 +23,10 @@
   // CONFIGURATION
   // ══════════════════════════════════════════
   var CONFIG = {
-    geminiApiKey: '', // Add your Gemini API key here
+    geminiApiKey: import.meta.env.PUBLIC_GEMINI_API_KEY || '',
     geminiModel: 'gemini-2.0-flash',
+    libredeskBaseUrl: import.meta.env.PUBLIC_LIBREDESK_BASE_URL || 'https://libredesk-production-d083.up.railway.app',
+    libredeskInboxId: import.meta.env.PUBLIC_LIBREDESK_INBOX_ID || '4a127926-e6cd-426b-afc9-b2b9ccd38b6f',
     autoOpenDelay: 30000,
     proactiveDelay: 15000,
     businessHours: { start: 8, end: 18, timezone: 'Africa/Nairobi' },

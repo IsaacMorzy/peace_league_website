@@ -1,16 +1,16 @@
 # Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 101 files · ~521,494 words
+- 101 files · ~522,157 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1042 nodes · 1146 edges · 83 communities (76 shown, 7 thin omitted)
+- 1044 nodes · 1149 edges · 85 communities (75 shown, 10 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8e507985`
+- Built from commit: `e4388693`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,6 +40,7 @@
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
@@ -71,6 +72,8 @@
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
 - [[_COMMUNITY_Community 82|Community 82]]
+- [[_COMMUNITY_Community 83|Community 83]]
+- [[_COMMUNITY_Community 84|Community 84]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `responses` - 28 edges
@@ -96,7 +99,7 @@
 - `generate_test_data()` --calls--> `seed_members()`  [EXTRACTED]
   peace_league_website/utils/seed_data.py → peace_league_website/utils/seed/seed_members.py
 
-## Communities (83 total, 7 thin omitted)
+## Communities (85 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -187,8 +190,8 @@ Cohesion: 0.15
 Nodes (12): Approach (Shared-Asset-First), Candidate Shared Fixes (Ordered by Likely Impact), Goals, Lighthouse Sweep Design (All Pages), Non-Goals, Outputs, Overview, Results (+4 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.09
-Nodes (19): FLAG_COUNTRIES, footerLinks, chevron, children, d, focusable, group, iconPaths (+11 more)
+Cohesion: 0.15
+Nodes (11): chevron, children, d, focusable, group, iconPaths, items, navItems (+3 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.27
@@ -243,8 +246,8 @@ Cohesion: 0.67
 Nodes (3): main(), pageStatus(), ROUTES
 
 ### Community 48 - "Community 48"
-Cohesion: 0.50
-Nodes (3): benefits, jobs, whyStats
+Cohesion: 0.17
+Nodes (7): FLAG_COUNTRIES, footerLinks, ../components/Footer.astro, benefits, jobs, whyStats, pages
 
 ### Community 49 - "Community 49"
 Cohesion: 0.06
@@ -297,13 +300,13 @@ Nodes (28): responses, age, contact, corporate, countries, donate, donate_amount
 ## Knowledge Gaps
 - **652 isolated node(s):** `name`, `type`, `version`, `node`, `dev` (+647 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `../components/Footer.astro` connect `Community 31` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 48`, `Community 54`, `Community 55`, `Community 60`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `../components/Footer.astro` connect `Community 48` to `Community 33`, `Community 3`, `Community 36`, `Community 40`, `Community 44`, `Community 45`, `Community 79`, `Community 83`, `Community 84`, `Community 54`, `Community 55`, `Community 60`, `Community 31`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `name`, `type`, `version` to the rest of the system?**
   _687 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
