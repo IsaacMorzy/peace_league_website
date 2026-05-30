@@ -103,7 +103,22 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
                   See Upcoming Events
                 </a>
               )}
-              <a href="javascript:void(0)" onclick="downloadCalendar()" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 text-white/80 font-medium rounded-full hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10 text-sm">
+              <a href="javascript:void(0)" onclick="downloadCalendar(this)" 
+                data-title={event.title}
+                data-month={event.month}
+                data-day={event.day}
+                data-year={event.year}
+                data-start={event.startTime}
+                data-end={event.endTime}
+                data-venue={event.venue}
+                data-location={event.location}
+                data-address={event.address}
+                data-description={event.description}
+                data-registered={event.registered}
+                data-capacity={event.capacity}
+                data-price={event.price}
+                data-slug={event.slug}
+                class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 text-white/80 font-medium rounded-full hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10 text-sm">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Add to Calendar
               </a>
@@ -753,15 +768,16 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
     }
 
     // ── Calendar Download Function ──
-    window.downloadCalendar = function() {
-      // Open Google Calendar with event details
-      const monthNum = String(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].indexOf(event.month) + 1).padStart(2, "0");
-      const dayNum = event.day.padStart(2, "0");
-      const start = `${event.year}${monthNum}${dayNum}T${event.startTime.replace(":", "")}00`;
-      const end = `${event.year}${monthNum}${dayNum}T${event.endTime.replace(":", "")}00`;
-      const title = encodeURIComponent(event.title);
-      const location = encodeURIComponent(`${event.venue}, ${event.location}, ${event.address}`);
-      const details = encodeURIComponent(`${event.description}\n\nCapacity: ${event.registered}/${event.capacity} registered\nPrice: ${event.price}\n\nJoin us at: https://peaceleagueafrica.com/events/${event.slug}`);
+    window.downloadCalendar = function(btn) {
+      // Read event data from button attributes
+      const d = btn.dataset;
+      const monthNum = String(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].indexOf(d.month) + 1).padStart(2, "0");
+      const dayNum = d.day.padStart(2, "0");
+      const start = `${d.year}${monthNum}${dayNum}T${d.start.replace(":", "")}00`;
+      const end = `${d.year}${monthNum}${dayNum}T${d.end.replace(":", "")}00`;
+      const title = encodeURIComponent(d.title);
+      const location = encodeURIComponent(`${d.venue}, ${d.location}, ${d.address}`);
+      const details = encodeURIComponent(`${d.description}\n\nCapacity: ${d.registered}/${d.capacity} registered\nPrice: ${d.price}\n\nJoin us at: https://peaceleagueafrica.com/events/${d.slug}`);
       const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`;
       window.open(url, "_blank", "noopener,noreferrer");
     };
