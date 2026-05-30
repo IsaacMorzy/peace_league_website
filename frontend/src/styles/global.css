@@ -2428,7 +2428,7 @@ a:active {
    Hidden at the very bottom of the page to avoid overlapping footer. */
 #sticky-donate-btn {
   position: fixed;
-  bottom: 24px;
+  bottom: 90px;
   right: 24px;
   z-index: 9999;
   opacity: 0;
@@ -2452,7 +2452,7 @@ a:active {
 }
 
 #sticky-donate-btn.hide-on-footer {
-  bottom: 80px; /* move up out of way when near footer */
+  bottom: 140px; /* move up out of way when near footer */
 }
 
 /* ── 7b. VISUAL FINANCIAL TRANSPARENCY (Donut Chart) ──
