@@ -226,6 +226,95 @@ const pageTitle = `${title} | Peace League Africa`;
       <svg class="toast-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
     </div>
 
+    <!-- Newsletter Popup (exit-intent) -->
+    <div id="newsletter-popup" class="fixed inset-0 z-[9998] hidden items-center justify-center p-4" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
+      <div class="bg-canvas rounded-3xl border border-hairline shadow-2xl max-w-md w-full p-8 relative overflow-hidden">
+        <button id="newsletter-close" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface flex items-center justify-center text-steel hover:text-ink transition-colors" aria-label="Close">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-ink mb-2">Stay in the Loop</h3>
+          <p class="text-sm text-steel mb-6">Get monthly updates on our peace-building work, impact stories, and ways to help.</p>
+          <form id="newsletter-popup-form" class="flex gap-2">
+            <input type="email" placeholder="your@email.com" required class="flex-1 px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
+            <button type="submit" class="px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-accent-deep transition-colors text-sm">Subscribe</button>
+          </form>
+          <p class="text-xs text-steel mt-3">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Popup Script -->
+    <script>
+      (function() {
+        var popup = document.getElementById('newsletter-popup');
+        var closeBtn = document.getElementById('newsletter-close');
+        var form = document.getElementById('newsletter-popup-form');
+        
+        if (!popup) return;
+        
+        // Don't show if already dismissed or subscribed
+        if (localStorage.getItem('pleague-newsletter-dismissed') || localStorage.getItem('pleague-newsletter-subscribed')) return;
+        
+        // Exit intent detection
+        document.addEventListener('mouseout', function(e) {
+          if (e.clientY <= 0 && !sessionStorage.getItem('newsletter-shown')) {
+            sessionStorage.setItem('newsletter-shown', '1');
+            setTimeout(function() {
+              popup.classList.remove('hidden');
+              popup.classList.add('flex');
+            }, 500);
+          }
+        });
+        
+        // Also show after 60 seconds on page
+        setTimeout(function() {
+          if (!sessionStorage.getItem('newsletter-shown') && !localStorage.getItem('pleague-newsletter-dismissed')) {
+            sessionStorage.setItem('newsletter-shown', '1');
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+          }
+        }, 60000);
+        
+        // Close button
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function() {
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            localStorage.setItem('pleague-newsletter-dismissed', '1');
+          });
+        }
+        
+        // Click outside to close
+        popup.addEventListener('click', function(e) {
+          if (e.target === popup) {
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            localStorage.setItem('pleague-newsletter-dismissed', '1');
+          }
+        });
+        
+        // Form submit
+        if (form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = form.querySelector('input[type=email]').value;
+            if (email) {
+              localStorage.setItem('pleague-newsletter-subscribed', '1');
+              popup.innerHTML = '<div class="text-center p-8"><div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-4"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><h3 class="text-xl font-bold text-ink mb-2">You\'re In!</h3><p class="text-sm text-steel">Check your inbox for a welcome message.</p></div>';
+              setTimeout(function() {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+              }, 3000);
+            }
+          });
+        }
+      })();
+    </script>
+
     <script>
       // Scroll reveal — guarded: only query DOM lazily and observe existing elements
       const revealTargets = document.querySelectorAll('.scroll-reveal');
@@ -754,16 +843,52 @@ const pageTitle = `${title} | Peace League Africa`;
 
           // ── 1. Auto-open chat after 30 seconds ──
           setTimeout(function() {
-            // Only auto-open if user hasn't closed it before in this session
             if (!sessionStorage.getItem('libredesk-dismissed')) {
               window.Libredesk.show();
             }
           }, 30000);
 
-          // Track when user closes chat (don't auto-open again)
           window.Libredesk.onHide(function() {
             sessionStorage.setItem('libredesk-dismissed', '1');
           });
+
+          // ── Proactive messages by page ──
+          var page = window.location.pathname;
+          var proactiveMessages = {
+            '/donate': 'Need help choosing where to give? We can show you exactly how your donation makes an impact.',
+            '/volunteer': 'Ready to make a difference? Our team can help you find the perfect volunteer opportunity.',
+            '/events': 'Looking for an event to attend? Ask us about upcoming gatherings near you.',
+            '/contact': 'Have a question? Our team typically responds within 2 hours during business hours.',
+            '/causes': 'Want to support a specific cause? We can help you find the best way to contribute.',
+            '/partner': 'Interested in partnering? Let us discuss how we can work together for peace.',
+            '/about': 'Want to learn more about our mission? Ask us anything about Peace League Africa.',
+            '/blog': 'Enjoying our stories? Subscribe to get the latest updates delivered to your inbox.',
+            '/team': 'Want to connect with a team member? We can put you in touch.',
+            '/gallery': 'Beautiful moments! Want to see more or share your own peace-building photos?'
+          };
+
+          var message = proactiveMessages[page];
+          if (message) {
+            setTimeout(function() {
+              window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+                type: 'proactive',
+                message: message
+              });
+            }, 15000);
+          }
+
+          // ── Business hours check ──
+          var now = new Date();
+          var hours = now.getHours();
+          var day = now.getDay();
+          var isBusinessHours = day >= 1 && day <= 5 && hours >= 8 && hours < 18;
+          
+          if (!isBusinessHours) {
+            window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+              type: 'info',
+              message: 'Our team is currently offline. Leave a message and we\'ll respond within 24 hours.'
+            });
+          }
 
           // ── 3. Pass user data from booking forms ──
           document.querySelectorAll('form[id*="booking"], form[id*="reg-"]').forEach(function(form) {
