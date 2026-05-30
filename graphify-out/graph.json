@@ -61,7 +61,7 @@
       "label": "now",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L566",
+      "source_location": "L581",
       "id": "events_slug_now",
       "community": 60,
       "norm_label": "now"
@@ -70,7 +70,7 @@
       "label": "days",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L575",
+      "source_location": "L590",
       "id": "events_slug_days",
       "community": 60,
       "norm_label": "days"
@@ -79,7 +79,7 @@
       "label": "hours",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L576",
+      "source_location": "L591",
       "id": "events_slug_hours",
       "community": 60,
       "norm_label": "hours"
@@ -88,7 +88,7 @@
       "label": "mins",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L577",
+      "source_location": "L592",
       "id": "events_slug_mins",
       "community": 60,
       "norm_label": "mins"
@@ -97,7 +97,7 @@
       "label": "secs",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L578",
+      "source_location": "L593",
       "id": "events_slug_secs",
       "community": 60,
       "norm_label": "secs"
@@ -106,7 +106,7 @@
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L591",
+      "source_location": "L606",
       "id": "events_slug_rect",
       "community": 60,
       "norm_label": "rect"
@@ -115,7 +115,7 @@
       "label": "dist",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L594",
+      "source_location": "L609",
       "id": "events_slug_dist",
       "community": 60,
       "norm_label": "dist"
@@ -124,7 +124,7 @@
       "label": "strength",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L596",
+      "source_location": "L611",
       "id": "events_slug_strength",
       "community": 60,
       "norm_label": "strength"
@@ -133,7 +133,7 @@
       "label": "err",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L643",
+      "source_location": "L658",
       "id": "events_slug_err",
       "community": 60,
       "norm_label": "err"
@@ -142,7 +142,7 @@
       "label": "valid",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L646",
+      "source_location": "L661",
       "id": "events_slug_valid",
       "community": 60,
       "norm_label": "valid"
@@ -151,7 +151,7 @@
       "label": "required",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L680",
+      "source_location": "L695",
       "id": "events_slug_required",
       "community": 60,
       "norm_label": "required"
@@ -160,7 +160,7 @@
       "label": "consent",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L705",
+      "source_location": "L720",
       "id": "events_slug_consent",
       "community": 60,
       "norm_label": "consent"
@@ -169,7 +169,7 @@
       "label": "firstErr",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L715",
+      "source_location": "L730",
       "id": "events_slug_firsterr",
       "community": 60,
       "norm_label": "firsterr"
@@ -178,7 +178,7 @@
       "label": "formData",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L721",
+      "source_location": "L736",
       "id": "events_slug_formdata",
       "community": 60,
       "norm_label": "formdata"
@@ -187,7 +187,7 @@
       "label": "data",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L722",
+      "source_location": "L737",
       "id": "events_slug_data",
       "community": 60,
       "norm_label": "data"
@@ -196,7 +196,7 @@
       "label": "submitBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L725",
+      "source_location": "L740",
       "id": "events_slug_submitbtn",
       "community": 60,
       "norm_label": "submitbtn"
@@ -205,7 +205,7 @@
       "label": "monthNum",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L758",
+      "source_location": "L774",
       "id": "events_slug_monthnum",
       "community": 60,
       "norm_label": "monthnum"
@@ -214,7 +214,7 @@
       "label": "dayNum",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L759",
+      "source_location": "L775",
       "id": "events_slug_daynum",
       "community": 60,
       "norm_label": "daynum"
@@ -223,7 +223,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L762",
+      "source_location": "L778",
       "id": "events_slug_title",
       "community": 60,
       "norm_label": "title"
@@ -232,7 +232,7 @@
       "label": "location",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L763",
+      "source_location": "L779",
       "id": "events_slug_location",
       "community": 60,
       "norm_label": "location"
@@ -241,7 +241,7 @@
       "label": "details",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L764",
+      "source_location": "L780",
       "id": "events_slug_details",
       "community": 60,
       "norm_label": "details"
@@ -8201,9 +8201,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L759",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_daynum",
-      "confidence_score": 1.0
+      "target": "events_slug_daynum"
     },
     {
       "relation": "contains",
@@ -8221,9 +8221,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L764",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_details",
-      "confidence_score": 1.0
+      "target": "events_slug_details"
     },
     {
       "relation": "contains",
@@ -8311,9 +8311,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L763",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_location",
-      "confidence_score": 1.0
+      "target": "events_slug_location"
     },
     {
       "relation": "contains",
@@ -8341,9 +8341,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L758",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_monthnum",
-      "confidence_score": 1.0
+      "target": "events_slug_monthnum"
     },
     {
       "relation": "contains",
@@ -8421,9 +8421,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L762",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_title",
-      "confidence_score": 1.0
+      "target": "events_slug_title"
     },
     {
       "relation": "contains",
@@ -8483,9 +8483,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro",
-      "confidence_score": 1.0
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro"
     },
     {
       "relation": "imports_from",
@@ -8494,17 +8494,17 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_navigation_astro",
-      "confidence_score": 1.0
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_navigation_astro"
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/events/[slug].astro",
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_layouts_layout_astro",
-      "confidence_score": 1.0
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_layouts_layout_astro"
     },
     {
       "relation": "imports_from",
@@ -8513,9 +8513,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json",
-      "confidence_score": 1.0
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json"
     },
     {
       "relation": "contains",
@@ -18264,5 +18264,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d8cac972decd6170fb108e0b92db81f8d1f6e015"
+  "built_at_commit": "a44bd854689186583b5b603da3c3bb7c193f7461"
 }
