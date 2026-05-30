@@ -366,6 +366,11 @@ a:active {
 .dark .section--band-dark p,
 .dark .section--band-dark span { color: #d1d1d6; }
 
+/* Fix bg-primary buttons in dark mode */
+.dark .bg-primary { background-color: var(--color-accent) !important; }
+.dark .bg-primary:hover { background-color: var(--color-accent-deep, #00b894) !important; }
+.dark .text-on-dark { color: #ffffff !important; }
+
 .dark .hero-gradient {
   background: linear-gradient(135deg, #0d1a1a 0%, #1a2d25 30%, #0d1a15 60%, #0a1210 100%);
   background-size: 300% 300%;
