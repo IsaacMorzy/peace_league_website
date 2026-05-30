@@ -1,0 +1,222 @@
+---
+// Libredesk Chat Widget Component
+// Handles: widget loading, agent routing, proactive messages, user data, event tracking
+---
+
+<!-- Libredesk Widget Configuration -->
+<script>
+  window.LibredeskSettings = {
+    baseURL: 'https://libredesk-production-d083.up.railway.app',
+    inboxID: '4a127926-e6cd-426b-afc9-b2b9ccd38b6f'
+  };
+</script>
+<script async src="https://libredesk-production-d083.up.railway.app/widget.js"></script>
+
+<!-- Libredesk Enhancements -->
+<script>
+(function() {
+  // ── Wait for Libredesk to load ──
+  function waitForLibredesk(callback, maxWait) {
+    maxWait = maxWait || 10000;
+    var start = Date.now();
+    function check() {
+      if (window.Libredesk && window.Libredesk.show) {
+        callback();
+      } else if (Date.now() - start < maxWait) {
+        setTimeout(check, 200);
+      }
+    }
+    check();
+  }
+
+  waitForLibredesk(function() {
+
+    // ══════════════════════════════════════════
+    // 1. AGENT ROUTING BY PAGE
+    // Routes conversations to the right team member
+    // ══════════════════════════════════════════
+    var page = window.location.pathname;
+
+    var agentRoutes = {
+      '/donate': { department: 'fundraising', message: 'Hi! I can help you with donation options and payment methods.' },
+      '/volunteer': { department: 'volunteer-coordination', message: 'Welcome! I can help you find the perfect volunteer opportunity.' },
+      '/events': { department: 'events', message: 'Need help with events? I can tell you about upcoming gatherings.' },
+      '/events/': { department: 'events', message: 'Questions about this event? I can help with registration and details.' },
+      '/contact': { department: 'general', message: 'How can we help you today?' },
+      '/partner': { department: 'partnerships', message: 'Interested in partnering? Let\'s discuss how we can work together.' },
+      '/causes': { department: 'programs', message: 'Want to support a specific cause? I can show you the impact.' },
+      '/careers': { department: 'hr', message: 'Looking to join our team? I can answer questions about open positions.' },
+      '/blog': { department: 'communications', message: 'Enjoying our stories? I can help you subscribe or share.' },
+      '/about': { department: 'general', message: 'Want to learn more about Peace League Africa? Ask me anything!' },
+      '/team': { department: 'general', message: 'Want to connect with a team member? I can put you in touch.' },
+      '/gallery': { department: 'communications', message: 'Beautiful moments! Want to see more or share your own photos?' }
+    };
+
+    // Find matching route
+    var matchedRoute = null;
+    for (var route in agentRoutes) {
+      if (page === route || page.startsWith(route)) {
+        matchedRoute = agentRoutes[route];
+        break;
+      }
+    }
+
+    if (matchedRoute) {
+      // Store department for handoff
+      sessionStorage.setItem('libredesk-department', matchedRoute.department);
+      
+      // Send proactive message after 15 seconds
+      setTimeout(function() {
+        window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+          type: 'proactive',
+          message: matchedRoute.message
+        });
+      }, 15000);
+    }
+
+    // ══════════════════════════════════════════
+    // 2. AUTO-OPEN CHAT (30 seconds)
+    // ══════════════════════════════════════════
+    setTimeout(function() {
+      if (!sessionStorage.getItem('libredesk-dismissed')) {
+        window.Libredesk.show();
+      }
+    }, 30000);
+
+    window.Libredesk.onHide(function() {
+      sessionStorage.setItem('libredesk-dismissed', '1');
+    });
+
+    // ══════════════════════════════════════════
+    // 3. BUSINESS HOURS AUTO-REPLY
+    // ══════════════════════════════════════════
+    var now = new Date();
+    var hours = now.getHours();
+    var day = now.getDay();
+    var isBusinessHours = day >= 1 && day <= 5 && hours >= 8 && hours < 18;
+    var isEastAfricaTime = hours >= 8 && hours < 18; // EAT is UTC+3
+
+    if (!isBusinessHours) {
+      sessionStorage.setItem('libredesk-offline', '1');
+    }
+
+    // ══════════════════════════════════════════
+    // 4. USER DATA FROM FORMS
+    // ══════════════════════════════════════════
+    document.querySelectorAll('form[id*="booking"], form[id*="reg-"], form[id*="partner"]').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        var formData = new FormData(form);
+        var name = formData.get('name') || '';
+        var email = formData.get('email') || '';
+        var phone = formData.get('phone') || '';
+        var org = formData.get('organization') || '';
+
+        if (name || email) {
+          window.Libredesk.setUser && window.Libredesk.setUser({
+            name: name,
+            email: email,
+            phone: phone,
+            company: org
+          });
+
+          localStorage.setItem('pleague-user', JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            company: org,
+            department: matchedRoute ? matchedRoute.department : 'general'
+          }));
+        }
+      });
+    });
+
+    // Restore user data from localStorage
+    var savedUser = localStorage.getItem('pleague-user');
+    if (savedUser) {
+      try {
+        var userData = JSON.parse(savedUser);
+        window.Libredesk.setUser && window.Libredesk.setUser(userData);
+      } catch(e) {}
+    }
+
+    // ══════════════════════════════════════════
+    // 5. EVENT TRACKING
+    // ══════════════════════════════════════════
+    function trackEvent(eventName, data) {
+      window.Libredesk.sendMessage && window.Libredesk.sendMessage({
+        type: 'event',
+        event: eventName,
+        data: data || {}
+      });
+    }
+
+    // Donate page views
+    if (page === '/donate') {
+      setTimeout(function() { trackEvent('donate_page_view', { url: page }); }, 3000);
+    }
+
+    // Form submissions
+    document.querySelectorAll('form[id*="volunteer"]').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        setTimeout(function() { trackEvent('volunteer_signup', { url: page }); }, 500);
+      });
+    });
+
+    document.querySelectorAll('form[id*="contact"]').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        setTimeout(function() { trackEvent('contact_form_submit', { url: page }); }, 500);
+      });
+    });
+
+    document.querySelectorAll('form[id*="booking"], form[id*="reg-"]').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        setTimeout(function() { trackEvent('event_registration', { url: page }); }, 500);
+      });
+    });
+
+    // Donation completions
+    document.querySelectorAll('form[id*="donate"], .donate-form').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        setTimeout(function() { trackEvent('donation_initiated', { url: page }); }, 500);
+      });
+    });
+
+    // ══════════════════════════════════════════
+    // 6. HANDOFF LOGIC
+    // When user asks about specific topics, route to right agent
+    // ══════════════════════════════════════════
+    window.Libredesk.onUnreadCountChange && window.Libredesk.onUnreadCountChange(function(count) {
+      // Update unread badge
+      var badge = document.getElementById('chat-unread-badge');
+      if (badge) {
+        if (count > 0) {
+          badge.textContent = count;
+          badge.classList.remove('hidden');
+        } else {
+          badge.classList.add('hidden');
+        }
+      }
+    });
+
+    // ══════════════════════════════════════════
+    // 7. PAGE-SPECIFIC WIDGET BEHAVIOR
+    // ══════════════════════════════════════════
+    
+    // On donate page: suggest donation amounts
+    if (page === '/donate') {
+      sessionStorage.setItem('libredesk-context', 'donor');
+    }
+    
+    // On volunteer page: ask about skills
+    if (page === '/volunteer') {
+      sessionStorage.setItem('libredesk-context', 'volunteer');
+    }
+    
+    // On event pages: ask about event details
+    if (page.startsWith('/events/')) {
+      sessionStorage.setItem('libredesk-context', 'attendee');
+    }
+
+  });
+})();
+</script>

@@ -4,13 +4,14 @@
   "graph": {},
   "nodes": [
     {
-      "label": "Layout.astro",
+      "label": "../layouts/Layout.astro",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L1",
+      "confidence": "EXTRACTED",
       "id": "frontend_src_layouts_layout_astro",
       "community": 49,
-      "norm_label": "layout.astro"
+      "norm_label": "../layouts/layout.astro"
     },
     {
       "label": "canonicalURL",
@@ -22,19 +23,37 @@
       "norm_label": "canonicalurl"
     },
     {
+      "label": "srObserver",
+      "file_type": "code",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L322",
+      "id": "layouts_layout_srobserver",
+      "community": 49,
+      "norm_label": "srobserver"
+    },
+    {
       "label": "srMo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L250",
+      "source_location": "L339",
       "id": "layouts_layout_srmo",
       "community": 49,
       "norm_label": "srmo"
     },
     {
+      "label": "tiltCards",
+      "file_type": "code",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L351",
+      "id": "layouts_layout_tiltcards",
+      "community": 49,
+      "norm_label": "tiltcards"
+    },
+    {
       "label": "sheen",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L265",
+      "source_location": "L354",
       "id": "layouts_layout_sheen",
       "community": 49,
       "norm_label": "sheen"
@@ -43,7 +62,7 @@
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L267",
+      "source_location": "L356",
       "id": "layouts_layout_rect",
       "community": 49,
       "norm_label": "rect"
@@ -52,7 +71,7 @@
       "label": "scrollObserver",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L289",
+      "source_location": "L378",
       "id": "layouts_layout_scrollobserver",
       "community": 49,
       "norm_label": "scrollobserver"
@@ -61,7 +80,7 @@
       "label": "mo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L305",
+      "source_location": "L394",
       "id": "layouts_layout_mo",
       "community": 49,
       "norm_label": "mo"
@@ -70,7 +89,7 @@
       "label": "heroSection",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L316",
+      "source_location": "L405",
       "id": "layouts_layout_herosection",
       "community": 49,
       "norm_label": "herosection"
@@ -79,7 +98,7 @@
       "label": "heroLayers",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L318",
+      "source_location": "L407",
       "id": "layouts_layout_herolayers",
       "community": 49,
       "norm_label": "herolayers"
@@ -88,7 +107,7 @@
       "label": "speeds",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L319",
+      "source_location": "L408",
       "id": "layouts_layout_speeds",
       "community": 49,
       "norm_label": "speeds"
@@ -97,7 +116,7 @@
       "label": "animateHeroDepth()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L330",
+      "source_location": "L419",
       "id": "layouts_layout_animateherodepth",
       "community": 49,
       "norm_label": "animateherodepth()"
@@ -106,7 +125,7 @@
       "label": "particles",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L350",
+      "source_location": "L439",
       "id": "layouts_layout_particles",
       "community": 49,
       "norm_label": "particles"
@@ -115,7 +134,7 @@
       "label": "origPositions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L361",
+      "source_location": "L450",
       "id": "layouts_layout_origpositions",
       "community": 49,
       "norm_label": "origpositions"
@@ -124,7 +143,7 @@
       "label": "animateParticles()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L371",
+      "source_location": "L460",
       "id": "layouts_layout_animateparticles",
       "community": 49,
       "norm_label": "animateparticles()"
@@ -133,7 +152,7 @@
       "label": "magneticBtns",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L393",
+      "source_location": "L482",
       "id": "layouts_layout_magneticbtns",
       "community": 49,
       "norm_label": "magneticbtns"
@@ -142,7 +161,7 @@
       "label": "cursorGlow",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L410",
+      "source_location": "L499",
       "id": "layouts_layout_cursorglow",
       "community": 49,
       "norm_label": "cursorglow"
@@ -151,7 +170,7 @@
       "label": "animateGlow()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L420",
+      "source_location": "L509",
       "id": "layouts_layout_animateglow",
       "community": 49,
       "norm_label": "animateglow()"
@@ -160,7 +179,7 @@
       "label": "progressBar",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L430",
+      "source_location": "L519",
       "id": "layouts_layout_progressbar",
       "community": 49,
       "norm_label": "progressbar"
@@ -169,7 +188,7 @@
       "label": "shapes",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L459",
+      "source_location": "L548",
       "id": "layouts_layout_shapes",
       "community": 49,
       "norm_label": "shapes"
@@ -178,7 +197,7 @@
       "label": "dots",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L460",
+      "source_location": "L549",
       "id": "layouts_layout_dots",
       "community": 49,
       "norm_label": "dots"
@@ -187,7 +206,7 @@
       "label": "stickyBtn",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L472",
+      "source_location": "L561",
       "id": "layouts_layout_stickybtn",
       "community": 49,
       "norm_label": "stickybtn"
@@ -196,7 +215,7 @@
       "label": "toast",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L507",
+      "source_location": "L596",
       "id": "layouts_layout_toast",
       "community": 49,
       "norm_label": "toast"
@@ -205,7 +224,7 @@
       "label": "people",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L509",
+      "source_location": "L598",
       "id": "layouts_layout_people",
       "community": 49,
       "norm_label": "people"
@@ -214,7 +233,7 @@
       "label": "locations",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L522",
+      "source_location": "L611",
       "id": "layouts_layout_locations",
       "community": 49,
       "norm_label": "locations"
@@ -223,7 +242,7 @@
       "label": "donationActions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L526",
+      "source_location": "L615",
       "id": "layouts_layout_donationactions",
       "community": 49,
       "norm_label": "donationactions"
@@ -232,7 +251,7 @@
       "label": "volunteerActions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L532",
+      "source_location": "L621",
       "id": "layouts_layout_volunteeractions",
       "community": 49,
       "norm_label": "volunteeractions"
@@ -241,7 +260,7 @@
       "label": "amounts",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L538",
+      "source_location": "L627",
       "id": "layouts_layout_amounts",
       "community": 49,
       "norm_label": "amounts"
@@ -250,7 +269,7 @@
       "label": "pick()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L543",
+      "source_location": "L632",
       "id": "layouts_layout_pick",
       "community": 49,
       "norm_label": "pick()"
@@ -259,7 +278,7 @@
       "label": "generateToastData()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L545",
+      "source_location": "L634",
       "id": "layouts_layout_generatetoastdata",
       "community": 49,
       "norm_label": "generatetoastdata()"
@@ -268,7 +287,7 @@
       "label": "showToast()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L562",
+      "source_location": "L651",
       "id": "layouts_layout_showtoast",
       "community": 49,
       "norm_label": "showtoast()"
@@ -277,7 +296,7 @@
       "label": "dist",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L624",
+      "source_location": "L713",
       "id": "layouts_layout_dist",
       "community": 49,
       "norm_label": "dist"
@@ -286,7 +305,7 @@
       "label": "strength",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L626",
+      "source_location": "L715",
       "id": "layouts_layout_strength",
       "community": 49,
       "norm_label": "strength"
@@ -295,7 +314,7 @@
       "label": "icon",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L717",
+      "source_location": "L806",
       "id": "layouts_layout_icon",
       "community": 49,
       "norm_label": "icon"
@@ -304,7 +323,7 @@
       "label": "check()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
-      "source_location": "L743",
+      "source_location": "L832",
       "id": "layouts_layout_check",
       "community": 49,
       "norm_label": "check()"
@@ -317,6 +336,177 @@
       "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css",
       "community": 49,
       "norm_label": "../styles/global.css"
+    },
+    {
+      "label": "index.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L1",
+      "id": "frontend_src_pages_index_astro",
+      "community": 60,
+      "norm_label": "index.astro"
+    },
+    {
+      "label": "sortedPosts",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L9",
+      "id": "pages_index_sortedposts",
+      "community": 60,
+      "norm_label": "sortedposts"
+    },
+    {
+      "label": "latestPosts",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L10",
+      "id": "pages_index_latestposts",
+      "community": 60,
+      "norm_label": "latestposts"
+    },
+    {
+      "label": "upcomingEvents",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L12",
+      "id": "pages_index_upcomingevents",
+      "community": 60,
+      "norm_label": "upcomingevents"
+    },
+    {
+      "label": "monthNames",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L13",
+      "id": "pages_index_monthnames",
+      "community": 60,
+      "norm_label": "monthnames"
+    },
+    {
+      "label": "upcomingWithDate",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L14",
+      "id": "pages_index_upcomingwithdate",
+      "community": 60,
+      "norm_label": "upcomingwithdate"
+    },
+    {
+      "label": "monthMap",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L20",
+      "id": "pages_index_monthmap",
+      "community": 60,
+      "norm_label": "monthmap"
+    },
+    {
+      "label": "goTo()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L892",
+      "id": "pages_index_goto",
+      "community": 60,
+      "norm_label": "goto()"
+    },
+    {
+      "label": "next()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L906",
+      "id": "pages_index_next",
+      "community": 60,
+      "norm_label": "next()"
+    },
+    {
+      "label": "prev()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L907",
+      "id": "pages_index_prev",
+      "community": 60,
+      "norm_label": "prev()"
+    },
+    {
+      "label": "startAutoplay()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L909",
+      "id": "pages_index_startautoplay",
+      "community": 60,
+      "norm_label": "startautoplay()"
+    },
+    {
+      "label": "stopAutoplay()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L916",
+      "id": "pages_index_stopautoplay",
+      "community": 60,
+      "norm_label": "stopautoplay()"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L958",
+      "id": "pages_index_target",
+      "community": 60,
+      "norm_label": "target"
+    },
+    {
+      "label": "tick()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L1004",
+      "id": "pages_index_tick",
+      "community": 60,
+      "norm_label": "tick()"
+    },
+    {
+      "label": "../components/Navigation.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Navigation.astro",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_navigation_astro",
+      "community": 60,
+      "norm_label": "../components/navigation.astro"
+    },
+    {
+      "label": "../components/Footer.astro",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Footer.astro",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro",
+      "community": 60,
+      "norm_label": "../components/footer.astro"
+    },
+    {
+      "label": "../lib/blog-data.json",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/blog-data.json",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
+      "community": 60,
+      "norm_label": "../lib/blog-data.json"
+    },
+    {
+      "label": "../lib/causes-data.json",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/causes-data.json",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json",
+      "community": 36,
+      "norm_label": "../lib/causes-data.json"
+    },
+    {
+      "label": "../lib/events-data.json",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/events-data.json",
+      "confidence": "EXTRACTED",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json",
+      "community": 60,
+      "norm_label": "../lib/events-data.json"
     },
     {
       "label": "Navigation.astro",
@@ -652,24 +842,6 @@
       "id": "events_slug_details"
     },
     {
-      "label": "../../components/Footer.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/components/Footer.astro",
-      "confidence": "EXTRACTED",
-      "community": 60,
-      "norm_label": "../../components/footer.astro",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro"
-    },
-    {
-      "label": "../../lib/events-data.json",
-      "file_type": "code",
-      "source_file": "frontend/src/lib/events-data.json",
-      "confidence": "EXTRACTED",
-      "community": 60,
-      "norm_label": "../../lib/events-data.json",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json"
-    },
-    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "frontend/package.json",
@@ -993,7 +1165,7 @@
       "source_file": "frontend/src/lib/events-data.json",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "community": 36,
+      "community": 60,
       "norm_label": "../lib/events-data.json",
       "id": "frontend_src_lib_events_data_json"
     },
@@ -1356,15 +1528,6 @@
       "community": 36,
       "norm_label": "step()",
       "id": "pages_causes_step"
-    },
-    {
-      "label": "../lib/causes-data.json",
-      "file_type": "code",
-      "source_file": "frontend/src/lib/causes-data.json",
-      "confidence": "EXTRACTED",
-      "community": 36,
-      "norm_label": "../lib/causes-data.json",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
     },
     {
       "label": "contact.astro",
@@ -2247,132 +2410,6 @@
       "community": 31,
       "norm_label": "galleryimages",
       "id": "pages_gallery_galleryimages"
-    },
-    {
-      "label": "index.astro",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L1",
-      "community": 36,
-      "norm_label": "index.astro",
-      "id": "frontend_src_pages_index_astro"
-    },
-    {
-      "label": "sortedPosts",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L9",
-      "community": 36,
-      "norm_label": "sortedposts",
-      "id": "pages_index_sortedposts"
-    },
-    {
-      "label": "latestPosts",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L10",
-      "community": 36,
-      "norm_label": "latestposts",
-      "id": "pages_index_latestposts"
-    },
-    {
-      "label": "upcomingEvents",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L12",
-      "community": 36,
-      "norm_label": "upcomingevents",
-      "id": "pages_index_upcomingevents"
-    },
-    {
-      "label": "monthNames",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L13",
-      "community": 36,
-      "norm_label": "monthnames",
-      "id": "pages_index_monthnames"
-    },
-    {
-      "label": "upcomingWithDate",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L14",
-      "community": 36,
-      "norm_label": "upcomingwithdate",
-      "id": "pages_index_upcomingwithdate"
-    },
-    {
-      "label": "monthMap",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L20",
-      "community": 36,
-      "norm_label": "monthmap",
-      "id": "pages_index_monthmap"
-    },
-    {
-      "label": "goTo()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L853",
-      "community": 36,
-      "norm_label": "goto()",
-      "id": "pages_index_goto"
-    },
-    {
-      "label": "next()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L867",
-      "community": 36,
-      "norm_label": "next()",
-      "id": "pages_index_next"
-    },
-    {
-      "label": "prev()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L868",
-      "community": 36,
-      "norm_label": "prev()",
-      "id": "pages_index_prev"
-    },
-    {
-      "label": "startAutoplay()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L870",
-      "community": 36,
-      "norm_label": "startautoplay()",
-      "id": "pages_index_startautoplay"
-    },
-    {
-      "label": "stopAutoplay()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L877",
-      "community": 36,
-      "norm_label": "stopautoplay()",
-      "id": "pages_index_stopautoplay"
-    },
-    {
-      "label": "target",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L919",
-      "community": 36,
-      "norm_label": "target",
-      "id": "pages_index_target"
-    },
-    {
-      "label": "tick()",
-      "file_type": "code",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L965",
-      "community": 36,
-      "norm_label": "tick()",
-      "id": "pages_index_tick"
     },
     {
       "label": "partner.astro",
@@ -8231,9 +8268,9 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/layouts/Layout.astro",
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css",
-      "confidence_score": 1.0
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css"
     },
     {
       "relation": "contains",
@@ -8291,9 +8328,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L743",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_check",
-      "confidence_score": 1.0
+      "target": "layouts_layout_check"
     },
     {
       "relation": "contains",
@@ -8529,6 +8566,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L322",
+      "weight": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_srobserver",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L438",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8544,6 +8591,16 @@
       "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
       "target": "layouts_layout_strength"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/layouts/Layout.astro",
+      "source_location": "L351",
+      "weight": 1.0,
+      "source": "frontend_src_layouts_layout_astro",
+      "target": "layouts_layout_tiltcards",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8754,6 +8811,312 @@
       "confidence_score": 1.0,
       "source": "layouts_layout_showtoast",
       "target": "layouts_layout_generatetoastdata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_components_footer_astro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_components_navigation_astro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_lib_blog_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_lib_causes_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "frontend_src_lib_events_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_navigation_astro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_blog_data_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L567",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_goto"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_latestposts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_monthmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_monthnames"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L581",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_next"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L582",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_prev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_sortedposts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L584",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_startautoplay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L591",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_stopautoplay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L659",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L965",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_tick"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_upcomingevents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_index_astro",
+      "target": "pages_index_upcomingwithdate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L581",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_index_next",
+      "target": "pages_index_goto"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L582",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_index_prev",
+      "target": "pages_index_goto"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/index.astro",
+      "source_location": "L585",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_index_startautoplay",
+      "target": "pages_index_stopautoplay"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/events/[slug].astro",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_events_slug_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/causes.astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_causes_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/events/[slug].astro",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_pages_events_slug_astro",
+      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json"
     },
     {
       "relation": "contains",
@@ -8986,17 +9349,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "frontend_src_pages_gallery_astro",
-      "target": "frontend_src_components_navigation_astro"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
       "target": "frontend_src_components_navigation_astro"
     },
     {
@@ -9357,28 +9709,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
       "target": "frontend_src_lib_events_data_json"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_events_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_components_footer_astro"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/events/[slug].astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_events_slug_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_events_data_json"
     },
     {
       "relation": "contains",
@@ -9859,17 +10189,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_components_footer_astro"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L4",
       "weight": 1.0,
@@ -9969,33 +10288,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_lib_blog_data_json"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "frontend_src_lib_events_data_json"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
       "target": "frontend_src_lib_events_data_json"
     },
     {
@@ -10361,17 +10658,6 @@
       "target": "frontend_src_lib_causes_data_json"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/causes.astro",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_causes_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/causes.astro",
@@ -10380,17 +10666,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_causes_astro",
       "target": "pages_causes_step"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
     },
     {
       "relation": "imports_from",
@@ -11479,180 +11754,6 @@
       "confidence_score": 1.0,
       "source": "frontend_src_pages_gallery_astro",
       "target": "pages_gallery_galleryimages"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_lib_causes_data_json"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L567",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_goto"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_latestposts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_monthmap"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_monthnames"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L581",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_next"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L582",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_prev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_sortedposts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L584",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_startautoplay"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L591",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_stopautoplay"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L659",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_target"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L965",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_tick"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_upcomingevents"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_upcomingwithdate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L581",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pages_index_next",
-      "target": "pages_index_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L582",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pages_index_prev",
-      "target": "pages_index_goto"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/pages/index.astro",
-      "source_location": "L585",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pages_index_startautoplay",
-      "target": "pages_index_stopautoplay"
     },
     {
       "relation": "contains",
@@ -18375,5 +18476,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9b8431495cbb1c8892ff4f2ac3de45bbb2f61415"
+  "built_at_commit": "e505b68ec0e4d2228095b9797891ba3aa212c567"
 }
