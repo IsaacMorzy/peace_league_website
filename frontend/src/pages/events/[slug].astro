@@ -754,77 +754,14 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
 
     // ── Calendar Download Function ──
     window.downloadCalendar = function() {
-      // Generate unique ID for the event
-      const uid = `${event.slug}@peaceleagueafrica.com`;
-      
-      // Format dates for iCalendar (YYYYMMDDTHHMMSS)
-      const startDateTime = `${event.year}${event.month.padStart(2, '0')}${event.day.padStart(2, '0')}T${event.startTime.replace(':', '')}00`;
-      const endDateTime = `${event.year}${event.month.padStart(2, '0')}${event.day.padStart(2, '0')}T${event.endTime.replace(':', '')}00`;
-      
-      // Current timestamp for DTSTAMP
-      const now = new Date();
-      const dtstamp = `${now.getFullYear()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}T${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getSeconds().toString().padStart(2, '0')}`;
-      
-      // Escape text for iCalendar (replace commas, semicolons, newlines)
-      const escapeText = (text) => {
-        return text
-          .replace(/[,;\n]/g, match => {
-            return {
-              ',': '\,',
-              ';': '\;',
-              '\n': '\n'
-            }[match];
-          });
-      };
-      
-      const description = escapeText(`${event.description}
-
-Location: ${event.venue}
-${event.location}
-${event.address}
-
-Capacity: ${event.registered}/${event.capacity} registered
-Price: ${event.price}
-
-Join us for this peace-building event across Africa!`);
-      
-      // Build iCalendar content
-      const icsContent = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Peace League Africa//Event Calendar//EN',
-        'CALSCALE:GREGORIAN',
-        'METHOD:PUBLISH',
-        'BEGIN:VEVENT',
-        `UID:${uid}`,
-        `DTSTAMP:${dtstamp}Z`,
-        `DTSTART:${startDateTime}`,
-        `DTEND:${endDateTime}`,
-        `SUMMARY:${escapeText(event.title)}`,
-        `DESCRIPTION:${description}`,
-        `LOCATION:${escapeText(`${event.venue}, ${event.location}, ${event.address}`)}`,
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
-      
-      // Create blob and trigger download
-      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const filename = `${event.slug}.ics`;
-      
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = filename;
-      
-      // Append to body and trigger click
-      document.body.appendChild(link);
-      link.click();
-      
-      // Clean up
-      setTimeout(() => {
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }, 100);
-    }
-  </script>
-</Layout>
+      // Open Google Calendar with event details
+      const monthNum = String(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].indexOf(event.month) + 1).padStart(2, "0");
+      const dayNum = event.day.padStart(2, "0");
+      const start = `${event.year}${monthNum}${dayNum}T${event.startTime.replace(":", "")}00`;
+      const end = `${event.year}${monthNum}${dayNum}T${event.endTime.replace(":", "")}00`;
+      const title = encodeURIComponent(event.title);
+      const location = encodeURIComponent(`${event.venue}, ${event.location}, ${event.address}`);
+      const details = encodeURIComponent(`${event.description}\n\nCapacity: ${event.registered}/${event.capacity} registered\nPrice: ${event.price}\n\nJoin us at: https://peaceleagueafrica.com/events/${event.slug}`);
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    };

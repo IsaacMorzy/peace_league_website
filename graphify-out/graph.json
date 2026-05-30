@@ -8,207 +8,207 @@
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L1",
-      "id": "frontend_package_json",
       "community": 18,
-      "norm_label": "package.json"
+      "norm_label": "package.json",
+      "id": "frontend_package_json"
     },
     {
       "label": "name",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L2",
-      "id": "frontend_package_name",
       "community": 18,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "frontend_package_name"
     },
     {
       "label": "type",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L3",
-      "id": "frontend_package_type",
       "community": 18,
-      "norm_label": "type"
+      "norm_label": "type",
+      "id": "frontend_package_type"
     },
     {
       "label": "version",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L4",
-      "id": "frontend_package_version",
       "community": 18,
-      "norm_label": "version"
+      "norm_label": "version",
+      "id": "frontend_package_version"
     },
     {
       "label": "engines",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L5",
-      "id": "frontend_package_engines",
       "community": 18,
-      "norm_label": "engines"
+      "norm_label": "engines",
+      "id": "frontend_package_engines"
     },
     {
       "label": "node",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L6",
-      "id": "frontend_package_engines_node",
       "community": 18,
-      "norm_label": "node"
+      "norm_label": "node",
+      "id": "frontend_package_engines_node"
     },
     {
       "label": "scripts",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L8",
-      "id": "frontend_package_scripts",
       "community": 18,
-      "norm_label": "scripts"
+      "norm_label": "scripts",
+      "id": "frontend_package_scripts"
     },
     {
       "label": "dev",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L9",
-      "id": "frontend_package_scripts_dev",
       "community": 18,
-      "norm_label": "dev"
+      "norm_label": "dev",
+      "id": "frontend_package_scripts_dev"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L10",
-      "id": "frontend_package_scripts_build",
       "community": 18,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "frontend_package_scripts_build"
     },
     {
       "label": "preview",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L11",
-      "id": "frontend_package_scripts_preview",
       "community": 18,
-      "norm_label": "preview"
+      "norm_label": "preview",
+      "id": "frontend_package_scripts_preview"
     },
     {
       "label": "astro",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L12",
-      "id": "frontend_package_scripts_astro",
       "community": 18,
-      "norm_label": "astro"
+      "norm_label": "astro",
+      "id": "frontend_package_scripts_astro"
     },
     {
       "label": "dependencies",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L14",
-      "id": "frontend_package_dependencies",
       "community": 18,
-      "norm_label": "dependencies"
+      "norm_label": "dependencies",
+      "id": "frontend_package_dependencies"
     },
     {
       "label": "@astrojs/sitemap",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L15",
-      "id": "frontend_package_dependencies_astrojs_sitemap",
       "community": 18,
-      "norm_label": "@astrojs/sitemap"
+      "norm_label": "@astrojs/sitemap",
+      "id": "frontend_package_dependencies_astrojs_sitemap"
     },
     {
       "label": "@tailwindcss/vite",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L16",
-      "id": "frontend_package_dependencies_tailwindcss_vite",
       "community": 18,
-      "norm_label": "@tailwindcss/vite"
+      "norm_label": "@tailwindcss/vite",
+      "id": "frontend_package_dependencies_tailwindcss_vite"
     },
     {
       "label": "astro",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L17",
-      "id": "frontend_package_dependencies_astro",
       "community": 18,
-      "norm_label": "astro"
+      "norm_label": "astro",
+      "id": "frontend_package_dependencies_astro"
     },
     {
       "label": "canvas-confetti",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L18",
-      "id": "frontend_package_dependencies_canvas_confetti",
       "community": 18,
-      "norm_label": "canvas-confetti"
+      "norm_label": "canvas-confetti",
+      "id": "frontend_package_dependencies_canvas_confetti"
     },
     {
       "label": "leaflet",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L19",
-      "id": "frontend_package_dependencies_leaflet",
       "community": 18,
-      "norm_label": "leaflet"
+      "norm_label": "leaflet",
+      "id": "frontend_package_dependencies_leaflet"
     },
     {
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L20",
-      "id": "frontend_package_dependencies_tailwindcss",
       "community": 18,
-      "norm_label": "tailwindcss"
+      "norm_label": "tailwindcss",
+      "id": "frontend_package_dependencies_tailwindcss"
     },
     {
       "label": "tailwindcss-animate",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L21",
-      "id": "frontend_package_dependencies_tailwindcss_animate",
       "community": 18,
-      "norm_label": "tailwindcss-animate"
+      "norm_label": "tailwindcss-animate",
+      "id": "frontend_package_dependencies_tailwindcss_animate"
     },
     {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L23",
-      "id": "frontend_package_devdependencies",
       "community": 18,
-      "norm_label": "devdependencies"
+      "norm_label": "devdependencies",
+      "id": "frontend_package_devdependencies"
     },
     {
       "label": "@types/leaflet",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L24",
-      "id": "frontend_package_devdependencies_types_leaflet",
       "community": 18,
-      "norm_label": "@types/leaflet"
+      "norm_label": "@types/leaflet",
+      "id": "frontend_package_devdependencies_types_leaflet"
     },
     {
       "label": "lighthouse",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L25",
-      "id": "frontend_package_devdependencies_lighthouse",
       "community": 18,
-      "norm_label": "lighthouse"
+      "norm_label": "lighthouse",
+      "id": "frontend_package_devdependencies_lighthouse"
     },
     {
       "label": "playwright",
       "file_type": "code",
       "source_file": "frontend/package.json",
       "source_location": "L26",
-      "id": "frontend_package_devdependencies_playwright",
       "community": 18,
-      "norm_label": "playwright"
+      "norm_label": "playwright",
+      "id": "frontend_package_devdependencies_playwright"
     },
     {
       "label": "../components/EventMap.astro",
@@ -216,72 +216,72 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "id": "frontend_src_components_eventmap_astro",
       "community": 44,
-      "norm_label": "../components/eventmap.astro"
+      "norm_label": "../components/eventmap.astro",
+      "id": "frontend_src_components_eventmap_astro"
     },
     {
       "label": "mapEl",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L50",
-      "id": "components_eventmap_mapel",
       "community": 44,
-      "norm_label": "mapel"
+      "norm_label": "mapel",
+      "id": "components_eventmap_mapel"
     },
     {
       "label": "dataEl",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L53",
-      "id": "components_eventmap_datael",
       "community": 44,
-      "norm_label": "datael"
+      "norm_label": "datael",
+      "id": "components_eventmap_datael"
     },
     {
       "label": "data",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L54",
-      "id": "components_eventmap_data",
       "community": 44,
-      "norm_label": "data"
+      "norm_label": "data",
+      "id": "components_eventmap_data"
     },
     {
       "label": "parsed",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L56",
-      "id": "components_eventmap_parsed",
       "community": 44,
-      "norm_label": "parsed"
+      "norm_label": "parsed",
+      "id": "components_eventmap_parsed"
     },
     {
       "label": "initHQMap()",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L67",
-      "id": "components_eventmap_inithqmap",
       "community": 44,
-      "norm_label": "inithqmap()"
+      "norm_label": "inithqmap()",
+      "id": "components_eventmap_inithqmap"
     },
     {
       "label": "initEventsMap()",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L132",
-      "id": "components_eventmap_initeventsmap",
       "community": 44,
-      "norm_label": "initeventsmap()"
+      "norm_label": "initeventsmap()",
+      "id": "components_eventmap_initeventsmap"
     },
     {
       "label": "lazyInitMap()",
       "file_type": "code",
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L253",
-      "id": "components_eventmap_lazyinitmap",
       "community": 44,
-      "norm_label": "lazyinitmap()"
+      "norm_label": "lazyinitmap()",
+      "id": "components_eventmap_lazyinitmap"
     },
     {
       "label": "../components/Footer.astro",
@@ -289,27 +289,27 @@
       "source_file": "frontend/src/components/Footer.astro",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "id": "frontend_src_components_footer_astro",
       "community": 34,
-      "norm_label": "../components/footer.astro"
+      "norm_label": "../components/footer.astro",
+      "id": "frontend_src_components_footer_astro"
     },
     {
       "label": "footerLinks",
       "file_type": "code",
       "source_file": "frontend/src/components/Footer.astro",
       "source_location": "L4",
-      "id": "components_footer_footerlinks",
       "community": 34,
-      "norm_label": "footerlinks"
+      "norm_label": "footerlinks",
+      "id": "components_footer_footerlinks"
     },
     {
       "label": "FLAG_COUNTRIES",
       "file_type": "code",
       "source_file": "frontend/src/components/Footer.astro",
       "source_location": "L41",
-      "id": "components_footer_flag_countries",
       "community": 34,
-      "norm_label": "flag_countries"
+      "norm_label": "flag_countries",
+      "id": "components_footer_flag_countries"
     },
     {
       "label": "../components/Navigation.astro",
@@ -317,90 +317,90 @@
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "id": "frontend_src_components_navigation_astro",
       "community": 31,
-      "norm_label": "../components/navigation.astro"
+      "norm_label": "../components/navigation.astro",
+      "id": "frontend_src_components_navigation_astro"
     },
     {
       "label": "normalizedFrappeBase",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L3",
-      "id": "components_navigation_normalizedfrappebase",
       "community": 31,
-      "norm_label": "normalizedfrappebase"
+      "norm_label": "normalizedfrappebase",
+      "id": "components_navigation_normalizedfrappebase"
     },
     {
       "label": "navItems",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L8",
-      "id": "components_navigation_navitems",
       "community": 31,
-      "norm_label": "navitems"
+      "norm_label": "navitems",
+      "id": "components_navigation_navitems"
     },
     {
       "label": "iconPaths",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L56",
-      "id": "components_navigation_iconpaths",
       "community": 31,
-      "norm_label": "iconpaths"
+      "norm_label": "iconpaths",
+      "id": "components_navigation_iconpaths"
     },
     {
       "label": "items",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L253",
-      "id": "components_navigation_items",
       "community": 31,
-      "norm_label": "items"
+      "norm_label": "items",
+      "id": "components_navigation_items"
     },
     {
       "label": "focusable",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L307",
-      "id": "components_navigation_focusable",
       "community": 31,
-      "norm_label": "focusable"
+      "norm_label": "focusable",
+      "id": "components_navigation_focusable"
     },
     {
       "label": "group",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L335",
-      "id": "components_navigation_group",
       "community": 31,
-      "norm_label": "group"
+      "norm_label": "group",
+      "id": "components_navigation_group"
     },
     {
       "label": "children",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L336",
-      "id": "components_navigation_children",
       "community": 31,
-      "norm_label": "children"
+      "norm_label": "children",
+      "id": "components_navigation_children"
     },
     {
       "label": "chevron",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L337",
-      "id": "components_navigation_chevron",
       "community": 31,
-      "norm_label": "chevron"
+      "norm_label": "chevron",
+      "id": "components_navigation_chevron"
     },
     {
       "label": "d",
       "file_type": "code",
       "source_file": "frontend/src/components/Navigation.astro",
       "source_location": "L363",
-      "id": "components_navigation_d",
       "community": 31,
-      "norm_label": "d"
+      "norm_label": "d",
+      "id": "components_navigation_d"
     },
     {
       "label": "../layouts/Layout.astro",
@@ -408,252 +408,243 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "id": "frontend_src_layouts_layout_astro",
       "community": 49,
-      "norm_label": "../layouts/layout.astro"
+      "norm_label": "../layouts/layout.astro",
+      "id": "frontend_src_layouts_layout_astro"
     },
     {
       "label": "canonicalURL",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L19",
-      "id": "layouts_layout_canonicalurl",
       "community": 49,
-      "norm_label": "canonicalurl"
+      "norm_label": "canonicalurl",
+      "id": "layouts_layout_canonicalurl"
     },
     {
       "label": "srMo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L250",
-      "id": "layouts_layout_srmo",
       "community": 49,
-      "norm_label": "srmo"
+      "norm_label": "srmo",
+      "id": "layouts_layout_srmo"
     },
     {
       "label": "sheen",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L265",
-      "id": "layouts_layout_sheen",
       "community": 49,
-      "norm_label": "sheen"
+      "norm_label": "sheen",
+      "id": "layouts_layout_sheen"
     },
     {
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L267",
-      "id": "layouts_layout_rect",
       "community": 49,
-      "norm_label": "rect"
+      "norm_label": "rect",
+      "id": "layouts_layout_rect"
     },
     {
       "label": "mo",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L305",
-      "id": "layouts_layout_mo",
       "community": 49,
-      "norm_label": "mo"
+      "norm_label": "mo",
+      "id": "layouts_layout_mo"
     },
     {
       "label": "moveX",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L380",
-      "id": "layouts_layout_movex",
       "community": 49,
-      "norm_label": "movex"
+      "norm_label": "movex",
+      "id": "layouts_layout_movex"
     },
     {
       "label": "moveY",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L381",
-      "id": "layouts_layout_movey",
       "community": 49,
-      "norm_label": "movey"
+      "norm_label": "movey",
+      "id": "layouts_layout_movey"
     },
     {
       "label": "cursorGlow",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L410",
-      "id": "layouts_layout_cursorglow",
       "community": 49,
-      "norm_label": "cursorglow"
+      "norm_label": "cursorglow",
+      "id": "layouts_layout_cursorglow"
     },
     {
       "label": "animateGlow()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L420",
-      "id": "layouts_layout_animateglow",
       "community": 49,
-      "norm_label": "animateglow()"
+      "norm_label": "animateglow()",
+      "id": "layouts_layout_animateglow"
     },
     {
       "label": "progressBar",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L430",
-      "id": "layouts_layout_progressbar",
       "community": 49,
-      "norm_label": "progressbar"
+      "norm_label": "progressbar",
+      "id": "layouts_layout_progressbar"
     },
     {
       "label": "heroSection",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L450",
-      "id": "layouts_layout_herosection",
       "community": 49,
-      "norm_label": "herosection"
+      "norm_label": "herosection",
+      "id": "layouts_layout_herosection"
     },
     {
       "label": "shapes",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L459",
-      "id": "layouts_layout_shapes",
       "community": 49,
-      "norm_label": "shapes"
+      "norm_label": "shapes",
+      "id": "layouts_layout_shapes"
     },
     {
       "label": "dots",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L460",
-      "id": "layouts_layout_dots",
       "community": 49,
-      "norm_label": "dots"
+      "norm_label": "dots",
+      "id": "layouts_layout_dots"
     },
     {
       "label": "stickyBtn",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L472",
-      "id": "layouts_layout_stickybtn",
       "community": 49,
-      "norm_label": "stickybtn"
+      "norm_label": "stickybtn",
+      "id": "layouts_layout_stickybtn"
     },
     {
       "label": "toast",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L507",
-      "id": "layouts_layout_toast",
       "community": 49,
-      "norm_label": "toast"
+      "norm_label": "toast",
+      "id": "layouts_layout_toast"
     },
     {
       "label": "people",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L509",
-      "id": "layouts_layout_people",
       "community": 49,
-      "norm_label": "people"
+      "norm_label": "people",
+      "id": "layouts_layout_people"
     },
     {
       "label": "locations",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L522",
-      "id": "layouts_layout_locations",
       "community": 49,
-      "norm_label": "locations"
+      "norm_label": "locations",
+      "id": "layouts_layout_locations"
     },
     {
       "label": "donationActions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L526",
-      "id": "layouts_layout_donationactions",
       "community": 49,
-      "norm_label": "donationactions"
+      "norm_label": "donationactions",
+      "id": "layouts_layout_donationactions"
     },
     {
       "label": "volunteerActions",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L532",
-      "id": "layouts_layout_volunteeractions",
       "community": 49,
-      "norm_label": "volunteeractions"
+      "norm_label": "volunteeractions",
+      "id": "layouts_layout_volunteeractions"
     },
     {
       "label": "amounts",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L538",
-      "id": "layouts_layout_amounts",
       "community": 49,
-      "norm_label": "amounts"
+      "norm_label": "amounts",
+      "id": "layouts_layout_amounts"
     },
     {
       "label": "pick()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L543",
-      "id": "layouts_layout_pick",
       "community": 49,
-      "norm_label": "pick()"
+      "norm_label": "pick()",
+      "id": "layouts_layout_pick"
     },
     {
       "label": "generateToastData()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L545",
-      "id": "layouts_layout_generatetoastdata",
       "community": 49,
-      "norm_label": "generatetoastdata()"
+      "norm_label": "generatetoastdata()",
+      "id": "layouts_layout_generatetoastdata"
     },
     {
       "label": "showToast()",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L562",
-      "id": "layouts_layout_showtoast",
       "community": 49,
-      "norm_label": "showtoast()"
+      "norm_label": "showtoast()",
+      "id": "layouts_layout_showtoast"
     },
     {
       "label": "dist",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L624",
-      "id": "layouts_layout_dist",
       "community": 49,
-      "norm_label": "dist"
+      "norm_label": "dist",
+      "id": "layouts_layout_dist"
     },
     {
       "label": "strength",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L626",
-      "id": "layouts_layout_strength",
       "community": 49,
-      "norm_label": "strength"
+      "norm_label": "strength",
+      "id": "layouts_layout_strength"
     },
     {
       "label": "icon",
       "file_type": "code",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L717",
-      "id": "layouts_layout_icon",
       "community": 49,
-      "norm_label": "icon"
-    },
-    {
-      "label": "../styles/global.css",
-      "file_type": "code",
-      "source_file": "frontend/src/styles/global.css",
-      "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css",
-      "community": 49,
-      "norm_label": "../styles/global.css"
+      "norm_label": "icon",
+      "id": "layouts_layout_icon"
     },
     {
       "label": "../lib/blog-data.json",
@@ -661,9 +652,9 @@
       "source_file": "frontend/src/lib/blog-data.json",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "id": "frontend_src_lib_blog_data_json",
       "community": 33,
-      "norm_label": "../lib/blog-data.json"
+      "norm_label": "../lib/blog-data.json",
+      "id": "frontend_src_lib_blog_data_json"
     },
     {
       "label": "../lib/events-data.json",
@@ -671,1935 +662,1935 @@
       "source_file": "frontend/src/lib/events-data.json",
       "source_location": "L1",
       "confidence": "EXTRACTED",
-      "id": "frontend_src_lib_events_data_json",
       "community": 36,
-      "norm_label": "../lib/events-data.json"
+      "norm_label": "../lib/events-data.json",
+      "id": "frontend_src_lib_events_data_json"
     },
     {
       "label": "about.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/about.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_about_astro",
       "community": 34,
-      "norm_label": "about.astro"
+      "norm_label": "about.astro",
+      "id": "frontend_src_pages_about_astro"
     },
     {
       "label": "milestones",
       "file_type": "code",
       "source_file": "frontend/src/pages/about.astro",
       "source_location": "L7",
-      "id": "pages_about_milestones",
       "community": 34,
-      "norm_label": "milestones"
+      "norm_label": "milestones",
+      "id": "pages_about_milestones"
     },
     {
       "label": "target",
       "file_type": "code",
       "source_file": "frontend/src/pages/about.astro",
       "source_location": "L378",
-      "id": "pages_about_target",
       "community": 34,
-      "norm_label": "target"
+      "norm_label": "target",
+      "id": "pages_about_target"
     },
     {
       "label": "blog.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_blog_astro",
       "community": 33,
-      "norm_label": "blog.astro"
+      "norm_label": "blog.astro",
+      "id": "frontend_src_pages_blog_astro"
     },
     {
       "label": "categories",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L7",
-      "id": "pages_blog_categories",
       "community": 33,
-      "norm_label": "categories"
+      "norm_label": "categories",
+      "id": "pages_blog_categories"
     },
     {
       "label": "totalPages",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L10",
-      "id": "pages_blog_totalpages",
       "community": 33,
-      "norm_label": "totalpages"
+      "norm_label": "totalpages",
+      "id": "pages_blog_totalpages"
     },
     {
       "label": "allPostsJson",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L11",
-      "id": "pages_blog_allpostsjson",
       "community": 33,
-      "norm_label": "allpostsjson"
+      "norm_label": "allpostsjson",
+      "id": "pages_blog_allpostsjson"
     },
     {
       "label": "grid",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L284",
-      "id": "pages_blog_grid",
       "community": 33,
-      "norm_label": "grid"
+      "norm_label": "grid",
+      "id": "pages_blog_grid"
     },
     {
       "label": "cards",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L285",
-      "id": "pages_blog_cards",
       "community": 33,
-      "norm_label": "cards"
+      "norm_label": "cards",
+      "id": "pages_blog_cards"
     },
     {
       "label": "loadMoreBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L286",
-      "id": "pages_blog_loadmorebtn",
       "community": 33,
-      "norm_label": "loadmorebtn"
+      "norm_label": "loadmorebtn",
+      "id": "pages_blog_loadmorebtn"
     },
     {
       "label": "pagination",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L287",
-      "id": "pages_blog_pagination",
       "community": 33,
-      "norm_label": "pagination"
+      "norm_label": "pagination",
+      "id": "pages_blog_pagination"
     },
     {
       "label": "pageNumbers",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L288",
-      "id": "pages_blog_pagenumbers",
       "community": 33,
-      "norm_label": "pagenumbers"
+      "norm_label": "pagenumbers",
+      "id": "pages_blog_pagenumbers"
     },
     {
       "label": "prevBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L289",
-      "id": "pages_blog_prevbtn",
       "community": 33,
-      "norm_label": "prevbtn"
+      "norm_label": "prevbtn",
+      "id": "pages_blog_prevbtn"
     },
     {
       "label": "nextBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L290",
-      "id": "pages_blog_nextbtn",
       "community": 33,
-      "norm_label": "nextbtn"
+      "norm_label": "nextbtn",
+      "id": "pages_blog_nextbtn"
     },
     {
       "label": "gridStatus",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L292",
-      "id": "pages_blog_gridstatus",
       "community": 33,
-      "norm_label": "gridstatus"
+      "norm_label": "gridstatus",
+      "id": "pages_blog_gridstatus"
     },
     {
       "label": "visibleCards",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L339",
-      "id": "pages_blog_visiblecards",
       "community": 33,
-      "norm_label": "visiblecards"
+      "norm_label": "visiblecards",
+      "id": "pages_blog_visiblecards"
     },
     {
       "label": "getVisibleCards()",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L361",
-      "id": "pages_blog_getvisiblecards",
       "community": 33,
-      "norm_label": "getvisiblecards()"
+      "norm_label": "getvisiblecards()",
+      "id": "pages_blog_getvisiblecards"
     },
     {
       "label": "showFilteredPage()",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L365",
-      "id": "pages_blog_showfilteredpage",
       "community": 33,
-      "norm_label": "showfilteredpage()"
+      "norm_label": "showfilteredpage()",
+      "id": "pages_blog_showfilteredpage"
     },
     {
       "label": "visible",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L393",
-      "id": "pages_blog_visible",
       "community": 33,
-      "norm_label": "visible"
+      "norm_label": "visible",
+      "id": "pages_blog_visible"
     },
     {
       "label": "showing",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L406",
-      "id": "pages_blog_showing",
       "community": 33,
-      "norm_label": "showing"
+      "norm_label": "showing",
+      "id": "pages_blog_showing"
     },
     {
       "label": "featuredCard",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L420",
-      "id": "pages_blog_featuredcard",
       "community": 33,
-      "norm_label": "featuredcard"
+      "norm_label": "featuredcard",
+      "id": "pages_blog_featuredcard"
     },
     {
       "label": "sheen",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L422",
-      "id": "pages_blog_sheen",
       "community": 33,
-      "norm_label": "sheen"
+      "norm_label": "sheen",
+      "id": "pages_blog_sheen"
     },
     {
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L424",
-      "id": "pages_blog_rect",
       "community": 33,
-      "norm_label": "rect"
+      "norm_label": "rect",
+      "id": "pages_blog_rect"
     },
     {
       "label": "initialVisible",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L446",
-      "id": "pages_blog_initialvisible",
       "community": 33,
-      "norm_label": "initialvisible"
+      "norm_label": "initialvisible",
+      "id": "pages_blog_initialvisible"
     },
     {
       "label": "[slug].astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_blog_slug_astro",
       "community": 33,
-      "norm_label": "[slug].astro"
+      "norm_label": "[slug].astro",
+      "id": "frontend_src_pages_blog_slug_astro"
     },
     {
       "label": "getStaticPaths()",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L7",
-      "id": "blog_slug_getstaticpaths",
       "community": 33,
-      "norm_label": "getstaticpaths()"
+      "norm_label": "getstaticpaths()",
+      "id": "blog_slug_getstaticpaths"
     },
     {
       "label": "tocEntries",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L21",
-      "id": "blog_slug_tocentries",
       "community": 33,
-      "norm_label": "tocentries"
+      "norm_label": "tocentries",
+      "id": "blog_slug_tocentries"
     },
     {
       "label": "text",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L37",
-      "id": "blog_slug_text",
       "community": 33,
-      "norm_label": "text"
+      "norm_label": "text",
+      "id": "blog_slug_text"
     },
     {
       "label": "id",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L38",
-      "id": "blog_slug_id",
       "community": 33,
-      "norm_label": "id"
+      "norm_label": "id",
+      "id": "blog_slug_id"
     },
     {
       "label": "relatedPosts",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L52",
-      "id": "blog_slug_relatedposts",
       "community": 33,
-      "norm_label": "relatedposts"
+      "norm_label": "relatedposts",
+      "id": "blog_slug_relatedposts"
     },
     {
       "label": "bar",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L676",
-      "id": "blog_slug_bar",
       "community": 33,
-      "norm_label": "bar"
+      "norm_label": "bar",
+      "id": "blog_slug_bar"
     },
     {
       "label": "tocProgress",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L680",
-      "id": "blog_slug_tocprogress",
       "community": 33,
-      "norm_label": "tocprogress"
+      "norm_label": "tocprogress",
+      "id": "blog_slug_tocprogress"
     },
     {
       "label": "tocPercent",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L681",
-      "id": "blog_slug_tocpercent",
       "community": 33,
-      "norm_label": "tocpercent"
+      "norm_label": "tocpercent",
+      "id": "blog_slug_tocpercent"
     },
     {
       "label": "btn",
       "file_type": "code",
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L719",
-      "id": "blog_slug_btn",
       "community": 33,
-      "norm_label": "btn"
+      "norm_label": "btn",
+      "id": "blog_slug_btn"
     },
     {
       "label": "careers.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/careers.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_careers_astro",
       "community": 48,
-      "norm_label": "careers.astro"
+      "norm_label": "careers.astro",
+      "id": "frontend_src_pages_careers_astro"
     },
     {
       "label": "jobs",
       "file_type": "code",
       "source_file": "frontend/src/pages/careers.astro",
       "source_location": "L6",
-      "id": "pages_careers_jobs",
       "community": 48,
-      "norm_label": "jobs"
+      "norm_label": "jobs",
+      "id": "pages_careers_jobs"
     },
     {
       "label": "benefits",
       "file_type": "code",
       "source_file": "frontend/src/pages/careers.astro",
       "source_location": "L13",
-      "id": "pages_careers_benefits",
       "community": 48,
-      "norm_label": "benefits"
+      "norm_label": "benefits",
+      "id": "pages_careers_benefits"
     },
     {
       "label": "whyStats",
       "file_type": "code",
       "source_file": "frontend/src/pages/careers.astro",
       "source_location": "L19",
-      "id": "pages_careers_whystats",
       "community": 48,
-      "norm_label": "whystats"
+      "norm_label": "whystats",
+      "id": "pages_careers_whystats"
     },
     {
       "label": "causes.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/causes.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_causes_astro",
       "community": 36,
-      "norm_label": "causes.astro"
+      "norm_label": "causes.astro",
+      "id": "frontend_src_pages_causes_astro"
     },
     {
       "label": "step()",
       "file_type": "code",
       "source_file": "frontend/src/pages/causes.astro",
       "source_location": "L100",
-      "id": "pages_causes_step",
       "community": 36,
-      "norm_label": "step()"
+      "norm_label": "step()",
+      "id": "pages_causes_step"
     },
     {
       "label": "../lib/causes-data.json",
       "file_type": "code",
       "source_file": "frontend/src/lib/causes-data.json",
       "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json",
       "community": 36,
-      "norm_label": "../lib/causes-data.json"
+      "norm_label": "../lib/causes-data.json",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_causes_data_json"
     },
     {
       "label": "contact.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_contact_astro",
       "community": 79,
-      "norm_label": "contact.astro"
+      "norm_label": "contact.astro",
+      "id": "frontend_src_pages_contact_astro"
     },
     {
       "label": "hqJson",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L7",
-      "id": "pages_contact_hqjson",
       "community": 79,
-      "norm_label": "hqjson"
+      "norm_label": "hqjson",
+      "id": "pages_contact_hqjson"
     },
     {
       "label": "field",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L284",
-      "id": "pages_contact_field",
       "community": 79,
-      "norm_label": "field"
+      "norm_label": "field",
+      "id": "pages_contact_field"
     },
     {
       "label": "errEl",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L285",
-      "id": "pages_contact_errel",
       "community": 79,
-      "norm_label": "errel"
+      "norm_label": "errel",
+      "id": "pages_contact_errel"
     },
     {
       "label": "errors",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L312",
-      "id": "pages_contact_errors",
       "community": 79,
-      "norm_label": "errors"
+      "norm_label": "errors",
+      "id": "pages_contact_errors"
     },
     {
       "label": "name",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L314",
-      "id": "pages_contact_name",
       "community": 79,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "pages_contact_name"
     },
     {
       "label": "email",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L321",
-      "id": "pages_contact_email",
       "community": 79,
-      "norm_label": "email"
+      "norm_label": "email",
+      "id": "pages_contact_email"
     },
     {
       "label": "subject",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L334",
-      "id": "pages_contact_subject",
       "community": 79,
-      "norm_label": "subject"
+      "norm_label": "subject",
+      "id": "pages_contact_subject"
     },
     {
       "label": "message",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L341",
-      "id": "pages_contact_message",
       "community": 79,
-      "norm_label": "message"
+      "norm_label": "message",
+      "id": "pages_contact_message"
     },
     {
       "label": "formData",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L363",
-      "id": "pages_contact_formdata",
       "community": 79,
-      "norm_label": "formdata"
+      "norm_label": "formdata",
+      "id": "pages_contact_formdata"
     },
     {
       "label": "data",
       "file_type": "code",
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L364",
-      "id": "pages_contact_data",
       "community": 79,
-      "norm_label": "data"
+      "norm_label": "data",
+      "id": "pages_contact_data"
     },
     {
       "label": "../lib/api.js",
       "file_type": "code",
       "source_file": "frontend/src/lib/api.ts",
       "confidence": "EXTRACTED",
-      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_api_ts",
       "community": 79,
-      "norm_label": "../lib/api.js"
+      "norm_label": "../lib/api.js",
+      "id": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_lib_api_ts"
     },
     {
       "label": "donate.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_donate_astro",
       "community": 3,
-      "norm_label": "donate.astro"
+      "norm_label": "donate.astro",
+      "id": "frontend_src_pages_donate_astro"
     },
     {
       "label": "causeSelect",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L367",
-      "id": "pages_donate_causeselect",
       "community": 3,
-      "norm_label": "causeselect"
+      "norm_label": "causeselect",
+      "id": "pages_donate_causeselect"
     },
     {
       "label": "option",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L369",
-      "id": "pages_donate_option",
       "community": 3,
-      "norm_label": "option"
+      "norm_label": "option",
+      "id": "pages_donate_option"
     },
     {
       "label": "form",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L380",
-      "id": "pages_donate_form",
       "community": 3,
-      "norm_label": "form"
+      "norm_label": "form",
+      "id": "pages_donate_form"
     },
     {
       "label": "skeleton",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L381",
-      "id": "pages_donate_skeleton",
       "community": 3,
-      "norm_label": "skeleton"
+      "norm_label": "skeleton",
+      "id": "pages_donate_skeleton"
     },
     {
       "label": "submitBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L382",
-      "id": "pages_donate_submitbtn",
       "community": 3,
-      "norm_label": "submitbtn"
+      "norm_label": "submitbtn",
+      "id": "pages_donate_submitbtn"
     },
     {
       "label": "submitBtnText",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L383",
-      "id": "pages_donate_submitbtntext",
       "community": 3,
-      "norm_label": "submitbtntext"
+      "norm_label": "submitbtntext",
+      "id": "pages_donate_submitbtntext"
     },
     {
       "label": "submitBtnArrow",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L384",
-      "id": "pages_donate_submitbtnarrow",
       "community": 3,
-      "norm_label": "submitbtnarrow"
+      "norm_label": "submitbtnarrow",
+      "id": "pages_donate_submitbtnarrow"
     },
     {
       "label": "submitSpinner",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L385",
-      "id": "pages_donate_submitspinner",
       "community": 3,
-      "norm_label": "submitspinner"
+      "norm_label": "submitspinner",
+      "id": "pages_donate_submitspinner"
     },
     {
       "label": "amountInputs",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L386",
-      "id": "pages_donate_amountinputs",
       "community": 3,
-      "norm_label": "amountinputs"
+      "norm_label": "amountinputs",
+      "id": "pages_donate_amountinputs"
     },
     {
       "label": "amountField",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L387",
-      "id": "pages_donate_amountfield",
       "community": 3,
-      "norm_label": "amountfield"
+      "norm_label": "amountfield",
+      "id": "pages_donate_amountfield"
     },
     {
       "label": "formError",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L388",
-      "id": "pages_donate_formerror",
       "community": 3,
-      "norm_label": "formerror"
+      "norm_label": "formerror",
+      "id": "pages_donate_formerror"
     },
     {
       "label": "formSuccess",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L389",
-      "id": "pages_donate_formsuccess",
       "community": 3,
-      "norm_label": "formsuccess"
+      "norm_label": "formsuccess",
+      "id": "pages_donate_formsuccess"
     },
     {
       "label": "mpesaWaiting",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L393",
-      "id": "pages_donate_mpesawaiting",
       "community": 3,
-      "norm_label": "mpesawaiting"
+      "norm_label": "mpesawaiting",
+      "id": "pages_donate_mpesawaiting"
     },
     {
       "label": "mpesaSuccess",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L394",
-      "id": "pages_donate_mpesasuccess",
       "community": 3,
-      "norm_label": "mpesasuccess"
+      "norm_label": "mpesasuccess",
+      "id": "pages_donate_mpesasuccess"
     },
     {
       "label": "mpesaPollStatus",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L395",
-      "id": "pages_donate_mpesapollstatus",
       "community": 3,
-      "norm_label": "mpesapollstatus"
+      "norm_label": "mpesapollstatus",
+      "id": "pages_donate_mpesapollstatus"
     },
     {
       "label": "mpesaRetry",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L396",
-      "id": "pages_donate_mpesaretry",
       "community": 3,
-      "norm_label": "mpesaretry"
+      "norm_label": "mpesaretry",
+      "id": "pages_donate_mpesaretry"
     },
     {
       "label": "mpesaReceiptInfo",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L397",
-      "id": "pages_donate_mpesareceiptinfo",
       "community": 3,
-      "norm_label": "mpesareceiptinfo"
+      "norm_label": "mpesareceiptinfo",
+      "id": "pages_donate_mpesareceiptinfo"
     },
     {
       "label": "phoneRequiredLabel",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L398",
-      "id": "pages_donate_phonerequiredlabel",
       "community": 3,
-      "norm_label": "phonerequiredlabel"
+      "norm_label": "phonerequiredlabel",
+      "id": "pages_donate_phonerequiredlabel"
     },
     {
       "label": "mpesaTimerRing",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L399",
-      "id": "pages_donate_mpesatimerring",
       "community": 3,
-      "norm_label": "mpesatimerring"
+      "norm_label": "mpesatimerring",
+      "id": "pages_donate_mpesatimerring"
     },
     {
       "label": "mpesaTimerText",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L400",
-      "id": "pages_donate_mpesatimertext",
       "community": 3,
-      "norm_label": "mpesatimertext"
+      "norm_label": "mpesatimertext",
+      "id": "pages_donate_mpesatimertext"
     },
     {
       "label": "mpesaProgressBar",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L401",
-      "id": "pages_donate_mpesaprogressbar",
       "community": 3,
-      "norm_label": "mpesaprogressbar"
+      "norm_label": "mpesaprogressbar",
+      "id": "pages_donate_mpesaprogressbar"
     },
     {
       "label": "mpesaDisplayPhone",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L402",
-      "id": "pages_donate_mpesadisplayphone",
       "community": 3,
-      "norm_label": "mpesadisplayphone"
+      "norm_label": "mpesadisplayphone",
+      "id": "pages_donate_mpesadisplayphone"
     },
     {
       "label": "mpesaSuccessAmount",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L403",
-      "id": "pages_donate_mpesasuccessamount",
       "community": 3,
-      "norm_label": "mpesasuccessamount"
+      "norm_label": "mpesasuccessamount",
+      "id": "pages_donate_mpesasuccessamount"
     },
     {
       "label": "mpesaImpactMessage",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L404",
-      "id": "pages_donate_mpesaimpactmessage",
       "community": 3,
-      "norm_label": "mpesaimpactmessage"
+      "norm_label": "mpesaimpactmessage",
+      "id": "pages_donate_mpesaimpactmessage"
     },
     {
       "label": "stepItems",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L406",
-      "id": "pages_donate_stepitems",
       "community": 3,
-      "norm_label": "stepitems"
+      "norm_label": "stepitems",
+      "id": "pages_donate_stepitems"
     },
     {
       "label": "stepConnectors",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L407",
-      "id": "pages_donate_stepconnectors",
       "community": 3,
-      "norm_label": "stepconnectors"
+      "norm_label": "stepconnectors",
+      "id": "pages_donate_stepconnectors"
     },
     {
       "label": "stepIndicator",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L408",
-      "id": "pages_donate_stepindicator",
       "community": 3,
-      "norm_label": "stepindicator"
+      "norm_label": "stepindicator",
+      "id": "pages_donate_stepindicator"
     },
     {
       "label": "fieldChecks",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L410",
-      "id": "pages_donate_fieldchecks",
       "community": 3,
-      "norm_label": "fieldchecks"
+      "norm_label": "fieldchecks",
+      "id": "pages_donate_fieldchecks"
     },
     {
       "label": "goToStep()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L417",
-      "id": "pages_donate_gotostep",
       "community": 3,
-      "norm_label": "gotostep()"
+      "norm_label": "gotostep()",
+      "id": "pages_donate_gotostep"
     },
     {
       "label": "showFieldCheck()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L442",
-      "id": "pages_donate_showfieldcheck",
       "community": 3,
-      "norm_label": "showfieldcheck()"
+      "norm_label": "showfieldcheck()",
+      "id": "pages_donate_showfieldcheck"
     },
     {
       "label": "hideFieldCheck()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L446",
-      "id": "pages_donate_hidefieldcheck",
       "community": 3,
-      "norm_label": "hidefieldcheck()"
+      "norm_label": "hidefieldcheck()",
+      "id": "pages_donate_hidefieldcheck"
     },
     {
       "label": "showFieldError()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L451",
-      "id": "pages_donate_showfielderror",
       "community": 3,
-      "norm_label": "showfielderror()"
+      "norm_label": "showfielderror()",
+      "id": "pages_donate_showfielderror"
     },
     {
       "label": "clearFieldError()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L459",
-      "id": "pages_donate_clearfielderror",
       "community": 3,
-      "norm_label": "clearfielderror()"
+      "norm_label": "clearfielderror()",
+      "id": "pages_donate_clearfielderror"
     },
     {
       "label": "clearAllErrors()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L466",
-      "id": "pages_donate_clearallerrors",
       "community": 3,
-      "norm_label": "clearallerrors()"
+      "norm_label": "clearallerrors()",
+      "id": "pages_donate_clearallerrors"
     },
     {
       "label": "updatePhoneRequirement()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L477",
-      "id": "pages_donate_updatephonerequirement",
       "community": 3,
-      "norm_label": "updatephonerequirement()"
+      "norm_label": "updatephonerequirement()",
+      "id": "pages_donate_updatephonerequirement"
     },
     {
       "label": "span",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L498",
-      "id": "pages_donate_span",
       "community": 3,
-      "norm_label": "span"
+      "norm_label": "span",
+      "id": "pages_donate_span"
     },
     {
       "label": "validateField()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L518",
-      "id": "pages_donate_validatefield",
       "community": 3,
-      "norm_label": "validatefield()"
+      "norm_label": "validatefield()",
+      "id": "pages_donate_validatefield"
     },
     {
       "label": "validate()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L559",
-      "id": "pages_donate_validate",
       "community": 3,
-      "norm_label": "validate()"
+      "norm_label": "validate()",
+      "id": "pages_donate_validate"
     },
     {
       "label": "showMpesaForm()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L630",
-      "id": "pages_donate_showmpesaform",
       "community": 3,
-      "norm_label": "showmpesaform()"
+      "norm_label": "showmpesaform()",
+      "id": "pages_donate_showmpesaform"
     },
     {
       "label": "showMpesaSuccess()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L636",
-      "id": "pages_donate_showmpesasuccess",
       "community": 3,
-      "norm_label": "showmpesasuccess()"
+      "norm_label": "showmpesasuccess()",
+      "id": "pages_donate_showmpesasuccess"
     },
     {
       "label": "showMpesaError()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L675",
-      "id": "pages_donate_showmpesaerror",
       "community": 3,
-      "norm_label": "showmpesaerror()"
+      "norm_label": "showmpesaerror()",
+      "id": "pages_donate_showmpesaerror"
     },
     {
       "label": "pollMpesaStatus()",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L687",
-      "id": "pages_donate_pollmpesastatus",
       "community": 3,
-      "norm_label": "pollmpesastatus()"
+      "norm_label": "pollmpesastatus()",
+      "id": "pages_donate_pollmpesastatus"
     },
     {
       "label": "formData",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L744",
-      "id": "pages_donate_formdata",
       "community": 3,
-      "norm_label": "formdata"
+      "norm_label": "formdata",
+      "id": "pages_donate_formdata"
     },
     {
       "label": "data",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L745",
-      "id": "pages_donate_data",
       "community": 3,
-      "norm_label": "data"
+      "norm_label": "data",
+      "id": "pages_donate_data"
     },
     {
       "label": "phone",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L760",
-      "id": "pages_donate_phone",
       "community": 3,
-      "norm_label": "phone"
+      "norm_label": "phone",
+      "id": "pages_donate_phone"
     },
     {
       "label": "freqOnce",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L801",
-      "id": "pages_donate_freqonce",
       "community": 3,
-      "norm_label": "freqonce"
+      "norm_label": "freqonce",
+      "id": "pages_donate_freqonce"
     },
     {
       "label": "freqMonthly",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L802",
-      "id": "pages_donate_freqmonthly",
       "community": 3,
-      "norm_label": "freqmonthly"
+      "norm_label": "freqmonthly",
+      "id": "pages_donate_freqmonthly"
     },
     {
       "label": "submitText",
       "file_type": "code",
       "source_file": "frontend/src/pages/donate.astro",
       "source_location": "L808",
-      "id": "pages_donate_submittext",
       "community": 3,
-      "norm_label": "submittext"
+      "norm_label": "submittext",
+      "id": "pages_donate_submittext"
     },
     {
       "label": "canvas-confetti",
       "file_type": "code",
       "source_file": "canvas-confetti",
       "confidence": "EXTRACTED",
-      "id": "canvas_confetti",
       "community": 18,
-      "norm_label": "canvas-confetti"
+      "norm_label": "canvas-confetti",
+      "id": "canvas_confetti"
     },
     {
       "label": "events.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_events_astro",
       "community": 44,
-      "norm_label": "events.astro"
+      "norm_label": "events.astro",
+      "id": "frontend_src_pages_events_astro"
     },
     {
       "label": "upcomingEvents",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L8",
-      "id": "pages_events_upcomingevents",
       "community": 44,
-      "norm_label": "upcomingevents"
+      "norm_label": "upcomingevents",
+      "id": "pages_events_upcomingevents"
     },
     {
       "label": "pastEvents",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L9",
-      "id": "pages_events_pastevents",
       "community": 44,
-      "norm_label": "pastevents"
+      "norm_label": "pastevents",
+      "id": "pages_events_pastevents"
     },
     {
       "label": "featuredEvents",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L10",
-      "id": "pages_events_featuredevents",
       "community": 44,
-      "norm_label": "featuredevents"
+      "norm_label": "featuredevents",
+      "id": "pages_events_featuredevents"
     },
     {
       "label": "monthNames",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L12",
-      "id": "pages_events_monthnames",
       "community": 44,
-      "norm_label": "monthnames"
+      "norm_label": "monthnames",
+      "id": "pages_events_monthnames"
     },
     {
       "label": "featuredEventsWithDate",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L13",
-      "id": "pages_events_featuredeventswithdate",
       "community": 44,
-      "norm_label": "featuredeventswithdate"
+      "norm_label": "featuredeventswithdate",
+      "id": "pages_events_featuredeventswithdate"
     },
     {
       "label": "monthMap",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L20",
-      "id": "pages_events_monthmap",
       "community": 44,
-      "norm_label": "monthmap"
+      "norm_label": "monthmap",
+      "id": "pages_events_monthmap"
     },
     {
       "label": "mapEventsJson",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L25",
-      "id": "pages_events_mapeventsjson",
       "community": 44,
-      "norm_label": "mapeventsjson"
+      "norm_label": "mapeventsjson",
+      "id": "pages_events_mapeventsjson"
     },
     {
       "label": "sizes",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L136",
-      "id": "pages_events_sizes",
       "community": 44,
-      "norm_label": "sizes"
+      "norm_label": "sizes",
+      "id": "pages_events_sizes"
     },
     {
       "label": "hDays",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L437",
-      "id": "pages_events_hdays",
       "community": 44,
-      "norm_label": "hdays"
+      "norm_label": "hdays",
+      "id": "pages_events_hdays"
     },
     {
       "label": "hHours",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L438",
-      "id": "pages_events_hhours",
       "community": 44,
-      "norm_label": "hhours"
+      "norm_label": "hhours",
+      "id": "pages_events_hhours"
     },
     {
       "label": "hMins",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L439",
-      "id": "pages_events_hmins",
       "community": 44,
-      "norm_label": "hmins"
+      "norm_label": "hmins",
+      "id": "pages_events_hmins"
     },
     {
       "label": "hSecs",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L440",
-      "id": "pages_events_hsecs",
       "community": 44,
-      "norm_label": "hsecs"
+      "norm_label": "hsecs",
+      "id": "pages_events_hsecs"
     },
     {
       "label": "updateHeroCountdown()",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L443",
-      "id": "pages_events_updateherocountdown",
       "community": 44,
-      "norm_label": "updateherocountdown()"
+      "norm_label": "updateherocountdown()",
+      "id": "pages_events_updateherocountdown"
     },
     {
       "label": "filterBtns",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L491",
-      "id": "pages_events_filterbtns",
       "community": 44,
-      "norm_label": "filterbtns"
+      "norm_label": "filterbtns",
+      "id": "pages_events_filterbtns"
     },
     {
       "label": "upcoming",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L492",
-      "id": "pages_events_upcoming",
       "community": 44,
-      "norm_label": "upcoming"
+      "norm_label": "upcoming",
+      "id": "pages_events_upcoming"
     },
     {
       "label": "past",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L493",
-      "id": "pages_events_past",
       "community": 44,
-      "norm_label": "past"
+      "norm_label": "past",
+      "id": "pages_events_past"
     },
     {
       "label": "emptyEl",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L494",
-      "id": "pages_events_emptyel",
       "community": 44,
-      "norm_label": "emptyel"
+      "norm_label": "emptyel",
+      "id": "pages_events_emptyel"
     },
     {
       "label": "gridView",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L517",
-      "id": "pages_events_gridview",
       "community": 44,
-      "norm_label": "gridview"
+      "norm_label": "gridview",
+      "id": "pages_events_gridview"
     },
     {
       "label": "listView",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L518",
-      "id": "pages_events_listview",
       "community": 44,
-      "norm_label": "listview"
+      "norm_label": "listview",
+      "id": "pages_events_listview"
     },
     {
       "label": "viewGridBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L519",
-      "id": "pages_events_viewgridbtn",
       "community": 44,
-      "norm_label": "viewgridbtn"
+      "norm_label": "viewgridbtn",
+      "id": "pages_events_viewgridbtn"
     },
     {
       "label": "viewListBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L520",
-      "id": "pages_events_viewlistbtn",
       "community": 44,
-      "norm_label": "viewlistbtn"
+      "norm_label": "viewlistbtn",
+      "id": "pages_events_viewlistbtn"
     },
     {
       "label": "revealObserver",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L536",
-      "id": "pages_events_revealobserver",
       "community": 44,
-      "norm_label": "revealobserver"
+      "norm_label": "revealobserver",
+      "id": "pages_events_revealobserver"
     },
     {
       "label": "tiltCards",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L562",
-      "id": "pages_events_tiltcards",
       "community": 44,
-      "norm_label": "tiltcards"
+      "norm_label": "tiltcards",
+      "id": "pages_events_tiltcards"
     },
     {
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L566",
-      "id": "pages_events_rect",
       "community": 44,
-      "norm_label": "rect"
+      "norm_label": "rect",
+      "id": "pages_events_rect"
     },
     {
       "label": "[slug].astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_events_slug_astro",
       "community": 60,
-      "norm_label": "[slug].astro"
+      "norm_label": "[slug].astro",
+      "id": "frontend_src_pages_events_slug_astro"
     },
     {
       "label": "getStaticPaths()",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L7",
-      "id": "events_slug_getstaticpaths",
       "community": 60,
-      "norm_label": "getstaticpaths()"
+      "norm_label": "getstaticpaths()",
+      "id": "events_slug_getstaticpaths"
     },
     {
       "label": "monthMap",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L16",
-      "id": "events_slug_monthmap",
       "community": 60,
-      "norm_label": "monthmap"
+      "norm_label": "monthmap",
+      "id": "events_slug_monthmap"
     },
     {
       "label": "fullDate",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L21",
-      "id": "events_slug_fulldate",
       "community": 60,
-      "norm_label": "fulldate"
+      "norm_label": "fulldate",
+      "id": "events_slug_fulldate"
     },
     {
       "label": "formattedDate",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L22",
-      "id": "events_slug_formatteddate",
       "community": 60,
-      "norm_label": "formatteddate"
+      "norm_label": "formatteddate",
+      "id": "events_slug_formatteddate"
     },
     {
       "label": "pastEvents",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L26",
-      "id": "events_slug_pastevents",
       "community": 60,
-      "norm_label": "pastevents"
+      "norm_label": "pastevents",
+      "id": "events_slug_pastevents"
     },
     {
       "label": "now",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L566",
-      "id": "events_slug_now",
       "community": 60,
-      "norm_label": "now"
+      "norm_label": "now",
+      "id": "events_slug_now"
     },
     {
       "label": "days",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L575",
-      "id": "events_slug_days",
       "community": 60,
-      "norm_label": "days"
+      "norm_label": "days",
+      "id": "events_slug_days"
     },
     {
       "label": "hours",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L576",
-      "id": "events_slug_hours",
       "community": 60,
-      "norm_label": "hours"
+      "norm_label": "hours",
+      "id": "events_slug_hours"
     },
     {
       "label": "mins",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L577",
-      "id": "events_slug_mins",
       "community": 60,
-      "norm_label": "mins"
+      "norm_label": "mins",
+      "id": "events_slug_mins"
     },
     {
       "label": "secs",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L578",
-      "id": "events_slug_secs",
       "community": 60,
-      "norm_label": "secs"
+      "norm_label": "secs",
+      "id": "events_slug_secs"
     },
     {
       "label": "rect",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L591",
-      "id": "events_slug_rect",
       "community": 60,
-      "norm_label": "rect"
+      "norm_label": "rect",
+      "id": "events_slug_rect"
     },
     {
       "label": "dist",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L594",
-      "id": "events_slug_dist",
       "community": 60,
-      "norm_label": "dist"
+      "norm_label": "dist",
+      "id": "events_slug_dist"
     },
     {
       "label": "strength",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L596",
-      "id": "events_slug_strength",
       "community": 60,
-      "norm_label": "strength"
+      "norm_label": "strength",
+      "id": "events_slug_strength"
     },
     {
       "label": "err",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L643",
-      "id": "events_slug_err",
       "community": 60,
-      "norm_label": "err"
+      "norm_label": "err",
+      "id": "events_slug_err"
     },
     {
       "label": "valid",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L646",
-      "id": "events_slug_valid",
       "community": 60,
-      "norm_label": "valid"
+      "norm_label": "valid",
+      "id": "events_slug_valid"
     },
     {
       "label": "required",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L680",
-      "id": "events_slug_required",
       "community": 60,
-      "norm_label": "required"
+      "norm_label": "required",
+      "id": "events_slug_required"
     },
     {
       "label": "consent",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L705",
-      "id": "events_slug_consent",
       "community": 60,
-      "norm_label": "consent"
+      "norm_label": "consent",
+      "id": "events_slug_consent"
     },
     {
       "label": "firstErr",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L715",
-      "id": "events_slug_firsterr",
       "community": 60,
-      "norm_label": "firsterr"
+      "norm_label": "firsterr",
+      "id": "events_slug_firsterr"
     },
     {
       "label": "formData",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L721",
-      "id": "events_slug_formdata",
       "community": 60,
-      "norm_label": "formdata"
+      "norm_label": "formdata",
+      "id": "events_slug_formdata"
     },
     {
       "label": "data",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L722",
-      "id": "events_slug_data",
       "community": 60,
-      "norm_label": "data"
+      "norm_label": "data",
+      "id": "events_slug_data"
     },
     {
       "label": "submitBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L725",
-      "id": "events_slug_submitbtn",
       "community": 60,
-      "norm_label": "submitbtn"
+      "norm_label": "submitbtn",
+      "id": "events_slug_submitbtn"
     },
     {
       "label": "escapeText()",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L769",
-      "id": "events_slug_escapetext",
       "community": 60,
-      "norm_label": "escapetext()"
+      "norm_label": "escapetext()",
+      "id": "events_slug_escapetext"
     },
     {
       "label": "description",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L780",
-      "id": "events_slug_description",
       "community": 60,
-      "norm_label": "description"
+      "norm_label": "description",
+      "id": "events_slug_description"
     },
     {
       "label": "icsContent",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L792",
-      "id": "events_slug_icscontent",
       "community": 60,
-      "norm_label": "icscontent"
+      "norm_label": "icscontent",
+      "id": "events_slug_icscontent"
     },
     {
       "label": "blob",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L811",
-      "id": "events_slug_blob",
       "community": 60,
-      "norm_label": "blob"
+      "norm_label": "blob",
+      "id": "events_slug_blob"
     },
     {
       "label": "url",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L812",
-      "id": "events_slug_url",
       "community": 60,
-      "norm_label": "url"
+      "norm_label": "url",
+      "id": "events_slug_url"
     },
     {
       "label": "link",
       "file_type": "code",
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L815",
-      "id": "events_slug_link",
       "community": 60,
-      "norm_label": "link"
+      "norm_label": "link",
+      "id": "events_slug_link"
     },
     {
       "label": "faq.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_faq_astro",
       "community": 40,
-      "norm_label": "faq.astro"
+      "norm_label": "faq.astro",
+      "id": "frontend_src_pages_faq_astro"
     },
     {
       "label": "faqs",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L6",
-      "id": "pages_faq_faqs",
       "community": 40,
-      "norm_label": "faqs"
+      "norm_label": "faqs",
+      "id": "pages_faq_faqs"
     },
     {
       "label": "item",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L117",
-      "id": "pages_faq_item",
       "community": 40,
-      "norm_label": "item"
+      "norm_label": "item",
+      "id": "pages_faq_item"
     },
     {
       "label": "answer",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L118",
-      "id": "pages_faq_answer",
       "community": 40,
-      "norm_label": "answer"
+      "norm_label": "answer",
+      "id": "pages_faq_answer"
     },
     {
       "label": "chevron",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L119",
-      "id": "pages_faq_chevron",
       "community": 40,
-      "norm_label": "chevron"
+      "norm_label": "chevron",
+      "id": "pages_faq_chevron"
     },
     {
       "label": "otherItem",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L124",
-      "id": "pages_faq_otheritem",
       "community": 40,
-      "norm_label": "otheritem"
+      "norm_label": "otheritem",
+      "id": "pages_faq_otheritem"
     },
     {
       "label": "otherAnswer",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L125",
-      "id": "pages_faq_otheranswer",
       "community": 40,
-      "norm_label": "otheranswer"
+      "norm_label": "otheranswer",
+      "id": "pages_faq_otheranswer"
     },
     {
       "label": "otherChevron",
       "file_type": "code",
       "source_file": "frontend/src/pages/faq.astro",
       "source_location": "L126",
-      "id": "pages_faq_otherchevron",
       "community": 40,
-      "norm_label": "otherchevron"
+      "norm_label": "otherchevron",
+      "id": "pages_faq_otherchevron"
     },
     {
       "label": "gallery.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/gallery.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_gallery_astro",
-      "community": 31,
-      "norm_label": "gallery.astro"
+      "community": 80,
+      "norm_label": "gallery.astro",
+      "id": "frontend_src_pages_gallery_astro"
     },
     {
       "label": "categories",
       "file_type": "code",
       "source_file": "frontend/src/pages/gallery.astro",
       "source_location": "L6",
-      "id": "pages_gallery_categories",
-      "community": 31,
-      "norm_label": "categories"
+      "community": 80,
+      "norm_label": "categories",
+      "id": "pages_gallery_categories"
     },
     {
       "label": "galleryImages",
       "file_type": "code",
       "source_file": "frontend/src/pages/gallery.astro",
       "source_location": "L8",
-      "id": "pages_gallery_galleryimages",
-      "community": 31,
-      "norm_label": "galleryimages"
+      "community": 80,
+      "norm_label": "galleryimages",
+      "id": "pages_gallery_galleryimages"
     },
     {
       "label": "index.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_index_astro",
       "community": 36,
-      "norm_label": "index.astro"
+      "norm_label": "index.astro",
+      "id": "frontend_src_pages_index_astro"
     },
     {
       "label": "sortedPosts",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L9",
-      "id": "pages_index_sortedposts",
       "community": 36,
-      "norm_label": "sortedposts"
+      "norm_label": "sortedposts",
+      "id": "pages_index_sortedposts"
     },
     {
       "label": "latestPosts",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L10",
-      "id": "pages_index_latestposts",
       "community": 36,
-      "norm_label": "latestposts"
+      "norm_label": "latestposts",
+      "id": "pages_index_latestposts"
     },
     {
       "label": "upcomingEvents",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L12",
-      "id": "pages_index_upcomingevents",
       "community": 36,
-      "norm_label": "upcomingevents"
+      "norm_label": "upcomingevents",
+      "id": "pages_index_upcomingevents"
     },
     {
       "label": "monthNames",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L13",
-      "id": "pages_index_monthnames",
       "community": 36,
-      "norm_label": "monthnames"
+      "norm_label": "monthnames",
+      "id": "pages_index_monthnames"
     },
     {
       "label": "upcomingWithDate",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L14",
-      "id": "pages_index_upcomingwithdate",
       "community": 36,
-      "norm_label": "upcomingwithdate"
+      "norm_label": "upcomingwithdate",
+      "id": "pages_index_upcomingwithdate"
     },
     {
       "label": "monthMap",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L20",
-      "id": "pages_index_monthmap",
       "community": 36,
-      "norm_label": "monthmap"
+      "norm_label": "monthmap",
+      "id": "pages_index_monthmap"
     },
     {
       "label": "goTo()",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L853",
-      "id": "pages_index_goto",
       "community": 36,
-      "norm_label": "goto()"
+      "norm_label": "goto()",
+      "id": "pages_index_goto"
     },
     {
       "label": "next()",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L867",
-      "id": "pages_index_next",
       "community": 36,
-      "norm_label": "next()"
+      "norm_label": "next()",
+      "id": "pages_index_next"
     },
     {
       "label": "prev()",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L868",
-      "id": "pages_index_prev",
       "community": 36,
-      "norm_label": "prev()"
+      "norm_label": "prev()",
+      "id": "pages_index_prev"
     },
     {
       "label": "startAutoplay()",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L870",
-      "id": "pages_index_startautoplay",
       "community": 36,
-      "norm_label": "startautoplay()"
+      "norm_label": "startautoplay()",
+      "id": "pages_index_startautoplay"
     },
     {
       "label": "stopAutoplay()",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L877",
-      "id": "pages_index_stopautoplay",
       "community": 36,
-      "norm_label": "stopautoplay()"
+      "norm_label": "stopautoplay()",
+      "id": "pages_index_stopautoplay"
     },
     {
       "label": "target",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L919",
-      "id": "pages_index_target",
       "community": 36,
-      "norm_label": "target"
+      "norm_label": "target",
+      "id": "pages_index_target"
     },
     {
       "label": "tick()",
       "file_type": "code",
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L965",
-      "id": "pages_index_tick",
       "community": 36,
-      "norm_label": "tick()"
+      "norm_label": "tick()",
+      "id": "pages_index_tick"
     },
     {
       "label": "partner.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_partner_astro",
       "community": 55,
-      "norm_label": "partner.astro"
+      "norm_label": "partner.astro",
+      "id": "frontend_src_pages_partner_astro"
     },
     {
       "label": "submitBtn",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L208",
-      "id": "pages_partner_submitbtn",
       "community": 55,
-      "norm_label": "submitbtn"
+      "norm_label": "submitbtn",
+      "id": "pages_partner_submitbtn"
     },
     {
       "label": "successMsg",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L209",
-      "id": "pages_partner_successmsg",
       "community": 55,
-      "norm_label": "successmsg"
+      "norm_label": "successmsg",
+      "id": "pages_partner_successmsg"
     },
     {
       "label": "error",
       "file_type": "code",
       "source_file": "frontend/src/pages/partner.astro",
       "source_location": "L217",
-      "id": "pages_partner_error",
       "community": 55,
-      "norm_label": "error"
+      "norm_label": "error",
+      "id": "pages_partner_error"
     },
     {
       "label": "privacy.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/privacy.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_privacy_astro",
       "community": 34,
-      "norm_label": "privacy.astro"
+      "norm_label": "privacy.astro",
+      "id": "frontend_src_pages_privacy_astro"
     },
     {
       "label": "team.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/team.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_team_astro",
-      "community": 80,
-      "norm_label": "team.astro"
+      "community": 34,
+      "norm_label": "team.astro",
+      "id": "frontend_src_pages_team_astro"
     },
     {
       "label": "teamMembers",
       "file_type": "code",
       "source_file": "frontend/src/pages/team.astro",
       "source_location": "L6",
-      "id": "pages_team_teammembers",
-      "community": 80,
-      "norm_label": "teammembers"
+      "community": 34,
+      "norm_label": "teammembers",
+      "id": "pages_team_teammembers"
     },
     {
       "label": "boardMembers",
       "file_type": "code",
       "source_file": "frontend/src/pages/team.astro",
       "source_location": "L15",
-      "id": "pages_team_boardmembers",
-      "community": 80,
-      "norm_label": "boardmembers"
+      "community": 34,
+      "norm_label": "boardmembers",
+      "id": "pages_team_boardmembers"
     },
     {
       "label": "testimonials.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_testimonials_astro",
       "community": 45,
-      "norm_label": "testimonials.astro"
+      "norm_label": "testimonials.astro",
+      "id": "frontend_src_pages_testimonials_astro"
     },
     {
       "label": "testimonials",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L6",
-      "id": "pages_testimonials_testimonials",
       "community": 45,
-      "norm_label": "testimonials"
+      "norm_label": "testimonials",
+      "id": "pages_testimonials_testimonials"
     },
     {
       "label": "stats",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L15",
-      "id": "pages_testimonials_stats",
       "community": 45,
-      "norm_label": "stats"
+      "norm_label": "stats",
+      "id": "pages_testimonials_stats"
     },
     {
       "label": "starIcons",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L22",
-      "id": "pages_testimonials_staricons",
       "community": 45,
-      "norm_label": "staricons"
+      "norm_label": "staricons",
+      "id": "pages_testimonials_staricons"
     },
     {
       "label": "resetAutoplay()",
       "file_type": "code",
       "source_file": "frontend/src/pages/testimonials.astro",
       "source_location": "L169",
-      "id": "pages_testimonials_resetautoplay",
       "community": 45,
-      "norm_label": "resetautoplay()"
+      "norm_label": "resetautoplay()",
+      "id": "pages_testimonials_resetautoplay"
     },
     {
       "label": "volunteer.astro",
       "file_type": "code",
       "source_file": "frontend/src/pages/volunteer.astro",
       "source_location": "L1",
-      "id": "frontend_src_pages_volunteer_astro",
       "community": 79,
-      "norm_label": "volunteer.astro"
+      "norm_label": "volunteer.astro",
+      "id": "frontend_src_pages_volunteer_astro"
     },
     {
       "label": "Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
       "community": 78,
-      "norm_label": "layout.astro_astro_type_script_index_0_lang.rwvggw5s.js"
+      "norm_label": "layout.astro_astro_type_script_index_0_lang.rwvggw5s.js",
+      "id": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js"
     },
     {
       "label": "v",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_v",
       "community": 78,
-      "norm_label": "v"
+      "norm_label": "v",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_v"
     },
     {
       "label": "e",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_e",
       "community": 78,
-      "norm_label": "e"
+      "norm_label": "e",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_e"
     },
     {
       "label": "p",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_p",
       "community": 78,
-      "norm_label": "p"
+      "norm_label": "p",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_p"
     },
     {
       "label": "t",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_t",
       "community": 78,
-      "norm_label": "t"
+      "norm_label": "t",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_t"
     },
     {
       "label": "o",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_o",
       "community": 78,
-      "norm_label": "o"
+      "norm_label": "o",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_o"
     },
     {
       "label": "g",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_g",
       "community": 78,
-      "norm_label": "g"
+      "norm_label": "g",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_g"
     },
     {
       "label": "n",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_n",
       "community": 78,
-      "norm_label": "n"
+      "norm_label": "n",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_n"
     },
     {
       "label": "r",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_r",
       "community": 78,
-      "norm_label": "r"
+      "norm_label": "r",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_r"
     },
     {
       "label": "u",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_u",
       "community": 78,
-      "norm_label": "u"
+      "norm_label": "u",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_u"
     },
     {
       "label": "b",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_b",
       "community": 78,
-      "norm_label": "b"
+      "norm_label": "b",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_b"
     },
     {
       "label": "i",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_i",
       "community": 78,
-      "norm_label": "i"
+      "norm_label": "i",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_i"
     },
     {
       "label": "w",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_w",
       "community": 78,
-      "norm_label": "w"
+      "norm_label": "w",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_w"
     },
     {
       "label": "y",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_y",
       "community": 78,
-      "norm_label": "y"
+      "norm_label": "y",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_y"
     },
     {
       "label": "a",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_a",
       "community": 78,
-      "norm_label": "a"
+      "norm_label": "a",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_a"
     },
     {
       "label": "f",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_f",
       "community": 78,
-      "norm_label": "f"
+      "norm_label": "f",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_f"
     },
     {
       "label": "h",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_h",
       "community": 78,
-      "norm_label": "h"
+      "norm_label": "h",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_h"
     },
     {
       "label": "s",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_s",
       "community": 78,
-      "norm_label": "s"
+      "norm_label": "s",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_s"
     },
     {
       "label": "l",
       "file_type": "code",
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
-      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_l",
       "community": 78,
-      "norm_label": "l"
+      "norm_label": "l",
+      "id": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_l"
     },
     {
       "label": "donate.astro_astro_type_script_index_0_lang.BFpEbOzg.js",
@@ -3147,7 +3138,7 @@
       "file_type": "code",
       "source_file": "frontend/src/pages/sitemap.astro",
       "source_location": "L1",
-      "community": 34,
+      "community": 31,
       "norm_label": "sitemap.astro",
       "id": "frontend_src_pages_sitemap_astro"
     },
@@ -3156,7 +3147,7 @@
       "file_type": "code",
       "source_file": "frontend/src/pages/sitemap.astro",
       "source_location": "L6",
-      "community": 34,
+      "community": 31,
       "norm_label": "pages",
       "id": "pages_sitemap_pages"
     },
@@ -8313,9 +8304,9 @@
       "source_file": "frontend/package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_package_dependencies",
-      "target": "frontend_package_dependencies_leaflet",
-      "confidence_score": 1.0
+      "target": "frontend_package_dependencies_leaflet"
     },
     {
       "relation": "contains",
@@ -8384,9 +8375,9 @@
       "source_file": "frontend/package.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_types_leaflet",
-      "confidence_score": 1.0
+      "target": "frontend_package_devdependencies_types_leaflet"
     },
     {
       "relation": "contains",
@@ -8394,9 +8385,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_data",
-      "confidence_score": 1.0
+      "target": "components_eventmap_data"
     },
     {
       "relation": "contains",
@@ -8404,9 +8395,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_datael",
-      "confidence_score": 1.0
+      "target": "components_eventmap_datael"
     },
     {
       "relation": "contains",
@@ -8414,9 +8405,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_initeventsmap",
-      "confidence_score": 1.0
+      "target": "components_eventmap_initeventsmap"
     },
     {
       "relation": "contains",
@@ -8424,9 +8415,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_inithqmap",
-      "confidence_score": 1.0
+      "target": "components_eventmap_inithqmap"
     },
     {
       "relation": "contains",
@@ -8434,9 +8425,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_lazyinitmap",
-      "confidence_score": 1.0
+      "target": "components_eventmap_lazyinitmap"
     },
     {
       "relation": "contains",
@@ -8444,9 +8435,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_mapel",
-      "confidence_score": 1.0
+      "target": "components_eventmap_mapel"
     },
     {
       "relation": "contains",
@@ -8454,9 +8445,9 @@
       "source_file": "frontend/src/components/EventMap.astro",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_eventmap_astro",
-      "target": "components_eventmap_parsed",
-      "confidence_score": 1.0
+      "target": "components_eventmap_parsed"
     },
     {
       "relation": "imports_from",
@@ -8465,9 +8456,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "frontend_src_components_eventmap_astro",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_eventmap_astro"
     },
     {
       "relation": "imports_from",
@@ -8476,9 +8467,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "frontend_src_components_eventmap_astro",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_eventmap_astro"
     },
     {
       "relation": "contains",
@@ -8606,9 +8597,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "frontend_src_components_footer_astro",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_footer_astro"
     },
     {
       "relation": "imports_from",
@@ -8927,9 +8918,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "frontend_src_components_navigation_astro",
-      "confidence_score": 1.0
+      "target": "frontend_src_components_navigation_astro"
     },
     {
       "relation": "imports_from",
@@ -9053,22 +9044,14 @@
       "target": "frontend_src_components_navigation_astro"
     },
     {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/layouts/Layout.astro",
-      "confidence_score": 1.0,
-      "source": "frontend_src_layouts_layout_astro",
-      "target": "home_crowd_frappe_bench_apps_peace_league_website_frontend_src_styles_global_css"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L538",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_amounts",
-      "confidence_score": 1.0
+      "target": "layouts_layout_amounts"
     },
     {
       "relation": "contains",
@@ -9106,9 +9089,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L624",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_dist",
-      "confidence_score": 1.0
+      "target": "layouts_layout_dist"
     },
     {
       "relation": "contains",
@@ -9116,9 +9099,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L526",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_donationactions",
-      "confidence_score": 1.0
+      "target": "layouts_layout_donationactions"
     },
     {
       "relation": "contains",
@@ -9136,9 +9119,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L545",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_generatetoastdata",
-      "confidence_score": 1.0
+      "target": "layouts_layout_generatetoastdata"
     },
     {
       "relation": "contains",
@@ -9156,9 +9139,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L717",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_icon",
-      "confidence_score": 1.0
+      "target": "layouts_layout_icon"
     },
     {
       "relation": "contains",
@@ -9166,9 +9149,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L522",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_locations",
-      "confidence_score": 1.0
+      "target": "layouts_layout_locations"
     },
     {
       "relation": "contains",
@@ -9206,9 +9189,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L509",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_people",
-      "confidence_score": 1.0
+      "target": "layouts_layout_people"
     },
     {
       "relation": "contains",
@@ -9216,9 +9199,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L543",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_pick",
-      "confidence_score": 1.0
+      "target": "layouts_layout_pick"
     },
     {
       "relation": "contains",
@@ -9266,9 +9249,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L562",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_showtoast",
-      "confidence_score": 1.0
+      "target": "layouts_layout_showtoast"
     },
     {
       "relation": "contains",
@@ -9296,9 +9279,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L626",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_strength",
-      "confidence_score": 1.0
+      "target": "layouts_layout_strength"
     },
     {
       "relation": "contains",
@@ -9316,9 +9299,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L532",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_layouts_layout_astro",
-      "target": "layouts_layout_volunteeractions",
-      "confidence_score": 1.0
+      "target": "layouts_layout_volunteeractions"
     },
     {
       "relation": "imports_from",
@@ -9396,9 +9379,9 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/events/[slug].astro",
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "frontend_src_layouts_layout_astro",
-      "confidence_score": 1.0
+      "target": "frontend_src_layouts_layout_astro"
     },
     {
       "relation": "imports_from",
@@ -9495,9 +9478,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L546",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "layouts_layout_generatetoastdata",
-      "target": "layouts_layout_pick",
-      "confidence_score": 1.0
+      "target": "layouts_layout_pick"
     },
     {
       "relation": "calls",
@@ -9506,9 +9489,9 @@
       "source_file": "frontend/src/layouts/Layout.astro",
       "source_location": "L563",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "layouts_layout_showtoast",
-      "target": "layouts_layout_generatetoastdata",
-      "confidence_score": 1.0
+      "target": "layouts_layout_generatetoastdata"
     },
     {
       "relation": "imports_from",
@@ -9550,9 +9533,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "frontend_src_lib_events_data_json",
-      "confidence_score": 1.0
+      "target": "frontend_src_lib_events_data_json"
     },
     {
       "relation": "imports_from",
@@ -9561,9 +9544,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "frontend_src_lib_events_data_json",
-      "confidence_score": 1.0
+      "target": "frontend_src_lib_events_data_json"
     },
     {
       "relation": "imports_from",
@@ -9572,9 +9555,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "frontend_src_lib_events_data_json",
-      "confidence_score": 1.0
+      "target": "frontend_src_lib_events_data_json"
     },
     {
       "relation": "contains",
@@ -9612,9 +9595,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L285",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_cards",
-      "confidence_score": 1.0
+      "target": "pages_blog_cards"
     },
     {
       "relation": "contains",
@@ -9632,9 +9615,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L420",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_featuredcard",
-      "confidence_score": 1.0
+      "target": "pages_blog_featuredcard"
     },
     {
       "relation": "contains",
@@ -9642,9 +9625,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L361",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_getvisiblecards",
-      "confidence_score": 1.0
+      "target": "pages_blog_getvisiblecards"
     },
     {
       "relation": "contains",
@@ -9652,9 +9635,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_grid",
-      "confidence_score": 1.0
+      "target": "pages_blog_grid"
     },
     {
       "relation": "contains",
@@ -9662,9 +9645,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_gridstatus",
-      "confidence_score": 1.0
+      "target": "pages_blog_gridstatus"
     },
     {
       "relation": "contains",
@@ -9672,9 +9655,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L446",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_initialvisible",
-      "confidence_score": 1.0
+      "target": "pages_blog_initialvisible"
     },
     {
       "relation": "contains",
@@ -9682,9 +9665,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L286",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_loadmorebtn",
-      "confidence_score": 1.0
+      "target": "pages_blog_loadmorebtn"
     },
     {
       "relation": "contains",
@@ -9692,9 +9675,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_nextbtn",
-      "confidence_score": 1.0
+      "target": "pages_blog_nextbtn"
     },
     {
       "relation": "contains",
@@ -9702,9 +9685,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_pagenumbers",
-      "confidence_score": 1.0
+      "target": "pages_blog_pagenumbers"
     },
     {
       "relation": "contains",
@@ -9712,9 +9695,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L287",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_pagination",
-      "confidence_score": 1.0
+      "target": "pages_blog_pagination"
     },
     {
       "relation": "contains",
@@ -9722,9 +9705,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L289",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_prevbtn",
-      "confidence_score": 1.0
+      "target": "pages_blog_prevbtn"
     },
     {
       "relation": "contains",
@@ -9732,9 +9715,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L424",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_rect",
-      "confidence_score": 1.0
+      "target": "pages_blog_rect"
     },
     {
       "relation": "contains",
@@ -9742,9 +9725,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L422",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_sheen",
-      "confidence_score": 1.0
+      "target": "pages_blog_sheen"
     },
     {
       "relation": "contains",
@@ -9752,9 +9735,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L365",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_showfilteredpage",
-      "confidence_score": 1.0
+      "target": "pages_blog_showfilteredpage"
     },
     {
       "relation": "contains",
@@ -9762,9 +9745,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L447",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_showing",
-      "confidence_score": 1.0
+      "target": "pages_blog_showing"
     },
     {
       "relation": "contains",
@@ -9782,9 +9765,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L393",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_visible",
-      "confidence_score": 1.0
+      "target": "pages_blog_visible"
     },
     {
       "relation": "contains",
@@ -9792,9 +9775,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L339",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_astro",
-      "target": "pages_blog_visiblecards",
-      "confidence_score": 1.0
+      "target": "pages_blog_visiblecards"
     },
     {
       "relation": "calls",
@@ -9803,9 +9786,9 @@
       "source_file": "frontend/src/pages/blog.astro",
       "source_location": "L366",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_blog_showfilteredpage",
-      "target": "pages_blog_getvisiblecards",
-      "confidence_score": 1.0
+      "target": "pages_blog_getvisiblecards"
     },
     {
       "relation": "contains",
@@ -9813,9 +9796,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L676",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_bar",
-      "confidence_score": 1.0
+      "target": "blog_slug_bar"
     },
     {
       "relation": "contains",
@@ -9823,9 +9806,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L719",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_btn",
-      "confidence_score": 1.0
+      "target": "blog_slug_btn"
     },
     {
       "relation": "contains",
@@ -9843,9 +9826,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L690",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_id",
-      "confidence_score": 1.0
+      "target": "blog_slug_id"
     },
     {
       "relation": "contains",
@@ -9863,9 +9846,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_text",
-      "confidence_score": 1.0
+      "target": "blog_slug_text"
     },
     {
       "relation": "contains",
@@ -9873,9 +9856,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_tocentries",
-      "confidence_score": 1.0
+      "target": "blog_slug_tocentries"
     },
     {
       "relation": "contains",
@@ -9883,9 +9866,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L681",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_tocpercent",
-      "confidence_score": 1.0
+      "target": "blog_slug_tocpercent"
     },
     {
       "relation": "contains",
@@ -9893,9 +9876,9 @@
       "source_file": "frontend/src/pages/blog/[slug].astro",
       "source_location": "L680",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_blog_slug_astro",
-      "target": "blog_slug_tocprogress",
-      "confidence_score": 1.0
+      "target": "blog_slug_tocprogress"
     },
     {
       "relation": "contains",
@@ -9984,9 +9967,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L364",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_data",
-      "confidence_score": 1.0
+      "target": "pages_contact_data"
     },
     {
       "relation": "contains",
@@ -9994,9 +9977,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L321",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_email",
-      "confidence_score": 1.0
+      "target": "pages_contact_email"
     },
     {
       "relation": "contains",
@@ -10004,9 +9987,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_errel",
-      "confidence_score": 1.0
+      "target": "pages_contact_errel"
     },
     {
       "relation": "contains",
@@ -10014,9 +9997,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L312",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_errors",
-      "confidence_score": 1.0
+      "target": "pages_contact_errors"
     },
     {
       "relation": "contains",
@@ -10024,9 +10007,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L291",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_field",
-      "confidence_score": 1.0
+      "target": "pages_contact_field"
     },
     {
       "relation": "contains",
@@ -10034,9 +10017,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L363",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_formdata",
-      "confidence_score": 1.0
+      "target": "pages_contact_formdata"
     },
     {
       "relation": "contains",
@@ -10044,9 +10027,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_hqjson",
-      "confidence_score": 1.0
+      "target": "pages_contact_hqjson"
     },
     {
       "relation": "contains",
@@ -10054,9 +10037,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L341",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_message",
-      "confidence_score": 1.0
+      "target": "pages_contact_message"
     },
     {
       "relation": "contains",
@@ -10064,9 +10047,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L314",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_name",
-      "confidence_score": 1.0
+      "target": "pages_contact_name"
     },
     {
       "relation": "contains",
@@ -10074,9 +10057,9 @@
       "source_file": "frontend/src/pages/contact.astro",
       "source_location": "L334",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_contact_astro",
-      "target": "pages_contact_subject",
-      "confidence_score": 1.0
+      "target": "pages_contact_subject"
     },
     {
       "relation": "imports_from",
@@ -10734,9 +10717,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L494",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_emptyel",
-      "confidence_score": 1.0
+      "target": "pages_events_emptyel"
     },
     {
       "relation": "contains",
@@ -10744,9 +10727,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_featuredevents",
-      "confidence_score": 1.0
+      "target": "pages_events_featuredevents"
     },
     {
       "relation": "contains",
@@ -10754,9 +10737,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_featuredeventswithdate",
-      "confidence_score": 1.0
+      "target": "pages_events_featuredeventswithdate"
     },
     {
       "relation": "contains",
@@ -10764,9 +10747,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L491",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_filterbtns",
-      "confidence_score": 1.0
+      "target": "pages_events_filterbtns"
     },
     {
       "relation": "contains",
@@ -10774,9 +10757,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L517",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_gridview",
-      "confidence_score": 1.0
+      "target": "pages_events_gridview"
     },
     {
       "relation": "contains",
@@ -10784,9 +10767,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L437",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_hdays",
-      "confidence_score": 1.0
+      "target": "pages_events_hdays"
     },
     {
       "relation": "contains",
@@ -10794,9 +10777,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L438",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_hhours",
-      "confidence_score": 1.0
+      "target": "pages_events_hhours"
     },
     {
       "relation": "contains",
@@ -10804,9 +10787,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L439",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_hmins",
-      "confidence_score": 1.0
+      "target": "pages_events_hmins"
     },
     {
       "relation": "contains",
@@ -10814,9 +10797,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L440",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_hsecs",
-      "confidence_score": 1.0
+      "target": "pages_events_hsecs"
     },
     {
       "relation": "contains",
@@ -10824,9 +10807,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L518",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_listview",
-      "confidence_score": 1.0
+      "target": "pages_events_listview"
     },
     {
       "relation": "contains",
@@ -10834,9 +10817,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_mapeventsjson",
-      "confidence_score": 1.0
+      "target": "pages_events_mapeventsjson"
     },
     {
       "relation": "contains",
@@ -10844,9 +10827,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_monthmap",
-      "confidence_score": 1.0
+      "target": "pages_events_monthmap"
     },
     {
       "relation": "contains",
@@ -10854,9 +10837,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_monthnames",
-      "confidence_score": 1.0
+      "target": "pages_events_monthnames"
     },
     {
       "relation": "contains",
@@ -10884,9 +10867,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L566",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_rect",
-      "confidence_score": 1.0
+      "target": "pages_events_rect"
     },
     {
       "relation": "contains",
@@ -10894,9 +10877,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L536",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_revealobserver",
-      "confidence_score": 1.0
+      "target": "pages_events_revealobserver"
     },
     {
       "relation": "contains",
@@ -10904,9 +10887,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_sizes",
-      "confidence_score": 1.0
+      "target": "pages_events_sizes"
     },
     {
       "relation": "contains",
@@ -10914,9 +10897,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L562",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_tiltcards",
-      "confidence_score": 1.0
+      "target": "pages_events_tiltcards"
     },
     {
       "relation": "contains",
@@ -10924,9 +10907,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L492",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_upcoming",
-      "confidence_score": 1.0
+      "target": "pages_events_upcoming"
     },
     {
       "relation": "contains",
@@ -10944,9 +10927,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L443",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_updateherocountdown",
-      "confidence_score": 1.0
+      "target": "pages_events_updateherocountdown"
     },
     {
       "relation": "contains",
@@ -10954,9 +10937,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L519",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_viewgridbtn",
-      "confidence_score": 1.0
+      "target": "pages_events_viewgridbtn"
     },
     {
       "relation": "contains",
@@ -10964,9 +10947,9 @@
       "source_file": "frontend/src/pages/events.astro",
       "source_location": "L520",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_astro",
-      "target": "pages_events_viewlistbtn",
-      "confidence_score": 1.0
+      "target": "pages_events_viewlistbtn"
     },
     {
       "relation": "contains",
@@ -10974,9 +10957,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L811",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_blob",
-      "confidence_score": 1.0
+      "target": "events_slug_blob"
     },
     {
       "relation": "contains",
@@ -10984,9 +10967,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L705",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_consent",
-      "confidence_score": 1.0
+      "target": "events_slug_consent"
     },
     {
       "relation": "contains",
@@ -10994,9 +10977,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L722",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_data",
-      "confidence_score": 1.0
+      "target": "events_slug_data"
     },
     {
       "relation": "contains",
@@ -11004,9 +10987,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L575",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_days",
-      "confidence_score": 1.0
+      "target": "events_slug_days"
     },
     {
       "relation": "contains",
@@ -11014,9 +10997,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L780",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_description",
-      "confidence_score": 1.0
+      "target": "events_slug_description"
     },
     {
       "relation": "contains",
@@ -11024,9 +11007,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L594",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_dist",
-      "confidence_score": 1.0
+      "target": "events_slug_dist"
     },
     {
       "relation": "contains",
@@ -11034,9 +11017,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L697",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_err",
-      "confidence_score": 1.0
+      "target": "events_slug_err"
     },
     {
       "relation": "contains",
@@ -11044,9 +11027,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L769",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_escapetext",
-      "confidence_score": 1.0
+      "target": "events_slug_escapetext"
     },
     {
       "relation": "contains",
@@ -11054,9 +11037,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L715",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_firsterr",
-      "confidence_score": 1.0
+      "target": "events_slug_firsterr"
     },
     {
       "relation": "contains",
@@ -11064,9 +11047,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_formatteddate",
-      "confidence_score": 1.0
+      "target": "events_slug_formatteddate"
     },
     {
       "relation": "contains",
@@ -11074,9 +11057,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L721",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_formdata",
-      "confidence_score": 1.0
+      "target": "events_slug_formdata"
     },
     {
       "relation": "contains",
@@ -11084,9 +11067,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_fulldate",
-      "confidence_score": 1.0
+      "target": "events_slug_fulldate"
     },
     {
       "relation": "contains",
@@ -11094,9 +11077,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_getstaticpaths",
-      "confidence_score": 1.0
+      "target": "events_slug_getstaticpaths"
     },
     {
       "relation": "contains",
@@ -11104,9 +11087,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L576",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_hours",
-      "confidence_score": 1.0
+      "target": "events_slug_hours"
     },
     {
       "relation": "contains",
@@ -11114,9 +11097,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L792",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_icscontent",
-      "confidence_score": 1.0
+      "target": "events_slug_icscontent"
     },
     {
       "relation": "contains",
@@ -11124,9 +11107,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L815",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_link",
-      "confidence_score": 1.0
+      "target": "events_slug_link"
     },
     {
       "relation": "contains",
@@ -11134,9 +11117,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L577",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_mins",
-      "confidence_score": 1.0
+      "target": "events_slug_mins"
     },
     {
       "relation": "contains",
@@ -11144,9 +11127,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_monthmap",
-      "confidence_score": 1.0
+      "target": "events_slug_monthmap"
     },
     {
       "relation": "contains",
@@ -11154,9 +11137,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L765",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_now",
-      "confidence_score": 1.0
+      "target": "events_slug_now"
     },
     {
       "relation": "contains",
@@ -11164,9 +11147,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_pastevents",
-      "confidence_score": 1.0
+      "target": "events_slug_pastevents"
     },
     {
       "relation": "contains",
@@ -11174,9 +11157,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L591",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_rect",
-      "confidence_score": 1.0
+      "target": "events_slug_rect"
     },
     {
       "relation": "contains",
@@ -11184,9 +11167,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L680",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_required",
-      "confidence_score": 1.0
+      "target": "events_slug_required"
     },
     {
       "relation": "contains",
@@ -11194,9 +11177,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L578",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_secs",
-      "confidence_score": 1.0
+      "target": "events_slug_secs"
     },
     {
       "relation": "contains",
@@ -11204,9 +11187,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L596",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_strength",
-      "confidence_score": 1.0
+      "target": "events_slug_strength"
     },
     {
       "relation": "contains",
@@ -11214,9 +11197,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L725",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_submitbtn",
-      "confidence_score": 1.0
+      "target": "events_slug_submitbtn"
     },
     {
       "relation": "contains",
@@ -11224,9 +11207,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L812",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_url",
-      "confidence_score": 1.0
+      "target": "events_slug_url"
     },
     {
       "relation": "contains",
@@ -11234,9 +11217,9 @@
       "source_file": "frontend/src/pages/events/[slug].astro",
       "source_location": "L646",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_events_slug_astro",
-      "target": "events_slug_valid",
-      "confidence_score": 1.0
+      "target": "events_slug_valid"
     },
     {
       "relation": "contains",
@@ -11355,9 +11338,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_latestposts",
-      "confidence_score": 1.0
+      "target": "pages_index_latestposts"
     },
     {
       "relation": "contains",
@@ -11365,9 +11348,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_monthmap",
-      "confidence_score": 1.0
+      "target": "pages_index_monthmap"
     },
     {
       "relation": "contains",
@@ -11375,9 +11358,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_monthnames",
-      "confidence_score": 1.0
+      "target": "pages_index_monthnames"
     },
     {
       "relation": "contains",
@@ -11405,9 +11388,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_sortedposts",
-      "confidence_score": 1.0
+      "target": "pages_index_sortedposts"
     },
     {
       "relation": "contains",
@@ -11445,9 +11428,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L965",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_tick",
-      "confidence_score": 1.0
+      "target": "pages_index_tick"
     },
     {
       "relation": "contains",
@@ -11455,9 +11438,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_upcomingevents",
-      "confidence_score": 1.0
+      "target": "pages_index_upcomingevents"
     },
     {
       "relation": "contains",
@@ -11465,9 +11448,9 @@
       "source_file": "frontend/src/pages/index.astro",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_pages_index_astro",
-      "target": "pages_index_upcomingwithdate",
-      "confidence_score": 1.0
+      "target": "pages_index_upcomingwithdate"
     },
     {
       "relation": "calls",
@@ -11598,9 +11581,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_a",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_a"
     },
     {
       "relation": "contains",
@@ -11608,9 +11591,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_b",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_b"
     },
     {
       "relation": "contains",
@@ -11618,9 +11601,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_e",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_e"
     },
     {
       "relation": "contains",
@@ -11628,9 +11611,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_f",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_f"
     },
     {
       "relation": "contains",
@@ -11638,9 +11621,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_g",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_g"
     },
     {
       "relation": "contains",
@@ -11648,9 +11631,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_h",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_h"
     },
     {
       "relation": "contains",
@@ -11658,9 +11641,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_i",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_i"
     },
     {
       "relation": "contains",
@@ -11668,9 +11651,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_l",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_l"
     },
     {
       "relation": "contains",
@@ -11678,9 +11661,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_n",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_n"
     },
     {
       "relation": "contains",
@@ -11688,9 +11671,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_o",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_o"
     },
     {
       "relation": "contains",
@@ -11698,9 +11681,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_p",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_p"
     },
     {
       "relation": "contains",
@@ -11708,9 +11691,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_r",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_r"
     },
     {
       "relation": "contains",
@@ -11718,9 +11701,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_s",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_s"
     },
     {
       "relation": "contains",
@@ -11728,9 +11711,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_t",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_t"
     },
     {
       "relation": "contains",
@@ -11738,9 +11721,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_u",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_u"
     },
     {
       "relation": "contains",
@@ -11748,9 +11731,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_v",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_v"
     },
     {
       "relation": "contains",
@@ -11758,9 +11741,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_w",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_w"
     },
     {
       "relation": "contains",
@@ -11768,9 +11751,9 @@
       "source_file": "peace_league_website/public/astro_pages/_astro/Layout.astro_astro_type_script_index_0_lang.rWVggW5S.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "peace_league_website_public_astro_pages_astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_js",
-      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_y",
-      "confidence_score": 1.0
+      "target": "astro_layout_astro_astro_type_script_index_0_lang_rwvggw5s_y"
     },
     {
       "relation": "imports",
@@ -18223,5 +18206,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "22dc3a2519dadf066b64161bb34ecc998f4dc1ba"
+  "built_at_commit": "ec42b3cd7ccd1546250a26e3659ec40fd9affa8f"
 }
