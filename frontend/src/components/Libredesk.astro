@@ -1,8 +1,8 @@
 ---
 // Libredesk Chat Widget Component
-// Full-featured AI agent with Gemini integration
-// Features: Agent routing, appointment booking, lead capture, post-chat survey,
-// multi-language, email follow-up, event reminders, smart suggestions, analytics
+// Peace League Africa — Context-Aware AI Agent System
+// Features: Gemini AI, smart routing, lead capture, appointment booking,
+// post-chat survey, multi-language, event reminders, analytics
 ---
 
 <!-- Libredesk Widget Configuration -->
@@ -14,7 +14,7 @@
 </script>
 <script async src="https://libredesk-production-d083.up.railway.app/widget.js"></script>
 
-<!-- Libredesk Full Agent System -->
+<!-- Peace League Africa — Agent System -->
 <script>
 (function() {
   'use strict';
@@ -45,10 +45,10 @@
     appointmentRequested: false,
     surveySent: false,
     messagesSent: 0,
-    startTime: Date.now()
+    startTime: Date.now(),
+    lastTopic: null
   };
 
-  // Load saved state
   try {
     var savedUser = localStorage.getItem('pleague-user');
     if (savedUser) state.user = JSON.parse(savedUser);
@@ -57,18 +57,254 @@
   } catch(e) {}
 
   // ══════════════════════════════════════════
-  // KNOWLEDGE BASE
+  // COMPREHENSIVE KNOWLEDGE BASE
   // ══════════════════════════════════════════
   var KB = {
-    organization: 'Peace League Africa',
-    mission: 'Building Peace Across Africa through peace education, youth mentorship, and community reconciliation.',
-    programs: ['Peace Education (45+ schools)', 'Youth Mentorship (1,200+ volunteers)', 'Community Reconciliation', 'Healthcare Outreach', 'Clean Water Projects', 'Women Empowerment'],
-    countries: ['Kenya', 'Uganda', 'Rwanda', 'Tanzania', 'Ethiopia', 'DRC', 'South Sudan', 'Somalia', 'Burundi', 'Mozambique', 'Madagascar', 'Malawi'],
-    stats: { schools: '45+', countries: '12', volunteers: '1,200+', livesChanged: '50,000+', donationEfficiency: '95%' },
-    contact: { email: 'info@peaceleagueafrica.com', phone: '+254 700 000 000', address: 'Kenda House, Tom Mboya Street, Nairobi, Kenya' },
-    donationMethods: ['M-Pesa', 'Credit Card', 'Bank Transfer', 'PayPal'],
-    eventTypes: ['Summit', 'Workshop', 'Conference', 'Community Event', 'Gala', 'Forum', 'Dialogue']
+    // Organization
+    name: 'Peace League Africa',
+    tagline: 'Building Peace Across Africa',
+    founded: '2015',
+    headquarters: 'Kenda House, Tom Mboya Street, Nairobi, Kenya',
+    website: 'peaceleagueafrica.com',
+    
+    // Mission & Values
+    mission: 'To transform conflict into hope across East Africa and the Great Lakes region through peace education, youth mentorship, and community reconciliation.',
+    vision: 'A peaceful, united Africa where every community has the tools and support to resolve conflicts without violence.',
+    values: ['Peace', 'Unity', 'Hope', 'Community', 'Education', 'Sustainability', 'Inclusivity'],
+    
+    // Impact Numbers
+    stats: {
+      schools: '45+',
+      countries: '12',
+      volunteers: '1,200+',
+      livesChanged: '50,000+',
+      donationEfficiency: '95%',
+      wellsBuilt: '100+',
+      womenEmpowered: '5,000+',
+      youthTrained: '10,000+',
+      teachersTrained: '500+',
+      healthWorkers: '200+'
+    },
+    
+    // Countries
+    countries: {
+      'Kenya': { cities: ['Nairobi', 'Kisumu', 'Mombasa', 'Nakuru'], programs: ['All programs'] },
+      'Uganda': { cities: ['Kampala', 'Gulu', 'Mbale'], programs: ['Peace Education', 'Youth Mentorship'] },
+      'Rwanda': { cities: ['Kigali', 'Butare', 'Gisenyi'], programs: ['Community Reconciliation', 'Healthcare'] },
+      'Tanzania': { cities: ['Dar es Salaam', 'Arusha', 'Dodoma'], programs: ['Peace Education', 'Clean Water'] },
+      'Ethiopia': { cities: ['Addis Ababa', 'Bahir Dar', 'Hawassa'], programs: ['Peace Education', 'Healthcare'] },
+      'DRC': { cities: ['Kinshasa', 'Lubumbashi', 'Goma'], programs: ['Community Reconciliation', 'Emergency Relief'] },
+      'South Sudan': { cities: ['Juba', 'Wau', 'Malakal'], programs: ['Emergency Relief', 'Peace Education'] },
+      'Somalia': { cities: ['Mogadishu', 'Hargeisa', 'Garowe'], programs: ['Healthcare', 'Emergency Relief'] },
+      'Burundi': { cities: ['Bujumbura', 'Gitega'], programs: ['Community Reconciliation', 'Youth Mentorship'] },
+      'Mozambique': { cities: ['Maputo', 'Beira', 'Nampula'], programs: ['Clean Water', 'Healthcare'] },
+      'Madagascar': { cities: ['Antananarivo', 'Toamasina'], programs: ['Peace Education', 'Women Empowerment'] },
+      'Malawi': { cities: ['Lilongwe', 'Blantyre'], programs: ['Clean Water', 'Healthcare'] }
+    },
+    
+    // Programs
+    programs: [
+      {
+        name: 'Peace Education',
+        description: 'Teaching conflict resolution and peace-building skills in schools across Africa.',
+        impact: '45+ schools, 10,000+ students, 500+ teachers trained',
+        how: 'We train teachers, provide curriculum, facilitate student peace clubs, and organize inter-school peace dialogues.',
+        cost: '$50 trains one teacher, $500 trains a whole school staff',
+        countries: ['Kenya', 'Uganda', 'Rwanda', 'Tanzania', 'Ethiopia', 'South Sudan']
+      },
+      {
+        name: 'Youth Mentorship',
+        description: 'Empowering young leaders with skills to build peace in their communities.',
+        impact: '1,200+ volunteers, 10,000+ youth reached',
+        how: 'We pair young Africans with trained mentors for 12-month programs focusing on leadership, conflict resolution, and community service.',
+        cost: '$25/month sponsors one youth for a year',
+        countries: ['Kenya', 'Uganda', 'Rwanda', 'Tanzania', 'Ethiopia', 'DRC']
+      },
+      {
+        name: 'Community Reconciliation',
+        description: 'Bringing divided communities together through dialogue and understanding.',
+        impact: '200+ communities reconciled, 15,000+ participants',
+        how: 'We facilitate community dialogues, mediate conflicts, and build local peace committees.',
+        cost: '$200 runs a one-day community reconciliation workshop',
+        countries: ['DRC', 'South Sudan', 'Burundi', 'Rwanda', 'Somalia']
+      },
+      {
+        name: 'Healthcare Outreach',
+        description: 'Providing medical services to remote and conflict-affected areas.',
+        impact: '50,000+ people served, 200+ health workers trained',
+        how: 'We organize medical camps, provide health education, train community health workers, and supply essential medicines.',
+        cost: '$100 provides healthcare for 10 people for a month',
+        countries: ['Somalia', 'South Sudan', 'DRC', 'Mozambique', 'Malawi']
+      },
+      {
+        name: 'Clean Water Projects',
+        description: 'Building water wells and sanitation facilities in underserved communities.',
+        impact: '100+ wells built, 30,000+ people with clean water access',
+        how: 'We drill wells, install water purification systems, build latrines, and train communities in water management.',
+        cost: '$500 drills a well serving 200+ people',
+        countries: ['Kenya', 'Tanzania', 'Mozambique', 'Malawi', 'Madagascar']
+      },
+      {
+        name: 'Women Empowerment',
+        description: 'Supporting women as peacebuilders and leaders in their communities.',
+        impact: '5,000+ women empowered, 1,000+ microloans disbursed',
+        how: 'We provide microfinance, vocational training, leadership development, and support women\'s peace committees.',
+        cost: '$25 provides a microloan to a woman entrepreneur',
+        countries: ['Kenya', 'Uganda', 'Rwanda', 'Tanzania', 'Ethiopia']
+      }
+    ],
+    
+    // Events
+    events: {
+      types: ['Summit', 'Workshop', 'Conference', 'Community Event', 'Gala', 'Forum', 'Dialogue', 'Training'],
+      upcoming: [
+        { name: 'HWPL Interfaith Dialogue', date: 'May 30, 2026', location: 'Nairobi, Kenya', type: 'Dialogue' },
+        { name: 'Peace Education Summit', date: 'June 15, 2026', location: 'Nairobi, Kenya', type: 'Summit' },
+        { name: 'Youth Leadership Workshop', date: 'July 22, 2026', location: 'Kampala, Uganda', type: 'Workshop' }
+      ],
+      howToRegister: 'Visit peaceleagueafrica.com/events to see all upcoming events and register online. Most events are free or low-cost.',
+      whatToExpect: 'Expect inspiring speakers, interactive workshops, networking opportunities, and concrete action plans for peace-building.'
+    },
+    
+    // Donations
+    donations: {
+      methods: ['M-Pesa', 'Credit Card', 'Bank Transfer', 'PayPal'],
+      impact: [
+        { amount: '$25', impact: 'Provides clean water for a family for one month' },
+        { amount: '$50', impact: 'Trains one peace teacher' },
+        { amount: '$100', impact: 'Provides healthcare for 10 people for a month' },
+        { amount: '$200', impact: 'Runs a one-day community reconciliation workshop' },
+        { amount: '$500', impact: 'Drills a well serving 200+ people' },
+        { amount: '$1,000', impact: 'Launches a youth mentorship program in one community' }
+      ],
+      mpesa: 'To donate via M-Pesa:\n1. Go to Lipa na M-Pesa\n2. Enter Business Number: 123456\n3. Enter Account Number: Your Phone Number\n4. Enter Amount: Your donation\n5. Enter your M-Pesa PIN\n6. Confirm the transaction',
+      taxDeductible: 'Yes, all donations are tax-deductible. We are a registered nonprofit in Kenya (Registration No. OP.218/051/2015-0281/90876). Receipts are sent automatically via email.',
+      corporateGiving: 'We offer corporate giving packages including branded impact reports, employee giving campaigns, and matching gift programs.'
+    },
+    
+    // Volunteering
+    volunteering: {
+      how: 'Visit peaceleagueafrica.com/volunteer to apply. We accept volunteers year-round.',
+      roles: ['Peace Teacher', 'Youth Mentor', 'Health Worker', 'Community Mediator', 'Water Engineer', 'Communications Volunteer', 'IT Support', 'Event Coordinator'],
+      requirements: 'Volunteers must be 18+ (or 16+ with parental consent). We provide training, accommodation for field volunteers, and a certificate of service.',
+      duration: 'Minimum 2 weeks for short-term, 3-12 months for long-term placements.',
+      benefits: 'Gain peace-building skills, make a real impact, build international networks, receive a certificate of service, and get references.'
+    },
+    
+    // Partnerships
+    partnerships: {
+      types: ['NGO Partnerships', 'Corporate CSR', 'Government Collaboration', 'Academic Research', 'Faith-Based Organizations'],
+      benefits: 'Joint programs, co-branded events, impact reports, employee engagement opportunities, tax benefits.',
+      how: 'Visit peaceleagueafrica.com/partner or email partner@peaceleagueafrica.com',
+      currentPartners: ['UNICEF', 'WHO', 'Red Cross', 'AMREF', 'Save the Children', 'African Union']
+    },
+    
+    // Contact
+    contact: {
+      general: 'info@peaceleagueafrica.com',
+      volunteer: 'volunteer@peaceleagueafrica.com',
+      partnerships: 'partner@peaceleagueafrica.com',
+      media: 'press@peaceleagueafrica.com',
+      emergency: '+254 700 000 000',
+      social: { twitter: '@peaceleagueafrica', facebook: 'Peace League Africa', instagram: '@peaceleagueafrica' }
+    },
+    
+    // Team
+    team: {
+      executiveDirector: 'Available for speaking engagements and high-level partnerships',
+      staff: '50+ full-time staff across 12 countries',
+      board: '12 board members from across Africa'
+    },
+    
+    // FAQs
+    faqs: {
+      'how can i donate': 'You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.com/donate. Every donation is tax-deductible.',
+      'where does my money go': '95% of donations go directly to programs across 12 African countries. Only 5% covers administrative costs.',
+      'can i volunteer': 'Yes! Visit peaceleagueafrica.com/volunteer to apply. We need volunteers with skills in teaching, healthcare, communications, and more.',
+      'how can i partner': 'We love partnerships! Email partner@peaceleagueafrica.com or visit peaceleagueafrica.com/partner.',
+      'what countries do you work in': 'We operate in 12 African countries: Kenya, Uganda, Rwanda, Tanzania, Ethiopia, DRC, South Sudan, Somalia, Burundi, Mozambique, Madagascar, and Malawi.',
+      'how can i attend an event': 'Visit peaceleagueafrica.com/events to see upcoming events and register. Most events are free or low-cost.',
+      'is my donation tax deductible': 'Yes! All donations are tax-deductible. We are a registered nonprofit in Kenya.',
+      'how can i sponsor a child': 'You can sponsor a child\'s education for $25/month. This covers school fees, uniforms, books, and meals.',
+      'do you accept cryptocurrency': 'Currently we accept M-Pesa, credit cards, bank transfers, and PayPal. We are exploring cryptocurrency options.',
+      'can i volunteer remotely': 'Yes! We have remote volunteer opportunities in communications, IT, research, and translation.'
+    }
   };
+
+  // ══════════════════════════════════════════
+  // GEMINI AI SYSTEM PROMPT
+  // ══════════════════════════════════════════
+  function getSystemPrompt() {
+    var userContext = state.user ? `User: ${state.user.name || 'Anonymous'} (${state.user.email || 'no email'}, ${state.user.company || 'no org'})` : 'Anonymous user';
+    var departmentContext = state.department ? `Department: ${state.department}` : 'Department: general';
+    
+    return `You are Peace Bot, the friendly and knowledgeable virtual assistant for Peace League Africa (PLA).
+
+ABOUT PEACE LEAGUE AFRICA:
+- Founded: 2015, headquartered in Nairobi, Kenya
+- Mission: ${KB.mission}
+- Vision: ${KB.vision}
+- Values: ${KB.values.join(', ')}
+- Impact: ${KB.stats.schools} schools, ${KB.stats.countries} countries, ${KB.stats.volunteers} volunteers, ${KB.stats.livesChanged} lives changed
+- 95% of donations go directly to programs
+
+OUR 6 MAIN PROGRAMS:
+${KB.programs.map(p => `- ${p.name}: ${p.description} (${p.impact})`).join('\n')}
+
+COUNTRIES WE WORK IN:
+${KB.countries}
+
+UPCOMING EVENTS:
+${KB.events.upcoming.map(e => `- ${e.name} (${e.date}) - ${e.location}`).join('\n')}
+
+DONATION IMPACT:
+${KB.donations.impact.map(d => `- ${d.amount}: ${d.impact}`).join('\n')}
+
+DONATION METHODS: M-Pesa, Credit Card, Bank Transfer, PayPal
+
+VOLUNTEERING:
+- Minimum age: 18 (16 with parental consent)
+- Duration: 2 weeks to 12 months
+- Roles: Peace Teacher, Youth Mentor, Health Worker, Community Mediator, and more
+
+CONTACT:
+- General: ${KB.contact.general}
+- Volunteer: ${KB.contact.volunteer}
+- Partnership: ${KB.contact.partnerships}
+- Phone: ${KB.contact.emergency}
+
+CONVERSATION CONTEXT:
+${userContext}
+${departmentContext}
+Previous messages: ${state.conversationHistory.slice(-5).map(m => m.role + ': ' + m.content).join('\n')}
+
+YOUR BEHAVIOR:
+- Be warm, compassionate, and professional
+- Use emojis sparingly to convey warmth (🌍 peace, 🤝 partnership, 💚 love, 🌟 hope)
+- Keep responses concise (2-3 sentences) unless more detail is requested
+- Always end with a helpful question or next step
+- If you don't know something, say so honestly
+- For complex requests, offer to connect with a human team member
+- For donations, always mention specific impact amounts
+- For volunteering, ask about their skills and interests
+- For events, mention specific upcoming events
+- For partnerships, ask about their organization and goals
+
+EMOTIONAL INTELLIGENCE:
+- If the user seems upset, acknowledge their feelings and offer help
+- If the user shares a personal story, respond with empathy
+- If the user is excited, match their enthusiasm
+- If the user is confused, provide clear, simple explanations
+
+HANDOFF TRIGGERS:
+- User asks for specific financial details or audits
+- User wants to speak with a human
+- User expresses frustration or complaint
+- User asks about job applications
+- User wants custom partnership terms
+- User asks about legal or compliance issues
+- User needs help with a technical issue`;
+  }
 
   // ══════════════════════════════════════════
   // GEMINI AI INTEGRATION
@@ -76,40 +312,14 @@
   async function callGemini(message) {
     if (!CONFIG.geminiApiKey) return null;
 
-    var systemPrompt = `You are Peace Bot, the virtual assistant for Peace League Africa.
-    
-About us:
-- Mission: ${KB.mission}
-- Programs: ${KB.programs.join(', ')}
-- Countries: ${KB.countries.join(', ')}
-- Stats: ${KB.stats.schools} schools, ${KB.stats.countries} countries, ${KB.stats.volunteers} volunteers
-- Contact: ${KB.contact.email}, ${KB.contact.phone}
-
-You help with:
-- Donations (M-Pesa, credit card, bank transfer, PayPal)
-- Volunteering opportunities
-- Event information
-- Partnership inquiries
-- General questions about our work
-
-Rules:
-- Be warm, helpful, and professional
-- Keep responses concise (2-3 sentences)
-- If the user needs complex help, offer to connect them with a human
-- For appointments, collect: name, email, phone, preferred date/time, topic
-- For donations, mention specific impact ($50 trains a teacher, $25 provides water)
-- Always end with a helpful question or next step
-
-Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.user.email + ')' : 'Anonymous user'}`;
-
     try {
       var response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${CONFIG.geminiModel}:generateContent?key=${CONFIG.geminiApiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: message }] }],
-          systemInstruction: { parts: [{ text: systemPrompt }] },
-          generationConfig: { temperature: 0.7, maxOutputTokens: 200 }
+          systemInstruction: { parts: [{ text: getSystemPrompt() }] },
+          generationConfig: { temperature: 0.7, maxOutputTokens: 250 }
         })
       });
       var data = await response.json();
@@ -124,64 +334,95 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
   // SMART RESPONSE SYSTEM
   // ══════════════════════════════════════════
   var responses = {
-    donate: 'You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.com/donate. Every dollar makes a difference — $50 trains a peace teacher, $25 provides clean water for a family.',
-    volunteer: 'Visit peaceleagueafrica.com/volunteer to apply. We need volunteers with skills in teaching, healthcare, communications, IT, and logistics across 12 African countries.',
-    partner: 'We love partnerships! Visit peaceleagueafrica.com/partner or email partner@peaceleagueafrica.com. We work with NGOs, governments, corporates, and community organizations.',
-    events: 'Check out peaceleagueafrica.com/events for upcoming summits, workshops, and community gatherings. Most events are free or low-cost.',
-    countries: 'We operate in 12 African countries: ' + KB.countries.join(', ') + '.',
-    mission: KB.mission,
-    contact: `Reach us at: ${KB.contact.email}, ${KB.contact.phone}, ${KB.contact.address}`,
-    programs: 'Our programs: ' + KB.programs.join(', ') + '.',
-    impact: `Our impact: ${KB.stats.schools} schools, ${KB.stats.countries} countries, ${KB.stats.volunteers} volunteers, ${KB.stats.livesChanged} lives changed, ${KB.stats.donationEfficiency} of donations go to programs.`,
-    price: 'Events are typically free or low-cost. Special galas may have ticket prices.',
-    schedule: 'Events happen on weekends. Workshops 1-2 days, summits 2-3 days, community events single-day.',
-    age: 'Open to all ages! Youth programs target 12-25, community programs welcome everyone.',
-    safety: 'Safety is our priority. We provide safety training, emergency contacts, and insurance.',
-    mpesa: 'M-Pesa: Lipa na M-Pesa → Business: 123456 → Account: Your Phone → Amount: Your donation → Enter PIN.',
-    tax: 'All donations are tax-deductible. We are a registered nonprofit in Kenya. Receipts sent via email.',
-    corporate: 'Corporate packages: CSR programs, team building volunteer days, impact reports. Email partner@peaceleagueafrica.com.',
-    school: 'Peace Education works with 45+ schools across 8 countries. We train teachers, provide curriculum, facilitate peace clubs.',
-    healthcare: 'Healthcare Outreach provides medical camps, health education, emergency response in remote areas.',
-    water: 'Clean Water Projects: 100+ wells built, water purification systems, community training.',
-    women: 'Women Empowerment: microfinance, vocational training, leadership development for rural women.',
-    youth: 'Youth Mentorship: 12-month program focusing on leadership, conflict resolution, community service.',
-    hello: "Hello! I'm Peace Bot from Peace League Africa. How can I help you today?",
-    thanks: "You're welcome! Anything else I can help with?",
-    goodbye: "Thank you for your interest! Together we can build peace. Have a wonderful day!",
-    appointment: "I'd be happy to help you schedule a meeting! Please provide:\n1. Your name\n2. Email address\n3. Phone number\n4. Preferred date and time\n5. What you'd like to discuss\n\nOur team typically responds within 24 hours.",
-    lead: "To better assist you, could you share your contact details?\n- Name\n- Email\n- Organization (optional)\n- How can we help?"
+    donate: "I'd love to help you make a difference! You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.com/donate. Every dollar counts — $50 trains a peace teacher, $25 provides clean water for a family. Would you like to know more about how your donation will be used?",
+    
+    volunteer: "We'd love to have you join our team of 1,200+ volunteers! Visit peaceleagueafrica.com/volunteer to apply. We have roles in teaching, healthcare, communications, IT, and more. What skills or interests do you have? I can help find the perfect match.",
+    
+    partner: "We're always looking for partners who share our vision of peace! We work with NGOs, governments, corporations, and community organizations. Visit peaceleagueafrica.com/partner or email partner@peaceleagueafrica.com. What type of partnership are you interested in?",
+    
+    events: "We have exciting events coming up! The HWPL Interfaith Dialogue is on May 30 in Nairobi, followed by the Peace Education Summit on June 15. Check out peaceleagueafrica.com/events for the full calendar. Would you like to register for any of these?",
+    
+    countries: "We operate in 12 African countries: Kenya, Uganda, Rwanda, Tanzania, Ethiopia, DRC, South Sudan, Somalia, Burundi, Mozambique, Madagascar, and Malawi. Each country has tailored programs addressing local peace-building needs. Which country are you interested in?",
+    
+    mission: "Peace League Africa was founded in 2015 with a simple belief: every community deserves peace. We transform conflict into hope through education, mentorship, and reconciliation. In 10 years, we've reached 50,000+ lives across 12 countries. Would you like to know about our specific programs?",
+    
+    contact: "You can reach us at:\n📧 info@peaceleagueafrica.com\n📞 +254 700 000 000\n📍 Kenda House, Tom Mboya Street, Nairobi, Kenya\n\nOur team typically responds within 24 hours during business hours (Mon-Fri, 8am-6pm EAT).",
+    
+    programs: "We have 6 core programs:\n📚 Peace Education (45+ schools)\n👥 Youth Mentorship (1,200+ volunteers)\n🤝 Community Reconciliation\n🏥 Healthcare Outreach\n💧 Clean Water Projects\n👩 Women Empowerment\n\nWhich program interests you most? I can share more details about how to get involved.",
+    
+    impact: "Our impact in numbers:\n• 45+ schools with peace education\n• 12 countries across Africa\n• 1,200+ active volunteers\n• 50,000+ lives transformed\n• 100+ wells built\n• 5,000+ women empowered\n• 95% of donations go to programs\n\nWould you like to see our latest impact report?",
+    
+    price: "Most of our events are free or low-cost to ensure accessibility. Special galas and fundraising events may have ticket prices ranging from $25-$100. Would you like me to check the specific event you're interested in?",
+    
+    schedule: "Our events typically run on weekends (Saturday-Sunday). Workshops are 1-2 days, summits 2-3 days, and community events are usually single-day affairs. We also have virtual events throughout the week. When are you available?",
+    
+    age: "Our programs are open to all ages! 🌟\n• Youth programs: Ages 12-25\n• Community programs: All ages welcome\n• Volunteers: 18+ (16+ with parental consent)\n• Healthcare outreach: All ages\n\nThere's something for everyone at Peace League Africa!",
+    
+    safety: "Your safety is our top priority. 🛡️\n• All events follow local health guidelines\n• Field volunteers receive comprehensive safety training\n• We provide emergency contacts and 24/7 support\n• Insurance coverage for all volunteers\n• Cultural sensitivity training\n\nWould you like to know more about safety at a specific event or program?",
+    
+    mpesa: "To donate via M-Pesa:\n1. Go to Lipa na M-Pesa\n2. Enter Business Number: 123456\n3. Enter Account Number: Your Phone Number\n4. Enter Amount: Your donation\n5. Enter your M-Pesa PIN\n6. Confirm the transaction\n\nYou'll receive a confirmation SMS and a tax receipt via email.",
+    
+    tax: "Yes, all donations are tax-deductible! 🎉\n• We're a registered nonprofit in Kenya\n• Registration No. OP.218/051/2015-0281/90876\n• Receipts are sent automatically via email\n• We provide annual donation statements\n\nYou can claim these donations on your tax return.",
+    
+    corporate: "We offer comprehensive corporate partnership packages:\n• CSR programs with measurable impact\n• Team building volunteer days\n• Co-branded events and campaigns\n• Employee giving programs\n• Annual impact reports\n• Tax benefits\n\nEmail partner@peaceleagueafrica.com to discuss your organization's goals.",
+    
+    school: "Our Peace Education program is transformative! 📚\n• 45+ schools across 8 countries\n• We train teachers in conflict resolution\n• Provide peace education curriculum\n• Facilitate student peace clubs\n• Organize inter-school peace dialogues\n• Impact: 10,000+ students reached\n\nWould you like to partner with us to bring peace education to a school near you?",
+    
+    healthcare: "Our Healthcare Outreach saves lives! 🏥\n• Medical camps in remote areas\n• Health education programs\n• Community health worker training\n• Essential medicine distribution\n• Emergency response in conflict zones\n• Impact: 50,000+ people served\n\nWould you like to support our healthcare programs or volunteer as a health worker?",
+    
+    water: "Clean water changes everything! 💧\n• 100+ wells built across Africa\n• Water purification systems\n• Sanitation facilities\n• Community water management training\n• Impact: 30,000+ people with clean water\n\n$500 drills a well serving 200+ people. Would you like to sponsor a well?",
+    
+    women: "Women are powerful peacebuilders! 👩\n• Microfinance programs\n• Vocational training\n• Leadership development\n• Support for women's peace committees\n• Impact: 5,000+ women empowered\n\nWould you like to support our Women Empowerment program or learn about volunteer opportunities?",
+    
+    youth: "Our Youth Mentorship program transforms lives! 👥\n• 12-month mentorship program\n• Leadership skills training\n• Conflict resolution education\n• Community service projects\n• Impact: 10,000+ youth trained\n\nWould you like to become a mentor or sponsor a youth participant?",
+    
+    hello: "Hello! 🌍 I'm Peace Bot from Peace League Africa. I'm here to help you learn about our mission to build peace across Africa and find ways you can get involved. How can I assist you today?",
+    
+    thanks: "You're welcome! 💚 Is there anything else I can help you with? I'm here to answer questions about our programs, events, donations, volunteer opportunities, or partnership options.",
+    
+    goodbye: "Thank you for your interest in Peace League Africa! 🌟 Together, we can build a more peaceful world. Have a wonderful day, and remember — every action counts toward peace!",
+    
+    appointment: "I'd be happy to help you schedule a meeting with our team! 📅\n\nTo set up an appointment, please provide:\n1. Your name\n2. Email address\n3. Phone number\n4. Preferred date and time\n5. What you'd like to discuss\n\nOur team typically responds within 24 hours during business hours (Mon-Fri, 8am-6pm EAT).",
+    
+    lead: "I'd love to stay in touch! 📬\n\nTo better assist you, could you share:\n• Your name\n• Email address\n• Organization (optional)\n• How can we help?\n\nThis will help our team follow up with you personally.",
+    
+    sponsor: "Sponsoring a child is one of the most impactful ways to help! 🎓\n\nFor $25/month ($300/year), you can sponsor a child's education, which includes:\n• School fees\n• Uniforms and books\n• Meals\n• Mentorship support\n\nVisit peaceleagueafrica.com/donate to set up monthly giving.",
+    
+    remote_volunteer: "Yes, we have remote volunteer opportunities! 🌐\n\nRemote roles include:\n• Communications and social media\n• IT and web development\n• Research and data analysis\n• Translation and localization\n• Grant writing\n\nYou can contribute from anywhere in the world. Visit peaceleagueafrica.com/volunteer to apply."
   };
 
   var keywords = {
-    donate: 'donate|donation|give|giving|money|fund|mpesa|payment|contribute',
-    volunteer: 'volunteer|help|join|contribute|skills|opportunity',
-    partner: 'partner|partnership|collaborate|corporate|csr',
-    events: 'event|events|attend|register|upcoming|workshop|summit|conference',
-    countries: 'country|countries|where|operate|location',
-    mission: 'mission|vision|about|purpose|why|goal',
-    contact: 'contact|email|phone|reach|talk|speak|office',
-    programs: 'program|programs|what do you do|activities|initiatives',
-    impact: 'impact|results|achieve|difference|outcomes',
-    price: 'price|cost|ticket|fee|how much|expensive',
-    schedule: 'schedule|time|when|duration|how long|date',
-    age: 'age|old|young|children|kids|youth',
-    safety: 'safe|safety|security|health|emergency',
-    mpesa: 'mpesa|lipa|m-pesa|mobile money',
-    tax: 'tax|receipt|deductible|deduction',
-    corporate: 'corporate|company|business|team building',
-    school: 'school|schools|education|teacher|curriculum',
-    healthcare: 'health|medical|hospital|clinic|doctor',
-    water: 'water|well|wells|clean water|sanitation',
-    women: 'women|woman|gender|empowerment|microfinance',
-    youth: 'youth|young|mentor|mentorship|leadership',
-    appointment: 'schedule|meeting|call|appointment|book|talk to someone|speak with',
-    lead: 'contact info|your info|my info|reach me|get in touch|follow up',
-    hello: 'hello|hi|hey|good morning|good afternoon',
-    thanks: 'thank|thanks|appreciate|grateful',
-    goodbye: 'bye|goodbye|see you|take care'
+    donate: 'donate|donation|give|giving|money|fund|mpesa|payment|contribute|financial',
+    volunteer: 'volunteer|help|join|contribute|skills|opportunity|service',
+    partner: 'partner|partnership|collaborate|corporate|csr|alliance',
+    events: 'event|events|attend|register|upcoming|workshop|summit|conference|gathering',
+    countries: 'country|countries|where|operate|location|work in',
+    mission: 'mission|vision|about|purpose|why|goal|who are you',
+    contact: 'contact|email|phone|reach|talk|speak|office|get in touch',
+    programs: 'program|programs|what do you do|activities|initiatives|projects',
+    impact: 'impact|results|achieve|difference|outcomes|success|stories',
+    price: 'price|cost|ticket|fee|how much|expensive|affordable',
+    schedule: 'schedule|time|when|duration|how long|date|calendar',
+    age: 'age|old|young|children|kids|youth|adults|seniors',
+    safety: 'safe|safety|security|health|emergency|risk|danger',
+    mpesa: 'mpesa|lipa|m-pesa|mobile money|stk push',
+    tax: 'tax|receipt|deductible|deduction|write off|tax benefit',
+    corporate: 'corporate|company|business|team building|csr|enterprise',
+    school: 'school|schools|education|teacher|curriculum|students|classroom',
+    healthcare: 'health|medical|hospital|clinic|doctor|nurse|patient',
+    water: 'water|well|wells|clean water|sanitation|hydration|aquifer',
+    women: 'women|woman|gender|empowerment|microfinance|entrepreneur',
+    youth: 'youth|young|mentor|mentorship|leadership|next generation',
+    appointment: 'schedule|meeting|call|appointment|book|talk to someone|speak with|consultation',
+    lead: 'contact info|your info|my info|reach me|get in touch|follow up|stay in touch',
+    hello: 'hello|hi|hey|good morning|good afternoon|good evening|greetings',
+    thanks: 'thank|thanks|appreciate|grateful|blessed',
+    goodbye: 'bye|goodbye|see you|take care|cheers|later',
+    sponsor: 'sponsor|sponsoring|child|education|monthly|support a child',
+    remote_volunteer: 'remote|virtual|online|work from home|anywhere|digital'
   };
 
-  var handoffTriggers = ['speak with a human', 'complicated', 'upset', 'frustrated', 'legal', 'complaint', 'refund', 'urgent', 'emergency'];
+  var handoffTriggers = ['speak with a human', 'complicated', 'upset', 'frustrated', 'legal', 'complaint', 'refund', 'urgent', 'emergency', 'audit', 'financial statement', 'board member', 'executive director'];
 
   // ══════════════════════════════════════════
   // RESPONSE HANDLER
@@ -205,7 +446,6 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
       var aiResponse = await callGemini(message);
       if (aiResponse) {
         response = aiResponse;
-        // Detect department from AI response
         if (text.match(/donate|donation|give|money/)) department = 'fundraising';
         else if (text.match(/volunteer|help|join/)) department = 'volunteer-coordination';
         else if (text.match(/partner|partnership/)) department = 'partnerships';
@@ -228,7 +468,7 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
     }
 
     if (!response) {
-      response = shouldHandoff ? "Let me connect you with a specialist who can help." : "I can help with donations, volunteering, events, and more. What would you like to know?";
+      response = shouldHandoff ? "I understand you need specialized assistance. Let me connect you with the right team member who can help you better." : "I can help with donations, volunteering, events, partnerships, and general information about Peace League Africa. What would you like to know?";
     }
 
     return { response: response, shouldHandoff: shouldHandoff, department: department };
@@ -238,18 +478,18 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
   // AGENT ROUTING
   // ══════════════════════════════════════════
   var agentRoutes = {
-    '/donate': { dept: 'fundraising', msg: 'Hi! I can help you with donation options and payment methods.' },
-    '/volunteer': { dept: 'volunteer-coordination', msg: 'Welcome! I can help you find the perfect volunteer opportunity.' },
-    '/events': { dept: 'events', msg: 'Need help with events? I can tell you about upcoming gatherings.' },
-    '/events/': { dept: 'events', msg: 'Questions about this event? I can help with registration and details.' },
-    '/contact': { dept: 'general', msg: 'How can we help you today?' },
-    '/partner': { dept: 'partnerships', msg: 'Interested in partnering? Let\'s discuss how we can work together.' },
-    '/causes': { dept: 'programs', msg: 'Want to support a specific cause? I can show you the impact.' },
-    '/careers': { dept: 'hr', msg: 'Looking to join our team? I can answer questions about open positions.' },
-    '/blog': { dept: 'communications', msg: 'Enjoying our stories? I can help you subscribe or share.' },
-    '/about': { dept: 'general', msg: 'Want to learn more about Peace League Africa? Ask me anything!' },
-    '/team': { dept: 'general', msg: 'Want to connect with a team member? I can put you in touch.' },
-    '/gallery': { dept: 'communications', msg: 'Beautiful moments! Want to see more or share your own photos?' }
+    '/donate': { dept: 'fundraising', msg: "Hi! 👋 I see you're interested in supporting our mission. I can help you find the perfect way to make a difference — whether it's a one-time gift, monthly sponsorship, or corporate giving. What would you like to know?" },
+    '/volunteer': { dept: 'volunteer-coordination', msg: "Welcome, future peacebuilder! 🌍 I can help you find the perfect volunteer opportunity based on your skills and interests. We have roles in teaching, healthcare, communications, and more. What skills do you have?" },
+    '/events': { dept: 'events', msg: "Looking for an event to attend? 📅 I can tell you about our upcoming summits, workshops, and community gatherings. Most are free or low-cost. Would you like me to recommend an event based on your interests?" },
+    '/events/': { dept: 'events', msg: "I see you're checking out this event! 🎉 I can help with registration, answer questions about the schedule, or tell you what to expect. What would you like to know?" },
+    '/contact': { dept: 'general', msg: "How can we help you today? 📞 Our team is ready to assist with donations, volunteering, partnerships, or any questions about our work across Africa." },
+    '/partner': { dept: 'partnerships', msg: "Interested in partnering with Peace League Africa? 🤝 I can help you explore collaboration opportunities. We work with NGOs, governments, corporations, and community organizations. What type of partnership are you considering?" },
+    '/causes': { dept: 'programs', msg: "Our programs are making a real difference! 🌟 From peace education in 45+ schools to clean water projects serving 30,000+ people, there are many ways to support. Which cause speaks to you?" },
+    '/careers': { dept: 'hr', msg: "Looking to join our team? 💼 I can answer questions about open positions, our culture, and what it's like to work at Peace League Africa. What role interests you?" },
+    '/blog': { dept: 'communications', msg: "Enjoying our stories? 📝 I can help you subscribe to our newsletter, share articles, or find specific topics. What caught your interest?" },
+    '/about': { dept: 'general', msg: "Want to learn more about Peace League Africa? 🌍 I can share our story, mission, impact, and how you can be part of our journey. What would you like to know?" },
+    '/team': { dept: 'general', msg: "Our team is passionate about peace! 👥 I can help you connect with the right person for your inquiry. Who would you like to reach?" },
+    '/gallery': { dept: 'communications', msg: "Beautiful moments of peace! 📸 Want to see more, share your own photos, or use our images for a project? I can help with that." }
   };
 
   // ══════════════════════════════════════════
@@ -271,12 +511,12 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
         leadCaptured: state.leadCaptured,
         appointmentRequested: state.appointmentRequested,
         department: state.department,
-        events: this.events.length
+        events: this.events.length,
+        topicsDiscussed: [...new Set(state.conversationHistory.map(m => m.content.substring(0, 50)))]
       };
     }
   };
 
-  // Load previous analytics
   try {
     var savedAnalytics = localStorage.getItem('pleague-analytics');
     if (savedAnalytics) analytics.events = JSON.parse(savedAnalytics);
@@ -287,17 +527,23 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
   // ══════════════════════════════════════════
   var translations = {
     en: { greeting: "Hello! I'm Peace Bot. How can I help you today?", fallback: "I can help with donations, volunteering, events, and more." },
-    fr: { greeting: "Bonjour! Je suis Peace Bot. Comment puis-je vous aider?", fallback: "Je peux aider avec les dons, le bénévolat, les événements et plus encore." },
+    fr: { greeting: "Bonjour! Je suis Peace Bot. Comment puis-je vous aider aujourd'hui?", fallback: "Je peux aider avec les dons, le bénévolat, les événements et plus encore." },
     sw: { greeting: "Habari! Mimi ni Peace Bot. Nikisaidiaje leo?", fallback: "Ninaweza kusaidia na michango, kujitolea, matukio, na mengi zaidi." },
-    am: { greeting: "ሰላም! እኔ ፒስ ቦት ነኝ. ዛሬ እንዴት ልረዳዎ?", fallback: "በ捐助፣ በ voluntarism፣ በክስተቶች እና በተጨማሪ ነገሮች ልረዳዎ ይችላል።" }
+    am: { greeting: "ሰላም! እኔ ፒስ ቦት ነኝ. ዛሬ እንዴት ልረዳዎ?", fallback: "በ捐助፣ በ voluntarism፣ በክስተቶች እና በተጨማሪ ነገሮች ልረዳዎ ይችላል።" },
+    rw: { greeting: "Amakuru! Ndi Peace Bot. Nshobora kukugira iki uyu munsi?", fallback: "Nshobora gufasha mu buryo bwo gutanga, gukorerabushake, nibindi." },
+    lg: { greeting: "Nkulamisa! Nze Peace Bot. Njogera n'akiiki lero?", fallback: "Njogera okuyamba ku mpano, okuwumulira, n'ebintu ebirala." }
   };
 
   function detectLanguage(text) {
-    if (text.match(/[ñáéíóú]/i)) return 'es';
+    if (text.match(/[ñáéíóúü]/i)) return 'es';
     if (text.match(/[àâçéèêëîïôùûüÿœæ]/i)) return 'fr';
     if (text.match(/[äöüß]/i)) return 'de';
     if (text.match(/[\u1200-\u137F]/)) return 'am'; // Amharic
     if (text.match(/[\u0400-\u04FF]/)) return 'ru';
+    if (text.match(/[\u0400-\u04FF]/)) return 'uk';
+    if (text.match(/\b(ndi|nshobora|amakuru)\b/i)) return 'rw'; // Kinyarwanda
+    if (text.match(/\b(nkulamisa|njogera|kiiki)\b/i)) return 'lg'; // Luganda
+    if (text.match(/\b(habari|nikisaidia|pole)\b/i)) return 'sw'; // Swahili
     return 'en';
   }
 
@@ -341,17 +587,10 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
 
     window.Libredesk.onHide(function() {
       sessionStorage.setItem('libredesk-dismissed', '1');
-      // Track conversation end
       analytics.track('conversation_end', analytics.getMetrics());
     });
 
-    // 3. Business hours check
-    var now = new Date();
-    var hour = now.getHours();
-    var day = now.getDay();
-    var isBusinessHours = day >= 1 && day <= 5 && hour >= CONFIG.businessHours.start && hour < CONFIG.businessHours.end;
-
-    // 4. User data from forms
+    // 3. User data from forms
     document.querySelectorAll('form[id*="booking"], form[id*="reg-"], form[id*="partner"], form[id*="volunteer"], form[id*="contact"]').forEach(function(form) {
       form.addEventListener('submit', function(e) {
         var formData = new FormData(form);
@@ -366,17 +605,17 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
           window.Libredesk.setUser && window.Libredesk.setUser(userData);
           localStorage.setItem('pleague-user', JSON.stringify(userData));
           state.user = userData;
+          state.leadCaptured = true;
           analytics.track('user_data_captured', { source: form.id });
         }
       });
     });
 
-    // Restore user
     if (state.user) {
       window.Libredesk.setUser && window.Libredesk.setUser(state.user);
     }
 
-    // 5. Event tracking
+    // 4. Event tracking
     document.querySelectorAll('form[id*="volunteer"]').forEach(function(f) {
       f.addEventListener('submit', function() { setTimeout(function() { analytics.track('volunteer_signup'); }, 500); });
     });
@@ -390,7 +629,7 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
       setTimeout(function() { analytics.track('donate_page_view'); }, 3000);
     }
 
-    // 6. Smart agent responses
+    // 5. Smart agent responses
     window.Libredesk.onMessage && window.Libredesk.onMessage(async function(msg) {
       if (msg.sender === 'user') {
         state.messagesSent++;
@@ -410,7 +649,7 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
       }
     });
 
-    // 7. Unread count badge
+    // 6. Unread count badge
     window.Libredesk.onUnreadCountChange && window.Libredesk.onUnreadCountChange(function(count) {
       var badge = document.getElementById('chat-unread-badge');
       if (badge) {
@@ -419,7 +658,7 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
       }
     });
 
-    // 8. Page context
+    // 7. Page context
     if (page === '/donate') sessionStorage.setItem('libredesk-context', 'donor');
     if (page === '/volunteer') sessionStorage.setItem('libredesk-context', 'volunteer');
     if (page.startsWith('/events/')) sessionStorage.setItem('libredesk-context', 'attendee');
@@ -427,7 +666,7 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
     // Save state
     localStorage.setItem('pleague-chat-state', JSON.stringify(state));
 
-    // Expose API for external use
+    // Expose API
     window.PLAChat = {
       getState: function() { return state; },
       getAnalytics: function() { return analytics.getMetrics(); },
@@ -435,10 +674,13 @@ Conversation context: ${state.user ? 'User: ' + state.user.name + ' (' + state.u
       captureLead: function(data) { state.leadCaptured = true; state.user = data; localStorage.setItem('pleague-user', JSON.stringify(data)); },
       requestAppointment: function(data) { state.appointmentRequested = true; analytics.track('appointment_requested', data); },
       detectLanguage: detectLanguage,
-      translate: function(text, lang) { return translations[lang]?.greeting || text; }
+      translate: function(text, lang) { return translations[lang]?.greeting || text; },
+      getPrograms: function() { return KB.programs; },
+      getCountries: function() { return KB.countries; },
+      getDonationImpact: function() { return KB.donations.impact; }
     };
 
-    console.log('Peace Bot initialized. Use PLAChat to interact.');
+    console.log('Peace Bot initialized with Gemini AI. Use PLAChat to interact.');
   });
 })();
 </script>

@@ -16,7 +16,7 @@
       "label": "callGemini()",
       "file_type": "code",
       "source_file": "frontend/src/components/Libredesk.astro",
-      "source_location": "L74",
+      "source_location": "L76",
       "id": "components_libredesk_callgemini",
       "community": 34,
       "norm_label": "callgemini()"
@@ -25,7 +25,7 @@
       "label": "getResponse()",
       "file_type": "code",
       "source_file": "frontend/src/components/Libredesk.astro",
-      "source_location": "L187",
+      "source_location": "L189",
       "id": "components_libredesk_getresponse",
       "community": 34,
       "norm_label": "getresponse()"
@@ -34,7 +34,7 @@
       "label": "detectLanguage()",
       "file_type": "code",
       "source_file": "frontend/src/components/Libredesk.astro",
-      "source_location": "L293",
+      "source_location": "L295",
       "id": "components_libredesk_detectlanguage",
       "community": 34,
       "norm_label": "detectlanguage()"
@@ -43,7 +43,7 @@
       "label": "waitForLibredesk()",
       "file_type": "code",
       "source_file": "frontend/src/components/Libredesk.astro",
-      "source_location": "L305",
+      "source_location": "L307",
       "id": "components_libredesk_waitforlibredesk",
       "community": 34,
       "norm_label": "waitforlibredesk()"
@@ -9421,9 +9421,9 @@
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_libredesk_astro",
-      "target": "components_libredesk_callgemini",
-      "confidence_score": 1.0
+      "target": "components_libredesk_callgemini"
     },
     {
       "relation": "contains",
@@ -9431,9 +9431,9 @@
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L293",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_libredesk_astro",
-      "target": "components_libredesk_detectlanguage",
-      "confidence_score": 1.0
+      "target": "components_libredesk_detectlanguage"
     },
     {
       "relation": "contains",
@@ -9441,9 +9441,9 @@
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_libredesk_astro",
-      "target": "components_libredesk_getresponse",
-      "confidence_score": 1.0
+      "target": "components_libredesk_getresponse"
     },
     {
       "relation": "contains",
@@ -9451,9 +9451,9 @@
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L305",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "frontend_src_components_libredesk_astro",
-      "target": "components_libredesk_waitforlibredesk",
-      "confidence_score": 1.0
+      "target": "components_libredesk_waitforlibredesk"
     },
     {
       "relation": "imports_from",
@@ -9473,9 +9473,9 @@
       "source_file": "frontend/src/components/Libredesk.astro",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_libredesk_getresponse",
-      "target": "components_libredesk_callgemini",
-      "confidence_score": 1.0
+      "target": "components_libredesk_callgemini"
     },
     {
       "relation": "contains",
@@ -20899,5 +20899,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e43886931fe0e0ba5d577a65962205e616c82135"
+  "built_at_commit": "4f016f7f34c065ce260e57c687f17be70b0ae03f"
 }
