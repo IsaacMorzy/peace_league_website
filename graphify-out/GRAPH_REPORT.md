@@ -1,7 +1,7 @@
 # Graph Report - peace_league_website  (2026-05-30)
 
 ## Corpus Check
-- 101 files · ~524,508 words
+- 101 files · ~524,839 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6ec5047b`
+- Built from commit: `e30f0544`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
