@@ -3515,3 +3515,22 @@ a:active {
     transform: translateY(0) scale(1);
   }
 }
+
+/* Hide Powered by Libredesk branding */
+.libredesk-powered-by,
+.libredesk-branding,
+.libredesk-footer a[href*="libredesk"],
+.libredesk-chat-footer a[href*="libredesk"],
+.libredesk-chat-window a[href*="libredesk"],
+.libredesk-popup a[href*="libredesk"],
+.libredesk-powered,
+[class*="powered"],
+[class*="branding"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
