@@ -21,8 +21,8 @@ import Footer from '../components/Footer.astro';
       "@context": "https://schema.org",
       "@type": "NGO",
       "name": "Peace League Africa",
-      "url": "https://peaceleagueafrica.org",
-      "logo": "https://peaceleagueafrica.org/logo.png",
+      "url": Astro.url.origin,
+      "logo": new URL("/logo.png", Astro.url).href,
       "sameAs": [
         "https://twitter.com/peaceleagueafrica",
         "https://facebook.com/peaceleagueafrica",
@@ -44,7 +44,7 @@ import Footer from '../components/Footer.astro';
       ],
       "potentialAction": {
         "@type": "ContactAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "https://peaceleagueafrica.org/partner" }
+        "target": { "@type": "EntryPoint", "urlTemplate": new URL("/partner", Astro.url).href" }
       }
     })} />
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
