@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
+const partnerUrl = new URL("/partner", Astro.url).href;
+const orgLogoUrl = new URL("/logo.png", Astro.url).href;
 
 <Layout title="Partner With Us" description="Partner with Peace League Africa. Corporate, NGO, foundation, and community partnerships that build lasting peace across 12 African countries. Start the conversation.">
   <Navigation />
@@ -22,7 +24,7 @@ import Footer from '../components/Footer.astro';
       "@type": "NGO",
       "name": "Peace League Africa",
       "url": Astro.url.origin,
-      "logo": new URL("/logo.png", Astro.url).href,
+      "logo": orgLogoUrl,
       "sameAs": [
         "https://twitter.com/peaceleagueafrica",
         "https://facebook.com/peaceleagueafrica",
@@ -44,7 +46,7 @@ import Footer from '../components/Footer.astro';
       ],
       "potentialAction": {
         "@type": "ContactAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": new URL("/partner", Astro.url).href" }
+        "target": { "@type": "EntryPoint", "urlTemplate": partnerUrl" }
       }
     })} />
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
