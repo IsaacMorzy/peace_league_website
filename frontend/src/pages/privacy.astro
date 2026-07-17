@@ -4,6 +4,10 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
+---
+const orgUrl = Astro.url.origin;
+---
+
 <Layout title="Privacy Policy" description="Peace League Africa Privacy Policy. How we collect, use, and protect your personal information.">
   <Navigation />
   
@@ -82,6 +86,22 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
   </main>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "PrivacyPolicy",
+      "name": "Peace League Africa Privacy Policy",
+      "url": orgUrl + "/privacy",
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-07-17",
+      "isPartOf": { "@type": "WebSite", "name": "Peace League Africa", "url": orgUrl },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Peace League Africa",
+        "url": orgUrl,
+        "logo": orgUrl + "/logo.png"
+      }
+    })} />
 
   <Footer />
 </Layout>
