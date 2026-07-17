@@ -33,3 +33,7 @@ frontend/test-results/
 *.swp
 *.swo
 *~
+
+# Loop scratch — local-only working area (worktrees, throwaway prototypes).
+# See AGENTS.md § Workflow step 2 and loop-constraints.md § Scratch Lane.
+/.scratch/

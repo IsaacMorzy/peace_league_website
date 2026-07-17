@@ -12,6 +12,25 @@ Read at the start of every loop run. Rules are binding.
 
 - **Never auto-merge to `main`.** Human approval required for every merge.
 - No force-push except in private, isolated scratch branches already named `scratch/*`.
+
+### Scratch Lane (`scratch/*`)
+
+- **Auto-commit**: commits to a scratch branch happen directly (no PR required *on the branch itself*).
+- **Auto-merge to main via PR**: allowed **only** if all three hold:
+  1. `loop-verifier` passes independently (tests + scope check).
+  2. One reviewer approval (`code-reviewer-minimax-m3` or human).
+  3. No item in the automerge veto list was tripped.
+
+**Automerge veto (always forces human escalation):**
+
+- Any denylist path read, modified, or staged.
+- Any test bypass added (`.skip`, `xfail`, `only`, commented asserts).
+- `payments/**` touched (treated READ-ONLY by the org rule).
+- Three failed fix attempts on the same ticket.
+- Branch is `main` itself — `main` never bypasses human merge approval.
+- **Any `*.key` / `*.crt` / `*.pem` / `*.env*` / `secrets.*` file read, modified, or staged** — certs and secrets are never auto-mergeable. (This repo currently carries `vmi3416692.tailc65d30.ts.net.key` and `*.crt` at root; agents must never stage them.)
+- **Any DocType schema delta** — `apps/*/doctype/**/*.json` field add/remove/rename under the Frappe app. Schema changes must flow through `migrations/`, never direct DocType JSON writes.
+
 - No `git reset --hard`, `git clean -fd`, `git push --force` to a shared branch — escalate.
 
 ## Denylist Paths — read/edit/commit forbidden

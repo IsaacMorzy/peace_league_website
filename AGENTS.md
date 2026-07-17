@@ -39,16 +39,53 @@ Local stubs in `.agents/skills/`. Globals live in `~/.agents/skills/`.
 
 ## Workflow
 
-End-to-end for every change:
+**Scope:** standard tasks (frontend, backend, features, docs). **Skim:** Ponytail's trivial ceiling (one-liner, no parser, no money, no permissions) skips the tests-first and map steps and proceeds straight to branch/fix/ship.
 
-1. **Constraints** — Load `loop-constraints.md`; run `loop-budget`. If `loop-pause-all` or budget exhausted → exit, no action.
-2. **Triage** — `loop-triage` produces a ranked list. Pick one high-priority minimal slice.
-3. **Seams** — Name the public interface under test; confirm with the user before any test.
-4. **Red** — Write the smallest failing test at that seam. Behavior, not implementation. Skip Red when ponytail classifies the change as trivial (one-liner, no parser, no money, no permissions).
-5. **Green** — Implement the minimum to pass. Use the Ponytail ladder. Mark shortcuts with `# ponytail:`.
-6. **Verify** — `loop-verifier` runs tests independently. Reject on scope creep, skipped asserts, or denylist touch.
-7. **Review** — `ponytail-review` for over-engineering. `code-reviewer-minimax-m3` for correctness, security, edge cases. **Both**.
-8. **Ship** — Never auto-merge to `main`. Human approves. One fix per run.
+1. **Tracker & Wayfinder.** GitHub Issues (`gh issue`). If a `wayfinder:map` issue exists for this effort, read the map before opening anything. Claim the ticket via `gh issue edit <id> --add-assignee @me`.
+2. **Worktree & branch (Git strategy).** Never work in `main` directly. Run `git worktree add ../wt-<slug> -b feature/<slug>` (standard lane — PR + 1 human review) **or** `-b scratch/<slug>` (autonomous lane — see `loop-constraints.md` § Scratch Lane).
+3. **Constraints.** Read `loop-constraints.md`; check `loop-budget.md`. Exit if `loop-pause-all` or budget exhausted.
+4. **Seams.** Name the public interface under test; confirm with the user before any test.
+5. **Red.** Write the smallest failing test at that seam. **Skip when ponytail classifies the change as trivial** (one-liner, no parser, no money, no permissions).
+6. **Green.** Implement the minimum to pass. Use the Ponytail ladder. Mark shortcuts `# ponytail: <ceiling>, <upgrade path>`.
+7. **Verify.** `loop-verifier` runs tests independently. Reject on scope creep or any veto.
+8. **Review.** `ponytail-review` for over-engineering. `code-reviewer-minimax-m3` for correctness/security/edges. **Both** in parallel.
+9. **Ship.** Push branch, open PR `gh pr create` (or auto-merge from scratch lane if veto cleared). On main-merge success: `git worktree remove --force ../wt-<slug>`, edit `STATE.md` once, close the ticket.
+10. **State-update.** Every task completion writes exactly one `STATE.md` entry: ticket moves to `Closed this period`, `Watchlist` updated if relevant, one log line appended to `loop-run-log.md`.
+
+## Commit-Message Convention
+
+**Format**: `type(scope): [slug] subject`
+
+- `type` ∈ {feat, fix, a11y, style, refactor, perf, docs, chore, test}
+- `scope` ∈ {agents, frontend, backend, api, deploy, …} — single word, the area of the codebase affected
+- `[slug]` is **OPTIONAL** and has two accepted forms:
+  - **inline** (preferred): slug sits right after `:` and merges into the subject, e.g. `a11y(index): fixing-accessibility + aria-valuetext on progress bar`
+  - **bracketed** (also OK): explicit citation at the tail, e.g. `a11y(index): aria-valuetext on progress bar [fixing-accessibility]`
+  - When the slug comes from a ui-skill or matt-pocock skill, cite it. If no skill applies, drop the slug.
+  - Slugs recognised: `ui-skills-root` · `baseline-ui` · `fixing-accessibility` · `fixing-metadata` · `fixing-motion-performance` · `ponytail` · `tdd` · `loop-triage` · `loop-verifier` · `wayfinder`.
+- Subject is imperative, lowercase after the first word, no trailing period, ≤72 chars.
+- Body explains WHY (one short paragraph; 2–3 bullet sides if needed). The convention exists so `git log --grep=<slug>` returns every fix routed through that skill two months from now.
+
+**Examples** (drawn from the live log)
+
+```
+a11y(index): fixing-accessibility + aria-valuetext on progress bar
+style(blog): baseline-ui weight hero h1 to font-semibold
+feat(agents): route frontend design tasks through ui-skills
+chore: ponytail skip indexing bigtable on initial migration
+```
+
+`type(scope): subject [slug/verb]`
+
+- End subject with the Wayfinder ticket name, the `ui-skills` slug, or the loop verb.
+- Body line 1: WHY (one sentence).
+- Body max 4 lines. Code describes how; commit describes why.
+
+## Worktree Convention
+
+- `../wt-<slug>` adjacent to repo, branch named to match the slug.
+- One worktree per ticket. Parallel tickets get parallel worktrees.
+- Tear down on merge: `git worktree remove --force ../wt-<slug>`.
 
 ## Project Rules
 

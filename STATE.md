@@ -8,12 +8,19 @@ Working state for the loop engineering workflow. Append-only between runs. Read 
 
 ## Active work
 
-| id | surface | status | opened | last_touched |
-|----|---------|--------|--------|--------------|
-| — | — | — | — | — |
+| id | slug | branch | worktree | state | commit | opener | closer |
+|----|------|--------|----------|-------|--------|--------|--------|
+| —  | —    | —      | —        | —     | —      | —      | —      |
 
-No active work yet. The loop opens an entry here when `loop-triage` flags a high-priority item.
+States: `claimed`, `in-progress`, `in-review`, `closed`. Open a row when a `wayfinder:grilling` / `wayfinder:task` ticket is assigned.
 
+## Closed this period
+
+| id | slug | summary |
+|----|------|---------|
+| —  | —    | —       |
+
+Move row here when the worktree closes, the PR merges, or the ticket is `wontfix`.
 ## Watchlist
 
 Lower-priority items the loop monitors but does not act on without an external signal. Each entry is one line:
