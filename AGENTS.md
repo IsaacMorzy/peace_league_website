@@ -125,3 +125,31 @@ Workflow steps 6–8 above are mandatory on every non-trivial change. Run **both
 - DON'T introduce a dependency when `functools`, `itertools`, `pathlib`, or a Frappe stdlib helper does it.
 - DON'T stall on questions with a defaultable answer — ship the lazy version and challenge it in the same response.
 - DON'T soft-pedal blocks. Escalate hard stops with one clear line.
+
+## Loop Dial Pipeline — invocation contract
+
+The agent runs **six ordered gates** per task. Each is independent and replaceable. Skip a gate **only** when Ponytail classifies the task as trivial (one-liner, no parser, no money, no permissions) — see § Workflow Skim above.
+
+1. **`loop-constraints`** (gate 1) — at the top of every run, before anything else. Reads `loop-constraints.md`, exits if `loop-pause-all=true`, and blocks any denylist-path interaction. Bypass: never.
+2. **`loop-triage`** (gate 2) — sorts `gh issue list --state open` plus recent CI failures plus unmerged commits into **High / Watch / Noise**. Pick one High (or wayfinder-claim one) before opening a worktree.
+3. **`loop-budget`** (gate 3) — at run start *and* run end. Reads `loop-budget.md` + `loop-run-log.md`; appends a JSON summary line at run end.
+4. **`tdd`** (gate 4, per-ticket) — write the smallest failing test at a public **seam** before any non-trivial change. Skip on trivial fixes per Ponytail ceiling.
+5. **`loop-verifier`** (gate 5, per-diff) — independent maker/checker. Runs tests, scope check, and veto check. Output: APPROVE / REJECT / ESCALATE_HUMAN. Required before any push.
+6. **`ponytail-review` + `code-reviewer-minimax-m3`** (review pair, both in parallel) — over-engineering scan and correctness/security scan on the finished diff. Required before any merge ask.
+
+**Invocation surface** (read verbatim — these are the skill folders on disk and/or the `Load skill` buttons in the UI):
+
+| Stage | Skill | When to load |
+|-------|-------|--------------|
+| Top    | `loop-constraints` | every run start |
+| Pick   | `loop-triage`      | before opening a worktree |
+| Spend  | `loop-budget`      | every run start + every run end |
+| Code   | `tdd`              | before any non-trivial change |
+| Check  | `loop-verifier`    | after every diff, before push |
+| Trim   | `ponytail-review`  | every diff |
+| Audit  | `code-reviewer-minimax-m3` | every diff |
+| Plan   | `wayfinder`        | before multi-session work (already mapped as IsaacMorzy/peace_league_website #1) |
+| Boot   | `setup-matt-pocock-skills` | once per repo (already done) |
+| UI     | `ui-skills-root` → child slug | before any `.astro` / Tailwind change (`npx ui-skills start`) |
+
+**Why explicit order, not implicit** — the prior run log showed drift (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.md`). Putting the order in the contract closes that hole. See `docs/adr/0001-loop-pipeline.md` for the design decision.
