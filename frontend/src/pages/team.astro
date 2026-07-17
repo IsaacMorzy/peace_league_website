@@ -19,6 +19,10 @@ const boardMembers = [
 ];
 ---
 
+---
+const orgUrl = Astro.url.origin;
+---
+
 <Layout title="Our Team" description="Meet the dedicated team behind Peace League Africa. Our leadership and board are committed to building lasting peace across 12 African countries.">
   <Navigation />
 
@@ -30,6 +34,37 @@ const boardMembers = [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.com" },
         { "@type": "ListItem", "position": 2, "name": "Our Team", "item": "https://peaceleagueafrica.com/team" }
       ]
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Our Team --- Peace League Africa",
+      "url": orgUrl,
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": orgUrl + "/logo.png"
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "@id": orgUrl + "#org",
+        "name": "Peace League Africa",
+        "url": orgUrl,
+        "logo": orgUrl + "/logo.png",
+        "founder": [
+          { "@type": "Person", "name": "Amina Osei", "jobTitle": "Executive Director", "image": orgUrl + "/team/Amina-Osei.jpg" },
+          { "@type": "Person", "name": "Joseph Kiprop", "jobTitle": "Programs Director", "image": orgUrl + "/team/Joseph-Kiprop.jpg" },
+          { "@type": "Person", "name": "Grace Mukamana", "jobTitle": "Finance & Operations", "image": orgUrl + "/team/Grace-Mukamana.jpg" },
+          { "@type": "Person", "name": "Dr. Samuel Tadesse", "jobTitle": "Health Programs Lead", "image": orgUrl + "/team/Samuel-Tadesse.jpg" },
+          { "@type": "Person", "name": "Nkechi Okonkwo", "jobTitle": "Communications Lead", "image": orgUrl + "/team/Nkechi-Okonkwo.jpg" },
+          { "@type": "Person", "name": "Pierre Habimana", "jobTitle": "Field Coordinator", "image": orgUrl + "/team/Pierre-Habimana.jpg" }
+        ],
+        "member": [
+          { "@type": "Person", "name": "Dr. Elizabeth Wanjiku", "jobTitle": "Board Chair", "image": orgUrl + "/team/Elizabeth-Wanjiku.jpg" },
+          { "@type": "Person", "name": "Michael Odhiambo", "jobTitle": "Vice Chair", "image": orgUrl + "/team/Michael-Odhiambo.jpg" },
+          { "@type": "Person", "name": "Fatima Hassan", "jobTitle": "Treasurer", "image": orgUrl + "/team/Fatima-Hassan.jpg" }
+        ]
+      }
     })} />
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
       <!-- Ambient orbs -->
