@@ -31,6 +31,11 @@ Local stubs in `.agents/skills/`. Globals live in `~/.agents/skills/`.
 | `loop-budget` | Token spend guard, early-exit when nothing actionable. |
 | `loop-verifier` | Maker/checker split: reject unless scope + tests pass. |
 | `code-reviewer-minimax-m3` | Parent subagent for correctness / security / edge cases on a finished diff. |
+| `ui-skills-root` | Meta-skill. `npx ui-skills start` routes the agent to the smallest useful UI skill set. |
+| `baseline-ui` | Slop-prevention baseline (Tailwind defaults, motion/react, `cn`, accessible primitives). |
+| `fixing-accessibility` | WCAG / ARIA / keyboard / focus / form errors. |
+| `fixing-metadata` | Title / OG / Twitter / canonical / favicon / JSON-LD / robots. |
+| `fixing-motion-performance` | Animation perf (compositor props, scroll-linked motion, blur). |
 
 ## Workflow
 
