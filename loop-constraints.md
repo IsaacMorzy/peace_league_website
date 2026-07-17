@@ -21,6 +21,8 @@ Read at the start of every loop run. Rules are binding.
 - `*.pem`, `*.key`, `*.crt`
 - `peace_league_website/public/files/` (user uploads)
 - Any `private/` directory under `sites/`
+- `payments/**` is READ-ONLY. Never edit `payments.payment_gateways.*`, `mpesa_settings.json`, or any third-party payment integration files; escalate writes to upstream.
+- `auth/` and any `*auth.py` are READ-ONLY (when present). This project imports `payments.payment_gateways.doctype.mpesa_settings.mpesa_connector`; the import is allowed, edits under `payments/` are not.
 
 Escalate if a task seems to require touching any of these.
 

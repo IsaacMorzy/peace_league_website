@@ -39,7 +39,7 @@ End-to-end for every change:
 1. **Constraints** — Load `loop-constraints.md`; run `loop-budget`. If `loop-pause-all` or budget exhausted → exit, no action.
 2. **Triage** — `loop-triage` produces a ranked list. Pick one high-priority minimal slice.
 3. **Seams** — Name the public interface under test; confirm with the user before any test.
-4. **Red** — Write the smallest failing test at that seam. Behavior, not implementation.
+4. **Red** — Write the smallest failing test at that seam. Behavior, not implementation. Skip Red when ponytail classifies the change as trivial (one-liner, no parser, no money, no permissions).
 5. **Green** — Implement the minimum to pass. Use the Ponytail ladder. Mark shortcuts with `# ponytail:`.
 6. **Verify** — `loop-verifier` runs tests independently. Reject on scope creep, skipped asserts, or denylist touch.
 7. **Review** — `ponytail-review` for over-engineering. `code-reviewer-minimax-m3` for correctness, security, edge cases. **Both**.

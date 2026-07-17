@@ -21,3 +21,14 @@ Daily caps read at the start of every loop run. Numbers here are placeholders; t
 ## Alerts This Period
 
 Append one line per self-throttle event: `<iso> <pattern> spend <X>% of cap, switched to report-only.`
+
+## Run log
+
+The loop-budget skill reads `loop-run-log.md` (last 24h) on every run. **Create on first run if absent.** Each entry is one JSON line:
+
+```
+{"run_id":"<iso>","pattern":"daily|ci|pr","duration_s":<n>,"items_found":<n>,"actions_taken":<n>,"escalations":<n>,"tokens_estimate":<n>,"outcome":"no-op|report-only|fix-proposed|escalated"}
+```
+
+Append (never rewrite) at end of run.
+
