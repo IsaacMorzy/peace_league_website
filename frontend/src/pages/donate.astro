@@ -816,3 +816,17 @@ import Footer from '../components/Footer.astro';
     });
   }
 </script>
+
+<!-- JSON-LD Donation schema (fixing-metadata; schema.org DonateAction) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "DonateAction",
+  "recipient": {
+    "@type": "Organization",
+    "name": "Peace League Africa",
+    "url": "https://peaceleagueafrica.org",
+    "logo": "https://peaceleagueafrica.org/favicon.svg"
+  },
+  "target": "https://peaceleagueafrica.org/donate",
+  "description": "Donate to Peace League Africa to support peace-building across the continent. 100% of contributions fund on-the-ground programmes."
+})}></script>
