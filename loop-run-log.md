@@ -1,24 +1,33 @@
-# Loop Run Log
+# loop-run-log
 
-Append-only log read by `loop-budget` at the start of every iteration. One JSON object per line; never rewrite. Retention: last 24h read into `loop-budget`'s start-of-run math.
+Per-session ledger written by `loop-budget` (gate 3) at run end. **One JSON line per closure**.
 
-## Schema
+The **authoritative content** lives in `STATE.md` § "Recent loop outcomes" — this sibling file exists so:
+
+1. `AGENTS.md` § Loop Dial Pipeline and `docs/adr/0001-loop-pipeline.md` can reference a real path when they mention `loop-run-log.md` (vs. the header inside `STATE.md`).
+2. `loop-budget` can `>>` append a JSON line per closure into this file without mutating `STATE.md` directly, keeping `STATE.md` human-curated and `loop-run-log.md` machine-written.
+
+## Format
+
+```json
+{"run_id":"<iso>","pattern":"daily","outcome":"no-op","actions_taken":0,"slur_sha":"<git>","scope":"<ticket-id or none>"}
+```
+
+Fields:
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `run_id` | ISO-8601 timestamp | `2026-07-17T20:30Z`-shaped; matches the loop-budget closure time. |
+| `pattern` | enum | One of: `daily`, `adhoc`, `scratch-auto`, `feature-pr`, `human-handoff`. |
+| `outcome` | enum | `no-op` (early exit), `closed` (ticket merged/closed), `rejected` (verifier rejected), `escalated` (human handoff required). |
+| `actions_taken` | int | The number of file mutations performed this run (not commits — file edits). |
+| `slur_sha` | string | First 12 chars of the `git rev-parse HEAD` at run end. Empty when no commit landed this run. |
+| `scope` | string | The ticket id this run worked on, or "none". |
+
+## Read pattern
 
 ```
-{"run_id":"<iso>","pattern":"daily|ci|pr","duration_s":<n>,"items_found":<n>,"actions_taken":<n>,"escalations":<n>,"tokens_estimate":<n>,"outcome":"no-op|report-only|fix-proposed|escalated"}
+tail -n 100 loop-run-log.md | jq -r '.run_id + "\t" + .pattern + "\t" + .outcome'
 ```
 
-Empty on first commit. Entries accumulate from the first loop iteration that closes.
-
-## Field notes
-
-- `run_id` — ISO8601 UTC.
-- `pattern` — one of `daily`, `ci`, `pr` (matches the `loop-budget.md` daily-cap table).
-- `outcome` — `no-op` (no actionable items, no sub-agent spawns), `report-only` (cap-throttled), `fix-proposed` (minimal-fix landed in worktree, awaiting human review), `escalated` (denylist hit, 3-attempt ceiling, or disabled-constraint request).
-
-## Examples (do not commit — for shape reference only)
-
-```
-{"run_id":"2026-07-18T07:00:00Z","pattern":"daily","duration_s":12.4,"items_found":0,"actions_taken":0,"escalations":0,"tokens_estimate":4100,"outcome":"no-op"}
-{"run_id":"2026-07-18T09:30:00Z","pattern":"ci","duration_s":8.1,"items_found":1,"actions_taken":0,"escalations":1,"tokens_estimate":22000,"outcome":"report-only"}
-```
+Aggregates cleanly into a daily cycle report without touching git log or `gh` again.

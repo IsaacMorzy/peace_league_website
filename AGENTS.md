@@ -128,14 +128,14 @@ Workflow steps 6–8 above are mandatory on every non-trivial change. Run **both
 
 ## Loop Dial Pipeline — invocation contract
 
-The agent runs **six ordered gates** per task. Each is independent and replaceable. Skip a gate **only** when Ponytail classifies the task as trivial (one-liner, no parser, no money, no permissions) — see § Workflow Skim above.
+The agent runs **six ordered gates** per task. Each is independent and replaceable. Skip rule: **gates 4–6 (tdd · loop-verifier · reviews) skip on Ponytail-classified trivial work** (one-liner, no parser, no money, no permissions — see § Workflow Skim above). **Gates 1–3 (loop-constraints · loop-triage · loop-budget) stay binding**; only `loop-pause-all=true` or budget exhaustion can bypass them.
 
 1. **`loop-constraints`** (gate 1) — at the top of every run, before anything else. Reads `loop-constraints.md`, exits if `loop-pause-all=true`, and blocks any denylist-path interaction. Bypass: never.
 2. **`loop-triage`** (gate 2) — sorts `gh issue list --state open` plus recent CI failures plus unmerged commits into **High / Watch / Noise**. Pick one High (or wayfinder-claim one) before opening a worktree.
 3. **`loop-budget`** (gate 3) — at run start *and* run end. Reads `loop-budget.md` + `loop-run-log.md`; appends a JSON summary line at run end.
-4. **`tdd`** (gate 4, per-ticket) — write the smallest failing test at a public **seam** before any non-trivial change. Skip on trivial fixes per Ponytail ceiling.
-5. **`loop-verifier`** (gate 5, per-diff) — independent maker/checker. Runs tests, scope check, and veto check. Output: APPROVE / REJECT / ESCALATE_HUMAN. Required before any push.
-6. **`ponytail-review` + `code-reviewer-minimax-m3`** (review pair, both in parallel) — over-engineering scan and correctness/security scan on the finished diff. Required before any merge ask.
+4. **`tdd`** (gate 4, per-ticket) — write the smallest failing test at a public **seam** before any non-trivial change. **Skips on trivial fixes per Ponytail ceiling** (see § Workflow Skim above).
+5. **`loop-verifier`** (gate 5, per-diff) — independent maker/checker. Runs tests, scope check, and veto check. Output: APPROVE / REJECT / ESCALATE_HUMAN. Required before any push. **Skips on trivial fixes per Ponytail ceiling.**
+6. **`ponytail-review` + `code-reviewer-minimax-m3`** (review pair, both in parallel) — over-engineering scan and correctness/security scan on the finished diff. Required before any merge ask. **Skips on trivial fixes per Ponytail ceiling.**
 
 **Invocation surface** (read verbatim — these are the skill folders on disk and/or the `Load skill` buttons in the UI):
 
