@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
-const partnerUrl = new URL("/partner", Astro.url).href;
+const orgUrl = Astro.url.origin;
 const orgLogoUrl = new URL("/logo.png", Astro.url).href;
+const partnerUrl = new URL("/partner", Astro.url).href;
 
 <Layout title="Partner With Us" description="Partner with Peace League Africa. Corporate, NGO, foundation, and community partnerships that build lasting peace across 12 African countries. Start the conversation.">
   <Navigation />
@@ -23,7 +24,7 @@ const orgLogoUrl = new URL("/logo.png", Astro.url).href;
       "@context": "https://schema.org",
       "@type": "NGO",
       "name": "Peace League Africa",
-      "url": Astro.url.origin,
+      "url": orgUrl,
       "logo": orgLogoUrl,
       "sameAs": [
         "https://twitter.com/peaceleagueafrica",
