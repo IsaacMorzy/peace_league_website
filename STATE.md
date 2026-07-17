@@ -33,7 +33,7 @@ Lower-priority items the loop monitors but does not act on without an external s
 
 ## Recent loop outcomes
 
-Mirror of `loop-run-log.md`. The machine-written ledger is the authoritative source — this section is the human-curated copy. Append one line per `loop-budget` closure. Schema lives in `loop-run-log.md` (six fields: `run_id` · `pattern` · `outcome` · `actions_taken` · `slur_sha` · `scope`); example:
+Mirror of `loop-run-log.jsonl`. The machine-written ledger is the authoritative source — this section is the human-curated copy. Append one line per `loop-budget` closure. Schema lives in `loop-run-log.jsonl` (six fields: `run_id` · `pattern` · `outcome` · `actions_taken` · `slur_sha` · `scope`); example:
 
 ```
 {"run_id":"<iso>","pattern":"daily","outcome":"no-op","actions_taken":0,"slur_sha":"<git>","scope":"<ticket-id or none>"}
@@ -44,7 +44,7 @@ Mirror of `loop-run-log.md`. The machine-written ledger is the authoritative sou
 ```
 {"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"32a19a1","scope":"none"}
 ```
-[ mirror of `loop-run-log.md` first entry — corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" — actions_taken: 2 reflects *that single run's* file mutations: AGENTS.md skip-rule clarification + `loop-run-log.md` creation. ]
+[ mirror of `loop-run-log.jsonl` first entry — corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" — actions_taken: 2 reflects *that single run's* file mutations: AGENTS.md skip-rule clarification + `loop-run-log.jsonl` creation. ]
 
 ## Notes / kill-switch log
 

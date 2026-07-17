@@ -50,7 +50,7 @@ Local stubs in `.agents/skills/`. Globals live in `~/.agents/skills/`.
 7. **Verify.** `loop-verifier` runs tests independently. Reject on scope creep or any veto.
 8. **Review.** `ponytail-review` for over-engineering. `code-reviewer-minimax-m3` for correctness/security/edges. **Both** in parallel.
 9. **Ship.** Push branch, open PR `gh pr create` (or auto-merge from scratch lane if veto cleared). On main-merge success: `git worktree remove --force ../wt-<slug>`, edit `STATE.md` once, close the ticket.
-10. **State-update.** Every task completion writes exactly one `STATE.md` entry: ticket moves to `Closed this period`, `Watchlist` updated if relevant, one log line appended to `loop-run-log.md`.
+10. **State-update.** Every task completion writes exactly one `STATE.md` entry: ticket moves to `Closed this period`, `Watchlist` updated if relevant, one log line appended to `loop-run-log.jsonl`.
 
 ## Commit-Message Convention
 
@@ -132,7 +132,7 @@ The agent runs **six ordered gates** per task. Each is independent and replaceab
 
 1. **`loop-constraints`** (gate 1) — at the top of every run, before anything else. Reads `loop-constraints.md`, exits if `loop-pause-all=true`, and blocks any denylist-path interaction. Bypass: never.
 2. **`loop-triage`** (gate 2) — sorts `gh issue list --state open` plus recent CI failures plus unmerged commits into **High / Watch / Noise**. Pick one High (or wayfinder-claim one) before opening a worktree.
-3. **`loop-budget`** (gate 3) — at run start *and* run end. Reads `loop-budget.md` + `loop-run-log.md`; appends a JSON summary line at run end.
+3. **`loop-budget`** (gate 3) — at run start *and* run end. Reads `loop-budget.md` + `loop-run-log.jsonl`; appends a JSON summary line at run end.
 4. **`tdd`** (gate 4, per-ticket) — write the smallest failing test at a public **seam** before any non-trivial change. **Skips on trivial fixes per Ponytail ceiling** (see § Workflow Skim above).
 5. **`loop-verifier`** (gate 5, per-diff) — independent maker/checker. Runs tests, scope check, and veto check. Output: APPROVE / REJECT / ESCALATE_HUMAN. Required before any push. **Skips on trivial fixes per Ponytail ceiling.**
 6. **`ponytail-review` + `code-reviewer-minimax-m3`** (review pair, both in parallel) — over-engineering scan and correctness/security scan on the finished diff. Required before any merge ask. **Skips on trivial fixes per Ponytail ceiling.**
@@ -152,4 +152,4 @@ The agent runs **six ordered gates** per task. Each is independent and replaceab
 | Boot   | `setup-matt-pocock-skills` | once per repo (already done) |
 | UI     | `ui-skills-root` → child slug | before any `.astro` / Tailwind change (`npx ui-skills start`) |
 
-**Why explicit order, not implicit** — the prior run log showed drift (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.md`). Putting the order in the contract closes that hole. See `docs/adr/0001-loop-pipeline.md` for the design decision.
+**Why explicit order, not implicit** — the prior run log showed drift (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.jsonl`). Putting the order in the contract closes that hole. See `docs/adr/0001-loop-pipeline.md` for the design decision.

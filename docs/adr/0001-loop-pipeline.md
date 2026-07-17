@@ -12,7 +12,7 @@ peace_league_website now carries an `AGENTS.md` Workflow v2 contract that maps e
 
 Until this ADR the contract referenced the loop + matt-pocock skills by name only, with no ordered rubric and no audit trail of which gate ran when. Two failure modes had already been observed:
 
-1. Drift between sessions — the agent re-derived the order from memory and got it wrong (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.md` reflects one such self-correction).
+1. Drift between sessions — the agent re-derived the order from memory and got it wrong (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.jsonl` reflects one such self-correction).
 2. Difficulty for a fresh-context agent loading `AGENTS.md` to recover the intended invocation order without probing the skill folders one by one.
 
 ## Decision
@@ -46,7 +46,7 @@ Plus two cross-cutting skills that wire to the gates:
 **Positive**
 
 - **Less drift.** A fresh-context agent loading `AGENTS.md` knows the order verbatim; no need to retread the prior commit log.
-- **Audit trail.** `STATE.md` § "Recent loop outcomes" + `loop-run-log.md` become the timestamped log of what each session ran.
+- **Audit trail.** `STATE.md` § "Recent loop outcomes" + `loop-run-log.jsonl` become the timestamped log of what each session ran.
 - **Gate failure is observable.** A `REJECT` from `loop-verifier` is now an explicit event in STATE, not a silent retry.
 - **Less gate, bounded blast radius.** `scratch/*` lanes can auto-merge when verifier+approval+veto all clear (see `loop-constraints.md` § Scratch Lane); `feature/*` keeps PR + 1 human review; `main` stays human-only. This was previously implicit, now codified.
 
@@ -66,5 +66,5 @@ Plus two cross-cutting skills that wire to the gates:
 ## Forward work
 
 - After roughly 10 runs through this dial, re-evaluate ordering and trim if gates 4–6 are routinely redundant on trivial fixes.
-- Promote `loop-run-log.md` JSON schema into a typed contract once the run count makes manual parsing fragile.
+- Promote `loop-run-log.jsonl` JSON schema into a typed contract once the run count makes manual parsing fragile.
 - When payments/** integration or other veto-sensitive surfaces mature, harden the veto list and consider promoting it into a dedicated `veto-list.md` rather than a sub-section of `loop-constraints.md`.
