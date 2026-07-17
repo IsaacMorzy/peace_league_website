@@ -16,6 +16,37 @@ import Footer from '../components/Footer.astro';
         { "@type": "ListItem", "position": 2, "name": "Partner With Us", "item": "https://peaceleagueafrica.com/partner" }
       ]
     })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Peace League Africa",
+      "url": "https://peaceleagueafrica.org",
+      "logo": "https://peaceleagueafrica.org/logo.png",
+      "sameAs": [
+        "https://twitter.com/peaceleagueafrica",
+        "https://facebook.com/peaceleagueafrica",
+        "https://linkedin.com/company/peaceleagueafrica"
+      ],
+      "knowsAbout": [
+        "Peace education",
+        "Conflict resolution",
+        "Youth mentorship",
+        "Clean water access",
+        "Community health"
+      ],
+      "areaServed": [
+        { "@type": "Country", "name": "Kenya" },
+        { "@type": "Country", "name": "Uganda" },
+        { "@type": "Country", "name": "Rwanda" },
+        { "@type": "Country", "name": "Ethiopia" },
+        { "@type": "Country", "name": "South Sudan" }
+      ],
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://peaceleagueafrica.org/partner" }
+      }
+    })} />
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
       <!-- Ambient orbs -->
       <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
