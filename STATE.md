@@ -33,11 +33,18 @@ Lower-priority items the loop monitors but does not act on without an external s
 
 ## Recent loop outcomes
 
-Append one JSON line per `loop-budget` closure. Mirror into `loop-run-log.md`:
+Mirror of `loop-run-log.md`. The machine-written ledger is the authoritative source — this section is the human-curated copy. Append one line per `loop-budget` closure. Schema lives in `loop-run-log.md` (six fields: `run_id` · `pattern` · `outcome` · `actions_taken` · `slur_sha` · `scope`); example:
 
 ```
-{"run_id":"<iso>","pattern":"daily","outcome":"no-op","actions_taken":0}
+{"run_id":"<iso>","pattern":"daily","outcome":"no-op","actions_taken":0,"slur_sha":"<git>","scope":"<ticket-id or none>"}
 ```
+
+## Entries
+
+```
+{"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":4,"slur_sha":"32a19a1","scope":"none"}
+```
+[ mirror of the first `loop-run-log.md` entry — corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" ]
 
 ## Notes / kill-switch log
 

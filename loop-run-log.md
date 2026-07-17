@@ -31,3 +31,21 @@ tail -n 100 loop-run-log.md | jq -r '.run_id + "\t" + .pattern + "\t" + .outcome
 ```
 
 Aggregates cleanly into a daily cycle report without touching git log or `gh` again.
+
+## ⚠️ Append-only / machine-written
+
+This file is **machine-appended** by `loop-budget` (one JSON line per run closure). After the first run-cycles it becomes high-churn; an unsuspecting `git add -A` followed by a PR will inflight dozens of timestamp lines at once.
+
+**Conventions:**
+
+- **Do not** manually edit rows. New entries = append.
+- **Do not** reformat. Strict JSONL, one line per closure, no pretty-printing.
+- **Commit separately** with a clear subject (`chore(loop): append run-log`), not bundled with feature or fix work.
+- After ~50 lines, rotate older entries to `loop-run-log.archive/YYYY-MM.jsonl` if performance becomes a concern.
+
+## Entries
+
+```
+{"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":4,"slur_sha":"32a19a1","scope":"none"}
+```
+[ corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" ] (first entry; appended per contract § step 10 state-update discipline).
