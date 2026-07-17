@@ -42,9 +42,9 @@ Mirror of `loop-run-log.md`. The machine-written ledger is the authoritative sou
 ## Entries
 
 ```
-{"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":4,"slur_sha":"32a19a1","scope":"none"}
+{"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"32a19a1","scope":"none"}
 ```
-[ mirror of the first `loop-run-log.md` entry — corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" ]
+[ mirror of `loop-run-log.md` first entry — corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" — actions_taken: 2 reflects *that single run's* file mutations: AGENTS.md skip-rule clarification + `loop-run-log.md` creation. ]
 
 ## Notes / kill-switch log
 

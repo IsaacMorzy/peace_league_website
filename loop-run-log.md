@@ -20,7 +20,7 @@ Fields:
 | `run_id` | ISO-8601 timestamp | `2026-07-17T20:30Z`-shaped; matches the loop-budget closure time. |
 | `pattern` | enum | One of: `daily`, `adhoc`, `scratch-auto`, `feature-pr`, `human-handoff`. |
 | `outcome` | enum | `no-op` (early exit), `closed` (ticket merged/closed), `rejected` (verifier rejected), `escalated` (human handoff required). |
-| `actions_taken` | int | The number of file mutations performed this run (not commits — file edits). |
+| `actions_taken` | int | The number of **file mutations** performed this **single run** (not commits — file edits). **Per-run, not cumulative** — reset between `loop-budget` closures. Computed by `loop-budget` from `git diff --stat` at run end. |
 | `slur_sha` | string | First 12 chars of the `git rev-parse HEAD` at run end. Empty when no commit landed this run. |
 | `scope` | string | The ticket id this run worked on, or "none". |
 
@@ -46,6 +46,12 @@ This file is **machine-appended** by `loop-budget` (one JSON line per run closur
 ## Entries
 
 ```
-{"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":4,"slur_sha":"32a19a1","scope":"none"}
+{"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"32a19a1","scope":"none"}
 ```
-[ corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" ] (first entry; appended per contract § step 10 state-update discipline).
+[ corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" — actions_taken: 2 reflects *that single run's* file mutations: AGENTS.md skip-rule clarification + loop-run-log.md creation. First entry; appended per contract § step 10 state-update discipline. ] ## Parser check
+
+```
+jq -c . loop-run-log.md > /dev/null && echo "ledger parses cleanly"
+```
+
+Run before any commit that touches `loop-run-log.md`. Future `loop-verifier` invocations will gate 6 on this.
