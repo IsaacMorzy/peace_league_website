@@ -844,6 +844,33 @@ The radius scale is tightly disciplined — the brand never uses a corner soften
 7. Pill-shaped buttons (`{rounded.full}`) always; squared buttons signal "third-party widget" in this language.
 8. Documentation prose belongs in `{typography.body-md}` 16px with 1.50 line-height — anything denser breaks the reading experience.
 
+
+## Design Skills Routing
+
+UI Skills (`npx ui-skills start`) is the routing layer for design tasks on this site. Run it before any `.astro` markup change, copy revision, page-level token swap, or new page. Each skill maps to specific sections in this document.
+
+| Skill | Trigger | Binds to |
+|-------|---------|----------|
+| `ui-skills-root` | unclear UI goal / routing | meta-skill: pick one of the categories below |
+| `baseline-ui` | spacing / hierarchy / typography cleanup | Overview, Colors, Typography, Layout, Elevation & Depth |
+| `fixing-accessibility` | new interactive control, form, dialog, icon-only, focus, form errors | Components, Navigation, Do’s and Don’ts |
+| `fixing-metadata` | new page, title/meta change, OG/Twitter, canonical, favicon, locale, JSON-LD | per-page `<head>` in `frontend/src/layouts/Layout.astro` |
+| `fixing-motion-performance` | new transition, `tailwindcss-animate` keyframe, reveal-on-scroll, jank | Components (enter/leave), Do’s and Don’ts |
+
+### Stack overrides for peace_league_website
+
+- **Tailwind defaults**. Custom values only when a token already exists. Match by token name (`colors.brand-green`, `rounded.full`, `typography.body-md`), never by hex.
+- **No React islands assumed.** Astro + Tailwind is the project stack; do not install `motion/react` to satisfy `baseline-ui`. Use native CSS transitions / Astro view transitions / `tailwindcss-animate` instead.
+- **`cn` utility not assumed.** Install `clsx` + `tailwind-merge` only when an Astro component needs conditional Tailwind classes. Today the components don’t need it.
+- **No Base UI / React Aria / Radix.** Use native HTML — `<button>`, `<details>`, `<dialog>`, `<form>` — with explicit ARIA when adding interactivity.
+
+### When NOT to route through ui-skills
+
+- Pure copy / content edits.
+- Backend Python (`peace_league_website/`). ui-skills scope is the frontend only.
+- Astro config (`frontend/astro.config.mjs`). Ponytail-review is enough.
+- One-line CSS tweaks that don't change hierarchy / spacing / typography.
+
 ## Known Gaps
 
 - Specific dark-mode token values for canvas, surface, ink, and hairline are not surfaced on these pages; the brand has not yet shipped a published dark-mode palette

@@ -37,6 +37,19 @@ Byte-identical copies of `~/.agents/skills/<name>/SKILL.md`. Pick whichever is i
 
 Re-run after the next 5+ commits land; the report naming convention is `docs/audit-YYYY-MM-DD.md`.
 
+
+## UI Skills (external family)
+
+From `npx ui-skills@0.2.3` (ibelick / motion-primitives.com). Installed in this project under `.agents/skills/<slug>/SKILL.md` and globally at `~/.agents/skills/<slug>/SKILL.md`. Byte-equivalent to upstream.
+
+- `ui-skills-root` — meta-skill: `npx ui-skills start` routes the agent to the smallest useful UI skill set.
+- `baseline-ui` — slop-prevention baseline (Tailwind defaults, motion/react, `cn` utility, accessibility primitives).
+- `fixing-accessibility` — WCAG / ARIA / keyboard / focus / form errors; trigger when adding interactive controls.
+- `fixing-metadata` — title / OG / Twitter / canonical / favicon / JSON-LD / robots; trigger on new pages or metadata changes.
+- `fixing-motion-performance` — animation perf (layout thrashing, compositor props, scroll-linked motion, blur); trigger on jank.
+
+Project-specific overrides (no React islands assumed; use Astro-native HTML + Tailwind for `baseline-ui`) live in `../DESIGN.md` § “Design Skills Routing”. When the upstream skill prescribes `motion/react`, Base UI, or React Aria, the override is “use Astro-native HTML + native CSS first; install only when migration is justified” (Ponytail ladder).
+
 ## Conventions
 
 - `# ponytail: <ceiling>, <upgrade path>` — mandatory comment on deliberate simplifications. Missing upgrade path = rot risk; flagged by `ponytail-debt`.

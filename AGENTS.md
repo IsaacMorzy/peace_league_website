@@ -56,6 +56,7 @@ End-to-end for every change:
 **Frontend — Astro / Tailwind**
 - Pages in `frontend/src/pages/`. `.astro` for layout and build-time logic; TypeScript only for non-trivial client behavior.
 - Match `DESIGN.md` tokens (`colors.brand-green`, `rounded.full`, `typography.body-md`). Never introduce a third typeface.
+- **Design tasks**: for any `.astro` markup change, Tailwind class change, or new page, run `npx ui-skills start` to route. Pick the smallest useful skill set (`baseline-ui`, `fixing-accessibility`, `fixing-metadata`, `fixing-motion-performance`). Cite the chosen slug in the commit message (e.g. `style(donate): baseline-ui + fixing-metadata`). Do not install React/Motion libraries to satisfy the skills — apply them as guidance, not as a stack requirement, on Astro’s native Tailwind. See `DESIGN.md` § “Design Skills Routing”.
 - Components stay generic; site-specific text lives in `.astro` pages, not in `components/`.
 
 **Build contract**
