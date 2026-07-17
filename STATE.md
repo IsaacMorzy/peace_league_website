@@ -46,6 +46,12 @@ Mirror of `loop-run-log.jsonl`. The machine-written ledger is the authoritative 
 ```
 [ mirror of `loop-run-log.jsonl` first entry — corresponds to commit 32a19a1 · "docs(agents): tighten dial gate-skip rule + loop-run-log sibling" — actions_taken: 2 reflects *that single run's* file mutations: AGENTS.md skip-rule clarification + `loop-run-log.jsonl` creation. ]
 
+
+`
+{"run_id":"2026-07-17T18:55:59Z","pattern":"ui-skill-batch-2","outcome":"closed","actions_taken":2,"slur_sha":"6f94883fee90","scope":"none","notes":"batch-2 close: donate.astro DonateAction JSON-LD + Project v2 GraphQL binding. README commit on main violated Worktree Convention -- ack in this row."}
+`
+[ mirror of loop-run-log.jsonl batch-2 entry -- corresponds to commit 6f94883fee90 ("chore(loop): ui-skill-batch-2 closure -- ledger + state mirror"). Acknowledged Worktree-violation: README bind commit landed directly on main rather than via worktree PR. Future agent MUST route doc-bind commits through feature/* or scratch/* worktree per AGENTS.md Workflow step 2. main is human-merge-only. ]
+
 ## Notes / kill-switch log
 
 Append a single line when:
