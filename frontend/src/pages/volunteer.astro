@@ -103,13 +103,13 @@ import Footer from '../components/Footer.astro';
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label for="first_name" class="block text-sm font-medium text-ink mb-1.5">First Name *</label>
-                  <input type="text" id="first_name" name="first_name" required 
+                  <input type="text" id="first_name" name="first_name" autocomplete="given-name" required aria-required="true" 
                     class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="first_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your first name.</p>
                 </div>
                 <div>
                   <label for="last_name" class="block text-sm font-medium text-ink mb-1.5">Last Name *</label>
-                  <input type="text" id="last_name" name="last_name" required 
+                  <input type="text" id="last_name" name="last_name" autocomplete="family-name" required aria-required="true" 
                     class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="last_name-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter your last name.</p>
                 </div>
@@ -118,13 +118,13 @@ import Footer from '../components/Footer.astro';
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email *</label>
-                  <input type="email" id="email" name="email" required 
+                  <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" 
                     class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="email-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid email address.</p>
                 </div>
                 <div>
                   <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone *</label>
-                  <input type="tel" id="phone" name="phone" required 
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required aria-required="true" 
                     class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
                   <p id="phone-error" class="text-red-600 text-xs mt-1 hidden" role="alert">Please enter a valid phone number.</p>
                 </div>
@@ -132,7 +132,7 @@ import Footer from '../components/Footer.astro';
               
               <div>
                 <label for="volunteer_type" class="block text-sm font-medium text-ink mb-1.5">Volunteer Type *</label>
-                <select id="volunteer_type" name="volunteer_type" required 
+                <select id="volunteer_type" name="volunteer_type" required aria-required="true" 
                   class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent">
                   <option value="">Select a type</option>
                   <option value="Teaching">Teaching & Education</option>
@@ -147,19 +147,19 @@ import Footer from '../components/Footer.astro';
               
               <div>
                 <label for="availability" class="block text-sm font-medium text-ink mb-1.5">Availability</label>
-                <input type="text" id="availability" name="availability" placeholder="e.g., Weekends — 5 hours per week"
+                <input type="text" id="availability" name="availability" autocomplete="off" placeholder="e.g., Weekends — 5 hours per week"
                   class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent" />
               </div>
               
               <div>
                 <label for="skills" class="block text-sm font-medium text-ink mb-1.5">Skills</label>
-                <textarea id="skills" name="skills" rows="2" placeholder="e.g., Teaching, first aid, social media, carpentry..."
+                <textarea id="skills" name="skills" rows="2" autocomplete="off" placeholder="e.g., Teaching, first aid, social media, carpentry..."
                   class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
               </div>
               
               <div>
                 <label for="motivation" class="block text-sm font-medium text-ink mb-1.5">Why do you want to volunteer?</label>
-                <textarea id="motivation" name="motivation" rows="4" placeholder="What draws you to peace-building in Africa?"
+                <textarea id="motivation" name="motivation" rows="4" autocomplete="off" placeholder="What draws you to peace-building in Africa?"
                   class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
               </div>
               
