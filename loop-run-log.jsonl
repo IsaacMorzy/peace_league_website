@@ -2,3 +2,4 @@
 {"run_id":"2026-07-17T18:25:49Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"04624eca58c8","scope":"none"}
 {"run_id":"2026-07-22T15:50Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"750bb9e","scope":"none"}
 {"run_id":"2026-07-22T16:45Z","pattern":"adhoc","outcome":"closed","actions_taken":15,"slur_sha":"89a52d0","scope":"#66"}
+{"run_id":"2026-07-17T19:50Z","pattern":"ui-skill-batch-5","outcome":"closed","actions_taken":3,"slur_sha":"ae3efd6","scope":"none","notes":"batch-5 close: careers.astro JobPosting JSON-LD (5-country applicantLocationRequirements), privacy.astro PrivacyPolicy WebPage JSON-LD, faq.astro accordion a11y (aria-controls + aria-labelledby on single button/panel). all three Layout-prop-independent so they take effect at parse time."}
