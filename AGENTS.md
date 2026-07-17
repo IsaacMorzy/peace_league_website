@@ -153,3 +153,192 @@ The agent runs **six ordered gates** per task. Each is independent and replaceab
 | UI     | `ui-skills-root` → child slug | before any `.astro` / Tailwind change (`npx ui-skills start`) |
 
 **Why explicit order, not implicit** — the prior run log showed drift (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.jsonl`). Putting the order in the contract closes that hole. See `docs/adr/0001-loop-pipeline.md` for the design decision.
+
+## GitHub Mechanics
+
+Concrete `gh` shell recipes an agent can copy. Required at every commit boundary.
+
+### Branch + worktree
+
+```bash
+# Standard lane -- PR + 1 human review
+git worktree add ../wt-<slug> -b feature/<slug>
+
+# Autonomous lane -- PR auto-mergeable when verifier+approval+veto clear (see loop-constraints.md § Scratch Lane)
+git worktree add ../wt-<slug> -b scratch/<slug>
+
+# Tear down on merge
+git worktree remove --force ../wt-<slug>
+```
+
+### Commit (per Commit-Message Convention above)
+
+```bash
+git add <files>
+git diff --cached --stat
+git -c user.name=... -c user.email=... commit -m "<type>(<scope>): [slug] <subject>"
+```
+
+### Push
+
+```bash
+# First push of a branch
+git push -u origin <branch>
+
+# Amending a published scratch/* branch (safe -- it is private to the lane)
+git push --force-with-lease origin <branch>
+```
+
+> Force-push is FORBIDDEN on shared branches (`main`, `feature/*` after another human pushed to it). Per `loop-constraints.md` veto list.
+
+### Open / edit / close issues
+
+```bash
+# Create
+gh issue create --label wayfinder:<type> --title "..." --body "..."
+
+# Edit (body, label set, assignee)
+gh issue edit <N> --add-label ready-for-agent --add-assignee @me --body-file <(cat <<'BODY'
+...
+BODY
+)
+
+# Close with a resolution comment
+gh issue close <N> --comment "Resolved by <commit-sha>. Refs <PR-URL>."
+```
+
+### PRs
+
+```bash
+# Create
+gh pr create \
+  --title '<type>(<scope>): [slug] <subject>' \
+  --body-file <(cat <<'BODY'
+## What
+...
+
+## Why
+...
+
+Refs: <ADR-URL>, <issue-URL>.
+BODY
+) \
+  --base main --head <branch>
+
+# Review and merge -- agent MUST NOT merge to main without human approval
+gh pr merge <N> --squash --delete-branch --body "LGTM. <commit-sha>."
+
+# Close (rejected or wontfix)
+gh pr close <N> --comment "Closing; see <issue-N> for context."
+```
+
+### Project v2
+
+```bash
+# Create (user-scoped). gh project create was deprecated; use GraphQL mutation.
+USER_ID=$(gh api graphql -f query='{ user(login:"<user>") { id } }' --jq '.data.user.id')
+gh api graphql -f query='mutation($ownerId: ID!) { createProjectV2(input: { ownerId: $ownerId, title: "<name>" }) { projectV2 { id number title url } } }' \
+  -f ownerId="$USER_ID"
+
+# Add an issue / PR to the project
+gh project item-add <PROJECT_ID> --owner <user> --url https://github.com/<owner>/<repo>/issues/<N>
+
+# List items in the project (use this for STATE.md cross-references)
+gh project item-list <PROJECT_ID> --owner <user> --format json --limit 50
+```
+
+## State Management — Local + Remote GitHub
+
+The contract pinpoints state to **3 systems** that MUST stay in lockstep on every task completion:
+
+| System | Lives in | Authoritative for | Authoritative hands |
+|--------|----------|-------------------|----------------------|
+| Git issues + PRs | github.com/IsaacMorzy/peace_league_website | ticket lifecycle | `gh` (agent + human) |
+| Project v2 | github.com/IsaacMorzy user-level | cross-tracker board | `gh` (agent + human) |
+| Local repo state | `STATE.md` (mirror) + `loop-run-log.jsonl` (ledger) | run-end audit trail | `loop-budget` + agent edit |
+
+### How they sync
+
+- **Ticket opens**: agent files `gh issue create` with the right `wayfinder:*` label. Human or agent may `gh issue edit --add-assignee @me` to claim.
+- **Work progresses**: each `loop-budget` closure appends one JSON line to `loop-run-log.jsonl`. The mirror row in `STATE.md` § Recent loop outcomes / Entries carries the same fields plus a `[corresponds to]` bullet linking to a `git rev-parse --short=12` SHA.
+- **Worktree closes / PR merges**: agent updates `STATE.md` (move ticket to `Closed this period`) and appends one final loop-log entry if it has not already.
+- **GitHub Project v2**: agent must NOT add issues to projects created outside the dial. The `peace_league_website Roadmap` project is the only one bound to this repo's planning.
+
+### Update discipline (single source of truth)
+
+- `loop-run-log.jsonl` is **append-only** — NEVER re-edit historical entries. (`docs/loop-run-log.md` § Append-only conventions + § Parser check.)
+- `STATE.md` § Recent loop outcomes is **chronological** — append at bottom, never re-order.
+- After every `git commit` that touches the agent contract, **append ONE loop-log line first**, **commit the append as `chore(loop): append run-log`**, **then mirror to STATE.md in the same commit**. Otherwise the audit trail is shadow-of-truth.
+
+### Cross-repo state (plan-repo ↔ main repo)
+
+Per `docs/adr/0002-plan-substrate-sync.md` § Decision-up-ward, the plan-repo (`IsaacMorzy/peace-league-website-plan`) is canonical for deploy/security/integration tickets; main repo is canonical for dial + ui-skills + ADR tickets. A dual-tracker ticket has a `wayfinder:task-sync` mirror issue on the main repo with a fixed-format pointer body. Drift sync pattern in `docs/plan-substrate/MAP-DRIFT-RULE.md`.
+
+## Human-Task Execution
+
+Agents execute tasks that humans would otherwise perform manually, within the dial's safety envelope. The slate is intentionally narrow; the veto list (in `loop-constraints.md` § Scratch Lane + § Denylist Paths) is the bound.
+
+### Agent CAN (autonomous, no human approval needed)
+
+- **Open PRs** and **request review** via `gh pr create` + assigning reviewers.
+- **Open / edit / close issues** with the right `wayfinder:*` or `ready-for-*` label.
+- **Apply labels** (`gh issue edit --add-label / --remove-label`) on issues already in the agent's lane.
+- **Draft body content** for SKILL.md specs, ADR drafts, issue bodies, PR reviews, release notes.
+- **Comment on issues / PRs** with substantive technical notes linking to commits or ADRs.
+- **Run code search / research** across `gh api`, `git grep`, `bunx skills ls`, repo file reads.
+- **Run both reviewers** (ponytail-review + code-reviewer-minimax-m3) on the scratch lane — those provide the human-equivalent review when the dial's auto-merge conditions hold.
+- **Push scratch/* branches with `--force-with-lease`** (the branch is private to the lane; safe to amend).
+
+### Agent MUST escalate to human
+
+- **Merge anything to `main`**. `main` is human-merge-only per `loop-constraints.md` § Push & Merge.
+- **Force-push to `main` or `feature/*` after another human pushed**. Veto list item — escalate.
+- **Delete an issue, PR, or comment**. Soft-pedal forbidden; if a stale artifact truly needs removal, file a `wayfinder:prototype` ticket and ask a human.
+- **Touch any denylist path**. Certs, keys, secrets, `.env`, payments/**, DocType JSON — see `loop-constraints.md` § Denylist Paths. The agent should fail loud (`loop-constraints` gate) and the human should run the actual edit.
+- **Override the veto list for the scratch lane** even with verifier + 1 approval. The veto list is unconditional.
+
+### Agent CANNOT
+
+- Edit `loop-constraints.md` § Veto list, § Denylist Paths, or § Push & Merge — even at human request. Those are binding per-machinery; ADRs capture changes.
+- Drop `loop-pause-all=true` autonomously. Human-only.
+- Bypass `loop-budget` exhaustion. The dial has a kill switch; respect it.
+
+> When in doubt: file a `wayfinder:grilling` ticket (conversation ticket for domain discovery) and let the human respond.
+
+## Design-Skills Workflow
+
+For **ANY**.astro markup change, Tailwind class change, new page, copy revision, or page-level token swap, the design-route goes:
+
+1. **Run `npx ui-skills start`** — meta-router. It returns a routing question whose answer is the smallest useful skill set.
+2. **Pick exactly one child slug**, or 2-3 if you have a specific multi-skill brief. Slugs:
+   - `baseline-ui` — typography hierarchy, spacing, layout polish, color tokens, component reuse.
+   - `fixing-accessibility` — WCAG / ARIA / keyboard / focus / form errors / screen-reader semantics.
+   - `fixing-metadata` — title, meta description, OG/Twitter cards, canonical, favicon, JSON-LD, theme-color.
+   - `fixing-motion-performance` — animation perf (compositor props, scroll-linked motion, blur, will-change).
+3. **Read the per-skill SKILL.md** at `~/.agents/skills/<slug>/SKILL.md` (mirrored at `peace_league_website/.agents/skills/<slug>/SKILL.md`).
+4. **Cite the slug in the commit message** (inline or bracketed form per Commit-Message Convention).
+5. **Apply ONE focused fix per skill invocation.** Per dial: one fix per run. Do not bundle multiple skills in a single commit.
+6. **Verify against DESIGN.md tokens** in `peace_league_website/DESIGN.md` (Mintlify-derived). Token name, never `#hex`. Re-run `npx @google/design.md lint DESIGN.md` from `$BENCH` after structural changes.
+
+### Concrete sweep recipe (start with frontend design)
+
+For each un-modified `.astro` page in `frontend/src/pages/`, run the four-skills opening in this order (start with `baseline-ui`, then accessibility/metadata/motion as concrete issues surface):
+
+| Skill | Concrete fix pattern | Example |
+|-------|----------------------|---------|
+| `baseline-ui` | `font-bold` → `font-semibold` (weight 700 is reserved for hero CTA; weight 600 is the heading / stat token) | `testimonials.astro` statistic tiles use `font-semibold` for stat values, not `font-bold`. |
+| `fixing-accessibility` | `aria-valuetext` on `<progress>` / `role=progressbar`; `aria-label` on icon-only buttons; keyboard-focus visible on interactive surfaces. | `causes.astro` progress bars announce the spoken-form "raised of goal" via `aria-valuetext` instead of bare percent. |
+| `fixing-metadata` | Add `<link rel="canonical">`, `og:url`, `og:title`, `twitter:card=summary_large_image`, `theme-color`, JSON-LD where the page has structured content. | `about.astro` carries JSON-LD; add canonical + OG if missing. |
+| `fixing-motion-performance` | Narrow `transition-all` to `transition-[transform,box-shadow,opacity]`; add `will-change-transform` on heavy hover/transform states; reserve keyframes for compositor-friendly props. | `causes.astro` cause tiles animate only compositor props, not layout. |
+
+### How to improve the website (cyclic recipe)
+
+1. Pick ONE page per cycle (per dial: one fix per run).
+2. Open a `../wt-<slug>` worktree under `feature/<page>-ui-skill-sweep` (or `scratch/...` if the lane is autocommit-safe).
+3. Run `npx ui-skills start` against the page, pick the smallest skill (`baseline-ui` for first-time page touch).
+4. Apply ONE pattern from the table above that the page actually needs (don't speculatively fix un-asked issues).
+5. Cite the slug in the commit (inline form preferred).
+6. Push branch + open PR. Human merges on `feature/*`; auto-merge on `scratch/*` if veto cleared.
+7. After human merge of the PR, the agent updates STATE.md (move ticket to Closed this period) and appends one final loop-log entry.
+8. Move on to the next page.
+
