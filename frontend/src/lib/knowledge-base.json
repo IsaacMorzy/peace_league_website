@@ -2,8 +2,8 @@
   "organization": {
     "name": "Peace League Africa",
     "tagline": "Building Peace Across Africa",
-    "website": "https://peaceleagueafrica.com",
-    "email": "info@peaceleagueafrica.com",
+    "website": "https://peaceleagueafrica.org",
+    "email": "info@peaceleagueafrica.org",
     "phone": "+254 700 000 000",
     "address": "Kenda House, Tom Mboya Street, Nairobi, Kenya",
     "founded": "2015",
@@ -59,7 +59,7 @@
   "events": {
     "types": ["Summit", "Workshop", "Conference", "Community Event", "Gala", "Forum", "Dialogue"],
     "frequency": "Monthly events across Africa",
-    "registration": "Free or low-cost, register at peaceleagueafrica.com/events"
+    "registration": "Free or low-cost, register at peaceleagueafrica.org/events"
   },
   "donation": {
     "methods": ["M-Pesa", "Credit Card", "Bank Transfer", "PayPal"],
@@ -68,10 +68,10 @@
     "whereMoneyGoes": "95% directly to programs, 5% administration"
   },
   "contact": {
-    "general": "info@peaceleagueafrica.com",
-    "volunteer": "volunteer@peaceleagueafrica.com",
-    "partnerships": "partner@peaceleagueafrica.com",
-    "media": "press@peaceleagueafrica.com",
+    "general": "info@peaceleagueafrica.org",
+    "volunteer": "volunteer@peaceleagueafrica.org",
+    "partnerships": "partner@peaceleagueafrica.org",
+    "media": "press@peaceleagueafrica.org",
     "emergency": "+254 700 000 000"
   },
   "team": {
@@ -82,11 +82,11 @@
   "faq": [
     {
       "question": "How can I donate?",
-      "answer": "You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.com/donate. All donations are tax-deductible."
+      "answer": "You can donate via M-Pesa, credit card, bank transfer, or PayPal at peaceleagueafrica.org/donate. All donations are tax-deductible."
     },
     {
       "question": "How can I volunteer?",
-      "answer": "Visit peaceleagueafrica.com/volunteer to apply. We welcome volunteers with skills in teaching, healthcare, communications, IT, and logistics."
+      "answer": "Visit peaceleagueafrica.org/volunteer to apply. We welcome volunteers with skills in teaching, healthcare, communications, IT, and logistics."
     },
     {
       "question": "Where does my money go?",
@@ -94,11 +94,11 @@
     },
     {
       "question": "Can I partner with Peace League Africa?",
-      "answer": "Yes! Visit peaceleagueafrica.com/partner or email partner@peaceleagueafrica.com to discuss partnership opportunities."
+      "answer": "Yes! Visit peaceleagueafrica.org/partner or email partner@peaceleagueafrica.org to discuss partnership opportunities."
     },
     {
       "question": "How can I attend an event?",
-      "answer": "Visit peaceleagueafrica.com/events to see upcoming events and register. Most events are free or low-cost."
+      "answer": "Visit peaceleagueafrica.org/events to see upcoming events and register. Most events are free or low-cost."
     },
     {
       "question": "What countries do you operate in?",

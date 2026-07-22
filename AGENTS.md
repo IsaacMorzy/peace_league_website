@@ -153,3 +153,17 @@ The agent runs **six ordered gates** per task. Each is independent and replaceab
 | UI     | `ui-skills-root` → child slug | before any `.astro` / Tailwind change (`npx ui-skills start`) |
 
 **Why explicit order, not implicit** — the prior run log showed drift (commit `8e56001 fix(loops): repair malformed JSON schema in loop-run-log.jsonl`). Putting the order in the contract closes that hole. See `docs/adr/0001-loop-pipeline.md` for the design decision.
+
+
+## Cross-Repo Plan Substrate
+
+A **read-only mirror** of the canonical planning substrate lives at `IsaacMorzy/peace-league-website-plan`. The mirror is **non-destructive** — the agent only READS from the plan repo; a human mutates it.
+
+Mirrored into this repo under `docs/plan-substrate/`:
+
+- `STANDING-ORDERS.md` — verbatim mirror of plan-repo AGENTS.md § Standing orders 1-8 (canonical nginx/sudoers/domain rules).
+- `STAGE-4-GATE.md` — bench pre-merge gate as a checklist. Distinct from the in-process dial (ADR 0001) and the loop-engineering control layer (plan-repo `LOOP.md`); see the layered-control table there.
+- `MAP-DRIFT-RULE.md` — `gh issue edit <N> --body-file` pattern + dual-tracker methodology for tickets filed on both this repo and the plan repo.
+
+See `docs/adr/0002-plan-substrate-sync.md` for the sync design rationale.
+
