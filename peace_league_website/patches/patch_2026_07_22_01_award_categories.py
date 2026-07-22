@@ -25,7 +25,7 @@ def execute():
     skipped = 0
     for cat in categories:
         # Check if category with this slug already exists
-        if frappe.db.exists("Award Category", cat.get("slug")):
+        if frappe.db.exists("Award Category", {"slug": cat.get("slug")}):
             skipped += 1
             continue
 
