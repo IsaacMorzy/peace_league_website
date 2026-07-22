@@ -3,330 +3,385 @@
     "doctype": "Award Category",
     "category_name": "Peace Ambassador for Fighting Radicalism and Terrorism",
     "slug": "peace-ambassador-fighting-radicalism-terrorism",
-    "description": ""
+    "description": "",
+    "name": "Peace Ambassador for Fighting Radicalism and Terrorism"
   },
   {
     "doctype": "Award Category",
     "category_name": "Lifetime Achievement Award in Diplomacy and Governance",
     "slug": "lifetime-achievement-award-diplomacy-governance",
-    "description": ""
+    "description": "",
+    "name": "Lifetime Achievement Award in Diplomacy and Governance"
   },
   {
     "doctype": "Award Category",
     "category_name": "Trailblazer Award in Military Leadership and Gender Empowerment",
     "slug": "trailblazer-award-military-leadership-gender-empowerment",
-    "description": ""
+    "description": "",
+    "name": "Trailblazer Award in Military Leadership and Gender Empowerment"
   },
   {
     "doctype": "Award Category",
     "category_name": "Champion for Women's Rights and Empowerment Award",
     "slug": "champion-womens-rights-empowerment-award",
-    "description": ""
+    "description": "",
+    "name": "Champion for Women's Rights and Empowerment Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Champion of Labour Rights and Social Protection",
     "slug": "champion-labour-rights-social-protection",
-    "description": ""
+    "description": "",
+    "name": "Champion of Labour Rights and Social Protection"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Legal Reforms Award",
     "slug": "outstanding-contribution-legal-reforms-award",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to Legal Reforms Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Community Policing Award",
     "slug": "excellence-community-policing-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Community Policing Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Da'wah in the City Centre",
     "slug": "outstanding-contribution-dawah-city-centre",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to Da'wah in the City Centre"
   },
   {
     "doctype": "Award Category",
     "category_name": "Leadership in Firearms Policy and Safety Award",
     "slug": "leadership-firearms-policy-safety-award",
-    "description": ""
+    "description": "",
+    "name": "Leadership in Firearms Policy and Safety Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Islamic Jurisprudence Award",
     "slug": "excellence-islamic-jurisprudence-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Islamic Jurisprudence Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Cultural Diplomacy Award",
     "slug": "excellence-cultural-diplomacy-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Cultural Diplomacy Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Trailblazer in Police Leadership and Literature Award",
     "slug": "trailblazer-police-leadership-literature-award",
-    "description": ""
+    "description": "",
+    "name": "Trailblazer in Police Leadership and Literature Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Cultural Exchange Award",
     "slug": "outstanding-contribution-cultural-exchange-award",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to Cultural Exchange Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Interfaith Harmony and Collaboration Award",
     "slug": "interfaith-harmony-collaboration-award",
-    "description": ""
+    "description": "",
+    "name": "Interfaith Harmony and Collaboration Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Creative Branding Award",
     "slug": "excellence-creative-branding-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Creative Branding Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Leadership in Public Administration Award",
     "slug": "leadership-public-administration-award",
-    "description": ""
+    "description": "",
+    "name": "Leadership in Public Administration Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to National Security Award",
     "slug": "outstanding-contribution-national-security-award",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to National Security Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Education and Professional Development Award",
     "slug": "outstanding-contribution-education-professional-development-award",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to Education and Professional Development Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Author for Excellence in Language Book Writing Award",
     "slug": "best-author-excellence-language-book-writing-award",
-    "description": ""
+    "description": "",
+    "name": "Best Author for Excellence in Language Book Writing Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Spiritual Wisdom Author Award",
     "slug": "best-spiritual-wisdom-author-award",
-    "description": ""
+    "description": "",
+    "name": "Best Spiritual Wisdom Author Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Author in Heritage Land Restoration Award",
     "slug": "best-author-heritage-land-restoration-award",
-    "description": ""
+    "description": "",
+    "name": "Best Author in Heritage Land Restoration Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Exceptional Commitment to Philanthropy and Selfless Contributions to the Betterment of Society",
     "slug": "exceptional-commitment-philanthropy-selfless-contributions-betterment-society",
-    "description": ""
+    "description": "",
+    "name": "Exceptional Commitment to Philanthropy and Selfless Contributions to the Betterment of Society"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Community Service Award",
     "slug": "excellence-community-service-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Community Service Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Social Impact Award",
     "slug": "outstanding-contribution-social-impact-award",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to Social Impact Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Environmental Conservation and Social Empowerment Award",
     "slug": "excellence-environmental-conservation-social-empowerment-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Environmental Conservation and Social Empowerment Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Champion of Interfaith Harmony Award",
     "slug": "champion-interfaith-harmony-award",
-    "description": ""
+    "description": "",
+    "name": "Champion of Interfaith Harmony Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Leadership, Religious Guidance and Literary Contribution Award",
     "slug": "excellence-leadership-religious-guidance-literary-contribution-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Leadership, Religious Guidance and Literary Contribution Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Philanthropy and Community Enrichment Award",
     "slug": "excellence-philanthropy-community-enrichment-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Philanthropy and Community Enrichment Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Business Leadership and Philanthropy Award",
     "slug": "excellence-business-leadership-philanthropy-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Business Leadership and Philanthropy Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Champion of Mosque Peace and Unity Award",
     "slug": "champion-mosque-peace-unity-award",
-    "description": ""
+    "description": "",
+    "name": "Champion of Mosque Peace and Unity Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Islamic Banking and Community Development Award",
     "slug": "excellence-islamic-banking-community-development-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Islamic Banking and Community Development Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Natural Health and Religious Leadership Award",
     "slug": "excellence-natural-health-religious-leadership-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Natural Health and Religious Leadership Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Psychology and Mental Health Advocacy Award",
     "slug": "excellence-psychology-mental-health-advocacy-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Psychology and Mental Health Advocacy Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Counselling and Girl-Child Mentorship Award",
     "slug": "excellence-counselling-girl-child-mentorship-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Counselling and Girl-Child Mentorship Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in National Security Leadership Award",
     "slug": "excellence-national-security-leadership-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in National Security Leadership Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Teacher of the Year Award",
     "slug": "best-teacher-year-award",
-    "description": ""
+    "description": "",
+    "name": "Best Teacher of the Year Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Leadership and Governance Award",
     "slug": "excellence-leadership-governance-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Leadership and Governance Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Music and Literary Arts Award",
     "slug": "excellence-music-literary-arts-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Music and Literary Arts Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Promoting Discipline in Schools Through Chaplaincy",
     "slug": "excellence-promoting-discipline-schools-chaplaincy",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Promoting Discipline in Schools Through Chaplaincy"
   },
   {
     "doctype": "Award Category",
     "category_name": "Medical Doctor of the Year",
     "slug": "medical-doctor-year",
-    "description": ""
+    "description": "",
+    "name": "Medical Doctor of the Year"
   },
   {
     "doctype": "Award Category",
     "category_name": "Championing Mangrove Conservation",
     "slug": "championing-mangrove-conservation",
-    "description": ""
+    "description": "",
+    "name": "Championing Mangrove Conservation"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Author in Voices of Perseverance in Literature Award",
     "slug": "best-author-voices-perseverance-literature-award",
-    "description": ""
+    "description": "",
+    "name": "Best Author in Voices of Perseverance in Literature Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Mediation and Conflict Resolution Award",
     "slug": "excellence-mediation-conflict-resolution-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Mediation and Conflict Resolution Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Radio Personnel Advocating for Positive Relationships",
     "slug": "best-radio-personnel-advocating-positive-relationships",
-    "description": ""
+    "description": "",
+    "name": "Best Radio Personnel Advocating for Positive Relationships"
   },
   {
     "doctype": "Award Category",
     "category_name": "Promoting Peace Through Sports and Journalism",
     "slug": "promoting-peace-through-sports-journalism",
-    "description": ""
+    "description": "",
+    "name": "Promoting Peace Through Sports and Journalism"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Journalism and Advocacy Award",
     "slug": "excellence-journalism-advocacy-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Journalism and Advocacy Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Author in Cultural Narratives of Unity and Hope",
     "slug": "best-author-cultural-narratives-unity-hope",
-    "description": ""
+    "description": "",
+    "name": "Best Author in Cultural Narratives of Unity and Hope"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Personality Promoting Peace Through Arts",
     "slug": "best-personality-promoting-peace-through-arts",
-    "description": ""
+    "description": "",
+    "name": "Best Personality Promoting Peace Through Arts"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Legal Leadership",
     "slug": "excellence-legal-leadership",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Legal Leadership"
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Social Welfare",
     "slug": "outstanding-contribution-social-welfare",
-    "description": ""
+    "description": "",
+    "name": "Outstanding Contribution to Social Welfare"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Humanitarian Leadership",
     "slug": "excellence-humanitarian-leadership",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Humanitarian Leadership"
   },
   {
     "doctype": "Award Category",
     "category_name": "Excellence in Championing Shariah Finance Compliance in Kenya Award",
     "slug": "excellence-championing-shariah-finance-compliance-kenya-award",
-    "description": ""
+    "description": "",
+    "name": "Excellence in Championing Shariah Finance Compliance in Kenya Award"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Radio Personnel Advocating for Peace and Spirituality",
     "slug": "best-radio-personnel-advocating-peace-spirituality",
-    "description": ""
+    "description": "",
+    "name": "Best Radio Personnel Advocating for Peace and Spirituality"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best Media Personnel Advocating for an Ethical Society",
     "slug": "best-media-personnel-advocating-ethical-society",
-    "description": ""
+    "description": "",
+    "name": "Best Media Personnel Advocating for an Ethical Society"
   },
   {
     "doctype": "Award Category",
     "category_name": "Best TV Producer Advocating for Peace in Society",
     "slug": "best-tv-producer-advocating-peace-society",
-    "description": ""
+    "description": "",
+    "name": "Best TV Producer Advocating for Peace in Society"
   }
 ]
