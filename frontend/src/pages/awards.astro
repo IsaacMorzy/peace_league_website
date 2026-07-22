@@ -2,13 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-
-// Placeholder data - will come from Frappe API
-const categories = [
-  { slug: 'peace-ambassador', name: 'Peace Ambassador for Fighting Radicalism and Terrorism', description: 'Recognizing individuals who have made exceptional contributions to countering violent extremism and promoting peaceful coexistence.', icon: '🕊️' },
-  { slug: 'lifetime-diplomacy', name: 'Lifetime Achievement Award in Diplomacy and Governance', description: 'Honoring a distinguished career in diplomacy and public service that has advanced peace and good governance.', icon: '🏛️' },
-  // ... 60 more categories (in real implementation, fetch from API)
-];
 ---
 
 <Layout title="Awards" description="Browse and vote for the Peace League Africa Awards categories. Recognize excellence in peace-building, community service, leadership, and more across East Africa and the Great Lakes region.">
@@ -21,7 +14,7 @@ const categories = [
         <div class="max-w-3xl">
           <h1 class="text-heading-2 text-ink mb-4">Peace League Awards</h1>
           <p class="text-body-md text-steel mb-6">
-            Celebrate the champions of peace across East Africa and the Great Lakes region. Browse 62 award categories, nominate outstanding individuals and organizations, and cast your vote for the 2026 winners.
+            Celebrate the champions of peace across East Africa and the Great Lakes region. Browse award categories, nominate outstanding individuals and organizations, and cast your vote for the 2026 winners.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="/awards/nominate" class="btn btn-primary">Nominate Someone</a>
@@ -36,15 +29,15 @@ const categories = [
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <div class="text-2xl font-bold text-accent">62</div>
+            <div class="text-2xl font-bold text-accent" id="stat-categories">—</div>
             <div class="text-sm text-steel">Award Categories</div>
           </div>
           <div>
-            <div class="text-2xl font-bold text-accent" id="nominee-count">~500</div>
+            <div class="text-2xl font-bold text-accent" id="stat-nominees">—</div>
             <div class="text-sm text-steel">Nominees</div>
           </div>
           <div>
-            <div class="text-2xl font-bold text-accent" id="vote-count">12,000+</div>
+            <div class="text-2xl font-bold text-accent" id="stat-votes">—</div>
             <div class="text-sm text-steel">Votes Cast</div>
           </div>
           <div>
@@ -61,13 +54,23 @@ const categories = [
         <div class="mb-8 flex justify-between items-end">
           <h2 class="text-heading-3 text-ink">Award Categories</h2>
           <div class="flex gap-2">
-            <!-- Search & Filter could be added later -->
+            <input
+              type="search"
+              id="category-search"
+              placeholder="Search categories…"
+              class="px-4 py-2 rounded-lg border border-hairline bg-canvas text-ink text-sm focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+            />
           </div>
         </div>
 
         <div id="categories-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <!-- Categories will be loaded via JS -->
-          <div class="col-span-full text-center text-steel py-12">Loading categories…</div>
+          <div class="col-span-full text-center text-steel py-12" id="categories-loading">Loading categories…</div>
+        </div>
+        <div id="categories-empty" class="hidden col-span-full text-center text-steel py-12">
+          No categories found.
+        </div>
+        <div id="categories-error" class="hidden col-span-full text-center text-brand-error py-12">
+          Unable to load categories. Please refresh the page.
         </div>
       </div>
     </section>
@@ -75,7 +78,7 @@ const categories = [
     <!-- Call to Action -->
     <section class="bg-accent/10 py-section">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-heading-3 text-ink mb-4">Know an deserving champion?</h2>
+        <h2 class="text-heading-3 text-ink mb-4">Know a deserving champion?</h2>
         <p class="text-body-md text-steel mb-6 max-w-2xl mx-auto">
           Anyone can nominate. Recognize individuals and organizations making a difference in peace, governance, community service, and more across Africa.
         </p>
@@ -87,8 +90,75 @@ const categories = [
   <Footer />
 </Layout>
 
+<script>
+  import { getAwardCategories } from '../lib/api.js';
+
+  let allCategories = [];
+
+  async function loadCategories() {
+    try {
+      const res = await getAwardCategories();
+      if (res.status !== 'success' || !res.data) {
+        throw new Error(res.message || 'API error');
+      }
+      allCategories = res.data;
+      document.getElementById('stat-categories').textContent = allCategories.length;
+      renderCategories(allCategories);
+    } catch (err) {
+      console.error('Awards load error:', err);
+      document.getElementById('categories-loading').classList.add('hidden');
+      document.getElementById('categories-error').classList.remove('hidden');
+    }
+  }
+
+  function renderCategories(cats) {
+    const grid = document.getElementById('categories-grid');
+    const loading = document.getElementById('categories-loading');
+    const empty = document.getElementById('categories-empty');
+    const error = document.getElementById('categories-error');
+
+    loading.classList.add('hidden');
+    error.classList.add('hidden');
+
+    if (!cats.length) {
+      empty.classList.remove('hidden');
+      return;
+    }
+    empty.classList.add('hidden');
+
+    grid.innerHTML = cats.map(cat => `
+      <a href="/awards/category/${encodeURIComponent(cat.slug)}" class="card-award-category card-base p-6 block hover:border-accent/30 transition-all duration-200">
+        <h3 class="text-heading-5 text-ink mb-2 line-clamp-2">${escapeHtml(cat.category_name)}</h3>
+        <p class="text-body-sm text-steel line-clamp-3">${escapeHtml(cat.description || '')}</p>
+        <div class="mt-4 text-sm font-medium text-accent">View nominees →</div>
+      </a>
+    `).join('');
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // Search filter
+  const searchEl = document.getElementById('category-search');
+  if (searchEl) {
+    searchEl.addEventListener('input', () => {
+      const q = searchEl.value.toLowerCase().trim();
+      const filtered = q
+        ? allCategories.filter(c =>
+            c.category_name.toLowerCase().includes(q) ||
+            (c.description || '').toLowerCase().includes(q))
+        : allCategories;
+      renderCategories(filtered);
+    });
+  }
+
+  loadCategories();
+</script>
+
 <style>
-  /* Custom award category card styling */
   .card-award-category {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }

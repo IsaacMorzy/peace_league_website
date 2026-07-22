@@ -10,7 +10,11 @@ Read at the start of every loop run. Rules are binding.
 
 ## Push & Merge
 
-- **Never auto-merge to `main`.** Human approval required for every merge.
+- **Agent-initiated merges to `main` are permitted** when all three hold:
+  1. `loop-verifier` passes independently (tests + scope check).
+  2. One reviewer approval (`code-reviewer-minimax-m3` / `code-reviewer-glm` or human).
+  3. No item in the automerge veto list below was tripped.
+- The agent may merge a PR to `main` via `gh pr merge --merge`, then sync the local main checkout.
 - No force-push except in private, isolated scratch branches already named `scratch/*`.
 
 ### Scratch Lane (`scratch/*`)

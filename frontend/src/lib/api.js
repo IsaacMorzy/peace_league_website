@@ -73,3 +73,33 @@ export async function submitContact(data) {
 export async function donationStatus(checkoutRequestId) {
   return apiCall(`/api/method/peace_league_website.api.donation_status?checkout_request_id=${encodeURIComponent(checkoutRequestId)}`);
 }
+
+// ── Awards API ──
+
+export async function getAwardCategories() {
+  return apiCall('/api/method/peace_league_website.api_awards.get_categories');
+}
+
+export async function getAwardCategory(slug) {
+  return apiCall(`/api/method/peace_league_website.api_awards.get_category?slug=${encodeURIComponent(slug)}`);
+}
+
+export async function getAwardResults() {
+  return apiCall('/api/method/peace_league_website.api_awards.get_results');
+}
+
+export async function castVote(nomineeId, categorySlug, email) {
+  const body = { nominee_id: nomineeId, category_slug: categorySlug };
+  if (email) body.email = email;
+  return apiCall('/api/method/peace_league_website.api_awards.cast_vote', {
+    method: 'POST',
+    body,
+  });
+}
+
+export async function submitNomination(formData) {
+  return apiCall('/api/method/peace_league_website.api_awards.create_nomination', {
+    method: 'POST',
+    body: formData,
+  });
+}

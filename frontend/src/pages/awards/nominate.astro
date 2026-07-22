@@ -2,14 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
-
-// In production, fetch categories from Frappe API
-const categories = [
-  { value: 'peace-ambassador', label: 'Peace Ambassador for Fighting Radicalism and Terrorism' },
-  { value: 'lifetime-diplomacy', label: 'Lifetime Achievement Award in Diplomacy and Governance' },
-  { value: 'trailblazer-military', label: 'Trailblazer Award in Military Leadership and Gender Empowerment' },
-  // ... all 62 categories
-];
 ---
 
 <Layout title="Nominate for Awards" description="Nominate an individual or organization for a Peace League Africa Award. Submission deadline: December 5, 2026 at 00:00 EAT.">
@@ -21,7 +13,7 @@ const categories = [
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-heading-2 text-ink mb-4">Submit a Nomination</h1>
         <p class="text-body-md text-steel mb-6">
-          Anyone can nominate! Recognize an individual or organization making a difference in peace, governance, community service, or any of our 62 award categories.
+          Anyone can nominate! Recognize an individual or organization making a difference in peace, governance, community service, or any of our award categories.
         </p>
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-ink border border-hairline">
           <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,23 +58,8 @@ const categories = [
                   class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
                 >
                   <option value="">Select a category...</option>
-                  {categories.map(cat => (
-                    <option value={cat.value}>{cat.label}</option>
-                  ))}
                 </select>
-              </div>
-
-              <div>
-                <label for="nominee-org" class="block text-body-sm font-semibold text-ink mb-2">
-                  Organization / Affiliation
-                </label>
-                <input
-                  type="text"
-                  id="nominee-org"
-                  name="nominee_org"
-                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                  placeholder="Organization or affiliation (if applicable)"
-                />
+                <p class="mt-2 text-sm text-steel" id="category-loading-text">Loading categories…</p>
               </div>
 
               <div>
@@ -192,7 +169,7 @@ const categories = [
             </div>
           </div>
 
-          <!-- reCAPTCHA & Terms -->
+          <!-- Terms -->
           <div class="card-base p-6">
             <div class="space-y-4">
               <div class="flex items-start gap-3">
@@ -209,9 +186,7 @@ const categories = [
                 </label>
               </div>
 
-              <!-- reCAPTCHA will be inserted here by the integration -->
               <div id="recaptcha-container" class="flex justify-center py-4">
-                <!-- reCAPTCHA widget placeholder -->
                 <div class="text-sm text-steel border border-hairline rounded p-4 bg-surface">
                   reCAPTCHA verification required (to be integrated)
                 </div>
@@ -221,12 +196,8 @@ const categories = [
 
           <!-- Submit -->
           <div class="flex justify-between items-center pt-4">
-            <p class="text-sm text-steel">
-              * Required fields
-            </p>
-            <button type="submit" class="btn btn-primary btn-large px-8">
-              Submit Nomination
-            </button>
+            <p class="text-sm text-steel">* Required fields</p>
+            <button type="submit" class="btn btn-primary btn-large px-8">Submit Nomination</button>
           </div>
         </form>
 
@@ -247,6 +218,33 @@ const categories = [
 </Layout>
 
 <script>
+  import { getAwardCategories, submitNomination } from '../../lib/api.js';
+
+  // Load categories into the dropdown
+  async function loadCategories() {
+    try {
+      const res = await getAwardCategories();
+      if (res.status !== 'success' || !res.data) throw new Error('API error');
+
+      const select = document.getElementById('category');
+      const loadingText = document.getElementById('category-loading-text');
+
+      res.data.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat.slug;
+        opt.textContent = cat.category_name;
+        select.appendChild(opt);
+      });
+      loadingText.textContent = `${res.data.length} categories available.`;
+      loadingText.classList.add('text-steel');
+    } catch (err) {
+      console.error('Category load error:', err);
+      document.getElementById('category-loading-text').textContent =
+        'Unable to load categories. Please refresh the page.';
+      document.getElementById('category-loading-text').classList.add('text-brand-error');
+    }
+  }
+
   // Character count
   const descEl = document.getElementById('description');
   const charCount = document.getElementById('char-count');
@@ -266,19 +264,12 @@ const categories = [
     submitBtn.textContent = 'Submitting...';
 
     try {
-      // TODO: Replace with actual Frappe endpoint
-      const API_BASE = import.meta.env.PUBLIC_API_URL || '';
-      const response = await fetch(`${API_BASE}/api/method/peace_league_website.api_awards.create_nomination`, {
-        method: 'POST',
-        body: formData
-      });
-
-      if (response.ok) {
+      const res = await submitNomination(formData);
+      if (res.status === 'success') {
         document.getElementById('nomination-form').classList.add('hidden');
         document.getElementById('success-message').classList.remove('hidden');
       } else {
-        const err = await response.text();
-        alert('Submission failed: ' + err);
+        alert('Submission failed: ' + (res.message || 'Please try again.'));
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Nomination';
       }
@@ -289,4 +280,6 @@ const categories = [
       submitBtn.textContent = 'Submit Nomination';
     }
   });
+
+  loadCategories();
 </script>
