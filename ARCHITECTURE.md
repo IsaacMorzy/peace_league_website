@@ -19,7 +19,7 @@
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                     Browser (User)                        │
-│              https://peaceleagueafrica.com                │
+│              https://peaceleagueafrica.org                │
 └────────────────────────┬─────────────────────────────────┘
                          │
                          ▼
@@ -133,7 +133,7 @@ peace_league_website/
 ### 3.1 Frontend Page Requests
 
 ```
-Browser ──GET https://peaceleagueafrica.com/──▶ Nginx (443)
+Browser ──GET https://peaceleagueafrica.org/──▶ Nginx (443)
                                                     │
                                               ┌─────┴─────┐
                                               │  location  │
@@ -153,7 +153,7 @@ Browser ──GET https://peaceleagueafrica.com/──▶ Nginx (443)
 ### 3.2 API Requests
 
 ```
-Browser ──GET https://peaceleagueafrica.com/api/method/peace_league_website.api.get_programs──▶
+Browser ──GET https://peaceleagueafrica.org/api/method/peace_league_website.api.get_programs──▶
                                                                                               │
                                                                                               ▼
                                                                                           Nginx (443)
@@ -328,7 +328,7 @@ form.addEventListener('submit', async (e) => {
 ```javascript
 const API_BASE_URL = import.meta.env.PUBLIC_API_URL || '';
 // Uses relative URLs so requests go to same origin
-// In production: https://peaceleagueafrica.com/api/method/...
+// In production: https://peaceleagueafrica.org/api/method/...
 // In dev: set PUBLIC_API_URL=http://localhost:8001
 ```
 
@@ -400,8 +400,8 @@ Port 443 (HTTPS)   →  /               → Astro static files from astro_pages/
 ### 7.3 CORS Configuration
 
 Configured in two places:
-1. **Nginx**: `add_header Access-Control-Allow-Origin "https://peaceleagueafrica.com"` on `/api/` location
-2. **Frappe site config**: `cors_allow_origins: ["https://peaceleagueafrica.com"]`
+1. **Nginx**: `add_header Access-Control-Allow-Origin "https://peaceleagueafrica.org"` on `/api/` location
+2. **Frappe site config**: `cors_allow_origins: ["https://peaceleagueafrica.org"]`
 
 ### 7.4 SSL/TLS
 

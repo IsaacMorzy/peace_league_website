@@ -17,7 +17,7 @@ const {
   noIndex = false
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://peaceleagueafrica.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://peaceleagueafrica.org');
 const pageTitle = `${title} | Peace League Africa`;
 ---
 
@@ -59,7 +59,7 @@ const pageTitle = `${title} | Peace League Africa`;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.com')} />
+    <meta property="og:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.org')} />
     <meta property="og:site_name" content="Peace League Africa" />
     <meta property="og:locale" content="en_US" />
 
@@ -68,7 +68,7 @@ const pageTitle = `${title} | Peace League Africa`;
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.com')} />
+    <meta name="twitter:image" content={new URL(image, Astro.site || 'https://peaceleagueafrica.org')} />
 
     <!-- Structured Data: Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -76,8 +76,8 @@ const pageTitle = `${title} | Peace League Africa`;
       "@type": "NGO",
       "name": "Peace League Africa",
       "description": description,
-      "url": "https://peaceleagueafrica.com",
-      "logo": "https://peaceleagueafrica.com/favicon.svg",
+      "url": "https://peaceleagueafrica.org",
+      "logo": "https://peaceleagueafrica.org/favicon.svg",
       "sameAs": [
         "https://twitter.com/peaceleagueafrica",
         "https://facebook.com/peaceleagueafrica",
@@ -85,7 +85,7 @@ const pageTitle = `${title} | Peace League Africa`;
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "info@peaceleagueafrica.com",
+        "email": "info@peaceleagueafrica.org",
         "telephone": "+1-555-123-4567",
         "address": {
           "@type": "PostalAddress",
@@ -100,12 +100,12 @@ const pageTitle = `${title} | Peace League Africa`;
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Peace League Africa",
-      "url": "https://peaceleagueafrica.com",
+      "url": "https://peaceleagueafrica.org",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://peaceleagueafrica.com/search?q={search_term_string}"
+          "urlTemplate": "https://peaceleagueafrica.org/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }

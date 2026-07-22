@@ -309,7 +309,7 @@ const nextStartTime = nextEvent?.startTime || "09:00";
                     <span class="font-semibold text-ink">${cause.raised_amount.toLocaleString()}</span>
                     <span class="text-steel">${cause.goal_amount.toLocaleString()}</span>
                   </div>
-                  <div class="w-full bg-hairline rounded-full h-2 progress-track" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100" aria-label={`${cause.title} fundraising progress`}>
+                  <div class="w-full bg-hairline rounded-full h-2 progress-track" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100" aria-label={`${cause.title} fundraising progress`} aria-valuetext={`$${cause.raised_amount.toLocaleString()} raised of $${cause.goal_amount.toLocaleString()} goal (${Math.round((cause.raised_amount / cause.goal_amount) * 100)} percent funded)`}>
                     <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="width: 0"></div>
                   </div>
                   <p class="mt-1 text-xs text-steel">{cause.donors_count} donors &middot; {Math.round((cause.raised_amount / cause.goal_amount) * 100)}% funded</p>
