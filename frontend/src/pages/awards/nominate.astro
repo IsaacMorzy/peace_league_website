@@ -109,6 +109,9 @@ import Footer from '../../components/Footer.astro';
                     <p class="text-xs text-steel">PNG, JPG, GIF up to 5MB</p>
                   </div>
                 </div>
+                <div id="photo-preview" class="mt-4 hidden">
+                  <img id="photo-preview-img" class="mx-auto max-h-48 rounded-lg border border-hairline" alt="Preview" />
+                </div>
               </div>
 
               <div>
@@ -295,4 +298,32 @@ import Footer from '../../components/Footer.astro';
   });
 
   loadCategories();
+
+  // Photo preview and size validation
+  const photoInput = document.getElementById('nominee-photo');
+  const previewContainer = document.getElementById('photo-preview');
+  const previewImg = document.getElementById('photo-preview-img');
+  const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+
+  if (photoInput && previewContainer && previewImg) {
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files[0];
+      if (!file) {
+        previewContainer.classList.add('hidden');
+        return;
+      }
+      if (file.size > MAX_SIZE) {
+        alert('Photo is too large. Maximum size is 5MB.');
+        photoInput.value = '';
+        previewContainer.classList.add('hidden');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        previewImg.src = e.target.result;
+        previewContainer.classList.remove('hidden');
+      };
+      reader.readAsDataURL(file);
+    });
+  }
 </script>
