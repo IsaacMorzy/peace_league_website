@@ -5,7 +5,7 @@ app_title = "Peace League Website"
 app_publisher = "Peace League"
 app_description = "Peace League Website Portal"
 app_icon = "octicon octicon-heart"
-app_email = "info@peaceleagueafrica.com"
+app_email = "info@peaceleagueafrica.org"
 
 # ── DocType connections (for graphify knowledge graph) ──
 # These document explicit relationships between DocTypes that
