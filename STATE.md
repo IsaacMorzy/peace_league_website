@@ -19,6 +19,8 @@ States: `claimed`, `in-progress`, `in-review`, `closed`. Open a row when a `wayf
 | id | slug | summary |
 |----|------|---------|
 | #66 | awards-feature | Awards feature: 3 DocTypes (Category/Nominee/Vote) + api_awards.py + 4 frontend pages wired to live API + 55 fixture categories. PR #68 merged. Deployed to production. |
+| #61 | privacy-jsonld-drift | Fixed: single source for 'Last updated' by deriving from JSON-LD dateModified; replaced Astro.url.origin with canonical orgUrl. |
+| #60 | careers-jsonld-drift | Fixed JobPosting JSON-LD to use https://peaceleagueafrica.org instead of Astro.url.origin. |
 
 Move row here when the worktree closes, the PR merges, or the ticket is `wontfix`.
 ## Watchlist
