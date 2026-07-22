@@ -13,7 +13,7 @@ import Footer from '../../components/Footer.astro';
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-heading-2 text-ink mb-4">Submit a Nomination</h1>
         <p class="text-body-md text-steel mb-6">
-          Anyone can nominate! Recognize an individual or organization making a difference in peace, governance, community service, or any of our award categories.
+          Nominate a person or organization for a Peace League Africa Award. Deadline: December 5, 2026.
         </p>
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-ink border border-hairline">
           <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -204,11 +204,24 @@ import Footer from '../../components/Footer.astro';
         <!-- Success Message (hidden by default) -->
         <div id="success-message" class="hidden mt-8 p-6 bg-accent/10 border border-accent rounded-xl text-center">
           <div class="text-5xl mb-4">🎉</div>
-          <h3 class="text-heading-5 text-ink mb-2">Nomination Submitted!</h3>
+          <h3 class="text-heading-5 text-ink mb-2">Nomination Submitted</h3>
           <p class="text-body-md text-steel mb-6">
-            Thank you for recognizing a peace champion! Your nomination has been received and will be publicly visible shortly.
+            Your nomination has been received and will appear on the site shortly.
           </p>
           <a href="/awards" class="btn btn-primary">Back to Awards</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">Explore more</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/awards" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">All Categories</a>
+          <a href="/awards/results" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Results</a>
+          <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+          <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
         </div>
       </div>
     </section>

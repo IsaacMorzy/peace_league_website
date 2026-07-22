@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
         <div class="max-w-3xl">
           <h1 class="text-heading-2 text-ink mb-4">Peace League Awards</h1>
           <p class="text-body-md text-steel mb-6">
-            Celebrate the champions of peace across East Africa and the Great Lakes region. Browse award categories, nominate outstanding individuals and organizations, and cast your vote for the 2026 winners.
+            Browse categories, nominate, and vote. Awards announced December 5, 2026.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="/awards/nominate" class="btn btn-primary">Nominate Someone</a>
@@ -78,14 +78,27 @@ import Footer from '../components/Footer.astro';
     <!-- Call to Action -->
     <section class="bg-accent/10 py-section">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-heading-3 text-ink mb-4">Know a deserving champion?</h2>
+        <h2 class="text-heading-3 text-ink mb-4">Nominate someone</h2>
         <p class="text-body-md text-steel mb-6 max-w-2xl mx-auto">
-          Anyone can nominate. Recognize individuals and organizations making a difference in peace, governance, community service, and more across Africa.
+          Anyone can submit a nomination. No fee, no membership required.
         </p>
         <a href="/awards/nominate" class="btn btn-primary btn-large">Submit a Nomination</a>
       </div>
-    </section>
-  </main>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="py-10 bg-canvas border-t border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm text-steel mb-4">You might also be interested in</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/causes" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Our Causes</a>
+        <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+        <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
+        <a href="/testimonials" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Testimonials</a>
+      </div>
+    </div>
+  </section>
+</main>
 
   <Footer />
 </Layout>
