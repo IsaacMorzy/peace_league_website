@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// This page is placeholder. In production, protect via Frappe permissions (Admin only).
+// Data will be fetched from Frappe API endpoints.
+---
+
+<Layout title="Awards Admin" description="Admin interface for managing Peace League Awards categories, nominations, and votes.">
+  <Navigation />
+
+  <main id="main-content" class="min-h-screen bg-surface">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 flex justify-between items-center">
+        <div>
+          <h1 class="text-heading-2 text-ink">Awards Admin</h1>
+          <p class="text-body-md text-steel mt-2">Manage categories, nominations, and view vote counts.</p>
+        </div>
+        <div class="flex gap-3">
+          <button class="btn btn-secondary">Export CSV</button>
+          <a href="/awards/nominate" class="btn btn-primary">View Public Site</a>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="border-b border-hairline mb-8">
+        <nav class="flex gap-8">
+          <button class="py-3 px-1 border-b-2 border-accent text-accent font-medium" data-tab="categories">Categories</button>
+          <button class="py-3 px-1 border-b-2 border-transparent text-steel hover:text-ink" data-tab="nominations">Nominations</button>
+          <button class="py-3 px-1 border-b-2 border-transparent text-steel hover:text-ink" data-tab="votes">Votes</button>
+        </nav>
+      </div>
+
+      <!-- Categories Table -->
+      <div id="tab-categories" class="tab-content">
+        <div class="card-base p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-heading-4 text-ink">Manage Categories</h2>
+            <button class="btn btn-primary" onclick="openCategoryModal()">+ Add Category</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-hairline text-sm text-steel">
+                  <th class="pb-3 font-medium">Name</th>
+                  <th class="pb-3 font-medium">Slug</th>
+                  <th class="pb-3 font-medium">Nominees</th>
+                  <th class="pb-3 font-medium">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-hairline">
+                  <td class="py-4 text-ink">Peace Ambassador for Fighting Radicalism and Terrorism</td>
+                  <td class="py-4 text-steel font-mono text-sm">peace-ambassador</td>
+                  <td class="py-4 text-ink">24</td>
+                  <td class="py-4">
+                    <button class="text-accent hover:underline text-sm">Edit</button>
+                    <button class="text-brand-error hover:underline text-sm ml-3">Delete</button>
+                  </td>
+                </tr>
+                <!-- more rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nominations Table -->
+      <div id="tab-nominations" class="tab-content hidden">
+        <div class="card-base p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-heading-4 text-ink">All Nominations</h2>
+            <div class="flex gap-2">
+              <input type="text" placeholder="Search..." class="px-4 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink" />
+              <select class="px-4 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink">
+                <option>All Categories</option>
+              </select>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-hairline text-sm text-steel">
+                  <th class="pb-3 font-medium">Nominee</th>
+                  <th class="pb-3 font-medium">Category</th>
+                  <th class="pb-3 font-medium">Submitted</th>
+                  <th class="pb-3 font-medium">Nominator</th>
+                  <th class="pb-3 font-medium">Status</th>
+                  <th class="pb-3 font-medium">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-hairline">
+                  <td class="py-4">
+                    <div class="flex items-center gap-3">
+                      <img src="/assets/images/awards/nominee-1.jpg" alt="" class="w-10 h-10 rounded bg-surface object-cover" />
+                      <div>
+                        <div class="text-ink font-medium">Dr. Amina Mohamed</div>
+                        <div class="text-steel text-sm">Peace Builders Kenya</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-4 text-steel">Peace Ambassador</td>
+                  <td class="py-4 text-steel">2026-07-15</td>
+                  <td class="py-4 text-steel">John Smith (john@example.com)</td>
+                  <td class="py-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Active</span></td>
+                  <td class="py-4">
+                    <button class="text-accent hover:underline text-sm">Edit</button>
+                    <button class="text-brand-error hover:underline text-sm ml-3">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Votes Monitoring -->
+      <div id="tab-votes" class="tab-content hidden">
+        <div class="card-base p-6">
+          <h2 class="text-heading-4 text-ink mb-6">Real-Time Vote Counts</h2>
+          <p class="text-body-md text-steel mb-6">
+            Votes are aggregated in real-time. Dec 5 00:00 EAT voting closes; winners announced at 18:00 EAT.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Category vote summary cards -->
+            <div class="p-4 border border-hairline rounded-lg">
+              <h3 class="font-semibold text-ink mb-2">Peace Ambassador</h3>
+              <div class="text-3xl font-bold text-accent">1,243</div>
+              <div class="text-sm text-steel">votes • 3 nominees</div>
+              <div class="mt-2 h-2 bg-hairline rounded-full overflow-hidden">
+                <div class="h-full bg-accent" style="width: 67%"></div>
+              </div>
+              <div class="mt-2 text-xs text-steel">Leading: Dr. Amina Mohamed (67%)</div>
+            </div>
+            <!-- more cards -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Simple tab switching
+  document.querySelectorAll('[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.dataset.tab;
+      // update tab button styles
+      document.querySelectorAll('[data-tab]').forEach(b => {
+        b.classList.remove('border-accent', 'text-accent');
+        b.classList.add('border-transparent', 'text-steel');
+      });
+      btn.classList.remove('border-transparent', 'text-steel');
+      btn.classList.add('border-accent', 'text-accent');
+      // show content
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+    });
+  });
+
+  function openCategoryModal() {
+    alert('Category modal will open here (implement with Frappe dialog).');
+  }
+</script>

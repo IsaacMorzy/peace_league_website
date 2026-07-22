@@ -1,0 +1,212 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Footer from '../../../components/Footer.astro';
+import categories from '../../../../../peace_league_website/fixtures/award_categories.json';
+
+// Pre-render a page for each known category slug from the fixtures file.
+// Each page is a shell that fetches live data from the Frappe API client-side.
+export function getStaticPaths() {
+  return categories.map((cat) => ({
+    params: { slug: cat.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title="Award Category | Awards" description={`Vote for nominees in this Peace League Africa Award category.`}>
+  <Navigation />
+
+  <main id="main-content" class="min-h-screen">
+    <!-- Breadcrumb -->
+    <nav class="bg-surface py-3 px-4 sm:px-6 lg:px-8 text-sm text-steel">
+      <div class="max-w-7xl mx-auto">
+        <a href="/awards" class="hover:text-accent">Awards</a>
+        <span class="mx-2">/</span>
+        <span class="text-ink" id="breadcrumb-name">Category</span>
+      </div>
+    </nav>
+
+    <!-- Category Header -->
+    <section class="bg-canvas py-8 px-4 sm:px-6 lg:px-8 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl">
+          <h1 class="text-heading-2 text-ink mb-4" id="category-name">Loading…</h1>
+          <p class="text-body-md text-steel" id="category-description"></p>
+          <div class="mt-4 text-sm text-steel">
+            Voting closes: <strong class="text-ink">December 5, 2026 at 00:00 EAT</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nominees Grid -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-6 flex justify-between items-center">
+          <h2 class="text-heading-4 text-ink">Nominees (<span id="nominee-count">0</span>)</h2>
+          <div class="text-sm text-steel">
+            Voting is open to everyone • One vote per category
+          </div>
+        </div>
+
+        <div id="nominees-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="col-span-full text-center text-steel py-12" id="nominees-loading">Loading nominees…</div>
+        </div>
+        <div id="nominees-empty" class="hidden col-span-full text-center text-steel py-12">
+          No nominees have been submitted for this category yet.
+          <div class="mt-4">
+            <a href="/awards/nominate" class="btn btn-primary">Submit a Nomination</a>
+          </div>
+        </div>
+        <div id="nominees-error" class="hidden col-span-full text-center text-brand-error py-12">
+          Unable to load this category. Please check the URL or go back to <a href="/awards" class="text-accent underline">all categories</a>.
+        </div>
+      </div>
+    </section>
+
+    <!-- Vote confirmation modal -->
+    <div id="vote-modal" class="fixed inset-0 z-50 hidden" aria-modal="true" role="dialog">
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeVoteModal()"></div>
+      <div class="absolute inset-0 flex items-center justify-center p-4">
+        <div class="bg-canvas rounded-xl max-w-md w-full p-6 shadow-2xl">
+          <h3 class="text-heading-5 text-ink mb-4" id="vote-modal-title">Vote Confirmed</h3>
+          <p class="text-body-md text-steel mb-6" id="vote-modal-message">Your vote has been recorded. Thank you for participating in the Peace League Awards.</p>
+          <button class="btn btn-primary w-full" onclick="closeVoteModal()">Continue Browsing</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<!-- Pass server-side slug to client script via data attribute -->
+<div id="category-data" data-slug={slug} class="hidden"></div>
+
+<script>
+  import { getAwardCategory, castVote } from '../../../lib/api.js';
+
+  const CATEGORY_SLUG = document.getElementById('category-data').dataset.slug;
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function showModal(title, message) {
+    document.getElementById('vote-modal-title').textContent = title;
+    document.getElementById('vote-modal-message').textContent = message;
+    document.getElementById('vote-modal').classList.remove('hidden');
+  }
+  window.closeVoteModal = () => document.getElementById('vote-modal').classList.add('hidden');
+
+  async function loadCategory() {
+    try {
+      const res = await getAwardCategory(CATEGORY_SLUG);
+      if (res.status !== 'success') {
+        throw new Error(res.message || 'Category not found');
+      }
+      const { category, nominees } = res.data;
+
+      // Populate header
+      document.getElementById('category-name').textContent = category.category_name;
+      document.getElementById('breadcrumb-name').textContent = category.category_name;
+      document.getElementById('category-description').textContent = category.description || '';
+      document.title = `${category.category_name} | Awards`;
+
+      document.getElementById('nominees-loading').classList.add('hidden');
+
+      if (!nominees || !nominees.length) {
+        document.getElementById('nominees-empty').classList.remove('hidden');
+        return;
+      }
+
+      document.getElementById('nominee-count').textContent = nominees.length;
+
+      const grid = document.getElementById('nominees-grid');
+      grid.innerHTML = nominees.map(n => `
+        <div class="card-base p-6" id="nominee-${escapeHtml(n.name)}">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              ${n.photo_url
+                ? `<img src="${escapeHtml(n.photo_url)}" alt="${escapeHtml(n.nominee_name)}" class="w-24 h-24 object-cover rounded-lg bg-surface" />`
+                : `<div class="w-24 h-24 rounded-lg bg-hairline flex items-center justify-center text-steel text-xs">No photo</div>`}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-heading-5 text-ink mb-1">${escapeHtml(n.nominee_name)}</h3>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-ink vote-count" data-votes="${n.votes}">${n.votes.toLocaleString()}</div>
+                  <div class="text-xs text-steel uppercase tracking-wide">Votes</div>
+                </div>
+              </div>
+              <p class="text-body-sm text-steel my-4 line-clamp-3">${escapeHtml(n.description)}</p>
+              <div class="mt-auto">
+                <button
+                  class="btn btn-primary vote-btn"
+                  data-nominee-id="${escapeHtml(n.name)}"
+                  data-category-slug="${escapeHtml(CATEGORY_SLUG)}"
+                >
+                  Vote for this nominee
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Wire vote buttons
+      grid.querySelectorAll('.vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleVote(btn));
+      });
+    } catch (err) {
+      console.error('Category load error:', err);
+      document.getElementById('nominees-loading').classList.add('hidden');
+      document.getElementById('nominees-error').classList.remove('hidden');
+    }
+  }
+
+  async function handleVote(button) {
+    const nomineeId = button.dataset.nomineeId;
+    const categorySlug = button.dataset.categorySlug;
+
+    button.disabled = true;
+    button.textContent = 'Submitting…';
+
+    try {
+      const res = await castVote(nomineeId, categorySlug);
+      if (res.status === 'success') {
+        // Increment vote count in the UI
+        const card = button.closest('[id^="nominee-"]');
+        const voteEl = card.querySelector('.vote-count');
+        const current = parseInt(voteEl.dataset.votes, 10) || 0;
+        voteEl.dataset.votes = current + 1;
+        voteEl.textContent = (current + 1).toLocaleString();
+
+        // Replace button with confirmation
+        const votedEl = document.createElement('div');
+        votedEl.className = 'text-sm text-green-600 font-medium flex items-center gap-2';
+        votedEl.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> You voted for this nominee';
+        button.replaceWith(votedEl);
+
+        showModal('Vote Confirmed', res.message || 'Your vote has been recorded. Thank you for participating.');
+      } else {
+        showModal('Vote Failed', res.message || 'Failed to cast vote. Please try again.');
+        button.disabled = false;
+        button.textContent = 'Vote for this nominee';
+      }
+    } catch (err) {
+      console.error('Vote error:', err);
+      showModal('Error', 'Network error. Please try again.');
+      button.disabled = false;
+      button.textContent = 'Vote for this nominee';
+    }
+  }
+
+  loadCategory();
+</script>

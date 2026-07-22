@@ -1,1 +1,2 @@
 # Patches for Peace League Website
+peace_league_website.patches.patch_2026_07_22_01_award_categories

@@ -1,0 +1,103 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-07-22",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "nominee",
+    "category",
+    "ip_address",
+    "email_verified",
+    "vote_datetime",
+    "user_agent"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "VOTE-.YYYY.-",
+      "hidden": 1
+    },
+    {
+      "fieldname": "nominee",
+      "fieldtype": "Link",
+      "label": "Nominee",
+      "options": "Award Nominee",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Link",
+      "label": "Category",
+      "options": "Award Category",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "ip_address",
+      "fieldtype": "Data",
+      "label": "IP Address",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "email_verified",
+      "fieldtype": "Check",
+      "label": "Email Verified"
+    },
+    {
+      "default": "Now",
+      "fieldname": "vote_datetime",
+      "fieldtype": "Datetime",
+      "label": "Vote Time",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "user_agent",
+      "fieldtype": "Text",
+      "label": "User Agent",
+      "read_only": 1,
+      "hidden": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 0,
+  "links": [],
+  "modified": "2026-07-22 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "PLW Portal",
+  "name": "Award Vote",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "select": 1,
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "title_field": "nominee",
+  "track_changes": 1
+}

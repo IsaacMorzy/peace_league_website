@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Awards Results" description="View the winners of the 2026 Peace League Africa Awards. Full ranked results with vote totals across all categories.">
+  <Navigation />
+
+  <main id="main-content" class="min-h-screen">
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-accent/10 to-surface py-section text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent font-semibold text-sm mb-4">
+          🏆 2026 Winners
+        </div>
+        <h1 class="text-heading-2 text-ink mb-4">Peace League Africa Awards Results</h1>
+        <p class="text-body-md text-steel max-w-2xl mx-auto mb-6" id="results-intro">
+          Loading results…
+        </p>
+        <div class="flex justify-center gap-4">
+          <a href="/awards" class="btn btn-secondary">Back to Categories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results List -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div id="results-container">
+          <div class="text-center text-steel py-12">Loading results…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Stats (hidden until results load) -->
+    <section id="summary-stats" class="hidden bg-surface py-section px-4 sm:px-6 lg:px-8 border-t border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-heading-3 text-ink mb-8 text-center">2026 Awards in Numbers</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2" id="sum-categories">—</div>
+            <div class="text-steel">Categories</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2" id="sum-nominees">—</div>
+            <div class="text-steel">Nominees</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2" id="sum-votes">—</div>
+            <div class="text-steel">Total Votes</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2">5 Dec</div>
+            <div class="text-steel">Announcement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import { getAwardResults } from '../../lib/api.js';
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  async function loadResults() {
+    try {
+      const res = await getAwardResults();
+      if (res.status !== 'success') throw new Error(res.message || 'API error');
+
+      const data = res.data;
+      const container = document.getElementById('results-container');
+      const intro = document.getElementById('results-intro');
+
+      if (!data.published) {
+        intro.textContent = data.message || 'Results have not been published yet. Check back after December 5, 2026 at 18:00 EAT.';
+        container.innerHTML = `
+          <div class="text-center py-16">
+            <div class="text-6xl mb-6">🗳️</div>
+            <h2 class="text-heading-3 text-ink mb-4">Voting in Progress</h2>
+            <p class="text-body-md text-steel max-w-xl mx-auto">
+              Results will be announced on <strong>December 5, 2026 at 18:00 EAT</strong>.
+              In the meantime, browse categories and cast your vote!
+            </p>
+            <a href="/awards" class="btn btn-primary mt-6">Browse Categories</a>
+          </div>
+        `;
+        return;
+      }
+
+      const results = data.results || [];
+      intro.textContent = 'Congratulations to all the outstanding nominees and winners! The results were announced on December 5, 2026 at the gala in Nairobi.';
+
+      if (!results.length) {
+        container.innerHTML = '<div class="text-center text-steel py-12">No results available.</div>';
+        return;
+      }
+
+      const totalVotesAll = results.reduce((sum, r) => sum + (r.total_votes || 0), 0);
+      const categoriesWithWinners = results.filter(r => r.winner).length;
+
+      container.innerHTML = `
+        <div class="mb-8">
+          <h2 class="text-heading-3 text-ink mb-2">Winners by Category</h2>
+          <p class="text-body-md text-steel">Full ranked results with vote totals. Winners are highlighted with a gold badge.</p>
+        </div>
+        <div class="space-y-6">
+          ${results.map(result => {
+            if (!result.winner) {
+              return `
+                <div class="card-base p-6" id="${escapeHtml(result.slug)}">
+                  <div class="mb-4"><h3 class="text-heading-5 text-ink">${escapeHtml(result.category)}</h3></div>
+                  <p class="text-body-sm text-steel">No votes were cast in this category.</p>
+                </div>
+              `;
+            }
+            const w = result.winner;
+            const pct = w.percentage ? w.percentage.toFixed(1) : '0.0';
+            return `
+              <div class="card-base p-6" id="${escapeHtml(result.slug)}">
+                <div class="mb-4"><h3 class="text-heading-5 text-ink">${escapeHtml(result.category)}</h3></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div class="md:col-span-2">
+                    <div class="flex gap-5 p-4 bg-accent/5 border-2 border-accent rounded-xl relative">
+                      <div class="absolute -top-3 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">WINNER</div>
+                      ${w.photo
+                        ? `<img src="${escapeHtml(w.photo)}" alt="${escapeHtml(w.name)}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />`
+                        : `<div class="w-20 h-20 rounded-lg bg-hairline flex items-center justify-center text-steel text-xs flex-shrink-0">No photo</div>`}
+                      <div>
+                        <h4 class="text-heading-5 text-ink mb-1">${escapeHtml(w.name)}</h4>
+                        <div class="text-sm text-steel">
+                          <span class="font-semibold">${(w.votes || 0).toLocaleString()}</span> votes
+                          <span class="text-hairline mx-2">•</span>
+                          <span>${pct}% of total</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-center items-center bg-surface rounded-xl p-6">
+                    <div class="text-4xl font-bold text-ink mb-2">${(w.votes || 0).toLocaleString()}</div>
+                    <div class="text-sm text-steel text-center">Votes for winner</div>
+                    <div class="mt-4 text-sm text-steel">
+                      Total votes: <span class="font-semibold text-ink">${(result.total_votes || 0).toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+
+      // Populate summary stats
+      const summary = document.getElementById('summary-stats');
+      summary.classList.remove('hidden');
+      document.getElementById('sum-categories').textContent = results.length;
+      document.getElementById('sum-votes').textContent = totalVotesAll.toLocaleString();
+    } catch (err) {
+      console.error('Results load error:', err);
+      document.getElementById('results-intro').textContent = 'Unable to load results. Please try again later.';
+      document.getElementById('results-container').innerHTML =
+        '<div class="text-center text-brand-error py-12">Failed to load results.</div>';
+    }
+  }
+
+  loadResults();
+</script>
