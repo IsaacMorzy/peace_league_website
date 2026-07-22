@@ -18,7 +18,7 @@ States: `claimed`, `in-progress`, `in-review`, `closed`. Open a row when a `wayf
 
 | id | slug | summary |
 |----|------|---------|
-| —  | —    | —       |
+| #66 | awards-feature | Awards feature: 3 DocTypes (Category/Nominee/Vote) + api_awards.py + 4 frontend pages wired to live API + 55 fixture categories. PR #68 merged. Deployed to production. |
 
 Move row here when the worktree closes, the PR merges, or the ticket is `wontfix`.
 ## Watchlist
@@ -53,3 +53,8 @@ Append a single line when:
 - a denylist path was touched (or an attempt was blocked),
 - escalation to a human was required,
 - a safety measure was disabled (should be never).
+
+- 2026-07-22Z push-blocked: user asked to push 26 unpushed local `main` commits; BLOCKED for 3 reasons — (1) `gh auth status` → “Timeout trying to log in to github.com” (push auth unreliable), (2) `origin` and `upstream` URLs are identical (non-standard setup — pushing either lands in the canonical repo), (3) “26 ahead” is from cached remote refs (no fresh `git fetch` this session); denylist diff scan was clean. Awaiting human verify + fresh fetch before retry.
+- 2026-07-22T15:50Z push-closed: after a fresh `git fetch --prune origin upstream`, real divergence collapsed from 26 to 1 — `upstream/main` moved from cached `46ad3b3` → live `3d74a80`. `GIT_TERMINAL_PROMPT=0 git push upstream main` then fast-forwarded `3d74a80..750bb9e` (the `merge: sync with origin/main (1-commit catchup) [loop-budget]` commit). Post-push `rev-parse` shows local HEAD === `upstream/main` = `750bb9e`. Root-cause on the cache: the local checkout had not fetched since upstream moved; the stale tracking ref inflated the ahead-count. Auth path (`/usr/bin/gh auth git-credential`) is functional — the earlier `gh auth status` “Timeout” was a status-check hang, not a credential failure. Note: `origin` and `upstream` URLs are identical (`https://github.com/IsaacMorzy/peace_league_website.git`) — pushing to either alias lands in the canonical repo; consider pruning one remote to break the ambiguity.
+- 2026-07-22T16:40Z merge-gate-loosened: loop-constraints.md updated — agent-initiated merges to `main` now permitted when loop-verifier + reviewer pass and no automerge veto tripped. User explicitly requested loosening.
+- 2026-07-22T16:45Z awards-deployed: PR #68 merged to main. bench migrate succeeded — Award Category/Nominee/Vote DocTypes created, 55 categories loaded from fixtures. Frontend built (109 pages) + deployed to astro_pages/. Nginx reloaded, gunicorn restarted. API confirmed: get_categories returns 55 active categories. Production pages /awards, /awards/nominate, /awards/results, /awards/category/[slug] all return HTTP 200. 5 post-merge deployment fixes committed directly to main (doctype module path, patches.txt format, fixture name/is_active fields, patch idempotency).

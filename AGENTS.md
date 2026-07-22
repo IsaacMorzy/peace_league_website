@@ -37,6 +37,16 @@ Local stubs in `.agents/skills/`. Globals live in `~/.agents/skills/`.
 | `fixing-metadata` | Title / OG / Twitter / canonical / favicon / JSON-LD / robots. |
 | `fixing-motion-performance` | Animation perf (compositor props, scroll-linked motion, blur). |
 
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked via GitHub Issues using the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context layout with `CONTEXT.md` at the repo root and ADRs in `docs/adr/`. See `docs/agents/domain.md`.
+
 ## Workflow
 
 **Scope:** standard tasks (frontend, backend, features, docs). **Skim:** Ponytail's trivial ceiling (one-liner, no parser, no money, no permissions) skips the tests-first and map steps and proceeds straight to branch/fix/ship.

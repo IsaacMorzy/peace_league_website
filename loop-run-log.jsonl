@@ -1,2 +1,4 @@
 {"run_id":"2026-07-17T20:35Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"32a19a1","scope":"none"}
 {"run_id":"2026-07-17T18:25:49Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"04624eca58c8","scope":"none"}
+{"run_id":"2026-07-22T15:50Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"750bb9e","scope":"none"}
+{"run_id":"2026-07-22T16:45Z","pattern":"adhoc","outcome":"closed","actions_taken":15,"slur_sha":"89a52d0","scope":"#66"}
