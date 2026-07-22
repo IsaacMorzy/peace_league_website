@@ -10,3 +10,6 @@
 {"run_id":"2026-07-22T08:38Z","pattern":"daily","outcome":"fix-proposed","actions_taken":1,"slur_sha":"14f6560d505c729a6ed38be47ffa41","scope":"design/tier1-404-validation"}
 {"run_id":"2026-07-22T08:40Z","pattern":"daily","outcome":"fix-proposed","actions_taken":1,"slur_sha":"61717b4893d17a19841b777272c3d66c31936266","scope":"design/tier1-faq"}
 {"run_id":"2026-07-22T08:55Z","pattern":"daily","outcome":"fix-proposed","actions_taken":2,"slur_sha":"164cf34","scope":"design/batch5-merge-resolve","notes":"merge resolved: ort auto-merge dropped main 6 daily-run entries from loop-run-log.jsonl (data-loss); wrote 8-entry union ordered by run_id and amended merge commit; dedup'd privacy.astro trailing comment. PR #49 ready for human merge gate."}
+{"run_id":"2026-07-22T17:15Z","pattern":"daily","outcome":"closed","actions_taken":2,"slur_sha":"a9437ff4b6e335f215bb3fb4efe091c10391b1d3","scope":"#61,#60,awards-enhancements"}
+{"run_id":"2026-07-22T17:38Z","pattern":"pr","outcome":"fix-proposed","actions_taken":1,"slur_sha":"d70ba94","scope":"test/awards-api"}
+{"run_id":"2026-07-22T17:38Z","pattern":"pr","outcome":"fix-proposed","actions_taken":1,"slur_sha":"e597324","scope":"feat/terms-design"}

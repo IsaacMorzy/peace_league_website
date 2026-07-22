@@ -11,6 +11,11 @@ Working state for the loop engineering workflow. Append-only between runs. Read 
 | id | slug | branch | worktree | state | commit | opener | closer |
 |----|------|--------|----------|-------|--------|--------|--------|
 | —  | —    | —      | —        | —     | —      | —      | —      |
+| #46 | terms-design | scratch/terms-design | wt-terms-design | in-review | e597324 | agent | — |
+| #45 | privacy-design | feature/design-privacy | wt-privacy-design-2026-07-22 | in-review | b645eea | agent | — |
+| #44 | sitemap-design | feature/design-sitemap | wt-sitemap-design-2026-07-22 | in-review | 36e642e | agent | — |
+| #43 | 404-design | feature/design-404 | wt-404-design-2026-07-22 | in-review | 63fdeb5 | agent | — |
+| —  | awards-api-tests | scratch/awards-api-tests | wt-awards-api-tests | in-review | d70ba94 | agent | — |
 
 States: `claimed`, `in-progress`, `in-review`, `closed`. Open a row when a `wayfinder:grilling` / `wayfinder:task` ticket is assigned.
 
