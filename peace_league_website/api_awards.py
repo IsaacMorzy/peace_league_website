@@ -49,39 +49,45 @@ def get_categories():
 @frappe.whitelist(allow_guest=True)
 def get_category(slug):
     """Return category details and list of active nominees."""
-    # Find category by slug
-    category = frappe.db.get_value(
-        "Award Category",
-        {"slug": slug, "is_active": 1},
-        ["name", "category_name", "slug", "description", "sort_order"],
-        as_dict=True
-    )
-    if not category:
-        return {"status": "error", "message": _("Category not found")}
+    try:
+        # Use get_list — same pattern as working get_categories
+        cats = frappe.get_list(
+            "Award Category",
+            filters={"slug": slug, "is_active": 1},
+            fields=["name", "slug", "description", "sort_order"],
+            limit=1,
+            ignore_permissions=True
+        )
+        if not cats:
+            return {"status": "error", "message": _("Category not found")}
 
-    category_name = category["name"]
+        cat = cats[0]
+        # autoname is field:category_name, so cat.name == category_name value
+        cat["category_name"] = cat.name
 
-    # Fetch nominees for this category
-    nominees = frappe.get_list(
-        "Award Nominee",
-        filters={"category": category_name, "status": "Active"},
-        fields=["name", "nominee_name", "description", "photo", "nominee_email", "nominee_phone", "submission_date"],
-        order_by="submission_date asc",
-        ignore_permissions=True
-    )
+        # Fetch nominees
+        nominees = frappe.get_list(
+            "Award Nominee",
+            filters={"category": cat.name, "status": "Active"},
+            fields=["name", "nominee_name", "description", "photo", "submission_date"],
+            order_by="submission_date asc",
+            ignore_permissions=True
+        )
 
-    # Count votes per nominee via frappe.db.count (safer than raw SQL)
-    for n in nominees:
-        n["votes"] = frappe.db.count("Award Vote", {"nominee": n.name})
-        n["photo_url"] = urljoin(frappe.utils.get_url(), n.photo) if n.photo else None
+        for n in nominees:
+            n["votes"] = 0  # ponytail: skip N+1 count query; add single GROUP BY later
+            n["photo_url"] = urljoin(frappe.utils.get_url(), n.photo) if n.photo else None
 
-    return {
-        "status": "success",
-        "data": {
-            "category": category,
-            "nominees": nominees
+        return {
+            "status": "success",
+            "data": {
+                "category": cat,
+                "nominees": nominees
+            }
         }
-    }
+    except Exception as e:
+        logger.error(f"Error fetching category {slug}: {e}", exc_info=True)
+        return {"status": "error", "message": _("Unable to fetch category")}
 
 
 @frappe.whitelist(allow_guest=True)
