@@ -74,8 +74,24 @@ def get_category(slug):
             ignore_permissions=True
         )
 
+        # Aggregate vote counts in a single query to avoid N+1
+        nominee_names = [n.name for n in nominees]
+        vote_counts = {}
+        if nominee_names:
+            counts = frappe.db.sql(
+                """
+                SELECT nominee, COUNT(*) as cnt
+                FROM `tabAward Vote`
+                WHERE nominee IN %s
+                GROUP BY nominee
+                """,
+                [nominee_names],
+                as_dict=True
+            )
+            vote_counts = {vc.nominee: vc.cnt for vc in counts}
+
         for n in nominees:
-            n["votes"] = 0  # ponytail: skip N+1 count query; add single GROUP BY later
+            n["votes"] = vote_counts.get(n.name, 0)
             n["photo_url"] = urljoin(frappe.utils.get_url(), n.photo) if n.photo else None
 
         return {
