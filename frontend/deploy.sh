@@ -19,7 +19,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FRONTEND_DIR="${SCRIPT_DIR}"                                      # .../frontend/
 APP_DIR="$(cd "${FRONTEND_DIR}/.." && pwd)"                      # .../peace_league_website/
-BENCH_DIR="$(cd "${APP_DIR}/.." && pwd)"                         # .../frappe-bench/
+BENCH_DIR="$(cd "${APP_DIR}/../.." && pwd)"                         # .../frappe-bench/ (apps/<app>/../../)
 APP_NAME="$(basename "${APP_DIR}")"                              # peace_league_website
 
 PROD=0
