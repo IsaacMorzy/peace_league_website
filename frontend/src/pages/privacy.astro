@@ -4,6 +4,12 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
+---
+const orgUrl = "https://peaceleagueafrica.org";
+const lastUpdatedISO = "2026-05-30";
+const lastUpdatedDisplay = new Date(lastUpdatedISO).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+---
+
 <Layout title="Privacy Policy" description="Peace League Africa Privacy Policy. How we collect, use, and protect your personal information.">
   <Navigation />
   
@@ -15,7 +21,7 @@ import Footer from '../components/Footer.astro';
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Privacy Policy</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">Last updated: January 2026</p>
+        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">Last updated: {lastUpdatedDisplay}</p>
       </div>
       <div class="geometric-shapes" aria-hidden="true">
         <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
@@ -83,5 +89,24 @@ import Footer from '../components/Footer.astro';
     </section>
   </main>
 
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "PrivacyPolicy",
+      "name": "Peace League Africa Privacy Policy",
+      "url": orgUrl + "/privacy",
+      "datePublished": "2026-01-15",
+      "dateModified": lastUpdatedISO,
+      "isPartOf": { "@type": "WebSite", "name": "Peace League Africa", "url": orgUrl },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Peace League Africa",
+        "url": orgUrl,
+        "logo": orgUrl + "/logo.png"
+      }
+    })} />
+
   <Footer />
 </Layout>
+
+<!-- keep dateModified in JSON-LD in sync with last policy text edit -->
+<!-- keep dateModified in JSON-LD in sync with last policy text edit -->

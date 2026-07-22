@@ -2,3 +2,11 @@
 {"run_id":"2026-07-17T18:25:49Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"04624eca58c8","scope":"none"}
 {"run_id":"2026-07-22T15:50Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"750bb9e","scope":"none"}
 {"run_id":"2026-07-22T16:45Z","pattern":"adhoc","outcome":"closed","actions_taken":15,"slur_sha":"89a52d0","scope":"#66"}
+{"run_id":"2026-07-17T19:50Z","pattern":"ui-skill-batch-5","outcome":"closed","actions_taken":3,"slur_sha":"ae3efd6","scope":"none","notes":"batch-5 close: careers.astro JobPosting JSON-LD (5-country applicantLocationRequirements), privacy.astro PrivacyPolicy WebPage JSON-LD, faq.astro accordion a11y (aria-controls + aria-labelledby on single button/panel). all three Layout-prop-independent so they take effect at parse time."}
+{"run_id":"2026-07-22T07:45Z","pattern":"daily","outcome":"fix-proposed","actions_taken":4,"slur_sha":"384e435","scope":"chore/domain-org-swap"}
+{"run_id":"2026-07-22T08:06Z","pattern":"daily","outcome":"fix-proposed","actions_taken":3,"slur_sha":"c8d6032315b86743484c56e25fff56914f2f497d","scope":"chore/domain-org-multi"}
+{"run_id":"2026-07-22T08:12Z","pattern":"daily","outcome":"fix-proposed","actions_taken":2,"slur_sha":"b645eea5fdb5368c0987dc47efd26eeff09c6620","scope":"design/tier1-privacy"}
+{"run_id":"2026-07-22T08:31Z","pattern":"daily","outcome":"fix-proposed","actions_taken":1,"slur_sha":"a6cc0c0a96c8dc89200a6adda0ec58731fb54260","scope":"design/tier1-sitemap"}
+{"run_id":"2026-07-22T08:38Z","pattern":"daily","outcome":"fix-proposed","actions_taken":1,"slur_sha":"14f6560d505c729a6ed38be47ffa41","scope":"design/tier1-404-validation"}
+{"run_id":"2026-07-22T08:40Z","pattern":"daily","outcome":"fix-proposed","actions_taken":1,"slur_sha":"61717b4893d17a19841b777272c3d66c31936266","scope":"design/tier1-faq"}
+{"run_id":"2026-07-22T08:55Z","pattern":"daily","outcome":"fix-proposed","actions_taken":2,"slur_sha":"164cf34","scope":"design/batch5-merge-resolve","notes":"merge resolved: ort auto-merge dropped main 6 daily-run entries from loop-run-log.jsonl (data-loss); wrote 8-entry union ordered by run_id and amended merge commit; dedup'd privacy.astro trailing comment. PR #49 ready for human merge gate."}

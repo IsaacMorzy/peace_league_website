@@ -76,11 +76,11 @@ const faqs = [
         <div class="space-y-3" id="faq-container">
           {faqs.map((faq, idx) => (
             <div class="scroll-reveal faq-item bg-canvas rounded-2xl border border-hairline transition-all duration-300 hover:shadow-md" style={`animation-delay: ${idx * 40}ms`}>
-              <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-surface/50 transition-colors rounded-lg min-h-[44px]" aria-expanded="false">
+              <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-surface/50 transition-colors rounded-lg min-h-[44px]" aria-expanded="false" aria-controls={`faq-answer-${idx}`} id={`faq-toggle-${idx}`}>
                 <span class="text-base font-semibold text-ink pr-4">{faq.q}</span>
                 <svg class="faq-chevron w-5 h-5 text-steel shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
-              <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+              <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300 ease-in-out" id={`faq-answer-${idx}`} role="region" aria-labelledby={`faq-toggle-${idx}`}>
                 <div class="px-6 pb-5 pt-0">
                   <p class="text-sm text-steel leading-relaxed">{faq.a}</p>
                 </div>
