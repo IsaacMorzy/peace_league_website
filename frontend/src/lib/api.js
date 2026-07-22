@@ -26,6 +26,11 @@ async function apiCall(endpoint, options = {}) {
       throw new Error(data.message || `HTTP ${response.status}`);
     }
     
+    // Frappe wraps API responses in {"message": {...}}, unwrap it
+    if (data.message && typeof data.message === 'object' && data.message.status) {
+      return data.message;
+    }
+    
     return data;
   } catch (error) {
     console.error('API Error:', error);

@@ -48,57 +48,40 @@ def get_categories():
 
 @frappe.whitelist(allow_guest=True)
 def get_category(slug):
-    """Return category details and list of active nominees with their vote counts."""
-    try:
-        # Find category by slug
-        category_name = frappe.db.get_value("Award Category", {"slug": slug}, "name")
-        if not category_name:
-            return {"status": "error", "message": _("Category not found")}
+    """Return category details and list of active nominees."""
+    # Find category by slug
+    category = frappe.db.get_value(
+        "Award Category",
+        {"slug": slug, "is_active": 1},
+        ["name", "category_name", "slug", "description", "sort_order"],
+        as_dict=True
+    )
+    if not category:
+        return {"status": "error", "message": _("Category not found")}
 
-        category = frappe.get_doc("Award Category", category_name)
+    category_name = category["name"]
 
-        # Count votes per nominee in this category
-        # Using raw SQL for aggregation
-        votes_query = """
-            SELECT nominee, COUNT(*) as vote_count
-            FROM `tabAward Vote`
-            WHERE category = %s
-            GROUP BY nominee
-        """
-        vote_counts = frappe.db.sql(votes_query, category_name, as_dict=True)
-        vote_map = {v.nominee: v.vote_count for v in vote_counts}
+    # Fetch nominees for this category
+    nominees = frappe.get_list(
+        "Award Nominee",
+        filters={"category": category_name, "status": "Active"},
+        fields=["name", "nominee_name", "description", "photo", "nominee_email", "nominee_phone", "submission_date"],
+        order_by="submission_date asc",
+        ignore_permissions=True
+    )
 
-        # Fetch nominees for this category (status Active)
-        nominees = frappe.get_list(
-            "Award Nominee",
-            filters={"category": category_name, "status": "Active"},
-            fields=["name", "nominee_name", "description", "photo", "nominee_email", "nominee_phone", "submission_date"],
-            order_by="submission_date asc",
-            ignore_permissions=True
-        )
+    # Count votes per nominee via frappe.db.count (safer than raw SQL)
+    for n in nominees:
+        n["votes"] = frappe.db.count("Award Vote", {"nominee": n.name})
+        n["photo_url"] = urljoin(frappe.utils.get_url(), n.photo) if n.photo else None
 
-        # Attach vote counts
-        for n in nominees:
-            n["votes"] = vote_map.get(n.name, 0)
-            # Build photo URL if present
-            if n.photo:
-                # In Frappe, Attach Image field returns something like "/files/photo.jpg"
-                # We need to prepend the site URL and possibly the private path if private?
-                # Assuming public files
-                n["photo_url"] = urljoin(frappe.utils.get_url(), n.photo)
-            else:
-                n["photo_url"] = None
-
-        return {
-            "status": "success",
-            "data": {
-                "category": category.as_dict(),
-                "nominees": nominees
-            }
+    return {
+        "status": "success",
+        "data": {
+            "category": category,
+            "nominees": nominees
         }
-    except Exception as e:
-        logger.error(f"Error fetching category {slug}: {e}", exc_info=True)
-        return {"status": "error", "message": _("Unable to fetch category")}
+    }
 
 
 @frappe.whitelist(allow_guest=True)
