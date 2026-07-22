@@ -1,0 +1,198 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+// In production, fetch category + nominees from Frappe API based on slug
+const category = {
+  name: 'Peace Ambassador for Fighting Radicalism and Terrorism',
+  description: 'Recognizing individuals who have made exceptional contributions to countering violent extremism and promoting peaceful coexistence.',
+  slug: 'peace-ambassador'
+};
+
+// Mock nominees - will come from API
+const nominees = [
+  {
+    id: '1',
+    name: 'Dr. Amina Mohamed',
+    org: 'Peace Builders Kenya',
+    description: 'For her groundbreaking work in deradicalization programs in Mombasa and Nairobi, rehabilitating over 200 youth.',
+    photo: '/assets/images/awards/nominee-1.jpg',
+    votes: 1243,
+    hasVoted: false // will be determined by user's IP/cookie
+  },
+  {
+    id: '2',
+    name: 'Sheikh Ibrahim Njoroge',
+    org: 'Interfaith Council of Kenya',
+    description: 'For promoting interfaith dialogue and countering extremist narratives through community outreach in Central Kenya.',
+    photo: '/assets/images/awards/nominee-2.jpg',
+    votes: 987,
+    hasVoted: false
+  },
+  // ... more nominees
+];
+---
+
+<Layout title={`${category.name} | Awards`} description={`Vote for the ${category.name} nominee.`}>
+  <Navigation />
+
+  <main id="main-content" class="min-h-screen">
+    <!-- Breadcrumb -->
+    <nav class="bg-surface py-3 px-4 sm:px-6 lg:px-8 text-sm text-steel">
+      <div class="max-w-7xl mx-auto">
+        <a href="/awards" class="hover:text-accent">Awards</a>
+        <span class="mx-2">/</span>
+        <span class="text-ink">{category.name}</span>
+      </div>
+    </nav>
+
+    <!-- Category Header -->
+    <section class="bg-canvas py-8 px-4 sm:px-6 lg:px-8 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl">
+          <h1 class="text-heading-2 text-ink mb-4">{category.name}</h1>
+          <p class="text-body-md text-steel">{category.description}</p>
+          <div class="mt-4 text-sm text-steel">
+            Voting closes: <strong class="text-ink">December 5, 2026 at 00:00 EAT</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nominees Grid -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-6 flex justify-between items-center">
+          <h2 class="text-heading-4 text-ink">Nominees ({nominees.length})</h2>
+          <div class="text-sm text-steel">
+            Voting is open to everyone • One vote per category
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {nominees.map((nominee) => (
+            <div class="card-base p-6" id={`nominee-${nominee.id}`}>
+              <div class="flex gap-6">
+                <!--Photo -->
+                <div class="flex-shrink-0">
+                  <img src={nominee.photo} alt={nominee.name} class="w-24 h-24 object-cover rounded-lg bg-surface" />
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 min-w-0">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-heading-5 text-ink mb-1">{nominee.name}</h3>
+                      <p class="text-body-sm text-accent mb-2">{nominee.org}</p>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-2xl font-bold text-ink">{nominee.votes.toLocaleString()}</div>
+                      <div class="text-xs text-steel uppercase tracking-wide">Votes</div>
+                    </div>
+                  </div>
+
+                  <p class="text-body-sm text-steel my-4 line-clamp-3">{nominee.description}</p>
+
+                  <!-- Vote Button -->
+                  <div class="mt-auto">
+                    {nominee.hasVoted ? (
+                      <div class="text-sm text-green-600 font-medium flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        You voted for this nominee
+                      </div>
+                    ) : (
+                      <button
+                        class="btn btn-primary"
+                        data-nominee-id={nominee.id}
+                        data-category-slug={category.slug}
+                        onclick="castVote(this)"
+                      >
+                        Vote for this nominee
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for captured vote confirmation -->
+    <div id="vote-modal" class="fixed inset-0 z-50 hidden" aria-modal="true" role="dialog">
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeVoteModal()"></div>
+      <div class="absolute inset-0 flex items-center justify-center p-4">
+        <div class="bg-canvas rounded-xl max-w-md w-full p-6 shadow-2xl">
+          <h3 class="text-heading-5 text-ink mb-4">Vote Confirmed</h3>
+          <p class="text-body-md text-steel mb-6">Your vote has been recorded. Thank you for participating in the Peace League Awards.</p>
+          <button class="btn btn-primary w-full" onclick="closeVoteModal()">Continue Browsing</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Simple vote casting - will be replaced with Frappe API call
+  async function castVote(button) {
+    const nomineeId = button.dataset.nomineeId;
+    const categorySlug = button.dataset.categorySlug;
+
+    // Disable button during request
+    button.disabled = true;
+    button.textContent = 'Submitting...';
+
+    try {
+      // TODO: Replace with actual Frappe endpoint
+      const API_BASE = import.meta.env.PUBLIC_API_URL || '';
+      const response = await fetch(`${API_BASE}/api/method/peace_league_website.api_awards.cast_vote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nominee_id: nomineeId,
+          category_slug: categorySlug,
+          // In production, identify voter via IP + optional email
+        })
+      });
+
+      if (response.ok) {
+        // Update UI
+        const card = button.closest('[id^="nominee-"]');
+        const voteCountEl = card.querySelector('.text-2xl.font-bold');
+        const currentVotes = parseInt(voteCountEl.textContent.replace(/,/g, ''));
+        voteCountEl.textContent = (currentVotes + 1).toLocaleString();
+
+        const votedEl = document.createElement('div');
+        votedEl.className = 'text-sm text-green-600 font-medium flex items-center gap-2';
+        votedEl.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> You voted for this nominee';
+        button.replaceWith(votedEl);
+
+        // Show modal
+        document.getElementById('vote-modal').classList.remove('hidden');
+      } else {
+        alert('Failed to cast vote. Please try again.');
+        button.disabled = false;
+        button.textContent = 'Vote for this nominee';
+      }
+    } catch (err) {
+      console.error('Vote error:', err);
+      alert('Network error. Please try again.');
+      button.disabled = false;
+      button.textContent = 'Vote for this nominee';
+    }
+  }
+
+  function closeVoteModal() {
+    document.getElementById('vote-modal').classList.add('hidden');
+  }
+</script>

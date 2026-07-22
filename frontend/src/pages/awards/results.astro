@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// Will be fetched from API; only populated after Dec 5, 2026 18:00 EAT
+const results = [
+  {
+    category: 'Peace Ambassador for Fighting Radicalism and Terrorism',
+    slug: 'peace-ambassador',
+    winner: {
+      name: 'Dr. Amina Mohamed',
+      org: 'Peace Builders Kenya',
+      photo: '/assets/images/awards/nominee-1.jpg',
+      votes: 1243,
+      totalVotes: 2034
+    }
+  },
+  // ... all 62 categories
+];
+---
+
+<Layout title="Awards Results" description="View the winners of the 2026 Peace League Africa Awards. Full ranked results with vote totals across 62 categories.">
+  <Navigation />
+
+  <main id="main-content" class="min-h-screen">
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-accent/10 to-surface py-section text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent font-semibold text-sm mb-4">
+          🏆 2026 Winners
+        </div>
+        <h1 class="text-heading-2 text-ink mb-4">Peace League Africa Awards Results</h1>
+        <p class="text-body-md text-steel max-w-2xl mx-auto mb-6">
+          Congratulations to all the outstanding nominees and winners! The results were announced on December 5, 2026 at the gala in Nairobi.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a href="/awards" class="btn btn-secondary">Back to Categories</a>
+          <a href="/awards/results?download=pdf" class="btn btn-primary">Download Full Report</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results List -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-8">
+          <h2 class="text-heading-3 text-ink mb-2">Winners by Category</h2>
+          <p class="text-body-md text-steel">
+            Full ranked results with vote totals. Winners are highlighted with a gold badge.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {results.map((result) => (
+            <div class="card-base p-6" id={result.slug}>
+              <div class="mb-4">
+                <h3 class="text-heading-5 text-ink">{result.category}</h3>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Winner (featured) -->
+                <div class="md:col-span-2">
+                  <div class="flex gap-5 p-4 bg-accent/5 border-2 border-accent rounded-xl relative">
+                    <div class="absolute -top-3 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                      WINNER
+                    </div>
+                    <img src={result.winner.photo} alt={result.winner.name} class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+                    <div>
+                      <h4 class="text-heading-5 text-ink mb-1">{result.winner.name}</h4>
+                      <p class="text-body-sm text-accent mb-2">{result.winner.org}</p>
+                      <div class="text-sm text-steel">
+                        <span class="font-semibold">{result.winner.votes.toLocaleString()}</span> votes
+                        <span class="text-hairline mx-2">•</span>
+                        <span>{((result.winner.votes / result.winner.totalVotes) * 100).toFixed(1)}% of total</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-col justify-center items-center bg-surface rounded-xl p-6">
+                  <div class="text-4xl font-bold text-ink mb-2">{result.winner.votes.toLocaleString()}</div>
+                  <div class="text-sm text-steel text-center">Votes for winner</div>
+                  <div class="mt-4 text-sm text-steel">
+                    Total votes: <span class="font-semibold text-ink">{result.winner.totalVotes.toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Stats -->
+    <section class="bg-surface py-section px-4 sm:px-6 lg:px-8 border-t border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-heading-3 text-ink mb-8 text-center">2026 Awards in Numbers</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2">62</div>
+            <div class="text-steel">Categories</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2">500+</div>
+            <div class="text-steel">Nominees</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2">12,000+</div>
+            <div class="text-steel">Total Votes</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-accent mb-2">5 Dec</div>
+            <div class="text-steel">Announcement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -11,7 +11,10 @@ async function apiCall(endpoint, options = {}) {
 
   const config = { ...defaultOptions, ...options };
 
-  if (config.body && typeof config.body === 'object') {
+  if (config.body instanceof FormData) {
+    // Let the browser set multipart/form-data Content-Type with boundary
+    delete config.headers['Content-Type'];
+  } else if (config.body && typeof config.body === 'object') {
     config.body = JSON.stringify(config.body);
   }
 

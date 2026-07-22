@@ -37,3 +37,6 @@ frontend/test-results/
 # Loop scratch — local-only working area (worktrees, throwaway prototypes).
 # See AGENTS.md § Workflow step 2 and loop-constraints.md § Scratch Lane.
 /.scratch/
+
+# In-root worktrees (git worktree add ./wt-<slug>)
+/wt-*/
