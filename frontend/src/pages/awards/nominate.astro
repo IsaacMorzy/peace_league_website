@@ -194,7 +194,9 @@ import Footer from '../../components/Footer.astro';
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   Submit Nomination
                 </button>
-                <input type="hidden" name="recaptcha_token" id="recaptcha-token" value="" />
+                <!-- Turnstile widget — rendered explicitly via JS below -->
+                <div id="turnstile-widget" class="mb-4" style="min-height:65px"></div>
+                <input type="hidden" name="cf-turnstile-response" id="turnstile-token" value="" />
               </div>
             </div>
           </div>
@@ -408,31 +410,33 @@ import Footer from '../../components/Footer.astro';
     reader.readAsDataURL(file);
   }
 
-  // ── reCAPTCHA v3 ──
-  const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '';
-  let recaptchaLoaded = false;
+  // ── Cloudflare Turnstile ──
+  const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  let turnstileReady = false;
 
-  if (RECAPTCHA_SITE_KEY) {
-    // Dynamically load reCAPTCHA v3 script
+  // Load Turnstile API script with explicit rendering
+  if (TURNSTILE_SITE_KEY) {
+    window.onTurnstileLoad = () => {
+      if (window.turnstile) {
+        window.turnstile.render('#turnstile-widget', {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => {
+            document.getElementById('turnstile-token').value = token;
+            turnstileReady = true;
+          },
+        });
+      }
+    };
+
     const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad';
     script.async = true;
     script.defer = true;
-    script.onload = () => { recaptchaLoaded = true; };
     document.head.appendChild(script);
   }
 
-  async function getRecaptchaToken() {
-    if (!RECAPTCHA_SITE_KEY || !recaptchaLoaded || typeof grecaptcha === 'undefined') {
-      return '';
-    }
-    try {
-      const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'nominate' });
-      return token;
-    } catch (e) {
-      console.warn('reCAPTCHA token error:', e);
-      return '';
-    }
+  function getTurnstileToken() {
+    return document.getElementById('turnstile-token').value || '';
   }
 
   // Form submission
@@ -443,10 +447,16 @@ import Footer from '../../components/Footer.astro';
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
-    // Get reCAPTCHA token and append to form data
-    const token = await getRecaptchaToken();
+    // Get Turnstile token — already set via hidden input from callback
+    const token = getTurnstileToken();
+    if (TURNSTILE_SITE_KEY && !token) {
+      alert('Please complete the security verification.');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
+      return;
+    }
     if (token) {
-      formData.set('recaptcha_token', token);
+      formData.set('cf-turnstile-response', token);
     }
 
     try {

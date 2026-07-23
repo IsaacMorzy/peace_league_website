@@ -27,43 +27,43 @@ logger = frappe.logger("awards", allow_site=True, file_count=5)
 
 # Anti-fraud settings
 VOTE_LIMIT_PER_IP = 10  # max categories an IP can vote in
-RECAPTCHA_SECRET = frappe.conf.get("recaptcha_secret_key") or ""  # set in site config
-RECAPTCHA_SITE_KEY = frappe.conf.get("recaptcha_site_key") or ""  # set in site config
+TURNSTILE_SECRET_KEY = frappe.conf.get("turnstile_secret_key") or ""  # set in site config
 
 
-def verify_recaptcha(token):
-    """Verify a reCAPTCHA v3 token with Google's API.
+def verify_turnstile(token):
+    """Verify a Cloudflare Turnstile token with Cloudflare's API.
 
-    Returns True if the token is valid and score >= 0.5.
-    Falls back to allowing the request if RECAPTCHA_SECRET is not configured,
-    so the site works in dev/CI without reCAPTCHA keys.
+    Returns True if the token is valid.
+    Falls back to allowing the request if TURNSTILE_SECRET_KEY is not configured,
+    so the site works in dev/CI without Turnstile keys.
     """
-    if not RECAPTCHA_SECRET:
-        logger.info("reCAPTCHA not configured — skipping verification.")
+    if not TURNSTILE_SECRET_KEY:
+        logger.info("Turnstile not configured — skipping verification.")
         return True
     if not token:
-        logger.warning("reCAPTCHA token missing.")
+        logger.warning("Turnstile token missing.")
         return False
 
     try:
         import requests as http
         resp = http.post(
-            "https://www.google.com/recaptcha/api/siteverify",
-            data={"secret": RECAPTCHA_SECRET, "response": token},
+            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            data={
+                "secret": TURNSTILE_SECRET_KEY,
+                "response": token,
+                "remoteip": frappe.request.remote_addr if frappe.request else "",
+            },
             timeout=10,
         )
         result = resp.json()
         success = result.get("success", False)
-        score = result.get("score", 0)
         if not success:
-            logger.warning(f"reCAPTCHA verification failed: {result.get('error-codes', [])}")
-            return False
-        if score < 0.5:
-            logger.warning(f"reCAPTCHA score too low: {score}")
+            error_codes = result.get("error-codes", [])
+            logger.warning(f"Turnstile verification failed: {error_codes}")
             return False
         return True
     except Exception as e:
-        logger.error(f"reCAPTCHA request error: {e}")
+        logger.error(f"Turnstile request error: {e}")
         # Fallback: allow on network error (don't block legitimate users for transient issues)
         return True
 
@@ -179,7 +179,7 @@ def create_nomination():
     - nominee_phone (str, optional)
     - nominator_name (str, optional)
     - nominator_email (str, optional)
-    - recaptcha_token (str) optional for future
+    - cf-turnstile-response (str) Cloudflare Turnstile token
     """
     try:
         # Get form fields
@@ -214,9 +214,9 @@ def create_nomination():
         if not category_name:
             return {"status": "error", "message": _("Selected category is not active or does not exist")}
 
-        # reCAPTCHA v3 verification
-        recaptcha_token = frappe.form_dict.get("recaptcha_token")
-        if not verify_recaptcha(recaptcha_token):
+        # Cloudflare Turnstile verification
+        turnstile_token = frappe.form_dict.get("cf-turnstile-response")
+        if not verify_turnstile(turnstile_token):
             return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Create Award Nominee document ──
