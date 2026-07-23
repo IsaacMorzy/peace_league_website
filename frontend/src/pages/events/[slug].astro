@@ -92,13 +92,13 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
             <!-- CTA + Calendar buttons -->
             <div class="flex flex-wrap gap-4" data-magnetic-container>
               {!isPast && (
-                <a href="#booking-form" class="magnetic-btn group inline-flex items-center gap-2 px-6 py-3 bg-accent btn-text-contrast font-semibold rounded-full shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40 hover:bg-accent-deep transition-all duration-300 btn-ripple" data-magnet-strength="0.35">
+                <a href="#booking-form" class="btn btn-accent btn-large btn-ripple group shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40" data-magnet-strength="0.35">
                   Register Now
                   <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
               )}
               {isPast && (
-                <a href="/events" class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
+                <a href="/events" class="btn btn-large bg-white/10 text-white border border-white/10 backdrop-blur-sm">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                   See Upcoming Events
                 </a>
@@ -118,7 +118,7 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
                 data-capacity={event.capacity}
                 data-price={event.price}
                 data-slug={event.slug}
-                class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 text-white/80 font-medium rounded-full hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10 text-sm">
+                class="btn btn-large bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Add to Calendar
               </a>
@@ -274,7 +274,7 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
 
               {!isPast && (
                 <div class="mt-6 pt-6 border-t border-hairline">
-                  <a href="#booking-form" class="magnetic-btn group w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all btn-ripple shadow-lg shadow-accent/20" data-magnet-strength="0.35">
+                  <a href="#booking-form" class="btn btn-accent btn-large btn-ripple group w-full shadow-lg shadow-accent/20" data-magnet-strength="0.35">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     Register Now
                   </a>
@@ -460,8 +460,7 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
             <div class="pt-2">
               <button
                 type="submit"
-                class="btn-ripple magnetic-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all shadow-xl shadow-accent/20 hover:shadow-2xl hover:shadow-accent/30 text-base"
-                data-magnet-strength="0.3"
+                class="btn btn-accent btn-large btn-ripple w-full sm:w-auto shadow-xl shadow-accent/20 hover:shadow-2xl hover:shadow-accent/30"
                 id="reg-submit"
               >
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -479,11 +478,11 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
             <h3 class="text-2xl font-bold text-ink mb-2">You're Registered! &#x2728;</h3>
             <p class="text-lg text-steel mb-6 max-w-md mx-auto">Thank you for registering for <strong class="text-ink">{event.title}</strong>. We've sent a confirmation to your email with all the details.</p>
             <div class="flex flex-wrap justify-center gap-3">
-              <a href="/events" class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all">
+              <a href="/events" class="btn btn-accent">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 More Events
               </a>
-              <a href="/donate" class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-accent/30 text-accent font-semibold rounded-full hover:bg-accent/5 transition-all">
+              <a href="/donate" class="btn btn-outline-accent">
                 Support Our Work
               </a>
             </div>
@@ -552,11 +551,11 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] tracking-tight mb-4" data-reveal="up">More Ways to Build Peace</h2>
         <p class="text-lg text-white/80 mb-8 max-w-xl mx-auto" data-reveal="up">Every event is a step toward lasting peace. Explore our full calendar and find your place in this movement.</p>
         <div class="flex flex-wrap justify-center gap-4" data-reveal="up">
-          <a href="/events" class="magnetic-btn inline-flex items-center gap-2 px-6 py-3 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all shadow-xl shadow-accent/25 btn-ripple" data-magnet-strength="0.35">
+          <a href="/events" class="btn btn-accent btn-large btn-ripple shadow-xl shadow-accent/25" data-magnet-strength="0.35">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             All Events
           </a>
-          <a href="/volunteer" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/25 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+          <a href="/volunteer" class="btn btn-large border-2 border-white/25 text-white hover:bg-white/10">
             Volunteer With Us
           </a>
         </div>

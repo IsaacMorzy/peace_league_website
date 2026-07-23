@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import causes from '../../lib/causes-data.json';
+
+export function getStaticPaths() {
+  return causes.map((cause) => ({
+    params: { slug: cause.name.toLowerCase().replace(/\s+/g, '-') },
+    props: { cause },
+  }));
+}
+
+const { cause } = Astro.props;
+const percentFunded = Math.min(Math.round((cause.raised_amount / cause.goal_amount) * 100), 100);
+const remaining = cause.goal_amount - cause.raised_amount;
+const causeSlug = cause.name.toLowerCase().replace(/\s+/g, '-');
+const shareUrl = `https://peaceleagueafrica.org/causes/${causeSlug}`;
+---
+
+<Layout title={`${cause.title} — Peace League Africa`} description={cause.description}>
+  <Navigation />
+
+  <main id="main-content">
+    <!-- ════════════════════════════════
+         HERO
+         ════════════════════════════════ -->
+    <section class="relative hero-inner grain-overlay overflow-hidden min-h-[50vh] flex items-center">
+      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
+      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
+
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium text-accent-soft border border-white/10 mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            {cause.category}
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-[-1.5px] text-white mb-4">
+            {cause.title}
+          </h1>
+
+          <p class="text-lg sm:text-xl text-white/70 max-w-2xl mb-8 leading-relaxed">
+            {cause.description}
+          </p>
+
+          <!-- Stats row -->
+          <div class="flex flex-wrap gap-8 text-white/80">
+            <div>
+              <span class="text-3xl font-bold text-accent">${cause.raised_amount.toLocaleString()}</span>
+              <p class="text-xs text-white/60 mt-1">Raised of ${cause.goal_amount.toLocaleString()} goal</p>
+            </div>
+            <div class="w-px h-12 bg-white/10 self-center hidden sm:block"></div>
+            <div>
+              <span class="text-3xl font-bold text-accent">{percentFunded}%</span>
+              <p class="text-xs text-white/60 mt-1">Funded</p>
+            </div>
+            <div class="w-px h-12 bg-white/10 self-center hidden sm:block"></div>
+            <div>
+              <span class="text-3xl font-bold text-accent">{cause.donors_count}</span>
+              <p class="text-xs text-white/60 mt-1">Donors</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex flex-wrap gap-4 mt-10">
+            <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-accent btn-large btn-pulse-glow">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              Donate to This Cause
+            </a>
+            <a href="/causes" class="btn btn-large bg-white/10 text-white border border-white/20 hover:bg-white/20">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+              All Causes
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative elements -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <span class="animate-dove-drift" style="left:18%;bottom:-20%;animation-delay:0.5s;font-size:1.125rem;">&#x1F54A;</span>
+        <span class="animate-dove-drift--slow" style="left:55%;bottom:-25%;animation-delay:2s;font-size:1.25rem;">&#x1F54A;</span>
+        <span class="animate-heart-rise" style="left:75%;bottom:-10%;animation-delay:1s;font-size:1rem;">&#x2764;</span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         PROGRESS + IMPACT
+         ════════════════════════════════ -->
+    <section class="py-16 lg:py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-10">
+          <!-- Main content -->
+          <div class="lg:col-span-2 space-y-10">
+            <!-- About -->
+            <div data-reveal="up">
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-6 tracking-tight">About This Cause</h2>
+              <p class="text-steel leading-relaxed text-lg">{cause.description}</p>
+              <p class="text-steel leading-relaxed mt-4">
+                Every contribution, big or small, brings us closer to our goal. Peace League Africa ensures 
+                that <strong class="text-ink">95% of every donation</strong> goes directly to programs on the 
+                ground — no bureaucracy, no bloat.
+              </p>
+            </div>
+
+            <!-- Impact preview -->
+            <div data-reveal="up">
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-6 tracking-tight">Your Impact</h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-md">
+                  <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-ink mb-2">Community-Led</h3>
+                  <p class="text-sm text-steel leading-relaxed">Programs designed by and for the communities they serve, ensuring cultural relevance and local ownership.</p>
+                </div>
+                <div class="bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-md">
+                  <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-ink mb-2">Fully Transparent</h3>
+                  <p class="text-sm text-steel leading-relaxed">Every dollar tracked, every program measured. We publish impact reports so you can see exactly what your gift achieved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="space-y-6" data-reveal="right">
+            <!-- Progress card -->
+            <div class="bg-canvas rounded-2xl border border-hairline p-6 sticky top-24">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Fundraising Progress</h3>
+
+              <!-- Large progress ring -->
+              <div class="text-center mb-6">
+                <div class="relative w-36 h-36 mx-auto">
+                  <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="52" fill="none" stroke="var(--color-hairline)" stroke-width="8" />
+                    <circle cx="60" cy="60" r="52" fill="none" stroke="var(--color-accent)" stroke-width="8"
+                      stroke-dasharray="326.73" stroke-dashoffset={326.73 - (326.73 * percentFunded / 100)}
+                      stroke-linecap="round" class="transition-all duration-1000 ease-out" />
+                  </svg>
+                  <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <span class="text-3xl font-bold text-accent">{percentFunded}%</span>
+                    <span class="text-xs text-steel">funded</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats -->
+              <div class="space-y-4 mb-6">
+                <div>
+                  <div class="flex justify-between text-sm mb-1.5">
+                    <span class="text-steel">Raised</span>
+                    <span class="font-semibold text-ink">${cause.raised_amount.toLocaleString()}</span>
+                  </div>
+                  <div class="h-2 bg-hairline rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-accent to-accent-soft rounded-full transition-all duration-1000" style={`width:${percentFunded}%`}></div>
+                  </div>
+                </div>
+                <div class="flex justify-between text-sm">
+                  <span class="text-steel">Goal</span>
+                  <span class="font-semibold text-ink">${cause.goal_amount.toLocaleString()}</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                  <span class="text-steel">Remaining</span>
+                  <span class="font-semibold text-ink">${remaining.toLocaleString()}</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                  <span class="text-steel">Donors</span>
+                  <span class="font-semibold text-ink">{cause.donors_count}</span>
+                </div>
+              </div>
+
+              <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-accent btn-large w-full">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                Donate Now
+              </a>
+              <p class="text-xs text-steel text-center mt-3">100% of your donation goes to this cause</p>
+            </div>
+
+            <!-- Share -->
+            <div class="bg-canvas rounded-2xl border border-hairline p-6">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Share This Cause</h3>
+              <div class="flex gap-3">
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Support ${cause.title} — Peace League Africa`)}&url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-steel hover:text-accent hover:bg-accent/10 transition-all" aria-label="Share on Twitter">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-steel hover:text-accent hover:bg-accent/10 transition-all" aria-label="Share on Facebook">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <button onclick="navigator.clipboard.writeText('${shareUrl}').then(() => { this.querySelector('span').textContent = 'Copied!'; setTimeout(() => { this.querySelector('span').textContent = 'Copy Link'; }, 2000); })" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-steel hover:text-accent hover:bg-accent/10 transition-all cursor-pointer" aria-label="Copy link">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                  <span class="sr-only">Copy Link</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         CTA BANNER
+         ════════════════════════════════ -->
+    <section class="py-16 hero-gradient text-white hero-pattern">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] tracking-tight mb-4" data-reveal="up">
+          Every Gift Builds Peace
+        </h2>
+        <p class="text-lg text-white/80 mb-8 max-w-xl mx-auto" data-reveal="up">
+          Your donation, no matter the size, creates ripples of peace that reach thousands across Africa.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4" data-reveal="up">
+          <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-accent btn-large btn-pulse-glow">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            Donate Now
+          </a>
+          <a href="/causes" class="btn btn-large bg-white/10 text-white border border-white/20 hover:bg-white/20">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Explore Other Causes
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .animate-dove-drift, .animate-heart-rise {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    color: rgba(255,255,255,0.25);
+  }
+</style>
