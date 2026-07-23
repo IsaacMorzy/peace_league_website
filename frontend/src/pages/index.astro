@@ -50,16 +50,10 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
         <span class="float-shape float-shape--c absolute" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);filter:blur(60px);border-radius:50%;"></span>
       </div>
 
-      <!-- ── DEPTH LAYER 2: Doves + Particles (mid-speed) ── -->
+      <!-- ── DEPTH LAYER 2: Subtle movement only ── -->
       <div class="hero-depth-layer hero-depth-2" aria-hidden="true">
-        <!-- Doves: hide on mobile, fewer on tablet -->
-        <span class="animate-dove-drift hidden sm:block" style="left:15%;bottom:-20%;animation-delay:0s;font-size:1.5rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
-        <span class="animate-dove-drift--slow hidden md:block" style="left:50%;bottom:-30%;animation-delay:2.5s;font-size:1.75rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
-        <span class="animate-dove-drift hidden sm:block" style="left:80%;bottom:-15%;animation-delay:4s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
-        <!-- Particles: fewer on mobile -->
-        <span class="animate-particle hidden sm:block" style="left:8%;bottom:5%;width:5px;height:5px;border-radius:50%;background:var(--color-accent);animation-delay:0.5s;"></span>
-        <span class="animate-particle--fast hidden sm:block" style="left:22%;bottom:10%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-soft);animation-delay:1.2s;"></span>
-        <span class="animate-particle--glow" style="left:45%;bottom:2%;color:var(--color-accent);animation-delay:2s;font-size:1.5rem;">&#x2726;</span>
+        <!-- Particles removed for performance -->
+        <span class="-glow" style="left:45%;bottom:2%;color:var(--color-accent);animation-delay:2s;font-size:1.5rem;">&#x2726;</span>
         <span class="animate-particle hidden sm:block" style="left:70%;bottom:15%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
         <span class="animate-particle--fast" style="left:85%;bottom:8%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:3s;"></span>
       </div>
