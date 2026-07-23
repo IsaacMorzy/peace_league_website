@@ -76,7 +76,7 @@ import causes from '../lib/causes-data.json';
                     <p class="mt-1 text-xs text-steel">raised of ${cause.goal_amount.toLocaleString()} goal</p>
                   </div>
                 ) : null}
-                <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full btn-pulse-glow hover:bg-charcoal transition-all duration-300">
+                <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-primary btn-large w-full btn-pulse-glow">
                   Donate Now
                 </a>
               </div>
