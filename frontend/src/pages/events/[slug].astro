@@ -12,6 +12,7 @@ export function getStaticPaths() {
 }
 
 const { event } = Astro.props;
+const isAwardsGala = event.slug === "peace-league-awards-gala-2026";
 
 const monthMap = {
   "Jan":"01","Feb":"02","Mar":"03","Apr":"04","May":"05","Jun":"06",
@@ -50,6 +51,12 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
               {event.tags.slice(0,2).map(tag => (
                 <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/70 backdrop-blur-sm border border-white/10">{tag}</span>
               ))}
+              {isAwardsGala && (
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 backdrop-blur-sm border border-amber-500/30">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                  62 Categories
+                </span>
+              )}
             </div>
 
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-[-1.5px] text-white mb-4">
@@ -101,6 +108,18 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
                 <a href="/events" class="btn btn-large bg-white/10 text-white border border-white/10 backdrop-blur-sm">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                   See Upcoming Events
+                </a>
+              )}
+              {isAwardsGala && (
+                <a href="/awards/program" class="btn btn-large bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-all">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  Full Programme
+                </a>
+              )}
+              {isAwardsGala && (
+                <a href="/awards" class="btn btn-large bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-all">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                  Browse Categories &amp; Vote
                 </a>
               )}
               <a href="javascript:void(0)" onclick="downloadCalendar(this)" 
