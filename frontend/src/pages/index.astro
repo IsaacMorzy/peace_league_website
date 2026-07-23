@@ -249,11 +249,11 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             <div class="flex items-center justify-between mb-3">
               <div>
                 <h3 class="text-lg font-bold text-ink">2026 Fundraising Goal</h3>
-                <p class="text-sm text-steel">Help us reach $500,000 for peace programs</p>
+                <p class="text-sm text-steel">Help us reach KES 50,000,000 for peace programs</p>
               </div>
               <div class="text-right">
-                <span class="text-2xl font-bold text-accent">$347,500</span>
-                <span class="text-sm text-steel block">of $500,000</span>
+                <span class="text-2xl font-bold text-accent">KES 34,750,000</span>
+                <span class="text-sm text-steel block">of KES 50,000,000</span>
               </div>
             </div>
             <div class="relative h-6 bg-hairline rounded-full overflow-hidden">
@@ -262,7 +262,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             </div>
             <div class="flex items-center justify-between mt-3">
               <span class="text-xs text-steel">69% achieved</span>
-              <span class="text-xs font-semibold text-accent">$152,500 to go</span>
+              <span class="text-xs font-semibold text-accent">KES 15,250,000 to go</span>
             </div>
             <div class="mt-4 pt-4 border-t border-hairline">
               <p class="text-xs text-steel mb-2">Recent supporters:</p>
@@ -302,15 +302,18 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
                 <p class="mt-2 text-sm text-steel line-clamp-2 leading-relaxed">{cause.description}</p>
                 <div class="mt-4">
                   <div class="flex justify-between text-sm mb-1.5">
-                    <span class="font-semibold text-ink">${cause.raised_amount.toLocaleString()}</span>
-                    <span class="text-steel">${cause.goal_amount.toLocaleString()}</span>
+                    <span class="font-semibold text-ink">KES {cause.raised_amount.toLocaleString()}</span>
+                    <span class="text-steel">KES {cause.goal_amount.toLocaleString()}</span>
                   </div>
-                  <div class="w-full bg-hairline rounded-full h-2 progress-track" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100" aria-label={`${cause.title} fundraising progress`} aria-valuetext={`$${cause.raised_amount.toLocaleString()} raised of $${cause.goal_amount.toLocaleString()} goal (${Math.round((cause.raised_amount / cause.goal_amount) * 100)} percent funded)`}>
+                  <div class="w-full bg-hairline rounded-full h-2 progress-track" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100"                    aria-label={`${cause.title} fundraising progress`} aria-valuetext={`KES ${cause.raised_amount.toLocaleString()} raised of KES ${cause.goal_amount.toLocaleString()} goal (${Math.round((cause.raised_amount / cause.goal_amount) * 100)} percent funded)`}>
                     <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="width: 0"></div>
                   </div>
                   <p class="mt-1 text-xs text-steel">{cause.donors_count} donors &middot; {Math.round((cause.raised_amount / cause.goal_amount) * 100)}% funded</p>
                 </div>
-                <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="mt-4 inline-flex items-center justify-center w-full min-h-[44px] px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-300">
+                <a href={`/causes/${cause.name.toLowerCase().replace(/\s+/g, '-')}`} class="mt-2 inline-flex items-center justify-center w-full min-h-[44px] px-4 py-2.5 bg-accent btn-text-contrast text-sm font-semibold rounded-full hover:bg-accent-deep transition-all duration-300 shadow-md">
+                  View Cause Details
+                </a>
+                <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="mt-2 inline-flex items-center justify-center w-full min-h-[44px] px-4 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-300">
                   Donate to This Cause
                 </a>
               </div>
@@ -601,17 +604,14 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden">
             <div class="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl"></div>
-            <div class="floating-bubble-card" style="width:16px;height:16px;bottom:-10px;left:8%;animation-delay:0s;animation-duration:16s"></div>
-            <div class="floating-bubble-card" style="width:11px;height:11px;bottom:-10px;left:40%;animation-delay:5s;animation-duration:20s"></div>
-            <div class="floating-heart-card" style="bottom:-10px;left:72%;font-size:14px;animation-delay:3s;animation-duration:22s">♥</div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="5" data-count-prefix="$">$0</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1" data-count-target="6500" data-count-prefix="KES ">KES 0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Provide a Nutritious Meal</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Provides a warm, nutritious meal for a child in need, supporting their health and ability to learn.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent h-1.5 rounded-full" style="width: 30%"></div>
               </div>
-              <a href="/donate?amount=5" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=6500" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 60ms">
@@ -619,14 +619,14 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             <div class="floating-bubble-warm" style="width:16px;height:16px;bottom:-10px;left:12%;animation-delay:1s;animation-duration:17s"></div>
             <div class="floating-bubble-warm" style="width:10px;height:10px;bottom:-10px;left:50%;animation-delay:6s;animation-duration:19s"></div>
             <div class="floating-heart-warm" style="bottom:-10px;left:78%;font-size:15px;animation-delay:4s;animation-duration:23s">♥</div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1 donation-amount" data-count-target="10" data-count-prefix="$">$0</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent-warm mb-1" data-count-target="1000" data-count-prefix="KES ">KES 0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">School Supplies for a Student</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Equips a student with pens, books, and a uniform for one term, removing barriers to education.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent-warm h-1.5 rounded-full" style="width: 45%"></div>
               </div>
-              <a href="/donate?amount=10" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=1000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 120ms">
@@ -634,14 +634,14 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             <div class="floating-bubble-card" style="width:20px;height:20px;bottom:-10px;left:14%;animation-delay:2s;animation-duration:15s"></div>
             <div class="floating-bubble-card" style="width:13px;height:13px;bottom:-10px;left:60%;animation-delay:7s;animation-duration:21s"></div>
             <div class="floating-heart-card" style="bottom:-10px;left:30%;font-size:16px;animation-delay:1s;animation-duration:20s">♥</div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="20" data-count-prefix="$">$0</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1" data-count-target="2000" data-count-prefix="KES ">KES 0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Emergency Food Package</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Delivers a week's worth of emergency food supplies to a family displaced by conflict or disaster.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent h-1.5 rounded-full" style="width: 55%"></div>
               </div>
-              <a href="/donate?amount=20" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=2000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 180ms">
@@ -651,14 +651,14 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             <div class="floating-bubble-card" style="width:22px;height:22px;bottom:-10px;left:65%;animation-delay:8s;animation-duration:18s"></div>
             <div class="floating-heart-card" style="bottom:-10px;left:20%;font-size:16px;animation-delay:2s;animation-duration:22s">♥</div>
             <div class="floating-heart-card" style="bottom:-10px;left:78%;font-size:13px;animation-delay:6s;animation-duration:24s">♥</div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="100" data-count-prefix="$">$0</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1" data-count-target="10000" data-count-prefix="KES ">KES 0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Sponsor a Child's Education</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Covers school fees, books, and a uniform for one term, giving a child from a conflict-affected community a chance to learn and thrive.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent-warm h-1.5 rounded-full" style="width: 72%"></div>
               </div>
-              <a href="/donate?amount=100" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=10000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 240ms">
@@ -666,14 +666,14 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             <div class="floating-bubble-card" style="width:22px;height:22px;bottom:-10px;left:20%;animation-delay:3s;animation-duration:18s"></div>
             <div class="floating-bubble-card" style="width:14px;height:14px;bottom:-10px;left:70%;animation-delay:9s;animation-duration:22s"></div>
             <div class="floating-heart-card" style="bottom:-10px;left:50%;font-size:18px;animation-delay:5s;animation-duration:25s">♥</div>
-            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1 donation-amount" data-count-target="500" data-count-prefix="$">$0</div>
+            <div class="text-4xl sm:text-5xl font-bold text-accent mb-1" data-count-target="50000" data-count-prefix="KES ">KES 0</div>
             <h3 class="text-lg font-semibold text-ink mb-2">Community Reconciliation</h3>
             <p class="text-sm text-steel leading-relaxed mb-4">Funds a multi-day reconciliation workshop bringing together divided communities for dialogue, healing, and sustainable peace.</p>
             <div class="mt-auto">
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent h-1.5 rounded-full" style="width: 35%"></div>
               </div>
-              <a href="/donate?amount=500" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=50000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </div>
@@ -946,7 +946,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
         <div class="floating-heart-warm" style="bottom:-20px;right:12%;font-size:24px;animation-delay:3s;animation-duration:25s">♥</div>
         <div class="text-center md:text-left">
           <h2 class="text-2xl md:text-3xl font-bold text-ink mb-2">Your donation creates lasting change</h2>
-          <p class="text-sm md:text-base text-steel max-w-xl">Every contribution, whether $5 or $500, brings clean water, education, and peace to communities across Africa.</p>
+          <p class="text-sm md:text-base text-steel max-w-xl">Every contribution, whether KES 500 or KES 50,000, brings clean water, education, and peace to communities across Africa.</p>
         </div>
         <div class="flex items-center gap-4 shrink-0">
           <a href="/donate" class="btn-pulse-glow inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-lg shadow-accent/20">
@@ -1075,7 +1075,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
         }
       });
     }, { threshold: 0.4 });
-    document.querySelectorAll('.donation-amount').forEach(el => donationObserver.observe(el));
+    document.querySelectorAll('[data-count-target]').forEach(el => donationObserver.observe(el));
 
     // ── Homepage Countdown Timer for Next Event ──
     (function() {

@@ -137,8 +137,6 @@ const pageTitle = `${title} | Peace League Africa`;
   </head>
   <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col overflow-x-hidden" data-js-listeners>
     <!-- Cursor glow ring -->
-    <div id="cursor-glow" aria-hidden="true"></div>
-
     <!-- Scroll progress bar -->
     <div id="scroll-progress-bar" aria-hidden="true"></div>
 
@@ -159,54 +157,7 @@ const pageTitle = `${title} | Peace League Africa`;
     <!-- Subtle ambient vignette (keeps the depth without AI-aesthetic orbs) -->
     <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_theme(colors.ink/0.03)_0%,_transparent_60%)]"></div>
 
-    <!-- ═════════════════════════════════════════════════════
-         HYPNOTIC MEDITATIVE AMBIENT EFFECTS
-         Slow-spinning mandala · Breathing light · Rising hearts
-         Floating embers · Gentle wave — all across every page
-         ═════════════════════════════════════════════════════ -->
-
-    <!-- Sacred Geometry Mandala (background, barely visible, slow rotation) -->
-    <div class="meditative-mandala" aria-hidden="true"></div>
-
-    <!-- Breathing overlay (gentle radial pulse like peaceful breath) -->
-    <div class="meditative-breath" aria-hidden="true"></div>
-
-    <!-- Subtle horizontal wave (like light on still water) -->
-    <div class="meditative-wave" aria-hidden="true"></div>
-
-    <!-- Floating decorative elements (across all pages) -->
-    <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true" style="contain:layout style paint;">
-      <div class="floating-bubble" style="width:14px;height:14px;left:12%;animation-delay:0s;"></div>
-      <div class="floating-bubble" style="width:10px;height:10px;left:68%;animation-delay:8s;"></div>
-      <div class="floating-dot" style="width:8px;height:8px;left:35%;animation-delay:4s;"></div>
-      <div class="floating-dot" style="width:6px;height:6px;left:82%;animation-delay:12s;"></div>
-    </div>
-
-    <!-- ── HYPNOTIC FLOATING HEARTS (two colors: warm amber + cool teal) ──
-         They emerge from the bottom of the viewport and float all the way
-         to the top with a gentle swaying motion — like leaves on a breeze.
-         Each heart has its own size, lateral position, timing, and duration
-         creating an organic, ever-changing constellation of love rising. -->
-    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:9995;contain:layout style paint;">
-      <span class="hypnotic-heart hypnotic-heart--warm" style="left:8%;font-size:0.55rem;--heart-dur:38s;animation-delay:0s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--cool" style="left:22%;font-size:0.6rem;--heart-dur:48s;animation-delay:4s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--warm" style="left:45%;font-size:0.5rem;--heart-dur:42s;animation-delay:8s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--cool" style="left:65%;font-size:0.55rem;--heart-dur:40s;animation-delay:2s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--warm" style="left:80%;font-size:0.45rem;--heart-dur:50s;animation-delay:12s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--cool" style="left:92%;font-size:0.5rem;--heart-dur:44s;animation-delay:6s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--pale" style="left:35%;font-size:0.35rem;--heart-dur:58s;animation-delay:16s;">&#x2764;</span>
-      <span class="hypnotic-heart hypnotic-heart--pale" style="left:72%;font-size:0.3rem;--heart-dur:60s;animation-delay:20s;">&#x2764;</span>
-    </div>
-
-    <!-- ── HYPNOTIC FLOATING PARTICLES (glowing embers) ──
-         Tiny gold, teal, and white specks that drift upward
-         like fireflies in a meditation garden. -->
-    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:9994;contain:layout style paint;">
-      <span class="hypnotic-particle hypnotic-particle--gold" style="left:15%;width:4px;height:4px;--particle-dur:28s;animation-delay:0s;"></span>
-      <span class="hypnotic-particle hypnotic-particle--teal" style="left:55%;width:4px;height:4px;--particle-dur:32s;animation-delay:6s;"></span>
-      <span class="hypnotic-particle hypnotic-particle--gold" style="left:78%;width:3px;height:3px;--particle-dur:26s;animation-delay:12s;"></span>
-      <span class="hypnotic-particle hypnotic-particle--teal" style="left:38%;width:3px;height:3px;--particle-dur:34s;animation-delay:18s;"></span>
-    </div>
+    <!-- Decorative ambient effects removed for performance → Clean layout -->
 
     <!-- ── STICKY DONATE BUTTON ── -->
     <a href="/donate" id="sticky-donate-btn" class="btn-text-contrast inline-flex items-center gap-2 px-4 py-2.5 bg-accent rounded-full text-xs font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" aria-label="Donate now">
@@ -222,7 +173,7 @@ const pageTitle = `${title} | Peace League Africa`;
       <div class="toast-text">
         <strong id="toast-name">Someone</strong>
         <span id="toast-action">just donated</span>
-        <strong id="toast-amount">$50</strong>
+        <strong id="toast-amount">KES 6,500</strong>
         <span id="toast-location"></span>
       </div>
       <svg class="toast-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
@@ -349,30 +300,7 @@ const pageTitle = `${title} | Peace League Africa`;
         }
       }
 
-      // ── TREND 1: 3D TILT CARDS ──
-      const tiltCards = document.querySelectorAll('.tilt-card');
-      if (tiltCards.length && window.matchMedia('(pointer: fine)').matches) {
-        tiltCards.forEach(card => {
-          const sheen = card.querySelector('.tilt-sheen');
-          card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -6;
-            const rotateY = ((x - centerX) / centerX) * 6;
-            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
-            if (sheen) {
-              sheen.style.setProperty('--sheen-x', `${(x / rect.width) * 100}%`);
-              sheen.style.setProperty('--sheen-y', `${(y / rect.height) * 100}%`);
-            }
-          });
-          card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
-          });
-        });
-      }
+      // ── TREND 1: 3D TILT CARDS (removed for performance — hover scale used instead)
 
       // ── TREND 2: ENHANCED SCROLL REVEALS ──
       // Handle .img-reveal, .reveal-scale, .reveal-scale, .img-reveal-left
@@ -403,119 +331,13 @@ const pageTitle = `${title} | Peace League Africa`;
         }
       }
 
-      // ── TREND 5: HERO MOUSE DEPTH PARALLAX ──
-      const heroSection = document.getElementById('hero-section');
-      if (heroSection && window.matchMedia('(pointer: fine)').matches) {
-        const heroLayers = heroSection.querySelectorAll('.hero-depth-layer');
-        const speeds = [0.02, 0.04, 0.06, 0.01]; // L0→L3
-        let heroCenterX = window.innerWidth / 2;
-        let heroCenterY = window.innerHeight / 2;
-        let mouseX = heroCenterX;
-        let mouseY = heroCenterY;
+      // ── TREND 5: HERO MOUSE DEPTH PARALLAX (removed for performance)
 
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        }, { passive: true });
+      // ── MOUSE-RESPONSIVE PARTICLES (removed for performance)
 
-        function animateHeroDepth() {
-          const dx = (mouseX - heroCenterX) / heroCenterX;
-          const dy = (mouseY - heroCenterY) / heroCenterY;
-          heroLayers.forEach((layer, i) => {
-            const s = speeds[i] || 0.02;
-            layer.style.transform = `translate(${dx * s * 40}px, ${dy * s * 40}px)`;
-          });
-          requestAnimationFrame(animateHeroDepth);
-        }
-        animateHeroDepth();
+      // ── MAGNETIC BUTTONS (removed for performance — CSS hover handled)
 
-        window.addEventListener('resize', () => {
-          heroCenterX = window.innerWidth / 2;
-          heroCenterY = window.innerHeight / 2;
-        }, { passive: true });
-      }
-
-      // ── MOUSE-RESPONSIVE PARTICLES ──
-      // Gently attract floating particles toward cursor
-      if (heroSection && window.matchMedia('(pointer: fine)').matches) {
-        const particles = heroSection.querySelectorAll('.animate-particle, .animate-particle--fast, .animate-particle--glow');
-        if (particles.length) {
-          let pMouseX = window.innerWidth / 2;
-          let pMouseY = window.innerHeight / 2;
-
-          document.addEventListener('mousemove', (e) => {
-            pMouseX = e.clientX;
-            pMouseY = e.clientY;
-          }, { passive: true });
-
-          // Store original positions
-          const origPositions = [];
-          particles.forEach((p, i) => {
-            const rect = p.getBoundingClientRect();
-            origPositions[i] = {
-              x: rect.left + rect.width / 2,
-              y: rect.top + rect.height / 2,
-            };
-          });
-
-          // Subtle attraction - move particles slightly toward cursor
-          function animateParticles() {
-            particles.forEach((p, i) => {
-              if (!origPositions[i]) return;
-              const rect = p.getBoundingClientRect();
-              const cx = rect.left + rect.width / 2;
-              const cy = rect.top + rect.height / 2;
-              const dx = (pMouseX - cx) * 0.0005;
-              const dy = (pMouseY - cy) * 0.0005;
-              // Clamp to tiny movement
-              const moveX = Math.max(-3, Math.min(3, dx));
-              const moveY = Math.max(-3, Math.min(3, dy));
-              // Use margin to avoid conflicting with keyframe transform
-              p.style.marginLeft = `${moveX}px`;
-              p.style.marginTop = `${moveY}px`;
-            });
-            requestAnimationFrame(animateParticles);
-          }
-          animateParticles();
-        }
-      }
-
-      // ── MAGNETIC BUTTONS ──
-      const magneticBtns = document.querySelectorAll('.magnetic-btn');
-      if (magneticBtns.length && window.matchMedia('(pointer: fine)').matches) {
-        magneticBtns.forEach(btn => {
-          const strength = parseFloat(btn.dataset.magnetStrength) || 0.3;
-          btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            btn.style.transform = `translate(${x * strength * 0.4}px, ${y * strength * 0.4}px) scale(1.03)`;
-          });
-          btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translate(0, 0) scale(1)';
-          });
-        });
-      }
-
-      // Cursor glow effect
-      const cursorGlow = document.getElementById('cursor-glow');
-      if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
-        let glowX = window.innerWidth / 2, glowY = window.innerHeight / 2;
-        let currentX = glowX, currentY = glowY;
-
-        document.addEventListener('mousemove', (e) => {
-          glowX = e.clientX;
-          glowY = e.clientY;
-        }, { passive: true });
-
-        function animateGlow() {
-          currentX += (glowX - currentX) * 0.08;
-          currentY += (glowY - currentY) * 0.08;
-          cursorGlow.style.transform = `translate(${currentX - 150}px, ${currentY - 150}px)`;
-          requestAnimationFrame(animateGlow);
-        }
-        animateGlow();
-      }
+      // Cursor glow effect (removed for performance)
 
       // Scroll progress bar
       const progressBar = document.getElementById('scroll-progress-bar');
@@ -535,29 +357,7 @@ const pageTitle = `${title} | Peace League Africa`;
         }, { passive: true });
       }
 
-      // Defer parallax init until idle — scoped to #hero-section
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => {
-          const heroSection = document.querySelector('#hero-section');
-          if (!heroSection) return;
-
-          let parallaxTicking = false;
-          window.addEventListener('scroll', () => {
-            if (!parallaxTicking) {
-              requestAnimationFrame(() => {
-                const speed = 0.15;
-                const y = heroSection.getBoundingClientRect().top;
-                const shapes = heroSection.querySelectorAll('.parallax-bg-shape');
-                const dots = heroSection.querySelectorAll('.parallax-dot-grid');
-                shapes.forEach(s => { s.style.transform = `translateY(${y * speed}px)`; });
-                dots.forEach(d => { d.style.transform = `translateY(${y * speed * 0.5}px)`; });
-                parallaxTicking = false;
-              });
-              parallaxTicking = true;
-            }
-          }, { passive: true });
-        });
-      }
+      // Defer parallax init (removed for performance)
 
       // ── STICKY DONATE BUTTON ──
       const stickyBtn = document.getElementById('sticky-donate-btn');
@@ -626,7 +426,7 @@ const pageTitle = `${title} | Peace League Africa`;
           { text: 'registered for community outreach', icon: 'volunteer' },
           { text: 'committed to weekly mentoring', icon: 'volunteer' },
         ];
-        const amounts = ['$25', '$50', '$75', '$100', '$150', '$200', '$500', '$1,000'];
+        const amounts = ['KES 3,000', 'KES 6,500', 'KES 10,000', 'KES 15,000', 'KES 25,000', 'KES 50,000', 'KES 100,000', 'KES 250,000'];
 
         let toastTimeout = null;
         let toastVisible = false;
