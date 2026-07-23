@@ -87,6 +87,10 @@ const { slug } = Astro.params;
       <div class="hs-overlay-open:opacity-100 opacity-0 fixed inset-0 bg-black/50 backdrop-blur-sm z-[-1]" data-hs-overlay="#hs-vote-modal"></div>
     </div>
 
+    <!-- Cloudflare Turnstile widget (hidden, rendered on load for vote protection) -->
+    <div id="turnstile-vote-widget" class="mb-4" style="min-height:65px;display:flex;justify-content:center"></div>
+    <input type="hidden" id="turnstile-vote-token" value="" />
+
     <!-- Cross-links -->
     <section class="py-10 bg-surface border-t border-hairline">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -111,6 +115,26 @@ const { slug } = Astro.params;
   import { getAwardCategory, castVote } from '../../../lib/api.js';
 
   const CATEGORY_SLUG = document.getElementById('category-data').dataset.slug;
+  const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+
+  // ── Cloudflare Turnstile for vote protection ──
+  let turnstileToken = '';
+  let turnstileReady = false;
+
+  if (TURNSTILE_SITE_KEY) {
+    window.onTurnstileLoad = () => {
+      if (window.turnstile) {
+        window.turnstile.render('#turnstile-vote-widget', {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => { turnstileToken = token; turnstileReady = true; },
+        });
+      }
+    };
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad';
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
 
   function escapeHtml(str) {
     const div = document.createElement('div');
@@ -121,12 +145,10 @@ const { slug } = Astro.params;
   function showModal(title, message) {
     document.getElementById('vote-modal-title').textContent = title;
     document.getElementById('vote-modal-message').textContent = message;
-    // Open Preline overlay
     const modal = document.getElementById('hs-vote-modal');
     if (modal && window.HSOverlay) {
       window.HSOverlay.open(modal);
     } else if (modal) {
-      // ponytail: fallback if Preline JS not loaded yet
       modal.classList.remove('hidden');
     }
   }
@@ -228,11 +250,19 @@ const { slug } = Astro.params;
     const nomineeId = button.dataset.nomineeId;
     const categorySlug = button.dataset.categorySlug;
 
+    // Check Turnstile before submitting
+    if (TURNSTILE_SITE_KEY && !turnstileReady) {
+      showModal('Verification Required', 'Please complete the security check.');
+      button.disabled = false;
+      button.textContent = 'Vote for this nominee';
+      return;
+    }
+
     button.disabled = true;
     button.textContent = 'Submitting…';
 
     try {
-      const res = await castVote(nomineeId, categorySlug);
+      const res = await castVote(nomineeId, categorySlug, null, turnstileToken);
       if (res.status === 'success') {
         // Increment vote count in the UI
         const card = button.closest('[id^="nominee-"]');

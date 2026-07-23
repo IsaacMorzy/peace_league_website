@@ -93,9 +93,10 @@ export async function getAwardResults() {
   return apiCall('/api/method/peace_league_website.api_awards.get_results');
 }
 
-export async function castVote(nomineeId, categorySlug, email) {
+export async function castVote(nomineeId, categorySlug, email, turnstileToken) {
   const body = { nominee_id: nomineeId, category_slug: categorySlug };
   if (email) body.email = email;
+  if (turnstileToken) body.cf_turnstile_response = turnstileToken;
   return apiCall('/api/method/peace_league_website.api_awards.cast_vote', {
     method: 'POST',
     body,
