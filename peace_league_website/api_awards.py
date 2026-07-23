@@ -37,6 +37,10 @@ def verify_turnstile(token):
     Falls back to allowing the request if TURNSTILE_SECRET_KEY is not configured,
     so the site works in dev/CI without Turnstile keys.
     """
+    # ponytail: tests-only Redis bypass, written by `TestHttpNominationSubmission` happy-path
+    # before posting and cleared in `finally`. Never set in production site_config.
+    if frappe.cache().get_value("disable_turnstile_check"):
+        return True
     if not TURNSTILE_SECRET_KEY:
         logger.info("Turnstile not configured — skipping verification.")
         return True

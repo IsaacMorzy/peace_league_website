@@ -312,6 +312,37 @@ class TestHttpNominationSubmission(IntegrationTestCase):
             self.assertNotIn('Value missing for Award Nominee', text,
                              'Photo mandatory bug regressed! Got: {0}'.format(body))
 
+    def test_create_nomination_http_happy_path(self):
+        """Full success path over HTTP: insert → save_file → db_set → success.
+
+        Uses the Redis `disable_turnstile_check` flag set by `verify_turnstile()`
+        to bypass the bot check so the complete flow runs end-to-end. The flag
+        is cleared in the `finally` block so the test does not pollute dev state.
+
+        Verifies:
+        - HTTP 200 with `message.status === "success"`
+        - response data.nominee and data.photo are populated
+        - the Award Nominee row exists in the DB
+        - the photo URL points at /files/...
+        """
+        frappe.cache().set_value('disable_turnstile_check', 1)
+        try:
+            status, body = self._post_nomination()
+            self.assertEqual(status, 200, 'HTTP status, got body: {0}'.format(body))
+            msg = body.get('message') or {}
+            self.assertEqual(msg.get('status'), 'success',
+                             'Expected success, got: {0}'.format(body))
+            data = msg.get('data') or {}
+            nominee_name = data.get('nominee')
+            self.assertTrue(nominee_name, 'Expected nominee name in response, got: {0}'.format(body))
+            doc = frappe.get_doc('Award Nominee', nominee_name)
+            self.assertEqual(doc.status, 'Active')
+            self.assertTrue(doc.photo, 'Missing photo URL in DB')
+            self.assertTrue(doc.photo.startswith('/files/'),
+                            'Unexpected photo path: {0}'.format(doc.photo))
+        finally:
+            frappe.cache().delete_value('disable_turnstile_check')
+
     def test_create_nomination_http_rejects_oversized_photo(self):
         """Backend must enforce the 5MB cap that the frontend declares.
 
