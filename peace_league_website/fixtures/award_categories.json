@@ -3,7 +3,7 @@
     "doctype": "Award Category",
     "category_name": "Peace Ambassador for Fighting Radicalism and Terrorism",
     "slug": "peace-ambassador-fighting-radicalism-terrorism",
-    "description": "",
+    "description": "Honours individuals who put their lives on the line to counter violent extremism in their communities. This award goes to those running deradicalization programs in prisons, mediating between militant groups and local leaders, or building early-warning networks that have stopped attacks before they happened.",
     "name": "Peace Ambassador for Fighting Radicalism and Terrorism",
     "is_active": 1
   },
@@ -11,7 +11,7 @@
     "doctype": "Award Category",
     "category_name": "Lifetime Achievement Award in Diplomacy and Governance",
     "slug": "lifetime-achievement-award-diplomacy-governance",
-    "description": "",
+    "description": "Recognizes a lifetime spent at the negotiation table — mediating border disputes, drafting peace accords, or reforming broken institutions. For the career diplomat, retired judge, or former minister whose quiet work shaped how nations in Africa resolve conflict without bullets.",
     "name": "Lifetime Achievement Award in Diplomacy and Governance",
     "is_active": 1
   },
@@ -19,7 +19,7 @@
     "doctype": "Award Category",
     "category_name": "Trailblazer Award in Military Leadership and Gender Empowerment",
     "slug": "trailblazer-award-military-leadership-gender-empowerment",
-    "description": "",
+    "description": "For service members who broke the glass ceiling in Africa's armed forces. Honors female officers commanding peacekeeping battalions, male commanders who champion women in combat roles, and veterans who now lead community reintegration programs for former child soldiers.",
     "name": "Trailblazer Award in Military Leadership and Gender Empowerment",
     "is_active": 1
   },
@@ -27,7 +27,7 @@
     "doctype": "Award Category",
     "category_name": "Champion for Women's Rights and Empowerment Award",
     "slug": "champion-womens-rights-empowerment-award",
-    "description": "",
+    "description": "Celebrates the activists, lawyers, and grassroots organizers fighting for girls to stay in school, women to own land, and survivors of gender-based violence to get justice. Honors those running safe houses, pushing through protective legislation, and changing minds one village meeting at a time.",
     "name": "Champion for Women's Rights and Empowerment Award",
     "is_active": 1
   },
@@ -35,7 +35,7 @@
     "doctype": "Award Category",
     "category_name": "Champion of Labour Rights and Social Protection",
     "slug": "champion-labour-rights-social-protection",
-    "description": "",
+    "description": "For trade union leaders, labour lawyers, and policy advocates who fight for fair wages, safe working conditions, and social safety nets. Honors the people organizing informal sector workers — market vendors, domestic staff, and gig economy laborers — who often have no one else in their corner.",
     "name": "Champion of Labour Rights and Social Protection",
     "is_active": 1
   },
@@ -43,7 +43,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Legal Reforms Award",
     "slug": "outstanding-contribution-legal-reforms-award",
-    "description": "",
+    "description": "Recognizes lawyers, judges, and legal scholars who drafted the bills, argued the landmark cases, and pushed through the judicial reforms that made justice more accessible. From constitutional review to small-claims courts in rural districts, this award is for those who changed how the law serves ordinary people.",
     "name": "Outstanding Contribution to Legal Reforms Award",
     "is_active": 1
   },
@@ -51,7 +51,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Community Policing Award",
     "slug": "excellence-community-policing-award",
-    "description": "",
+    "description": "For police officers and stations that rebuilt trust between law enforcement and the communities they serve. Honors beat cops walking neighbourhood beats, setting up youth mentorship programs in high-crime areas, and solving cases through cooperation rather than confrontation.",
     "name": "Excellence in Community Policing Award",
     "is_active": 1
   },
@@ -59,7 +59,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Da'wah in the City Centre",
     "slug": "outstanding-contribution-dawah-city-centre",
-    "description": "",
+    "description": "Honours Islamic scholars, preachers, and community leaders making faith relevant to urban life. Recognizes those running interfaith dialogues in busy marketplaces, youth mentorship programs in city estates, and outreach that meets young people where they are — on the streets, in cafes, and online.",
     "name": "Outstanding Contribution to Da'wah in the City Centre",
     "is_active": 1
   },
@@ -67,7 +67,7 @@
     "doctype": "Award Category",
     "category_name": "Leadership in Firearms Policy and Safety Award",
     "slug": "leadership-firearms-policy-safety-award",
-    "description": "",
+    "description": "For security experts, policymakers, and activists working to reduce the flow of illegal weapons across borders. Honors those leading gun buyback programs, drafting tougher licensing laws, and tracing the supply chains that arm criminal networks in the Horn of Africa and the Sahel.",
     "name": "Leadership in Firearms Policy and Safety Award",
     "is_active": 1
   },
@@ -75,7 +75,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Islamic Jurisprudence Award",
     "slug": "excellence-islamic-jurisprudence-award",
-    "description": "",
+    "description": "Recognizes legal scholars and kadhis who apply Islamic law with depth, fairness, and relevance to contemporary challenges. For those whose rulings on family law, finance, and community disputes have set precedents that balance tradition with human dignity.",
     "name": "Excellence in Islamic Jurisprudence Award",
     "is_active": 1
   },
@@ -83,7 +83,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Cultural Diplomacy Award",
     "slug": "excellence-cultural-diplomacy-award",
-    "description": "",
+    "description": "For artists, musicians, filmmakers, and cultural curators who use creative expression to bridge ethnic and national divides. Honours festivals that bring rival communities together, films that tell untold stories of reconciliation, and exchange programs that let young Africans see themselves in each other.",
     "name": "Excellence in Cultural Diplomacy Award",
     "is_active": 1
   },
@@ -91,7 +91,7 @@
     "doctype": "Award Category",
     "category_name": "Trailblazer in Police Leadership and Literature Award",
     "slug": "trailblazer-police-leadership-literature-award",
-    "description": "",
+    "description": "A rare combination — for police leaders who also write. Honors officers who have authored books on security, leadership, or social issues while actively reforming the institutions they serve. Celebrates the idea that a good officer also thinks, reads, and reflects.",
     "name": "Trailblazer in Police Leadership and Literature Award",
     "is_active": 1
   },
@@ -99,7 +99,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Cultural Exchange Award",
     "slug": "outstanding-contribution-cultural-exchange-award",
-    "description": "",
+    "description": "For the exchange coordinators, host families, and cultural ambassadors who make cross-border understanding personal. Honors the programs that send Kenyan students to Senegal, Ethiopian artists to Ghana, and Nigerian writers to Rwanda — creating connections that policy papers never could.",
     "name": "Outstanding Contribution to Cultural Exchange Award",
     "is_active": 1
   },
@@ -107,7 +107,7 @@
     "doctype": "Award Category",
     "category_name": "Interfaith Harmony and Collaboration Award",
     "slug": "interfaith-harmony-collaboration-award",
-    "description": "",
+    "description": "For religious leaders and faith organizations that turned doctrine into dialogue. Honors the priest and imam who together rebuilt a destroyed market, the rabbi and sheikh co-teaching a peace studies class, and the grassroots initiatives that prove scripture need not divide.",
     "name": "Interfaith Harmony and Collaboration Award",
     "is_active": 1
   },
@@ -115,7 +115,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Creative Branding Award",
     "slug": "excellence-creative-branding-award",
-    "description": "",
+    "description": "For designers, ad agencies, and brand strategists who tell Africa's story on its own terms. Recognizes campaigns that shifted perceptions — whether rebranding a city's image after conflict, launching a continent-wide tourism drive, or giving a social movement a visual identity that spread beyond borders.",
     "name": "Excellence in Creative Branding Award",
     "is_active": 1
   },
@@ -123,7 +123,7 @@
     "doctype": "Award Category",
     "category_name": "Leadership in Public Administration Award",
     "slug": "leadership-public-administration-award",
-    "description": "",
+    "description": "For civil servants who made government actually work for citizens. Honors the county administrators cutting red tape, the IT directors digitizing land registries to stop graft, and the permanent secretaries who reformed procurement so school supplies reached classrooms instead of warehouses.",
     "name": "Leadership in Public Administration Award",
     "is_active": 1
   },
@@ -131,7 +131,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to National Security Award",
     "slug": "outstanding-contribution-national-security-award",
-    "description": "",
+    "description": "For intelligence officers, border patrol commanders, and cybersecurity analysts who protect nations from threats both visible and hidden. Honors the work that never makes headlines — the plots disrupted, the networks dismantled, the data breaches stopped — because a quiet border is a secure one.",
     "name": "Outstanding Contribution to National Security Award",
     "is_active": 1
   },
@@ -139,7 +139,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Education and Professional Development Award",
     "slug": "outstanding-contribution-education-professional-development-award",
-    "description": "",
+    "description": "For the educators who don't just teach — they transform. Honors principals turning around failing rural schools, technical trainers getting unemployed youth into apprenticeships, and university lecturers whose research actually changed policy. Measured not in exam scores but in lives redirected.",
     "name": "Outstanding Contribution to Education and Professional Development Award",
     "is_active": 1
   },
@@ -147,7 +147,7 @@
     "doctype": "Award Category",
     "category_name": "Best Author for Excellence in Language Book Writing Award",
     "slug": "best-author-excellence-language-book-writing-award",
-    "description": "",
+    "description": "For writers keeping African languages alive on the page. Honors authors publishing novels, poetry collections, and children's books in mother tongues — Swahili, Kikuyu, Luo, Somali, Amharic, and others — ensuring that future generations can read, dream, and argue in the languages their grandparents spoke.",
     "name": "Best Author for Excellence in Language Book Writing Award",
     "is_active": 1
   },
@@ -155,7 +155,7 @@
     "doctype": "Award Category",
     "category_name": "Best Spiritual Wisdom Author Award",
     "slug": "best-spiritual-wisdom-author-award",
-    "description": "",
+    "description": "For writers whose books on faith, purpose, and inner peace have guided readers through hardship. Honors those who tackle grief, doubt, and meaning — not with platitudes, but with hard-won insights drawn from scripture, tradition, and the messy reality of daily life.",
     "name": "Best Spiritual Wisdom Author Award",
     "is_active": 1
   },
@@ -163,7 +163,7 @@
     "doctype": "Award Category",
     "category_name": "Best Author in Heritage Land Restoration Award",
     "slug": "best-author-heritage-land-restoration-award",
-    "description": "",
+    "description": "For writers documenting the fight to reclaim degraded landscapes. Honors those who tell the stories of communities replanting forests, cleaning polluted rivers, and restoring ancestral grazing lands — connecting the science of restoration to the people doing the digging, planting, and watering.",
     "name": "Best Author in Heritage Land Restoration Award",
     "is_active": 1
   },
@@ -171,7 +171,7 @@
     "doctype": "Award Category",
     "category_name": "Exceptional Commitment to Philanthropy and Selfless Contributions to the Betterment of Society",
     "slug": "exceptional-commitment-philanthropy-selfless-contributions-betterment-society",
-    "description": "",
+    "description": "For donors and founders who give more than money — they give time, networks, and reputational capital to causes others ignore. Honors the philanthropist who funded a hospice in a conflict zone, who paid school fees for 500 orphaned girls, and who wrote checks without wanting a building named after them.",
     "name": "Exceptional Commitment to Philanthropy and Selfless Contributions to the Betterment of Society",
     "is_active": 1
   },
@@ -179,7 +179,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Community Service Award",
     "slug": "excellence-community-service-award",
-    "description": "",
+    "description": "For neighbourhood heroes — the volunteers running soup kitchens, organizing street clean-ups, coaching after-school sports, and checking on elderly neighbours. No salary, no title, no office. Just the stubborn belief that a community takes care of its own.",
     "name": "Excellence in Community Service Award",
     "is_active": 1
   },
@@ -187,7 +187,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Social Impact Award",
     "slug": "outstanding-contribution-social-impact-award",
-    "description": "",
+    "description": "For social entrepreneurs and NGO leaders who can prove their work makes a measurable difference. Recognizes the programs that reduced maternal mortality in a district, doubled primary school completion rates, or lifted 10,000 families out of extreme poverty — and backed it up with data.",
     "name": "Outstanding Contribution to Social Impact Award",
     "is_active": 1
   },
@@ -195,7 +195,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Environmental Conservation and Social Empowerment Award",
     "slug": "excellence-environmental-conservation-social-empowerment-award",
-    "description": "",
+    "description": "For projects that prove conservation and community development are the same thing. Honors the initiatives paying women to plant trees, training former poachers as wildlife rangers, and building eco-lodges that employ local youth — because a protected forest means nothing if the people living next to it are hungry.",
     "name": "Excellence in Environmental Conservation and Social Empowerment Award",
     "is_active": 1
   },
@@ -203,7 +203,7 @@
     "doctype": "Award Category",
     "category_name": "Champion of Interfaith Harmony Award",
     "slug": "champion-interfaith-harmony-award",
-    "description": "",
+    "description": "For individuals who personally bridge faith divides — often at great personal risk. Honors the pastor who sheltered Muslim neighbours during post-election violence, the sheikh who condemned extremism from his own pulpit, and the nun who runs a school where children of all faiths learn side by side.",
     "name": "Champion of Interfaith Harmony Award",
     "is_active": 1
   },
@@ -211,7 +211,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Leadership, Religious Guidance and Literary Contribution Award",
     "slug": "excellence-leadership-religious-guidance-literary-contribution-award",
-    "description": "",
+    "description": "A triple-threat award for leaders who preach, write, and organize. Honors clerics who built schools and clinics next to their places of worship, who publish newsletters and books that reach beyond their congregations, and whose moral authority shapes public debate on issues from corruption to climate justice.",
     "name": "Excellence in Leadership, Religious Guidance and Literary Contribution Award",
     "is_active": 1
   },
@@ -219,7 +219,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Philanthropy and Community Enrichment Award",
     "slug": "excellence-philanthropy-community-enrichment-award",
-    "description": "",
+    "description": "For those who turn private wealth into public good with strategic focus. Honors family foundations building libraries, corporate social responsibility programs that go beyond photo ops, and individual donors who fund scholarships, health centers, and community halls in the places where they grew up.",
     "name": "Excellence in Philanthropy and Community Enrichment Award",
     "is_active": 1
   },
@@ -227,7 +227,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Business Leadership and Philanthropy Award",
     "slug": "excellence-business-leadership-philanthropy-award",
-    "description": "",
+    "description": "For CEOs and founders who run profitable companies while making social impact core to their business model. Honors the manufacturing boss employing refugees, the tech founder who prices products for low-income users, and the banker financing smallholder farmers — proving that doing good and doing business are not opposites.",
     "name": "Excellence in Business Leadership and Philanthropy Award",
     "is_active": 1
   },
@@ -235,7 +235,7 @@
     "doctype": "Award Category",
     "category_name": "Champion of Mosque Peace and Unity Award",
     "slug": "champion-mosque-peace-unity-award",
-    "description": "",
+    "description": "For imams and mosque committees that turned their places of worship into community anchors. Honors those opening mosque doors for interfaith iftars, running youth sports leagues from the courtyard, and using Friday sermons to preach tolerance, civic participation, and peaceful coexistence.",
     "name": "Champion of Mosque Peace and Unity Award",
     "is_active": 1
   },
@@ -243,7 +243,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Islamic Banking and Community Development Award",
     "slug": "excellence-islamic-banking-community-development-award",
-    "description": "",
+    "description": "For financial institutions and bankers whose work goes beyond Shariah compliance to actually lift communities. Honors those financing small businesses that conventional banks reject, offering micro-takaful (insurance) to poor households, and designing savings products that help families plan for hajj, education, and emergencies.",
     "name": "Excellence in Islamic Banking and Community Development Award",
     "is_active": 1
   },
@@ -251,7 +251,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Natural Health and Religious Leadership Award",
     "slug": "excellence-natural-health-religious-leadership-award",
-    "description": "",
+    "description": "For leaders who integrate traditional medicine and spiritual care with modern healthcare. Honors those running clinics that respect herbal knowledge while referring patients for surgery, training traditional birth attendants to recognize danger signs, and addressing the spiritual dimension of healing in communities with few doctors.",
     "name": "Excellence in Natural Health and Religious Leadership Award",
     "is_active": 1
   },
@@ -259,7 +259,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Psychology and Mental Health Advocacy Award",
     "slug": "excellence-psychology-mental-health-advocacy-award",
-    "description": "",
+    "description": "For psychologists, counselors, and activists breaking the silence around mental health in Africa. Honors those running trauma recovery groups for survivors of conflict, training teachers to spot depression in teenagers, and pushing for mental health budgets that match the scale of the need — where one in four people will experience a disorder.",
     "name": "Excellence in Psychology and Mental Health Advocacy Award",
     "is_active": 1
   },
@@ -267,7 +267,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Counselling and Girl-Child Mentorship Award",
     "slug": "excellence-counselling-girl-child-mentorship-award",
-    "description": "",
+    "description": "For counselors, social workers, and mentors who show up for girls at their most vulnerable. Honors those running safe spaces for teenage mothers to return to school, leading after-school clubs where girls learn they can be engineers and pilots, and sitting with families to negotiate an extra year of education instead of an early marriage.",
     "name": "Excellence in Counselling and Girl-Child Mentorship Award",
     "is_active": 1
   },
@@ -275,7 +275,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in National Security Leadership Award",
     "slug": "excellence-national-security-leadership-award",
-    "description": "",
+    "description": "For senior security leaders who reformed how their agencies operate. Honors the police commissioners who rooted out corruption in their ranks, the intelligence chiefs who prioritized prevention over surveillance, and the defense ministers who made human rights training mandatory for all troops before deployment.",
     "name": "Excellence in National Security Leadership Award",
     "is_active": 1
   },
@@ -283,7 +283,7 @@
     "doctype": "Award Category",
     "category_name": "Best Teacher of the Year Award",
     "slug": "best-teacher-year-award",
-    "description": "",
+    "description": "For the classroom heroes. Honors the teacher walking three kilometers to school before dawn, the one cooking lunch for students who arrive hungry, and the one whose students outperform city schools despite having no electricity or textbooks. The award that says: we see what you do, and it matters more than you know.",
     "name": "Best Teacher of the Year Award",
     "is_active": 1
   },
@@ -291,7 +291,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Leadership and Governance Award",
     "slug": "excellence-leadership-governance-award",
-    "description": "",
+    "description": "For elected officials, traditional rulers, and board chairs who governed with integrity. Honors those who published their assets, held town halls in remote wards, and left office with no scandal and a record of delivery — roads built, schools opened, water pipes laid. Leadership measured by what outlasts the term.",
     "name": "Excellence in Leadership and Governance Award",
     "is_active": 1
   },
@@ -299,7 +299,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Music and Literary Arts Award",
     "slug": "excellence-music-literary-arts-award",
-    "description": "",
+    "description": "For artists whose work shapes how Africa sees itself. Honors musicians whose lyrics became anthems for peace movements, novelists whose stories humanized communities in conflict, and poets whose words spoken at rallies changed minds. Art not for its own sake, but as a tool for collective reflection and change.",
     "name": "Excellence in Music and Literary Arts Award",
     "is_active": 1
   },
@@ -307,7 +307,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Promoting Discipline in Schools Through Chaplaincy",
     "slug": "excellence-promoting-discipline-schools-chaplaincy",
-    "description": "",
+    "description": "For school chaplains and guidance counselors who shape character alongside curriculum. Honors those running mentorship programs that cut suspension rates, mediating conflicts between students from rival communities, and creating school cultures where discipline comes from respect, not fear of punishment.",
     "name": "Excellence in Promoting Discipline in Schools Through Chaplaincy",
     "is_active": 1
   },
@@ -315,7 +315,7 @@
     "doctype": "Award Category",
     "category_name": "Medical Doctor of the Year",
     "slug": "medical-doctor-year",
-    "description": "",
+    "description": "For physicians who go beyond the clinic walls. Honors the doctor running mobile clinics in pastoralist communities, the surgeon who stays overnight to monitor post-op patients when there's no nursing staff, and the public health officer who tracked a cholera outbreak village by village. Medicine with mud on its boots.",
     "name": "Medical Doctor of the Year",
     "is_active": 1
   },
@@ -323,7 +323,7 @@
     "doctype": "Award Category",
     "category_name": "Championing Mangrove Conservation",
     "slug": "championing-mangrove-conservation",
-    "description": "",
+    "description": "For environmental defenders protecting Africa's coastal forests. Honors communities replanting mangroves kilometer by kilometer, scientists documenting how these trees buffer storm surges and shelter fisheries, and activists who stopped mangrove destruction for charcoal and real estate development — saving both the coastline and the livelihoods it supports.",
     "name": "Championing Mangrove Conservation",
     "is_active": 1
   },
@@ -331,7 +331,7 @@
     "doctype": "Award Category",
     "category_name": "Best Author in Voices of Perseverance in Literature Award",
     "slug": "best-author-voices-perseverance-literature-award",
-    "description": "",
+    "description": "For writers whose work captures the human capacity to endure. Honors memoirs of survivors — of war, displacement, illness, or loss — and novels whose characters refuse to be broken by circumstances. Stories that remind readers that perseverance is not glamorous; it is waking up and trying again.",
     "name": "Best Author in Voices of Perseverance in Literature Award",
     "is_active": 1
   },
@@ -339,7 +339,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Mediation and Conflict Resolution Award",
     "slug": "excellence-mediation-conflict-resolution-award",
-    "description": "",
+    "description": "For peacemakers who sit between opposing sides and refuse to let them shoot. Honors the mediators who brokered local ceasefires in ethnic clashes, the elders who resolved land disputes before they turned violent, and the professional negotiators who spent months in windowless rooms hammering out agreements that held.",
     "name": "Excellence in Mediation and Conflict Resolution Award",
     "is_active": 1
   },
@@ -347,7 +347,7 @@
     "doctype": "Award Category",
     "category_name": "Best Radio Personnel Advocating for Positive Relationships",
     "slug": "best-radio-personnel-advocating-positive-relationships",
-    "description": "",
+    "description": "For radio hosts, producers, and journalists who use the airwaves to strengthen families and communities. Honors those running call-in shows that counsel couples in crisis, talkback segments that give youth a platform, and programs that model respectful dialogue across ethnic and political lines — before the rhetoric turns dangerous.",
     "name": "Best Radio Personnel Advocating for Positive Relationships",
     "is_active": 1
   },
@@ -355,7 +355,7 @@
     "doctype": "Award Category",
     "category_name": "Promoting Peace Through Sports and Journalism",
     "slug": "promoting-peace-through-sports-journalism",
-    "description": "",
+    "description": "For those who use two powerful platforms — sports and media — to build peace. Honors journalists who cover sports as a unifying force, coaches running mixed-ethnicity leagues in divided communities, and broadcasters whose sports commentary emphasizes teamwork over tribal identity. Where balls and words both carry hope.",
     "name": "Promoting Peace Through Sports and Journalism",
     "is_active": 1
   },
@@ -363,7 +363,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Journalism and Advocacy Award",
     "slug": "excellence-journalism-advocacy-award",
-    "description": "",
+    "description": "For reporters and media outlets whose investigations changed things. Honors the journalist who exposed a corruption scandal and survived the threats, the editor who ran the story despite pressure from advertisers, and the newsroom that kept covering a famine while everyone else moved on. Journalism that holds power accountable.",
     "name": "Excellence in Journalism and Advocacy Award",
     "is_active": 1
   },
@@ -371,7 +371,7 @@
     "doctype": "Award Category",
     "category_name": "Best Author in Cultural Narratives of Unity and Hope",
     "slug": "best-author-cultural-narratives-unity-hope",
-    "description": "",
+    "description": "For storytellers who craft narratives that bring people together across lines of difference. Honors authors whose novels, plays, or oral histories highlight what communities share rather than what divides them — finding the universal in the particular, and proving that a good story can make us see strangers as neighbours.",
     "name": "Best Author in Cultural Narratives of Unity and Hope",
     "is_active": 1
   },
@@ -379,7 +379,7 @@
     "doctype": "Award Category",
     "category_name": "Best Personality Promoting Peace Through Arts",
     "slug": "best-personality-promoting-peace-through-arts",
-    "description": "",
+    "description": "For public figures — actors, musicians, comedians, dancers — who use their platform to advocate for peace. Honors the celebrity who visited refugee camps when cameras weren't rolling, the musician who toured conflict zones to perform for both sides, and the artist whose work sparked conversations that official channels could not.",
     "name": "Best Personality Promoting Peace Through Arts",
     "is_active": 1
   },
@@ -387,15 +387,15 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Legal Leadership",
     "slug": "excellence-legal-leadership",
-    "description": "",
+    "description": "For advocates who shaped the law in service of justice. Honors the bar association chairs who defended judicial independence, the public defenders who took on impossible cases, and the lawyers who won reparations for victims of state violence — proving that the law, when wielded by skilled and courageous hands, can actually protect the vulnerable.",
     "name": "Excellence in Legal Leadership",
     "is_active": 1
   },
   {
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Social Welfare",
-    "slug": "outstanding-contribution-social-welfare",
-    "description": "",
+    "slug": "outstanding-contribution-social-welfare-award",
+    "description": "For social workers and caregivers who support society's most vulnerable — the elderly abandoned by families, children in institutional care, adults living with severe disabilities. Honors those who visit, bathe, feed, and advocate for people the rest of the world has forgotten. The hands that do the hardest work for the least recognition.",
     "name": "Outstanding Contribution to Social Welfare",
     "is_active": 1
   },
@@ -403,7 +403,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Humanitarian Leadership",
     "slug": "excellence-humanitarian-leadership",
-    "description": "",
+    "description": "For the men and women who run relief operations in the world's most dangerous places. Honors aid directors managing food distribution in active conflict zones, logisticians keeping supply chains moving through flooded roads, and doctors operating in makeshift wards when bombs fall nearby. Leadership under fire, literally.",
     "name": "Excellence in Humanitarian Leadership",
     "is_active": 1
   },
@@ -411,7 +411,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Championing Shariah Finance Compliance in Kenya Award",
     "slug": "excellence-championing-shariah-finance-compliance-kenya-award",
-    "description": "",
+    "description": "For finance professionals ensuring Islamic financial products meet both regulatory and religious standards. Honors those who built Kenya's Shariah-compliant banking sector from scratch — training auditors, designing contracts, and convincing conventional banks that ethical finance was not just a niche but the future.",
     "name": "Excellence in Championing Shariah Finance Compliance in Kenya Award",
     "is_active": 1
   },
@@ -419,7 +419,7 @@
     "doctype": "Award Category",
     "category_name": "Best Radio Personnel Advocating for Peace and Spirituality",
     "slug": "best-radio-personnel-advocating-peace-spirituality",
-    "description": "",
+    "description": "For broadcasters whose programs nourish the soul while informing the mind. Honors radio hosts leading early-morning devotional shows that start listeners' days with reflection, those who mediate live disputes between callers, and producers whose religious programming emphasizes compassion over condemnation.",
     "name": "Best Radio Personnel Advocating for Peace and Spirituality",
     "is_active": 1
   },
@@ -427,7 +427,7 @@
     "doctype": "Award Category",
     "category_name": "Best Media Personnel Advocating for an Ethical Society",
     "slug": "best-media-personnel-advocating-ethical-society",
-    "description": "",
+    "description": "For journalists and media personalities who consistently champion integrity in public life. Honors those running anti-corruption campaigns on air, investigating misuse of public funds, and using their platforms to model honest discourse — refusing bribes, correcting their own mistakes publicly, and demanding accountability from everyone, including their own industry.",
     "name": "Best Media Personnel Advocating for an Ethical Society",
     "is_active": 1
   },
@@ -435,7 +435,7 @@
     "doctype": "Award Category",
     "category_name": "Best TV Producer Advocating for Peace in Society",
     "slug": "best-tv-producer-advocating-peace-society",
-    "description": "",
+    "description": "For television producers who understand that what people watch shapes how they think. Honors those creating shows that deliberately bridge ethnic divides — casting actors from multiple communities, writing storylines that model reconciliation, and producing documentaries that humanize \"the other side\". Television as a peacebuilding tool, not just entertainment.",
     "name": "Best TV Producer Advocating for Peace in Society",
     "is_active": 1
   },
@@ -443,7 +443,7 @@
     "doctype": "Award Category",
     "category_name": "Youth Leadership and Empowerment Award",
     "slug": "youth-leadership-empowerment-award",
-    "description": "",
+    "description": "For young leaders under 35 who are already changing their communities. Honors the student organizing climate strikes in her town, the recent graduate starting a tech hub in a rural county, and the youth group that cleaned up a neglected public park and turned it into a safe space for children. The future is not waiting.",
     "name": "Youth Leadership and Empowerment Award",
     "is_active": 1
   },
@@ -451,7 +451,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Digital Innovation for Peace Award",
     "slug": "excellence-digital-innovation-peace-award",
-    "description": "",
+    "description": "For tech innovators using digital tools to prevent conflict and build understanding. Honors the developers building early-warning apps that flag hate speech on social media, platforms connecting farmers across border regions to share resources, and SMS systems that deliver peace education to feature phones in communities with no internet.",
     "name": "Excellence in Digital Innovation for Peace Award",
     "is_active": 1
   },
@@ -459,7 +459,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Peace Journalism Award",
     "slug": "outstanding-contribution-peace-journalism-award",
-    "description": "",
+    "description": "For journalists who report on conflict without inflaming it. Honors those who interview both sides, avoid dehumanizing language, and cover peace processes with the same rigor they would cover battles. Journalism that understands its power to escalate or de-escalate — and chooses responsibility over sensationalism.",
     "name": "Outstanding Contribution to Peace Journalism Award",
     "is_active": 1
   },
@@ -467,7 +467,7 @@
     "doctype": "Award Category",
     "category_name": "Champion of Disability Rights and Inclusion Award",
     "slug": "champion-disability-rights-inclusion-award",
-    "description": "",
+    "description": "For advocates, policymakers, and organizations building a world where disability is not a barrier. Honors those who fought for accessible public transport, employers who actively hire people with disabilities, and schools that integrated inclusive education — proving that removing physical and social barriers unlocks talent that society desperately needs.",
     "name": "Champion of Disability Rights and Inclusion Award",
     "is_active": 1
   },
@@ -475,7 +475,7 @@
     "doctype": "Award Category",
     "category_name": "Excellence in Sports for Peace and Unity Award",
     "slug": "excellence-sports-peace-unity-award",
-    "description": "",
+    "description": "For sports leaders, coaches, and organizations using athletics to heal divided communities. Honors the football league that brought together youth from rival ethnic groups, the marathon that raised funds for a peace foundation, and the boxing gym keeping at-risk teenagers off the streets. Where the playing field is the only field that matters.",
     "name": "Excellence in Sports for Peace and Unity Award",
     "is_active": 1
   },
@@ -483,7 +483,7 @@
     "doctype": "Award Category",
     "category_name": "Outstanding Contribution to Refugee and IDP Support Award",
     "slug": "outstanding-contribution-refugee-idp-support-award",
-    "description": "",
+    "description": "For those who serve people displaced by conflict and disaster. Honors camp managers running schools inside refugee settlements, local volunteers hosting displaced families in their own homes, and legal aid workers helping refugees navigate asylum systems. In a world with more displaced people than ever, this work has never been more urgent.",
     "name": "Outstanding Contribution to Refugee and IDP Support Award",
     "is_active": 1
   },
@@ -491,7 +491,7 @@
     "doctype": "Award Category",
     "category_name": "Lifetime Achievement in Peacebuilding and Reconciliation Award",
     "slug": "lifetime-achievement-peacebuilding-reconciliation-award",
-    "description": "",
+    "description": "The highest honour — for someone who has dedicated their entire career to making peace. Not a single project or campaign, but decades of showing up: mediating ceasefires, leading truth commissions, healing communities after genocide, and training the next generation of peacebuilders. A life measured not by what was accumulated, but by what was repaired.",
     "name": "Lifetime Achievement in Peacebuilding and Reconciliation Award",
     "is_active": 1
   }
