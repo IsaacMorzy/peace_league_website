@@ -31,12 +31,15 @@ States: `claimed`, `in-progress`, `in-review`, `closed`. Open a row when a `wayf
 Move row here when the worktree closes, the PR merges, or the ticket is `wontfix`.
 ## Watchlist
 
+
 Lower-priority items the loop monitors but does not act on without an external signal. Each entry is one line:
 
 `<iso> <surface>: <signal>`.
 
 | since | surface | signal |
 |-------|---------|--------|
+| 2026-07-23Z | tests    | Happy-path HTTP test deferred: Redis cache-bypass design raised production-wide bypass risk per code-reviewer-minimax-m3 (a single `frappe.cache.set_value` line disables Turnstile site-wide). Better path: browser-driven test via freshjuice-dev/astro-test stack, OR real Cloudflare Turnstile widget test token (`0xAAAAAAAABBBBBBBBBBCCCCCCCCCCCCCC`) wired into site_config as dev-only. Smoke regression string assertion in `TestHttpNominationSubmission` (`b8abaa6`) covers the historical photo-mandatory bug; happy-path is nice-to-have not blocking. |
+
 | 2026-07-23Z | bench | #126 — migrate Award Nominee.photo to `reqd: 0`, then delete the `ignore_mandatory` + `db_set` workaround in `create_nomination()`. Land after one week of production submission traffic. |
 | 2026-07-23Z | tests | Add BENCH_BYPASS_TURNSTILE=1 gated happy-path HTTP test for `create_nomination()`. Currently the smoke tests only guard against the historical regression string; full happy-path coverage requires a Turnstile test token or empty site config. |
 
