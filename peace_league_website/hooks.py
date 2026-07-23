@@ -24,6 +24,18 @@ extend_doctype_class = {
 }
 
 # Custom fields for standard DocTypes
+# ── Scheduled tasks ──
+scheduler_events = {
+    "cron": {
+        "0 21 4 12 *": [  # Dec 4 at 21:00 UTC = Dec 5 00:00 EAT
+            "peace_league_website.awards_scheduled.close_voting"
+        ],
+        "0 15 5 12 *": [  # Dec 5 at 15:00 UTC = Dec 5 18:00 EAT
+            "peace_league_website.awards_scheduled.publish_results"
+        ],
+    },
+}
+
 custom_fields = [
     {
         "doctype": "Donation",
