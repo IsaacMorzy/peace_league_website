@@ -128,7 +128,7 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
           <!-- Right: Hero image / Countdown -->
           <div data-reveal="right" class="relative">
             <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-              <img src={`https://images.unsplash.com/${event.image}?w=800&q=85&auto=format&fit=crop`} alt={event.title} class="w-full h-full object-cover" />
+              <img src={event.image.startsWith('http') || event.image.startsWith('/') ? event.image : `https://images.unsplash.com/${event.image}?w=800&q=85&auto=format&fit=crop`} alt={event.title} class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               {!isPast && (
                 <div class="absolute bottom-4 left-4 right-4">
@@ -511,7 +511,7 @@ const pastEvents = events.filter(e => e.status === 'past' && e.slug !== event.sl
               class="group relative bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-accent/20 block"
               style={`animation-delay: ${idx * 80}ms`} data-reveal="up">
               <div class="relative overflow-hidden aspect-[16/10]">
-                <img src={`https://images.unsplash.com/${pe.image}?w=500&q=75&auto=format&fit=crop`}
+                <img src={pe.image.startsWith('http') || pe.image.startsWith('/') ? pe.image : `https://images.unsplash.com/${pe.image}?w=500&q=75&auto=format&fit=crop`}
                   alt={pe.title} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-center rounded-lg px-2.5 py-1.5 leading-tight shadow-lg">
