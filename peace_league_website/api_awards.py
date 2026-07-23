@@ -253,18 +253,17 @@ def create_nomination():
         frappe.db.commit()
 
         # ── Attach photo to the real docname (proper File link) ──
-        # On file failure, rollback the orphan nominee so we don't leave dangling
-        # Award Nominee docs without photos in the DB.
         try:
             file_doc = save_file(
                 photo.filename, photo.read(),
                 "Award Nominee", nominee.name,
                 is_private=0,
             )
-            # db_set is deliberate: it skips full re-validation (which would touch
-            # other fields' validators and could be affected by future schema
-            # changes). Keep it here even though photo is now non-mandatory.
-            nominee.db_set("photo", file_doc.file_url)
+            # Photo non-mandatory (PR #127); save(ignore_permissions=True) mirrors
+            # db_set's permission + hook bypass for the public-guest endpoint.
+            # Commit restores the original db_set path's transactional boundary.
+            nominee.photo = file_doc.file_url
+            nominee.save(ignore_permissions=True)
             frappe.db.commit()
         except Exception as file_err:
             # Soft-fail: photo is non-mandatory at the DocType level (GH #126),
