@@ -15,7 +15,7 @@ logger = frappe.logger("awards", allow_site=True, file_count=5)
 # ── Constants ──
 
 VOTING_CLOSES_UTC = datetime.datetime(2026, 12, 4, 21, 0, 0)  # Dec 5 00:00 EAT
-RESULTS_ANNOUNCED_UTC = datetime.datetime(2026, 12, 5, 15, 0, 0)  # Dec 5 18:00 EAT
+RESULTS_ANNOUNCED_UTC = datetime.datetime(2026, 12, 17, 7, 0, 0)  # Dec 17 10:00 AM EAT
 
 
 def close_voting():

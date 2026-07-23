@@ -352,14 +352,14 @@ def send_vote_verification_email(email, vote_name):
 def get_results():
     """
     Get the results of the awards.
-    Before announcement (Dec 5 18:00 EAT), possibly hide or return empty?
+    Before announcement (Dec 17 10:00 AM EAT), possibly hide or return empty?
     We'll return data only after announced flag is set in a site config or based on datetime.
     """
     try:
         # Check if results are published: could use a Site Config flag or datetime comparison
-        # For simplicity, check if current datetime >= 2026-12-05 18:00 EAT (UTC+3)
-        # Convert to UTC: 2026-12-05 15:00 UTC
-        announce_utc = datetime.datetime(2026, 12, 5, 15, 0, 0)
+        # For simplicity, check if current datetime >= 2026-12-17 10:00 AM EAT (UTC+3)
+        # Convert to UTC: 2026-12-17 07:00 UTC
+        announce_utc = datetime.datetime(2026, 12, 17, 7, 0, 0)
         now_utc = datetime.datetime.utcnow()
         if now_utc < announce_utc:
             return {"status": "success", "data": {"published": False, "message": "Results not yet published"}}
@@ -571,9 +571,9 @@ def purchase_ticket(**kwargs):
 Thank you for purchasing {quantity}x {name_map[ticket_tier]} ticket(s) to the Peace League Africa Awards Gala 2026!
 
 Event: Peace League Africa Awards Gala
-Date: December 5, 2026
-Time: 3:00 PM EAT
-Venue: Villa Rosa Kempinski, Nairobi
+Date: December 17, 2026
+Time: 10:00 AM EAT
+Venue: August 7th Memorial Park (next to Cooperative Bank), Nairobi
 Ticket: {name_map[ticket_tier]}
 Quantity: {quantity}
 Amount: KES {amount:,.0f}

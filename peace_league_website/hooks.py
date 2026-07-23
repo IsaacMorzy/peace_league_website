@@ -30,7 +30,7 @@ scheduler_events = {
         "0 21 4 12 *": [  # Dec 4 at 21:00 UTC = Dec 5 00:00 EAT
             "peace_league_website.awards_scheduled.close_voting"
         ],
-        "0 15 5 12 *": [  # Dec 5 at 15:00 UTC = Dec 5 18:00 EAT
+        "0 7 17 12 *": [  # Dec 17 at 07:00 UTC = Dec 17 10:00 AM EAT
             "peace_league_website.awards_scheduled.publish_results"
         ],
     },

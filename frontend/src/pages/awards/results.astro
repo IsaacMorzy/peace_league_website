@@ -77,8 +77,8 @@ import Footer from '../../components/Footer.astro';
             <div class="text-steel">Total Votes</div>
           </div>
           <div>
-            <div class="text-4xl font-bold text-accent mb-2">5 Dec</div>
-            <div class="text-steel">Announcement</div>
+            <div class="text-4xl font-bold text-accent mb-2">17 Dec</div>
+            <div class="text-steel">Ceremony</div>
           </div>
         </div>
       </div>
@@ -119,13 +119,13 @@ import Footer from '../../components/Footer.astro';
       const intro = document.getElementById('results-intro');
 
       if (!data.published) {
-        intro.textContent = data.message || 'Results have not been published yet. Check back after December 5, 2026 at 18:00 EAT.';
+        intro.textContent = data.message || 'Results have not been published yet. Check back after December 17, 2026 at 10:00 AM EAT.';
         container.innerHTML = `
           <div class="text-center py-16">
             <div class="text-6xl mb-6">🗳️</div>
             <h2 class="text-heading-3 text-ink mb-4">Voting in Progress</h2>
             <p class="text-body-md text-steel max-w-xl mx-auto">
-              Results will be announced on <strong>December 5, 2026 at 18:00 EAT</strong>.
+              Results will be announced on <strong>December 17, 2026 at 10:00 AM EAT</strong>.
               In the meantime, browse categories and cast your vote!
             </p>
             <a href="/awards" class="btn btn-primary mt-6">Browse Categories</a>
@@ -135,7 +135,7 @@ import Footer from '../../components/Footer.astro';
       }
 
       const results = data.results || [];
-      intro.textContent = 'Congratulations to all the outstanding nominees and winners! The results were announced on December 5, 2026 at the gala in Nairobi.';
+      intro.textContent = 'Congratulations to all the outstanding nominees and winners! The results were announced on December 17, 2026 at the gala in Nairobi.';
 
       if (!results.length) {
         document.getElementById('results-all-content').innerHTML = '<div class="text-center text-steel py-12">No results available.</div>';
