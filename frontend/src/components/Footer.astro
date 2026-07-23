@@ -1,5 +1,10 @@
 ---
+import causes from '../lib/causes-data.json';
 const currentYear = new Date().getFullYear();
+
+const causeSlugs = Object.fromEntries(
+  causes.map(c => [c.name, c.name.toLowerCase().replace(/\s+/g, '-')])
+);
 
 const footerLinks = {
   about: [
@@ -11,11 +16,11 @@ const footerLinks = {
   ],
   causes: [
     { label: 'All Causes', href: '/causes' },
-    { label: 'Peace Education', href: '/causes?category=Education' },
-    { label: 'Healthcare', href: '/causes?category=Health' },
-    { label: 'Clean Water', href: '/causes?category=Water' },
-    { label: 'Youth', href: '/causes?category=Youth' },
-    { label: 'Agriculture', href: '/causes?category=Agriculture' },
+    { label: 'Peace Education', href: `/causes/${causeSlugs['Peace Education']}` },
+    { label: 'Healthcare', href: `/causes/${causeSlugs['Healthcare Outreach']}` },
+    { label: 'Clean Water', href: `/causes/${causeSlugs['Clean Water Access']}` },
+    { label: 'Youth', href: `/causes/${causeSlugs['Youth Empowerment Initiative']}` },
+    { label: 'Agriculture', href: `/causes/${causeSlugs['Sustainable Agriculture']}` },
   ],
   awards: [
     { label: 'All Categories', href: '/awards' },
@@ -261,16 +266,7 @@ const FLAG_COUNTRIES = [
       </div>
     </div>
   </div>
-  <!-- ── HYPNOTIC HEARTS: Two colors floating from footer to top ──
-       These hearts emerge from the footer and rise all the way to the
-       page header, swaying gently like autumn leaves on a thermal draft.
-       Warm amber ♥ and cool teal ♥ — meditation in motion. -->
-  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:0;">
-    <span class="footer-hypnotic-heart footer-hypnotic-heart--warm" style="left:10%;bottom:8%;font-size:0.65rem;--heart-dur:34s;animation-delay:0.5s;">&#x2764;</span>
-    <span class="footer-hypnotic-heart footer-hypnotic-heart--cool" style="left:35%;bottom:12%;font-size:0.55rem;--heart-dur:42s;animation-delay:2s;">&#x2764;</span>
-    <span class="footer-hypnotic-heart footer-hypnotic-heart--warm" style="left:65%;bottom:6%;font-size:0.6rem;--heart-dur:38s;animation-delay:1s;">&#x2764;</span>
-    <span class="footer-hypnotic-heart footer-hypnotic-heart--cool" style="left:88%;bottom:10%;font-size:0.5rem;--heart-dur:46s;animation-delay:3s;">&#x2764;</span>
-  </div>
+  <!-- Hypnotic hearts removed for performance -->
 </footer>
 
 <script>
