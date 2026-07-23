@@ -233,13 +233,10 @@ def create_nomination():
             return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Create Award Nominee document ──
-        # The Award Nominee DocType has `photo` as a mandatory Attach Image field.
-        # Pattern: insert doc WITH ignore_mandatory (bypasses the photo check),
-        # then save_file with the real (generated) docname so the File doc is properly
-        # linked for referential integrity, then db_set the photo URL — db_set writes
-        # directly to MySQL without re-running validators.
-        # ponytail: full, upgrade by removing `reqd: 1` from Award Nominee.photo
-        # then delete the ignore_mandatory + db_set workaround below.
+        # Photo is non-mandatory at DocType level (GH #126 migration).
+        # Insert the doc first, then attach the photo to its generated docname
+        # so the File doc gets proper referential integrity.
+
         nominee = frappe.get_doc({
             "doctype": "Award Nominee",
             "nominee_name": nominee_name,
@@ -252,25 +249,21 @@ def create_nomination():
             "status": "Active",
             "submission_date": nowdate(),
         })
-        # ponytail: try/finally so the global flag is always reset, even on error
-        try:
-            nominee.flags.ignore_mandatory = True
-            nominee.insert(ignore_permissions=True)
-        finally:
-            nominee.flags.ignore_mandatory = False
+        nominee.insert(ignore_permissions=True)
         frappe.db.commit()
 
         # ── Attach photo to the real docname (proper File link) ──
-        # ponytail: on file failure, roll back the orphan nominee so we don't
-        # leave dangling Award Nominee docs without photos in the DB.
+        # On file failure, rollback the orphan nominee so we don't leave dangling
+        # Award Nominee docs without photos in the DB.
         try:
             file_doc = save_file(
                 photo.filename, photo.read(),
                 "Award Nominee", nominee.name,
                 is_private=0,
             )
-            # ponytail: db_set skips full re-validation (which would re-trigger
-            # the mandatory check for `photo` because ignore_mandatory was reset).
+            # db_set is deliberate: it skips full re-validation (which would touch
+            # other fields' validators and could be affected by future schema
+            # changes). Keep it here even though photo is now non-mandatory.
             nominee.db_set("photo", file_doc.file_url)
             frappe.db.commit()
         except Exception as file_err:
