@@ -259,8 +259,75 @@ import Footer from '../../components/Footer.astro';
     lines.forEach((l, i) => l.className = `h-px flex-1 mt-4 stepper-line ${i < currentStep ? 'bg-accent' : 'bg-hairline'}`);
   }
 
+  // Step validation: required fields per step
+  const stepRequired = {
+    0: ['nominee-name'],
+    1: ['category', 'description'],
+    2: ['nominee-photo'],  // validated via JS check since input is hidden
+  };
+
+  // ponytail: inline validation, no framework needed
+  function getFieldLabel(el) {
+    if (el.id) {
+      const label = document.querySelector(`label[for="${el.id}"]`);
+      if (label) return label.textContent.replace('*', '').trim();
+    }
+    return 'this field';
+  }
+
+  function validateStep(step) {
+    const fields = stepRequired[step];
+    if (!fields) return true;
+    for (const id of fields) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (el.type === 'file' && (!el.files || !el.files.length)) {
+        document.querySelectorAll('.photo-error').forEach(e => e.remove());
+        const err = document.createElement('p');
+        err.className = 'step-error photo-error text-xs text-brand-error mt-2 text-center';
+        err.textContent = 'Please upload a photo before continuing.';
+        err.setAttribute('role', 'alert');
+        document.getElementById('photo-dropzone')?.after(err);
+        return false;
+      }
+      if (!el.value || !el.value.trim()) {
+        document.querySelectorAll(`[data-field="${id}"]`).forEach(e => e.remove());
+        const err = document.createElement('p');
+        err.className = `step-error text-xs text-brand-error mt-1`;
+        err.dataset.field = id;
+        err.textContent = `Please fill in "${getFieldLabel(el)}" before continuing.`;
+        err.setAttribute('role', 'alert');
+        el.parentElement?.appendChild(err);
+        el.focus();
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return false;
+      }
+    }
+    // Clear errors on this step
+    document.querySelectorAll(`.form-step[data-step="${step}"] .step-error`).forEach(e => e.remove());
+    return true;
+  }
+
   document.querySelectorAll('.next-step').forEach(btn => {
-    btn.addEventListener('click', () => goToStep(parseInt(btn.dataset.next)));
+    btn.addEventListener('click', () => {
+      const currentStepEl = btn.closest('.form-step');
+      const step = parseInt(currentStepEl?.dataset?.step);
+      if (step !== undefined && !validateStep(step)) return;
+      goToStep(parseInt(btn.dataset.next));
+    });
+  });
+
+  // Clear errors on interaction
+  document.querySelectorAll('input, select, textarea').forEach(el => {
+    const evt = el.tagName === 'SELECT' ? 'change' : 'input';
+    el.addEventListener(evt, () => {
+      el.closest('.form-step')?.querySelectorAll('.step-error').forEach(e => e.remove());
+    });
+  });
+
+  // Clear errors on file selection
+  document.getElementById('nominee-photo')?.addEventListener('change', () => {
+    document.querySelectorAll('.form-step .step-error').forEach(e => e.remove());
   });
   document.querySelectorAll('.prev-step').forEach(btn => {
     btn.addEventListener('click', () => goToStep(parseInt(btn.dataset.prev)));
