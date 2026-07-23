@@ -38,6 +38,7 @@ Lower-priority items the loop monitors but does not act on without an external s
 
 | since | surface | signal |
 |-------|---------|--------|
+| 2026-07-23Z | tests    | Soft-fail behavior change deferred: 3 ship-blockers from code-reviewer (frontend UI gap, orphan File cleanup SQL, outer-except test failure). Recommend next attempt bundles frontend warning UI + tests in one atomic PR for human review. |
 | 2026-07-23Z | tests    | Happy-path HTTP test deferred: Redis cache-bypass design raised production-wide bypass risk per code-reviewer-minimax-m3 (a single `frappe.cache.set_value` line disables Turnstile site-wide). Better path: browser-driven test via freshjuice-dev/astro-test stack, OR real Cloudflare Turnstile widget test token (`0xAAAAAAAABBBBBBBBBBCCCCCCCCCCCCCC`) wired into site_config as dev-only. Smoke regression string assertion in `TestHttpNominationSubmission` (`b8abaa6`) covers the historical photo-mandatory bug; happy-path is nice-to-have not blocking. |
 
 | 2026-07-23Z | bench | #126 — migrate Award Nominee.photo to `reqd: 0`, then delete the `ignore_mandatory` + `db_set` workaround in `create_nomination()`. Land after one week of production submission traffic. |
