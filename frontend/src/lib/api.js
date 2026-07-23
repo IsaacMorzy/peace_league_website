@@ -108,3 +108,14 @@ export async function submitNomination(formData) {
     body: formData,
   });
 }
+
+export async function purchaseTicket(data) {
+  return apiCall('/api/method/peace_league_website.api_awards.purchase_ticket', {
+    method: 'POST',
+    body: data,
+  });
+}
+
+export async function ticketPaymentStatus(checkoutRequestId) {
+  return apiCall(`/api/method/peace_league_website.api_awards.ticket_payment_status?checkout_request_id=${encodeURIComponent(checkoutRequestId)}`);
+}

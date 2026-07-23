@@ -1,0 +1,125 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2026-07-23",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "ticket_tier",
+    "quantity",
+    "attendee_name",
+    "attendee_email",
+    "attendee_phone",
+    "special_requests",
+    "column_break_1",
+    "payment_method",
+    "amount",
+    "status",
+    "checkout_request_id",
+    "mpesa_receipt"
+  ],
+  "fields": [
+    {
+      "fieldname": "ticket_tier",
+      "fieldtype": "Select",
+      "label": "Ticket Tier",
+      "options": "Premium\nStandard\nEarly Bird",
+      "reqd": 1
+    },
+    {
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "label": "Quantity",
+      "default": "1",
+      "reqd": 1
+    },
+    {
+      "fieldname": "attendee_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Attendee Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "attendee_email",
+      "fieldtype": "Data",
+      "label": "Attendee Email",
+      "reqd": 1
+    },
+    {
+      "fieldname": "attendee_phone",
+      "fieldtype": "Data",
+      "label": "Attendee Phone",
+      "reqd": 1
+    },
+    {
+      "fieldname": "special_requests",
+      "fieldtype": "Small Text",
+      "label": "Special Requests"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Select",
+      "label": "Payment Method",
+      "options": "M-Pesa\nCard\nBank Transfer",
+      "reqd": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1
+    },
+    {
+      "allow_on_submit": 1,
+      "default": "Pending Payment",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Status",
+      "options": "Pending Payment\nPaid\nFailed\nConfirmed",
+      "read_only": 1
+    },
+    {
+      "fieldname": "checkout_request_id",
+      "fieldtype": "Data",
+      "label": "Checkout Request ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "mpesa_receipt",
+      "fieldtype": "Data",
+      "label": "M-Pesa Receipt Number",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "modified": "2026-07-23",
+  "modified_by": "Administrator",
+  "module": "PLW Portal",
+  "name": "Award Ticket Purchase",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "System Manager",
+      "select": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "title_field": "attendee_name",
+  "track_changes": 1
+}

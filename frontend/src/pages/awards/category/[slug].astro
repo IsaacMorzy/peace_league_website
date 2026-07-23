@@ -66,16 +66,25 @@ const { slug } = Astro.params;
       </div>
     </section>
 
-    <!-- Vote confirmation modal -->
-    <div id="vote-modal" class="fixed inset-0 z-50 hidden" aria-modal="true" role="dialog">
-      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeVoteModal()"></div>
-      <div class="absolute inset-0 flex items-center justify-center p-4">
-        <div class="bg-canvas rounded-xl max-w-md w-full p-6 shadow-2xl">
-          <h3 class="text-heading-5 text-ink mb-4" id="vote-modal-title">Vote Confirmed</h3>
-          <p class="text-body-md text-steel mb-6" id="vote-modal-message">Your vote has been recorded. Thank you for participating in the Peace League Awards.</p>
-          <button class="btn btn-primary w-full" onclick="closeVoteModal()">Continue Browsing</button>
+    <!-- Vote confirmation modal — Preline overlay -->
+    <div id="hs-vote-modal" class="hs-overlay hidden fixed inset-0 z-[80] size-full" role="dialog" tabindex="-1" aria-labelledby="vote-modal-title">
+      <div class="mt-0 opacity-0 ease-out transition-all size-full">
+        <div class="flex justify-center items-center min-h-full p-4">
+          <div class="scale-95 opacity-0 ease-out transition-all max-w-md w-full">
+            <div class="bg-canvas rounded-2xl p-6 shadow-2xl border border-hairline">
+              <div class="flex justify-between items-start mb-4" id="vote-modal-header">
+                <h3 class="text-heading-5 text-ink" id="vote-modal-title">Vote Confirmed</h3>
+                <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-surface text-steel hover:bg-hairline focus:outline-hidden focus:bg-hairline" aria-label="Close" data-hs-overlay="#hs-vote-modal">
+                  <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+              </div>
+              <p class="text-body-md text-steel mb-6" id="vote-modal-message">Your vote has been recorded. Thank you for participating.</p>
+              <button type="button" class="btn btn-accent w-full" data-hs-overlay="#hs-vote-modal">Continue Browsing</button>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="hs-overlay-open:opacity-100 opacity-0 fixed inset-0 bg-black/50 backdrop-blur-sm z-[-1]" data-hs-overlay="#hs-vote-modal"></div>
     </div>
 
     <!-- Cross-links -->
@@ -112,9 +121,23 @@ const { slug } = Astro.params;
   function showModal(title, message) {
     document.getElementById('vote-modal-title').textContent = title;
     document.getElementById('vote-modal-message').textContent = message;
-    document.getElementById('vote-modal').classList.remove('hidden');
+    // Open Preline overlay
+    const modal = document.getElementById('hs-vote-modal');
+    if (modal && window.HSOverlay) {
+      window.HSOverlay.open(modal);
+    } else if (modal) {
+      // ponytail: fallback if Preline JS not loaded yet
+      modal.classList.remove('hidden');
+    }
   }
-  window.closeVoteModal = () => document.getElementById('vote-modal').classList.add('hidden');
+  window.closeVoteModal = () => {
+    const modal = document.getElementById('hs-vote-modal');
+    if (modal && window.HSOverlay) {
+      window.HSOverlay.close(modal);
+    } else if (modal) {
+      modal.classList.add('hidden');
+    }
+  };
 
   async function loadCategory() {
     try {
@@ -158,7 +181,24 @@ const { slug } = Astro.params;
                   <div class="text-xs text-steel uppercase tracking-wide">Votes</div>
                 </div>
               </div>
-              <p class="text-body-sm text-steel my-4 line-clamp-3">${escapeHtml(n.description)}</p>
+              <!-- Preline Accordion for nominee description -->
+              <div class="hs-accordion-group my-4" data-hs-accordion-always-open>
+                <div class="hs-accordion" id="hs-accordion-${escapeHtml(n.name)}">
+                  <div id="hs-accordion-body-${escapeHtml(n.name)}" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region">
+                    <p class="text-body-sm text-steel">${escapeHtml(n.description)}</p>
+                  </div>
+                  ${n.description && n.description.length > 150 ? `
+                    <p class="text-body-sm text-steel line-clamp-3 accordion-preview" id="accordion-preview-${escapeHtml(n.name)}">${escapeHtml(n.description)}</p>
+                    <button type="button" class="hs-accordion-toggle inline-flex items-center gap-x-1 text-xs font-medium text-accent hover:text-accent-deep mt-2 transition-colors" aria-controls="hs-accordion-body-${escapeHtml(n.name)}">
+                      <span class="accordion-text-more">Read more</span>
+                      <span class="hidden accordion-text-less">Show less</span>
+                      <svg class="size-3 transition-transform accordion-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+                    </button>
+                  ` : `
+                    <p class="text-body-sm text-steel">${escapeHtml(n.description)}</p>
+                  `}
+                </div>
+              </div>
               <div class="mt-auto">
                 <button
                   class="btn btn-primary vote-btn"
@@ -223,3 +263,12 @@ const { slug } = Astro.params;
 
   loadCategory();
 </script>
+
+<style>
+  /* ponytail: accordion toggle states without Preline plugin variants */
+  .hs-accordion-toggle[aria-expanded="true"] .accordion-chevron { transform: rotate(180deg); }
+  .hs-accordion-toggle[aria-expanded="true"] .accordion-text-more { display: none; }
+  .hs-accordion-toggle[aria-expanded="true"] .accordion-text-less { display: inline; }
+  .hs-accordion-toggle .accordion-text-less { display: none; }
+  .hs-accordion-toggle[aria-expanded="true"] ~ .accordion-preview { display: none; }
+</style>

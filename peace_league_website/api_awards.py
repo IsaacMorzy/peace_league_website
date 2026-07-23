@@ -13,12 +13,15 @@ All endpoints are whitelisted for guest access except the admin ones (if any).
 
 import datetime
 import json
+import re
 from urllib.parse import urljoin
 
 import frappe
 from frappe import _
-from frappe.utils import now, nowdate
+from frappe.utils import now, nowdate, get_request_site_address
 from frappe.utils.file_manager import save_file
+from payments.payment_gateways.doctype.mpesa_settings.mpesa_connector import MpesaConnector
+from payments.payment_gateways.doctype.mpesa_settings.mpesa_settings import sanitize_mobile_number
 
 logger = frappe.logger("awards", allow_site=True, file_count=5)
 
@@ -31,7 +34,7 @@ RECAPTCHA_SECRET = frappe.conf.get("recaptcha_secret_key") or ""  # set in site 
 
 @frappe.whitelist(allow_guest=True)
 def get_categories():
-    """Return all active award categories, ordered by sort_order or name."""
+    """Return all active award categories with nominee counts, ordered by sort_order or name."""
     try:
         categories = frappe.get_list(
             "Award Category",
@@ -40,6 +43,26 @@ def get_categories():
             order_by="sort_order asc, category_name asc",
             ignore_permissions=True
         )
+        # ponytail: single SQL query for all nominee counts, avoid N+1
+        cat_names = [c.name for c in categories]
+        if cat_names:
+            counts = frappe.db.sql(
+                """
+                SELECT category, COUNT(*) as cnt
+                FROM `tabAward Nominee`
+                WHERE category IN %s AND status = 'Active'
+                GROUP BY category
+                """,
+                [cat_names],
+                as_dict=True
+            )
+            count_map = {c.category: c.cnt for c in counts}
+            for cat in categories:
+                cat["nominee_count"] = count_map.get(cat.name, 0)
+        else:
+            for cat in categories:
+                cat["nominee_count"] = 0
+
         return {"status": "success", "data": categories}
     except Exception as e:
         logger.error(f"Error fetching categories: {e}", exc_info=True)
@@ -416,6 +439,277 @@ def admin_update_nomination(nominee_name, **kwargs):
     nominee.save(ignore_permissions=True)
     frappe.db.commit()
     return {"status": "success", "message": _("Nomination updated")}
+
+
+@frappe.whitelist(allow_guest=True)
+def purchase_ticket(**kwargs):
+    """
+    Purchase a ticket for the Awards Gala. For M-Pesa, initiates STK Push.
+    
+    Expected kwargs:
+    - ticket_tier: 'premium', 'standard', 'early_bird'
+    - quantity: int
+    - attendee_name: str
+    - attendee_email: str
+    - attendee_phone: str
+    - special_requests: str (optional)
+    - payment_method: 'mpesa', 'card', 'bank'
+    - amount: float
+    """
+    try:
+        frappe.flags.ignore_permissions = True
+        ticket_tier = kwargs.get('ticket_tier')
+        quantity = int(kwargs.get('quantity', 1))
+        attendee_name = kwargs.get('attendee_name')
+        attendee_email = kwargs.get('attendee_email')
+        attendee_phone = kwargs.get('attendee_phone')
+        special_requests = kwargs.get('special_requests', '')
+        payment_method = kwargs.get('payment_method', 'mpesa')
+        amount = float(kwargs.get('amount', 0))
+        # ponytail: map frontend values to DocType select options
+        payment_method = {'mpesa': 'M-Pesa', 'card': 'Card', 'bank': 'Bank Transfer'}.get(payment_method, payment_method)
+        is_mpesa = payment_method == 'M-Pesa'
+
+        name_map = {'premium': 'Premium Seat', 'standard': 'Standard Seat', 'early_bird': 'Early Bird Standard Seat'}
+
+        # Validate required fields
+        if not attendee_name:
+            return {"status": "error", "message": _("Attendee name is required")}
+        if not attendee_email:
+            return {"status": "error", "message": _("Email is required")}
+        if not attendee_phone:
+            return {"status": "error", "message": _("Phone number is required")}
+        if ticket_tier not in ('premium', 'standard', 'early_bird'):
+            return {"status": "error", "message": _("Invalid ticket tier")}
+        if quantity < 1 or quantity > 10:
+            return {"status": "error", "message": _("Quantity must be between 1 and 10")}
+        if ticket_tier != 'premium':
+            return {"status": "error", "message": _("This ticket tier is currently sold out")}
+
+        # ── Store ticket purchase in a simple log table ──
+        # ponytail: use SQL INSERT into a lightweight log; upgrade to proper doctype later
+        checkout_id = None
+        if is_mpesa:
+            checkout_id = _initiate_mpesa_ticket_stk(attendee_phone, amount, attendee_name)
+            if not checkout_id:
+                return {"status": "error", "message": _("M-Pesa payment initiation failed. Please try again.")}
+
+        frappe.db.sql(
+            """
+            INSERT INTO `tabAward Ticket Purchase` (name, ticket_tier, quantity, attendee_name,
+                attendee_email, attendee_phone, special_requests, payment_method, amount,
+                status, checkout_request_id, creation, modified)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
+            """,
+            [
+                frappe.generate_hash(length=15),
+                ticket_tier,
+                quantity,
+                attendee_name,
+                attendee_email,
+                attendee_phone,
+                special_requests,
+                payment_method,
+                amount,
+                "Pending Payment" if is_mpesa else "Confirmed",
+                checkout_id or "",
+            ],
+        )
+        frappe.db.commit()
+
+        logger.info(f"Ticket purchase: {attendee_name} — {quantity}x {ticket_tier} — {payment_method}")
+
+        # ── Send confirmation email (non-blocking) ──
+        try:
+            payment_note = "Complete payment on your phone to confirm." if is_mpesa else "Payment confirmed."
+            frappe.sendmail(
+                recipients=[attendee_email],
+                subject="Peace League Awards Gala — Ticket Confirmation",
+                message=f"""Dear {attendee_name},
+
+Thank you for purchasing {quantity}x {name_map[ticket_tier]} ticket(s) to the Peace League Africa Awards Gala 2026!
+
+Event: Peace League Africa Awards Gala
+Date: December 5, 2026
+Time: 3:00 PM EAT
+Venue: Villa Rosa Kempinski, Nairobi
+Ticket: {name_map[ticket_tier]}
+Quantity: {quantity}
+Amount: KES {amount:,.0f}
+Payment Method: {payment_method.upper()}
+Status: {payment_note}
+
+{f'Special requests: {special_requests}' if special_requests else ''}
+
+If you have any questions, reply to this email or contact us at info@peaceleagueafrica.org.
+
+See you at the gala!
+
+— The Peace League Africa Team
+"""
+            )
+        except Exception as mail_err:
+            logger.warning(f"Ticket confirmation email failed for {attendee_email}: {mail_err}")
+
+        if is_mpesa:
+            return {
+                "status": "success",
+                "message": _("M-Pesa prompt sent to your phone. Complete payment on your phone."),
+                "data": {
+                    "ticket_tier": ticket_tier,
+                    "quantity": quantity,
+                    "amount": amount,
+                    "checkout_request_id": checkout_id,
+                    "mpesa_pending": True,
+                }
+            }
+
+        return {
+            "status": "success",
+            "message": _("Your ticket order has been confirmed!"),
+            "data": {"ticket_tier": ticket_tier, "quantity": quantity, "amount": amount}
+        }
+    except Exception as e:
+        logger.error(f"Ticket purchase error: {e}", exc_info=True)
+        return {"status": "error", "message": _("Failed to process ticket order")}
+
+
+def _initiate_mpesa_ticket_stk(phone, amount, customer_name):
+    """Initiate M-Pesa STK Push for a ticket purchase. Returns checkout_request_id or None."""
+    try:
+        mpesa_settings_name = frappe.db.get_value("Mpesa Settings", {}, "name")
+        if not mpesa_settings_name:
+            logger.error("M-Pesa not configured for ticket purchase")
+            return None
+
+        mpesa_settings = frappe.get_doc("Mpesa Settings", mpesa_settings_name)
+        env = "production" if not mpesa_settings.sandbox else "sandbox"
+        business_shortcode = (
+            mpesa_settings.business_shortcode if env == "production" else mpesa_settings.till_number
+        )
+
+        callback_url = (
+            get_request_site_address(True)
+            + "/api/method/peace_league_website.api_awards.mpesa_ticket_callback"
+        )
+
+        connector = MpesaConnector(
+            env=env,
+            app_key=mpesa_settings.consumer_key,
+            app_secret=mpesa_settings.get_password("consumer_secret"),
+        )
+
+        mobile_number = sanitize_mobile_number(phone)
+
+        response = connector.stk_push(
+            business_shortcode=business_shortcode,
+            amount=int(amount),
+            passcode=mpesa_settings.get_password("online_passkey"),
+            callback_url=callback_url,
+            reference_code=mpesa_settings.till_number,
+            phone_number=mobile_number,
+            description="Awards Gala Ticket",
+        )
+
+        if response.get("ResponseCode") == "0":
+            return response["CheckoutRequestID"]
+        else:
+            logger.error(f"M-Pesa STK Push failed for ticket: {response.get('ResponseDescription')}")
+            return None
+    except Exception as e:
+        logger.error(f"M-Pesa ticket STK error: {e}", exc_info=True)
+        return None
+
+
+@frappe.whitelist(allow_guest=True)
+def ticket_payment_status(checkout_request_id):
+    """
+    GET /api/method/peace_league_website.api_awards.ticket_payment_status
+    Poll the status of an M-Pesa ticket payment.
+    """
+    try:
+        frappe.flags.ignore_permissions = True
+        if not checkout_request_id:
+            return {"status": "error", "message": _("Missing checkout request ID")}
+
+        row = frappe.db.sql(
+            """
+            SELECT status, amount FROM `tabAward Ticket Purchase`
+            WHERE checkout_request_id = %s LIMIT 1
+            """,
+            [checkout_request_id],
+            as_dict=True,
+        )
+        if not row:
+            return {"status": "error", "message": _("Ticket purchase not found")}
+
+        purchase = row[0]
+        return {
+            "status": "success",
+            "data": {
+                "paid": purchase.status == "Paid",
+                "status": purchase.status,
+                "amount": float(purchase.amount),
+            }
+        }
+    except Exception as e:
+        logger.error(f"Ticket payment status error: {e}", exc_info=True)
+        return {"status": "error", "message": str(e)}
+
+
+@frappe.whitelist(allow_guest=True, methods=["POST"])
+def mpesa_ticket_callback(**kwargs):
+    """
+    POST callback from Safaricom M-Pesa STK Push for ticket purchases.
+    Updates the Award Ticket Purchase status to Paid or Failed.
+    """
+    try:
+        frappe.flags.ignore_permissions = True
+        raw = frappe.get_json()
+        body = frappe._dict(raw.get("Body", {}))
+        stk_callback = frappe._dict(body.get("stkCallback", {}))
+
+        checkout_request_id = stk_callback.get("CheckoutRequestID")
+        result_code = stk_callback.get("ResultCode", 1)
+
+        if not checkout_request_id:
+            return {"ResultCode": 1, "ResultDesc": "Missing CheckoutRequestID"}
+
+        if result_code == 0:
+            metadata = stk_callback.get("CallbackMetadata", {}).get("Item", [])
+            mpesa_receipt = None
+            for item in metadata:
+                if item.get("Name") == "MpesaReceiptNumber":
+                    mpesa_receipt = item.get("Value")
+                    break
+
+            frappe.db.sql(
+                """
+                UPDATE `tabAward Ticket Purchase`
+                SET status = 'Paid', mpesa_receipt = %s, modified = NOW()
+                WHERE checkout_request_id = %s
+                """,
+                [mpesa_receipt or "", checkout_request_id],
+            )
+            frappe.db.commit()
+            logger.info(f"M-Pesa ticket payment completed: {checkout_request_id} receipt={mpesa_receipt}")
+        else:
+            result_desc = stk_callback.get("ResultDesc", "Payment failed")
+            frappe.db.sql(
+                """
+                UPDATE `tabAward Ticket Purchase`
+                SET status = 'Failed', modified = NOW()
+                WHERE checkout_request_id = %s
+                """,
+                [checkout_request_id],
+            )
+            frappe.db.commit()
+            logger.warning(f"M-Pesa ticket payment failed: {checkout_request_id} — {result_desc}")
+
+        return {"ResultCode": 0, "ResultDesc": "Success"}
+    except Exception as e:
+        logger.error(f"M-Pesa ticket callback error: {e}", exc_info=True)
+        return {"ResultCode": 1, "ResultDesc": "Internal error"}
 
 
 @frappe.whitelist()

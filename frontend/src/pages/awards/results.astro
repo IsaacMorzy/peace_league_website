@@ -24,11 +24,37 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Results List -->
+    <!-- Results Tabs — Preline -->
     <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
       <div class="max-w-7xl mx-auto">
-        <div id="results-container">
-          <div class="text-center text-steel py-12">Loading results…</div>
+        <div class="mb-8">
+          <h2 class="text-heading-3 text-ink mb-2">Winners by Category</h2>
+          <p class="text-body-md text-steel">Full ranked results with vote totals. Winners are highlighted.</p>
+        </div>
+
+        <!-- Preline Tabs -->
+        <nav class="flex gap-x-2 mb-8" aria-label="Tabs" role="tablist" data-hs-tabs="true">
+          <button type="button" class="py-2.5 px-5 inline-flex items-center gap-x-2 border border-hairline rounded-full text-sm font-medium text-steel hover:text-ink hover:border-accent/40 transition-all disabled:opacity-50 disabled:pointer-events-none active bg-accent text-[#0a0a0a] border-accent" id="tab-all" data-hs-tab="#results-all" aria-controls="results-all" role="tab">
+            All Winners
+          </button>
+          <button type="button" class="py-2.5 px-5 inline-flex items-center gap-x-2 border border-hairline rounded-full text-sm font-medium text-steel hover:text-ink hover:border-accent/40 transition-all disabled:opacity-50 disabled:pointer-events-none" id="tab-winners" data-hs-tab="#results-only-winners" aria-controls="results-only-winners" role="tab">
+            Only Winners
+          </button>
+        </nav>
+
+        <div id="results-container" class="space-y-6">
+          <!-- Tab 1: All Winners -->
+          <div id="results-all" role="tabpanel" aria-labelledby="tab-all">
+            <div id="results-all-content" class="space-y-6">
+              <div class="text-center text-steel py-12">Loading results…</div>
+            </div>
+          </div>
+          <!-- Tab 2: Only Winners -->
+          <div id="results-only-winners" class="hidden" role="tabpanel" aria-labelledby="tab-winners">
+            <div id="results-winners-content" class="space-y-6">
+              <div class="text-center text-steel py-12">Loading results…</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -90,7 +116,6 @@ import Footer from '../../components/Footer.astro';
       if (res.status !== 'success') throw new Error(res.message || 'API error');
 
       const data = res.data;
-      const container = document.getElementById('results-container');
       const intro = document.getElementById('results-intro');
 
       if (!data.published) {
@@ -113,63 +138,65 @@ import Footer from '../../components/Footer.astro';
       intro.textContent = 'Congratulations to all the outstanding nominees and winners! The results were announced on December 5, 2026 at the gala in Nairobi.';
 
       if (!results.length) {
-        container.innerHTML = '<div class="text-center text-steel py-12">No results available.</div>';
+        document.getElementById('results-all-content').innerHTML = '<div class="text-center text-steel py-12">No results available.</div>';
+        document.getElementById('results-winners-content').innerHTML = '<div class="text-center text-steel py-12">No winners yet.</div>';
         return;
       }
 
       const totalVotesAll = results.reduce((sum, r) => sum + (r.total_votes || 0), 0);
-      const categoriesWithWinners = results.filter(r => r.winner).length;
+      const winners = results.filter(r => r.winner);
 
-      container.innerHTML = `
-        <div class="mb-8">
-          <h2 class="text-heading-3 text-ink mb-2">Winners by Category</h2>
-          <p class="text-body-md text-steel">Full ranked results with vote totals. Winners are highlighted with a gold badge.</p>
-        </div>
-        <div class="space-y-6">
-          ${results.map(result => {
-            if (!result.winner) {
-              return `
-                <div class="card-base p-6" id="${escapeHtml(result.slug)}">
-                  <div class="mb-4"><h3 class="text-heading-5 text-ink">${escapeHtml(result.category)}</h3></div>
-                  <p class="text-body-sm text-steel">No votes were cast in this category.</p>
-                </div>
-              `;
-            }
-            const w = result.winner;
-            const pct = w.percentage ? w.percentage.toFixed(1) : '0.0';
-            return `
-              <div class="card-base p-6" id="${escapeHtml(result.slug)}">
-                <div class="mb-4"><h3 class="text-heading-5 text-ink">${escapeHtml(result.category)}</h3></div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div class="md:col-span-2">
-                    <div class="flex gap-5 p-4 bg-accent/5 border-2 border-accent rounded-xl relative">
-                      <div class="absolute -top-3 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">WINNER</div>
-                      ${w.photo
-                        ? `<img src="${escapeHtml(w.photo)}" alt="${escapeHtml(w.name)}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />`
-                        : `<div class="w-20 h-20 rounded-lg bg-hairline flex items-center justify-center text-steel text-xs flex-shrink-0">No photo</div>`}
-                      <div>
-                        <h4 class="text-heading-5 text-ink mb-1">${escapeHtml(w.name)}</h4>
-                        <div class="text-sm text-steel">
-                          <span class="font-semibold">${(w.votes || 0).toLocaleString()}</span> votes
-                          <span class="text-hairline mx-2">•</span>
-                          <span>${pct}% of total</span>
-                        </div>
-                      </div>
+      function renderResultCard(result) {
+        if (!result.winner) {
+          return `
+            <div class="card-base p-6" id="${escapeHtml(result.slug)}">
+              <div class="mb-4"><h3 class="text-heading-5 text-ink">${escapeHtml(result.category)}</h3></div>
+              <p class="text-body-sm text-steel">No votes were cast in this category.</p>
+            </div>
+          `;
+        }
+        const w = result.winner;
+        const pct = w.percentage ? w.percentage.toFixed(1) : '0.0';
+        return `
+          <div class="card-base p-6" id="${escapeHtml(result.slug)}">
+            <div class="mb-4"><h3 class="text-heading-5 text-ink">${escapeHtml(result.category)}</h3></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="md:col-span-2">
+                <div class="flex gap-5 p-4 bg-accent/5 border-2 border-accent rounded-xl relative">
+                  <div class="absolute -top-3 left-4 bg-accent text-[#0a0a0a] text-xs font-bold px-3 py-1 rounded-full">WINNER</div>
+                  ${w.photo
+                    ? `<img src="${escapeHtml(w.photo)}" alt="${escapeHtml(w.name)}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />`
+                    : `<div class="w-20 h-20 rounded-lg bg-hairline flex items-center justify-center text-steel text-xs flex-shrink-0">No photo</div>`}
+                  <div>
+                    <h4 class="text-heading-5 text-ink mb-1">${escapeHtml(w.name)}</h4>
+                    <div class="text-sm text-steel">
+                      <span class="font-semibold">${(w.votes || 0).toLocaleString()}</span> votes
+                      <span class="text-hairline mx-2">·</span>
+                      <span>${pct}% of total</span>
                     </div>
-                  </div>
-                  <div class="flex flex-col justify-center items-center bg-surface rounded-xl p-6">
-                    <div class="text-4xl font-bold text-ink mb-2">${(w.votes || 0).toLocaleString()}</div>
-                    <div class="text-sm text-steel text-center">Votes for winner</div>
-                    <div class="mt-4 text-sm text-steel">
-                      Total votes: <span class="font-semibold text-ink">${(result.total_votes || 0).toLocaleString()}</span>
+                    <div class="mt-3 w-full bg-hairline rounded-full h-2" role="progressbar" aria-valuenow="${Math.round(parseFloat(pct))}" aria-valuemin="0" aria-valuemax="100" aria-label="${pct}% of votes">
+                      <div class="bg-accent h-2 rounded-full transition-all duration-1000 ease-out" style="width: ${pct}%"></div>
                     </div>
                   </div>
                 </div>
               </div>
-            `;
-          }).join('')}
-        </div>
-      `;
+              <div class="flex flex-col justify-center items-center bg-surface rounded-xl p-6">
+                <div class="text-4xl font-bold text-ink mb-2">${(w.votes || 0).toLocaleString()}</div>
+                <div class="text-sm text-steel text-center">Votes for winner</div>
+                <div class="mt-4 text-sm text-steel">
+                  Total votes: <span class="font-semibold text-ink">${(result.total_votes || 0).toLocaleString()}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Populate both tab containers
+      document.getElementById('results-all-content').innerHTML = results.map(renderResultCard).join('');
+      document.getElementById('results-winners-content').innerHTML = winners.length
+        ? winners.map(renderResultCard).join('')
+        : '<div class="text-center text-steel py-8">All categories have recorded votes.</div>';
 
       // Populate summary stats
       const summary = document.getElementById('summary-stats');
@@ -179,7 +206,7 @@ import Footer from '../../components/Footer.astro';
     } catch (err) {
       console.error('Results load error:', err);
       document.getElementById('results-intro').textContent = 'Unable to load results. Please try again later.';
-      document.getElementById('results-container').innerHTML =
+      document.getElementById('results-all-content').innerHTML =
         '<div class="text-center text-brand-error py-12">Failed to load results.</div>';
     }
   }

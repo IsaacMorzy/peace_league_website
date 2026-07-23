@@ -9,13 +9,13 @@ import Footer from '../../components/Footer.astro';
 
   <main id="main-content" class="min-h-screen">
     <!-- Header -->
-    <section class="bg-accent/10 py-12 px-4 sm:px-6 lg:px-8 border-b border-hairline">
+    <section class="bg-accent/10 py-10 px-4 sm:px-6 lg:px-8 border-b border-hairline">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-heading-2 text-ink mb-4">Submit a Nomination</h1>
-        <p class="text-body-md text-steel mb-6">
+        <p class="text-body-md text-steel mb-4">
           Nominate a person or organization for a Peace League Africa Award. Deadline: December 5, 2026.
         </p>
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-ink border border-hairline">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-canvas rounded-full text-sm text-ink border border-hairline">
           <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
@@ -27,191 +27,184 @@ import Footer from '../../components/Footer.astro';
     <!-- Form -->
     <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
       <div class="max-w-3xl mx-auto">
+
+        <!-- Preline Stepper -->
+        <div id="nominate-stepper" class="mb-10">
+          <ul class="flex justify-between items-center gap-1" role="list">
+            <li class="flex-1 flex flex-col items-center stepper-step" data-step="0">
+              <div class="step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-accent bg-accent text-[#0a0a0a] stepper-dot">1</div>
+              <span class="text-[10px] font-medium text-ink mt-1.5 stepper-label">Info</span>
+            </li>
+            <li class="h-px flex-1 bg-accent stepper-line mt-4"></li>
+            <li class="flex-1 flex flex-col items-center stepper-step" data-step="1">
+              <div class="step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-hairline text-steel bg-canvas stepper-dot">2</div>
+              <span class="text-[10px] font-medium text-steel mt-1.5 stepper-label">Details</span>
+            </li>
+            <li class="h-px flex-1 bg-hairline stepper-line mt-4"></li>
+            <li class="flex-1 flex flex-col items-center stepper-step" data-step="2">
+              <div class="step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-hairline text-steel bg-canvas stepper-dot">3</div>
+              <span class="text-[10px] font-medium text-steel mt-1.5 stepper-label">Photo</span>
+            </li>
+            <li class="h-px flex-1 bg-hairline stepper-line mt-4"></li>
+            <li class="flex-1 flex flex-col items-center stepper-step" data-step="3">
+              <div class="step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-hairline text-steel bg-canvas stepper-dot">4</div>
+              <span class="text-[10px] font-medium text-steel mt-1.5 stepper-label">Submit</span>
+            </li>
+          </ul>
+        </div>
+
         <form id="nomination-form" class="space-y-8" enctype="multipart/form-data">
-          <!-- Nominee Information -->
-          <div class="card-base p-6">
-            <h2 class="text-heading-4 text-ink mb-6 pb-4 border-b border-hairline">Nominee Details</h2>
-
-            <div class="space-y-6">
+          <!-- Step 1: Nominee Info -->
+          <div class="card-base p-6 form-step" data-step="0">
+            <h2 class="text-heading-4 text-ink mb-6 pb-4 border-b border-hairline">Step 1: Nominee Information</h2>
+            <div class="space-y-5">
               <div>
-                <label for="nominee-name" class="block text-body-sm font-semibold text-ink mb-2">
-                  Nominee Name <span class="text-brand-error">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="nominee-name"
-                  name="nominee_name"
-                  required
-                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                  placeholder="Full name of the nominee"
-                />
+                <label for="nominee-name" class="block text-body-sm font-semibold text-ink mb-2">Nominee Name <span class="text-brand-error">*</span></label>
+                <input type="text" id="nominee-name" name="nominee_name" required
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                  placeholder="Full name of the nominee" />
               </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label for="nominee-email" class="block text-body-sm font-semibold text-ink mb-2">Nominee Email</label>
+                  <input type="email" id="nominee-email" name="nominee_email"
+                    class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                    placeholder="contact@example.org" />
+                  <p class="mt-1 text-xs text-steel">Optional. Used only to notify if they win.</p>
+                </div>
+                <div>
+                  <label for="nominee-phone" class="block text-body-sm font-semibold text-ink mb-2">Phone Number</label>
+                  <input type="tel" id="nominee-phone" name="nominee_phone"
+                    class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                    placeholder="+254 XXX XXX XXX" />
+                  <p class="mt-1 text-xs text-steel">Optional.</p>
+                </div>
+              </div>
+              <div class="flex justify-end pt-2">
+                <button type="button" class="btn btn-accent next-step" data-next="1">Next: Details →</button>
+              </div>
+            </div>
+          </div>
 
+          <!-- Step 2: Category & Description -->
+          <div class="card-base p-6 form-step hidden" data-step="1">
+            <h2 class="text-heading-4 text-ink mb-6 pb-4 border-b border-hairline">Step 2: Category & Justification</h2>
+            <div class="space-y-5">
               <div>
-                <label for="category" class="block text-body-sm font-semibold text-ink mb-2">
-                  Award Category <span class="text-brand-error">*</span>
-                </label>
-                <select
-                  id="category"
-                  name="category"
-                  required
-                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                >
+                <label for="category" class="block text-body-sm font-semibold text-ink mb-2">Award Category <span class="text-brand-error">*</span></label>
+                <select id="category" name="category" required
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring">
                   <option value="">Select a category...</option>
                 </select>
-                <p class="mt-2 text-sm text-steel" id="category-loading-text">Loading categories…</p>
+                <p class="mt-1 text-xs text-steel" id="category-loading-text">Loading categories…</p>
               </div>
-
               <div>
-                <label for="nominee-email" class="block text-body-sm font-semibold text-ink mb-2">
-                  Nominee Email
-                </label>
-                <input
-                  type="email"
-                  id="nominee-email"
-                  name="nominee_email"
-                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                  placeholder="contact@example.org"
-                />
-                <p class="mt-2 text-sm text-steel">Optional. Used only to notify if they win.</p>
+                <label for="description" class="block text-body-sm font-semibold text-ink mb-2">Description / Justification <span class="text-brand-error">*</span></label>
+                <textarea id="description" name="description" rows="4" required maxlength="500"
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring resize-none"
+                  placeholder="Explain why this nominee deserves this award. What have they accomplished? How have they contributed to peace, community, or their field? (Max 500 characters)"></textarea>
+                <div class="mt-1 text-right text-xs text-steel"><span id="char-count">0</span>/500</div>
               </div>
-
-              <div>
-                <label for="nominee-phone" class="block text-body-sm font-semibold text-ink mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="nominee-phone"
-                  name="nominee_phone"
-                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                  placeholder="+254 XXX XXX XXX"
-                />
-                <p class="mt-2 text-sm text-steel">Optional.</p>
+              <div class="flex justify-between pt-2">
+                <button type="button" class="btn btn-secondary prev-step" data-prev="0">← Back</button>
+                <button type="button" class="btn btn-accent next-step" data-next="2">Next: Photo →</button>
               </div>
+            </div>
+          </div>
 
+          <!-- Step 3: Photo -->
+          <div class="card-base p-6 form-step hidden" data-step="2">
+            <h2 class="text-heading-4 text-ink mb-6 pb-4 border-b border-hairline">Step 3: Photo of Nominee</h2>
+            <div class="space-y-5">
               <div>
-                <label for="nominee-photo" class="block text-body-sm font-semibold text-ink mb-2">
-                  Photo of Nominee <span class="text-brand-error">*</span>
-                </label>
-                <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-hairline border-dashed rounded-lg hover:border-accent transition-colors">
+                <label class="block text-body-sm font-semibold text-ink mb-2">Photo <span class="text-brand-error">*</span></label>
+                <div class="mt-1 flex justify-center px-6 pt-5 pb-5 border-2 border-hairline border-dashed rounded-lg hover:border-accent transition-colors cursor-pointer" id="photo-dropzone">
                   <div class="space-y-1 text-center">
                     <svg class="mx-auto h-12 w-12 text-steel" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                       <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <div class="flex text-sm text-steel justify-center">
-                      <label for="nominee-photo" class="relative cursor-pointer bg-canvas rounded-md font-medium text-accent hover:text-accent-deep focus-within:outline-none">
-                        <span>Upload a file</span>
-                        <input id="nominee-photo" name="photo" type="file" accept="image/*" required class="sr-only" />
-                      </label>
+                      <span class="relative cursor-pointer font-medium text-accent hover:text-accent-deep">Upload a file</span>
                       <p class="pl-1">or drag and drop</p>
                     </div>
                     <p class="text-xs text-steel">PNG, JPG, GIF up to 5MB</p>
                   </div>
+                  <input id="nominee-photo" name="photo" type="file" accept="image/*" required class="hidden" />
                 </div>
                 <div id="photo-preview" class="mt-4 hidden">
                   <img id="photo-preview-img" class="mx-auto max-h-48 rounded-lg border border-hairline" alt="Preview" />
+                  <p class="text-center text-xs text-steel mt-2" id="photo-filename"></p>
                 </div>
               </div>
+              <div class="flex justify-between pt-2">
+                <button type="button" class="btn btn-secondary prev-step" data-prev="1">← Back</button>
+                <button type="button" class="btn btn-accent next-step" data-next="3">Next: Review →</button>
+              </div>
+            </div>
+          </div>
 
+          <!-- Step 4: Review & Submit -->
+          <div class="card-base p-6 form-step hidden" data-step="3">
+            <h2 class="text-heading-4 text-ink mb-6 pb-4 border-b border-hairline">Step 4: Review & Submit</h2>
+            <div class="space-y-5">
+              <!-- Nominator Info -->
               <div>
-                <label for="description" class="block text-body-sm font-semibold text-ink mb-2">
-                  Description / Justification <span class="text-brand-error">*</span>
-                </label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  required
-                  maxlength="500"
-                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-none"
-                  placeholder="Explain why this nominee deserves this award. What have they accomplished? How have they contributed to peace, community, or their field? (Max 500 characters)"
-                ></textarea>
-                <div class="mt-1 text-right text-sm text-steel">
-                  <span id="char-count">0</span>/500
+                <h3 class="text-body-sm font-semibold text-ink mb-3">Your Information (Optional)</h3>
+                <p class="text-xs text-steel mb-4">We'd love to know who's submitting this nomination, but it's not required.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="nominator-name" class="block text-xs font-semibold text-ink mb-1">Your Name</label>
+                    <input type="text" id="nominator-name" name="nominator_name"
+                      class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                      placeholder="Your full name" />
+                  </div>
+                  <div>
+                    <label for="nominator-email" class="block text-xs font-semibold text-ink mb-1">Your Email</label>
+                    <input type="email" id="nominator-email" name="nominator_email"
+                      class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                      placeholder="your@email.com" />
+                  </div>
                 </div>
+              </div>
+
+              <!-- Review summary -->
+              <div class="bg-surface rounded-xl p-4 space-y-2 text-sm">
+                <h4 class="font-semibold text-ink mb-2">Summary</h4>
+                <div class="flex justify-between"><span class="text-steel">Nominee:</span><span class="text-ink font-medium" id="review-name">—</span></div>
+                <div class="flex justify-between"><span class="text-steel">Category:</span><span class="text-ink font-medium" id="review-category">—</span></div>
+                <div class="flex justify-between"><span class="text-steel">Justification:</span><span class="text-ink font-medium" id="review-chars">0 chars</span></div>
+                <div class="flex justify-between"><span class="text-steel">Photo:</span><span class="text-ink font-medium" id="review-photo">Not uploaded</span></div>
+              </div>
+
+              <!-- Terms -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="terms" name="terms" required class="mt-1 w-4 h-4 text-accent rounded border-hairline focus:ring-accent" />
+                  <label for="terms" class="text-xs text-ink">I confirm that this nomination is made in good faith and the information provided is accurate. <span class="text-brand-error">*</span></label>
+                </div>
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="public-consent" name="public_consent" required class="mt-1 w-4 h-4 text-accent rounded border-hairline focus:ring-accent" />
+                  <label for="public-consent" class="text-xs text-ink">I understand this nomination will be publicly visible on the website immediately upon submission. <span class="text-brand-error">*</span></label>
+                </div>
+              </div>
+
+              <div class="flex justify-between pt-4">
+                <button type="button" class="btn btn-secondary prev-step" data-prev="2">← Back</button>
+                <button type="submit" class="btn btn-accent btn-large px-8">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Submit Nomination
+                </button>
               </div>
             </div>
-          </div>
-
-          <!-- Nominator Information (Optional) -->
-          <div class="card-base p-6">
-            <h2 class="text-heading-4 text-ink mb-6 pb-4 border-b border-hairline">Your Information (Optional)</h2>
-            <p class="text-body-sm text-steel mb-6">
-              We'd love to know who's submitting this nomination, but it's not required. Leave blank to remain anonymous.
-            </p>
-
-            <div class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="nominator-name" class="block text-body-sm font-semibold text-ink mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="nominator-name"
-                    name="nominator_name"
-                    class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <div>
-                  <label for="nominator-email" class="block text-body-sm font-semibold text-ink mb-2">
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="nominator-email"
-                    name="nominator_email"
-                    class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Terms -->
-          <div class="card-base p-6">
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="terms" name="terms" required class="mt-1" />
-                <label for="terms" class="text-body-sm text-ink">
-                  I confirm that this nomination is made in good faith and the information provided is accurate to the best of my knowledge. <span class="text-brand-error">*</span>
-                </label>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="public-consent" name="public_consent" required class="mt-1" />
-                <label for="public-consent" class="text-body-sm text-ink">
-                  I understand that this nomination will be publicly visible on the website immediately upon submission. <span class="text-brand-error">*</span>
-                </label>
-              </div>
-
-              <div id="recaptcha-container" class="flex justify-center py-4">
-                <div class="text-sm text-steel border border-hairline rounded p-4 bg-surface">
-                  reCAPTCHA verification required (to be integrated)
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Submit -->
-          <div class="flex justify-between items-center pt-4">
-            <p class="text-sm text-steel">* Required fields</p>
-            <button type="submit" class="btn btn-primary btn-large px-8">Submit Nomination</button>
           </div>
         </form>
 
-        <!-- Success Message (hidden by default) -->
-        <div id="success-message" class="hidden mt-8 p-6 bg-accent/10 border border-accent rounded-xl text-center">
+        <!-- Success Message -->
+        <div id="success-message" class="hidden mt-8 p-8 bg-accent/10 border-2 border-accent rounded-2xl text-center">
           <div class="text-5xl mb-4">🎉</div>
           <h3 class="text-heading-5 text-ink mb-2">Nomination Submitted</h3>
-          <p class="text-body-md text-steel mb-6">
-            Your nomination has been received and will appear on the site shortly.
-          </p>
-          <a href="/awards" class="btn btn-primary">Back to Awards</a>
+          <p class="text-body-md text-steel mb-6">Your nomination has been received and will appear on the site shortly.</p>
+          <a href="/awards" class="btn btn-accent">Back to Awards</a>
         </div>
       </div>
     </section>
@@ -236,44 +229,120 @@ import Footer from '../../components/Footer.astro';
 <script>
   import { getAwardCategories, submitNomination } from '../../lib/api.js';
 
-  // Load categories into the dropdown
+  let currentStep = 0;
+
+  // Stepper navigation
+  function goToStep(step) {
+    document.querySelectorAll('.form-step').forEach(el => el.classList.add('hidden'));
+    const target = document.querySelector(`.form-step[data-step="${step}"]`);
+    if (target) target.classList.remove('hidden');
+    currentStep = step;
+    updateStepperUI();
+    updateReview();
+    window.scrollTo({ top: target?.offsetTop - 100, behavior: 'smooth' });
+  }
+
+  function updateStepperUI() {
+    const dots = document.querySelectorAll('.stepper-dot');
+    const labels = document.querySelectorAll('.stepper-label');
+    const lines = document.querySelectorAll('.stepper-line');
+    dots.forEach((d, i) => {
+      if (i < currentStep) {
+        d.className = 'step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-accent bg-accent text-[#0a0a0a] stepper-dot';
+      } else if (i === currentStep) {
+        d.className = 'step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-accent bg-accent text-[#0a0a0a] stepper-dot';
+      } else {
+        d.className = 'step-marker w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold border-2 border-hairline text-steel bg-canvas stepper-dot';
+      }
+    });
+    labels.forEach((l, i) => l.className = `text-[10px] font-medium mt-1.5 stepper-label ${i <= currentStep ? 'text-ink' : 'text-steel'}`);
+    lines.forEach((l, i) => l.className = `h-px flex-1 mt-4 stepper-line ${i < currentStep ? 'bg-accent' : 'bg-hairline'}`);
+  }
+
+  document.querySelectorAll('.next-step').forEach(btn => {
+    btn.addEventListener('click', () => goToStep(parseInt(btn.dataset.next)));
+  });
+  document.querySelectorAll('.prev-step').forEach(btn => {
+    btn.addEventListener('click', () => goToStep(parseInt(btn.dataset.prev)));
+  });
+
+  // Load categories
   async function loadCategories() {
     try {
       const res = await getAwardCategories();
       if (res.status !== 'success' || !res.data) throw new Error('API error');
-
       const select = document.getElementById('category');
-      const loadingText = document.getElementById('category-loading-text');
-
       res.data.forEach(cat => {
         const opt = document.createElement('option');
         opt.value = cat.slug;
         opt.textContent = cat.category_name;
         select.appendChild(opt);
       });
-      loadingText.textContent = `${res.data.length} categories available.`;
-      loadingText.classList.add('text-steel');
+      document.getElementById('category-loading-text').textContent = `${res.data.length} categories available.`;
     } catch (err) {
-      console.error('Category load error:', err);
-      document.getElementById('category-loading-text').textContent =
-        'Unable to load categories. Please refresh the page.';
+      document.getElementById('category-loading-text').textContent = 'Unable to load categories.';
       document.getElementById('category-loading-text').classList.add('text-brand-error');
     }
   }
 
   // Character count
   const descEl = document.getElementById('description');
-  const charCount = document.getElementById('char-count');
-  if (descEl && charCount) {
-    descEl.addEventListener('input', () => {
-      charCount.textContent = descEl.value.length;
-    });
+  descEl?.addEventListener('input', () => {
+    document.getElementById('char-count').textContent = descEl.value.length;
+  });
+
+  // Review summary
+  function updateReview() {
+    if (currentStep !== 3) return;
+    document.getElementById('review-name').textContent = document.getElementById('nominee-name').value || '—';
+    const cat = document.getElementById('category');
+    document.getElementById('review-category').textContent = cat.selectedOptions[0]?.textContent || '—';
+    document.getElementById('review-chars').textContent = (descEl?.value.length || 0) + ' chars';
+    const photo = document.getElementById('nominee-photo');
+    document.getElementById('review-photo').textContent = photo?.files[0]?.name || 'Not uploaded';
+  }
+
+  // Photo dropzone
+  const dropzone = document.getElementById('photo-dropzone');
+  const photoInput = document.getElementById('nominee-photo');
+  const previewContainer = document.getElementById('photo-preview');
+  const previewImg = document.getElementById('photo-preview-img');
+  const MAX_SIZE = 5 * 1024 * 1024;
+
+  dropzone?.addEventListener('click', () => photoInput?.click());
+  dropzone?.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('border-accent'); });
+  dropzone?.addEventListener('dragleave', () => dropzone.classList.remove('border-accent'));
+  dropzone?.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-accent');
+    const file = e.dataTransfer?.files[0];
+    if (file) handlePhotoFile(file);
+  });
+
+  photoInput?.addEventListener('change', () => {
+    const file = photoInput.files[0];
+    if (file) handlePhotoFile(file);
+  });
+
+  function handlePhotoFile(file) {
+    if (file.size > MAX_SIZE) {
+      alert('Photo is too large. Maximum size is 5MB.');
+      photoInput.value = '';
+      previewContainer.classList.add('hidden');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      previewImg.src = e.target.result;
+      previewContainer.classList.remove('hidden');
+      document.getElementById('photo-filename').textContent = file.name;
+    };
+    reader.readAsDataURL(file);
   }
 
   // Form submission
   document.getElementById('nomination-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
     const submitBtn = e.target.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
@@ -283,47 +352,20 @@ import Footer from '../../components/Footer.astro';
       const res = await submitNomination(formData);
       if (res.status === 'success') {
         document.getElementById('nomination-form').classList.add('hidden');
+        document.getElementById('nominate-stepper').classList.add('hidden');
         document.getElementById('success-message').classList.remove('hidden');
       } else {
         alert('Submission failed: ' + (res.message || 'Please try again.'));
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Nomination';
+        submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
       }
     } catch (err) {
-      console.error('Nomination error:', err);
       alert('Network error. Please try again.');
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Nomination';
+      submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
     }
   });
 
   loadCategories();
-
-  // Photo preview and size validation
-  const photoInput = document.getElementById('nominee-photo');
-  const previewContainer = document.getElementById('photo-preview');
-  const previewImg = document.getElementById('photo-preview-img');
-  const MAX_SIZE = 5 * 1024 * 1024; // 5MB
-
-  if (photoInput && previewContainer && previewImg) {
-    photoInput.addEventListener('change', () => {
-      const file = photoInput.files[0];
-      if (!file) {
-        previewContainer.classList.add('hidden');
-        return;
-      }
-      if (file.size > MAX_SIZE) {
-        alert('Photo is too large. Maximum size is 5MB.');
-        photoInput.value = '';
-        previewContainer.classList.add('hidden');
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        previewImg.src = e.target.result;
-        previewContainer.classList.remove('hidden');
-      };
-      reader.readAsDataURL(file);
-    });
-  }
+  goToStep(0);
 </script>
