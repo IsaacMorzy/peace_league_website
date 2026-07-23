@@ -206,6 +206,19 @@ def create_nomination():
             return {"status": "error", "message": _("Description must be 500 characters or less")}
         if not photo:
             return {"status": "error", "message": _("Photo is required")}
+        # ponytail: enforce the frontend's 5MB cap on the backend too (clients can lie)
+        # ponytail: shrink, upgrade by using Content-Length header to avoid reading 5MB twice
+        photo_max = 5 * 1024 * 1024
+        try:
+            photo_size = len(photo.read()) if photo and photo.filename else 0
+            # Reset stream position so the subsequent save_file can read it again
+            if hasattr(photo, "stream") and hasattr(photo.stream, "seek"):
+                photo.stream.seek(0)
+        except Exception:
+            photo_size = 0
+        if photo_size > photo_max:
+            return {"status": "error", "message": _("Photo is too large. Maximum size is 5MB.")}
+
         if not terms or not public_consent:
             return {"status": "error", "message": _("You must accept the terms and public visibility consent")}
 
@@ -220,8 +233,13 @@ def create_nomination():
             return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Create Award Nominee document ──
-        # save_file needs a docname, but photo is mandatory on the DocType.
-        # Strategy: bypass mandatory check, insert, attach file, update photo.
+        # The Award Nominee DocType has `photo` as a mandatory Attach Image field.
+        # Pattern: insert doc WITH ignore_mandatory (bypasses the photo check),
+        # then save_file with the real (generated) docname so the File doc is properly
+        # linked for referential integrity, then db_set the photo URL — db_set writes
+        # directly to MySQL without re-running validators.
+        # ponytail: full, upgrade by removing `reqd: 1` from Award Nominee.photo
+        # then delete the ignore_mandatory + db_set workaround below.
         nominee = frappe.get_doc({
             "doctype": "Award Nominee",
             "nominee_name": nominee_name,
@@ -234,27 +252,42 @@ def create_nomination():
             "status": "Active",
             "submission_date": nowdate(),
         })
-        frappe.flags.ignore_mandatory = True
-        nominee.insert(ignore_permissions=True)
-        frappe.flags.ignore_mandatory = False
+        # ponytail: try/finally so the global flag is always reset, even on error
+        try:
+            nominee.flags.ignore_mandatory = True
+            nominee.insert(ignore_permissions=True)
+        finally:
+            nominee.flags.ignore_mandatory = False
         frappe.db.commit()
 
-        # ── Attach photo to the nominee document ──
-        file_doc = save_file(
-            photo.filename, photo.read(),
-            "Award Nominee", nominee.name,
-            is_private=0,
-        )
-        nominee.photo = file_doc.file_url
-        nominee.save(ignore_permissions=True)
-        frappe.db.commit()
+        # ── Attach photo to the real docname (proper File link) ──
+        # ponytail: on file failure, roll back the orphan nominee so we don't
+        # leave dangling Award Nominee docs without photos in the DB.
+        try:
+            file_doc = save_file(
+                photo.filename, photo.read(),
+                "Award Nominee", nominee.name,
+                is_private=0,
+            )
+            # ponytail: db_set skips full re-validation (which would re-trigger
+            # the mandatory check for `photo` because ignore_mandatory was reset).
+            nominee.db_set("photo", file_doc.file_url)
+            frappe.db.commit()
+        except Exception as file_err:
+            logger.error(f"Photo attach failed for nominee {nominee.name}: {file_err}")
+            try:
+                frappe.delete_doc("Award Nominee", nominee.name, ignore_permissions=True, force=True)
+                frappe.db.commit()
+            except Exception as cleanup_err:
+                logger.error(f"Failed to cleanup orphan nominee {nominee.name}: {cleanup_err}")
+            return {"status": "error", "message": _("Photo upload failed. Please try again.")}
 
         logger.info(f"Award nomination created: {nominee.name} for category {category_name}")
 
         return {
             "status": "success",
             "message": _("Nomination submitted successfully"),
-            "data": {"nominee": nominee.name}
+            "data": {"nominee": nominee.name, "photo": file_doc.file_url}
         }
     except Exception as e:
         logger.error(f"Nomination error: {e}", exc_info=True)

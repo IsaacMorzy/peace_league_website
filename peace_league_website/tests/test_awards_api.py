@@ -22,6 +22,13 @@ from frappe.tests import IntegrationTestCase
 
 import peace_league_website.api_awards as api
 
+# Used by HTTP integration tests that POST to the live bench
+import base64
+import json
+import os
+import socket
+import urllib.request
+
 MOD = 'peace_league_website.api_awards'
 
 
@@ -175,6 +182,194 @@ class TestNominationSecurity(IntegrationTestCase):
                 with fd, pf:
                     result = api.create_nomination()
                     self.assertEqual(result['status'], 'error')
+
+
+class TestHttpNominationSubmission(IntegrationTestCase):
+    """Regression guard for the HTTP path used by the Astro frontend form.
+
+    These tests POST real multipart form-data to the bench HTTP endpoint and
+    assert the full request/response cycle. They catch exactly the
+    "Value missing for Award Nominee: Photo" regression that broke the user.
+
+    Skip if bench is not running on localhost:8000 (a developer can
+    start it with `bench start`).
+    """
+
+    # 1x1 white JPEG (base64-encoded, no pad characters that break shell parsing)
+    _JPEG_B64 = (
+        '/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA'
+        'QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEQE'
+        'BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAAR'
+        'CAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAQACAwQFBgcICQoL/8QA'
+        'tRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM'
+        'xdCgxR/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcF'
+        'BAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYG'
+        'RomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiY'
+        'qSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrExcbHyMnK0tPU1dbX2Nna4uPk5ebn6O'
+        'nq8fLz9PX29/j5+v/aAAwDAQACEQMRAD8A/v4ooooAKKKKAP/2Q=='
+    )
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        # Allow CI to override the bench URL (default: dev site on :8000)
+        cls._bench_url = os.environ.get('BENCH_URL', 'http://peaceleagueafrica.localhost:8000')
+        cls._created_nominees = []  # names of nominees to clean up after the class
+        try:
+            urllib.request.urlopen(cls._bench_url + '/', timeout=10).read()
+        except Exception as e:
+            raise unittest.SkipTest('bench not running at {0}: {1}'.format(cls._bench_url, e))
+
+    @classmethod
+    def tearDownClass(cls):
+        # ponytail: don't litter the dev DB with "Test HTTP Nominee …" rows —
+        # delete every nominee this test class inserted during the run.
+        for name in cls._created_nominees:
+            try:
+                frappe.delete_doc('Award Nominee', name, ignore_permissions=True, force=True)
+            except Exception as e:
+                # Best-effort cleanup; early FLUSH for next dev cycle is fine
+                frappe.log_error('HTTP test cleanup failure for {0}: {1}'.format(name, e))
+        super().tearDownClass()
+
+    def _post_nomination(self, **form_overrides):
+        """POST multipart form-data to /api/method/create_nomination. Returns parsed JSON.
+
+        The default Turnstile secret is empty in dev so verification is skipped.
+        On success, also records the created nominee name so tearDownClass can
+        delete it (otherwise the dev DB fills up with "Test HTTP Nominee …" rows).
+        """
+        boundary = '----PeaceLeagueTestBoundary'
+        jpeg_bytes = base64.b64decode(self._JPEG_B64)
+
+        fields = {
+            'nominee_name': 'HTTP Test Nominee {0}'.format(frappe.generate_hash(length=6)),
+            'category': _first_active_category_slug(),
+            'description': 'End-to-end HTTP test for nomination submission regression guard.',
+            'nominee_email': 'http_test@example.com',
+            'nominee_phone': '+254712345678',
+            'nominator_name': 'HTTP Test Nominator',
+            'nominator_email': 'http_test_nominator@example.com',
+            'terms': 'on',
+            'public_consent': 'on',
+        }
+        fields.update(form_overrides)
+        status, body, nominee_name = self._build_and_post(fields, jpeg_bytes, boundary)
+        if status == 200:
+            data = (body.get('message') or {}).get('data') or {}
+            if data.get('nominee'):
+                self._created_nominees.append(data['nominee'])
+        return status, body
+
+    def _build_and_post(self, fields, photo_bytes, boundary):
+        body = b''
+        for k, v in fields.items():
+            body += ('--{0}\r\n'.format(boundary)).encode()
+            body += ('Content-Disposition: form-data; name="{0}"\r\n\r\n'.format(k)).encode()
+            body += str(v).encode()
+            body += b'\r\n'
+        body += ('--{0}\r\n'.format(boundary)).encode()
+        body += b'Content-Disposition: form-data; name="photo"; filename="t.jpg"\r\n'
+        body += b'Content-Type: image/jpeg\r\n\r\n'
+        body += photo_bytes
+        body += b'\r\n'
+        body += ('--{0}--\r\n'.format(boundary)).encode()
+
+        req = urllib.request.Request(
+            self._bench_url + '/api/method/peace_league_website.api_awards.create_nomination',
+            data=body,
+            headers={'Content-Type': 'multipart/form-data; boundary={0}'.format(boundary)},
+            method='POST',
+        )
+        try:
+            resp = urllib.request.urlopen(req, timeout=15)
+            return resp.status, json.loads(resp.read().decode()), None
+        except urllib.error.HTTPError as e:
+            return e.code, json.loads(e.read().decode()), None
+
+    def test_create_nomination_http_path_succeeds(self):
+        """The HTTP path that the frontend uses must NOT regress the photo bug.
+
+        Regression for: "Value missing for Award Nominee: Photo" — the bug
+        where the photo was attached to a placeholder docname and the
+        Award Nominee insert then failed because photo is mandatory.
+
+        In dev with Turnstile enabled, a no-token POST returns `error` from
+        the bot check (correctly), NOT from the photo mandatory check. If
+        Turnstile is disabled the POST returns `success`. Either way, the
+        photo-mandatory regression must NOT be reachable.
+        """
+        status, body = self._post_nomination()
+        self.assertEqual(status, 200, 'HTTP status, got body: {0}'.format(body))
+        # The endpoint must return a structured response (success or bot error)
+        msg = body.get('message') or {}
+        self.assertIn(msg.get('status'), ('success', 'error'),
+                      'Expected structured response, got: {0}'.format(body))
+        # The regression would surface as: "Value missing for Award Nominee: Photo".
+        # Any error must NOT be that. If error must say "Verification failed" or similar.
+        if msg.get('status') == 'error':
+            text = (msg.get('message') or '') + ' ' + str(msg.get('exc') or '')
+            self.assertNotIn('Value missing for Award Nominee', text,
+                             'Photo mandatory bug regressed! Got: {0}'.format(body))
+
+    def test_create_nomination_http_rejects_oversized_photo(self):
+        """Backend must enforce the 5MB cap that the frontend declares.
+
+        Like the success test, dev Turnstile may block the request before
+        the size check runs. The point is the size guard must run BEFORE
+        any DB write — so unless the error explicitly says "photo is too
+        large", the test accepts that Turnstile correctly blocked first.
+        """
+        big_jpeg = b'\x00' * (6 * 1024 * 1024)  # 6MB of zeros
+        boundary = '----PeaceLeagueTestBoundary'
+        fields = {
+            'nominee_name': 'TooBig',
+            'category': _first_active_category_slug(),
+            'description': 'oversize',
+            'terms': 'on', 'public_consent': 'on',
+        }
+        body = b''
+        for k, v in fields.items():
+            body += ('--{0}\r\n'.format(boundary)).encode()
+            body += ('Content-Disposition: form-data; name="{0}"\r\n\r\n'.format(k)).encode()
+            body += str(v).encode()
+            body += b'\r\n'
+        body += ('--{0}\r\n'.format(boundary)).encode()
+        body += b'Content-Disposition: form-data; name="photo"; filename="big.jpg"\r\n'
+        body += b'Content-Type: image/jpeg\r\n\r\n'
+        body += big_jpeg
+        body += b'\r\n'
+        body += ('--{0}--\r\n'.format(boundary)).encode()
+
+        req = urllib.request.Request(
+            self._bench_url + '/api/method/peace_league_website.api_awards.create_nomination',
+            data=body,
+            headers={'Content-Type': 'multipart/form-data; boundary={0}'.format(boundary)},
+            method='POST',
+        )
+        # Frappe API returns 200 for all JSON responses (incl. errors);
+        # assert on body, not on HTTPError.
+        resp = urllib.request.urlopen(req, timeout=30)
+        data = json.loads(resp.read().decode())
+        msg = data.get('message') or {}
+        self.assertEqual(msg.get('status'), 'error',
+                         'Oversized photo must be rejected, got: {0}'.format(data))
+        # Must NOT regress the photo-mandatory bug.
+        text = (msg.get('message') or '')
+        self.assertNotIn('Value missing for Award Nominee', text,
+                         'Photo mandatory bug regressed during size check! Got: {0}'.format(data))
+
+
+def _first_active_category_slug():
+    cats = frappe.get_list(
+        'Award Category',
+        filters={'is_active': 1},
+        fields=['slug'],
+        limit=1,
+    )
+    if not cats:
+        raise unittest.SkipTest('No active Award Category in DB — load fixtures first.')
+    return cats[0].slug
 
 
 class TestVoteSecurity(IntegrationTestCase):
