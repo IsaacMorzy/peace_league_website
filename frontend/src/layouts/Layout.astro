@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Libredesk from '../components/Libredesk.astro';
+import '@freshjuice/astro-search-plugin/styles.css';
 
 
 interface Props {
@@ -817,6 +818,20 @@ const pageTitle = `${title} | Peace League Africa`;
     <!-- Preline UI -->
     <script>
       import 'preline';
+    </script>
+
+    <!-- Site-wide Search Palette (Cmd+K) -->
+    <astro-search-palette
+      index-url="/search-index.json"
+      shortcut="mod+k"
+      placeholder="Search pages, awards, causes, events…"
+      empty-text="No results found. Try a different term."
+      loading-text="Loading search index…"
+      button-label="Toggle search"
+    ></astro-search-palette>
+
+    <script>
+      import '@freshjuice/astro-search-plugin/element';
     </script>
 
     <!-- Libredesk Chat Widget Component -->
