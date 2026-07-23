@@ -69,12 +69,18 @@ import Footer from '../../components/Footer.astro';
       <!-- Nominations Table -->
       <div id="tab-nominations" class="tab-content hidden">
         <div class="card-base p-6">
-          <div class="flex justify-between items-center mb-6">
-            <h2 class="text-heading-4 text-ink">All Nominations</h2>
-            <div class="flex gap-2">
-              <input type="text" placeholder="Search..." class="px-4 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink" />
-              <select class="px-4 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink">
-                <option>All Categories</option>
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <h2 class="text-heading-4 text-ink">All Nominations <span id="nomination-count" class="text-sm text-steel font-normal">0</span></h2>
+            <div class="flex flex-wrap gap-2">
+              <input type="text" id="filter-search" placeholder="Search nominees…" class="input-focus-ring px-3 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink w-40 sm:w-48" />
+              <select id="filter-category" class="px-3 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink min-w-[130px]">
+                <option value="">All Categories</option>
+              </select>
+              <select id="filter-status" class="px-3 py-2 border border-hairline rounded-lg text-sm bg-canvas text-ink">
+                <option value="">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Rejected">Rejected</option>
               </select>
             </div>
           </div>
@@ -83,7 +89,6 @@ import Footer from '../../components/Footer.astro';
               <thead>
                 <tr class="border-b border-hairline text-sm text-steel">
                   <th class="pb-3 font-medium">Nominee</th>
-                  <th class="pb-3 font-medium">Category</th>
                   <th class="pb-3 font-medium">Submitted</th>
                   <th class="pb-3 font-medium">Nominator</th>
                   <th class="pb-3 font-medium">Status</th>
@@ -91,25 +96,7 @@ import Footer from '../../components/Footer.astro';
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b border-hairline">
-                  <td class="py-4">
-                    <div class="flex items-center gap-3">
-                      <img src="/assets/images/awards/nominee-1.jpg" alt="" class="w-10 h-10 rounded bg-surface object-cover" />
-                      <div>
-                        <div class="text-ink font-medium">Dr. Amina Mohamed</div>
-                        <div class="text-steel text-sm">Peace Builders Kenya</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4 text-steel">Peace Ambassador</td>
-                  <td class="py-4 text-steel">2026-07-15</td>
-                  <td class="py-4 text-steel">John Smith (john@example.com)</td>
-                  <td class="py-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Active</span></td>
-                  <td class="py-4">
-                    <button class="text-accent hover:underline text-sm">Edit</button>
-                    <button class="text-brand-error hover:underline text-sm ml-3">Delete</button>
-                  </td>
-                </tr>
+                <tr><td colspan="5" class="py-8 text-center text-steel text-sm">Loading nominations…</td></tr>
               </tbody>
             </table>
           </div>
@@ -119,22 +106,12 @@ import Footer from '../../components/Footer.astro';
       <!-- Votes Monitoring -->
       <div id="tab-votes" class="tab-content hidden">
         <div class="card-base p-6">
-          <h2 class="text-heading-4 text-ink mb-6">Real-Time Vote Counts</h2>
+          <h2 class="text-heading-4 text-ink mb-2">Real-Time Vote Counts</h2>
           <p class="text-body-md text-steel mb-6">
-            Votes are aggregated in real-time. Dec 5 00:00 EAT voting closes; winners announced at 18:00 EAT.
+            <span id="vote-count" class="font-semibold text-ink">—</span> categories &middot; Votes aggregated in real-time. Dec 5 00:00 EAT voting closes; winners announced at 18:00 EAT.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Category vote summary cards -->
-            <div class="p-4 border border-hairline rounded-lg">
-              <h3 class="font-semibold text-ink mb-2">Peace Ambassador</h3>
-              <div class="text-3xl font-bold text-accent">1,243</div>
-              <div class="text-sm text-steel">votes • 3 nominees</div>
-              <div class="mt-2 h-2 bg-hairline rounded-full overflow-hidden">
-                <div class="h-full bg-accent" style="width: 67%"></div>
-              </div>
-              <div class="mt-2 text-xs text-steel">Leading: Dr. Amina Mohamed (67%)</div>
-            </div>
-            <!-- more cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="vote-stats-grid">
+            <p class="col-span-full text-center text-steel text-sm py-8">Loading vote stats…</p>
           </div>
         </div>
       </div>
@@ -145,24 +122,272 @@ import Footer from '../../components/Footer.astro';
 </Layout>
 
 <script>
-  // Simple tab switching
+  import {
+    adminGetNominations,
+    adminGetVoteStats,
+    adminDeleteNomination,
+    adminUpdateNomination,
+    getAwardCategories,
+  } from '../../lib/api.js';
+
+  let allCategories = [];
+  let allNominations = [];
+  let voteStats = {};
+
+  // ── Tab switching ──
   document.querySelectorAll('[data-tab]').forEach(btn => {
     btn.addEventListener('click', () => {
       const tabId = btn.dataset.tab;
-      // update tab button styles
       document.querySelectorAll('[data-tab]').forEach(b => {
         b.classList.remove('border-accent', 'text-accent');
         b.classList.add('border-transparent', 'text-steel');
       });
       btn.classList.remove('border-transparent', 'text-steel');
       btn.classList.add('border-accent', 'text-accent');
-      // show content
       document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
       document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+      if (tabId === 'nominations') renderNominations(allNominations);
+      if (tabId === 'votes') renderVoteStats();
+      if (tabId === 'categories') renderCategoryTable();
     });
   });
 
-  function openCategoryModal() {
-    alert('Category modal will open here (implement with Frappe dialog).');
+  // ── Load initial data ──
+  async function loadData() {
+    try {
+      const [catRes, nomRes, voteRes] = await Promise.all([
+        getAwardCategories(),
+        adminGetNominations(),
+        adminGetVoteStats(),
+      ]);
+
+      if (catRes.status === 'success') {
+        allCategories = catRes.data || [];
+        renderCategoryTable();
+        populateCategoryFilter();
+      }
+
+      if (nomRes.status === 'success') {
+        allNominations = nomRes.data || [];
+        if (document.querySelector('[data-tab].border-accent')?.dataset.tab === 'nominations') {
+          renderNominations(allNominations);
+        }
+      }
+
+      if (voteRes.status === 'success') {
+        voteStats = voteRes.data || {};
+        if (document.querySelector('[data-tab].border-accent')?.dataset.tab === 'votes') {
+          renderVoteStats();
+        }
+      }
+    } catch (err) {
+      console.error('Admin load error:', err);
+    }
   }
+
+  // ── Category Table ──
+  function renderCategoryTable() {
+    const tbody = document.querySelector('#tab-categories tbody');
+    if (!tbody) return;
+    if (!allCategories.length) {
+      tbody.innerHTML = `<tr><td colspan="4" class="py-8 text-center text-steel text-sm">No categories found.</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = allCategories.map(cat => `
+      <tr class="border-b border-hairline">
+        <td class="py-3 text-ink text-sm font-medium">${escapeHtml(cat.category_name)}</td>
+        <td class="py-3 text-steel font-mono text-xs">${escapeHtml(cat.slug)}</td>
+        <td class="py-3 text-ink text-sm">${cat.nominee_count || 0}</td>
+        <td class="py-3">
+          <button class="text-accent hover:underline text-sm" onclick="alert('Edit: Not yet implemented')">Edit</button>
+          <button class="text-brand-error hover:underline text-sm ml-3" onclick="alert('Delete: Not yet implemented')">Delete</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  // ── Nominations Table ──
+  function renderNominations(nominations) {
+    const tbody = document.querySelector('#tab-nominations tbody');
+    const count = document.getElementById('nomination-count');
+    if (count) count.textContent = nominations.length;
+    if (!tbody) return;
+    if (!nominations.length) {
+      tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-steel text-sm">No nominations found matching your filters.</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = nominations.map(n => {
+      const statusColor = n.status === 'Active' ? 'bg-green-100 text-green-800' :
+        n.status === 'Pending' ? 'bg-amber-100 text-amber-800' :
+        'bg-steel/10 text-steel';
+      return `
+      <tr class="border-b border-hairline">
+        <td class="py-3">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-xs font-bold text-accent shrink-0 overflow-hidden">
+              ${n.photo_url
+                ? `<img src="${escapeHtml(n.photo_url)}" alt="" class="w-full h-full object-cover" />`
+                : `<span>${(n.nominee_name || '?')[0]}</span>`
+              }
+            </div>
+            <div>
+              <div class="text-ink font-medium text-sm">${escapeHtml(n.nominee_name)}</div>
+              <div class="text-steel text-xs">${escapeHtml(n.category_name || '')}</div>
+            </div>
+          </div>
+        </td>
+        <td class="py-3 text-steel text-sm">${n.submission_date ? new Date(n.submission_date).toLocaleDateString() : '—'}</td>
+        <td class="py-3 text-steel text-xs">${escapeHtml(n.nominator_name || '')}${n.nominator_email ? `<br/><span class="text-muted">${escapeHtml(n.nominator_email)}</span>` : ''}</td>
+        <td class="py-3"><span class="px-2 py-0.5 text-xs font-medium rounded-full ${statusColor}">${n.status || 'Active'}</span></td>
+        <td class="py-3">
+          <div class="flex gap-2">
+            <select class="text-xs border border-hairline rounded px-1.5 py-1 bg-canvas text-ink status-select" data-nominee="${n.name}">
+              <option value="Active" ${n.status === 'Active' ? 'selected' : ''}>Active</option>
+              <option value="Pending" ${n.status === 'Pending' ? 'selected' : ''}>Pending</option>
+              <option value="Rejected" ${n.status === 'Rejected' ? 'selected' : ''}>Rejected</option>
+            </select>
+            <button class="text-brand-error hover:underline text-xs delete-btn" data-nominee="${n.name}" data-name="${escapeHtml(n.nominee_name)}">Delete</button>
+          </div>
+        </td>
+      </tr>
+    `}).join('');
+
+    // Wire up status change handlers
+    tbody.querySelectorAll('.status-select').forEach(sel => {
+      sel.addEventListener('change', async function() {
+        try {
+          await adminUpdateNomination(this.dataset.nominee, { status: this.value });
+        } catch (e) {
+          console.error('Status update failed:', e);
+        }
+      });
+    });
+
+    // Wire up delete handlers
+    tbody.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        if (!confirm(`Delete nomination for "${this.dataset.name}"? This cannot be undone.`)) return;
+        try {
+          const res = await adminDeleteNomination(this.dataset.nominee);
+          if (res.status === 'success') {
+            allNominations = allNominations.filter(n => n.name !== this.dataset.nominee);
+            renderNominations(allNominations);
+          } else {
+            alert('Failed to delete: ' + (res.message || 'Unknown error'));
+          }
+        } catch (e) {
+          alert('Failed to delete nomination');
+        }
+      });
+    });
+  }
+
+  // ── Search / Filter ──
+  function populateCategoryFilter() {
+    const select = document.getElementById('filter-category');
+    if (!select) return;
+    select.innerHTML = '<option value="">All Categories</option>' +
+      allCategories.map(c => `<option value="${escapeHtml(c.slug)}">${escapeHtml(c.category_name)}</option>`).join('');
+  }
+
+  async function applyFilters() {
+    const search = document.getElementById('filter-search')?.value || '';
+    const category = document.getElementById('filter-category')?.value || '';
+    const status = document.getElementById('filter-status')?.value || '';
+    const filters = {};
+    if (search) filters.search = search;
+    if (category) filters.category = category;
+    if (status) filters.status = status;
+    try {
+      const res = await adminGetNominations(filters);
+      if (res.status === 'success') {
+        allNominations = res.data || [];
+        renderNominations(allNominations);
+      }
+    } catch (e) {
+      console.error('Filter error:', e);
+    }
+  }
+
+  // ── Vote Stats ──
+  function renderVoteStats() {
+    const container = document.querySelector('#vote-stats-grid');
+    const count = document.getElementById('vote-count');
+    if (!container) return;
+    const entries = Object.entries(voteStats);
+    if (count) count.textContent = entries.length;
+    if (!entries.length) {
+      container.innerHTML = '<p class="col-span-full text-center text-steel text-sm py-8">No vote data available yet.</p>';
+      return;
+    }
+    // Resolve category names
+    const catMap = {};
+    allCategories.forEach(c => { catMap[c.name] = c.category_name; });
+    container.innerHTML = entries.map(([catName, stats]) => {
+      const percent = stats.total_votes > 0 ? Math.round((stats.top_votes / stats.total_votes) * 100) : 0;
+      return `
+      <div class="p-4 border border-hairline rounded-lg hover:border-accent/30 transition-colors">
+        <h3 class="font-semibold text-ink text-sm mb-1">${escapeHtml(catMap[catName] || catName)}</h3>
+        <div class="text-2xl font-bold text-accent">${stats.total_votes}</div>
+        <div class="text-xs text-steel">votes</div>
+        <div class="mt-2 h-1.5 bg-hairline rounded-full overflow-hidden">
+          <div class="h-full bg-accent rounded-full" style="width: ${percent}%"></div>
+        </div>
+        <div class="mt-1 text-xs text-steel truncate">Leading: ${stats.top_nominee ? stats.top_nominee : '—'} (${percent}%)</div>
+      </div>
+    `}).join('');
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // ── Search debounce ──
+  document.getElementById('filter-search')?.addEventListener('input', debounce(applyFilters, 300));
+  document.getElementById('filter-category')?.addEventListener('change', applyFilters);
+  document.getElementById('filter-status')?.addEventListener('change', applyFilters);
+
+  function debounce(fn, ms) {
+    let timer;
+    return function(...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), ms);
+    };
+  }
+
+  // ── Export CSV ──
+  document.querySelector('.btn-secondary')?.addEventListener('click', function exportCSV() {
+    if (!allNominations.length) {
+      alert('No data to export.');
+      return;
+    }
+    const headers = ['Name', 'Category', 'Email', 'Phone', 'Status', 'Submitted', 'Nominator'];
+    const rows = allNominations.map(n => [
+      n.nominee_name,
+      n.category_name || n.category,
+      n.nominee_email || '',
+      n.nominee_phone || '',
+      n.status,
+      n.submission_date || '',
+      n.nominator_name || '',
+    ]);
+    const csv = [headers.join(','), ...rows.map(r => r.map(c => `"${(c || '').replace(/"/g, '""')}"`).join(','))].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'awards-nominations.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  function openCategoryModal() {
+    // Placeholder for Frappe dialog integration
+    alert('Category creation will open a Frappe dialog or redirect to Desk.');
+  }
+
+  // ── Init ──
+  loadData();
 </script>
