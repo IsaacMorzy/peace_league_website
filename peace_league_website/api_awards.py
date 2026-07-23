@@ -527,8 +527,8 @@ def purchase_ticket(**kwargs):
             return {"status": "error", "message": _("Invalid ticket tier")}
         if quantity < 1 or quantity > 10:
             return {"status": "error", "message": _("Quantity must be between 1 and 10")}
-        if ticket_tier != 'premium':
-            return {"status": "error", "message": _("This ticket tier is currently sold out")}
+        # All tiers are available for purchase
+        # ponytail: remove sold-out restriction — all tiers selectable
 
         # ── Store ticket purchase in a simple log table ──
         # ponytail: use SQL INSERT into a lightweight log; upgrade to proper doctype later

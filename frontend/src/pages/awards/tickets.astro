@@ -67,19 +67,18 @@ import Footer from '../../components/Footer.astro';
                   <p class="text-sm text-steel mt-1">Priority seating, VIP lounge access, networking session, gala dinner, and full event programme.</p>
                 </div>
               </label>
-              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-hairline cursor-not-allowed opacity-60">
-                <input type="radio" name="ticket_tier" value="standard" disabled class="mt-1 w-4 h-4" />
+              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-hairline cursor-pointer hover:border-accent/40 has-checked:border-accent has-checked:bg-accent/10 transition-colors">
+                <input type="radio" name="ticket_tier" value="standard" class="mt-1 w-4 h-4 text-accent focus:ring-accent" />
                 <div class="flex-1">
                   <div class="flex justify-between items-start">
                     <span class="font-semibold text-ink">Standard Seat</span>
                     <span class="font-bold text-ink text-lg">KES 3,500</span>
                   </div>
                   <p class="text-sm text-steel mt-1">Gala dinner, event programme, and full gala access.</p>
-                  <span class="inline-block mt-1 px-2 py-0.5 bg-hairline text-muted text-xs font-medium rounded-full">Sold Out</span>
                 </div>
               </label>
-              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-hairline cursor-not-allowed opacity-60">
-                <input type="radio" name="ticket_tier" value="early_bird" disabled class="mt-1 w-4 h-4" />
+              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-hairline cursor-pointer hover:border-accent/40 has-checked:border-accent has-checked:bg-accent/10 transition-colors">
+                <input type="radio" name="ticket_tier" value="early_bird" class="mt-1 w-4 h-4 text-accent focus:ring-accent" />
                 <div class="flex-1">
                   <div class="flex justify-between items-start">
                     <span class="font-semibold text-ink">Early Bird Standard Seat</span>
@@ -89,7 +88,6 @@ import Footer from '../../components/Footer.astro';
                     </div>
                   </div>
                   <p class="text-sm text-steel mt-1">Gala dinner, event programme, full gala access. Early bird discount — save 29%.</p>
-                  <span class="inline-block mt-1 px-2 py-0.5 bg-hairline text-muted text-xs font-medium rounded-full">Sold Out</span>
                 </div>
               </label>
             </div>

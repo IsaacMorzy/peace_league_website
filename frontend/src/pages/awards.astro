@@ -429,20 +429,64 @@ import Footer from '../components/Footer.astro';
     if (!cats.length) { empty.classList.remove('hidden'); return; }
     empty.classList.add('hidden');
 
-    grid.innerHTML = cats.map((cat, i) => `
+    grid.innerHTML = cats.map((cat, i) => {
+      const icon = getCategoryIcon(cat.category_name);
+      return `
       <a href="/awards/category/${encodeURIComponent(cat.slug)}"
-         class="card-shadow-shift card-base p-6 flex flex-col gap-3 group">
+         class="card-shadow-shift card-base p-6 flex flex-col gap-3 group relative overflow-hidden">
+        <div class="absolute -top-6 -right-6 text-6xl opacity-[0.06] pointer-events-none select-none">${icon}</div>
         <div class="flex items-start justify-between">
-          <span class="text-xs font-bold text-accent bg-accent/10 px-2.5 py-1 rounded-full">${String(i + 1).padStart(2, '0')}</span>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 text-xl" aria-hidden="true">${icon}</span>
           <span class="text-xs text-steel bg-surface px-2.5 py-1 rounded-full">${cat.nominee_count || 0} nominee${cat.nominee_count !== 1 ? 's' : ''}</span>
         </div>
         <h3 class="text-heading-5 text-ink line-clamp-2 group-hover:text-accent-deep transition-colors">${escapeHtml(cat.category_name)}</h3>
         <p class="text-body-sm text-steel line-clamp-2 flex-1">${escapeHtml(cat.description || 'No description available.')}</p>
         <div class="flex items-center justify-between pt-2 border-t border-hairline mt-auto">
-          <span class="text-sm font-medium text-accent">View nominees →</span>
+          <span class="text-sm font-semibold text-accent group-hover:translate-x-1 transition-transform">View nominees →</span>
         </div>
       </a>
-    `).join('');
+    `}).join('');
+  }
+
+  function getCategoryIcon(name) {
+    const n = name.toLowerCase();
+    if (/peace|radical|terror|extrem/i.test(n)) return '🛡️';
+    if (/diplomacy|diplomat|governance|border/i.test(n)) return '🤝';
+    if (/military|army|defence|defense|combat|soldier/i.test(n)) return '🎖️';
+    if (/women|woman|gender|girls|female/i.test(n)) return '✊';
+    if (/labour|labor|worker|trade union/i.test(n)) return '👷';
+    if (/legal|lawyer|judge|justice|reform|constitution/i.test(n)) return '⚖️';
+    if (/police|policing|security|law enforcement/i.test(n)) return '👮';
+    if (/teacher|education|school|teaching|classroom/i.test(n)) return '📚';
+    if (/health|medical|doctor|nurse|hospital|clinical/i.test(n)) return '🏥';
+    if (/youth|young|student|teen/i.test(n)) return '🌱';
+    if (/environment|climate|conservation|wildlife|forest/i.test(n)) return '🌿';
+    if (/journalism|media|press|broadcast|reporter/i.test(n)) return '📰';
+    if (/sport|athlete|football|soccer|rugby|stadium/i.test(n)) return '⚽';
+    if (/art|culture|music|artist|dance|theatre/i.test(n)) return '🎨';
+    if (/innovation|technology|tech|startup|digital|scien/i.test(n)) return '💡';
+    if (/humanitarian|relief|aid|disaster|emergency/i.test(n)) return '🤲';
+    if (/community service|volunteer|social work/i.test(n)) return '❤️';
+    if (/leadership|leader|excellence/i.test(n)) return '👑';
+    if (/human rights|prosecut|torture/i.test(n)) return '✊';
+    if (/child|children|orphan|baby|infant/i.test(n)) return '👶';
+    if (/disability|inclusion|special needs/i.test(n)) return '♿';
+    if (/agriculture|farmer|farming|food security|crops/i.test(n)) return '🌾';
+    if (/business|entrepreneur|enterprise|trade|commerce/i.test(n)) return '💼';
+    if (/religion|faith|interfaith|pastor|imam|church|mosque|cler/i.test(n)) return '🙏';
+    if (/peacebuilding|conflict resol|mediation|reconciliation/i.test(n)) return '🕊️';
+    if (/democracy|election|voting|parliament|civic/i.test(n)) return '🗳️';
+    if (/refugee|migration|displaced|asylum/i.test(n)) return '🏠';
+    if (/indigenous|traditional|cultural heritage|elder/i.test(n)) return '🏺';
+    if (/water|sanitation|hygiene/i.test(n)) return '💧';
+    if (/maritime|ocean|fishing|coastal|sea/i.test(n)) return '🌊';
+    if (/cyber|internet|online|data protection/i.test(n)) return '💻';
+    if (/energy|power|electric|renewable|solar/i.test(n)) return '⚡';
+    if (/corruption|transparency|accountability/i.test(n)) return '🔍';
+    if (/lifetime|achievement/i.test(n)) return '🏆';
+    if (/trailblazer|pioneer|breakthrough/i.test(n)) return '🚀';
+    if (/champion|outstanding|best/i.test(n)) return '🥇';
+    return '🏆';
   }
 
   function escapeHtml(str) {
