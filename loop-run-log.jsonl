@@ -13,3 +13,4 @@
 {"run_id":"2026-07-22T17:15Z","pattern":"daily","outcome":"closed","actions_taken":2,"slur_sha":"a9437ff4b6e335f215bb3fb4efe091c10391b1d3","scope":"#61,#60,awards-enhancements"}
 {"run_id":"2026-07-22T17:38Z","pattern":"pr","outcome":"fix-proposed","actions_taken":1,"slur_sha":"d70ba94","scope":"test/awards-api"}
 {"run_id":"2026-07-22T17:38Z","pattern":"pr","outcome":"fix-proposed","actions_taken":1,"slur_sha":"e597324","scope":"feat/terms-design"}
+{"run_id":"2026-07-23T19:45Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"b8abaa6","scope":"nomination-photo-fix","notes":"create_nomination() bug fix + HTTP regression guard; GH #126 opens follow-up migration."}
