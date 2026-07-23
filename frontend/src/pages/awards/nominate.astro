@@ -204,9 +204,12 @@ import Footer from '../../components/Footer.astro';
 
         <!-- Success Message -->
         <div id="success-message" class="hidden mt-8 p-8 bg-accent/10 border-2 border-accent rounded-2xl text-center">
-          <div class="text-5xl mb-4">🎉</div>
-          <h3 class="text-heading-5 text-ink mb-2">Nomination Submitted</h3>
-          <p class="text-body-md text-steel mb-6">Your nomination has been received and will appear on the site shortly.</p>
+          <div id="success-icon" class="text-5xl mb-4">🎉</div>
+          <h3 id="success-title" class="text-heading-5 text-ink mb-2">Nomination Submitted</h3>
+          <p id="success-blurb" class="text-body-md text-steel mb-2">Your nomination has been received and will appear on the site shortly.</p>
+          <p id="success-photo-warning" class="hidden text-body-sm text-amber-900 bg-amber-100 border border-amber-300 rounded-lg p-4 mb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2" role="status" tabindex="-1">
+            <strong>Heads up:</strong> <span id="success-photo-warning-text"></span>
+          </p>
           <a href="/awards" class="btn btn-accent">Back to Awards</a>
         </div>
       </div>
@@ -465,6 +468,20 @@ import Footer from '../../components/Footer.astro';
         document.getElementById('nomination-form').classList.add('hidden');
         document.getElementById('nominate-stepper').classList.add('hidden');
         document.getElementById('success-message').classList.remove('hidden');
+        // Soft-fail: when the backend saved the nomination but save_file() raised,
+        // it returns status:success with data.photo_warning \u2014 surface it inline.
+        const photoWarning = res.data && res.data.photo_warning;
+        if (photoWarning) {
+          // Soft-fail tone: drop the green-celebration look so it does not
+          // contradict the amber heads-up paragraph below.
+          document.getElementById('success-icon').textContent = '⚠️';
+          document.getElementById('success-title').textContent = 'Nomination Saved — Photo Pending';
+          document.getElementById('success-blurb').textContent =
+            'Your nomination was submitted. One small thing from the photo step:';
+          document.getElementById('success-photo-warning-text').textContent = photoWarning;
+          document.getElementById('success-photo-warning').classList.remove('hidden');
+          document.getElementById('success-photo-warning').focus();
+        }
       } else {
         alert('Submission failed: ' + (res.message || 'Please try again.'));
         submitBtn.disabled = false;

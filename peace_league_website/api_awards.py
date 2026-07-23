@@ -233,13 +233,10 @@ def create_nomination():
             return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Create Award Nominee document ──
-        # The Award Nominee DocType has `photo` as a mandatory Attach Image field.
-        # Pattern: insert doc WITH ignore_mandatory (bypasses the photo check),
-        # then save_file with the real (generated) docname so the File doc is properly
-        # linked for referential integrity, then db_set the photo URL — db_set writes
-        # directly to MySQL without re-running validators.
-        # ponytail: full, upgrade by removing `reqd: 1` from Award Nominee.photo
-        # then delete the ignore_mandatory + db_set workaround below.
+        # Photo is non-mandatory at DocType level (GH #126 migration).
+        # Insert the doc first, then attach the photo to its generated docname
+        # so the File doc gets proper referential integrity.
+
         nominee = frappe.get_doc({
             "doctype": "Award Nominee",
             "nominee_name": nominee_name,
@@ -252,35 +249,62 @@ def create_nomination():
             "status": "Active",
             "submission_date": nowdate(),
         })
-        # ponytail: try/finally so the global flag is always reset, even on error
-        try:
-            nominee.flags.ignore_mandatory = True
-            nominee.insert(ignore_permissions=True)
-        finally:
-            nominee.flags.ignore_mandatory = False
+        nominee.insert(ignore_permissions=True)
         frappe.db.commit()
 
         # ── Attach photo to the real docname (proper File link) ──
-        # ponytail: on file failure, roll back the orphan nominee so we don't
-        # leave dangling Award Nominee docs without photos in the DB.
+        # On file failure, rollback the orphan nominee so we don't leave dangling
+        # Award Nominee docs without photos in the DB.
         try:
             file_doc = save_file(
                 photo.filename, photo.read(),
                 "Award Nominee", nominee.name,
                 is_private=0,
             )
-            # ponytail: db_set skips full re-validation (which would re-trigger
-            # the mandatory check for `photo` because ignore_mandatory was reset).
+            # db_set is deliberate: it skips full re-validation (which would touch
+            # other fields' validators and could be affected by future schema
+            # changes). Keep it here even though photo is now non-mandatory.
             nominee.db_set("photo", file_doc.file_url)
             frappe.db.commit()
         except Exception as file_err:
-            logger.error(f"Photo attach failed for nominee {nominee.name}: {file_err}")
+            # Soft-fail: photo is non-mandatory at the DocType level (GH #126),
+            # so we keep the nominee on disk and surface the photo failure as a
+            # warning rather than a hard error that would delete the just-inserted
+            # row and force the user to retry. Frontend surfaces
+            # data.photo_warning in the success toast.
+            #
+            # Cleanup: if save_file() wrote a File row before raising, that row
+            # now orphans against an Award Nominee whose `photo` field stays empty.
+            # The previous delete_doc path cascade-removed these; we now do an
+            # explicit best-effort DELETE here.
+            logger.warning(
+                f"Photo attach failed for nominee {nominee.name}: {file_err} \u2014 saved without photo"
+            )
+            # ponytail: review #1 fix — sanitize. Raw str(file_err) leaks OSError
+            # details and internal class names. Map to a generic user-facing
+            # message; the raw exception is preserved in the logger above.
+            USER_FACING_WARNING = _("Photo upload failed. The nomination was saved without a photo; you can re-submit a photo later from your dashboard.")
             try:
-                frappe.delete_doc("Award Nominee", nominee.name, ignore_permissions=True, force=True)
+                frappe.db.sql(
+                    "DELETE FROM `tabFile` "
+                    "WHERE attached_to_doctype = 'Award Nominee' "
+                    "AND attached_to_name = %s",
+                    (nominee.name,),
+                )
                 frappe.db.commit()
             except Exception as cleanup_err:
-                logger.error(f"Failed to cleanup orphan nominee {nominee.name}: {cleanup_err}")
-            return {"status": "error", "message": _("Photo upload failed. Please try again.")}
+                logger.warning(
+                    f"Best-effort File row cleanup failed for {nominee.name}: {cleanup_err}"
+                )
+            return {
+                "status": "success",
+                "message": _("Nomination saved. Photo upload failed."),
+                "data": {
+                    "nominee": nominee.name,
+                    "photo": None,
+                    "photo_warning": USER_FACING_WARNING,
+                },
+            }
 
         logger.info(f"Award nomination created: {nominee.name} for category {category_name}")
 
