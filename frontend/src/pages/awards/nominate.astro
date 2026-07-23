@@ -194,6 +194,7 @@ import Footer from '../../components/Footer.astro';
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   Submit Nomination
                 </button>
+                <input type="hidden" name="recaptcha_token" id="recaptcha-token" value="" />
               </div>
             </div>
           </div>
@@ -407,6 +408,33 @@ import Footer from '../../components/Footer.astro';
     reader.readAsDataURL(file);
   }
 
+  // ── reCAPTCHA v3 ──
+  const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '';
+  let recaptchaLoaded = false;
+
+  if (RECAPTCHA_SITE_KEY) {
+    // Dynamically load reCAPTCHA v3 script
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => { recaptchaLoaded = true; };
+    document.head.appendChild(script);
+  }
+
+  async function getRecaptchaToken() {
+    if (!RECAPTCHA_SITE_KEY || !recaptchaLoaded || typeof grecaptcha === 'undefined') {
+      return '';
+    }
+    try {
+      const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'nominate' });
+      return token;
+    } catch (e) {
+      console.warn('reCAPTCHA token error:', e);
+      return '';
+    }
+  }
+
   // Form submission
   document.getElementById('nomination-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -414,6 +442,12 @@ import Footer from '../../components/Footer.astro';
     const submitBtn = e.target.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
+
+    // Get reCAPTCHA token and append to form data
+    const token = await getRecaptchaToken();
+    if (token) {
+      formData.set('recaptcha_token', token);
+    }
 
     try {
       const res = await submitNomination(formData);

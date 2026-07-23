@@ -28,6 +28,44 @@ logger = frappe.logger("awards", allow_site=True, file_count=5)
 # Anti-fraud settings
 VOTE_LIMIT_PER_IP = 10  # max categories an IP can vote in
 RECAPTCHA_SECRET = frappe.conf.get("recaptcha_secret_key") or ""  # set in site config
+RECAPTCHA_SITE_KEY = frappe.conf.get("recaptcha_site_key") or ""  # set in site config
+
+
+def verify_recaptcha(token):
+    """Verify a reCAPTCHA v3 token with Google's API.
+
+    Returns True if the token is valid and score >= 0.5.
+    Falls back to allowing the request if RECAPTCHA_SECRET is not configured,
+    so the site works in dev/CI without reCAPTCHA keys.
+    """
+    if not RECAPTCHA_SECRET:
+        logger.info("reCAPTCHA not configured — skipping verification.")
+        return True
+    if not token:
+        logger.warning("reCAPTCHA token missing.")
+        return False
+
+    try:
+        import requests as http
+        resp = http.post(
+            "https://www.google.com/recaptcha/api/siteverify",
+            data={"secret": RECAPTCHA_SECRET, "response": token},
+            timeout=10,
+        )
+        result = resp.json()
+        success = result.get("success", False)
+        score = result.get("score", 0)
+        if not success:
+            logger.warning(f"reCAPTCHA verification failed: {result.get('error-codes', [])}")
+            return False
+        if score < 0.5:
+            logger.warning(f"reCAPTCHA score too low: {score}")
+            return False
+        return True
+    except Exception as e:
+        logger.error(f"reCAPTCHA request error: {e}")
+        # Fallback: allow on network error (don't block legitimate users for transient issues)
+        return True
 
 
 # ── Public endpoints ──
@@ -176,7 +214,10 @@ def create_nomination():
         if not category_name:
             return {"status": "error", "message": _("Selected category is not active or does not exist")}
 
-        # Optional: reCAPTCHA verification later
+        # reCAPTCHA v3 verification
+        recaptcha_token = frappe.form_dict.get("recaptcha_token")
+        if not verify_recaptcha(recaptcha_token):
+            return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # Create Award Nominee document first; attach photo after insert
         # (save_file needs a docname, so the doc must exist first)
