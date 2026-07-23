@@ -191,6 +191,9 @@ import Footer from '../components/Footer.astro';
                   class="input-focus-ring w-full px-3 py-2.5 border border-hairline rounded-md text-base text-ink focus:border-accent focus:ring-1 focus:ring-accent"></textarea>
               </div>
               
+              <!-- Cloudflare Turnstile -->
+              <div id="turnstile-volunteer-widget" class="flex justify-center my-4"></div>
+
               <div class="rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-0.5">
                 <button type="submit" id="submit-btn"
                   class="btn btn-primary btn-large w-full">
@@ -323,6 +326,25 @@ import Footer from '../components/Footer.astro';
   const formError = document.getElementById('form-error');
   const formSuccess = document.getElementById('form-success');
 
+  // ── Cloudflare Turnstile ──
+  const TS_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  let turnstileVolunteerToken = '';
+
+  if (TS_KEY) {
+    window.onTurnstileVolunteerLoad = () => {
+      if (window.turnstile) {
+        window.turnstile.render('#turnstile-volunteer-widget', {
+          sitekey: TS_KEY,
+          callback: (token) => { turnstileVolunteerToken = token; },
+        });
+      }
+    };
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileVolunteerLoad';
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const PHONE_RE = /^[\d\s\-\+\(\)]{7,20}$/;
 
@@ -422,6 +444,7 @@ import Footer from '../components/Footer.astro';
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    data.cf_turnstile_response = turnstileVolunteerToken || '';
 
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';

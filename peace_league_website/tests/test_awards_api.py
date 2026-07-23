@@ -193,14 +193,16 @@ class TestVoteSecurity(IntegrationTestCase):
         super().tearDownClass()
 
     def test_rate_limit_after_20_attempts(self):
+        # Mock TURNSTILE_SECRET_KEY to empty so verify_turnstile() passes (dev fallback)
         # Mock now() to return a datetime (has .timestamp()) + cache.get to return 20
         mock_now = MagicMock()
         mock_now.timestamp.return_value = 1_700_000_000
-        with patch(f'{MOD}.now', return_value=mock_now, create=True):
-            with patch(f'{MOD}.frappe.cache.get', return_value=20, create=True):
-                result = api.cast_vote(nominee_id='x', category_slug='y')
-                self.assertEqual(result['status'], 'error')
-                self.assertIn('Too many', result.get('message', ''))
+        with patch.object(api, 'TURNSTILE_SECRET_KEY', ''):
+            with patch(f'{MOD}.now', return_value=mock_now, create=True):
+                with patch(f'{MOD}.frappe.cache.get', return_value=20, create=True):
+                    result = api.cast_vote(nominee_id='x', category_slug='y')
+                    self.assertEqual(result['status'], 'error')
+                    self.assertIn('Too many', result.get('message', ''))
 
 
 if __name__ == '__main__':

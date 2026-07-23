@@ -173,6 +173,9 @@ import Footer from '../../components/Footer.astro';
             </div>
           </div>
 
+          <!-- Cloudflare Turnstile -->
+          <div id="turnstile-ticket-widget" class="flex justify-center my-6"></div>
+
           <!-- Submit -->
           <button type="button" id="submit-btn" class="btn btn-accent btn-large w-full cta-hover-glow">
             Complete Purchase — <span id="submit-total">KES 6,500</span>
@@ -313,6 +316,28 @@ import Footer from '../../components/Footer.astro';
   window.addEventListener('scroll', updateStepper, { passive: true });
   updateStepper();
 
+  // ── Cloudflare Turnstile ──
+  const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  let turnstileToken = '';
+  let turnstileWidgetId = null;
+
+  if (TURNSTILE_SITE_KEY) {
+    window.onTurnstileTicketLoad = () => {
+      if (window.turnstile) {
+        turnstileWidgetId = window.turnstile.render('#turnstile-ticket-widget', {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => { turnstileToken = token; },
+        });
+      }
+    };
+
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileTicketLoad';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   // ── M-Pesa polling ──
   const formEl = document.getElementById('ticket-form');
   const waitingEl = document.getElementById('mpesa-waiting');
@@ -404,6 +429,7 @@ import Footer from '../../components/Footer.astro';
       special_requests: document.getElementById('special-requests').value.trim(),
       payment_method: payment,
       amount: priceMap[tier] * qty,
+      cf_turnstile_response: turnstileToken || '',
     };
 
     if (!data.attendee_name || !data.attendee_email || !data.attendee_phone) {

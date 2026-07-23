@@ -7,6 +7,9 @@ from peace_league_website.utils.seed_data import seed_causes as _seed_causes, ge
 from payments.payment_gateways.doctype.mpesa_settings.mpesa_connector import MpesaConnector
 from payments.payment_gateways.doctype.mpesa_settings.mpesa_settings import sanitize_mobile_number
 
+# Import Turnstile verification from awards module (no circular import since api_awards doesn't import from api)
+from peace_league_website.api_awards import verify_turnstile
+
 logger = frappe.logger("peace_league", allow_site=True, file_count=5)
 
 
@@ -79,6 +82,11 @@ def create_volunteer(**kwargs):
     try:
         frappe.flags.ignore_permissions = True
         data = {k: v for k, v in kwargs.items()}
+
+        # Cloudflare Turnstile verification
+        turnstile_token = data.get('cf_turnstile_response', '')
+        if not verify_turnstile(turnstile_token):
+            return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Input validation ──
         email = (data.get("email") or "").strip()
@@ -170,6 +178,11 @@ def create_donation(**kwargs):
     try:
         frappe.flags.ignore_permissions = True
         data = {k: v for k, v in kwargs.items()}
+
+        # Cloudflare Turnstile verification
+        turnstile_token = data.get('cf_turnstile_response', '')
+        if not verify_turnstile(turnstile_token):
+            return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Input validation ──
         donor_name = (data.get("donor_name") or "").strip()
@@ -285,6 +298,11 @@ def submit_contact_form(**kwargs):
     try:
         frappe.flags.ignore_permissions = True
         data = {k: v for k, v in kwargs.items()}
+
+        # Cloudflare Turnstile verification
+        turnstile_token = data.get('cf_turnstile_response', '')
+        if not verify_turnstile(turnstile_token):
+            return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
         # ── Input validation ──
         name = (data.get("name") or "").strip()

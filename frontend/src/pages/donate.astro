@@ -287,7 +287,10 @@ import Footer from '../components/Footer.astro';
                 100% Transparent
               </span>
             </div>
-            
+
+            <!-- Cloudflare Turnstile -->
+            <div id="turnstile-donate-widget" class="flex justify-center my-4"></div>
+
             <div class="btn-pulse-glow rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-0.5 shadow-lg shadow-accent/20">
               <button type="submit" id="submit-btn"
                 class="btn btn-primary btn-large w-full">
@@ -454,6 +457,25 @@ import Footer from '../components/Footer.astro';
     phone: document.querySelector('#phone + .field-check'),
     amount: document.querySelector('#amount + .field-check'),
   };
+
+  // ── Cloudflare Turnstile ──
+  const TS_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  let turnstileDonateToken = '';
+
+  if (TS_KEY) {
+    window.onTurnstileDonateLoad = () => {
+      if (window.turnstile) {
+        window.turnstile.render('#turnstile-donate-widget', {
+          sitekey: TS_KEY,
+          callback: (token) => { turnstileDonateToken = token; },
+        });
+      }
+    };
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileDonateLoad';
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
 
   function goToStep(step) {
     stepItems.forEach((item, i) => {
@@ -787,6 +809,7 @@ import Footer from '../components/Footer.astro';
     data.anonymous = data.anonymous === '1' ? 1 : 0;
     data.currency = 'USD';
     data.payment_method = data.payment_method === 'Mobile Money' ? 'MPesa' : data.payment_method;
+    data.cf_turnstile_response = turnstileDonateToken || '';
 
     submitBtn.disabled = true;
     submitBtnText.textContent = 'Processing...';

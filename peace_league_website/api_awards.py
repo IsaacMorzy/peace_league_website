@@ -268,8 +268,10 @@ def cast_vote(**kwargs):
     - nominee_id: name of Award Nominee document
     - category_slug: slug of the category
     - email: optional email for verification (string)
+    - cf_turnstile_response: Cloudflare Turnstile token (required when configured)
 
     Enforces:
+    - Turnstile bot check (when configured)
     - One vote per IP per category (new vote replaces old in same category)
     - Max VOTE_LIMIT_PER_IP total categories voted by this IP
     - Rate limiting via decorator (e.g., 5 votes per minute per IP)
@@ -277,7 +279,12 @@ def cast_vote(**kwargs):
     nominee_id = kwargs.get('nominee_id')
     category_slug = kwargs.get('category_slug')
     email = kwargs.get('email')
+    turnstile_token = kwargs.get('cf_turnstile_response', '')
     try:
+        # Cloudflare Turnstile verification
+        if not verify_turnstile(turnstile_token):
+            return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
+
         # Rate limit: max 5 vote attempts per minute per IP
         # We'll wrap the core logic in a rate_limited call (later)
         # For now, we'll manually check using Redis key: rate_limit:vote:<ip>
@@ -502,6 +509,11 @@ def purchase_ticket(**kwargs):
     """
     try:
         frappe.flags.ignore_permissions = True
+        # Cloudflare Turnstile verification
+        turnstile_token = kwargs.get('cf_turnstile_response', '')
+        if not verify_turnstile(turnstile_token):
+            return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
+
         ticket_tier = kwargs.get('ticket_tier')
         quantity = int(kwargs.get('quantity', 1))
         attendee_name = kwargs.get('attendee_name')
