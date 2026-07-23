@@ -267,13 +267,44 @@ def create_nomination():
             nominee.db_set("photo", file_doc.file_url)
             frappe.db.commit()
         except Exception as file_err:
-            logger.error(f"Photo attach failed for nominee {nominee.name}: {file_err}")
+            # Soft-fail: photo is non-mandatory at the DocType level (GH #126),
+            # so we keep the nominee on disk and surface the photo failure as a
+            # warning rather than a hard error that would delete the just-inserted
+            # row and force the user to retry. Frontend surfaces
+            # data.photo_warning in the success toast.
+            #
+            # Cleanup: if save_file() wrote a File row before raising, that row
+            # now orphans against an Award Nominee whose `photo` field stays empty.
+            # The previous delete_doc path cascade-removed these; we now do an
+            # explicit best-effort DELETE here.
+            logger.warning(
+                f"Photo attach failed for nominee {nominee.name}: {file_err} \u2014 saved without photo"
+            )
+            # ponytail: review #1 fix — sanitize. Raw str(file_err) leaks OSError
+            # details and internal class names. Map to a generic user-facing
+            # message; the raw exception is preserved in the logger above.
+            USER_FACING_WARNING = _("Photo upload failed. The nomination was saved without a photo; you can re-submit a photo later from your dashboard.")
             try:
-                frappe.delete_doc("Award Nominee", nominee.name, ignore_permissions=True, force=True)
+                frappe.db.sql(
+                    "DELETE FROM `tabFile` "
+                    "WHERE attached_to_doctype = 'Award Nominee' "
+                    "AND attached_to_name = %s",
+                    (nominee.name,),
+                )
                 frappe.db.commit()
             except Exception as cleanup_err:
-                logger.error(f"Failed to cleanup orphan nominee {nominee.name}: {cleanup_err}")
-            return {"status": "error", "message": _("Photo upload failed. Please try again.")}
+                logger.warning(
+                    f"Best-effort File row cleanup failed for {nominee.name}: {cleanup_err}"
+                )
+            return {
+                "status": "success",
+                "message": _("Nomination saved. Photo upload failed."),
+                "data": {
+                    "nominee": nominee.name,
+                    "photo": None,
+                    "photo_warning": USER_FACING_WARNING,
+                },
+            }
 
         logger.info(f"Award nomination created: {nominee.name} for category {category_name}")
 
