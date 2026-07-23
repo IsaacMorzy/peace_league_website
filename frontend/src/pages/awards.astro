@@ -53,13 +53,17 @@ import Footer from '../components/Footer.astro';
           <a href="/awards/nominate" class="btn btn-large bg-white/10 text-on-dark border border-white/20 hover:bg-white/20 hover:border-white/30">
             Nominate Someone
           </a>
+          <a href="/awards/program" class="btn btn-large inline-flex items-center gap-2 border-2 border-accent/40 text-accent-soft hover:bg-accent/10 transition-all">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            View Full Programme
+          </a>
         </div>
 
         <!-- Event details -->
         <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-on-dark-muted">
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            05 Dec 2026
+            17 Dec 2026
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -109,8 +113,8 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="stat-card-glass rounded-xl p-4 relative">
-            <div class="text-3xl font-bold text-accent">1</div>
-            <div class="text-sm text-steel mt-1">Night of Excellence</div>
+            <div class="text-3xl font-bold text-accent" id="stat-ceremony-countdown-days">—</div>
+            <div class="text-sm text-steel mt-1">Days to Ceremony</div>
             <div class="group/tip inline-block absolute top-2 right-2">
               <button type="button" class="size-5 inline-flex justify-center items-center rounded-full text-steel hover:text-ink transition-colors" aria-label="What is the gala?">
                 <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -359,7 +363,7 @@ import Footer from '../components/Footer.astro';
   let allCategories = [];
 
   // Countdown timer
-  const TARGET_DATE = new Date('2026-12-05T00:00:00+03:00');
+  const TARGET_DATE = new Date('2026-12-17T10:00:00+03:00');
 
   function updateCountdown() {
     const now = new Date();
@@ -378,6 +382,14 @@ import Footer from '../components/Footer.astro';
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  // Ceremony days remaining (static, updated on load)
+  const ceremonyDate = new Date('2026-12-17T10:00:00+03:00');
+  const ceremonyDaysEl = document.getElementById('stat-ceremony-countdown-days');
+  if (ceremonyDaysEl) {
+    const diff = ceremonyDate - new Date();
+    ceremonyDaysEl.textContent = diff > 0 ? Math.ceil(diff / 86400000).toLocaleString() : '0';
+  }
 
   // Animated count-up
   function animateCount(el, target, duration = 1200) {
