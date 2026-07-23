@@ -219,8 +219,9 @@ def create_nomination():
         if not verify_recaptcha(recaptcha_token):
             return {"status": "error", "message": _("Verification failed. Please refresh and try again.")}
 
-        # Create Award Nominee document first; attach photo after insert
-        # (save_file needs a docname, so the doc must exist first)
+        # ── Create Award Nominee document ──
+        # save_file needs a docname, but photo is mandatory on the DocType.
+        # Strategy: bypass mandatory check, insert, attach file, update photo.
         nominee = frappe.get_doc({
             "doctype": "Award Nominee",
             "nominee_name": nominee_name,
@@ -232,11 +233,13 @@ def create_nomination():
             "nominator_email": nominator_email,
             "status": "Active",
             "submission_date": nowdate(),
-            # IP and UA will be set in before_insert if request present
         })
+        frappe.flags.ignore_mandatory = True
         nominee.insert(ignore_permissions=True)
+        frappe.flags.ignore_mandatory = False
+        frappe.db.commit()
 
-        # Attach photo to the nominee document
+        # ── Attach photo to the nominee document ──
         file_doc = save_file(
             photo.filename, photo.read(),
             "Award Nominee", nominee.name,
