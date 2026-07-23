@@ -108,3 +108,42 @@ export async function submitNomination(formData) {
     body: formData,
   });
 }
+
+export async function purchaseTicket(data) {
+  return apiCall('/api/method/peace_league_website.api_awards.purchase_ticket', {
+    method: 'POST',
+    body: data,
+  });
+}
+
+export async function ticketPaymentStatus(checkoutRequestId) {
+  return apiCall(`/api/method/peace_league_website.api_awards.ticket_payment_status?checkout_request_id=${encodeURIComponent(checkoutRequestId)}`);
+}
+
+// ── Admin API ──
+
+export async function adminGetNominations(filters = {}) {
+  const params = new URLSearchParams();
+  if (Object.keys(filters).length) {
+    params.set('filters', JSON.stringify(filters));
+  }
+  return apiCall(`/api/method/peace_league_website.api_awards.admin_get_nominations?${params.toString()}`);
+}
+
+export async function adminGetVoteStats() {
+  return apiCall('/api/method/peace_league_website.api_awards.admin_get_vote_stats');
+}
+
+export async function adminDeleteNomination(nomineeName) {
+  return apiCall('/api/method/peace_league_website.api_awards.admin_delete_nomination', {
+    method: 'POST',
+    body: { nominee_name: nomineeName },
+  });
+}
+
+export async function adminUpdateNomination(nomineeName, updates) {
+  return apiCall('/api/method/peace_league_website.api_awards.admin_update_nomination', {
+    method: 'POST',
+    body: { nominee_name: nomineeName, ...updates },
+  });
+}

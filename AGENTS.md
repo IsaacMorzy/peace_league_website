@@ -32,6 +32,11 @@ Local stubs in `.agents/skills/`. Globals live in `~/.agents/skills/`.
 | `loop-verifier` | Maker/checker split: reject unless scope + tests pass. |
 | `code-reviewer-minimax-m3` | Parent subagent for correctness / security / edge cases on a finished diff. |
 | `ui-skills-root` | Meta-skill. `npx ui-skills start` routes the agent to the smallest useful UI skill set. |
+| `ui-styling` | Beautiful, accessible UIs: shadcn/ui, Tailwind CSS, Radix primitives, dark mode, themes. |
+| `ui-ux-pro-max` | Full-stack UI/UX design intelligence: 50+ styles, color palettes, font pairings, layouts. |
+| `frontend-ui-engineering` | Production-quality UIs: components, layouts, state, responsive design. |
+| `design-taste-frontend` | Anti-slop frontend for landing pages, portfolios, redesigns. Real design systems. |
+| `design` | Comprehensive design: brand identity, design tokens, logo generation, CIP mockups, banners. |
 | `baseline-ui` | Slop-prevention baseline (Tailwind defaults, motion/react, `cn`, accessible primitives). |
 | `fixing-accessibility` | WCAG / ARIA / keyboard / focus / form errors. |
 | `fixing-metadata` | Title / OG / Twitter / canonical / favicon / JSON-LD / robots. |

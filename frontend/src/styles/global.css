@@ -520,7 +520,7 @@ a:active {
 /* ── Partner Logo Float ── */
 
 .partner-logo-float {
-  animation: partner-float 4s ease-in-out infinite;
+  animation: partner-float 10s ease-in-out infinite;
 }
 @keyframes partner-float {
   0%, 100% { transform: translateY(0); }
@@ -565,6 +565,169 @@ a:active {
   transition: opacity 0s;
 }
 
+/* ════════════════════════════════════════════
+   ── BUTTON SYSTEM (Preline-inspired) ──
+   ════════════════════════════════════════════ */
+
+/* ── Base Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s var(--ease-out-expo);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn[disabled],
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn svg {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ── Accent (Primary CTA) ── */
+.btn-accent {
+  background: var(--color-accent);
+  color: #0a0a0a;
+  border-color: var(--color-accent);
+}
+.btn-accent:hover {
+  background: var(--color-accent-deep);
+  border-color: var(--color-accent-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 212, 164, 0.25);
+}
+.btn-accent:active {
+  transform: scale(0.97) translateY(0);
+}
+.dark .btn-accent {
+  color: #0a0a0a;
+}
+
+/* ── Primary (Dark/Ink) ── */
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  border-color: var(--color-ink);
+}
+.btn-primary:hover {
+  background: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.btn-primary:active {
+  transform: scale(0.97) translateY(0);
+}
+.dark .btn-primary {
+  background: var(--color-accent);
+  color: #0a0a0a;
+  border-color: var(--color-accent);
+}
+.dark .btn-primary:hover {
+  background: var(--color-accent-deep);
+  border-color: var(--color-accent-deep);
+}
+
+/* ── Secondary (Outlined) ── */
+.btn-secondary {
+  background: var(--color-canvas);
+  color: var(--color-steel);
+  border-color: var(--color-hairline);
+}
+.btn-secondary:hover {
+  color: var(--color-ink);
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.btn-secondary:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* ── Ghost (Minimal) ── */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-steel);
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+/* ── Outline Accent ── */
+.btn-outline-accent {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn-outline-accent:hover {
+  background: var(--color-accent);
+  color: #0a0a0a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 212, 164, 0.2);
+}
+
+/* ── Sizes ── */
+.btn-large {
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9375rem;
+  min-height: 48px;
+}
+.btn-large svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.btn-sm {
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+}
+.btn-sm svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ── Icon-only button ── */
+.btn-icon {
+  padding: 0.5rem;
+  border-radius: var(--radius-full);
+  min-width: unset;
+}
+.btn-icon.btn-sm {
+  padding: 0.375rem;
+}
+
+/* ── CTA Hover Glow (compat, now works natively with .btn-accent) ── */
+/* .cta-hover-glow is defined below and works with any .btn */
+
 /* ── Pulse-Glow 3-beat then stop ── */
 /* Note: full .btn-pulse-glow definition is below with @keyframes pulse-glow */
 
@@ -577,14 +740,14 @@ a:active {
 .animate-fade-in-scale { animation: fade-in-scale 0.5s ease-out; }
 
 @keyframes globe-glow-pulse {
-  0%, 100% { filter: brightness(1) drop-shadow(0 0 4px rgba(0,212,164,0.4)); }
-  50% { filter: brightness(1.2) drop-shadow(0 0 12px rgba(0,212,164,0.7)); }
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 3px rgba(0,212,164,0.3)); }
+  50% { filter: brightness(1.05) drop-shadow(0 0 6px rgba(0,212,164,0.4)); }
 }
 @keyframes globe-spin {
   from { transform: perspective(200px) rotateY(0deg); }
   to { transform: perspective(200px) rotateY(360deg); }
 }
-.globe-glow { animation: globe-glow-pulse 3s ease-in-out infinite; }
+.globe-glow { animation: globe-glow-pulse 8s ease-in-out infinite; }
 .globe-spin { animation: globe-spin 30s linear infinite; }
 
 @keyframes slide-up-bounce {
@@ -688,84 +851,22 @@ a:active {
    ── ANIMATIONS: FLIGHT & RISE ──
    ════════════════════════════════════════════ */
 
-/* ── DOVE: Natural swooping flight ──
-   The dove arcs upward, banks, glides, then swoops again.
-   Multiple keyframes create a figure-8 flight path with
-   varying speed for an organic, bird-like feel. */
-.animate-dove-drift {
-  animation: dove-flight 18s ease-in-out infinite;
-}
-@keyframes dove-flight {
-  0%   { transform: translate3d(-30px, 0, 0) scale(0.7) rotate(-5deg); opacity: 0; }
-  5%   { opacity: 0.3; transform: translate3d(-15px, -8vh, 0) scale(0.85) rotate(-3deg); }
-  15%  { opacity: 0.45; transform: translate3d(15px, -25vh, 0) scale(1) rotate(2deg); }
-  25%  { opacity: 0.5; transform: translate3d(40px, -38vh, 0) scale(1.05) rotate(6deg); }
-  35%  { opacity: 0.45; transform: translate3d(55px, -48vh, 0) scale(1) rotate(3deg); }
-  45%  { opacity: 0.4; transform: translate3d(60px, -55vh, 0) scale(0.95) rotate(-2deg); }
-  55%  { opacity: 0.35; transform: translate3d(50px, -60vh, 0) scale(0.9) rotate(-6deg); }
-  65%  { opacity: 0.3; transform: translate3d(35px, -65vh, 0) scale(0.85) rotate(-3deg); }
-  80%  { opacity: 0.2; transform: translate3d(15px, -75vh, 0) scale(0.8) rotate(0deg); }
-  100% { transform: translate3d(-20px, -90vh, 0) scale(0.7) rotate(5deg); opacity: 0; }
-}
-
-/* ── Alternate dove (slower, wider arc) ── */
+/* ── DOVE: Removed for performance — replaced with display:none ── */
+.animate-dove-drift,
 .animate-dove-drift--slow {
-  animation: dove-flight-slow 24s ease-in-out infinite;
-}
-@keyframes dove-flight-slow {
-  0%   { transform: translate3d(-40px, 0, 0) scale(0.6) rotate(-8deg); opacity: 0; }
-  8%   { opacity: 0.25; transform: translate3d(-20px, -10vh, 0) scale(0.8) rotate(-4deg); }
-  20%  { opacity: 0.4; transform: translate3d(25px, -30vh, 0) scale(0.95) rotate(3deg); }
-  35%  { opacity: 0.45; transform: translate3d(55px, -45vh, 0) scale(1.1) rotate(8deg); }
-  50%  { opacity: 0.35; transform: translate3d(70px, -55vh, 0) scale(1) rotate(5deg); }
-  65%  { opacity: 0.25; transform: translate3d(50px, -65vh, 0) scale(0.85) rotate(-4deg); }
-  85%  { opacity: 0.15; transform: translate3d(20px, -80vh, 0) scale(0.7) rotate(-2deg); }
-  100% { transform: translate3d(-30px, -95vh, 0) scale(0.55) rotate(6deg); opacity: 0; }
+  display: none !important;
 }
 
-/* ── HEART: Pulsing rise with shimmer ── */
+/* ── HEART: Removed for performance ── */
 .animate-heart-rise {
-  color: var(--color-accent);
-  animation: heart-flight 14s ease-in-out infinite;
-}
-@keyframes heart-flight {
-  0%   { transform: translate3d(0, 0, 0) scale(0.4) rotate(0deg); opacity: 0; filter: blur(2px); }
-  8%   { opacity: 0.4; transform: translate3d(-8px, -8vh, 0) scale(0.7) rotate(-6deg); filter: blur(0); }
-  20%  { opacity: 0.55; transform: translate3d(12px, -20vh, 0) scale(0.95) rotate(8deg); filter: blur(0); text-shadow: 0 0 10px rgba(0,212,164,0.4); }
-  35%  { opacity: 0.5; transform: translate3d(-5px, -35vh, 0) scale(1.05) rotate(-4deg); }
-  50%  { opacity: 0.45; transform: translate3d(18px, -50vh, 0) scale(1) rotate(10deg); text-shadow: 0 0 15px rgba(0,212,164,0.3); }
-  65%  { opacity: 0.35; transform: translate3d(-10px, -65vh, 0) scale(0.85) rotate(-8deg); }
-  80%  { opacity: 0.2; transform: translate3d(8px, -80vh, 0) scale(0.7) rotate(4deg); filter: blur(1px); }
-  100% { transform: translate3d(-15px, -100vh, 0) scale(0.5) rotate(-12deg); opacity: 0; filter: blur(3px); }
+  display: none !important;
 }
 
-/* ── SPARKLE / SHIMMER PARTICLES ── */
-.animate-particle {
-  animation: particle-rise 12s ease-in-out infinite;
-}
-@keyframes particle-rise {
-  0%   { transform: translate3d(0, 0, 0) scale(0) rotate(0deg); opacity: 0; }
-  10%  { opacity: 0.6; transform: translate3d(-10px, -5vh, 0) scale(0.6) rotate(30deg); }
-  30%  { opacity: 0.4; transform: translate3d(15px, -20vh, 0) scale(0.4) rotate(120deg); }
-  50%  { opacity: 0.5; transform: translate3d(-5px, -35vh, 0) scale(0.8) rotate(210deg); box-shadow: 0 0 6px currentColor; }
-  70%  { opacity: 0.3; transform: translate3d(10px, -55vh, 0) scale(0.3) rotate(300deg); }
-  100% { transform: translate3d(-20px, -80vh, 0) scale(0) rotate(400deg); opacity: 0; }
-}
-
-.animate-particle--fast {
-  animation: particle-rise 8s ease-in-out infinite;
-}
-
+/* ── SPARKLE / PARTICLES: Removed for performance ── */
+.animate-particle,
+.animate-particle--fast,
 .animate-particle--glow {
-  animation: particle-glow-rise 15s ease-in-out infinite;
-}
-@keyframes particle-glow-rise {
-  0%   { transform: translate3d(0, 0, 0) scale(0); opacity: 0; }
-  8%   { opacity: 0.3; transform: translate3d(-15px, -5vh, 0) scale(0.8); filter: blur(0); }
-  25%  { opacity: 0.5; transform: translate3d(20px, -18vh, 0) scale(1.2); filter: blur(0); box-shadow: 0 0 20px currentColor; }
-  45%  { opacity: 0.35; transform: translate3d(-10px, -35vh, 0) scale(0.7); filter: blur(1px); }
-  65%  { opacity: 0.2; transform: translate3d(15px, -55vh, 0) scale(0.5); filter: blur(2px); }
-  100% { transform: translate3d(-25px, -85vh, 0) scale(0); opacity: 0; filter: blur(4px); }
+  display: none !important;
 }
 
 @keyframes glow-pulse {
@@ -1390,14 +1491,9 @@ a:active {
   opacity: 0.45;
 }
 
-.dove-drift {
-  animation: dove-drift 26s ease-in-out infinite;
-}
-
+.dove-drift,
 .heart-rise {
-  animation: heart-rise 30s ease-in-out infinite;
-  color: var(--color-accent);
-  opacity: 0.28;
+  display: none !important;
 }
 
 .soft-glow {
@@ -1410,93 +1506,23 @@ a:active {
   background: linear-gradient(180deg, var(--color-canvas) 0%, var(--color-surface-soft) 100%);
 }
 
-@keyframes dove-drift {
-  0% { transform: translate3d(0, 0, 0) scale(0.9); opacity: 0; }
-  20% { opacity: 0.4; }
-  50% { transform: translate3d(30px, -12px, 0) scale(1); opacity: 0.55; }
-  80% { opacity: 0.35; }
-  100% { transform: translate3d(60px, -18px, 0) scale(0.95); opacity: 0; }
-}
 
-@keyframes heart-rise {
-  0% { transform: translate3d(0, 20px, 0) scale(0.6); opacity: 0; }
-  20% { opacity: 0.5; }
-  70% { opacity: 0.35; }
-  100% { transform: translate3d(0, -140px, 0) scale(1); opacity: 0; }
-}
 
 @keyframes soft-glow {
   0%, 100% { opacity: 0.25; }
   50% { opacity: 0.55; }
 }
 
-/* ── Floating decor all pages ── */
-.floating-bubble {
-  position: fixed;
-  bottom: -60px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  opacity: 0;
-  pointer-events: none;
-  animation: bubble-float 20s ease-in-out infinite;
-}
-
-.floating-bubble-warm {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--color-accent-warm);
-  opacity: 0;
-  pointer-events: none;
-  animation: bubble-float-warm-high 18s ease-in-out infinite;
-}
-
-.floating-heart-warm {
-  position: absolute;
-  color: var(--color-accent-warm);
-  pointer-events: none;
-  animation: heart-float-warm-high 22s ease-in-out infinite;
-}
-
-/* ── Card variants for donation impact grid ── */
-.floating-bubble-card {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--color-accent);
-  opacity: 0;
-  pointer-events: none;
-  animation: bubble-float-warm 18s ease-in-out infinite;
-}
-
-.floating-heart-card {
-  position: absolute;
-  color: var(--color-accent);
-  pointer-events: none;
-  animation: heart-float-warm 22s ease-in-out infinite;
-}
-
-.floating-dot {
-  position: fixed;
-  bottom: -40px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  opacity: 0;
-  pointer-events: none;
-  animation: dot-float 22s ease-in-out infinite;
-}
-
-.floating-heart {
-  position: fixed;
-  bottom: -20px;
-  color: var(--color-accent);
-  pointer-events: none;
-  animation: heart-float 28s ease-in-out infinite;
-}
-
+/* ── Floating decor: Removed for performance ── */
+.floating-bubble,
+.floating-bubble-warm,
+.floating-heart-warm,
+.floating-bubble-card,
+.floating-heart-card,
+.floating-dot,
+.floating-heart,
 .floating-dove {
-  position: fixed;
-  bottom: -40px;
-  pointer-events: none;
-  animation: dove-float 35s ease-in-out infinite;
+  display: none !important;
 }
 
 @keyframes bubble-float {
@@ -1790,15 +1816,15 @@ a:active {
 }
 
 .float-shape--a {
-  animation: float-shape-a 20s ease-in-out infinite;
+  animation: float-shape-a 80s ease-in-out infinite;
 }
 
 .float-shape--b {
-  animation: float-shape-b 16s ease-in-out infinite;
+  animation: float-shape-b 64s ease-in-out infinite;
 }
 
 .float-shape--c {
-  animation: float-shape-c 22s ease-in-out infinite;
+  animation: float-shape-c 88s ease-in-out infinite;
 }
 
 .float-shape--ring {
@@ -2950,21 +2976,21 @@ a:active {
   width: 400px;
   height: 400px;
   background: var(--color-accent);
-  animation: orb-drift-1 25s ease-in-out infinite;
+  animation: orb-drift-1 60s ease-in-out infinite;
 }
 
 .orb-float--2 {
   width: 300px;
   height: 300px;
   background: var(--color-accent-warm);
-  animation: orb-drift-2 20s ease-in-out infinite;
+  animation: orb-drift-2 50s ease-in-out infinite;
 }
 
 .orb-float--3 {
   width: 250px;
   height: 250px;
   background: var(--color-accent);
-  animation: orb-drift-3 18s ease-in-out infinite;
+  animation: orb-drift-3 45s ease-in-out infinite;
   opacity: 0.08;
 }
 

@@ -50,6 +50,34 @@ import Footer from '../components/Footer.astro';
     <section class="py-10 lg:py-14 bg-surface">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <!-- How It Works -->
+        <div class="mb-10 text-center scroll-reveal">
+          <h2 class="text-heading-4 text-ink mb-6">How It Works</h2>
+          <ol class="grid grid-cols-1 sm:grid-cols-3 gap-6 list-none">
+            <li class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl font-bold text-accent">01</span>
+              </div>
+              <h3 class="text-heading-5 text-ink mb-1">Choose Amount</h3>
+              <p class="text-sm text-steel">Pick a preset or enter a custom amount that fits your heart.</p>
+            </li>
+            <li class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl font-bold text-accent">02</span>
+              </div>
+              <h3 class="text-heading-5 text-ink mb-1">Pay Securely</h3>
+              <p class="text-sm text-steel">Use card, bank transfer, PayPal, or M-Pesa mobile money.</p>
+            </li>
+            <li class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl font-bold text-accent">03</span>
+              </div>
+              <h3 class="text-heading-5 text-ink mb-1">See Your Impact</h3>
+              <p class="text-sm text-steel">Receive updates and stories from the communities you're helping.</p>
+            </li>
+          </ol>
+        </div>
+
         <!-- ── CAMPAIGN PROGRESS ── -->
         <div class="campaign-progress-card mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div class="flex items-center gap-6">
@@ -262,7 +290,7 @@ import Footer from '../components/Footer.astro';
             
             <div class="btn-pulse-glow rounded-full bg-gradient-to-r from-accent via-accent-warm to-accent p-0.5 shadow-lg shadow-accent/20">
               <button type="submit" id="submit-btn"
-                class="submit-btn w-full bg-primary text-on-dark py-2.5 rounded-full text-sm font-medium leading-[1.30] hover:bg-charcoal transition-all duration-200 disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed disabled:shadow-none disabled:scale-100 inline-flex items-center justify-center gap-2">
+                class="btn btn-primary btn-large w-full">
                 <span id="submit-btn-text">Complete My Gift</span>
                 <svg id="submit-btn-arrow" class="w-4 h-4 transition-transform group-hover/submit:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 <svg id="submit-spinner" class="hidden w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">

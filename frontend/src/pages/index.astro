@@ -16,10 +16,12 @@ const upcomingWithDate = upcomingEvents.map(e => {
   const d = new Date(parseInt(e.year), monthIndex, parseInt(e.day));
   return { ...e, dateObj: d };
 });
-const nextEvent = upcomingWithDate.sort((a, b) => a.dateObj - b.dateObj)[0];
+const awardsEvent = events.find(e => e.slug === "peace-league-awards-gala-2026");
+const otherUpcoming = upcomingWithDate.filter(e => e.slug !== "peace-league-awards-gala-2026");
 const monthMap = { "Jan":"01","Feb":"02","Mar":"03","Apr":"04","May":"05","Jun":"06","Jul":"07","Aug":"08","Sep":"09","Oct":"10","Nov":"11","Dec":"12" };
-const nextIsoDate = nextEvent ? `${nextEvent.year}-${monthMap[nextEvent.month]}-${nextEvent.day.padStart(2,"0")}` : "2026-12-31";
-const nextStartTime = nextEvent?.startTime || "09:00";
+const awardsIsoDate = awardsEvent ? `${awardsEvent.year}-${monthMap[awardsEvent.month]}-${awardsEvent.day.padStart(2,"0")}` : "2026-12-17";
+const awardsStartTime = awardsEvent?.startTime || "10:00";
+
 ---
 
 <Layout title="Home" description="Peace League Africa builds peace across 12 African countries through education, healthcare, clean water, and youth programs. 1,200+ volunteers active.">
@@ -48,16 +50,10 @@ const nextStartTime = nextEvent?.startTime || "09:00";
         <span class="float-shape float-shape--c absolute" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);filter:blur(60px);border-radius:50%;"></span>
       </div>
 
-      <!-- ── DEPTH LAYER 2: Doves + Particles (mid-speed) ── -->
+      <!-- ── DEPTH LAYER 2: Subtle movement only ── -->
       <div class="hero-depth-layer hero-depth-2" aria-hidden="true">
-        <!-- Doves: hide on mobile, fewer on tablet -->
-        <span class="animate-dove-drift hidden sm:block" style="left:15%;bottom:-20%;animation-delay:0s;font-size:1.5rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
-        <span class="animate-dove-drift--slow hidden md:block" style="left:50%;bottom:-30%;animation-delay:2.5s;font-size:1.75rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
-        <span class="animate-dove-drift hidden sm:block" style="left:80%;bottom:-15%;animation-delay:4s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">&#x1F54A;</span>
-        <!-- Particles: fewer on mobile -->
-        <span class="animate-particle hidden sm:block" style="left:8%;bottom:5%;width:5px;height:5px;border-radius:50%;background:var(--color-accent);animation-delay:0.5s;"></span>
-        <span class="animate-particle--fast hidden sm:block" style="left:22%;bottom:10%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-soft);animation-delay:1.2s;"></span>
-        <span class="animate-particle--glow" style="left:45%;bottom:2%;color:var(--color-accent);animation-delay:2s;font-size:1.5rem;">&#x2726;</span>
+        <!-- Particles removed for performance -->
+        <span class="-glow" style="left:45%;bottom:2%;color:var(--color-accent);animation-delay:2s;font-size:1.5rem;">&#x2726;</span>
         <span class="animate-particle hidden sm:block" style="left:70%;bottom:15%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
         <span class="animate-particle--fast" style="left:85%;bottom:8%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:3s;"></span>
       </div>
@@ -104,11 +100,11 @@ const nextStartTime = nextEvent?.startTime || "09:00";
 
           <!-- CTA Buttons - more compact on mobile -->
           <div class="hero-social mt-6 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-6" style="animation-delay: 0.7s;">
-            <a href="/donate" class="magnetic-btn group inline-flex items-center justify-center w-full sm:w-auto min-h-[48px] sm:min-h-[56px] px-8 sm:px-10 py-3 sm:py-4 bg-accent btn-text-contrast font-semibold text-sm sm:text-base rounded-full shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40 hover:bg-accent-deep transition-all duration-300 ease-out-expo btn-pulse-glow btn-ripple" data-magnet-strength="0.4">
+            <a href="/donate" class="btn btn-accent btn-large btn-ripple group w-full sm:w-auto shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40 btn-pulse-glow" data-magnet-strength="0.4">
               Give Today
               <svg class="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
-            <a href="/causes" class="magnetic-btn btn-ripple inline-flex items-center justify-center w-full sm:w-auto min-h-[48px] sm:min-h-[56px] px-8 sm:px-10 py-3 sm:py-4 border-2 border-white/25 text-white font-semibold text-sm sm:text-base rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300" data-magnet-strength="0.25">
+            <a href="/causes" class="btn btn-large btn-ripple w-full sm:w-auto border-2 border-white/25 text-white hover:bg-white/10 hover:border-white/50" data-magnet-strength="0.25">
               Explore Our Causes
             </a>
           </div>
@@ -331,58 +327,98 @@ const nextStartTime = nextEvent?.startTime || "09:00";
     </section>
 
     <!-- ════════════════════════════════════════════════════════
-         UPCOMING EVENT — Next featured event with countdown
+         FEATURED EVENT — Peace League Africa Awards Gala
          ════════════════════════════════════════════════════════ -->
-    {nextEvent && (
+    {awardsEvent && (
     <section class="py-16 lg:py-24 bg-gradient-to-br from-accent/5 via-canvas to-accent-warm/5 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12" data-reveal>
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent uppercase tracking-wider mb-4">Next Event</span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Join Us Soon</h2>
-          <p class="text-lg text-steel max-w-xl mx-auto">Be part of the change. Register for our next peace-building event.</p>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500 uppercase tracking-wider mb-4">Awards Gala</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Peace League Africa Awards Gala 2026</h2>
+          <p class="text-lg text-steel max-w-2xl mx-auto">Celebrating 62 categories of peace champions across Africa &mdash; join us at the historic August 7th Memorial Park for a landmark ceremony of honour, resilience, and hope.</p>
         </div>
 
-        <a href={`/events/${nextEvent.slug}`} class="group block" data-reveal>
-          <div class="relative bg-canvas rounded-3xl border border-hairline overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-2">
+        <!-- Countdown + Stats Bar -->
+        <div class="max-w-3xl mx-auto mb-12" data-reveal>
+          <div class="bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 rounded-2xl p-6 sm:p-8 border border-accent/10 shadow-lg shadow-accent/5">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center mb-6">
+              <div>
+                <span class="block text-3xl sm:text-4xl font-bold text-accent" id="home-cd-days">--</span>
+                <span class="text-xs text-steel uppercase tracking-wider font-medium">Days</span>
+              </div>
+              <div>
+                <span class="block text-3xl sm:text-4xl font-bold text-accent" id="home-cd-hours">--</span>
+                <span class="text-xs text-steel uppercase tracking-wider font-medium">Hours</span>
+              </div>
+              <div>
+                <span class="block text-3xl sm:text-4xl font-bold text-accent" id="home-cd-mins">--</span>
+                <span class="text-xs text-steel uppercase tracking-wider font-medium">Minutes</span>
+              </div>
+              <div>
+                <span class="block text-3xl sm:text-4xl font-bold text-accent" id="home-cd-secs">--</span>
+                <span class="text-xs text-steel uppercase tracking-wider font-medium">Seconds</span>
+              </div>
+            </div>
+            <div id="home-countdown-timer" data-target-date={`${awardsIsoDate}T${awardsStartTime}:00`}></div>
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-steel">
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                December 17, 2026
+              </span>
+              <span class="w-px h-4 bg-hairline hidden sm:block"></span>
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                10:00 AM – 3:00 PM EAT
+              </span>
+              <span class="w-px h-4 bg-hairline hidden sm:block"></span>
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                August 7th Memorial Park, Nairobi
+              </span>
+              <span class="w-px h-4 bg-hairline hidden sm:block"></span>
+              <span class="inline-flex items-center gap-1.5 font-semibold">
+                <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                {awardsEvent.registered} registered
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Awards Ceremony Full Program -->
+        <div class="max-w-5xl mx-auto" data-reveal>
+          <div class="bg-canvas rounded-3xl border border-hairline overflow-hidden shadow-lg">
             <div class="grid md:grid-cols-5 gap-0">
               <!-- Image -->
-              <div class="md:col-span-2 relative overflow-hidden min-h-[280px] md:min-h-[340px]">
-                <img src={`https://images.unsplash.com/${nextEvent.image}?w=600&q=80&auto=format&fit=crop`} alt={nextEvent.title} class="w-full h-full absolute inset-0 object-cover transition-all duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
-
-                <!-- Date badge -->
+              <div class="md:col-span-2 relative overflow-hidden min-h-[280px] md:min-h-[400px]">
+                <img src="/images/events/august-7th-memorial-park.jpg" alt="August 7th Memorial Park, Nairobi" class="w-full h-full absolute inset-0 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
                 <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-md text-center rounded-2xl px-4 py-3 leading-tight shadow-xl">
-                  <span class="block text-2xl font-bold text-ink leading-none">{nextEvent.day}</span>
-                  <span class="block text-xs font-bold text-accent mt-1 uppercase tracking-wider">{nextEvent.month}</span>
+                  <span class="block text-2xl font-bold text-ink leading-none">17</span>
+                  <span class="block text-xs font-bold text-accent mt-1 uppercase tracking-wider">Dec</span>
                 </div>
-
-                <!-- Type badge -->
                 <div class="absolute top-5 right-5">
-                  <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-accent/90 text-white backdrop-blur-sm shadow-lg">
-                    {nextEvent.type}
+                  <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/90 text-white backdrop-blur-sm shadow-lg">
+                    &#9733; Gala
                   </span>
                 </div>
 
-                <!-- Countdown overlay -->
+                <!-- Quick facts overlay -->
                 <div class="absolute bottom-5 left-5 right-5">
                   <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/10">
-                    <p class="text-[10px] text-white/60 uppercase tracking-widest font-semibold mb-2">Event Starts In</p>
-                    <div class="flex gap-2" id="home-countdown-timer" data-target-date={`${nextIsoDate}T${nextStartTime}:00`}>>
-                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[56px]">
-                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-days">--</span>
-                        <span class="text-[9px] text-white/50 uppercase tracking-wider">days</span>
+                    <div class="flex gap-3 text-center">
+                      <div class="flex-1">
+                        <span class="block text-lg font-bold text-white">62</span>
+                        <span class="text-[9px] text-white/60 uppercase tracking-wider">Categories</span>
                       </div>
-                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[52px]">
-                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-hours">--</span>
-                        <span class="text-[9px] text-white/50 uppercase tracking-wider">hrs</span>
+                      <div class="w-px bg-white/10"></div>
+                      <div class="flex-1">
+                        <span class="block text-lg font-bold text-white">12</span>
+                        <span class="text-[9px] text-white/60 uppercase tracking-wider">Countries</span>
                       </div>
-                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[52px]">
-                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-mins">--</span>
-                        <span class="text-[9px] text-white/50 uppercase tracking-wider">min</span>
-                      </div>
-                      <div class="text-center bg-white/10 rounded-xl px-3 py-2 min-w-[52px]">
-                        <span class="block text-xl font-bold text-white leading-none" id="home-cd-secs">--</span>
-                        <span class="text-[9px] text-white/50 uppercase tracking-wider">sec</span>
+                      <div class="w-px bg-white/10"></div>
+                      <div class="flex-1">
+                        <span class="block text-lg font-bold text-white">{awardsEvent.capacity}</span>
+                        <span class="text-[9px] text-white/60 uppercase tracking-wider">Capacity</span>
                       </div>
                     </div>
                   </div>
@@ -390,61 +426,111 @@ const nextStartTime = nextEvent?.startTime || "09:00";
               </div>
 
               <!-- Content -->
-              <div class="md:col-span-3 p-7 md:p-9 flex flex-col justify-center">
+              <div class="md:col-span-3 p-7 md:p-9">
                 <div class="flex items-center gap-2 text-xs text-steel mb-3">
                   <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-                  <span>{nextEvent.venue}, {nextEvent.location}</span>
-                  <span class="mx-1 text-hairline">&middot;</span>
-                  <span>{nextEvent.startTime} &ndash; {nextEvent.endTime} {nextEvent.timezone}</span>
+                  <span>August 7th Memorial Park, Nairobi (next to Cooperative Bank)</span>
                 </div>
-
-                <h3 class="text-2xl md:text-3xl font-bold text-ink mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
-                  {nextEvent.title}
+                <h3 class="text-2xl md:text-3xl font-bold text-ink mb-4 leading-tight">
+                  A Day of Honour, Remembrance &amp; Hope
                 </h3>
-
-                <p class="text-sm text-steel leading-relaxed mb-6 line-clamp-2 max-w-lg">
-                  {nextEvent.description}
+                <p class="text-sm text-steel leading-relaxed mb-6">
+                  The Peace League Africa Awards Gala is the continent's premier celebration of peacebuilding. Set at the historic August 7th Memorial Park — a site of remembrance and resilience — this landmark ceremony honours 62 categories of peace champions from 12 African countries who are transforming conflict into hope, one community at a time.
                 </p>
 
-                <!-- Registration progress -->
-                {nextEvent.capacity > 0 && (
-                <div class="mb-6">
-                  <div class="flex justify-between text-xs mb-2">
-                    <span class="text-steel font-medium">{nextEvent.registered} registered</span>
-                    <span class="font-bold text-ink">{Math.round((nextEvent.registered / nextEvent.capacity) * 100)}% full</span>
+                <!-- Full Schedule -->
+                <div class="space-y-2 mb-6">
+                  <p class="text-xs font-bold text-accent uppercase tracking-wider mb-2">Programme Highlights</p>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="shrink-0 px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">10:00</span>
+                    <span class="text-ink font-medium">Opening Ceremony &amp; Keynote Address</span>
                   </div>
-                  <div class="w-full bg-hairline rounded-full h-2 overflow-hidden">
-                    <div class="h-full rounded-full bg-gradient-to-r from-accent to-accent-warm transition-all duration-1000" style={`width:${Math.round((nextEvent.registered / nextEvent.capacity) * 100)}%`}></div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="shrink-0 px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">10:45</span>
+                    <span class="text-ink font-medium">Award Session 1: Peace Advocacy &amp; Humanitarian</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="shrink-0 px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">11:45</span>
+                    <span class="text-ink font-medium">Award Session 2: Youth &amp; Community Development</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="shrink-0 px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">13:30</span>
+                    <span class="text-ink font-medium">Award Session 3: Special Recognitions &amp; Lifetime Achievement</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="shrink-0 px-2 py-0.5 rounded bg-accent/10 text-accent font-semibold">14:45</span>
+                    <span class="text-ink font-medium">Group Photo, Media &amp; Networking Reception</span>
                   </div>
                 </div>
-                )}
 
-                <!-- CTA -->
-                <div class="flex items-center gap-4">
-                  <span class="inline-flex items-center gap-2 px-6 py-3 bg-accent btn-text-contrast font-semibold rounded-full shadow-xl shadow-accent/25 group-hover:shadow-2xl group-hover:shadow-accent/40 group-hover:bg-accent-deep transition-all duration-300">
-                    Register Now
+                <!-- Registration progress -->
+                <div class="mb-6">
+                  <div class="flex justify-between text-xs mb-2">
+                    <span class="text-steel font-medium">{awardsEvent.registered} registered</span>
+                    <span class="font-bold text-ink">{Math.round((awardsEvent.registered / awardsEvent.capacity) * 100)}% full</span>
+                  </div>
+                  <div class="w-full bg-hairline rounded-full h-2 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-accent to-accent-warm transition-all duration-1000" style={`width:${Math.round((awardsEvent.registered / awardsEvent.capacity) * 100)}%`}></div>
+                  </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-wrap items-center gap-4">
+                  <a href="/awards" class="inline-flex items-center gap-2 px-6 py-3 bg-accent btn-text-contrast font-semibold rounded-full shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40 hover:bg-accent-deep transition-all duration-300 group">
+                    View Categories &amp; Vote
                     <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                  </span>
-                  <span class="text-sm font-semibold text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                    View Details →
-                  </span>
+                  </a>
+                  <a href="/awards/tickets" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-accent/30 text-ink font-semibold rounded-full hover:bg-accent/5 hover:border-accent/50 transition-all duration-300">
+                    Buy Tickets
+                  </a>
+                  <a href="/events/peace-league-awards-gala-2026" class="text-sm font-semibold text-accent hover:text-accent-deep transition-colors">
+                    Full Programme &rarr;
+                  </a>
                 </div>
               </div>
             </div>
 
             <!-- Animated gradient border on hover -->
-            <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden"
               style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #f59e0b, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
             </div>
           </div>
-        </a>
-
-        <div class="mt-10 text-center">
-          <a href="/events" class="magnetic-btn group inline-flex items-center gap-2 px-8 py-3.5 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all shadow-xl shadow-accent/25 btn-ripple" data-magnet-strength="0.35">
-            View All Events
-            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
         </div>
+
+        <!-- Other Upcoming Events Grid -->
+        {otherUpcoming.length > 0 && (
+        <div class="mt-16" data-reveal>
+          <div class="text-center mb-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-ink tracking-tight">More Upcoming Events</h3>
+            <p class="text-sm text-steel mt-1">Join us at our other peace-building gatherings across the continent.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {otherUpcoming.slice(0, 3).map((ev, idx) => (
+              <a href={`/events/${ev.slug}`} class="group relative bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20 hover:shadow-accent/5 block" style={`animation-delay: ${idx * 80}ms`}>
+                <div class="aspect-[16/9] overflow-hidden relative">
+                  <img src={ev.image && (ev.image.startsWith('http') || ev.image.startsWith('/')) ? ev.image : `https://images.unsplash.com/${ev.image}?w=400&q=75&auto=format&fit=crop`} alt={ev.title} class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-center rounded-lg px-2.5 py-1.5 leading-tight shadow-lg">
+                    <span class="block text-sm font-bold text-ink leading-none">{ev.day}</span>
+                    <span class="block text-[9px] font-semibold text-accent mt-0.5 uppercase">{ev.month}</span>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <span class="text-[10px] font-semibold uppercase tracking-wider text-accent">{ev.type}</span>
+                  <h4 class="text-sm font-bold text-ink mt-1 leading-snug group-hover:text-accent transition-colors line-clamp-2">{ev.title}</h4>
+                  <p class="text-xs text-steel mt-1 line-clamp-1">{ev.venue}, {ev.location}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div class="mt-8 text-center">
+            <a href="/events" class="magnetic-btn group inline-flex items-center gap-2 px-6 py-2.5 bg-accent btn-text-contrast font-semibold rounded-full hover:bg-accent-deep transition-all shadow-lg shadow-accent/20 btn-ripple text-sm" data-magnet-strength="0.35">
+              View All Events
+              <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+        )}
       </div>
     </section>
     )}

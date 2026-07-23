@@ -438,5 +438,61 @@
     "description": "",
     "name": "Best TV Producer Advocating for Peace in Society",
     "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Youth Leadership and Empowerment Award",
+    "slug": "youth-leadership-empowerment-award",
+    "description": "",
+    "name": "Youth Leadership and Empowerment Award",
+    "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Excellence in Digital Innovation for Peace Award",
+    "slug": "excellence-digital-innovation-peace-award",
+    "description": "",
+    "name": "Excellence in Digital Innovation for Peace Award",
+    "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Outstanding Contribution to Peace Journalism Award",
+    "slug": "outstanding-contribution-peace-journalism-award",
+    "description": "",
+    "name": "Outstanding Contribution to Peace Journalism Award",
+    "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Champion of Disability Rights and Inclusion Award",
+    "slug": "champion-disability-rights-inclusion-award",
+    "description": "",
+    "name": "Champion of Disability Rights and Inclusion Award",
+    "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Excellence in Sports for Peace and Unity Award",
+    "slug": "excellence-sports-peace-unity-award",
+    "description": "",
+    "name": "Excellence in Sports for Peace and Unity Award",
+    "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Outstanding Contribution to Refugee and IDP Support Award",
+    "slug": "outstanding-contribution-refugee-idp-support-award",
+    "description": "",
+    "name": "Outstanding Contribution to Refugee and IDP Support Award",
+    "is_active": 1
+  },
+  {
+    "doctype": "Award Category",
+    "category_name": "Lifetime Achievement in Peacebuilding and Reconciliation Award",
+    "slug": "lifetime-achievement-peacebuilding-reconciliation-award",
+    "description": "",
+    "name": "Lifetime Achievement in Peacebuilding and Reconciliation Award",
+    "is_active": 1
   }
 ]

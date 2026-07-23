@@ -1,0 +1,452 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Get Tickets — Peace League Awards 2026" description="Purchase tickets for the Peace League Africa Awards Gala on December 17, 2026 at August 7th Memorial Park, Nairobi.">
+  <Navigation />
+
+  <main id="main-content" class="min-h-screen">
+    <!-- Hero -->
+    <section class="relative hero-gradient text-on-dark py-section-sm px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="relative max-w-3xl mx-auto z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent-soft font-semibold text-sm mb-4 backdrop-blur-sm">
+          🎟️ Awards Gala 2026
+        </div>
+        <h1 class="text-heading-2 text-on-dark mb-4">Get Your Tickets</h1>
+        <p class="text-body-md text-on-dark-muted max-w-xl mx-auto">
+          December 17, 2026 · August 7th Memorial Park, Nairobi · 10:00 AM EAT
+        </p>
+      </div>
+    </section>
+
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-3xl mx-auto">
+        <!-- Error / Success messages -->
+        <div id="form-error" class="hidden p-4 bg-error-bg text-error rounded-lg text-sm mb-6" role="alert"></div>
+
+        <!-- Preline Stepper -->
+        <div id="purchase-stepper" class="mb-10" data-hs-stepper="true">
+          <ul class="flex justify-between items-center gap-2" role="list">
+            <li class="flex-1 flex flex-col items-center" data-hs-stepper-nav-item='{ "index": 0 }'>
+              <div class="step-marker w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 border-accent bg-accent text-[#0a0a0a]">01</div>
+              <span class="text-xs font-medium text-ink mt-2">Select Ticket</span>
+            </li>
+            <li class="h-px flex-1 bg-hairline mt-5"></li>
+            <li class="flex-1 flex flex-col items-center" data-hs-stepper-nav-item='{ "index": 1 }'>
+              <div class="step-marker w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 border-hairline text-steel bg-canvas">02</div>
+              <span class="text-xs font-medium text-steel mt-2">Your Details</span>
+            </li>
+            <li class="h-px flex-1 bg-hairline mt-5"></li>
+            <li class="flex-1 flex flex-col items-center" data-hs-stepper-nav-item='{ "index": 2 }'>
+              <div class="step-marker w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 border-hairline text-steel bg-canvas">03</div>
+              <span class="text-xs font-medium text-steel mt-2">Pay</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ticket Form (hidden after M-Pesa initiated) -->
+        <div id="ticket-form" class="space-y-8">
+          <!-- Stepper highlight: mark step 1 active on load; JS advances on section visibility -->
+          <!-- Ticket Selection -->
+          <div class="card-base p-6 scroll-reveal">
+            <h2 class="text-heading-4 text-ink mb-6">Select Your Ticket</h2>
+            <div class="space-y-4">
+              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-accent/40 bg-accent/5 cursor-pointer has-checked:border-accent has-checked:bg-accent/10 transition-colors">
+                <input type="radio" name="ticket_tier" value="premium" checked class="mt-1 w-4 h-4 text-accent focus:ring-accent" />
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <span class="font-semibold text-ink">Premium Seat</span>
+                      <span class="ml-2 px-2 py-0.5 bg-accent text-[#0a0a0a] text-xs font-bold rounded-full">RECOMMENDED</span>
+                    </div>
+                    <span class="font-bold text-ink text-lg">KES 6,500</span>
+                  </div>
+                  <p class="text-sm text-steel mt-1">Priority seating, VIP lounge access, networking session, gala dinner, and full event programme.</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-hairline cursor-not-allowed opacity-60">
+                <input type="radio" name="ticket_tier" value="standard" disabled class="mt-1 w-4 h-4" />
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <span class="font-semibold text-ink">Standard Seat</span>
+                    <span class="font-bold text-ink text-lg">KES 3,500</span>
+                  </div>
+                  <p class="text-sm text-steel mt-1">Gala dinner, event programme, and full gala access.</p>
+                  <span class="inline-block mt-1 px-2 py-0.5 bg-hairline text-muted text-xs font-medium rounded-full">Sold Out</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-hairline cursor-not-allowed opacity-60">
+                <input type="radio" name="ticket_tier" value="early_bird" disabled class="mt-1 w-4 h-4" />
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <span class="font-semibold text-ink">Early Bird Standard Seat</span>
+                    <div class="flex items-baseline gap-2">
+                      <span class="font-bold text-ink text-lg">KES 2,500</span>
+                      <span class="text-sm text-muted line-through">3,500</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-steel mt-1">Gala dinner, event programme, full gala access. Early bird discount — save 29%.</p>
+                  <span class="inline-block mt-1 px-2 py-0.5 bg-hairline text-muted text-xs font-medium rounded-full">Sold Out</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Attendee Details -->
+          <div class="card-base p-6 scroll-reveal">
+            <h2 class="text-heading-4 text-ink mb-6">Attendee Details</h2>
+            <div class="space-y-5">
+              <div>
+                <label for="attendee-name" class="block text-sm font-semibold text-ink mb-2">Full Name <span class="text-brand-error">*</span></label>
+                <input type="text" id="attendee-name" name="attendee_name" required
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                  placeholder="Your full name" />
+              </div>
+              <div>
+                <label for="attendee-email" class="block text-sm font-semibold text-ink mb-2">Email <span class="text-brand-error">*</span></label>
+                <input type="email" id="attendee-email" name="attendee_email" required
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                  placeholder="your@email.com" />
+              </div>
+              <div>
+                <label for="attendee-phone" class="block text-sm font-semibold text-ink mb-2">Phone Number <span class="text-brand-error">*</span></label>
+                <input type="tel" id="attendee-phone" name="attendee_phone" required
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring"
+                  placeholder="+254 XXX XXX XXX" />
+              </div>
+              <div>
+                <label for="ticket-quantity" class="block text-sm font-semibold text-ink mb-2">Quantity</label>
+                <select id="ticket-quantity" name="quantity"
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring">
+                  <option value="1">1 ticket — KES 6,500</option>
+                  <option value="2">2 tickets — KES 13,000</option>
+                  <option value="3">3 tickets — KES 19,500</option>
+                  <option value="4">4 tickets — KES 26,000</option>
+                  <option value="5">5 tickets — KES 32,500</option>
+                </select>
+              </div>
+              <div>
+                <label for="special-requests" class="block text-sm font-semibold text-ink mb-2">Special Requests <span class="text-steel font-normal">(Optional)</span></label>
+                <textarea id="special-requests" name="special_requests" rows="2"
+                  class="w-full px-4 py-3 rounded-lg border border-hairline bg-canvas text-ink input-focus-ring resize-none"
+                  placeholder="Dietary requirements, accessibility needs, seating preferences…"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment -->
+          <div class="card-base p-6 scroll-reveal">
+            <h2 class="text-heading-4 text-ink mb-6">Payment Method</h2>
+            <div class="space-y-4">
+              <label class="flex items-center gap-3 p-3 rounded-lg border border-hairline cursor-pointer hover:border-accent has-checked:border-accent has-checked:bg-accent/5 transition-colors">
+                <input type="radio" name="payment_method" value="mpesa" checked class="w-4 h-4 text-accent focus:ring-accent" />
+                <span class="font-medium text-ink">M-Pesa</span>
+                <span class="text-sm text-steel">Pay via mobile money</span>
+              </label>
+              <label class="flex items-center gap-3 p-3 rounded-lg border border-hairline cursor-pointer hover:border-accent has-checked:border-accent has-checked:bg-accent/5 transition-colors">
+                <input type="radio" name="payment_method" value="card" class="w-4 h-4 text-accent focus:ring-accent" />
+                <span class="font-medium text-ink">Credit / Debit Card</span>
+                <span class="text-sm text-steel">Pay securely via card</span>
+              </label>
+              <label class="flex items-center gap-3 p-3 rounded-lg border border-hairline cursor-pointer hover:border-accent has-checked:border-accent has-checked:bg-accent/5 transition-colors">
+                <input type="radio" name="payment_method" value="bank" class="w-4 h-4 text-accent focus:ring-accent" />
+                <span class="font-medium text-ink">Bank Transfer</span>
+                <span class="text-sm text-steel">Invoice will be sent to your email</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="card-base p-6 bg-surface scroll-reveal">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-steel">Ticket</span>
+              <span class="text-ink font-medium" id="summary-tier">Premium Seat</span>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-steel">Quantity</span>
+              <span class="text-ink font-medium" id="summary-qty">1</span>
+            </div>
+            <div class="flex justify-between items-center pt-3 border-t border-hairline">
+              <span class="font-semibold text-ink">Total</span>
+              <span class="font-bold text-ink text-xl" id="summary-total">KES 6,500</span>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="button" id="submit-btn" class="btn btn-accent btn-large w-full cta-hover-glow">
+            Complete Purchase — <span id="submit-total">KES 6,500</span>
+          </button>
+        </div>
+
+        <!-- M-Pesa Waiting Screen -->
+        <div id="mpesa-waiting" class="hidden text-center py-8" role="status" aria-live="polite">
+          <div class="max-w-sm mx-auto">
+            <div class="mb-6 flex justify-center">
+              <svg class="w-32 h-auto" viewBox="0 0 120 200" fill="none" aria-hidden="true">
+                <rect x="10" y="5" width="100" height="190" rx="16" fill="var(--color-surface)" stroke="var(--color-hairline)" stroke-width="2"/>
+                <rect x="40" y="10" width="40" height="4" rx="2" fill="var(--color-hairline)"/>
+                <rect x="25" y="40" width="70" height="8" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+                <rect x="25" y="55" width="50" height="6" rx="2" fill="var(--color-hairline)"/>
+                <rect x="25" y="85" width="70" height="40" rx="6" fill="var(--color-accent)" opacity="0.08"/>
+                <text x="60" y="108" text-anchor="middle" font-size="9" fill="var(--color-accent)" font-weight="700">M-PESA</text>
+                <rect x="25" y="135" width="70" height="6" rx="3" fill="var(--color-accent)" opacity="0.6"/>
+                <rect x="25" y="148" width="40" height="6" rx="3" fill="var(--color-hairline)"/>
+                <rect x="45" y="175" width="30" height="3" rx="1.5" fill="var(--color-hairline)"/>
+              </svg>
+            </div>
+            <div class="relative mb-5">
+              <svg class="w-20 h-20 mx-auto -rotate-90" viewBox="0 0 72 72" aria-hidden="true">
+                <circle cx="36" cy="36" r="30" fill="none" stroke="var(--color-hairline)" stroke-width="5"/>
+                <circle id="mpesa-timer-ring" cx="36" cy="36" r="30" fill="none" stroke="var(--color-accent)" stroke-width="5" stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="188.5"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold text-ink mb-2">Check Your Phone</h3>
+            <p class="text-steel text-sm mb-1">An M-Pesa prompt has been sent to <span id="mpesa-display-phone" class="font-medium text-ink">your phone</span>.</p>
+            <p class="text-steel text-sm mb-4">Enter your M-Pesa PIN to complete your purchase.</p>
+            <p id="mpesa-timer-text" class="text-xs text-steel mb-1">Waiting for confirmation</p>
+            <div class="w-full bg-hairline rounded-full h-1.5 mb-4 max-w-xs mx-auto overflow-hidden">
+              <div id="mpesa-progress-bar" class="bg-accent h-full rounded-full w-0 transition-all duration-1000 ease-linear"></div>
+            </div>
+            <div id="mpesa-retry" class="hidden mt-2">
+              <button type="button" id="mpesa-retry-btn" class="inline-flex items-center gap-1.5 text-accent hover:text-accent-deep text-sm font-medium transition-colors min-h-[44px] px-4">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 102.13-9.36L1 10"></path></svg>
+                Didn't receive the prompt? Try again.
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- M-Pesa Success -->
+        <div id="mpesa-success" class="hidden text-center py-8" role="status" aria-live="polite">
+          <div class="mb-4 flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-success-bg flex items-center justify-center animate-fade-in-scale">
+              <svg class="w-10 h-10 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-ink mb-1">Payment Confirmed!</h3>
+          <p class="text-accent font-semibold text-lg mb-3" id="mpesa-success-amount">KES 6,500</p>
+          <p class="text-steel text-sm mb-5">Your ticket is confirmed. A confirmation email is on its way.</p>
+          <div class="flex justify-center gap-3">
+            <a href="/awards" class="btn btn-accent">Back to Awards</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">Explore more</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/awards" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">All Categories</a>
+          <a href="/awards/nominate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Nominate</a>
+          <a href="/awards/results" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Results</a>
+          <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import { purchaseTicket, ticketPaymentStatus } from '../../lib/api.js';
+
+  const priceMap = { premium: 6500, standard: 3500, early_bird: 2500 };
+  const nameMap = { premium: 'Premium Seat', standard: 'Standard Seat', early_bird: 'Early Bird Standard Seat' };
+
+  function updateSummary() {
+    const tier = document.querySelector('input[name="ticket_tier"]:checked')?.value || 'premium';
+    const qty = parseInt(document.getElementById('ticket-quantity').value) || 1;
+    const total = priceMap[tier] * qty;
+    document.getElementById('summary-tier').textContent = nameMap[tier];
+    document.getElementById('summary-qty').textContent = qty;
+    document.getElementById('summary-total').textContent = 'KES ' + total.toLocaleString();
+    document.getElementById('submit-total').textContent = 'KES ' + total.toLocaleString();
+
+    const sel = document.getElementById('ticket-quantity');
+    const curVal = sel.value;
+    sel.innerHTML = Array.from({length: 5}, (_, i) => {
+      const n = i + 1;
+      const p = (priceMap[tier] * n).toLocaleString();
+      return `<option value="${n}">${n} ticket${n > 1 ? 's' : ''} — KES ${p}</option>`;
+    }).join('');
+    sel.value = curVal <= 5 ? curVal : '1';
+  }
+
+  updateSummary();
+  document.querySelectorAll('input[name="ticket_tier"]').forEach(el => el.addEventListener('change', updateSummary));
+  document.getElementById('ticket-quantity').addEventListener('change', updateSummary);
+
+  // ── Stepper: highlight current step based on scroll position ──
+  const stepperMarkers = document.querySelectorAll('#purchase-stepper .step-marker');
+  const stepperLabels = document.querySelectorAll('#purchase-stepper span');
+  const stepperLines = document.querySelectorAll('#purchase-stepper .h-px');
+  const formCards = document.querySelectorAll('#ticket-form .card-base');
+
+  function updateStepper() {
+    let activeIdx = 0;
+    formCards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.5) activeIdx = i;
+    });
+    stepperMarkers.forEach((m, i) => {
+      const isActive = i <= activeIdx;
+      if (isActive) {
+        m.className = 'step-marker w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 border-accent bg-accent text-[#0a0a0a]';
+      } else {
+        m.className = 'step-marker w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 border-hairline text-steel bg-canvas';
+      }
+    });
+    stepperLabels.forEach((l, i) => {
+      l.className = `text-xs font-medium mt-2 ${i <= activeIdx ? 'text-ink' : 'text-steel'}`;
+    });
+    stepperLines.forEach((line, i) => {
+      line.className = `h-px flex-1 mt-5 ${i < activeIdx ? 'bg-accent' : 'bg-hairline'}`;
+    });
+  }
+  window.addEventListener('scroll', updateStepper, { passive: true });
+  updateStepper();
+
+  // ── M-Pesa polling ──
+  const formEl = document.getElementById('ticket-form');
+  const waitingEl = document.getElementById('mpesa-waiting');
+  const successEl = document.getElementById('mpesa-success');
+  const errorEl = document.getElementById('form-error');
+  const timerRing = document.getElementById('mpesa-timer-ring');
+  const timerText = document.getElementById('mpesa-timer-text');
+  const progressBar = document.getElementById('mpesa-progress-bar');
+  const retryEl = document.getElementById('mpesa-retry');
+  const displayPhone = document.getElementById('mpesa-display-phone');
+
+  function showMpesaWaiting(phone) {
+    formEl.classList.add('hidden');
+    waitingEl.classList.remove('hidden');
+    const masked = phone.length > 4 ? '****' + phone.slice(-4) : phone;
+    displayPhone.textContent = masked;
+  }
+
+  function showMpesaSuccess(amount) {
+    waitingEl.classList.add('hidden');
+    successEl.classList.remove('hidden');
+    document.getElementById('mpesa-success-amount').textContent = 'KES ' + amount.toLocaleString();
+  }
+
+  function showError(msg) {
+    waitingEl.classList.add('hidden');
+    formEl.classList.remove('hidden');
+    errorEl.textContent = msg;
+    errorEl.classList.remove('hidden');
+  }
+
+  async function pollMpesaStatus(checkoutRequestId, amount) {
+    let attempts = 0;
+    const maxAttempts = 40;
+    const totalDuration = maxAttempts * 3000;
+    const circumference = 188.5;
+
+    while (attempts < maxAttempts) {
+      attempts++;
+      const elapsed = attempts * 3000;
+      const pct = Math.min((elapsed / totalDuration) * 100, 99);
+      const offset = circumference - (circumference * pct / 100);
+      timerRing.style.strokeDashoffset = offset;
+      progressBar.style.width = pct + '%';
+
+      if (pct < 50) timerText.textContent = 'Waiting for payment confirmation...';
+      else if (pct < 80) timerText.textContent = 'Still waiting... check your phone';
+      else timerText.textContent = 'Almost there!';
+
+      try {
+        const result = await ticketPaymentStatus(checkoutRequestId);
+        if (result.status === 'success' && result.data) {
+          if (result.data.paid) {
+            timerRing.style.strokeDashoffset = '0';
+            progressBar.style.width = '100%';
+            showMpesaSuccess(result.data.amount || amount);
+            return;
+          }
+          if (result.data.status === 'Failed') {
+            showError('Payment was declined. Please try again.');
+            return;
+          }
+        }
+      } catch (e) { /* continue polling */ }
+
+      await new Promise(r => setTimeout(r, 3000));
+    }
+
+    retryEl.classList.remove('hidden');
+    timerText.textContent = 'Payment confirmation timed out.';
+  }
+
+  // ── Submit handler ──
+  document.getElementById('submit-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('submit-btn');
+    errorEl.classList.add('hidden');
+    btn.disabled = true;
+    btn.textContent = 'Processing…';
+
+    const tier = document.querySelector('input[name="ticket_tier"]:checked')?.value || 'premium';
+    const payment = document.querySelector('input[name="payment_method"]:checked')?.value || 'mpesa';
+    const qty = parseInt(document.getElementById('ticket-quantity').value) || 1;
+    const data = {
+      ticket_tier: tier,
+      quantity: qty,
+      attendee_name: document.getElementById('attendee-name').value.trim(),
+      attendee_email: document.getElementById('attendee-email').value.trim(),
+      attendee_phone: document.getElementById('attendee-phone').value.trim(),
+      special_requests: document.getElementById('special-requests').value.trim(),
+      payment_method: payment,
+      amount: priceMap[tier] * qty,
+    };
+
+    if (!data.attendee_name || !data.attendee_email || !data.attendee_phone) {
+      errorEl.textContent = 'Please fill in all required fields.';
+      errorEl.classList.remove('hidden');
+      btn.disabled = false;
+      btn.innerHTML = 'Complete Purchase — <span id="submit-total">' + document.getElementById('submit-total').textContent + '</span>';
+      return;
+    }
+
+    try {
+      const res = await purchaseTicket(data);
+      if (res.status === 'success') {
+        if (res.data?.mpesa_pending && res.data?.checkout_request_id) {
+          showMpesaWaiting(data.attendee_phone);
+          pollMpesaStatus(res.data.checkout_request_id, data.amount);
+        } else {
+          formEl.classList.add('hidden');
+          successEl.classList.remove('hidden');
+          document.getElementById('mpesa-success-amount').textContent = 'KES ' + data.amount.toLocaleString();
+        }
+      } else {
+        errorEl.textContent = res.message || 'Failed to process order.';
+        errorEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.innerHTML = 'Complete Purchase — <span id="submit-total">' + document.getElementById('submit-total').textContent + '</span>';
+      }
+    } catch (err) {
+      errorEl.textContent = 'Network error. Please try again.';
+      errorEl.classList.remove('hidden');
+      btn.disabled = false;
+      btn.innerHTML = 'Complete Purchase — <span id="submit-total">' + document.getElementById('submit-total').textContent + '</span>';
+    }
+  });
+
+  // Retry button
+  document.getElementById('mpesa-retry-btn')?.addEventListener('click', () => {
+    waitingEl.classList.add('hidden');
+    formEl.classList.remove('hidden');
+    retryEl.classList.add('hidden');
+    document.getElementById('submit-btn').disabled = false;
+    document.getElementById('submit-btn').innerHTML = 'Complete Purchase — <span id="submit-total">' + document.getElementById('submit-total').textContent + '</span>';
+  });
+</script>

@@ -1,0 +1,306 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import causes from '../../lib/causes-data.json';
+
+export function getStaticPaths() {
+  return causes.map((cause) => ({
+    params: { slug: cause.name.toLowerCase().replace(/\s+/g, '-') },
+    props: { cause },
+  }));
+}
+
+const { cause } = Astro.props;
+
+// Find related causes (same category, excluding current)
+const relatedCauses = causes
+  .filter(c => c.category === cause.category && c.name !== cause.name)
+  .slice(0, 3);
+
+const progressPercent = cause.raised_amount > 0 && cause.goal_amount > 0
+  ? Math.min(Math.round((cause.raised_amount / cause.goal_amount) * 100), 100)
+  : 0;
+---
+
+<Layout title={`${cause.title} — Peace League Africa`} description={cause.description}>
+  <Navigation />
+
+  <main id="main-content">
+    <!-- ════════════════════════════════════════════════════════
+         HERO — Split-screen: cause info + image
+         ════════════════════════════════════════════════════════ -->
+    <section class="relative hero-inner grain-overlay overflow-hidden min-h-[50vh] flex items-center">
+      <div class="orb-float orb-float--1" style="top:-80px;right:-80px;" aria-hidden="true"></div>
+      <div class="orb-float orb-float--2" style="bottom:-60px;left:-60px;" aria-hidden="true"></div>
+
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Cause info -->
+          <div data-reveal="left">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-accent btn-text-contrast">
+                {cause.category}
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/70 backdrop-blur-sm border border-white/10">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                {cause.donors_count} donors
+              </span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-[-1.5px] text-white mb-4">
+              {cause.title}
+            </h1>
+            <p class="text-lg sm:text-xl text-white/70 max-w-xl mb-8 leading-relaxed">{cause.description}</p>
+
+            <!-- Progress bar -->
+            {cause.raised_amount > 0 && cause.goal_amount > 0 && (
+              <div class="mb-8">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="text-white/80 font-semibold">KES {cause.raised_amount.toLocaleString()}</span>
+                  <span class="text-white/60">raised of KES {cause.goal_amount.toLocaleString()}</span>
+                </div>
+                <div class="h-3 bg-white/15 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-accent to-accent-soft rounded-full" style={`width:${progressPercent}%`}></div>
+                </div>
+                <p class="text-xs text-white/50 mt-2">{progressPercent}% funded by {cause.donors_count} generous donors</p>
+              </div>
+            )}
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4" data-magnetic-container>
+              <a href={`/donate?cause=${encodeURIComponent(cause.name)}`} class="btn btn-accent btn-large btn-ripple group shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40" data-magnet-strength="0.35">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                Donate Now
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="/causes" class="btn btn-large bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-all">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                All Causes
+              </a>
+              <a href="/volunteer" class="btn btn-large bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm hover:bg-white/20 transition-all">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Volunteer
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Hero image -->
+          <div data-reveal="right" class="relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <img src={cause.image} alt={cause.title} class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+              <!-- Stats overlay -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+                  <div class="flex gap-4 justify-around">
+                    <div class="text-center">
+                      <span class="block text-xl font-bold text-white">{cause.donors_count}</span>
+                      <span class="text-[10px] text-white/50 uppercase">Donors</span>
+                    </div>
+                    <div class="text-center">
+                      <span class="block text-xl font-bold text-white">{progressPercent}%</span>
+                      <span class="text-[10px] text-white/50 uppercase">Funded</span>
+                    </div>
+                    <div class="text-center">
+                      <span class="block text-xl font-bold text-white">{cause.category}</span>
+                      <span class="text-[10px] text-white/50 uppercase">Category</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick donate -->
+            <div class="mt-4 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <p class="text-xs text-white/60 uppercase tracking-wider font-semibold mb-2">Quick Donate</p>
+              <div class="flex gap-2">
+                {[1000, 5000, 10000].map(amount => (
+                  <a href={`/donate?cause=${encodeURIComponent(cause.name)}&amount=${amount}`}
+                    class="flex-1 text-center py-2 rounded-lg bg-white/10 text-white/80 text-sm font-semibold hover:bg-white/20 transition-all border border-white/10">
+                    KES {amount.toLocaleString()}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+         CONTENT — Details about this cause
+         ════════════════════════════════════════════════════════ -->
+    <section class="py-16 lg:py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Main content -->
+          <div class="lg:col-span-2 space-y-10">
+            <div data-reveal="up">
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-6 tracking-tight">About This Cause</h2>
+              <div class="prose prose-lg max-w-none text-steel leading-relaxed">
+                <p>{cause.description}</p>
+                <p class="mt-4">Your support makes a tangible difference. Every contribution — whether KES 500 or KES 50,000 — directly funds programs that transform communities. From building classrooms to drilling water wells, from training peace leaders to feeding school children, your generosity saves lives and builds futures.</p>
+                <p class="mt-4">Peace League Africa is committed to transparency. All donations are tracked, reported, and audited. You will receive regular updates on how your contribution is creating impact.</p>
+              </div>
+            </div>
+
+            <!-- Impact stats -->
+            <div data-reveal="up">
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-6 tracking-tight">Impact at a Glance</h2>
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div class="bg-canvas rounded-xl p-5 border border-hairline text-center">
+                  <p class="text-3xl font-bold text-accent">{cause.donors_count}</p>
+                  <p class="text-sm text-steel mt-1">Donors</p>
+                </div>
+                <div class="bg-canvas rounded-xl p-5 border border-hairline text-center">
+                  <p class="text-3xl font-bold text-accent">{progressPercent}%</p>
+                  <p class="text-sm text-steel mt-1">Funded</p>
+                </div>
+                <div class="bg-canvas rounded-xl p-5 border border-hairline text-center">
+                  <p class="text-3xl font-bold text-accent">KES {cause.raised_amount.toLocaleString()}</p>
+                  <p class="text-sm text-steel mt-1">Raised</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- How donations help -->
+            <div data-reveal="up">
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-6 tracking-tight">How Your Donation Helps</h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 bg-canvas rounded-xl p-4 border border-hairline transition-all duration-300 hover:border-accent/30 hover:shadow-md">
+                  <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-ink">Direct Program Funding</p>
+                    <p class="text-xs text-steel mt-1">85% of every donation goes directly to program implementation and community impact.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 bg-canvas rounded-xl p-4 border border-hairline transition-all duration-300 hover:border-accent/30 hover:shadow-md">
+                  <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-ink">Measurable Impact</p>
+                    <p class="text-xs text-steel mt-1">Quarterly reports with photos, stories, and metrics showing exactly what was achieved.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="space-y-6" data-reveal="right">
+            <!-- Donate Card -->
+            <div class="bg-canvas rounded-2xl border border-hairline p-6 sticky top-24">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Support This Cause</h3>
+              <div class="space-y-4 mb-6">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  <div>
+                    <p class="text-sm font-semibold text-ink">Make a Donation</p>
+                    <p class="text-xs text-steel">Every amount makes a difference</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  <div>
+                    <p class="text-sm font-semibold text-ink">Fundraise</p>
+                    <p class="text-xs text-steel">Start a fundraiser for this cause</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <div>
+                    <p class="text-sm font-semibold text-ink">Volunteer</p>
+                    <p class="text-xs text-steel">Lend your time and skills</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-3">
+                <a href={`/donate?cause=${encodeURIComponent(cause.name)}`} class="btn btn-accent btn-large btn-ripple group w-full shadow-lg shadow-accent/20">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  Donate Now
+                </a>
+                <a href="/fundraise" class="btn btn-secondary btn-large w-full">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  Start Fundraising
+                </a>
+              </div>
+            </div>
+
+            <!-- Share -->
+            <div class="bg-canvas rounded-2xl border border-hairline p-6">
+              <h3 class="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Share This Cause</h3>
+              <div class="flex gap-3">
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Support ${cause.title} — Peace League Africa`)}&url=https://peaceleagueafrica.org/causes/${cause.name.toLowerCase().replace(/\s+/g, '-')}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-steel hover:text-accent hover:bg-accent/10 transition-all" aria-label="Share on Twitter">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://peaceleagueafrica.org/causes/${cause.name.toLowerCase().replace(/\s+/g, '-')}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-steel hover:text-accent hover:bg-accent/10 transition-all" aria-label="Share on Facebook">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://peaceleagueafrica.org/causes/${cause.name.toLowerCase().replace(/\s+/g, '-')}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-steel hover:text-accent hover:bg-accent/10 transition-all" aria-label="Share on LinkedIn">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+         RELATED CAUSES
+         ════════════════════════════════════════════════════════ -->
+    {relatedCauses.length > 0 && (
+      <section class="py-16 lg:py-24 bg-canvas border-t border-hairline">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12" data-reveal="up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight">Related Causes</h2>
+            <p class="text-lg text-steel mt-3 max-w-xl mx-auto">More ways to make a difference in <strong class="text-ink">{cause.category}</strong></p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            {relatedCauses.map((related, idx) => (
+              <a href={`/causes/${related.name.toLowerCase().replace(/\s+/g, '-')}`}
+                class="group bg-canvas rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 img-zoom"
+                data-reveal="up"
+                style={`animation-delay: ${idx * 100}ms`}>
+                <div class="h-44 overflow-hidden">
+                  <img src={related.image} alt={related.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div class="p-5">
+                  <span class="badge-tag text-xs">{related.category}</span>
+                  <h3 class="text-lg font-semibold text-ink mt-2 group-hover:text-accent transition-colors">{related.title}</h3>
+                  <p class="text-sm text-steel mt-1 line-clamp-2">{related.description}</p>
+                  <div class="mt-4 flex items-center text-accent text-sm font-semibold">
+                    Donate Now
+                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">You might also be interested in</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/donate" class="btn btn-secondary btn-sm">Donate</a>
+          <a href="/volunteer" class="btn btn-secondary btn-sm">Volunteer</a>
+          <a href="/events" class="btn btn-secondary btn-sm">Events</a>
+          <a href="/awards" class="btn btn-secondary btn-sm">Awards</a>
+          <a href="/about" class="btn btn-secondary btn-sm">About Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

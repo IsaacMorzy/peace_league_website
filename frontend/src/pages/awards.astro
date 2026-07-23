@@ -4,70 +4,183 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Awards" description="Browse and vote for the Peace League Africa Awards categories. Recognize excellence in peace-building, community service, leadership, and more across East Africa and the Great Lakes region.">
+<Layout title="Peace League Awards 2026" description="Browse categories, vote for nominees, and celebrate excellence in peace-building across Africa. Awards announced December 5, 2026.">
   <Navigation />
 
   <main id="main-content" class="min-h-screen">
-    <!-- Page Header -->
-    <section class="bg-surface py-section-sm px-4 sm:px-6 lg:px-8 border-b border-hairline">
-      <div class="max-w-7xl mx-auto">
-        <div class="max-w-3xl">
-          <h1 class="text-heading-2 text-ink mb-4">Peace League Awards</h1>
-          <p class="text-body-md text-steel mb-6">
-            Browse categories, nominate, and vote. Awards announced December 5, 2026.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="/awards/nominate" class="btn btn-primary">Nominate Someone</a>
-            <a href="/awards" class="btn btn-secondary">Vote Now</a>
+    <!-- Hero with gradient + countdown -->
+    <section class="relative hero-gradient text-on-dark py-section-lg px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="absolute inset-0 hero-pattern-overlay"></div>
+      <div class="relative max-w-7xl mx-auto text-center z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent-soft font-semibold text-sm mb-6 backdrop-blur-sm">
+          <span>🏆</span> 2026 Awards
+        </div>
+        <h1 class="text-heading-1 text-on-dark mb-6 max-w-4xl mx-auto">
+          Peace League Africa Awards
+        </h1>
+        <p class="text-body-md text-on-dark-muted mb-8 max-w-2xl mx-auto">
+          Celebrating the champions of peace-building, community service, and leadership
+          across East Africa and the Great Lakes region.
+        </p>
+
+        <!-- Countdown -->
+        <div class="flex justify-center gap-4 sm:gap-6 mb-10" id="countdown" aria-live="polite" aria-label="Countdown to awards ceremony">
+          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-days">—</div>
+            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Days</div>
+          </div>
+          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-hours">—</div>
+            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Hours</div>
+          </div>
+          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-minutes">—</div>
+            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Minutes</div>
+          </div>
+          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-seconds">—</div>
+            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Seconds</div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#categories" class="btn btn-accent btn-large btn-pulse-glow">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+            View Nominees
+          </a>
+          <a href="/awards/nominate" class="btn btn-large bg-white/10 text-on-dark border border-white/20 hover:bg-white/20 hover:border-white/30">
+            Nominate Someone
+          </a>
+          <a href="/awards/program" class="btn btn-large inline-flex items-center gap-2 border-2 border-accent/40 text-accent-soft hover:bg-accent/10 transition-all">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            View Full Programme
+          </a>
+        </div>
+
+        <!-- Event details -->
+        <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-on-dark-muted">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            17 Dec 2026
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            August 7th Memorial Park (next to Cooperative Bank), Nairobi
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            10:00 AM EAT
           </div>
         </div>
       </div>
     </section>
 
     <!-- Stats Bar -->
-    <section class="bg-canvas py-6 px-4 sm:px-6 lg:px-8 border-b border-hairline">
+    <section class="bg-canvas py-8 px-4 sm:px-6 lg:px-8 border-b border-hairline">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div class="text-2xl font-bold text-accent" id="stat-categories">—</div>
-            <div class="text-sm text-steel">Award Categories</div>
+          <div class="stat-card-glass rounded-xl p-4 relative">
+            <div class="text-3xl font-bold text-accent" id="stat-categories">—</div>
+            <div class="text-sm text-steel mt-1">Award Categories</div>
+            <!-- ponytail: css tooltip instead of broken hs-tooltip-shown: variants -->
+            <div class="group/tip inline-block absolute top-2 right-2">
+              <button type="button" class="size-5 inline-flex justify-center items-center rounded-full text-steel hover:text-ink transition-colors" aria-label="What are award categories?">
+                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </button>
+              <span class="invisible group-hover/tip:visible opacity-0 group-hover/tip:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-charcoal text-on-dark text-xs rounded-lg py-2 px-3 z-10 pointer-events-none shadow-lg" role="tooltip">Total active award categories across peace-building, leadership, and community service themes.</span>
+            </div>
           </div>
-          <div>
-            <div class="text-2xl font-bold text-accent" id="stat-nominees">—</div>
-            <div class="text-sm text-steel">Nominees</div>
+          <div class="stat-card-glass rounded-xl p-4 relative">
+            <div class="text-3xl font-bold text-accent" id="stat-nominees">—</div>
+            <div class="text-sm text-steel mt-1">Nominees</div>
+            <div class="group/tip inline-block absolute top-2 right-2">
+              <button type="button" class="size-5 inline-flex justify-center items-center rounded-full text-steel hover:text-ink transition-colors" aria-label="What are nominees?">
+                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </button>
+              <span class="invisible group-hover/tip:visible opacity-0 group-hover/tip:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-charcoal text-on-dark text-xs rounded-lg py-2 px-3 z-10 pointer-events-none shadow-lg" role="tooltip">Individuals and organizations nominated for their outstanding contributions.</span>
+            </div>
           </div>
-          <div>
-            <div class="text-2xl font-bold text-accent" id="stat-votes">—</div>
-            <div class="text-sm text-steel">Votes Cast</div>
+          <div class="stat-card-glass rounded-xl p-4 relative">
+            <div class="text-3xl font-bold text-accent" id="stat-votes">—</div>
+            <div class="text-sm text-steel mt-1">Votes Cast</div>
+            <div class="group/tip inline-block absolute top-2 right-2">
+              <button type="button" class="size-5 inline-flex justify-center items-center rounded-full text-steel hover:text-ink transition-colors" aria-label="What are votes?">
+                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </button>
+              <span class="invisible group-hover/tip:visible opacity-0 group-hover/tip:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-charcoal text-on-dark text-xs rounded-lg py-2 px-3 z-10 pointer-events-none shadow-lg" role="tooltip">Total public votes cast across all categories. Anyone can vote once per category.</span>
+            </div>
           </div>
-          <div>
-            <div class="text-2xl font-bold text-accent">5 Dec 2026</div>
-            <div class="text-sm text-steel">Announcement</div>
+          <div class="stat-card-glass rounded-xl p-4 relative">
+            <div class="text-3xl font-bold text-accent" id="stat-ceremony-countdown-days">—</div>
+            <div class="text-sm text-steel mt-1">Days to Ceremony</div>
+            <div class="group/tip inline-block absolute top-2 right-2">
+              <button type="button" class="size-5 inline-flex justify-center items-center rounded-full text-steel hover:text-ink transition-colors" aria-label="What is the gala?">
+                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </button>
+              <span class="invisible group-hover/tip:visible opacity-0 group-hover/tip:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-charcoal text-on-dark text-xs rounded-lg py-2 px-3 z-10 pointer-events-none shadow-lg" role="tooltip">The Peace League Africa Awards Gala — December 17, 2026 at August 7th Memorial Park, Nairobi.</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Dismissible Alert (Preline) -->
+    <div id="voting-alert" class="bg-accent/10 border-b border-accent/20" role="alert">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-sm text-ink">
+          <span>⏳</span>
+          <span>Voting closes <strong>December 5, 2026</strong>. Every vote counts — cast yours today!</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#categories" class="text-xs font-semibold text-accent hover:text-accent-deep transition-colors">Vote now →</a>
+          <button type="button" class="size-6 inline-flex justify-center items-center rounded-full text-steel hover:text-ink hover:bg-hairline transition-colors" data-hs-remove-element="#voting-alert" aria-label="Dismiss">
+            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Categories Grid -->
-    <section class="py-section px-4 sm:px-6 lg:px-8">
+    <section id="categories" class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
       <div class="max-w-7xl mx-auto">
-        <div class="mb-8 flex justify-between items-end">
-          <h2 class="text-heading-3 text-ink">Award Categories</h2>
+        <div class="mb-8 flex flex-col sm:flex-row justify-between sm:items-end gap-4">
+          <div>
+            <h2 class="text-heading-3 text-ink">Award Categories</h2>
+            <p class="text-body-sm text-steel mt-2">Browse all categories and cast your vote</p>
+          </div>
           <div class="flex gap-2">
-            <input
-              type="search"
-              id="category-search"
-              placeholder="Search categories…"
-              class="px-4 py-2 rounded-lg border border-hairline bg-canvas text-ink text-sm focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-            />
+            <input type="search" id="category-search" placeholder="Search categories…" class="input-focus-ring px-4 py-2.5 rounded-full border border-hairline bg-canvas text-ink text-sm w-full sm:w-56" />
+            <!-- Preline Dropdown for sort -->
+            <div class="hs-dropdown relative inline-flex">
+              <button type="button" class="hs-dropdown-toggle input-focus-ring px-4 py-2.5 rounded-full border border-hairline bg-canvas text-ink text-sm flex items-center gap-1.5 hover:border-accent/40 transition-colors">
+                Sort
+                <svg class="size-3.5 text-steel transition-transform group-data-[hs-dropdown-open]:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+              </button>
+              <div class="hs-dropdown-menu hidden transition-[opacity,margin] duration-200 opacity-0 absolute right-0 top-full mt-2 min-w-48 bg-canvas rounded-xl border border-hairline shadow-lg z-20 p-1.5" role="menu">
+                <button type="button" class="sort-option flex w-full items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-steel hover:bg-surface hover:text-ink transition-colors" data-sort="name">
+                  <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                  Name (A–Z)
+                </button>
+                <button type="button" class="sort-option flex w-full items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-steel hover:bg-surface hover:text-ink transition-colors" data-sort="nominees">
+                  <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  Most Nominees
+                </button>
+                <button type="button" class="sort-option flex w-full items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-steel hover:bg-surface hover:text-ink transition-colors" data-sort="index">
+                  <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h10a2 2 0 012 2v1m-6 14h6m-3-5h3m-3-10h3"/></svg>
+                  Default Order
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
         <div id="categories-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <div class="col-span-full text-center text-steel py-12" id="categories-loading">Loading categories…</div>
         </div>
         <div id="categories-empty" class="hidden col-span-full text-center text-steel py-12">
-          No categories found.
+          <div class="text-4xl mb-4">🔍</div>
+          <p>No categories found matching your search.</p>
         </div>
         <div id="categories-error" class="hidden col-span-full text-center text-brand-error py-12">
           Unable to load categories. Please refresh the page.
@@ -75,30 +188,171 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="bg-accent/10 py-section">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-heading-3 text-ink mb-4">Nominate someone</h2>
-        <p class="text-body-md text-steel mb-6 max-w-2xl mx-auto">
-          Anyone can submit a nomination. No fee, no membership required.
-        </p>
-        <a href="/awards/nominate" class="btn btn-primary btn-large">Submit a Nomination</a>
+    <!-- How It Works -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-heading-3 text-ink mb-4">How It Works</h2>
+          <p class="text-body-md text-steel max-w-xl mx-auto">Three simple steps to participate in the Peace League Awards</p>
+        </div>
+        <ol class="grid grid-cols-1 md:grid-cols-3 gap-8 list-none">
+          <li class="text-center scroll-reveal">
+            <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-accent">01</span>
+            </div>
+            <h3 class="text-heading-5 text-ink mb-2">Browse Nominees</h3>
+            <p class="text-body-sm text-steel">Explore categories and discover the champions of peace-building across Africa.</p>
+          </li>
+          <li class="text-center scroll-reveal">
+            <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-accent">02</span>
+            </div>
+            <h3 class="text-heading-5 text-ink mb-2">Cast Your Vote</h3>
+            <p class="text-body-sm text-steel">Vote for your favourite nominees. One vote per category. It's free and open to everyone.</p>
+          </li>
+          <li class="text-center scroll-reveal">
+            <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-accent">03</span>
+            </div>
+            <h3 class="text-heading-5 text-ink mb-2">Celebrate</h3>
+            <p class="text-body-sm text-steel">Join us on December 17, 2026 at August 7th Memorial Park, Nairobi for the gala awards ceremony.</p>
+          </li>
+        </ol>
       </div>
-  </section>
+    </section>
 
-  <!-- Cross-links -->
-  <section class="py-10 bg-canvas border-t border-hairline">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-sm text-steel mb-4">You might also be interested in</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="/causes" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Our Causes</a>
-        <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
-        <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
-        <a href="/testimonials" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Testimonials</a>
+    <!-- Tickets / Pricing -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-4">
+            🎟️ Secure Your Seat
+          </div>
+          <h2 class="text-heading-3 text-ink mb-4">Attend the Gala</h2>
+          <p class="text-body-md text-steel max-w-xl mx-auto">
+            Join us on December 17, 2026 at August 7th Memorial Park, Nairobi for an unforgettable day of recognition.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          <!-- Early Bird -->
+          <div class="card-base p-6 flex flex-col gap-4 scroll-reveal relative overflow-hidden">
+            <div class="absolute -top-4 right-4 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full">Save 29%</div>
+            <div>
+              <h3 class="text-heading-5 text-ink">Early Bird Standard Seat</h3>
+              <p class="text-sm text-steel mt-1">Limited early bird offer before August 31.</p>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-ink">KES 2,500</span>
+              <span class="text-sm text-muted line-through">3,500</span>
+            </div>
+            <ul class="space-y-2 text-sm text-steel flex-1">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Gala Dinner
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Event Programme
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Full Gala Access
+              </li>
+            </ul>
+            <button class="btn w-full" disabled aria-disabled="true">Sold Out</button>
+            <p class="text-xs text-steel text-center -mt-2">100 tickets — all claimed</p>
+          </div>
+          <!-- Standard -->
+          <div class="card-base p-6 flex flex-col gap-4 scroll-reveal">
+            <div>
+              <h3 class="text-heading-5 text-ink">Standard Seat</h3>
+              <p class="text-sm text-steel mt-1">Standard single seat at the gala.</p>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-ink">KES 3,500</span>
+            </div>
+            <ul class="space-y-2 text-sm text-steel flex-1">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Gala Dinner
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Event Programme
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Full Gala Access
+              </li>
+            </ul>
+            <button class="btn w-full" disabled aria-disabled="true">Sold Out</button>
+          </div>
+          <!-- Premium -->
+          <div class="card-base p-6 flex flex-col gap-4 scroll-reveal border-accent/40 ring-1 ring-accent/20 relative">
+            <div class="absolute -top-3 left-4 bg-accent text-[#0a0a0a] text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
+            <div>
+              <h3 class="text-heading-5 text-ink">Premium Seat</h3>
+              <p class="text-sm text-steel mt-1">Priority placement and exclusive networking.</p>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-ink">KES 6,500</span>
+            </div>
+            <ul class="space-y-2 text-sm text-steel flex-1">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Gala Dinner
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Priority Seating
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                VIP Lounge Access
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Networking Session
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Event Programme
+              </li>
+            </ul>
+            <a href="/awards/tickets" class="btn btn-accent btn-large w-full cta-hover-glow">Get Ticket</a>
+            <p class="text-xs text-steel text-center -mt-2">100 remaining</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="bg-accent/5 py-section px-4 sm:px-6 lg:px-8 border-y border-accent/10">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-heading-3 text-ink mb-4">Know a peace champion?</h2>
+        <p class="text-body-md text-steel mb-6 max-w-2xl mx-auto">
+          Anyone can submit a nomination. No fee, no membership required. Nominations close December 5, 2026.
+        </p>
+        <a href="/awards/nominate" class="btn btn-accent btn-large cta-hover-glow">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          Submit a Nomination
+        </a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-canvas border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">You might also be interested in</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/causes" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Our Causes</a>
+          <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+          <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
+          <a href="/awards/results" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Results</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <Footer />
 </Layout>
@@ -108,14 +362,55 @@ import Footer from '../components/Footer.astro';
 
   let allCategories = [];
 
+  // Countdown timer
+  const TARGET_DATE = new Date('2026-12-17T10:00:00+03:00');
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = TARGET_DATE - now;
+    if (diff <= 0) {
+      ['days','hours','minutes','seconds'].forEach(id => {
+        const el = document.getElementById('countdown-' + id);
+        if (el) el.textContent = '00';
+      });
+      return;
+    }
+    document.getElementById('countdown-days').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+    document.getElementById('countdown-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    document.getElementById('countdown-minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    document.getElementById('countdown-seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Ceremony days remaining (static, updated on load)
+  const ceremonyDate = new Date('2026-12-17T10:00:00+03:00');
+  const ceremonyDaysEl = document.getElementById('stat-ceremony-countdown-days');
+  if (ceremonyDaysEl) {
+    const diff = ceremonyDate - new Date();
+    ceremonyDaysEl.textContent = diff > 0 ? Math.ceil(diff / 86400000).toLocaleString() : '0';
+  }
+
+  // Animated count-up
+  function animateCount(el, target, duration = 1200) {
+    const start = 0;
+    const startTime = performance.now();
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(start + (target - start) * eased).toLocaleString();
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   async function loadCategories() {
     try {
       const res = await getAwardCategories();
-      if (res.status !== 'success' || !res.data) {
-        throw new Error(res.message || 'API error');
-      }
+      if (res.status !== 'success' || !res.data) throw new Error(res.message || 'API error');
       allCategories = res.data;
-      document.getElementById('stat-categories').textContent = allCategories.length;
+      animateCount(document.getElementById('stat-categories'), allCategories.length);
       renderCategories(allCategories);
     } catch (err) {
       console.error('Awards load error:', err);
@@ -129,21 +424,23 @@ import Footer from '../components/Footer.astro';
     const loading = document.getElementById('categories-loading');
     const empty = document.getElementById('categories-empty');
     const error = document.getElementById('categories-error');
-
     loading.classList.add('hidden');
     error.classList.add('hidden');
-
-    if (!cats.length) {
-      empty.classList.remove('hidden');
-      return;
-    }
+    if (!cats.length) { empty.classList.remove('hidden'); return; }
     empty.classList.add('hidden');
 
-    grid.innerHTML = cats.map(cat => `
-      <a href="/awards/category/${encodeURIComponent(cat.slug)}" class="card-award-category card-base p-6 block hover:border-accent/30 transition-all duration-200">
-        <h3 class="text-heading-5 text-ink mb-2 line-clamp-2">${escapeHtml(cat.category_name)}</h3>
-        <p class="text-body-sm text-steel line-clamp-3">${escapeHtml(cat.description || '')}</p>
-        <div class="mt-4 text-sm font-medium text-accent">View nominees →</div>
+    grid.innerHTML = cats.map((cat, i) => `
+      <a href="/awards/category/${encodeURIComponent(cat.slug)}"
+         class="card-shadow-shift card-base p-6 flex flex-col gap-3 group">
+        <div class="flex items-start justify-between">
+          <span class="text-xs font-bold text-accent bg-accent/10 px-2.5 py-1 rounded-full">${String(i + 1).padStart(2, '0')}</span>
+          <span class="text-xs text-steel bg-surface px-2.5 py-1 rounded-full">${cat.nominee_count || 0} nominee${cat.nominee_count !== 1 ? 's' : ''}</span>
+        </div>
+        <h3 class="text-heading-5 text-ink line-clamp-2 group-hover:text-accent-deep transition-colors">${escapeHtml(cat.category_name)}</h3>
+        <p class="text-body-sm text-steel line-clamp-2 flex-1">${escapeHtml(cat.description || 'No description available.')}</p>
+        <div class="flex items-center justify-between pt-2 border-t border-hairline mt-auto">
+          <span class="text-sm font-medium text-accent">View nominees →</span>
+        </div>
       </a>
     `).join('');
   }
@@ -151,22 +448,31 @@ import Footer from '../components/Footer.astro';
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
-    return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    return div.innerHTML.replace(/\"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  // Search filter
-  const searchEl = document.getElementById('category-search');
-  if (searchEl) {
-    searchEl.addEventListener('input', () => {
-      const q = searchEl.value.toLowerCase().trim();
-      const filtered = q
-        ? allCategories.filter(c =>
-            c.category_name.toLowerCase().includes(q) ||
-            (c.description || '').toLowerCase().includes(q))
-        : allCategories;
-      renderCategories(filtered);
+  document.getElementById('category-search')?.addEventListener('input', () => {
+    const q = document.getElementById('category-search').value.toLowerCase().trim();
+    renderCategories(q ? allCategories.filter(c => c.category_name.toLowerCase().includes(q) || (c.description || '').toLowerCase().includes(q)) : allCategories);
+  });
+
+  // Preline dropdown sort handlers
+  document.querySelectorAll('.sort-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sort = btn.dataset.sort;
+      let sorted = [...allCategories];
+      if (sort === 'name') sorted.sort((a, b) => a.category_name.localeCompare(b.category_name));
+      else if (sort === 'nominees') sorted.sort((a, b) => (b.nominee_count || 0) - (a.nominee_count || 0));
+      // 'index' keeps original order
+      renderCategories(sorted);
+      const dropdown = document.querySelector('.hs-dropdown');
+      if (dropdown && window.HSDropdown) {
+        const toggle = dropdown.querySelector('.hs-dropdown-toggle');
+        const instance = window.HSDropdown.getInstance(toggle);
+        if (instance) instance.close();
+      }
     });
-  }
+  });
 
   loadCategories();
 </script>

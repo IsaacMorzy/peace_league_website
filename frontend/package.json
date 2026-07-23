@@ -14,10 +14,12 @@
   "dependencies": {
     "@astrojs/node": "^10.1.2",
     "@astrojs/sitemap": "^3.7.2",
+    "@freshjuice/astro-search-plugin": "^1.0.1",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.1",
     "canvas-confetti": "^1.9.4",
     "leaflet": "^1.9.4",
+    "preline": "^4.2.0",
     "tailwindcss": "^4.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

@@ -135,6 +135,13 @@
       "select": 1,
       "share": 1,
       "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "write": 1,
+      "delete": 1,
+      "role": "Awards Admin"
     }
   ],
   "row_format": "Dynamic",

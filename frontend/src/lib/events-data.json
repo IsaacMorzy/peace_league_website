@@ -1,5 +1,117 @@
 [
   {
+    "slug": "peace-league-awards-gala-2026",
+    "title": "Peace League Africa Awards Gala 2026",
+    "tagline": "Celebrating excellence in peace-building across Africa — 62 categories, one unforgettable ceremony",
+    "description": "The Peace League Africa Awards Gala honours exceptional individuals and organizations working to build peace across the continent. With 62 award categories spanning peace advocacy, humanitarian service, youth leadership, and community development, this landmark ceremony brings together peacebuilders from 12 African countries at the historic August 7th Memorial Park in Nairobi.",
+    "day": "17",
+    "month": "Dec",
+    "year": "2026",
+    "startTime": "10:00",
+    "endTime": "15:00",
+    "timezone": "EAT",
+    "location": "Nairobi, Kenya",
+    "venue": "August 7th Memorial Park",
+    "address": "Haile Selassie Avenue (next to Cooperative Bank), Nairobi",
+    "image": "/images/events/august-7th-memorial-park.jpg",
+    "images": [
+      "/images/events/august-7th-memorial-park.jpg"
+    ],
+    "type": "Gala",
+    "category": "Awards",
+    "status": "upcoming",
+    "featured": true,
+    "capacity": 1000,
+    "registered": 342,
+    "price": "KES 2,500 – KES 6,500 (Early Bird KES 2,500)",
+    "tags": [
+      "Awards",
+      "Gala",
+      "Peacebuilding",
+      "Recognition",
+      "Celebration"
+    ],
+    "speakers": [
+      {
+        "name": "Dr. James Nderitu",
+        "role": "Executive Director, Peace League Africa",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=60"
+      },
+      {
+        "name": "H.E. Fatuma Mohamed",
+        "role": "Cabinet Secretary, Ministry of Interior & Coordination — Kenya",
+        "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=60"
+      },
+      {
+        "name": "Amb. Olusegun Akinlade",
+        "role": "African Union Special Envoy for Conflict Resolution",
+        "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=60"
+      },
+      {
+        "name": "Mama Esperance Mukamana",
+        "role": "Founder, Women Peacebuilders Network — Rwanda",
+        "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100&q=60"
+      }
+    ],
+    "highlights": [
+      "62 award categories recognizing peace champions across Africa",
+      "Keynote address by H.E. Cabinet Secretary Fatuma Mohamed",
+      "Cultural performances from 5 African nations",
+      "Special tribute to grassroots peacebuilders",
+      "Live broadcast across 12 countries",
+      "Networking reception with 500+ peace leaders"
+    ],
+    "schedule": [
+      {
+        "time": "08:00",
+        "title": "Arrival, Registration & Welcome Coffee"
+      },
+      {
+        "time": "09:00",
+        "title": "Pre-Ceremony Gathering — Networking & Exhibition"
+      },
+      {
+        "time": "10:00",
+        "title": "Opening Ceremony — National Anthem & Welcome Address"
+      },
+      {
+        "time": "10:15",
+        "title": "Keynote Address — H.E. Fatuma Mohamed"
+      },
+      {
+        "time": "10:45",
+        "title": "Award Session 1: Peace Advocacy & Humanitarian Service"
+      },
+      {
+        "time": "11:30",
+        "title": "Cultural Interlude — Music & Dance Performance"
+      },
+      {
+        "time": "11:45",
+        "title": "Award Session 2: Youth Leadership & Community Development"
+      },
+      {
+        "time": "12:30",
+        "title": "Lunch Break & Networking"
+      },
+      {
+        "time": "13:30",
+        "title": "Award Session 3: Special Recognitions & Lifetime Achievement"
+      },
+      {
+        "time": "14:15",
+        "title": "Closing Remarks — A Call to Action for Peace"
+      },
+      {
+        "time": "14:45",
+        "title": "Group Photo & Media Interviews"
+      }
+    ],
+    "content": "<p>The Peace League Africa Awards Gala 2026 is the continent's premier celebration of peacebuilding excellence. Taking place at the historic <strong>August 7th Memorial Park</strong> in Nairobi — a site dedicated to remembrance, resilience, and the triumph of peace over violence — this landmark ceremony honours 62 categories of peace champions from across 12 African countries.</p><p>From peace ambassadors fighting radicalism and terrorism, to youth leaders building bridges in divided communities, to humanitarians providing life-saving aid in conflict zones — every nominee represents the very best of Africa's peacebuilding spirit. The awards ceremony is the culmination of months of public nominations, community vetting, and transparent voting.</p><h3>Why August 7th Memorial Park?</h3><p>The choice of venue carries profound symbolic weight. The August 7th Memorial Park stands on the site of the 1998 US Embassy bombing, a tragedy that claimed 218 lives and reshaped Kenya's relationship with peace and security. By hosting our awards ceremony here, we honour the memory of those lost while celebrating the peacebuilders who — every day — choose hope over hate, dialogue over division, and reconciliation over revenge.</p><h3>What to Expect</h3><p>Guests will enjoy a full-day programme featuring a keynote address by H.E. Cabinet Secretary Fatuma Mohamed, three award sessions spanning peace advocacy, youth leadership, community development, and lifetime achievement recognitions, cultural performances from five African nations, and a networking reception bringing together over 500 peace leaders, policymakers, civil society organizations, and grassroots changemakers.</p><h3>Dress Code</h3><p>African formal / Business attire. Traditional regalia encouraged and celebrated.</p><h3>Tickets</h3><p>Premium Seats: KES 6,500 (front rows, priority seating, programme booklet, certificate of attendance)<br>Standard Seats: KES 3,500 (main seating area, programme booklet)<br>Early Bird Standard: KES 2,500 (limited availability)</p><p>Group discounts available for organizations sending 10+ delegates. Contact us at awards@peaceleagueafrica.org for group bookings.</p><p>All proceeds support Peace League Africa's peacebuilding programs across the continent.</p>",
+    "lat": -1.2883,
+    "lng": 36.8231
+  },
+  {
     "slug": "hwpl-interfaith-dialogue-2026",
     "title": "HWPL Interfaith Dialogue: Addressing Hate Speech Through Scriptures",
     "tagline": "Addressing Hate Speech and Promoting Peaceful Communication Through Scriptures",
