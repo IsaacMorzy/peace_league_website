@@ -13,9 +13,9 @@
     "location": "Nairobi, Kenya",
     "venue": "August 7th Memorial Park",
     "address": "Haile Selassie Avenue (next to Cooperative Bank), Nairobi",
-    "image": "/images/events/august-7th-memorial-park.jpg",
+    "image": "/images/events/peace-league-awards-gala-2026.jpg",
     "images": [
-      "/images/events/august-7th-memorial-park.jpg"
+      "/images/events/peace-league-awards-gala-2026.jpg"
     ],
     "type": "Gala",
     "category": "Awards",
@@ -373,11 +373,9 @@
     "location": "Kigali, Rwanda",
     "venue": "Kigali Convention Centre",
     "address": "KG 2 Roundabout, Kigali",
-    "image": "/images/events/community-health-fair.jpg",
+    "image": "/images/events/community-health-fair-2026.jpg",
     "images": [
-      "/images/events/community-health-fair.jpg",
-      "photo-1534430480872-3498386e7856",
-      "photo-1529156069898-49953e39b3ac"
+      "/images/events/community-health-fair-2026.jpg"
     ],
     "type": "Community Event",
     "category": "Health",
@@ -443,11 +441,9 @@
     "location": "Nairobi, Kenya",
     "venue": "Radisson Blu Hotel, Upper Hill",
     "address": "Upper Hill Rd, Nairobi",
-    "image": "/images/events/annual-gala-fundraiser.jpg",
+    "image": "/images/events/annual-gala-fundraiser-2026.jpg",
     "images": [
-      "/images/events/annual-gala-fundraiser.jpg",
-      "photo-1524178232363-1fb2b075b655",
-      "photo-1511795409834-ef04bbd61622"
+      "/images/events/annual-gala-fundraiser-2026.jpg"
     ],
     "type": "Gala",
     "category": "Fundraising",
@@ -525,11 +521,9 @@
     "location": "Turkana, Kenya",
     "venue": "Lokitaung Village",
     "address": "Lokitaung, Turkana County",
-    "image": "/images/events/water-well-inauguration.jpg",
+    "image": "/images/events/water-well-inauguration-turkana.jpg",
     "images": [
-      "/images/events/water-well-inauguration.jpg",
-      "photo-1524178232363-1fb2b075b655",
-      "photo-1540575467063-178a50c2df87"
+      "/images/events/water-well-inauguration-turkana.jpg"
     ],
     "type": "Community Event",
     "category": "Water",
@@ -587,11 +581,9 @@
     "location": "Addis Ababa, Ethiopia",
     "venue": "African Union Headquarters",
     "address": "PO Box 3243, Addis Ababa",
-    "image": "/images/events/interfaith-dialogue-forum.jpg",
+    "image": "/images/events/interfaith-dialogue-forum-2026.jpg",
     "images": [
-      "/images/events/interfaith-dialogue-forum.jpg",
-      "photo-1522071820081-009f0129c71c",
-      "photo-1552664730-d307ca884978"
+      "/images/events/interfaith-dialogue-forum-2026.jpg"
     ],
     "type": "Forum",
     "category": "Dialogue",
@@ -673,7 +665,7 @@
     "location": "Nairobi, Kenya",
     "venue": "Uhuru Gardens",
     "address": "Uhuru Highway, Nairobi",
-    "image": "/images/events/peace-run.jpg",
+    "image": "/images/events/peace-run-2026.jpg",
     "images": [],
     "type": "Community Event",
     "category": "Fundraising",
@@ -714,7 +706,7 @@
     "location": "Kampala, Uganda",
     "venue": "Imperial Royale Hotel",
     "address": "Plot 1-3, Kintu Rd, Kampala",
-    "image": "/images/events/women-peacebuilding.jpg",
+    "image": "/images/events/women-in-peacebuilding-2026.jpg",
     "images": [],
     "type": "Conference",
     "category": "Women",
@@ -755,7 +747,7 @@
     "location": "Kisumu, Kenya",
     "venue": "Kisumu Waterfront",
     "address": "Kisumu, Lake Victoria",
-    "image": "/images/events/clean-water-awareness.jpg",
+    "image": "/images/events/clean-water-awareness-day-2026.jpg",
     "images": [],
     "type": "Community Event",
     "category": "Water",
