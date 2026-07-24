@@ -36,27 +36,14 @@ const causeSlugs = Object.fromEntries(
         <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
         <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <!-- Doves flying (natural swooping arcs) -->
-        <span class="animate-dove-drift" style="left:18%;bottom:-20%;animation-delay:0.5s;font-size:1.125rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-dove-drift--slow" style="left:55%;bottom:-25%;animation-delay:2s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-dove-drift" style="left:82%;bottom:-15%;animation-delay:3.5s;font-size:1rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <!-- Hearts pulsing -->
-        <!-- Sparkle particles -->
-        <span class="animate-particle" style="left:10%;bottom:5%;width:4px;height:4px;border-radius:50%;background:var(--color-accent);animation-delay:1s;"></span>
-        <span class="animate-particle--fast" style="left:25%;bottom:10%;width:3px;height:3px;border-radius:50%;background:var(--color-accent-soft);animation-delay:0.3s;"></span>
-        <span class="animate-particle" style="left:40%;bottom:8%;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);animation-delay:2s;"></span>
-        <span class="animate-particle--glow" style="left:60%;bottom:0;color:var(--color-accent);animation-delay:1.5s;font-size:1.2rem;">&#x2726;</span>
-        <span class="animate-particle--fast" style="left:75%;bottom:15%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:2.5s;"></span>
-        <span class="animate-particle" style="left:90%;bottom:5%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
-      </div>
+
     </section>
 
     <section class="py-12 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="causes-list" class="cascade-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {causes.map((cause, idx) => (
-            <div class="cascade-item bg-canvas rounded-2xl border border-hairline overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom cursor-pointer" style={`animation-delay: ${idx * 100}ms`} data-card-link={`/causes/${causeSlugs[cause.name]}`} tabindex="0" role="link">
+            <div class="cascade-item bg-canvas rounded-2xl border border-hairline overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style={`animation-delay: ${idx * 100}ms`}>
               <div class="h-48 relative overflow-hidden">
                 <img src={cause.image} alt={cause.title} width="400" height="200" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -71,18 +58,23 @@ const causeSlugs = Object.fromEntries(
                 {cause.raised_amount > 0 && cause.goal_amount > 0 ? (
                   <div class="mt-4">
                     <div class="flex justify-between text-sm mb-1.5">
-                      <span class="font-medium text-ink">${cause.raised_amount.toLocaleString()}</span>
-                      <span class="text-steel">${cause.goal_amount.toLocaleString()}</span>
+                      <span class="font-medium text-ink">KES {cause.raised_amount.toLocaleString()}</span>
+                      <span class="text-steel">KES {cause.goal_amount.toLocaleString()}</span>
                     </div>
                     <div class="w-full bg-hairline rounded-full h-2.5 progress-track">
                       <div class="bg-accent-deep h-2.5 rounded-full progress-bar" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="width: 0"></div>
                     </div>
-                    <p class="mt-1 text-xs text-steel">raised of ${cause.goal_amount.toLocaleString()} goal</p>
+                    <p class="mt-1 text-xs text-steel">raised of KES {cause.goal_amount.toLocaleString()} goal</p>
                   </div>
                 ) : null}
-                <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-primary btn-large w-full btn-pulse-glow" data-card-donate>
-                  Donate Now
-                </a>
+                <div class="mt-4 flex flex-col gap-2">
+                  <a href={`/causes/${causeSlugs[cause.name]}`} class="btn btn-primary btn-large w-full" data-card-details>
+                    View Cause Details
+                  </a>
+                  <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-secondary btn-large w-full">
+                    Donate Now
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -129,19 +121,6 @@ const causeSlugs = Object.fromEntries(
     }, { threshold: 0.3 });
     document.querySelectorAll('.progress-bar').forEach(el => progressObserver.observe(el));
 
-    // Clickable cause cards — navigate to detail page, but let donate buttons work independently
-    document.querySelectorAll('[data-card-link]').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (!e.target.closest('[data-card-donate], a, button')) {
-          window.location = card.dataset.cardLink;
-        }
-      });
-      // Keyboard accessibility
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.target.closest('[data-card-donate], a, button')) {
-          window.location = card.dataset.cardLink;
-        }
-      });
-    });
+    // Cause cards are navigated via explicit "View Cause Details" buttons for accessibility.
   </script>
 </Layout>
