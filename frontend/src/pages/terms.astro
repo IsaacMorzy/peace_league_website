@@ -2,41 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const orgUrl = "https://peaceleagueafrica.org";
+const lastUpdated = "January 2026";
 ---
 
 <Layout title="Terms of Service" description="Peace League Africa Terms of Service. Read our terms governing donations, volunteering, and use of our website.">
   <Navigation />
   
   <main id="main-content">
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Terms of Service</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70">Last updated: January 2026</p>
-      </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
-      </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <!-- Doves flying (natural swooping arcs) -->
-        <span class="animate-dove-drift" style="left:18%;bottom:-20%;animation-delay:0.5s;font-size:1.125rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-dove-drift--slow" style="left:55%;bottom:-25%;animation-delay:2s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-dove-drift" style="left:82%;bottom:-15%;animation-delay:3.5s;font-size:1rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <!-- Hearts pulsing -->
-        <!-- Sparkle particles -->
-        <span class="animate-particle" style="left:10%;bottom:5%;width:4px;height:4px;border-radius:50%;background:var(--color-accent);animation-delay:1s;"></span>
-        <span class="animate-particle--fast" style="left:25%;bottom:10%;width:3px;height:3px;border-radius:50%;background:var(--color-accent-soft);animation-delay:0.3s;"></span>
-        <span class="animate-particle" style="left:40%;bottom:8%;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);animation-delay:2s;"></span>
-        <span class="animate-particle--glow" style="left:60%;bottom:0;color:var(--color-accent);animation-delay:1.5s;font-size:1.2rem;">&#x2726;</span>
-        <span class="animate-particle--fast" style="left:75%;bottom:15%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:2.5s;"></span>
-        <span class="animate-particle" style="left:90%;bottom:5%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
-      </div>
+    <section class="bg-accent/10 py-section-sm px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-heading-2 text-ink mb-4">Terms of Service</h1>
+        <p class="text-body-md text-steel">Last updated: {lastUpdated}</p>
+ </div>
     </section>
 
     <section class="py-10 lg:py-14 bg-surface">
@@ -82,6 +61,21 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
   </main>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Terms of Service",
+      "url": orgUrl + "/terms",
+      "lastReviewed": "2026-01-15",
+      "copyrightNotice": "© 2026 Peace League Africa. All rights reserved.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Peace League Africa",
+        "url": orgUrl,
+        "logo": orgUrl + "/favicon.svg"
+      }
+    })} />
 
   <Footer />
 </Layout>
