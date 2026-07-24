@@ -202,6 +202,14 @@ import Footer from '../../components/Footer.astro';
           </div>
         </form>
 
+        <!-- Inline Error Message -->
+        <div id="error-message" class="hidden mt-8 p-6 bg-brand-error/10 border-2 border-brand-error rounded-2xl text-center" role="alert" aria-live="assertive">
+          <div class="text-4xl mb-3">⚠️</div>
+          <h3 class="text-heading-5 text-ink mb-2">Submission Failed</h3>
+          <p id="error-message-text" class="text-body-md text-steel mb-4">Something went wrong. Please try again.</p>
+          <button type="button" id="dismiss-error" class="btn btn-secondary">Try Again</button>
+        </div>
+
         <!-- Success Message -->
         <div id="success-message" class="hidden mt-8 p-8 bg-accent/10 border-2 border-accent rounded-2xl text-center">
           <div id="success-icon" class="text-5xl mb-4">🎉</div>
@@ -442,20 +450,45 @@ import Footer from '../../components/Footer.astro';
     return document.getElementById('turnstile-token').value || '';
   }
 
+  // Error banner helpers
+  function showError(text) {
+    const banner = document.getElementById('error-message');
+    document.getElementById('error-message-text').textContent = text;
+    banner.classList.remove('hidden');
+    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function hideError() {
+    document.getElementById('error-message').classList.add('hidden');
+  }
+  document.getElementById('dismiss-error')?.addEventListener('click', () => {
+    hideError();
+    document.getElementById('nomination-form').classList.remove('hidden');
+    document.getElementById('nominate-stepper').classList.remove('hidden');
+    window.scrollTo({ top: document.getElementById('nomination-form').offsetTop - 100, behavior: 'smooth' });
+  });
+
+  function setSubmitting(isSubmitting, btn) {
+    btn.disabled = isSubmitting;
+    if (isSubmitting) {
+      btn.innerHTML = '<svg class="animate-spin -ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>Submitting...';
+    } else {
+      btn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
+    }
+  }
+
   // Form submission
   document.getElementById('nomination-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const submitBtn = e.target.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    hideError();
+    setSubmitting(true, submitBtn);
 
     // Get Turnstile token — already set via hidden input from callback
     const token = getTurnstileToken();
     if (TURNSTILE_SITE_KEY && !token) {
-      alert('Please complete the security verification.');
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
+      showError('Please complete the security verification before submitting.');
+      setSubmitting(false, submitBtn);
       return;
     }
     if (token) {
@@ -467,6 +500,7 @@ import Footer from '../../components/Footer.astro';
       if (res.status === 'success') {
         document.getElementById('nomination-form').classList.add('hidden');
         document.getElementById('nominate-stepper').classList.add('hidden');
+        hideError();
         document.getElementById('success-message').classList.remove('hidden');
         // Soft-fail: when the backend saved the nomination but save_file() raised,
         // it returns status:success with data.photo_warning \u2014 surface it inline.
@@ -483,14 +517,12 @@ import Footer from '../../components/Footer.astro';
           document.getElementById('success-photo-warning').focus();
         }
       } else {
-        alert('Submission failed: ' + (res.message || 'Please try again.'));
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
+        showError(res.message || 'Submission failed. Please check your input and try again.');
+        setSubmitting(false, submitBtn);
       }
     } catch (err) {
-      alert('Network error. Please try again.');
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Submit Nomination';
+      showError('Network error. Please check your connection and try again.');
+      setSubmitting(false, submitBtn);
     }
   });
 
