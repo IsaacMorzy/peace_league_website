@@ -73,6 +73,7 @@ echo "📦 Deploying to app public dir: ${APP_PUBLIC}"
 rm -rf "${APP_PUBLIC:?}"/*
 cp -r dist/* "${APP_PUBLIC}/"
 
+
 echo "✅ Deployed successfully to site: ${SITE}"
 
 if [[ "${PROD}" == "1" ]]; then

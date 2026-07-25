@@ -4,6 +4,10 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 ---
 
+<script>
+  import 'preline';
+</script>
+
 <Layout title="Awards Results" description="View the winners of the 2026 Peace League Africa Awards. Full ranked results with vote totals across all categories.">
   <Navigation />
 
@@ -93,6 +97,17 @@ import Footer from '../../components/Footer.astro';
           <a href="/awards/nominate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Nominate</a>
           <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
           <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
+        </div>
+      </div>
+    </section>
+    <!-- Cross-links -->
+    <section class="py-10 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">Explore more awards</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/awards" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">All Categories</a>
+          <a href="/awards/nominate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Nominate</a>
+          <a href="/blog" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Latest News</a>
         </div>
       </div>
     </section>

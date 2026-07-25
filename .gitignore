@@ -39,4 +39,6 @@ frontend/test-results/
 /.scratch/
 
 # In-root worktrees (git worktree add ./wt-<slug>)
-/wt-*/
+/wt-*/peace_league_website/public/astro_pages/
+public/astro_pages/
+peace_league_website/public/astro_pages/

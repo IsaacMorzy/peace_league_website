@@ -50,19 +50,7 @@ const footerLinks = {
   ],
 };
 
-const FLAG_COUNTRIES = [
-  { code: "dz", name: "Algeria" }, { code: "ao", name: "Angola" }, { code: "bj", name: "Benin" }, { code: "bw", name: "Botswana" }, { code: "bf", name: "Burkina Faso" },
-  { code: "bi", name: "Burundi" }, { code: "cv", name: "Cape Verde" }, { code: "cm", name: "Cameroon" }, { code: "cf", name: "Central African Republic" }, { code: "td", name: "Chad" },
-  { code: "km", name: "Comoros" }, { code: "cg", name: "Congo" }, { code: "cd", name: "Democratic Republic of the Congo" }, { code: "ci", name: "Côte d'Ivoire" }, { code: "dj", name: "Djibouti" },
-  { code: "eg", name: "Egypt" }, { code: "gq", name: "Equatorial Guinea" }, { code: "er", name: "Eritrea" }, { code: "sz", name: "Eswatini" }, { code: "et", name: "Ethiopia" },
-  { code: "ga", name: "Gabon" }, { code: "gm", name: "Gambia" }, { code: "gh", name: "Ghana" }, { code: "gn", name: "Guinea" }, { code: "gw", name: "Guinea-Bissau" },
-  { code: "ke", name: "Kenya" }, { code: "ls", name: "Lesotho" }, { code: "lr", name: "Liberia" }, { code: "ly", name: "Libya" }, { code: "mg", name: "Madagascar" },
-  { code: "mw", name: "Malawi" }, { code: "ml", name: "Mali" }, { code: "mr", name: "Mauritania" }, { code: "mu", name: "Mauritius" }, { code: "ma", name: "Morocco" },
-  { code: "mz", name: "Mozambique" }, { code: "na", name: "Namibia" }, { code: "ne", name: "Niger" }, { code: "ng", name: "Nigeria" }, { code: "rw", name: "Rwanda" },
-  { code: "st", name: "São Tomé and Príncipe" }, { code: "sn", name: "Senegal" }, { code: "sc", name: "Seychelles" }, { code: "sl", name: "Sierra Leone" }, { code: "so", name: "Somalia" },
-  { code: "za", name: "South Africa" }, { code: "ss", name: "South Sudan" }, { code: "sd", name: "Sudan" }, { code: "tz", name: "Tanzania" }, { code: "tg", name: "Togo" },
-  { code: "tn", name: "Tunisia" }, { code: "ug", name: "Uganda" }, { code: "zm", name: "Zambia" }, { code: "zw", name: "Zimbabwe" },
-];
+
 ---
 
 <footer class="bg-canvas mt-auto relative overflow-hidden">
@@ -108,8 +96,7 @@ const FLAG_COUNTRIES = [
     class="w-full text-center py-3 min-h-[44px] cursor-pointer"
     aria-label="Back to top"
   >
-    <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-hairline text-steel hover:text-accent hover:border-accent/30 transition-all shadow-sm">
-      <span class="inline-block animate-bounce text-sm">&uarr;</span>
+    <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-hairline text-steel hover:text-accent hover:border-accent/30 transition-all shadow-sm">          <span class="inline-block text-sm">&uarr;</span>
       <span class="text-xs tracking-[1px] uppercase">Back to top</span>
     </span>
   </button>
@@ -248,14 +235,6 @@ const FLAG_COUNTRIES = [
 
   <!-- Copyright bar -->
   <div class="border-t border-hairline">
-    <!-- Country flags row -->
-    <div class="overflow-hidden relative h-12 flex items-center">
-      <div class="flex gap-8 animate-marquee whitespace-nowrap items-center opacity-30">
-        {FLAG_COUNTRIES.map(({ code, name }) => (
-          <img src={`https://flagcdn.com/w40/${code}.png`} alt={`Flag of ${name}`} width="28" height="21" class="inline-block rounded-sm flag-wave" loading="lazy" />
-        ))}
-      </div>
-    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-steel">
         <p>&copy; {currentYear} Peace League Africa. All rights reserved.</p>

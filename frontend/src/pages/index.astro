@@ -47,15 +47,12 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
         <span class="float-shape float-shape--a absolute sm:hidden" style="width:120px;height:120px;top:10%;right:-20px;background:radial-gradient(circle,rgba(0,212,164,0.10),transparent 70%);border-radius:50%;"></span>
         <span class="float-shape float-shape--b absolute sm:hidden" style="width:80px;height:80px;bottom:30%;left:-20px;background:radial-gradient(circle,rgba(245,158,11,0.06),transparent 70%);border-radius:50%;"></span>
         <!-- Large blur always -->
-        <span class="float-shape float-shape--c absolute" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);filter:blur(60px);border-radius:50%;"></span>
+        <span class="float-shape float-shape--c absolute" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);border-radius:50%;"></span>
       </div>
 
       <!-- ── DEPTH LAYER 2: Subtle movement only ── -->
       <div class="hero-depth-layer hero-depth-2" aria-hidden="true">
         <!-- Particles removed for performance -->
-        <span class="-glow" style="left:45%;bottom:2%;color:var(--color-accent);animation-delay:2s;font-size:1.5rem;">&#x2726;</span>
-        <span class="animate-particle hidden sm:block" style="left:70%;bottom:15%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
-        <span class="animate-particle--fast" style="left:85%;bottom:8%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:3s;"></span>
       </div>
 
       <!-- ── DEPTH LAYER 3: Overlay gradients (nearest) ── -->
@@ -95,7 +92,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
 
           <!-- CTA Buttons - more compact on mobile -->
           <div class="hero-social mt-6 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-6" style="animation-delay: 0.7s;">
-            <a href="/donate" class="btn btn-accent btn-large btn-ripple group w-full sm:w-auto shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40 btn-pulse-glow" data-magnet-strength="0.4">
+            <a href="/donate" class="btn btn-accent btn-large btn-ripple group w-full sm:w-auto shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40" data-magnet-strength="0.4">
               Give Today
               <svg class="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -253,7 +250,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
             </div>
             <div class="relative h-6 bg-hairline rounded-full overflow-hidden">
               <div class="absolute inset-y-0 left-0 bg-gradient-to-r from-accent to-accent-soft rounded-full" style="width: 69%"></div>
-              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+
             </div>
             <div class="flex items-center justify-between mt-3">
               <span class="text-xs text-steel">69% achieved</span>
@@ -288,7 +285,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
           {causes.slice(0, 6).map((cause, idx) => (
             <div class="data-gradient-border data-reveal data-reveal-delay={idx * 80} tilt-card group bg-canvas rounded-xl overflow-hidden border border-hairline shadow-sm transition-all duration-300 hover:-translate-y-0 hover:shadow-xl hover:border-accent/20" style={`transform-style: preserve-3d;`}>
               <div class="h-44 relative overflow-hidden tilt-card-content">
-                <img src={cause.image} alt={cause.title} width="400" height="220" class="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105" loading="lazy" decoding="async" />
+                <img src={cause.image} alt={cause.title} width="400" height="220" class="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105" loading={idx === 0 ? undefined : 'lazy'} fetchpriority={idx === 0 ? 'high' : undefined} decoding="async" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <span class="absolute bottom-3 left-3 badge-tag">{cause.category}</span>
               </div>
@@ -301,7 +298,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
                     <span class="text-steel">KES {cause.goal_amount.toLocaleString()}</span>
                   </div>
                   <div class="w-full bg-hairline rounded-full h-2 progress-track" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100"                    aria-label={`${cause.title} fundraising progress`} aria-valuetext={`KES ${cause.raised_amount.toLocaleString()} raised of KES ${cause.goal_amount.toLocaleString()} goal (${Math.round((cause.raised_amount / cause.goal_amount) * 100)} percent funded)`}>
-                    <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="width: 0"></div>
+                    <div class="bg-accent h-2 rounded-full progress-bar" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="transform: scaleX(0); transform-origin: left;"></div>
                   </div>
                   <p class="mt-1 text-xs text-steel">{cause.donors_count} donors &middot; {Math.round((cause.raised_amount / cause.goal_amount) * 100)}% funded</p>
                 </div>
@@ -606,7 +603,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent h-1.5 rounded-full" style="width: 30%"></div>
               </div>
-              <a href="/donate?amount=6500" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=6500" class="inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 60ms">
@@ -618,7 +615,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent-warm h-1.5 rounded-full" style="width: 45%"></div>
               </div>
-              <a href="/donate?amount=1000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=1000" class="inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 120ms">
@@ -630,7 +627,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent h-1.5 rounded-full" style="width: 55%"></div>
               </div>
-              <a href="/donate?amount=2000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=2000" class="inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent-warm/30 overflow-hidden" style="animation-delay: 180ms">
@@ -647,7 +644,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent-warm h-1.5 rounded-full" style="width: 72%"></div>
               </div>
-              <a href="/donate?amount=10000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=10000" class="inline-flex items-center text-sm font-medium text-accent-warm-link hover:text-amber-600 transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
           <div class="scroll-reveal group relative p-6 rounded-2xl border border-hairline bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-accent/30 overflow-hidden" style="animation-delay: 240ms">
@@ -659,13 +656,13 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
               <div class="w-full bg-hairline rounded-full h-1.5 mb-3">
                 <div class="bg-accent h-1.5 rounded-full" style="width: 35%"></div>
               </div>
-              <a href="/donate?amount=50000" class="btn-pulse-glow inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+              <a href="/donate?amount=50000" class="inline-flex items-center text-sm font-medium text-accent hover:text-accent-deep transition-colors group/btn">Donate Now <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </div>
         <div class="mt-10 text-center">
           <p class="text-sm text-steel mb-5">Every contribution, no matter the size, creates ripples of peace that reach far beyond what any of us can imagine.</p>
-          <a href="/donate" class="btn-pulse-glow inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-lg shadow-accent/20">
+          <a href="/donate" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-lg shadow-accent/20">
             Make a Donation
           </a>
         </div>
@@ -933,12 +930,26 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
           <p class="text-sm md:text-base text-steel max-w-xl">Every contribution, whether KES 500 or KES 50,000, brings clean water, education, and peace to communities across Africa.</p>
         </div>
         <div class="flex items-center gap-4 shrink-0">
-          <a href="/donate" class="btn-pulse-glow inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-lg shadow-accent/20">
+          <a href="/donate" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary text-on-dark font-medium text-sm rounded-full hover:bg-charcoal transition-all duration-300 shadow-lg shadow-accent/20">
             Donate Now
           </a>
           <a href="/volunteer" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 border border-hairline text-ink font-medium text-sm rounded-full hover:bg-surface transition-all duration-300">
             Get Involved
           </a>
+        </div>
+      </div>
+    </section>
+    <!-- Cross-links -->
+    <section class="py-10 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">Explore Peace League Africa</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">About Us</a>
+          <a href="/causes" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Our Causes</a>
+          <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+          <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
+          <a href="/volunteer" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Volunteer</a>
+          <a href="/awards" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Awards</a>
         </div>
       </div>
     </section>
@@ -1037,9 +1048,8 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
     const progressObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          const targetWidth = parseFloat(el.dataset.progressWidth) || 0;
-          requestAnimationFrame(() => { el.style.width = targetWidth + '%'; });
+          const el = entry.target;              const targetWidth = parseFloat(el.dataset.progressWidth) || 0;
+              requestAnimationFrame(() => { el.style.transform = 'scaleX(' + (targetWidth / 100) + ')'; });
           progressObserver.unobserve(el);
         }
       });

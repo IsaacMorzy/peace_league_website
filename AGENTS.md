@@ -152,6 +152,29 @@ The agent runs **six ordered gates** per task. Each is independent and replaceab
 5. **`loop-verifier`** (gate 5, per-diff) — independent maker/checker. Runs tests, scope check, and veto check. Output: APPROVE / REJECT / ESCALATE_HUMAN. Required before any push. **Skips on trivial fixes per Ponytail ceiling.**
 6. **`ponytail-review` + `code-reviewer-minimax-m3`** (review pair, both in parallel) — over-engineering scan and correctness/security scan on the finished diff. Required before any merge ask. **Skips on trivial fixes per Ponytail ceiling.**
 
+## Continuous execution loop
+
+This agent runs in a **self-perpetuating task loop**. After every completed task:
+
+1. **Always suggest followups** via `suggest_followups` — at least 3 options pointing to the next task in the wayfinder plan.
+2. **Always proceed with the highest-priority suggested followup** unless the user explicitly chooses a different one.
+3. **Do NOT wait for explicit confirmation** on routine tasks from the active wayfinder map. The last conversation's suggested followups ARE the task plan. Pick up where you left off.
+4. **Read STATE.md + wayfinder issues** at the top of every session to determine the next task. If a wayfinder:task is open and no one is assigned, claim it and execute it.
+5. **Cycle through the wayfinder plan** in order: interlinking → design sweep → remaining open tickets → watchlist items → back to triage for new issues.
+6. **Track everything**: every task writes `STATE.md` + `loop-run-log.jsonl` + commits + pushes/merges as appropriate.
+7. **Exception**: if the user explicitly says "stop" or "pause", honor it and set `loop-pause-all=true` in STATE.md.
+
+Concretely, the task priority order is:
+| Priority | Source | Example |
+|----------|--------|--------|
+| 1 | wayfinder:task issues open & unassigned | Claim and execute |
+| 2 | Previous session's suggested followups | Continue design sweep, interlinking |
+| 3 | Watchlist items | #126 migration, Turnstile test harness |
+| 4 | Open PRs needing merge/rebase | PR #106 awards tests |
+| 5 | loop-triage of new issues | gh issue list --state open |
+
+When all high-priority items are exhausted, run `loop-triage` to find new tasks.
+
 **Invocation surface** (read verbatim — these are the skill folders on disk and/or the `Load skill` buttons in the UI):
 
 | Stage | Skill | When to load |

@@ -26,6 +26,10 @@ const whyStats = [
 const orgUrl = "https://peaceleagueafrica.org";
 ---
 
+<script>
+  import 'preline';
+</script>
+
 <Layout title="Careers" description="Join Peace League Africa's team and turn your passion for peace into a career. View open positions in programs, health, communications, and operations.">
   <Navigation />
 
@@ -84,19 +88,9 @@ const orgUrl = "https://peaceleagueafrica.org";
         <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
         <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
         <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
+        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <span class="animate-dove-drift" style="left:18%;bottom:-20%;animation-delay:0.5s;font-size:1.125rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-dove-drift--slow" style="left:55%;bottom:-25%;animation-delay:2s;font-size:1.25rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-dove-drift" style="left:82%;bottom:-15%;animation-delay:3.5s;font-size:1rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">&#x1F54A;</span>
-        <span class="animate-particle" style="left:10%;bottom:5%;width:4px;height:4px;border-radius:50%;background:var(--color-accent);animation-delay:1s;"></span>
-        <span class="animate-particle--fast" style="left:25%;bottom:10%;width:3px;height:3px;border-radius:50%;background:var(--color-accent-soft);animation-delay:0.3s;"></span>
-        <span class="animate-particle" style="left:40%;bottom:8%;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);animation-delay:2s;"></span>
-        <span class="animate-particle--glow" style="left:60%;bottom:0;color:var(--color-accent);animation-delay:1.5s;font-size:1.2rem;">&#x2726;</span>
-        <span class="animate-particle--fast" style="left:75%;bottom:15%;width:4px;height:4px;border-radius:50%;background:var(--color-accent-warm);animation-delay:2.5s;"></span>
-        <span class="animate-particle" style="left:90%;bottom:5%;width:3px;height:3px;border-radius:50%;background:white;animation-delay:0.8s;opacity:0.3;"></span>
-      </div>
+
     </section>
 
     <section class="py-12 bg-surface">
@@ -137,10 +131,10 @@ const orgUrl = "https://peaceleagueafrica.org";
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="scroll-reveal text-2xl sm:text-3xl lg:text-4xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Open Positions</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-12">Find a role where your skills meet Africa's greatest needs — peace, health, education, and opportunity.</p>
-        <div class="max-w-4xl mx-auto space-y-6">
+        <div class="max-w-4xl mx-auto hs-accordion-group" role="region" aria-label="Open positions accordion">
           {jobs.map((job, idx) => (
-            <div class="scroll-reveal animate-in fade-in slide-in-from-bottom-4 bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-accent/20" style={`animation-delay: ${idx * 80}ms`}>
-              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div class="hs-accordion scroll-reveal bg-canvas rounded-2xl border border-hairline mb-4 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-accent/20" style={`animation-delay: ${idx * 80}ms`} id={`job-${idx}`}>
+              <button class="hs-accordion-toggle flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 w-full p-6 text-left transition-colors hover:bg-accent/5" aria-expanded={idx === 0 ? 'true' : 'false'}>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center gap-2 mb-1">
                     <span class="px-2.5 py-0.5 text-xs font-medium bg-accent/10 text-accent-link rounded-full">{job.department}</span>
@@ -152,12 +146,35 @@ const orgUrl = "https://peaceleagueafrica.org";
                     {job.location}
                   </div>
                 </div>
-                <a href="/contact" class="shrink-0 inline-flex items-center px-5 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-300 shadow-sm hover:shadow-md min-h-[44px]">
-                  Apply Now
-                  <svg class="w-3.5 h-3.5 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
+                <div class="flex items-center gap-3 shrink-0">
+                  <a href="/contact" class="inline-flex items-center px-5 py-2.5 bg-primary text-on-dark text-sm font-medium rounded-full hover:bg-charcoal transition-all duration-300 shadow-sm hover:shadow-md min-h-[44px]" onclick="event.stopPropagation()">
+                    Apply Now
+                    <svg class="w-3.5 h-3.5 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </a>
+                  <svg class="w-5 h-5 text-steel hs-accordion-active:rotate-180 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+              </button>
+              <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" {idx === 0 ? '' : 'hidden'} aria-labelledby={`job-${idx}`}>
+                <div class="px-6 pb-6">
+                  <div class="border-t border-hairline pt-4">
+                    <p class="text-sm text-steel leading-relaxed">{job.desc}</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                      <span class="inline-flex items-center gap-1 text-xs text-steel bg-surface px-3 py-1.5 rounded-full">
+                        <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        {job.type}
+                      </span>
+                      <span class="inline-flex items-center gap-1 text-xs text-steel bg-surface px-3 py-1.5 rounded-full">
+                        <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                        {job.location}
+                      </span>
+                      <span class="inline-flex items-center gap-1 text-xs text-steel bg-surface px-3 py-1.5 rounded-full">
+                        <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        {job.department}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="mt-4 text-sm text-steel leading-relaxed border-t border-hairline pt-4">{job.desc}</p>
             </div>
           ))}
         </div>
