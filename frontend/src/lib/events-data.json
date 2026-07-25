@@ -13,9 +13,9 @@
     "location": "Nairobi, Kenya",
     "venue": "August 7th Memorial Park",
     "address": "Haile Selassie Avenue (next to Cooperative Bank), Nairobi",
-    "image": "/images/events/peace-league-awards-gala-2026.jpg",
+    "image": "/images/events/peace-league-awards-gala-2026.webp",
     "images": [
-      "/images/events/peace-league-awards-gala-2026.jpg"
+      "/images/events/peace-league-awards-gala-2026.webp"
     ],
     "type": "Gala",
     "category": "Awards",
@@ -125,9 +125,9 @@
     "location": "Nairobi, Kenya",
     "venue": "Nairobi Jamia Mosque",
     "address": "Banda Street, Nairobi, Kenya",
-    "image": "/images/events/interfaith-dialogue.jpg",
+    "image": "/images/events/interfaith-dialogue.webp",
     "images": [
-      "/images/events/interfaith-dialogue.jpg",
+      "/images/events/interfaith-dialogue.webp",
       "photo-1552581234-26160f608093",
       "photo-1544027993-37dbfe43562a"
     ],
@@ -149,7 +149,7 @@
       {
         "name": "Dr. Hassan Kinyua Omari",
         "role": "Chairperson, Peace League Africa \u00b7 Islamic Law Scholar \u00b7 Certified Mediator",
-        "image": "/speaker-hassan-kinyua.jpg"
+        "image": "/speaker-hassan-kinyua.webp"
       },
       {
         "name": "Archbishop David Mugambi",
@@ -218,9 +218,9 @@
     "location": "Nairobi, Kenya",
     "venue": "Kenyatta International Conference Centre",
     "address": "Kenyatta Ave, Nairobi, Kenya",
-    "image": "/images/events/peace-education-summit.jpg",
+    "image": "/images/events/peace-education-summit.webp",
     "images": [
-      "/images/events/peace-education-summit.jpg",
+      "/images/events/peace-education-summit.webp",
       "photo-1571019613454-1cb2f99b2d8b",
       "photo-1511795409834-ef04bbd61622"
     ],
@@ -304,9 +304,9 @@
     "location": "Kampala, Uganda",
     "venue": "Uganda National Cultural Centre",
     "address": "Plot 2-4, Parliament Ave, Kampala",
-    "image": "/images/events/youth-leadership-workshop.jpg",
+    "image": "/images/events/youth-leadership-workshop.webp",
     "images": [
-      "/images/events/youth-leadership-workshop.jpg",
+      "/images/events/youth-leadership-workshop.webp",
       "photo-1511795409834-ef04bbd61622",
       "photo-1540575467063-178a50c2df87"
     ],
@@ -373,9 +373,9 @@
     "location": "Kigali, Rwanda",
     "venue": "Kigali Convention Centre",
     "address": "KG 2 Roundabout, Kigali",
-    "image": "/images/events/community-health-fair-2026.jpg",
+    "image": "/images/events/community-health-fair-2026.webp",
     "images": [
-      "/images/events/community-health-fair-2026.jpg"
+      "/images/events/community-health-fair-2026.webp"
     ],
     "type": "Community Event",
     "category": "Health",
@@ -441,9 +441,9 @@
     "location": "Nairobi, Kenya",
     "venue": "Radisson Blu Hotel, Upper Hill",
     "address": "Upper Hill Rd, Nairobi",
-    "image": "/images/events/annual-gala-fundraiser-2026.jpg",
+    "image": "/images/events/annual-gala-fundraiser-2026.webp",
     "images": [
-      "/images/events/annual-gala-fundraiser-2026.jpg"
+      "/images/events/annual-gala-fundraiser-2026.webp"
     ],
     "type": "Gala",
     "category": "Fundraising",
@@ -521,9 +521,9 @@
     "location": "Turkana, Kenya",
     "venue": "Lokitaung Village",
     "address": "Lokitaung, Turkana County",
-    "image": "/images/events/water-well-inauguration-turkana.jpg",
+    "image": "/images/events/water-well-inauguration-turkana.webp",
     "images": [
-      "/images/events/water-well-inauguration-turkana.jpg"
+      "/images/events/water-well-inauguration-turkana.webp"
     ],
     "type": "Community Event",
     "category": "Water",
@@ -581,9 +581,9 @@
     "location": "Addis Ababa, Ethiopia",
     "venue": "African Union Headquarters",
     "address": "PO Box 3243, Addis Ababa",
-    "image": "/images/events/interfaith-dialogue-forum-2026.jpg",
+    "image": "/images/events/interfaith-dialogue-forum-2026.webp",
     "images": [
-      "/images/events/interfaith-dialogue-forum-2026.jpg"
+      "/images/events/interfaith-dialogue-forum-2026.webp"
     ],
     "type": "Forum",
     "category": "Dialogue",
@@ -665,7 +665,7 @@
     "location": "Nairobi, Kenya",
     "venue": "Uhuru Gardens",
     "address": "Uhuru Highway, Nairobi",
-    "image": "/images/events/peace-run-2026.jpg",
+    "image": "/images/events/peace-run-2026.webp",
     "images": [],
     "type": "Community Event",
     "category": "Fundraising",
@@ -706,7 +706,7 @@
     "location": "Kampala, Uganda",
     "venue": "Imperial Royale Hotel",
     "address": "Plot 1-3, Kintu Rd, Kampala",
-    "image": "/images/events/women-in-peacebuilding-2026.jpg",
+    "image": "/images/events/women-in-peacebuilding-2026.webp",
     "images": [],
     "type": "Conference",
     "category": "Women",
@@ -747,7 +747,7 @@
     "location": "Kisumu, Kenya",
     "venue": "Kisumu Waterfront",
     "address": "Kisumu, Lake Victoria",
-    "image": "/images/events/clean-water-awareness-day-2026.jpg",
+    "image": "/images/events/clean-water-awareness-day-2026.webp",
     "images": [],
     "type": "Community Event",
     "category": "Water",

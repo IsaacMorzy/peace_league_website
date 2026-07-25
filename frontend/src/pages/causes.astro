@@ -45,7 +45,7 @@ const causeSlugs = Object.fromEntries(
           {causes.map((cause, idx) => (
             <div class="cascade-item bg-canvas rounded-2xl border border-hairline overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style={`animation-delay: ${idx * 100}ms`}>
               <div class="h-48 relative overflow-hidden">
-                <img src={cause.image} alt={cause.title} width="400" height="200" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                <img src={cause.image} alt={cause.title} width="400" height="200" class="w-full h-full object-cover" loading={idx === 0 ? 'eager' : 'lazy'} fetchpriority={idx === 0 ? 'high' : undefined} decoding="async" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <svg class="w-14 h-14 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
