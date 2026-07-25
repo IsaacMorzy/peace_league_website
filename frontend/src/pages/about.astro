@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
+const orgUrl = "https://peaceleagueafrica.org";
 
 const milestones = [
   { year: '2015', title: 'First Peace Workshop', desc: 'A single peace workshop in a Nairobi community hall — 47 people, one room, and a vision that would change thousands of lives.' },
@@ -14,9 +15,25 @@ const milestones = [
   { year: '2023', title: '50,000 Lives Impacted', desc: 'Crossed the milestone of 50,000 lives directly impacted through peace education, healthcare, water, and youth programs.' },
   { year: '2025', title: 'Peace Built Here', desc: 'Launched the Peace League Africa digital platform, connecting donors directly with communities and bringing transparency to every dollar.' },
 ];
+
+const values = [
+  { icon: '🤝', title: 'Community First', desc: 'Every solution is designed with and for the communities we serve. We listen before we act.' },
+  { icon: '⚖️', title: 'Justice & Dignity', desc: 'We believe peace is impossible without justice. Every program centers human dignity.' },
+  { icon: '🌱', title: 'Sustainable Impact', desc: 'Short-term aid meets long-term investment. We build systems that outlast our presence.' },
+  { icon: '📊', title: 'Radical Transparency', desc: 'Donors see exactly where every shilling goes. No overhead hiding. No fine print.' },
+  { icon: '🤲', title: 'Ubuntu Spirit', desc: '"I am because we are." Our work is rooted in the African philosophy of interconnected humanity.' },
+  { icon: '🔬', title: 'Evidence-Based', desc: 'Every program is measured, evaluated, and improved. We fund what works.' },
+];
+
+const impactStats = [
+  { number: '50K+', label: 'Lives Impacted', icon: '❤️' },
+  { number: '12', label: 'Countries Reached', icon: '🌍' },
+  { number: '1K+', label: 'Active Volunteers', icon: '👥' },
+  { number: '200+', label: 'Communities Served', icon: '🏘️' },
+];
 ---
 
-<Layout title="About Us" description="Peace League Africa is a peace-building organization transforming conflict into hope across 12 African countries. Learn about our mission, history, values, and impact.">
+<Layout title="About Us — Peace League Africa" description="Peace League Africa is a peace-building organization transforming conflict into hope across 12 African countries. Learn about our mission, history, values, and impact.">
   <Navigation />
   
   <main id="main-content">
@@ -24,15 +41,15 @@ const milestones = [
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
-        { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://peaceleagueafrica.org/about" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": orgUrl },
+        { "@type": "ListItem", "position": 2, "name": "About Us", "item": orgUrl + "/about" }
       ]
     })} />
+
+    <!-- Hero -->
     <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
       <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
       <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
-
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">About Peace League Africa</h1>
         <p class="mt-4 text-lg text-white/80 max-w-2xl">From a single peace workshop in 2015 to a movement spanning 12 countries — we replace division with dialogue, poverty with opportunity, and despair with hope.</p>
@@ -43,4 +60,127 @@ const milestones = [
         <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
         <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true"></div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 lg:py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div class="bg-canvas rounded-2xl border border-hairline p-8 md:p-10 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-5">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </span>
+            <h2 class="text-2xl font-semibold text-ink mb-4">Our Mission</h2>
+            <p class="text-steel leading-relaxed">To build sustainable peace across Africa by investing in community-led solutions — from peace education classrooms to clean water wells, from youth leadership programs to emergency response. We believe peace is not the absence of conflict but the presence of justice, opportunity, and dignity for every person.</p>
+          </div>
+          <div class="bg-canvas rounded-2xl border border-hairline p-8 md:p-10 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-50 text-amber-600 mb-5">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </span>
+            <h2 class="text-2xl font-semibold text-ink mb-4">Our Vision</h2>
+            <p class="text-steel leading-relaxed">A peaceful, prosperous Africa where every community has the tools, resources, and agency to resolve conflict, build opportunity, and thrive. A continent where the next generation inherits not division but dialogue, not poverty but possibility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="py-16 lg:py-20 bg-canvas">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-ink text-center mb-3">Our Impact by the Numbers</h2>
+        <p class="text-steel text-center max-w-xl mx-auto mb-10">Since 2015, Peace League Africa has grown from a single workshop to a continent-wide movement.</p>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {impactStats.map((stat) => (
+            <div class="text-center bg-surface rounded-2xl border border-hairline p-6 md:p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <span class="text-3xl mb-3 block">{stat.icon}</span>
+              <p class="text-3xl sm:text-4xl font-bold text-accent mb-1">{stat.number}</p>
+              <p class="text-sm text-steel">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values (Preline Cards) -->
+    <section class="py-16 lg:py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-ink text-center mb-3">What We Stand For</h2>
+        <p class="text-steel text-center max-w-xl mx-auto mb-10">These principles guide every decision, every partnership, and every program we run.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {values.map((value) => (
+            <div class="group bg-canvas rounded-2xl border border-hairline p-6 transition-all duration-300 hover:shadow-lg hover:border-accent/20 hover:-translate-y-1">
+              <span class="text-2xl mb-3 block">{value.icon}</span>
+              <h3 class="text-lg font-semibold text-ink mb-2 group-hover:text-accent transition-colors">{value.title}</h3>
+              <p class="text-sm text-steel leading-relaxed">{value.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Journey Timeline (Preline Accordion) -->
+    <section class="py-16 lg:py-20 bg-canvas">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-ink text-center mb-3">Our Journey</h2>
+        <p class="text-steel text-center max-w-xl mx-auto mb-10">A decade of growth, resilience, and impact — told by the moments that shaped us.</p>
+        <div class="hs-accordion-group" role="region" aria-label="Organization history timeline">
+          {milestones.map((m, idx) => (
+            <div class="hs-accordion bg-surface rounded-2xl border border-hairline mb-4 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-accent/20">
+              <button class="hs-accordion-toggle flex items-center justify-between gap-4 w-full p-5 md:p-6 text-left transition-colors hover:bg-accent/5" id={`milestone-${idx}`} aria-expanded={idx === 0 ? 'true' : 'false'}>
+                <div class="flex items-center gap-4">
+                  <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent font-bold text-sm shrink-0">{m.year}</span>
+                  <span class="font-medium text-ink">{m.title}</span>
+                </div>
+                <svg class="w-5 h-5 text-steel hs-accordion-active:rotate-180 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" {idx === 0 ? '' : 'hidden'} aria-labelledby={`milestone-${idx}`}>
+                <div class="px-5 md:px-6 pb-5 md:pb-6">
+                  <div class="pl-14">
+                    <p class="text-steel leading-relaxed">{m.desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 lg:py-20 bg-accent-deep text-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Be Part of the Story</h2>
+        <p class="text-white/80 mb-8 max-w-lg mx-auto">Whether you donate, volunteer, or partner with us — every action moves us closer to a peaceful, prosperous Africa.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/donate" class="inline-flex items-center px-6 py-3 bg-white text-accent-deep font-semibold rounded-full hover:bg-accent/10 hover:text-white transition-all duration-200 shadow-lg shadow-black/20">
+            Donate Now
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="/volunteer" class="inline-flex items-center px-6 py-3 border-2 border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-all duration-200">
+            Volunteer With Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">You might also be interested in</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/causes" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Our Causes</a>
+          <a href="/team" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Our Team</a>
+          <a href="/blog" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Blog</a>
+          <a href="/contact" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import 'preline';
+</script>
