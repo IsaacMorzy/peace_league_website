@@ -82,8 +82,13 @@ if [[ "${PROD}" == "1" ]]; then
     # /etc/sudoers.d/peace-league-deploy (only these four commands; anything
     # else still asks for the sudo password). Drop that file from
     # /etc/sudoers.d/ if you want to revoke this script's privilege.
+    # NOTE: frappe-multitenant.conf is the bench-wide multitenant baseline
+    # (lives at BENCH_DIR/scripts/ — separate tenant-0 config not owned by
+    # this app). peaceleagueafrica-le.conf is APP-specific and was promoted
+    # to frontend/scripts/nginx/ so its evolution is git-tracked alongside
+    # the Astro build pipeline that consumes it.
     sudo cp "${MIRROR_DIR}/frappe-multitenant.conf" /etc/nginx/conf.d/
-    sudo cp "${MIRROR_DIR}/peaceleagueafrica-le.conf" /etc/nginx/conf.d/
+    sudo cp "${FRONTEND_DIR}/scripts/nginx/peaceleagueafrica-le.conf" /etc/nginx/conf.d/
     sudo nginx -t
     sudo systemctl reload nginx
     echo "🌐 nginx reloaded. peaceleagueafrica.org serving Astro, Frappe login still at /login."
