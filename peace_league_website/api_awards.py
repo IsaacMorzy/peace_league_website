@@ -345,7 +345,6 @@ def cast_vote(**kwargs):
         # We'll wrap the core logic in a rate_limited call (later)
         # For now, we'll manually check using Redis key: rate_limit:vote:<ip>
         ip = frappe.request.remote_addr if frappe.request else "0.0.0.0"
-        now_ts = int(now().timestamp())
         # Simple rate limiting: 20 requests per 10 minutes
         rate_key = f"vote_rate:{ip}"
         count = frappe.cache.get(rate_key) or 0

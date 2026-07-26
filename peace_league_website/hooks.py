@@ -7,6 +7,9 @@ app_description = "Peace League Website Portal"
 app_icon = "octicon octicon-heart"
 app_email = "info@peaceleagueafrica.org"
 
+# ── Fixtures: data Frappe auto-syncs on every migrate (see fixtures/award_category.json) ──
+fixtures = ["Award Category"]
+
 # ── DocType connections (for graphify knowledge graph) ──
 # These document explicit relationships between DocTypes that
 # graphify cannot infer from AST alone.
