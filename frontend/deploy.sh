@@ -3,7 +3,7 @@
 #
 # Usage:
 #   ./deploy.sh                  # build + copy to peaceleagueafrica.localhost (default)
-#   ./deploy.sh peaceleagueafrica.org  # ditto, but advertise .org in sitemap/canonical
+#   ./deploy.sh peaceleagueafrica.com  # ditto, but advertise .com in sitemap/canonical
 #   ./deploy.sh --prod           # additionally push mirror nginx configs into
 #                                # /etc/nginx/conf.d and reload nginx (needs sudo)
 #
@@ -91,5 +91,5 @@ if [[ "${PROD}" == "1" ]]; then
     sudo cp "${FRONTEND_DIR}/scripts/nginx/peaceleagueafrica-le.conf" /etc/nginx/conf.d/
     sudo nginx -t
     sudo systemctl reload nginx
-    echo "🌐 nginx reloaded. peaceleagueafrica.org serving Astro, Frappe login still at /login."
+    echo "🌐 nginx reloaded. peaceleagueafrica.com serving Astro, Frappe login still at /login."
 fi

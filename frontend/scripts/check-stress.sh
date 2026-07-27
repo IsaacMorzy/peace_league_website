@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Post-deploy smoke probe for peaceleagueafrica.org.
+# Post-deploy smoke probe for peaceleagueafrica.com.
 #
 # Usage:
 #   ./check-stress.sh                # default site, full probe
-#   ./check-stress.sh https://staging.peaceleagueafrica.org
+#   ./check-stress.sh https://staging.peaceleagueafrica.com
 #   STRESS_N=200 ./check-stress.sh   # more aggressive nav count
 #
 # Curl-only by design so this runs in CI without Playwright/Chromium.
@@ -15,7 +15,7 @@
 
 set -euo pipefail
 
-SITE="${1:-https://peaceleagueafrica.org}"
+SITE="${1:-https://peaceleagueafrica.com}"
 SITE="${SITE%/}"  # strip single trailing slash so caller `https://x/` + route `/` -> no double-slash
 # Routes that must always 200: marketing surface + a sampling of static and /api/method/*
 ROUTES=(
@@ -105,7 +105,7 @@ fi
 
 if (( overall_status == 0 )); then
     echo
-    echo "✅ All probes pass -- peaceleagueafrica.org serving clean."
+    echo "✅ All probes pass -- peaceleagueafrica.com serving clean."
     exit 0
 else
     echo
