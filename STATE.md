@@ -173,3 +173,4 @@ Append a single line when:
 ## STATE.md entry
 - 2026-07-27Z deploy: hero light mode fix + lighthouse infra + a11y improvements. HEAD 507ce09 pushed to upstream/main. lighthouse baseline: Perf 83, A11y 94, BP 100, SEO 92. Blog confirmed working live (200).
 - 2026-07-27Z perf: lazy-load search plugin (68KB savings), defer WOW effects to idle callback, add requestIdleCallback fallback, add import().catch handler. Perf baseline: 83. Build: 144 pages ✓
+- 2026-07-27Z blog: fixed 21 missing hero images + 1 inline Utumishi image. Topic-relevant Unsplash CDN URLs replace non-existent local files. Build: 144 pages ✓
