@@ -155,7 +155,7 @@ const process = [
           <h2 class="text-heading-3 text-ink mb-4">Volunteer signup</h2>
           <p class="text-body-md text-steel">5-minute form. We respond within 7 days.</p>
         </div>
-        <form class="card-base p-6 md:p-8 space-y-5" data-volunteer-intake>
+        <form class="card-base p-6 md:p-8 space-y-5" data-volunteer-intake action="mailto:volunteer@peaceleagueafrica.org" method="post" enctype="text/plain">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
               <label for="vol-name" class="text-sm font-semibold text-ink">Full name <span class="text-brand-error" aria-hidden="true">*</span></label>
@@ -178,7 +178,7 @@ const process = [
             <textarea id="vol-skills" name="skills" rows="3" placeholder="Languages, design, research, fundraising, M&E…"></textarea>
           </div>
           <button type="submit" class="btn btn-accent btn-large cta-hover-glow w-full" aria-describedby="vol-submit-disclosure">Submit volunteer application</button>
-          <p id="vol-submit-disclosure" class="text-xs text-steel">By submitting, you consent to Peace League Africa storing this application for 12 months. Access is limited to the Volunteer Coordinator. See <a href="/privacy" class="link-accent">/privacy</a>.</p>
+          <p id="vol-submit-disclosure" class="text-xs text-steel">Your application goes by email to our Volunteer Coordinator in Nairobi. We never share your details with third parties. Retention details at <a href="/privacy" class="text-accent-deep underline hover:text-accent">/privacy</a>.</p>
           <p class="text-sm text-accent-deep font-semibold hidden" data-volunteer-success role="status">✓ Thank you! A volunteer coordinator will reach out within 7 days.</p>
         </form>
       </div>

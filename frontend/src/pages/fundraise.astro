@@ -147,7 +147,7 @@ const steps = [
             Tell us what you're planning. Our team will reach out within 48 hours with your personalised fundraising page, branded share links, and impact-reporting tools.
           </p>
         </div>
-        <form class="card-base p-6 md:p-8 space-y-6" data-fundraise-intake>
+        <form class="card-base p-6 md:p-8 space-y-6" data-fundraise-intake action="mailto:fundraise@peaceleagueafrica.org" method="post" enctype="text/plain">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
               <label for="fund-name" class="text-sm font-semibold text-ink">Your full name <span class="text-brand-error" aria-hidden="true">*</span></label>
@@ -181,10 +181,10 @@ const steps = [
             <textarea id="fund-story" name="story" rows="4" placeholder="Why does peace in Africa matter to you? When is the event? Who's joining you?" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
           </div>
           <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-hairline">
-            <p class="text-xs text-steel max-w-md">
-              Submitting this form sends your details to the Peace League Africa programmes team. We never share your contact info publicly.
+            <p id="fund-disclosure" class="text-xs text-steel max-w-md">
+              Your campaign details go by email to our Programmes Officer in Nairobi. We never share your contact details with third parties. Retention details at <a href="/privacy" class="text-accent-deep underline hover:text-accent">/privacy</a>.
             </p>
-            <button type="submit" class="btn btn-accent btn-large cta-hover-glow">
+            <button type="submit" class="btn btn-accent btn-large cta-hover-glow" aria-describedby="fund-disclosure">
               Submit &amp; start campaign
             </button>
           </div>
