@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import { slugify } from "../lib/slugify";
 
 const ideas = [
   { emoji: "🎂", title: "Birthday Fundraiser", desc: "Ask friends and family to donate to Peace League Africa instead of buying gifts. A birthday wish that changes lives.", raised: "KES 12,450", donors: "187" },
@@ -107,7 +108,7 @@ const steps = [
               </div>
               <h3 class="text-heading-5 text-ink group-hover:text-accent-deep transition-colors">{idea.title}</h3>
               <p class="text-sm text-steel leading-relaxed">{idea.desc}</p>
-              <a href={`/fundraise?idea=${encodeURIComponent(idea.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}`} class="mt-auto inline-flex items-center text-sm font-semibold text-accent-deep hover:text-accent group-hover:translate-x-1 transition-all">
+              <a href={`/fundraise?idea=${encodeURIComponent(slugify(idea.title))}`} class="mt-auto inline-flex items-center text-sm font-semibold text-accent-deep hover:text-accent group-hover:translate-x-1 transition-all">
                 Start this idea
                 <svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

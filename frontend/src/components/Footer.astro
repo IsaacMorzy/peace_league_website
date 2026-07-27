@@ -1,9 +1,10 @@
 ---
 import causes from '../lib/causes-data.json';
+import { slugify } from '../lib/slugify';
 const currentYear = new Date().getFullYear();
 
 const causeSlugs = Object.fromEntries(
-  causes.map(c => [c.name, c.name.toLowerCase().replace(/\s+/g, '-')])
+  causes.map(c => [c.name, slugify(c.name)])
 );
 
 const footerLinks = {
