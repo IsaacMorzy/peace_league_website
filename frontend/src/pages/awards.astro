@@ -133,7 +133,7 @@ import Footer from '../components/Footer.astro';
         </div>
         <div class="flex items-center gap-3">
           <a href="#categories" class="text-xs font-semibold text-accent hover:text-accent-deep transition-colors">Vote now →</a>
-          <button type="button" class="size-6 inline-flex justify-center items-center rounded-full text-steel hover:text-ink hover:bg-hairline transition-colors" data-hs-remove-element="#voting-alert" aria-label="Dismiss">
+          <button type="button" class="size-6 inline-flex justify-center items-center rounded-full text-steel hover:text-ink hover:bg-hairline transition-colors" onclick="document.getElementById('voting-alert').remove()" aria-label="Dismiss">
             <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>

@@ -8,28 +8,26 @@ import causes from '../lib/causes-data.json';
 <Layout title="Donate" description="Support peace-building across Africa. Your tax-deductible donation funds peace education, clean water, healthcare, and youth programs in 12 countries. Donate via M-Pesa, Card, Bank, or PayPal.">
   <Navigation />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
+      { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://peaceleagueafrica.org/donate" }
+    ]
+  })} />
+
   <main id="main-content">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
-        { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://peaceleagueafrica.org/donate" }
-      ]
-    })} />
 
-    <section class="relative text-white bg-gradient-to-br from-[#1a3d4a] via-[#16404a] to-[#0d2530] overflow-hidden py-12 lg:py-20">
-      <!-- Single mint orbs (no amber, no backdrop-blur) -->
-      <div class="absolute top-[-80px] right-[-80px] w-[280px] h-[280px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,212,164,0.18) 0%, transparent 70%);" aria-hidden="true"></div>
-      <div class="absolute bottom-[-60px] left-[-60px] w-[200px] h-[200px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,212,164,0.05) 0%, transparent 70%);" aria-hidden="true"></div>
-
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-white/8 rounded-full border border-white/15 text-xs sm:text-sm font-medium text-accent-soft">
+    <!-- Hero: flat per DESIGN.md (atmospheric gradient reserved for home + startups only) [baseline-ui] -->
+    <section class="py-12 lg:py-20 bg-surface border-b border-hairline">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-accent/10 rounded-full border border-accent/20 text-xs sm:text-sm font-medium text-accent-deep">
           <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true"></span>
           95% Goes Directly to Programs
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.10] tracking-tight">Your Gift Rebuilds Communities</h1>
-        <p class="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.10] tracking-tight text-ink">Your Gift Rebuilds Communities</h1>
+        <p class="mt-6 text-lg text-steel max-w-2xl mx-auto">
           KES 50 trains a peace teacher. KES 25 provides clean water for a family. KES 500 launches a youth mentorship program. Every shilling goes directly to peace-building across 12 African countries.
         </p>
       </div>
