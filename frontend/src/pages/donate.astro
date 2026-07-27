@@ -19,17 +19,79 @@ import causes from '../lib/causes-data.json';
 
   <main id="main-content">
 
-    <!-- Hero: flat per DESIGN.md (atmospheric gradient reserved for home + startups only) [baseline-ui] -->
-    <section class="py-12 lg:py-20 bg-surface border-b border-hairline">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-accent/10 rounded-full border border-accent/20 text-xs sm:text-sm font-medium text-accent-deep">
+    <!-- Hero: gradient with ambient glow -->
+    <section class="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style="background: linear-gradient(135deg, #0d2530 0%, #1a3d4a 40%, #0d2530 100%);">
+      <!-- Ambient glow orbs -->
+      <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-15" style="background: radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10" style="background: radial-gradient(circle, rgba(0,212,164,0.2) 0%, transparent 70%);"></div>
+      <div class="absolute top-10 right-10 text-8xl opacity-[0.04] pointer-events-none select-none" aria-hidden="true">❤️</div>
+      <div class="absolute bottom-10 left-10 text-6xl opacity-[0.03] pointer-events-none select-none" aria-hidden="true">🕊️</div>
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-xs sm:text-sm font-semibold text-accent-soft">
           <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true"></span>
           95% Goes Directly to Programs
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.10] tracking-tight text-ink">Your Gift Rebuilds Communities</h1>
-        <p class="mt-6 text-lg text-steel max-w-2xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.10] tracking-tight text-white" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Your Gift <span class="text-accent-soft">Rebuilds</span> Communities</h1>
+        <p class="mt-6 text-lg text-white/70 max-w-2xl mx-auto font-light">
           KES 50 trains a peace teacher. KES 25 provides clean water for a family. KES 500 launches a youth mentorship program. Every shilling goes directly to peace-building across 12 African countries.
         </p>
+      </div>
+    </section>
+
+    <!-- Impact Tiers: What your gift funds -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-4 bg-accent/10 rounded-full border border-accent/20 text-xs sm:text-sm font-medium text-accent-deep">
+            <span aria-hidden="true">✨</span> Your Impact
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight">What Your Gift Funds</h2>
+          <p class="text-lg text-steel mt-2 max-w-2xl mx-auto">Every shilling goes directly to community-driven peacebuilding programs across East Africa.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="scroll-reveal rounded-2xl border border-hairline bg-canvas p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30">
+            <div class="text-3xl mb-2">📚</div>
+            <div class="text-2xl font-bold text-accent-deep">KES 500</div>
+            <div class="text-sm text-ink font-semibold mt-1">Peace Classroom</div>
+            <p class="text-xs text-steel mt-1">Funds a day of peace education for 50 students including materials and a trained facilitator.</p>
+          </div>
+          <div class="scroll-reveal rounded-2xl border border-hairline bg-canvas p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="animation-delay: 60ms">
+            <div class="text-3xl mb-2">💧</div>
+            <div class="text-2xl font-bold text-accent-deep">KES 2,500</div>
+            <div class="text-sm text-ink font-semibold mt-1">Clean Water Access</div>
+            <p class="text-xs text-steel mt-1">Provides clean water for a family of 6 for 3 months through well maintenance and purification tablets.</p>
+          </div>
+          <div class="scroll-reveal rounded-2xl border border-hairline bg-canvas p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="animation-delay: 120ms">
+            <div class="text-3xl mb-2">🌱</div>
+            <div class="text-2xl font-bold text-accent-deep">KES 10,000</div>
+            <div class="text-sm text-ink font-semibold mt-1">Youth Mentorship</div>
+            <p class="text-xs text-steel mt-1">Funds a 3-month mentorship cohort for 20 youth including leadership workshops and community projects.</p>
+          </div>
+          <div class="scroll-reveal rounded-2xl border border-hairline bg-canvas p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30" style="animation-delay: 180ms">
+            <div class="text-3xl mb-2">🏥</div>
+            <div class="text-2xl font-bold text-accent-deep">KES 50,000</div>
+            <div class="text-sm text-ink font-semibold mt-1">Medical Outreach</div>
+            <p class="text-xs text-steel mt-1">Funds a full-day medical camp serving 200+ patients with consultations, medicine, and health education.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 text-center">
+          <div class="rounded-xl border border-hairline p-4 bg-canvas">
+            <div class="text-2xl font-bold text-accent-deep">95%</div>
+            <div class="text-xs text-steel mt-1">Goes to programs</div>
+          </div>
+          <div class="rounded-xl border border-hairline p-4 bg-canvas">
+            <div class="text-2xl font-bold text-accent-deep">12</div>
+            <div class="text-xs text-steel mt-1">Countries served</div>
+          </div>
+          <div class="rounded-xl border border-hairline p-4 bg-canvas">
+            <div class="text-2xl font-bold text-accent-deep">1,200+</div>
+            <div class="text-xs text-steel mt-1">Volunteers active</div>
+          </div>
+          <div class="rounded-xl border border-hairline p-4 bg-canvas">
+            <div class="text-2xl font-bold text-accent-deep">500K+</div>
+            <div class="text-xs text-steel mt-1">Lives impacted</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -210,20 +272,6 @@ import causes from '../lib/causes-data.json';
           </p>
         </form>
 
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          <div class="rounded-xl border border-hairline p-4">
-            <div class="text-2xl font-semibold text-accent-deep">95%</div>
-            <div class="text-xs text-steel mt-1">Goes directly to programs</div>
-          </div>
-          <div class="rounded-xl border border-hairline p-4">
-            <div class="text-2xl font-semibold text-accent-deep">12</div>
-            <div class="text-xs text-steel mt-1">Countries served</div>
-          </div>
-          <div class="rounded-xl border border-hairline p-4">
-            <div class="text-2xl font-semibold text-accent-deep">1,200+</div>
-            <div class="text-xs text-steel mt-1">Volunteers active</div>
-          </div>
-        </div>
       </div>
     </section>
   </main>

@@ -177,6 +177,10 @@ const process = [
             <label for="vol-skills" class="text-sm font-semibold text-ink">Skills you bring (one paragraph)</label>
             <textarea id="vol-skills" name="skills" rows="3" placeholder="Languages, design, research, fundraising, M&E…"></textarea>
           </div>
+          <!-- Cloudflare Turnstile -->
+          <div id="vol-turnstile-widget" class="my-4 flex justify-center" style="min-height:65px"></div>
+          <input type="hidden" name="cf-turnstile-response" id="vol-turnstile-token" value="" />
+
           <button type="submit" class="btn btn-accent btn-large cta-hover-glow w-full" aria-describedby="vol-submit-disclosure">Submit volunteer application</button>
           <p id="vol-submit-disclosure" class="text-xs text-steel">Your application goes by email to our Volunteer Coordinator in Nairobi. We never share your details with third parties. Retention details at <a href="/privacy" class="text-accent-deep underline hover:text-accent">/privacy</a>.</p>
           <p class="text-sm text-accent-deep font-semibold hidden" data-volunteer-success role="status">✓ Thank you! A volunteer coordinator will reach out within 7 days.</p>
@@ -201,16 +205,47 @@ const process = [
   <Footer />
 
   <script>
-    // Progressive enhancement: submitGuard
+    // ── Cloudflare Turnstile ──
+    const VOL_TURNSTILE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+    let volToken = '';
+    function setVolToken(t) {
+      volToken = t;
+      var el = document.getElementById('vol-turnstile-token');
+      if (el) el.value = t;
+    }
+    if (VOL_TURNSTILE_KEY) {
+      window.onVolTurnstileLoad = function () {
+        if (window.turnstile) {
+          window.turnstile.render('#vol-turnstile-widget', {
+            sitekey: VOL_TURNSTILE_KEY,
+            callback: setVolToken,
+            'error-callback': function () { setVolToken(''); },
+            'expired-callback': function () { setVolToken(''); },
+          });
+        }
+      };
+      var s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onVolTurnstileLoad';
+      s.async = true;
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+
     const f = document.querySelector('[data-volunteer-intake]');
     const ok = document.querySelector('[data-volunteer-success]');
     if (f && ok) {
       f.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!f.checkValidity()) { f.reportValidity(); return; }
+        if (VOL_TURNSTILE_KEY && !volToken) {
+          document.getElementById('vol-turnstile-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
         ok.classList.remove('hidden');
         ok.focus?.();
         f.reset();
+        volToken = '';
+        if (window.turnstile) window.turnstile.reset();
         ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     }

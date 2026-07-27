@@ -251,6 +251,9 @@ const awardsEventSchema = {
             <label for="vote-email" class="block text-sm font-medium text-ink mb-1.5">Email (optional — for confirmation)</label>
             <input type="email" id="vote-email" placeholder="you@example.com" class="input-focus-ring w-full px-4 py-2.5 rounded-xl border border-hairline bg-surface text-ink text-sm" />
           </div>
+          <!-- Cloudflare Turnstile -->
+          <div id="vote-turnstile-widget" class="my-4 flex justify-center" style="min-height:65px"></div>
+          <input type="hidden" id="vote-turnstile-token" value="" />
           <button type="button" id="vote-submit" class="mt-4 w-full px-6 py-3 bg-accent text-[#0a0a0a] font-bold rounded-full hover:bg-accent-deep transition-all shadow-md shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed hidden">
             <span id="vote-submit-text">Submit Vote</span>
           </button>
@@ -809,6 +812,11 @@ const awardsEventSchema = {
     voteModalError.classList.add('hidden');
     document.body.style.overflow = 'hidden';
 
+    // Render Turnstile if available
+    if (VOTE_TURNSTILE_KEY && window.turnstile) {
+      renderVoteTurnstile();
+    }
+
     // Fetch nominees for this category
     import('../lib/api.js').then(({ getAwardCategory }) => {
       getAwardCategory(categorySlug).then(res => {
@@ -898,14 +906,50 @@ const awardsEventSchema = {
     btn.addEventListener('click', closeVoteModal);
   });
 
+  // ── Cloudflare Turnstile for vote modal ──
+  const VOTE_TURNSTILE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  let voteTurnstileToken = '';
+  let voteTurnstileRendered = false;
+
+  function renderVoteTurnstile() {
+    if (voteTurnstileRendered || !VOTE_TURNSTILE_KEY || !window.turnstile) return;
+    voteTurnstileRendered = true;
+    window.turnstile.render('#vote-turnstile-widget', {
+      sitekey: VOTE_TURNSTILE_KEY,
+      callback: function(t) { voteTurnstileToken = t; },
+      'error-callback': function() { voteTurnstileToken = ''; },
+      'expired-callback': function() { voteTurnstileToken = ''; },
+    });
+  }
+
+  // Load Turnstile script globally if not already loaded
+  if (VOTE_TURNSTILE_KEY && !window.turnstile) {
+    window.onVoteTurnstileLoad = function() {
+      if (document.querySelector('#vote-turnstile-widget:not(.hidden)')) {
+        renderVoteTurnstile();
+      }
+    };
+    if (!document.querySelector('script[src*="turnstile/v0/api.js"]')) {
+      var ts = document.createElement('script');
+      ts.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onVoteTurnstileLoad';
+      ts.async = true;
+      ts.defer = true;
+      document.head.appendChild(ts);
+    }
+  }
+
   voteSubmit.addEventListener('click', async function() {
     if (!selectedNomineeId) return;
+    if (VOTE_TURNSTILE_KEY && !voteTurnstileToken) {
+      document.getElementById('vote-turnstile-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     voteSubmit.disabled = true;
     voteSubmitText.textContent = 'Submitting...';
     try {
       const { castVote } = await import('../lib/api.js');
       const email = voteEmail.value.trim() || '';
-      const result = await castVote(selectedNomineeId, currentCategorySlug, email);
+      const result = await castVote(selectedNomineeId, currentCategorySlug, email, voteTurnstileToken);
       voteSubmit.classList.add('hidden');
       voteModalNominees.classList.add('hidden');
       voteModalEmailSection.classList.add('hidden');

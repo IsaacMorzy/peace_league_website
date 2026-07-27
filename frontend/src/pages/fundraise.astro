@@ -181,6 +181,10 @@ const steps = [
             <label for="fund-story" class="text-sm font-semibold text-ink">Tell us your story (optional)</label>
             <textarea id="fund-story" name="story" rows="4" placeholder="Why does peace in Africa matter to you? When is the event? Who's joining you?" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
           </div>
+          <!-- Cloudflare Turnstile -->
+          <div id="fund-turnstile-widget" class="my-4 flex justify-center" style="min-height:65px"></div>
+          <input type="hidden" name="cf-turnstile-response" id="fund-turnstile-token" value="" />
+
           <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-hairline">
             <p id="fund-disclosure" class="text-xs text-steel max-w-md">
               Your campaign details go by email to our Programmes Officer in Nairobi. We never share your contact details with third parties. Retention details at <a href="/privacy" class="text-accent-deep underline hover:text-accent">/privacy</a>.
@@ -255,9 +259,32 @@ const steps = [
   <Footer />
 
   <script>
-    // Progressive enhancement: confirm form submission client-side. The Frappe API
-    // hook (peace_league_website.api.create_fundraiser_intake) is wired by the
-    // server-side story; this is a thin submitGuard so the UI feels responsive.
+    // ── Cloudflare Turnstile ──
+    const FUN_TURNSTILE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+    let funToken = '';
+    function setFunToken(t) {
+      funToken = t;
+      var el = document.getElementById('fund-turnstile-token');
+      if (el) el.value = t;
+    }
+    if (FUN_TURNSTILE_KEY) {
+      window.onFundTurnstileLoad = function () {
+        if (window.turnstile) {
+          window.turnstile.render('#fund-turnstile-widget', {
+            sitekey: FUN_TURNSTILE_KEY,
+            callback: setFunToken,
+            'error-callback': function () { setFunToken(''); },
+            'expired-callback': function () { setFunToken(''); },
+          });
+        }
+      };
+      var s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onFundTurnstileLoad';
+      s.async = true;
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+
     const form = document.querySelector('[data-fundraise-intake]');
     const successEl = document.querySelector('[data-fundraise-success]');
     if (form && successEl) {
@@ -267,9 +294,15 @@ const steps = [
           form.reportValidity();
           return;
         }
+        if (FUN_TURNSTILE_KEY && !funToken) {
+          document.getElementById('fund-turnstile-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
         successEl.classList.remove('hidden');
         successEl.focus?.();
         form.reset();
+        funToken = '';
+        if (window.turnstile) window.turnstile.reset();
         successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     }
