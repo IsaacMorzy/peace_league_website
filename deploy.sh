@@ -2,6 +2,7 @@
 # Peace League Astro -> Frappe multitenancy deploy.
 # Default target = sites/peaceleagueafrica.localhost/public (crowd:crowd 0775).
 # No sudo needed for the copy step. Pass --reload to also sudo-and-reload nginx.
+# Pass --clean: rm -rf TARGET/_astro/ before copy (Ponytail: orphan cleanup, OFF default).
 set -euo pipefail
 
 DIST="$(cd "$(dirname "$0")" && pwd)/peace_league_website/public/astro_pages"
@@ -41,10 +42,9 @@ test -d "$TARGET" || { echo "ERROR: $TARGET not a directory"; exit 1; }
 [ -w "$TARGET" ] || { echo "ERROR: $TARGET not writable by $(whoami)"; exit 1; }
 [ "$(realpath "$TARGET")" = "/" ] && { echo "ERROR: refusing root target"; exit 1; }
 
-echo "[3.5] clean _astro/"
-[ "$DO_CLEAN" = 1 ] && run rm -rf "$TARGET/_astro" || echo "  (skipped; --clean not set)"
-
-echo "[4] copy to $TARGET"
+echo "[4] clean + copy to $TARGET (DO_CLEAN=$DO_CLEAN)"
+# Ponytail: delete-before-adding guarded orphan-chunk cleanup before copy.
+[ "$DO_CLEAN" = 1 ] && run rm -rf "$TARGET/_astro"
 run cp -R "$DIST"/. "$TARGET"/
 
 echo "[5] nginx reload"
