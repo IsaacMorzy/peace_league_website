@@ -33,3 +33,4 @@
 {"run_id": "2026-07-27T10:13Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 3, "slur_sha": "255f5d5", "scope": "Fol-1 #144 closed + Fol-2 /donate Lighthouse + Fol-3 Slice 1 /privacy hero fluff cleanup"}
 {"run_id": "2026-07-27T10:14Z", "pattern": "recovery", "outcome": "open", "actions_taken": 1, "slur_sha": "7b61f0a", "scope": "cache-bypass probe \u2014 upstream nginx cache stale (77,103 B, fluff=1); human operator flush required (sudo nginx -s reload OR PURGE /privacy)"}
 {"run_id": "2026-07-27T10:20Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 2, "slur_sha": "bb98952", "scope": "Slice 1B+1C: flatten gradient hero on /awards and /fundraise per DESIGN.md atmospheric-gradient mandate"}
+{"run_id": "2026-07-27T10:23Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 3, "slur_sha": "8260cf1", "scope": "Recover fundraise broken markup + silence chatty aria-live timer"}

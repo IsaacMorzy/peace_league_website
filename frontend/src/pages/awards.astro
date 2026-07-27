@@ -22,8 +22,8 @@ import Footer from '../components/Footer.astro';
           across East Africa and the Great Lakes region.
         </p>
 
-        <!-- Countdown (semantically grouped as a list; aria-live announces updates) [fixing-accessibility] -->
-        <div class="flex justify-center gap-4 sm:gap-6 mb-10" id="countdown" role="timer" aria-live="polite" aria-atomic="true" aria-label="Countdown to awards ceremony on December 17, 2026">
+        <!-- Countdown (sr users can query on demand; live = off so we don't re-announce every second) [fixing-accessibility] -->
+        <div class="flex justify-center gap-4 sm:gap-6 mb-10" id="countdown" role="timer" aria-live="off" aria-label="Countdown to awards ceremony on December 17, 2026 — days, hours, minutes, seconds remaining">
           <div class="card-base px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
             <div class="text-3xl sm:text-4xl font-bold text-ink" id="countdown-days" aria-label="days remaining">—</div>
             <div class="text-xs text-steel uppercase tracking-wider mt-1">Days</div>
