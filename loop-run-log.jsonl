@@ -61,3 +61,5 @@
 {"run_id":"2026-07-27T14:07Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"4c0f774","scope":"awards+infra-fixes"}
 {"run_id":"2026-07-27T14:09Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"f1f86e3","scope":"awards-aria-resolve"}
 {"run_id":"2026-07-27T14:10Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"33252ba","scope":"awards-aria-complete"}
+{"run_id":"2026-07-27T14:10Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"4ad20f6","scope":"aria-db-audit-sh"}
+{"run_id":"2026-07-27T14:11Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"6fc7a00","scope":"awards-aria-final"}

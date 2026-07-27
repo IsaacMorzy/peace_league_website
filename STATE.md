@@ -168,3 +168,5 @@ Append a single line when:
 - 2026-07-27T14:09Z awards-aria-resolve: WCAG-fix for the dangling aria-labelledby="awards-hero" relation. Prior chain added the H1 id="awards-hero" but missed adding aria-labelledby to the wrapping <section>. Verified dist/awards/index.html: aria-labelledby=6, awards-hero target resolved. Future aria-labelledby passes elsewhere should add both the section attribute and the heading id in the SAME commit.
 
 - 2026-07-27T14:10Z awards-aria-complete: applied 3 missing aria-labelledby for awards-stats / awards-categories / awards-cta. dist/awards/index.html now resolves all 6 slugs. Closes the dangling-aria bug class on /awards. Pair with the new audit-aridadb.sh hook.
+
+- 2026-07-27T14:11Z awards-aria-final: Closed the last aria-labelledby dangling pointer on /awards. Added a sr-only <h2 id="awards-stats">Awards statistics at a glance</h2> inside the stats bar section so the section's aria-labelledby resolves. audit-aridadb + audit-astro-closures both exit 0. The aria-labelledby /awards chain is now genuinely 6/6 sailing — no more iterations.
