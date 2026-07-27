@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Libredesk from '../components/Libredesk.astro';
+import LibredeskAgent from '../components/LibredeskAgent.astro';
 import '@freshjuice/astro-search-plugin/styles.css';
 
 
@@ -20,6 +21,15 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://peaceleagueafrica.org');
 const pageTitle = `${title} | Peace League Africa`;
+
+// Slice 8A2 - mount agent KB only on routes where proactive chat adds value
+// (donate, volunteer, partner, causes, contact, careers, about, team, events).
+// `Libredesk` (settings + pre-chat form + widget.js async) is still rendered on
+// every page so the floating chat-launcher bubble appears site-wide.
+const agentHighValuePrefixes = ['/donate','/volunteer','/partner','/causes','/contact','/careers','/about','/team','/events'];
+const isAgentRoute = agentHighValuePrefixes.some(
+  (p) => Astro.url.pathname === p || Astro.url.pathname.startsWith(p + '/')
+);
 ---
 
 <!doctype html>
@@ -629,8 +639,8 @@ const pageTitle = `${title} | Peace League Africa`;
       import '@freshjuice/astro-search-plugin/element';
     </script>
 
-    <!-- Libredesk Chat Widget Component -->
-    <Libredesk />
+    <!-- Libredesk Chat Widget Component (always rendered) + Agent KB (only on high-value routes) -->
+    <Libredesk />{isAgentRoute && <LibredeskAgent />}
 
   </body>
 </html>
