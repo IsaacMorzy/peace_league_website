@@ -137,3 +137,22 @@ Append a single line when:
 
 - 2026-07-27T13:17Z deploy.sh: added --clean flag (rm -rf _astro/ before copy, OFF default). Live deploy verified clean + redeploy + served HTML unchanged. Push 0ef0eb7. [baseline-ui]
 
+
+- 2026-07-27T13:19Z deploy.sh polish+reconcile: [3.5] step folded into [4] (rename 'clean + copy to '), --clean added to -h help, misleading 'polish-succeeded' entries pruned from loop-run-log.jsonl + STATE.md. Real --clean deploy verified, /causes data-filter-cat=10, _astro/ chunks present, smoke HTTP/2 200. Push e8e54e8. [baseline-ui]
+
+- 2026-07-27T13:23Z slugify-migration: 5 files refactored to use lib/slugify (causes.astro causeSlugs map, Footer.astro import+map, causes/[slug].astro getStaticPaths + 3 share links + related link, index.astro cause href, fundraise.astro import+href). All 26 /causes/<slug> + 6 /fundraise?idea= paths verified HTTP/2 200. Push 717265f. [baseline-ui]
+
+
+
+- 2026-07-27T13:33Z filterPills-extraction: extracted wireFilterPills helper to frontend/src/lib/filterPills.ts (52 lines), then rewrote /causes and /gallery inline IIFEs into 5-line calls (each). Single source of truth for category-pill + aria-pressed + aria-live + role=status behaviour. Live smoke /causes + /gallery both HTTP/2 200, filter pills + aria-live markers intact, dist==served. Push 0e89bee. [baseline-ui]
+
+- 2026-07-27T13:35Z filterPills-tighten: dropped 3 'as HTMLElement' casts via HTMLElement|null typing; tightened ArrayLike<Element> -> ArrayLike<HTMLButtonElement>+ArrayLike<HTMLElement>; added typed generics to querySelectorAll/querySelector at /causes + /gallery call sites; codified countMessage (visible, total, cat) => string JSDoc contract. Live smoke /causes + /gallery both HTTP/2 200, filter markers + aria-live unchanged. Push f20a42f. [baseline-ui]
+
+
+- 2026-07-27T13:37Z events-layout-fix: audit of all 25 content pages found /events/[slug].astro missing </Layout>. /gallery had the same bug class (fixed earlier). One-line addition closes the wrapping <Layout>. Build green, /events + /events/peace-league-awards-gala-2026 + /events/global-peace-summit-2026 all HTTP 200. Push 949d7cf. [baseline-ui]
+
+
+- 2026-07-27T13:42Z audit-script-bugfix: e3cc4cd closed over a buggy audit script. Three real issues per code-reviewer: (1) '<Footer/>' regex didn't match the project '<Footer />' convention; (2) 'grep -c' exit-1 trap killed the loop on zero-match pages with 'set -e'; (3) fail rule was inverted, flagging real 0/0 dynamic shells as broken. New script: '<Footer[ \t]*/>' regex, 'grep -c ... || echo 0' guard, FAIL only when open > 0 AND open != close. Verified clean exit on current state + exit=1 on a deliberately-broken /causes (1 open / 0 close). pnpm hook still wires through. Push f622f2b. [baseline-ui]
+- 2026-07-27T13:46Z slugifyPost-lib: extracted /blog/[slug].astro's 5-step heading-anchor chain into frontend/src/lib/slugifyPost.ts composing tag-strip + entity-strip + lib/slugify. Documented intentional behaviour diffs (lowercase, underscore->dash, redundant multi-dash collapse removed). Build green, /blog + /blog/<known-slug> both HTTP 200. Push da546b1. [baseline-ui]
+
+- 2026-07-27T13:50Z churn: housekeeping commit (audit skip-rule exact-match + dedupe .gitignore + evict ephemeral lighthouse-reports from index). Locked behind  gate. Root-cause on prior false-positive: bash case-glob with  did NOT match sitemap.astro so a real <main hit was exposed after awk-occurrence polish; tightened via  basename equality. No .astro, no deps, no build-config changes this commit.

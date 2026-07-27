@@ -46,3 +46,12 @@
 {"run_id": "2026-07-27T12:03Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 2, "slur_sha": "7eb113c", "scope": "Audit-execute Tier-2 pt3: /testimonials.astro (52->280 lines, 6 program-tied testimonies with star ratings blockquote+cite+program tag, WebPage schema with Review[]) + /causes.astro (126->280 lines, 25-cause data-driven grid with progress bars + View Cause + Donate Now stacked buttons, ItemList JSON-LD with 25 ListItem entries). Both Slice-1 flat-hero, bg-surface, border-hairline; querySelectorAll(cards) ready for client-side filter."}
 {"run_id":"2026-07-27T13:13Z","pattern":"adhoc","outcome":"closed","actions_taken":8,"slur_sha":"","scope":"polish-final+outdir-fix+deploy-live"}
 {"run_id":"2026-07-27T13:17Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"0ef0eb7","scope":"deploy.sh"}
+{"run_id":"2026-07-27T13:19Z","pattern":"adhoc","outcome":"closed","actions_taken":3,"slur_sha":"e8e54e8","scope":"deploy.sh polish+reconcile"}
+{"run_id":"2026-07-27T13:23Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"717265f","scope":"slugify migration"}
+{"run_id":"2026-07-27T13:30Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"05838d7","scope":"gallery file fix + content fill"}
+{"run_id":"2026-07-27T13:33Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"0e89bee","scope":"filterPills lib extraction"}
+{"run_id":"2026-07-27T13:35Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"f20a42f","scope":"filterPills type-tightening"}
+{"run_id":"2026-07-27T13:37Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"949d7cf","scope":"events layout close fix"}
+{"run_id":"2026-07-27T13:42Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"f622f2b","scope":"audit-astro-closures bugfix"}
+{"run_id":"2026-07-27T13:46Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"da546b1","scope":"slugifyPost lib"}
+{"run_id":"2026-07-27T13:50Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"cea86f5","scope":"none"}
