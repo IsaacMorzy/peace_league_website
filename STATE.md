@@ -172,3 +172,4 @@ Append a single line when:
 - 2026-07-27T14:11Z awards-aria-final: Closed the last aria-labelledby dangling pointer on /awards. Added a sr-only <h2 id="awards-stats">Awards statistics at a glance</h2> inside the stats bar section so the section's aria-labelledby resolves. audit-aridadb + audit-astro-closures both exit 0. The aria-labelledby /awards chain is now genuinely 6/6 sailing — no more iterations.
 ## STATE.md entry
 - 2026-07-27Z deploy: hero light mode fix + lighthouse infra + a11y improvements. HEAD 507ce09 pushed to upstream/main. lighthouse baseline: Perf 83, A11y 94, BP 100, SEO 92. Blog confirmed working live (200).
+- 2026-07-27Z perf: lazy-load search plugin (68KB savings), defer WOW effects to idle callback, add requestIdleCallback fallback, add import().catch handler. Perf baseline: 83. Build: 144 pages ✓
