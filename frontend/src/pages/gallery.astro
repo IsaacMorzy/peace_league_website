@@ -1,24 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
-const categories = ['All', 'Education', 'Health', 'Events', 'Community'];
+const categories = ["All", "Education", "Health", "Events", "Community"];
 
 const galleryImages = [
-  { src: 'photo-1497633762265-9d179a990aa6', alt: 'Students in a peace education classroom', category: 'Education', desc: 'Students engaging with our peace curriculum in a classroom in Nairobi, learning conflict resolution and empathy skills.' },
-  { src: 'photo-1559027615-cd4628902d4a', alt: 'Youth leadership workshop participants', category: 'Education', desc: 'Young leaders from across East Africa participate in an intensive workshop on civic engagement and public speaking.' },
-  { src: 'photo-1571019613454-1cb2f99b2d8b', alt: 'Community health outreach workers', category: 'Health', desc: 'Our mobile clinic team provides free health screenings and nutrition counseling to rural communities.' },
-  { src: 'photo-1534430480872-3498386e7856', alt: 'Clean water well inauguration ceremony', category: 'Community', desc: 'Celebrating the inauguration of our 50th clean water well, providing safe drinking water to thousands.' },
-  { src: 'photo-1540575467063-178a50c2df87', alt: 'Annual gala fundraising event', category: 'Events', desc: 'Our annual gala brings together supporters, partners, and beneficiaries for an evening of inspiration.' },
-  { src: 'photo-1507003211169-0a1dd7228f2d', alt: 'Youth peace club gathering', category: 'Community', desc: 'Peace club members meet weekly to organize community service projects and peace-building activities.' },
-  { src: 'photo-1543269865-cbf427effbad', alt: 'Community dialogue session', category: 'Events', desc: 'Community members gather for an open dialogue on reconciliation and building trust across divides.' },
-  { src: 'photo-1488521787991-ed7bbaae773c', alt: 'School supplies distribution', category: 'Education', desc: 'Distributing school supplies to children in underserved communities to support access to education.' },
-  { src: 'photo-1488521787991-ed7bbaae773c', alt: 'Women empowerment workshop', category: 'Community', desc: 'Women entrepreneurs gather for a workshop on financial literacy, leadership, and business skills.' },
+  { src: "photo-1497633762265-9d179a990aa6", alt: "Students in a peace education classroom", category: "Education", desc: "Students engaging with our peace curriculum in a classroom in Nairobi, learning conflict resolution and empathy skills." },
+  { src: "photo-1559027615-cd4628902d4a", alt: "Youth leadership workshop participants", category: "Education", desc: "Young leaders from across East Africa participate in an intensive workshop on civic engagement and public speaking." },
+  { src: "photo-1571019613454-1cb2f99b2d8b", alt: "Community health outreach workers", category: "Health", desc: "Our mobile clinic team provides free health screenings and nutrition counseling to rural communities." },
+  { src: "photo-1534430480872-3498386e7856", alt: "Clean water well inauguration ceremony", category: "Community", desc: "Celebrating the inauguration of our 50th clean water well, providing safe drinking water to thousands." },
+  { src: "photo-1540575467063-178a50c2df87", alt: "Annual gala fundraising event", category: "Events", desc: "Our annual gala brings together supporters, partners, and beneficiaries for an evening of inspiration." },
+  { src: "photo-1507003211169-0a1dd7228f2d", alt: "Youth peace club gathering", category: "Community", desc: "Peace club members meet weekly to organize community service projects and peace-building activities." },
+  { src: "photo-1543269865-cbf427effbad", alt: "Community dialogue session", category: "Events", desc: "Community members gather for an open dialogue on reconciliation and building trust across divides." },
+  { src: "photo-1488521787991-ed7bbaae773c", alt: "School supplies distribution", category: "Education", desc: "Distributing school supplies to children in underserved communities to support access to education." },
+  { src: "photo-1573497019940-1c28c88b4f3e", alt: "Women empowerment workshop", category: "Community", desc: "Women entrepreneurs gather for a workshop on financial literacy, leadership, and business skills." },
 ];
 ---
 
-<Layout title="Gallery" description="Browse Peace League Africa's photo gallery featuring peace education, community health, clean water, and youth empowerment moments from across Africa.">
+<Layout title="Gallery" description="Browse Peace League Africa photo gallery featuring peace education, community health, clean water, and youth empowerment moments from across Africa.">
   <Navigation />
 
   <main id="main-content">
@@ -30,14 +30,15 @@ const galleryImages = [
         { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://peaceleagueafrica.org/gallery" }
       ]
     })} />
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
+
+    <!-- Hero -->
+    <section class="hero-inner grain-overlay text-white py-4 lg:py-8 relative">
       <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
       <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Gallery</h1>
-        <p class="mt-4 text-lg text-white/80 max-w-2xl">From a child's first day at school to a community's first clean water well — see the faces and places behind 10 years of peace-building across Africa.</p>
+        <p class="mt-4 text-lg text-white/80 max-w-2xl">From a child&apos;s first day at school to a community&apos;s first clean water well — see the faces and places behind 10 years of peace-building across Africa.</p>
       </div>
       <div class="geometric-shapes" aria-hidden="true">
         <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
@@ -45,4 +46,112 @@ const galleryImages = [
         <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
         <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    </section>
+
+    <!-- Category filter pills (interactive, mirrors /causes landing pattern) -->
+    <section class="py-6 px-4 sm:px-6 lg:px-8 bg-canvas border-b border-hairline">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="sr-only">Filter photos by category.</p>
+        <div role="group" aria-label="Filter photos by category" class="flex flex-wrap gap-2 justify-center">
+          {categories.map((cat) => (
+            <button
+              type="button"
+              class={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors ${cat === "All" ? "bg-primary text-on-primary border-primary" : "bg-canvas text-steel border-hairline hover:text-ink hover:border-accent/40"}`}
+              data-filter-cat={cat}
+              aria-pressed={cat === "All" ? "true" : "false"}
+            >{cat}</button>
+          ))}
+        </div>
+        <p class="text-xs text-steel mt-2" data-gallery-count aria-live="polite" aria-atomic="true">Showing all {galleryImages.length} photos.</p>
+        <p class="hidden text-center text-steel py-12" data-gallery-empty role="status">No photos in this category yet — check back soon.</p>
+      </div>
+    </section>
+
+    <!-- Gallery grid -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryImages.map((img, idx) => (
+            <figure class="card-base p-0 overflow-hidden" data-photo-card data-category={img.category}>
+              <div class="aspect-[4/3] overflow-hidden bg-hairline">
+                <img
+                  src={`https://images.unsplash.com/${img.src}?w=800&q=85&auto=format&fit=crop`}
+                  alt={img.alt}
+                  loading={idx === 0 ? undefined : "lazy"}
+                  width="800"
+                  height="600"
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="p-5 flex flex-col gap-2">
+                <span class="badge-tag self-start">{img.category}</span>
+                <p class="text-sm text-steel leading-relaxed">{img.desc}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Outro CTA: Submit-a-photo -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas border-t border-hairline">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-heading-3 text-ink mb-4">Share your peace story</h2>
+        <p class="text-body-md text-steel mb-4">
+          Every photo in this gallery was taken with consent in the field. If you are a Peace League partner, volunteer, or community member — send us your photo and we will add it to the next quarterly release.
+        </p>
+        <p class="text-body-sm text-steel mb-8">
+          We credit every contributor and respect community photography protocols.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/contact?intent=photo" class="btn btn-accent btn-large">Submit a photo</a>
+          <a href="/blog" class="btn btn-large border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all">Read field stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo-card live filter JS (mirrors /causes landing IIFE) -->
+    <script>
+      (function() {
+        const buttons = document.querySelectorAll("[data-filter-cat]");
+        const cards = document.querySelectorAll("[data-photo-card]");
+        const countEl = document.querySelector("[data-gallery-count]");
+        const emptyEl = document.querySelector("[data-gallery-empty]");
+        if (!buttons.length || !cards.length) return;
+        function applyFilter(cat) {
+          let visible = 0;
+          cards.forEach((card) => {
+            const match = cat === "All" || card.dataset.category === cat;
+            card.style.display = match ? "" : "none";
+            if (match) visible++;
+          });
+          if (countEl) {
+            countEl.textContent = cat === "All"
+              ? `Showing all ${cards.length} photos.`
+              : `Showing ${visible} photo(s) in ${cat}.`;
+          }
+          if (emptyEl) emptyEl.hidden = visible > 0;
+        }
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const cat = btn.dataset.filterCat || "All";
+            buttons.forEach((b) => {
+              const isActive = b.dataset.filterCat === cat;
+              b.classList.toggle("bg-primary", isActive);
+              b.classList.toggle("text-on-primary", isActive);
+              b.classList.toggle("border-primary", isActive);
+              b.classList.toggle("bg-canvas", !isActive);
+              b.classList.toggle("text-steel", !isActive);
+              b.classList.toggle("border-hairline", !isActive);
+              b.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
+            applyFilter(cat);
+          });
+        });
+      })();
+    </script>
+  </main>
+
+  <Footer />
+</Layout>
