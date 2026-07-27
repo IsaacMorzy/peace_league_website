@@ -58,3 +58,4 @@
 {"run_id":"2026-07-27T13:56Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"56ccf22","scope":"index-ui-skills"}
 {"run_id":"2026-07-27T13:57Z","pattern":"adhoc","outcome":"closed","actions_taken":2,"slur_sha":"aab9cfc","scope":"index-aria-fix"}
 {"run_id":"2026-07-27T13:58Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"8573a7f","scope":"index-aria-honest"}
+{"run_id":"2026-07-27T14:07Z","pattern":"adhoc","outcome":"closed","actions_taken":1,"slur_sha":"4c0f774","scope":"awards+infra-fixes"}
