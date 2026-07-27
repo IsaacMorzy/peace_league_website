@@ -93,28 +93,28 @@ import causes from '../lib/causes-data.json';
             <legend class="block text-base font-medium text-ink mb-3">How would you like to give?</legend>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" role="radiogroup" aria-label="Payment method">
               <label class="payment-method relative cursor-pointer">
-                <input type="radio" name="payment_method" value="mpesa" class="peer sr-only" />
+                <input type="radio" name="payment_method" value="MPesa" class="peer sr-only" />
                 <div class="rounded-xl border border-hairline p-4 peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
                   <div class="text-base font-semibold text-ink">M-Pesa</div>
                   <div class="text-xs text-steel mt-1">Mobile money</div>
                 </div>
               </label>
               <label class="payment-method relative cursor-pointer">
-                <input type="radio" name="payment_method" value="card" class="peer sr-only" checked />
+                <input type="radio" name="payment_method" value="Card" class="peer sr-only" checked />
                 <div class="rounded-xl border-2 border-accent bg-accent/5 p-4 peer-checked:border-accent peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
                   <div class="text-base font-semibold text-ink">Card</div>
                   <div class="text-xs text-steel mt-1">Visa &middot; Mastercard</div>
                 </div>
               </label>
               <label class="payment-method relative cursor-pointer">
-                <input type="radio" name="payment_method" value="bank" class="peer sr-only" />
+                <input type="radio" name="payment_method" value="Bank" class="peer sr-only" />
                 <div class="rounded-xl border border-hairline p-4 peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
                   <div class="text-base font-semibold text-ink">Bank</div>
                   <div class="text-xs text-steel mt-1">ACH &middot; Wire</div>
                 </div>
               </label>
               <label class="payment-method relative cursor-pointer">
-                <input type="radio" name="payment_method" value="paypal" class="peer sr-only" />
+                <input type="radio" name="payment_method" value="PayPal" class="peer sr-only" />
                 <div class="rounded-xl border border-hairline p-4 peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
                   <div class="text-base font-semibold text-ink">PayPal</div>
                   <div class="text-xs text-steel mt-1">International</div>
@@ -125,8 +125,85 @@ import causes from '../lib/causes-data.json';
 
           <hr class="my-8 border-hairline" />
 
-          <button type="submit" class="btn btn-accent btn-large w-full justify-center">
-            Continue to give safely
+          <fieldset>
+            <legend class="block text-base font-medium text-ink mb-3">Your details</legend>
+            <p class="text-sm text-steel mb-5">Required to issue your tax-deductible receipt and (for M-Pesa) the STK Push prompt.</p>
+
+            <div class="space-y-4">
+              <label class="block">
+                <span class="block text-sm font-medium text-ink mb-1.5">Full name</span>
+                <input
+                  type="text"
+                  name="donor_name"
+                  required
+                  autocomplete="name"
+                  class="w-full h-12 px-4 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-muted text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+                  placeholder="Amina Wanjiku"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-sm font-medium text-ink mb-1.5">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="w-full h-12 px-4 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-muted text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+                  placeholder="amina@example.org"
+                />
+              </label>
+
+              <div id="phone-row" class="hidden">
+                <noscript>
+                  <style>#phone-row { display: block !important; }</style>
+                </noscript>
+                <label class="block">
+                  <span class="block text-sm font-medium text-ink mb-1.5">M-Pesa phone number</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    class="w-full h-12 px-4 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-muted text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+                    placeholder="+254 7XX XXX XXX"
+                    aria-describedby="phone-help"
+                  />
+                  <p id="phone-help" class="mt-1 text-xs text-steel">We will send the STK Push prompt to this number. Format: +254XXXXXXXXX or 07XXXXXXXX.</p>
+                </label>
+              </div>
+
+              <label class="block">
+                <span class="block text-sm font-medium text-ink mb-1.5">Message (optional)</span>
+                <textarea
+                  name="message"
+                  rows="3"
+                  maxlength="500"
+                  class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-muted text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors resize-none"
+                  placeholder="In memory of, in honor of, or any dedication for your receipt..."
+                ></textarea>
+              </label>
+
+              <label class="flex items-start gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  name="anonymous"
+                  value="1"
+                  class="mt-1 w-4 h-4 rounded border-hairline text-accent focus:ring-accent"
+                />
+                <span class="text-sm text-steel">Show my donation as anonymous on the public leaderboard.</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <hr class="my-8 border-hairline" />
+
+          <!-- Cloudflare Turnstile (matches nominate.astro / tickets.astro / [slug].astro wiring) -->
+          <div id="cf-turnstile-widget" class="my-6 flex justify-center" style="min-height:65px"></div>
+          <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-token" value="" />
+
+          <button id="donate-submit" type="submit" class="btn btn-accent btn-large w-full justify-center">
+            Complete my donation
             <svg class="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </button>
 
@@ -158,6 +235,102 @@ import causes from '../lib/causes-data.json';
 
 <script id="causes-json" type="application/json" set:html={JSON.stringify(causes)} is:inline />
 <script>
+  // ── Phone field visibility: shown only when MPesa selected (matches server contract) ──
+  function syncPhoneVisibility() {
+    var checked = document.querySelector('input[name="payment_method"]:checked');
+    var phoneRow = document.getElementById('phone-row');
+    if (!phoneRow) return;
+    var isMpesa = checked && checked.value === 'MPesa';
+    phoneRow.classList.toggle('hidden', !isMpesa);
+    var phoneInput = phoneRow.querySelector('input[name="phone"]');
+    if (phoneInput) phoneInput.required = isMpesa;
+  }
+  document.querySelectorAll('input[name="payment_method"]').forEach(function (radio) {
+    radio.addEventListener('change', syncPhoneVisibility);
+  });
+  syncPhoneVisibility();
+
+  // ── Custom amount route: when user types a value > 0, route that under name=amount
+  // (server creates a Donation record from data.amount; data.custom_amount is read but
+  // not used. We disable the radios + custom_amount input so the browser POSTs only the
+  // hidden override.) # ponytail: full, extend peace_league_website.api.create_donation
+  // to read custom_amount with priority over the radio.
+  var customAmountInput = document.querySelector('input[name="custom_amount"]');
+  if (customAmountInput) {
+    customAmountInput.addEventListener('input', function () {
+      var v = this.value.trim();
+      var radios = document.querySelectorAll('#amount-grid input[name="amount"]');
+      var override = document.getElementById('custom-amount-override');
+      if (v && parseFloat(v) > 0) {
+        // Disable radios so they don't POST name=amount and override our hidden.
+        radios.forEach(function (r) { r.disabled = true; r.checked = false; });
+        if (override) {
+          override.value = v;
+        } else {
+          var h = document.createElement('input');
+          h.type = 'hidden';
+          h.name = 'amount';
+          h.value = v;
+          h.id = 'custom-amount-override';
+          this.form.appendChild(h);
+        }
+        // Disable custom_amount input so browser skips it from POST payload.
+        this.disabled = true;
+      } else {
+        radios.forEach(function (r) { r.disabled = false; r.checked = r.defaultChecked; });
+        if (override) override.remove();
+        this.disabled = false;
+      }
+    });
+  }
+
+  // ── Cloudflare Turnstile (matches nominate.astro / tickets.astro / [slug].astro wiring) ──
+  const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+  let cfToken = '';
+  function setCfToken(t) {
+    cfToken = t;
+    var el = document.getElementById('cf-turnstile-token');
+    if (el) el.value = t;
+  }
+  if (TURNSTILE_SITE_KEY) {
+    window.onTurnstileLoad = function () {
+      if (window.turnstile) {
+        window.turnstile.render('#cf-turnstile-widget', {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: setCfToken,
+          'error-callback': function () { setCfToken(''); },
+          'expired-callback': function () { setCfToken(''); },
+        });
+      }
+    };
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  // ── Submit guard: block if Turnstile required but not completed ──
+  var submitForm = document.querySelector('form');
+  if (submitForm) {
+    submitForm.addEventListener('submit', function (e) {
+      if (TURNSTILE_SITE_KEY && !cfToken) {
+        e.preventDefault();
+        var btn = document.getElementById('donate-submit');
+        if (btn) {
+          btn.textContent = 'Complete the security check below';
+          btn.classList.add('opacity-60');
+          setTimeout(function () {
+            btn.textContent = 'Complete my donation';
+            btn.classList.remove('opacity-60');
+          }, 3500);
+        }
+        var widget = document.getElementById('cf-turnstile-widget');
+        if (widget) widget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+
   // Per-cause amount preset scaler.
   // Reads ?cause=<name> from the URL. If present, looks up the cause in the
   // inlined causes-data island and rescales the 4 amount radios to 1% / 5% /
