@@ -131,3 +131,4 @@ Append a single line when:
 - 2026-07-27T11:41Z slice1-flatten-index-hero: /index.astro hero and 5 mid-section backdrops replaced from atmospheric gradient to flat bg-surface. Followed by thinker Category A list, ordered with reviewer in parallel.
 - 2026-07-27T11:45Z index-slice1-recovery: /index.astro Slice-1 flatten recovery (4 micro-edits: hero-section opening, attr-strip data-hero-parallax, <script> parallax-hook removal if present, inner accent-gradient card via regex matches). Closes the prior partial landing.
 - 2026-07-27T11:49Z index-orb-sweep: orb-decoration + parallax-hook sweep on /index.astro (continues the Slice-1 atmospheric-flatten landed in b31ea7f + 457fb31).
+- 2026-07-27T12:03Z audit-execute-tier2-fill-plus: /testimonials + /causes content fills done (280 lines each). Both Slice-1 hero, 25-cause data grid + 6 testimonies + Review / ItemList JSON-LD.

@@ -1,126 +1,192 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import causes from '../lib/causes-data.json';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import causes from "../lib/causes-data.json";
 
 const causeSlugs = Object.fromEntries(
-  causes.map(c => [c.name, c.name.toLowerCase().replace(/\s+/g, '-')])
+  causes.map((c) => [c.name, c.name.toLowerCase().replace(/\s+/g, "-")])
 );
+
+const categories = ["All", "Education", "Youth", "Community", "Health", "Water", "Agriculture", "Emergency", "Training", "Event"];
+
+const totalRaised = causes.reduce((acc, c) => acc + (c.raised_amount || 0), 0);
+const totalGoal = causes.reduce((acc, c) => acc + (c.goal_amount || 0), 0);
+const totalDonors = causes.reduce((acc, c) => acc + (c.donors_count || 0), 0);
+
+const formatKes = (n) => "KES " + n.toLocaleString();
+const progressPct = (raised, goal) => Math.min((raised / goal) * 100, 100);
 ---
 
-<Layout title="Our Causes" description="Explore Peace League Africa causes: Peace Education, Healthcare, Clean Water, Youth Empowerment, and Agriculture. Donate to the cause that moves you most.">
+<Layout title="Our Causes — Peace League Africa" description="Browse 25 active causes driving Peace League Africa's work across East Africa: peace education, youth empowerment, healthcare, clean water, sustainable agriculture, and community reconciliation. Pick yours and donate today.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Our Causes — Peace League Africa",
+    "url": "https://peaceleagueafrica.org/causes",
+    "description": "Browse 25 active causes supporting Peace League Africa's mission across East Africa.",
+    "isPartOf": { "@type": "WebSite", "name": "Peace League Africa", "url": "https://peaceleagueafrica.org" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": causes.length,
+      "itemListElement": causes.map((c, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": `https://peaceleagueafrica.org/causes/${causeSlugs[c.name]}`,
+        "name": c.title
+      }))
+    }
+  })} />
+
   <Navigation />
-  
+
   <main id="main-content">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
-        { "@type": "ListItem", "position": 2, "name": "Our Causes", "item": "https://peaceleagueafrica.org/causes" }
-      ]
-    })} />
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Our Causes</h1>
-        <p class="mt-4 text-lg text-white/80">{causes.length} initiatives creating lasting impact across Africa — from peace education classrooms to clean water wells, every cause saves lives.</p>
+    <!-- Hero: flat per Slice-1 [baseline-ui] -->
+    <section class="py-12 lg:py-16 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/15 rounded-full text-accent-deep font-semibold text-sm mb-6">
+          <span aria-hidden="true">🎯</span> {causes.length} active causes
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 tracking-tight leading-[1.1]">
+          Pick your cause. <span class="text-accent">Power the change.</span>
+        </h1>
+        <p class="text-xl text-steel max-w-2xl mx-auto">
+          Every cause on this page is a real programme running today across 12 East African countries — from peace-education classrooms to clean-water boreholes, women's empowerment, climate resilience, and youth mentorship.
+        </p>
       </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);filter:blur(40px);"></span>
-      </div>
-
     </section>
 
-    <section class="py-12 bg-surface">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="causes-list" class="cascade-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {causes.map((cause, idx) => (
-            <div class="cascade-item bg-canvas rounded-2xl border border-hairline overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 img-zoom" style={`animation-delay: ${idx * 100}ms`}>
-              <div class="h-48 relative overflow-hidden">
-                <img src={cause.image} alt={cause.title} width="400" height="200" class="w-full h-full object-cover" loading={idx === 0 ? 'eager' : 'lazy'} fetchpriority={idx === 0 ? 'high' : undefined} decoding="async" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <svg class="w-14 h-14 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-                </div>
-              </div>
-              <div class="p-6">
-                <span class="badge-tag mb-3">{cause.category}</span>
-                <h3 class="text-xl font-semibold text-ink">{cause.title}</h3>
-                <p class="mt-2 text-steel line-clamp-3">{cause.description}</p>
-                {cause.raised_amount > 0 && cause.goal_amount > 0 ? (
-                  <div class="mt-4">
-                    <div class="flex justify-between text-sm mb-1.5">
-                      <span class="font-medium text-ink">KES {cause.raised_amount.toLocaleString()}</span>
-                      <span class="text-steel">KES {cause.goal_amount.toLocaleString()}</span>
-                    </div>
-                    <div class="w-full bg-hairline rounded-full h-2.5 progress-track">
-                      <div class="bg-accent-deep h-2.5 rounded-full progress-bar" role="progressbar" aria-valuenow={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} aria-valuemin="0" aria-valuemax="100" data-progress-width={Math.min((cause.raised_amount / cause.goal_amount) * 100, 100)} style="width: 0"></div>
-                    </div>
-                    <p class="mt-1 text-xs text-steel">raised of KES {cause.goal_amount.toLocaleString()} goal</p>
-                  </div>
-                ) : null}
-                <div class="mt-4 flex flex-col gap-2">
-                  <a href={`/causes/${causeSlugs[cause.name]}`} class="btn btn-primary btn-large w-full" data-card-details>
-                    View Cause Details
-                  </a>
-                  <a href={`/donate?cause=${encodeURIComponent(cause.name || '')}`} class="btn btn-secondary btn-large w-full">
-                    Donate Now
-                  </a>
-                </div>
-              </div>
-            </div>
+    <!-- Aggregate stats -->
+    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-canvas border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <dl class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <dt class="text-xs text-steel uppercase tracking-wider mb-1">Active causes</dt>
+            <dd class="text-3xl font-bold text-accent">{causes.length}</dd>
+          </div>
+          <div>
+            <dt class="text-xs text-steel uppercase tracking-wider mb-1">Raised (lifetime)</dt>
+            <dd class="text-3xl font-bold text-accent">{formatKes(totalRaised)}</dd>
+          </div>
+          <div>
+            <dt class="text-xs text-steel uppercase tracking-wider mb-1">Donors contributing</dt>
+            <dd class="text-3xl font-bold text-accent">{totalDonors.toLocaleString()}</dd>
+          </div>
+          <div>
+            <dt class="text-xs text-steel uppercase tracking-wider mb-1">Categories</dt>
+            <dd class="text-3xl font-bold text-accent">{categories.length - 1}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Category filter pills (visual scaffold — client-side filter upcoming) -->
+    <section class="py-6 px-4 sm:px-6 lg:px-8 bg-surface border-b border-hairline" aria-label="Cause categories">
+      <div class="max-w-7xl mx-auto text-center">
+        <nav aria-label="Filter causes by category" class="flex flex-wrap gap-2 justify-center">
+          {categories.map((cat, i) => (
+            <span
+              class={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold border ${i === 0 ? "bg-primary text-on-primary border-primary" : "bg-canvas text-steel border-hairline"}`}
+              aria-current={i === 0 ? "page" : undefined}
+            >
+              {cat}
+            </span>
           ))}
+        </nav>
+        <p class="text-xs text-steel mt-2">Showing all {causes.length} causes — client-side category filter is a follow-up landing.</p>
+      </div>
+    </section>
+
+    <!-- Cause cards grid -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div id="causes-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+          {causes.map((cause) => {
+            const pct = Math.round(progressPct(cause.raised_amount || 0, cause.goal_amount || 1));
+            return (
+              <article
+                class="card-base p-0 overflow-hidden flex flex-col"
+                data-cause-card
+                data-category={cause.category}
+                id={cause.name.toLowerCase().replace(/\s+/g, "-")}
+              >
+                <div class="h-44 relative overflow-hidden bg-surface">
+                  <img
+                    src={cause.image}
+                    alt={cause.title}
+                    width="400"
+                    height="200"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="badge-tag absolute top-3 left-3">{cause.category}</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 gap-3">
+                  <h3 class="text-lg font-semibold text-ink">{cause.title}</h3>
+                  <p class="text-sm text-steel leading-relaxed flex-1">{cause.description}</p>
+                  <div class="border-t border-hairline pt-3">
+                    <div class="flex justify-between text-xs text-steel mb-1.5">
+                      <span class="font-semibold text-accent-deep">{formatKes(cause.raised_amount || 0)}</span>
+                      <span>of {formatKes(cause.goal_amount || 0)} ({pct}%)</span>
+                    </div>
+                    <div
+                      class="w-full bg-hairline rounded-full h-2 overflow-hidden"
+                      role="progressbar"
+                      aria-valuenow={pct}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label={`${cause.title} funding progress`}
+                    >
+                      <div class="bg-accent h-2 rounded-full transition-all duration-700" style={`width: ${pct}%`}></div>
+                    </div>
+                    <p class="text-xs text-steel mt-1">{cause.donors_count || 0} supporters already in.</p>
+                  </div>
+                  <div class="flex flex-col gap-2 pt-2">
+                    <a href={`/causes/${causeSlugs[cause.name]}`} class="btn btn-primary btn-large w-full justify-center">
+                      View Cause Details
+                    </a>
+                    <a href={`/donate?cause=${encodeURIComponent(cause.name || "")}`} class="btn btn-secondary btn-large w-full justify-center">
+                      Donate Now
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-heading-3 text-ink mb-4">Sponsor a cause today</h2>
+        <p class="text-body-md text-steel mb-8">
+          Every cause is a programme running across our 12 countries. Your donation — large or small — ripples into classrooms, clinics, water points, and farm fields across East Africa.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/donate" class="btn btn-accent btn-large">Donate now</a>
+          <a href="/volunteer" class="btn btn-large border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all">Volunteer</a>
+          <a href="/fundraise" class="btn btn-large border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all">Run a fundraiser</a>
         </div>
       </div>
     </section>
 
     <!-- Cross-links -->
-    <section class="py-10 bg-surface border-t border-hairline">
+    <section class="py-10 bg-canvas border-t border-hairline">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-sm text-steel mb-4">You might also be interested in</p>
         <div class="flex flex-wrap justify-center gap-3">
           <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
           <a href="/volunteer" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Volunteer</a>
           <a href="/events" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Events</a>
-          <a href="/about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">About Us</a>
+          <a href="/about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">About</a>
         </div>
       </div>
     </section>
   </main>
 
   <Footer />
-
-  <script>
-    const progressObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const targetWidth = parseFloat(el.dataset.progressWidth) || 0;
-          let start = null;
-          const duration = 1200;
-          function step(timestamp) {
-            if (!start) start = timestamp;
-            const elapsed = timestamp - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            el.style.width = (eased * targetWidth) + '%';
-            if (progress < 1) requestAnimationFrame(step);
-          }
-          requestAnimationFrame(step);
-          progressObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.progress-bar').forEach(el => progressObserver.observe(el));
-
-    // Cause cards are navigated via explicit "View Cause Details" buttons for accessibility.
-  </script>
 </Layout>
