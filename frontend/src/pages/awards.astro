@@ -2,9 +2,46 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const siteUrl = Astro.site?.toString() ?? "https://peaceleagueafrica.org/";
+const awardsEventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Peace League Africa Awards 2026",
+  "description": "Awards ceremony celebrating champions of peace-building, community service, and leadership across East Africa.",
+  "startDate": "2026-12-17T10:00:00+03:00",
+  "endDate": "2026-12-17T15:00:00+03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "August 7th Memorial Park",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Uhuru Highway next to Cooperative Bank",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Peace League Africa",
+    "url": siteUrl
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": siteUrl + "awards/tickets",
+    "price": "3500",
+    "priceCurrency": "KES",
+    "availability": "https://schema.org/InStock"
+  }
+};
 ---
 
 <Layout title="Peace League Awards 2026" description="Browse categories, vote for nominees, and celebrate excellence in peace-building across Africa. Awards announced December 5, 2026.">
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(awardsEventSchema)}></script>
+  </Fragment>
   <Navigation />
 
   <main id="main-content" class="min-h-screen">
@@ -14,7 +51,7 @@ import Footer from '../components/Footer.astro';
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-6">
           <span aria-hidden="true">🏆</span> 2026 Awards
         </div>
-        <h1 class="text-heading-1 text-ink mb-6 max-w-4xl mx-auto">
+        <h1 id="awards-hero" class="text-heading-1 text-ink mb-6 max-w-4xl mx-auto">
           Peace League Africa Awards
         </h1>
         <p class="text-body-md text-steel mb-8 max-w-2xl mx-auto">
@@ -199,10 +236,10 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- How It Works -->
-    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+    <section aria-labelledby="awards-how-it-works" class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-heading-3 text-ink mb-4">How It Works</h2>
+          <h2 id="awards-how-it-works" class="text-heading-3 text-ink mb-4">How It Works</h2>
           <p class="text-body-md text-steel max-w-xl mx-auto">Three simple steps to participate in the Peace League Awards</p>
         </div>
         <ol class="grid grid-cols-1 md:grid-cols-3 gap-8 list-none">
@@ -232,13 +269,13 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Tickets / Pricing -->
-    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
+    <section aria-labelledby="awards-tickets" class="py-section px-4 sm:px-6 lg:px-8 bg-surface">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-10">
           <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-4">
             🎟️ Secure Your Seat
           </div>
-          <h2 class="text-heading-3 text-ink mb-4">Attend the Gala</h2>
+          <h2 id="awards-tickets" class="text-heading-3 text-ink mb-4">Attend the Gala</h2>
           <p class="text-body-md text-steel max-w-xl mx-auto">
             Join us on December 17, 2026 at August 7th Memorial Park, Nairobi for an unforgettable day of recognition.
           </p>

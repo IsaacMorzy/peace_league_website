@@ -6,11 +6,13 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
     "astro": "astro",
-    "audit:astro-closures": "bash scripts/audit-astro-closures.sh"
+    "audit:astro-closures": "bash scripts/audit-astro-closures.sh",
+    "audit:lighthouse": "node scripts/lighthouse-sweep.mjs --base-url http://localhost:4321 --routes-file scripts/routes.txt",
+    "audit:playwright:ui-smoke": "node scripts/playwright-sweep.mjs",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/node": "^10.1.2",
