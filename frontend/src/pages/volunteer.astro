@@ -136,7 +136,7 @@ const process = [
           <h2 class="text-heading-3 text-ink mb-4">From application to first impact</h2>
           <p class="text-body-md text-steel">Four steps. Average time-to-first-volunteer-hour: 14 days.</p>
         </div>
-        <ol class="grid grid-cols-1 md:grid-cols-4 gap-6 list-none">
+        <ol class="grid grid-cols-1 md:grid-cols-4 gap-6 list-none" aria-label="Volunteer onboarding steps">
           {process.map((p) => (
             <li class="card-base p-6 flex flex-col gap-3">
               <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent text-primary font-bold text-lg shrink-0" aria-hidden="true">{p.step}</span>
@@ -177,7 +177,8 @@ const process = [
             <label for="vol-skills" class="text-sm font-semibold text-ink">Skills you bring (one paragraph)</label>
             <textarea id="vol-skills" name="skills" rows="3" placeholder="Languages, design, research, fundraising, M&E…"></textarea>
           </div>
-          <button type="submit" class="btn btn-accent btn-large cta-hover-glow w-full">Submit volunteer application</button>
+          <button type="submit" class="btn btn-accent btn-large cta-hover-glow w-full" aria-describedby="vol-submit-disclosure">Submit volunteer application</button>
+          <p id="vol-submit-disclosure" class="text-xs text-steel">By submitting, you consent to Peace League Africa storing this application for 12 months. Access is limited to the Volunteer Coordinator. See <a href="/privacy" class="link-accent">/privacy</a>.</p>
           <p class="text-sm text-accent-deep font-semibold hidden" data-volunteer-success role="status">✓ Thank you! A volunteer coordinator will reach out within 7 days.</p>
         </form>
       </div>
