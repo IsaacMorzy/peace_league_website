@@ -170,3 +170,5 @@ Append a single line when:
 - 2026-07-27T14:10Z awards-aria-complete: applied 3 missing aria-labelledby for awards-stats / awards-categories / awards-cta. dist/awards/index.html now resolves all 6 slugs. Closes the dangling-aria bug class on /awards. Pair with the new audit-aridadb.sh hook.
 
 - 2026-07-27T14:11Z awards-aria-final: Closed the last aria-labelledby dangling pointer on /awards. Added a sr-only <h2 id="awards-stats">Awards statistics at a glance</h2> inside the stats bar section so the section's aria-labelledby resolves. audit-aridadb + audit-astro-closures both exit 0. The aria-labelledby /awards chain is now genuinely 6/6 sailing — no more iterations.
+## STATE.md entry
+- 2026-07-27Z deploy: hero light mode fix + lighthouse infra + a11y improvements. HEAD 507ce09 pushed to upstream/main. lighthouse baseline: Perf 83, A11y 94, BP 100, SEO 92. Blog confirmed working live (200).

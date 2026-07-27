@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://peaceleagueafrica.com/sitemap-index.xml
+
