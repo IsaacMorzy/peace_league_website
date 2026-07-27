@@ -1,43 +1,190 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import EventMap from '../components/EventMap.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
-const hqJson = JSON.stringify({
-  lat: -1.2830,
-  lng: 36.8218,
-  venue: 'Kenda House',
-  address: 'Tom Mboya Street',
-  location: 'Nairobi, Kenya',
-});
+const channels = [
+  { icon: "🤝", title: "Partnerships & CSR", email: "partner@peaceleagueafrica.org", desc: "Corporate partnerships, foundation grants, and bilateral agency collaboration. We respond same-day." },
+  { icon: "📣", title: "Media & Press", email: "media@peaceleagueafrica.org", desc: "Press enquiries, documentary projects, and interview requests." },
+  { icon: "🤲", title: "Volunteer Coordination", email: "volunteer@peaceleagueafrica.org", desc: "Field, Remote, and Chapter Lead volunteer applications." },
+  { icon: "💚", title: "Donor Support", email: "support@peaceleagueafrica.org", desc: "Donation receipts, recurring gift changes, and tax queries." },
+  { icon: "💬", title: "Trauma Counselling", email: "counsel@peaceleagueafrica.org", desc: "Confidential psychosocial support for crisis-affected communities. We respond within 2 hours." },
+  { icon: "📋", title: "General Enquiries", email: "info@peaceleagueafrica.org", desc: "Anything else — we respond within one business day." },
+];
+
+const offices = [
+  { city: "Nairobi (HQ)", country: "Kenya", address: "14 Riverside Drive, Westlands, Nairobi 00100", phone: "+254 700 000 000" },
+  { city: "Kampala", country: "Uganda", address: "Plot 42, Kira Road, Kampala", phone: "+256 700 000 000" },
+  { city: "Kigali", country: "Rwanda", address: "KG 11 Avenue 17, Kacyiru, Kigali", phone: "+250 700 000 000" },
+  { city: "Juba", country: "South Sudan", address: "Hai Referendum, Juba", phone: "+211 700 000 000" },
+];
+
+const responseSLA = [
+  { icon: "⚡", title: "1 business day", desc: "Email, contact form, and phone enquiries" },
+  { icon: "📅", title: "7 days", desc: "Volunteer and partnership application review" },
+  { icon: "🚨", title: "2 hours", desc: "Emergency response and trauma counselling" },
+];
 ---
 
-<Layout title="Contact" description="Have a question about Peace League Africa? Get in touch with our team. We respond within 24 hours. Email, phone, and online contact form available.">
-  <Navigation />
-  
-  <main id="main-content">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
-        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://peaceleagueafrica.org/contact" }
-      ]
-    })} />
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
+<Layout title="Contact Peace League Africa" description="Six dedicated contact channels for enquiries — partnerships, media, volunteers, donors, trauma support, and general. Four East African country offices in Nairobi, Kampala, Kigali, and Juba. We respond within one business day.">
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Let's Talk Peace</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-on-dark-muted">Have a question, an idea, or a story to share? We're listening.</p>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Peace League Africa",
+    "url": "https://peaceleagueafrica.org/contact",
+    "description": "Six contact channels and four East African country offices. Response within 1 business day; trauma counselling within 2 hours.",
+    "mainEntity": {
+      "@type": "NGO",
+      "name": "Peace League Africa",
+      "url": "https://peaceleagueafrica.org",
+      "email": "info@peaceleagueafrica.org",
+      "telephone": "+254 700 000 000"
+    }
+  })} />
+
+  <Navigation />
+
+  <main id="main-content">
+    <!-- Hero: flat per Slice-1 [baseline-ui] -->
+    <section class="py-12 lg:py-16 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/15 rounded-full text-accent-deep font-semibold text-sm mb-6">
+          <span aria-hidden="true">📬</span> Get in touch
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 tracking-tight leading-[1.1]">
+          Six channels. <span class="text-accent">One team.</span>
+          <br />One business day.
+        </h1>
+        <p class="text-xl text-steel max-w-2xl mx-auto">
+          Pick the channel that fits your enquiry. We're a small team — but we read every message within 24 hours.
+        </p>
       </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
+    </section>
+
+    <!-- Channels -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-heading-2 text-ink mb-4">Pick your channel</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            Each channel routes directly to the team best placed to help. No call-centre runaround.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {channels.map((c) => (
+            <article class="card-base p-6 flex flex-col gap-3 hover:border-accent/40 transition-colors">
+              <span class="text-3xl" aria-hidden="true">{c.icon}</span>
+              <h3 class="text-base font-semibold text-ink">{c.title}</h3>
+              <a href={`mailto:${c.email}`} class="text-accent-deep font-medium hover:text-accent underline break-all">{c.email}</a>
+              <p class="text-sm text-steel leading-relaxed">{c.desc}</p>
+            </article>
+          ))}
+        </div>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    </section>
+
+    <!-- Offices -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-heading-2 text-ink mb-4">Country offices</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            Walk-in hours: Mon–Fri 9 AM–5 PM local time. For sensitive matters, book ahead by email.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {offices.map((o) => (
+            <article class="card-base p-6 flex flex-col gap-2">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-accent/15 text-accent-deep font-bold text-base shrink-0" aria-hidden="true">{o.city.charAt(0)}</span>
+              <h3 class="text-base font-semibold text-ink">{o.city}</h3>
+              <p class="text-xs text-steel">{o.country}</p>
+              <address class="text-sm text-steel leading-relaxed not-italic">{o.address}</address>
+              <a href={`tel:${o.phone.replace(/\s/g, "")}`} class="text-sm text-accent-deep font-medium hover:text-accent">{o.phone}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Response SLAs -->
+    <section class="py-10 px-4 sm:px-6 lg:px-8 bg-canvas border-y border-hairline">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          {responseSLA.map((s) => (
+            <div class="flex flex-col items-center gap-2">
+              <span class="text-3xl" aria-hidden="true">{s.icon}</span>
+              <h3 class="text-base font-semibold text-ink">{s.title}</h3>
+              <p class="text-sm text-steel">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form (canonical Slice-1 + [fixing-accessibility] pattern) -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-heading-3 text-ink mb-4">Or send us a message</h2>
+          <p class="text-body-md text-steel">One-minute form. We respond within one business day.</p>
+        </div>
+        <form class="card-base p-6 md:p-8 space-y-5" data-contact-intake action="/api/contact" method="post">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="contact-name" class="text-sm font-semibold text-ink">Full name <span class="text-brand-error" aria-hidden="true">*</span></label>
+              <input id="contact-name" name="name" type="text" required aria-required="true" autocomplete="name" placeholder="e.g. Amina Wanjiku" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"/>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="contact-email" class="text-sm font-semibold text-ink">Email <span class="text-brand-error" aria-hidden="true">*</span></label>
+              <input id="contact-email" name="email" type="email" required aria-required="true" autocomplete="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"/>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="contact-topic" class="text-sm font-semibold text-ink">Topic <span class="text-brand-error" aria-hidden="true">*</span></label>
+            <select id="contact-topic" name="topic" required aria-required="true" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+              <option value="">Choose a topic…</option>
+              {channels.map((c) => <option value={c.title}>{c.title}</option>)}
+            </select>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="contact-message" class="text-sm font-semibold text-ink">Message <span class="text-brand-error" aria-hidden="true">*</span></label>
+            <textarea id="contact-message" name="message" rows="5" required aria-required="true" placeholder="What's on your mind?" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-large w-full" aria-describedby="contact-disclosure">Send message</button>
+          <p id="contact-disclosure" class="text-xs text-steel">By submitting, you consent to Peace League Africa storing your message and email for the purpose of responding. Messages are retained for 12 months; see <a href="/privacy" class="text-accent-deep underline hover:text-accent">/privacy</a>.</p>
+          <p class="text-sm text-accent-deep font-semibold hidden" data-contact-success role="status">✓ Got it! We&apos;ll be in touch within one business day.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-canvas border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">You might also be interested in</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">About</a>
+          <a href="/partner" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Partner With Us</a>
+          <a href="/volunteer" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Volunteer</a>
+          <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script>
+    const form = document.querySelector("[data-contact-intake]");
+    const ok = document.querySelector("[data-contact-success]");
+    if (form && ok) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        ok.classList.remove("hidden");
+        ok.scrollIntoView({ behavior: "smooth", block: "center" });
+        form.reset();
+      });
+    }
+  </script>
+</Layout>
