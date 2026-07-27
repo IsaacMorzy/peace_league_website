@@ -156,3 +156,5 @@ Append a single line when:
 - 2026-07-27T13:46Z slugifyPost-lib: extracted /blog/[slug].astro's 5-step heading-anchor chain into frontend/src/lib/slugifyPost.ts composing tag-strip + entity-strip + lib/slugify. Documented intentional behaviour diffs (lowercase, underscore->dash, redundant multi-dash collapse removed). Build green, /blog + /blog/<known-slug> both HTTP 200. Push da546b1. [baseline-ui]
 
 - 2026-07-27T13:50Z churn: housekeeping commit (audit skip-rule exact-match + dedupe .gitignore + evict ephemeral lighthouse-reports from index). Locked behind  gate. Root-cause on prior false-positive: bash case-glob with  did NOT match sitemap.astro so a real <main hit was exposed after awk-occurrence polish; tightened via  basename equality. No .astro, no deps, no build-config changes this commit.
+
+- 2026-07-27T13:56Z ui-skills-pass (corrective): JSON-LD via JSON.stringify(orgSchema)+Astro.site; aria-labelledby on 8 sections (incl. 2 new ids for Featured Event + Latest Blog); Hero skipped (no h2). No build-config or Layout changes; audit gate green. Replaces prior commit's silent-fail aria-labelledby patches with proper per-section matching.
