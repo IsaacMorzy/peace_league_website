@@ -31,3 +31,4 @@
 {"run_id":"2026-07-27T09:55Z","pattern":"slice-8a","outcome":"shipped","actions_taken":1,"slur_sha":"5dde28f","scope":"perf/libredesk-lazy"}
 {"run_id": "2026-07-27T10:06Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 3, "slur_sha": "4fd14de", "scope": "deploy+leasure Slice 8A2 \u2192 / pushed"}
 {"run_id": "2026-07-27T10:13Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 3, "slur_sha": "255f5d5", "scope": "Fol-1 #144 closed + Fol-2 /donate Lighthouse + Fol-3 Slice 1 /privacy hero fluff cleanup"}
+{"run_id": "2026-07-27T10:14Z", "pattern": "recovery", "outcome": "open", "actions_taken": 1, "slur_sha": "7b61f0a", "scope": "cache-bypass probe \u2014 upstream nginx cache stale (77,103 B, fluff=1); human operator flush required (sudo nginx -s reload OR PURGE /privacy)"}
