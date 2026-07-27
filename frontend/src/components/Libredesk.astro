@@ -76,6 +76,12 @@
 
 <!-- Peace League Africa — Agent System -->
 <script>
+// Slice 8A — Lazy-load the AI Knowledge Base + agent handlers. The
+// 27 KB IIFE below initializes the Gemini KB and Chat Handlers which
+// only need to run once the user might interact with chat. We schedule
+// it on requestIdleCallback so it does not block the main thread on
+// the page-load critical path.
+function __pleagueLibredeskBoot() {
 (function() {
   'use strict';
 
@@ -824,4 +830,13 @@ HANDOFF TRIGGERS:
     console.log('Peace Bot initialized with Gemini AI. Use PLAChat to interact.');
   });
 })();
+} // end __pleagueLibredeskBoot
+
+if (typeof window !== 'undefined') {
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(__pleagueLibredeskBoot, { timeout: 3000 });
+  } else {
+    window.setTimeout(__pleagueLibredeskBoot, 1500);
+  }
+}
 </script>

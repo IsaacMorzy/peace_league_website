@@ -28,3 +28,4 @@
 {"run_id":"2026-07-27T09:20Z","pattern":"slices","outcome":"closed","actions_taken":18,"slur_sha":"31312ef128fe82418633dd42673a1e8ffa7d3077","scope":"frontend/src/pages/{index,donate,fundraise}.astro + lib/blog-data.json"}
 {"run_id":"2026-07-27T09:27Z","pattern":"scratch-lane","outcome":"closed","actions_taken":1,"slur_sha":"3462d85","scope":"perf/about"}
 {"run_id":"2026-07-27T09:34Z","pattern":"wayfinder-e2e","outcome":"closed","actions_taken":4,"slur_sha":"7cf5306","scope":"deploy+wayfinder"}
+{"run_id":"2026-07-27T09:55Z","pattern":"slice-8a","outcome":"shipped","actions_taken":1,"slur_sha":"5dde28f","scope":"perf/libredesk-lazy"}
