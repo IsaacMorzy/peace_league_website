@@ -4,9 +4,9 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Donate" description="Support peace-building across Africa. Your tax-deductible donation funds peace education, clean water, healthcare, and youth programs in 12 countries. Donate now.">
+<Layout title="Donate" description="Support peace-building across Africa. Your tax-deductible donation funds peace education, clean water, healthcare, and youth programs in 12 countries. Donate via M-Pesa, Card, Bank, or PayPal.">
   <Navigation />
-  
+
   <main id="main-content">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -16,19 +16,143 @@ import Footer from '../components/Footer.astro';
         { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://peaceleagueafrica.org/donate" }
       ]
     })} />
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 class="animate-in fade-in slide-in-from-bottom-4 duration-700 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.10] tracking-tight">Your Gift Rebuilds Communities</h1>
-        <p class="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 text-lg text-white/70 max-w-2xl">$50 trains a peace teacher. $25 provides clean water for a family. $500 launches a youth mentorship program. Every dollar goes to peace-building across 12 African countries.</p>
+    <section class="relative text-white bg-gradient-to-br from-[#1a3d4a] via-[#16404a] to-[#0d2530] overflow-hidden py-12 lg:py-20">
+      <!-- Single mint orbs (no amber, no backdrop-blur) -->
+      <div class="absolute top-[-80px] right-[-80px] w-[280px] h-[280px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,212,164,0.18) 0%, transparent 70%);" aria-hidden="true"></div>
+      <div class="absolute bottom-[-60px] left-[-60px] w-[200px] h-[200px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,212,164,0.05) 0%, transparent 70%);" aria-hidden="true"></div>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-white/8 rounded-full border border-white/15 text-xs sm:text-sm font-medium text-accent-soft">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true"></span>
+          95% Goes Directly to Programs
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.10] tracking-tight">Your Gift Rebuilds Communities</h1>
+        <p class="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
+          $50 trains a peace teacher. $25 provides clean water for a family. $500 launches a youth mentorship program. Every dollar goes directly to peace-building across 12 African countries.
+        </p>
       </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-canvas">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <form
+          class="bg-canvas border border-hairline rounded-2xl shadow-sm p-6 sm:p-8 lg:p-10"
+          data-astro-reload
+          method="post"
+          action="/api/method/peace_league_website.api.create_pledge"
+        >
+          <fieldset>
+            <legend class="block text-xl font-semibold text-ink mb-2">Choose an amount</legend>
+            <p class="text-sm text-steel mb-6">In USD. Tax-deductible. Recurring monthly giving is available at the next step.</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="group" aria-label="Donation amount presets">
+              <button type="button" class="amount-btn h-14 rounded-xl border border-hairline bg-canvas text-ink font-semibold hover:border-accent hover:bg-accent/5 transition-colors focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2" aria-pressed="false" data-amount="25">$25</button>
+              <button type="button" class="amount-btn h-14 rounded-xl border-2 border-accent bg-accent text-primary font-semibold hover:bg-accent-deep transition-colors focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2" aria-pressed="true" data-amount="50">$50</button>
+              <button type="button" class="amount-btn h-14 rounded-xl border border-hairline bg-canvas text-ink font-semibold hover:border-accent hover:bg-accent/5 transition-colors focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2" aria-pressed="false" data-amount="100">$100</button>
+              <button type="button" class="amount-btn h-14 rounded-xl border border-hairline bg-canvas text-ink font-semibold hover:border-accent hover:bg-accent/5 transition-colors focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2" aria-pressed="false" data-amount="250">$250</button>
+            </div>
+
+            <label class="block">
+              <span class="block text-sm font-medium text-ink mb-2">Or enter a custom amount</span>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-steel pointer-events-none" aria-hidden="true">$</span>
+                <input
+                  type="number"
+                  inputmode="decimal"
+                  min="1"
+                  step="1"
+                  placeholder="500"
+                  class="w-full h-12 pl-8 pr-4 rounded-xl border border-hairline bg-canvas text-ink placeholder:text-muted text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+                  name="custom_amount"
+                  aria-label="Custom donation amount in USD"
+                />
+              </div>
+            </label>
+          </fieldset>
+
+          <hr class="my-8 border-hairline" />
+
+          <fieldset>
+            <legend class="block text-base font-medium text-ink mb-3">How would you like to give?</legend>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" role="radiogroup" aria-label="Payment method">
+              <label class="payment-method relative cursor-pointer">
+                <input type="radio" name="payment_method" value="mpesa" class="peer sr-only" />
+                <div class="rounded-xl border border-hairline p-4 peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
+                  <div class="text-base font-semibold text-ink">M-Pesa</div>
+                  <div class="text-xs text-steel mt-1">Mobile money</div>
+                </div>
+              </label>
+              <label class="payment-method relative cursor-pointer">
+                <input type="radio" name="payment_method" value="card" class="peer sr-only" checked />
+                <div class="rounded-xl border-2 border-accent bg-accent/5 p-4 peer-checked:border-accent peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
+                  <div class="text-base font-semibold text-ink">Card</div>
+                  <div class="text-xs text-steel mt-1">Visa &middot; Mastercard</div>
+                </div>
+              </label>
+              <label class="payment-method relative cursor-pointer">
+                <input type="radio" name="payment_method" value="bank" class="peer sr-only" />
+                <div class="rounded-xl border border-hairline p-4 peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
+                  <div class="text-base font-semibold text-ink">Bank</div>
+                  <div class="text-xs text-steel mt-1">ACH &middot; Wire</div>
+                </div>
+              </label>
+              <label class="payment-method relative cursor-pointer">
+                <input type="radio" name="payment_method" value="paypal" class="peer sr-only" />
+                <div class="rounded-xl border border-hairline p-4 peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 transition-colors hover:border-accent/30">
+                  <div class="text-base font-semibold text-ink">PayPal</div>
+                  <div class="text-xs text-steel mt-1">International</div>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <hr class="my-8 border-hairline" />
+
+          <button type="submit" class="btn btn-accent btn-large w-full justify-center">
+            Continue to give safely
+            <svg class="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+
+          <p class="mt-4 text-xs text-steel text-center">
+            Peace League Africa is a registered nonprofit. Donations are tax-deductible. We never sell or share your data.
+          </p>
+        </form>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+          <div class="rounded-xl border border-hairline p-4">
+            <div class="text-2xl font-semibold text-accent-deep">95%</div>
+            <div class="text-xs text-steel mt-1">Goes directly to programs</div>
+          </div>
+          <div class="rounded-xl border border-hairline p-4">
+            <div class="text-2xl font-semibold text-accent-deep">12</div>
+            <div class="text-xs text-steel mt-1">Countries served</div>
+          </div>
+          <div class="rounded-xl border border-hairline p-4">
+            <div class="text-2xl font-semibold text-accent-deep">1,200+</div>
+            <div class="text-xs text-steel mt-1">Volunteers active</div>
+          </div>
+        </div>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Amount-button group: only one selected at a time. Real buttons + aria-pressed.
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.amount-btn');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => {
+        b.setAttribute('aria-pressed', 'false');
+        b.classList.remove('border-accent', 'bg-accent', 'text-primary', 'border-2');
+        b.classList.add('border', 'border-hairline', 'bg-canvas', 'text-ink');
+      });
+      btn.setAttribute('aria-pressed', 'true');
+      btn.classList.remove('border', 'border-hairline', 'bg-canvas', 'text-ink');
+      btn.classList.add('border-2', 'border-accent', 'bg-accent', 'text-primary');
+    });
+  });
+</script>

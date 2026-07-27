@@ -4,7 +4,7 @@ import causes from '../lib/causes-data.json';
 import blogs from '../lib/blog-data.json';
 // Award categories live in the backend fixtures; the frontend build imports them
 // at build-time so the index is fully static (no runtime API cost).
-import awardCategories from '../../../peace_league_website/fixtures/award_categories.json';
+import awardCategories from '../../../peace_league_website/fixtures/award_category.json';
 
 type SearchType = 'event' | 'cause' | 'blog' | 'category';
 

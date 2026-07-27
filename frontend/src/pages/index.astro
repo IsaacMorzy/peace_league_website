@@ -41,35 +41,25 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
         <div class="absolute inset-0 opacity-[0.04] bg-[image:radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:32px_32px]"></div>
         <!-- Desktop shapes -->
         <span class="float-shape float-shape--a absolute hidden sm:block" style="width:300px;height:300px;top:5%;left:0;background:radial-gradient(circle,rgba(0,212,164,0.12),transparent 70%);border-radius:50%;"></span>
-        <span class="float-shape float-shape--b absolute hidden sm:block" style="width:180px;height:180px;top:20%;right:5%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);border-radius:50%;"></span>
+        <span class="float-shape float-shape--b absolute hidden sm:block" style="width:180px;height:180px;top:20%;right:5%;background:radial-gradient(circle,rgba(0,212,164,0.08),transparent 70%);border-radius:50%;"></span>
         <span class="float-shape--diamond float-shape--a absolute hidden sm:block" style="width:100px;height:100px;bottom:25%;left:8%;border:2px solid rgba(0,212,164,0.1);background:transparent;border-radius:0;transform:rotate(45deg);"></span>
         <!-- Mobile-friendly smaller shapes -->
         <span class="float-shape float-shape--a absolute sm:hidden" style="width:120px;height:120px;top:10%;right:-20px;background:radial-gradient(circle,rgba(0,212,164,0.10),transparent 70%);border-radius:50%;"></span>
-        <span class="float-shape float-shape--b absolute sm:hidden" style="width:80px;height:80px;bottom:30%;left:-20px;background:radial-gradient(circle,rgba(245,158,11,0.06),transparent 70%);border-radius:50%;"></span>
+        <span class="float-shape float-shape--b absolute sm:hidden" style="width:80px;height:80px;bottom:30%;left:-20px;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);border-radius:50%;"></span>
         <!-- Large blur always -->
         <span class="float-shape float-shape--c absolute" style="width:400px;height:400px;bottom:-20%;right:-10%;background:radial-gradient(circle,rgba(0,212,164,0.05),transparent 70%);border-radius:50%;"></span>
       </div>
 
-      <!-- ── DEPTH LAYER 2: Subtle movement only ── -->
-      <div class="hero-depth-layer hero-depth-2" aria-hidden="true">
-        <!-- Particles removed for performance -->
-      </div>
-
-      <!-- ── DEPTH LAYER 3: Overlay gradients (nearest) ── -->
-      <div class="hero-depth-layer hero-depth-3" aria-hidden="true">
-        <div class="absolute inset-0 bg-gradient-to-t from-hero-bg/60 via-transparent to-hero-bg/20"></div>
         <div class="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-hero-bg to-transparent"></div>
       </div>
 
-      <!-- ── SWEEPING LIGHT BEAM (hope ray) ── -->
-      <div class="light-beam" aria-hidden="true"></div>
 
       <!-- ── HERO CONTENT (foreground) ── -->
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28 z-10 w-full">
         <div class="max-w-3xl">
           <!-- Badge - faster entrance on mobile -->
           <div class="hero-badge mb-4 sm:mb-6" style="animation-delay: 0.1s;">
-            <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium text-accent-soft border border-white/10">
+            <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/8 rounded-full text-xs sm:text-sm font-medium text-accent-soft border border-white/15">
               <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent animate-pulse"></span>
               12 Countries &middot; 500 Communities &middot; One Mission
             </span>
@@ -392,7 +382,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
                   <span class="block text-xs font-bold text-accent mt-1 uppercase tracking-wider">Dec</span>
                 </div>
                 <div class="absolute top-5 right-5">
-                  <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/90 text-white backdrop-blur-sm shadow-lg">
+                  <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/90 text-white bg-white/8 shadow-lg">
                     &#9733; Gala
                   </span>
                 </div>
@@ -487,7 +477,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
 
             <!-- Animated gradient border on hover -->
             <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden"
-              style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #f59e0b, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
+              style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #00d4a4, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
             </div>
           </div>
         </div>
@@ -749,14 +739,14 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
 
                 <!-- Category badge -->
                 <div class="absolute top-4 left-4">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-sm text-ink shadow-lg">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/90 bg-white/8 text-ink shadow-lg">
                     {post.category}
                   </span>
                 </div>
 
                 <!-- Read time -->
                 <div class="absolute top-4 right-4">
-                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/40 backdrop-blur-sm text-white/90">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/40 bg-white/8 text-white/90">
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     {post.readTime}
                   </span>
@@ -796,7 +786,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
 
               <!-- Animated gradient border on hover -->
               <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #f59e0b, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
+                style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #00d4a4, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background-size: 300% 300%; animation: gradient-shift 4s ease infinite;">
               </div>
             </a>
           ))}

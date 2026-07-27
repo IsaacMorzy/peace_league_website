@@ -36,8 +36,11 @@ html { overflow-x: hidden; }
   --color-brand-annotate: #1ba673;
   --color-brand-error: #d45656;
 
-  --color-accent-warm: #f59e0b;
-  --color-accent-warm-soft: #fef3c7;
+  /* DEPRECATED aliases — repointed to brand-green for visual coherence with DESIGN.md.
+     Class names kept to avoid 35+ binary-rendering regressions across existing components.
+     Follow-up PR: rename `accent-warm-*` -> `accent-*` and remove these aliases. */
+  --color-accent-warm: #00d4a4;
+  --color-accent-warm-soft: #7cebcb;
   --color-success: #059669;
   --color-success-bg: #ecfdf5;
   --color-error: #dc2626;
@@ -73,7 +76,7 @@ html { overflow-x: hidden; }
   --shadow-lg: 0 10px 15px rgba(0,0,0,0.06), 0 4px 6px rgba(0,0,0,0.04);
   --shadow-xl: 0 20px 25px rgba(0,0,0,0.08), 0 8px 10px rgba(0,0,0,0.04);
   --shadow-glow-accent: 0 0 20px rgba(0,212,164,0.3);
-  --shadow-glow-warm: 0 0 20px rgba(245,158,11,0.3);
+  --shadow-glow-warm: 0 0 20px rgba(0, 212, 164, 0.3);
 
   /* ── Easing Tokens ── */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -266,20 +269,20 @@ body {
 
 .text-accent-warm-glow {
   color: var(--color-accent-warm);
-  text-shadow: 0 0 20px rgba(245,158,11,0.15);
+  text-shadow: 0 0 20px rgba(0,212,164,0.15);
 }
 
 .dark .text-accent-warm-glow {
   color: var(--color-accent-warm);
-  text-shadow: 0 0 20px rgba(245,158,11,0.25);
+  text-shadow: 0 0 20px rgba(0,212,164,0.25);
 }
 
 .text-accent-warm-link {
-  color: #b45309;
+  color: var(--color-accent-deep);
 }
 
 .dark .text-accent-warm-link {
-  color: var(--color-accent-warm);
+  color: var(--color-accent-deep);
 }
 
 /* Accent text as bold color should be large enough to meet contrast */
@@ -349,7 +352,7 @@ a:active {
   --color-error-bg: #7f1d1d;
   --color-accent: #00d4a4;
   --color-accent-soft: #5adbb5;
-  --color-accent-warm: #f59e0b;
+  --color-accent-warm: #00d4a4; /* DEPRECATED alias — see :root counterpart */
 }
 
 .dark .glass {
@@ -513,9 +516,7 @@ a:active {
 .cta-hover-glow:active {
   transform: scale(0.98);
 }
-.cta-hover-glow-warm:hover {
-  box-shadow: 0 0 24px rgba(245, 158, 11, 0.25);
-}
+
 
 /* ── Partner Logo Float ── */
 
@@ -965,7 +966,7 @@ a:active {
 .hero-pattern-overlay {
   background-image:
     radial-gradient(circle at 20% 50%, rgba(0,212,164,0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(245,158,11,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0,212,164,0.06) 0%, transparent 50%),
     radial-gradient(circle at 50% 80%, rgba(0,212,164,0.05) 0%, transparent 50%);
   pointer-events: none;
 }
@@ -1835,14 +1836,14 @@ a:active {
 .mesh-gradient {
   background:
     radial-gradient(ellipse 80% 60% at 10% 20%, rgba(0,212,164,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 80% at 90% 30%, rgba(245,158,11,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 90% 30%, rgba(0,212,164,0.10) 0%, transparent 50%),
     radial-gradient(ellipse 70% 50% at 50% 80%, rgba(0,212,164,0.08) 0%, transparent 50%);
 }
 
 .dark .mesh-gradient {
   background:
     radial-gradient(ellipse 80% 60% at 10% 20%, rgba(0,212,164,0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 80% at 90% 30%, rgba(245,158,11,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 90% 30%, rgba(0,212,164,0.08) 0%, transparent 50%),
     radial-gradient(ellipse 70% 50% at 50% 80%, rgba(0,212,164,0.06) 0%, transparent 50%);
 }
 
@@ -1906,7 +1907,7 @@ a:active {
 }
 
 .bento-card--warm {
-  background: linear-gradient(135deg, var(--color-accent-warm), #d97706);
+  background: linear-gradient(135deg, var(--color-accent-warm), #00b48a);
   color: white;
   border-color: transparent;
 }
@@ -2037,7 +2038,7 @@ a:active {
   inset: 0;
   background-image:
     radial-gradient(circle at 15% 25%, rgba(0,212,164,0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 15%, rgba(245,158,11,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(0,212,164,0.08) 0%, transparent 40%),
     radial-gradient(circle at 45% 85%, rgba(0,212,164,0.06) 0%, transparent 40%);
   pointer-events: none;
 }
@@ -2045,7 +2046,7 @@ a:active {
 .dark .hero-mesh::before {
   background-image:
     radial-gradient(circle at 15% 25%, rgba(0,212,164,0.10) 0%, transparent 45%),
-    radial-gradient(circle at 85% 15%, rgba(245,158,11,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(0,212,164,0.06) 0%, transparent 40%),
     radial-gradient(circle at 45% 85%, rgba(0,212,164,0.05) 0%, transparent 40%);
 }
 
@@ -2089,7 +2090,7 @@ a:active {
   inset: 0;
   background-image:
     radial-gradient(circle at 20% 40%, rgba(0,212,164,0.10) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(245,158,11,0.07) 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(0,212,164,0.07) 0%, transparent 35%),
     radial-gradient(circle at 50% 80%, rgba(0,212,164,0.06) 0%, transparent 40%);
   pointer-events: none;
 }
@@ -3064,12 +3065,12 @@ a:active {
   contain: layout style paint;
   background-image:
     radial-gradient(circle at 50% 50%, transparent 18%, rgba(0,212,164,0.04) 18.5%, transparent 19.5%),
-    radial-gradient(circle at 50% 50%, transparent 28%, rgba(245,158,11,0.03) 28.5%, transparent 29.5%),
+    radial-gradient(circle at 50% 50%, transparent 28%, rgba(0,212,164,0.03) 28.5%, transparent 29.5%),
     radial-gradient(circle at 50% 50%, transparent 38%, rgba(0,212,164,0.03) 38.5%, transparent 39.5%),
-    radial-gradient(circle at 50% 50%, transparent 48%, rgba(245,158,11,0.025) 48.5%, transparent 49.5%),
+    radial-gradient(circle at 50% 50%, transparent 48%, rgba(0,212,164,0.025) 48.5%, transparent 49.5%),
     radial-gradient(circle at 50% 50%, transparent 58%, rgba(0,212,164,0.02) 58.5%, transparent 59.5%),
     repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(0,212,164,0.008) 50px, rgba(0,212,164,0.008) 51px),
-    repeating-linear-gradient(-60deg, transparent, transparent 50px, rgba(245,158,11,0.008) 50px, rgba(245,158,11,0.008) 51px);
+    repeating-linear-gradient(-60deg, transparent, transparent 50px, rgba(0,212,164,0.008) 50px, rgba(0,212,164,0.008) 51px);
   animation: mandala-spin 180s linear infinite;
 }
 
@@ -3133,8 +3134,8 @@ a:active {
 }
 
 .hypnotic-particle--gold {
-  background: radial-gradient(circle, rgba(245,158,11,0.7), rgba(245,158,11,0));
-  box-shadow: 0 0 6px rgba(245,158,11,0.25);
+  background: radial-gradient(circle, rgba(0,212,164,0.7), rgba(0,212,164,0));
+  box-shadow: 0 0 6px rgba(0,212,164,0.25);
 }
 
 .hypnotic-particle--teal {
@@ -3196,8 +3197,8 @@ a:active {
 
 /* Two distinct color palettes */
 .hypnotic-heart--warm {
-  color: #f59e0b;
-  filter: drop-shadow(0 0 8px rgba(245,158,11,0.25)) drop-shadow(0 0 20px rgba(245,158,11,0.1));
+  color: #00d4a4;
+  filter: drop-shadow(0 0 8px rgba(0,212,164,0.25)) drop-shadow(0 0 20px rgba(0,212,164,0.1));
 }
 
 .hypnotic-heart--cool {
@@ -3305,8 +3306,8 @@ a:active {
 }
 
 .footer-hypnotic-heart--warm {
-  color: #f59e0b;
-  filter: drop-shadow(0 0 8px rgba(245,158,11,0.2));
+  color: #00d4a4;
+  filter: drop-shadow(0 0 8px rgba(0,212,164,0.2));
 }
 
 .footer-hypnotic-heart--cool {
@@ -3498,7 +3499,7 @@ a:active {
 /* Unread badge */
 .libredesk-unread-badge,
 .libredesk-badge {
-  background: #f59e0b !important;
+  background: #00d4a4 !important;
   color: white !important;
   font-size: 11px !important;
   font-weight: 700 !important;
