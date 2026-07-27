@@ -26,3 +26,4 @@
 {"run_id":"2026-07-27T08:46Z","pattern":"slices","outcome":"closed","actions_taken":12,"slur_sha":"6c2cec45fbf288e78254d0dfd5d85eb31e861771","scope":"frontend/src/pages/index.astro"}
 {"run_id":"2026-07-27T09:01Z","pattern":"slices","outcome":"closed","actions_taken":3,"slur_sha":"141b99c0fcee6916e5e9ec6e6fc2e783db15d6e2","scope":"frontend/scripts/nginx/peaceleagueafrica-le.conf"}
 {"run_id":"2026-07-27T09:20Z","pattern":"slices","outcome":"closed","actions_taken":18,"slur_sha":"31312ef128fe82418633dd42673a1e8ffa7d3077","scope":"frontend/src/pages/{index,donate,fundraise}.astro + lib/blog-data.json"}
+{"run_id":"2026-07-27T09:27Z","pattern":"scratch-lane","outcome":"closed","actions_taken":1,"slur_sha":"3462d85","scope":"perf/about"}
