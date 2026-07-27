@@ -13,6 +13,7 @@ DO_BUILD=1
 DO_RELOAD=0
 DO_HEALTH=1
 DRY_RUN=0
+DO_CLEAN=0  # --clean: rm -rf _astro/ before copy
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -20,6 +21,7 @@ while [ $# -gt 0 ]; do
     --no-build) DO_BUILD=0; shift;;
     --no-healthcheck) DO_HEALTH=0; shift;;
     --reload) DO_RELOAD=1; shift;;
+    --clean) DO_CLEAN=1; shift;;
     --dry-run) DRY_RUN=1; shift;;
     -h|--help) sed -n '4,12p' "$0"; exit 0;;
     *) echo "unknown flag: $1" >&2; exit 2;;
@@ -38,6 +40,9 @@ echo "[3] target"
 test -d "$TARGET" || { echo "ERROR: $TARGET not a directory"; exit 1; }
 [ -w "$TARGET" ] || { echo "ERROR: $TARGET not writable by $(whoami)"; exit 1; }
 [ "$(realpath "$TARGET")" = "/" ] && { echo "ERROR: refusing root target"; exit 1; }
+
+echo "[3.5] clean _astro/"
+[ "$DO_CLEAN" = 1 ] && run rm -rf "$TARGET/_astro" || echo "  (skipped; --clean not set)"
 
 echo "[4] copy to $TARGET"
 run cp -R "$DIST"/. "$TARGET"/
