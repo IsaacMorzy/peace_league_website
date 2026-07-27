@@ -40,8 +40,13 @@ function runLighthouse({ url, mode, port, outputBase }) {
     '--throttling-method=simulate',
     '--quiet',
     '--output=html,json',
-    `--output-path=${outputBase}`
+    `--output-path=${outputBase}`,
+    '--chrome-flags=--headless --no-sandbox --disable-gpu --disable-dev-shm-usage'
   ];
+
+  if (process.env.CHROME_PATH) {
+    baseArgs.push(`--chrome-path=${process.env.CHROME_PATH}`);
+  }
 
   if (mode === 'desktop') {
     baseArgs.push('--preset=desktop');

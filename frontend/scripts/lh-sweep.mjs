@@ -26,7 +26,7 @@ const { launch } = await import('chrome-launcher');
 const lh = await import('lighthouse');
 
 const chrome = await launch({
-  chromePath: '/snap/chromium/3423/usr/lib/chromium-browser/chrome',
+  chromePath: process.env.CHROME_PATH || undefined,
   port: 0,
   chromeFlags: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage']
 });

@@ -57,11 +57,7 @@ const orgSchema = {
   <Navigation />
 
   <main id="main-content">
-    <section id="hero-section" class="relative bg-surface text-ink py-section-lg border-b border-hairline overflow-hidden flex items-center min-h-[70vh] md:min-h-[80vh]">
-
-        <div class="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-hero-bg to-transparent"></div>
-      </div>
-
+    <section id="hero-section" class="relative bg-hero-bg text-white py-section-lg overflow-hidden flex items-center min-h-[70vh] md:min-h-[80vh]" style="background: linear-gradient(135deg, #1a3d4a 0%, #0d2530 100%);">
 
       <!-- ── HERO CONTENT (foreground) ── -->
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28 z-10 w-full">
@@ -75,7 +71,7 @@ const orgSchema = {
           </div>
 
           <!-- Headline with word reveal - faster on mobile, larger on mobile -->
-          <h1 class="text-[clamp(2rem,10vw,3rem)] sm:text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] sm:leading-[1.02] tracking-[-1.5px] sm:tracking-[-3px] text-white" style="perspective: 800px;">
+          <h1 class="text-[clamp(2rem,10vw,3rem)] sm:text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] sm:leading-[1.02] tracking-[-1.5px] sm:tracking-[-3px] text-white" style="perspective: 800px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
             <span class="hero-word" style="animation-delay: 0.2s;">Turning</span>
             <span class="hero-word" style="animation-delay: 0.28s;">Conflict</span>
             <br class="hidden sm:block"/>
@@ -907,7 +903,7 @@ const orgSchema = {
         </button>
         <div class="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2 md:gap-3" role="tablist" aria-label="Slide indicators">
           {[0,1,2,3,4].map((i) => (
-            <button class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300 cursor-pointer" role="tab" aria-selected={i === 0} aria-label={`Slide ${i + 1}`} data-carousel-dot={i}></button>
+            <button class="carousel-dot w-4 h-4 md:w-6 md:h-6 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300 cursor-pointer" role="tab" aria-selected={i === 0} aria-label={`Slide ${i + 1}`} data-carousel-dot={i}></button>
           ))}
         </div>
       </div>

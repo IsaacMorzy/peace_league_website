@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distDir = path.resolve(__dirname, '..', 'dist');
+const distDir = process.env.LIGHTHOUSE_DIST || path.resolve(__dirname, '..', '..', 'peace_league_website', 'public', 'astro_pages');
 const port = parseInt(process.argv[2] || '4321', 10);
 const host = process.argv[3] || '0.0.0.0';
 
