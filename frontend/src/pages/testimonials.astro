@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import { slugify } from "../lib/slugify";
 
 const testimonials = [
   {
@@ -61,8 +62,6 @@ const programImpact = [
   { name: "Healthcare Outreach", metric: "Zero maternal deaths in target areas", active_in: "Karamoja + Teso (Uganda)" },
   { name: "Youth Mentorship", metric: "73% less likely to join armed groups", active_in: "Northern Uganda + S. Sudan" }
 ];
-
-const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 ---
 
 <Layout title="Testimonials — Peace League Africa" description="Stories from communities, partners, and volunteers working with Peace League Africa across 12 East African countries. Real voices from the field — peace education, clean water, mentorship, healthcare, stewardship, reconciliation.">
@@ -125,7 +124,7 @@ const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t) => (
-            <article class="card-base p-6 flex flex-col gap-4" data-testimonial id={slugify(t.name)}>
+            <article class="card-base p-6 flex flex-col gap-4" data-testimonial id={`testimonial-${slugify(t.name)}`}>
               <div class="flex items-center gap-1" aria-label={`Rated ${t.rating} out of 5 stars`}>
                 {Array.from({ length: t.rating }).map(() => (
                   <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -158,7 +157,7 @@ const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {programImpact.map((p) => (
-            <div class="card-base p-6 flex flex-col gap-2">
+            <div class="card-base p-6 flex flex-col gap-2" id={slugify(p.name)}>
               <span class="badge-tag self-start">{p.name}</span>
               <p class="text-lg font-semibold text-ink mt-1">{p.metric}</p>
               <p class="text-sm text-steel">Active in: {p.active_in}</p>

@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import causes from "../lib/causes-data.json";
+import { formatKes, progressPct } from "../lib/format";
+import { slugify } from "../lib/slugify";
 
 const causeSlugs = Object.fromEntries(
   causes.map((c) => [c.name, c.name.toLowerCase().replace(/\s+/g, "-")])
@@ -11,11 +13,7 @@ const causeSlugs = Object.fromEntries(
 const categories = ["All", "Education", "Youth", "Community", "Health", "Water", "Agriculture", "Emergency", "Training", "Event"];
 
 const totalRaised = causes.reduce((acc, c) => acc + (c.raised_amount || 0), 0);
-const totalGoal = causes.reduce((acc, c) => acc + (c.goal_amount || 0), 0);
 const totalDonors = causes.reduce((acc, c) => acc + (c.donors_count || 0), 0);
-
-const formatKes = (n) => "KES " + n.toLocaleString();
-const progressPct = (raised, goal) => Math.min((raised / goal) * 100, 100);
 ---
 
 <Layout title="Our Causes — Peace League Africa" description="Browse 25 active causes driving Peace League Africa's work across East Africa: peace education, youth empowerment, healthcare, clean water, sustainable agriculture, and community reconciliation. Pick yours and donate today.">
@@ -81,20 +79,22 @@ const progressPct = (raised, goal) => Math.min((raised / goal) * 100, 100);
       </div>
     </section>
 
-    <!-- Category filter pills (visual scaffold — client-side filter upcoming) -->
-    <section class="py-6 px-4 sm:px-6 lg:px-8 bg-surface border-b border-hairline" aria-label="Cause categories">
+    <!-- Category filter pills (interactive) -->
+    <section class="py-6 px-4 sm:px-6 lg:px-8 bg-surface border-b border-hairline">
       <div class="max-w-7xl mx-auto text-center">
-        <nav aria-label="Filter causes by category" class="flex flex-wrap gap-2 justify-center">
-          {categories.map((cat, i) => (
-            <span
-              class={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold border ${i === 0 ? "bg-primary text-on-primary border-primary" : "bg-canvas text-steel border-hairline"}`}
-              aria-current={i === 0 ? "page" : undefined}
+        <div role="group" aria-label="Filter causes by category" class="flex flex-wrap gap-2 justify-center">
+          {categories.map((cat) => (
+            <button
+              type="button"
+              class={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors ${cat === "All" ? "bg-primary text-on-primary border-primary" : "bg-canvas text-steel border-hairline hover:text-ink hover:border-accent/40"}`}
+              data-filter-cat={cat}
+              aria-pressed={cat === "All" ? "true" : "false"}
             >
               {cat}
-            </span>
+            </button>
           ))}
-        </nav>
-        <p class="text-xs text-steel mt-2">Showing all {causes.length} causes — client-side category filter is a follow-up landing.</p>
+        </div>
+        <p class="text-xs text-steel mt-2" data-cause-count aria-live="polite" aria-atomic="true">Showing all {causes.length} causes.</p>
       </div>
     </section>
 
@@ -103,13 +103,13 @@ const progressPct = (raised, goal) => Math.min((raised / goal) * 100, 100);
       <div class="max-w-7xl mx-auto">
         <div id="causes-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
           {causes.map((cause) => {
-            const pct = Math.round(progressPct(cause.raised_amount || 0, cause.goal_amount || 1));
+            const pct = progressPct(cause.raised_amount || 0, cause.goal_amount || 1);
             return (
               <article
                 class="card-base p-0 overflow-hidden flex flex-col"
                 data-cause-card
                 data-category={cause.category}
-                id={cause.name.toLowerCase().replace(/\s+/g, "-")}
+                id={slugify(cause.name)}
               >
                 <div class="h-44 relative overflow-hidden bg-surface">
                   <img
@@ -159,6 +159,9 @@ const progressPct = (raised, goal) => Math.min((raised / goal) * 100, 100);
       </div>
     </section>
 
+    <!-- Empty state when no categories match (shown via :empty selector) -->
+    <p hidden data-cause-empty role="status" class="text-center text-steel py-12">No causes in this category yet — check back soon.</p>
+
     <!-- CTA -->
     <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
       <div class="max-w-3xl mx-auto text-center">
@@ -189,4 +192,54 @@ const progressPct = (raised, goal) => Math.min((raised / goal) * 100, 100);
   </main>
 
   <Footer />
+
+  <script>
+    // Category filter — progressive enhancement. Filter is interactive
+    // without a full reload by toggling display on data-cause-card entries
+    // based on the data-category attribute.
+    (function() {
+      const buttons = document.querySelectorAll('[data-filter-cat]');
+      const cards = document.querySelectorAll('[data-cause-card]');
+      const countEl = document.querySelector('[data-cause-count]');
+      const emptyEl = document.querySelector('[data-cause-empty]');
+      if (!buttons.length || !cards.length) return;
+
+      function applyFilter(cat) {
+        let visible = 0;
+        cards.forEach((card) => {
+          if (cat === 'All' || card.dataset.category === cat) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (countEl) {
+          countEl.textContent = cat === 'All'
+            ? `Showing all ${cards.length} causes.`
+            : `Showing ${visible} cause(s) in ${cat}.`;
+        }
+        if (emptyEl) {
+          emptyEl.hidden = visible > 0;
+        }
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const cat = btn.dataset.filterCat || 'All';
+          buttons.forEach((b) => {
+            const isActive = b.dataset.filterCat === cat;
+            b.classList.toggle('bg-primary', isActive);
+            b.classList.toggle('text-on-primary', isActive);
+            b.classList.toggle('border-primary', isActive);
+            b.classList.toggle('bg-canvas', !isActive);
+            b.classList.toggle('text-steel', !isActive);
+            b.classList.toggle('border-hairline', !isActive);
+            b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          });
+          applyFilter(cat);
+        });
+      });
+    })();
+  </script>
 </Layout>

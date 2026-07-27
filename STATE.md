@@ -132,3 +132,5 @@ Append a single line when:
 - 2026-07-27T11:45Z index-slice1-recovery: /index.astro Slice-1 flatten recovery (4 micro-edits: hero-section opening, attr-strip data-hero-parallax, <script> parallax-hook removal if present, inner accent-gradient card via regex matches). Closes the prior partial landing.
 - 2026-07-27T11:49Z index-orb-sweep: orb-decoration + parallax-hook sweep on /index.astro (continues the Slice-1 atmospheric-flatten landed in b31ea7f + 457fb31).
 - 2026-07-27T12:03Z audit-execute-tier2-fill-plus: /testimonials + /causes content fills done (280 lines each). Both Slice-1 hero, 25-cause data grid + 6 testimonies + Review / ItemList JSON-LD.
+
+- 2026-07-27T13:13Z polish-pipeline-fix-LIVE: cumulative Polish landing + canonical no-sudo deploy.sh + astro.config.mjs outDir fix (closes pnpm build -> deploy.sh target path gap) shipped. served /causes on peaceleagueafrica.com has full Polish landing: data-filter-cat=10 + aria-pressed=10 (1=true on 'All', 9=false on others) + role=status=1 + aria-live=2 + aria-atomic=1 + data-cause-card=26 + data-cause-count=2 + data-cause-empty=2; HTTP/2 200; diff dist == served.
