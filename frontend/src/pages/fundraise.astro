@@ -42,45 +42,60 @@ const steps = [
   <Navigation />
 
   <main id="main-content">
-    <!-- Hero: flat per DESIGN.md (atmospheric gradient reserved for home + startups only) [baseline-ui] -->
-    <section class="py-12 lg:py-16 border-b border-hairline bg-surface">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-6">
-          <span aria-hidden="true">💛</span> Personal fundraising
+    <!-- Hero: gradient with ambient glow [performance: compositor-only bg, no JS] -->
+    <section class="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style="background: linear-gradient(135deg, #0d2530 0%, #1a3d4a 40%, #0d2530 100%);">
+      <!-- Ambient glow orbs - opacity only, compositor-friendly -->
+      <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-15" style="background: radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10" style="background: radial-gradient(circle, rgba(0,212,164,0.2) 0%, transparent 70%);"></div>
+      <div class="absolute top-10 right-10 text-8xl opacity-[0.04] pointer-events-none select-none" aria-hidden="true">💛</div>
+      <div class="absolute bottom-10 left-10 text-6xl opacity-[0.03] pointer-events-none select-none" aria-hidden="true">🎯</div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-accent-soft font-semibold text-sm mb-6 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+          Personal Fundraising
         </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 tracking-tight leading-[1.1]">
-          Turn Your Passion<br class="hidden sm:inline" /> Into <span class="text-accent">Peace</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+          Turn Your Passion<br class="hidden sm:inline" /> Into <span class="text-accent-soft">Peace</span>
         </h1>
-        <p class="text-xl text-steel max-w-2xl">
+        <p class="text-xl text-white/70 max-w-2xl font-light">
           Run a marathon for water. Share a birthday for schools. Game for peace.
           Whatever you love, turn it into a fundraiser that rebuilds communities across Africa.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#ideas" class="btn btn-accent btn-large cta-hover-glow">Browse ideas</a>
-          <a href="#start-campaign" class="btn btn-large border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all">Start your campaign</a>
+          <a href="#ideas" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-[#0a0a0a] font-bold rounded-full hover:bg-accent-deep transition-all shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/40 group">
+            Browse Ideas
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="#start-campaign" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all">
+            Start Your Campaign
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Impact strip: live numbers -->
-    <section class="bg-canvas py-8 px-4 sm:px-6 lg:px-8 border-b border-hairline">
+    <!-- Impact strip: glass-morphism with animated counters [performance: IO observer, RAF throttled] -->
+    <section class="py-10 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(180deg, #0d2530 0%, #f7f7f7 100%);">
       <div class="max-w-7xl mx-auto">
-        <dl class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <dt class="text-xs text-steel uppercase tracking-wider mt-1">{heroImpact.totalRaised}</dt>
-          <dd class="text-2xl md:text-3xl font-bold text-accent">Raised by supporters</dd>
+        <dl class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div class="scroll-reveal rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm border border-white/10" style="background: rgba(255,255,255,0.08);">
+            <dt class="text-3xl md:text-4xl font-bold text-accent-soft stat-fund-counter" data-target="61510" data-prefix="KES ">KES 0</dt>
+            <dd class="text-sm text-white/70 mt-1 font-medium">Raised by supporters</dd>
+            <div class="absolute -top-4 -right-4 text-5xl opacity-[0.06]" aria-hidden="true">💰</div>
           </div>
-          <div>
-            <dt class="text-xs text-steel uppercase tracking-wider mt-1">{heroImpact.totalDonors}</dt>
-          <dd class="text-2xl md:text-3xl font-bold text-accent">Personal donors</dd>
+          <div class="scroll-reveal rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm border border-white/10" style="background: rgba(255,255,255,0.08); animation-delay: 80ms;">
+            <dt class="text-3xl md:text-4xl font-bold text-accent-soft stat-fund-counter" data-target="1006" data-prefix="">0</dt>
+            <dd class="text-sm text-white/70 mt-1 font-medium">Personal Donors</dd>
+            <div class="absolute -top-4 -right-4 text-5xl opacity-[0.06]" aria-hidden="true">👥</div>
           </div>
-          <div>
-            <dt class="text-xs text-steel uppercase tracking-wider mt-1">{heroImpact.activeCampaigns}</dt>
-          <dd class="text-2xl md:text-3xl font-bold text-accent">Active campaigns</dd>
+          <div class="scroll-reveal rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm border border-white/10" style="background: rgba(255,255,255,0.08); animation-delay: 160ms;">
+            <dt class="text-3xl md:text-4xl font-bold text-accent-soft stat-fund-counter" data-target="47" data-prefix="">0</dt>
+            <dd class="text-sm text-white/70 mt-1 font-medium">Active Campaigns</dd>
+            <div class="absolute -top-4 -right-4 text-5xl opacity-[0.06]" aria-hidden="true">🚀</div>
           </div>
-          <div>
-            <dt class="text-xs text-steel uppercase tracking-wider mt-1">{heroImpact.avgCampaignGoal}</dt>
-          <dd class="text-2xl md:text-3xl font-bold text-accent">Average goal</dd>
+          <div class="scroll-reveal rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm border border-white/10" style="background: rgba(255,255,255,0.08); animation-delay: 240ms;">
+            <dt class="text-3xl md:text-4xl font-bold text-accent-soft stat-fund-counter" data-target="18400" data-prefix="KES ">KES 0</dt>
+            <dd class="text-sm text-white/70 mt-1 font-medium">Average Campaign Goal</dd>
+            <div class="absolute -top-4 -right-4 text-5xl opacity-[0.06]" aria-hidden="true">🎯</div>
           </div>
         </dl>
       </div>
@@ -95,22 +110,24 @@ const steps = [
             Six community-tested formats. Click any idea to see a real-life example and what a similar campaign has already raised for peace.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ideas.map((idea) => (
-            <article class="card-base p-6 flex flex-col gap-4 group" data-idea-card>
-              <div class="flex items-start justify-between">
-                <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-2xl shrink-0" aria-hidden="true">{idea.emoji}</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 tilt-container">
+          {ideas.map((idea, idx) => (
+            <article class="tilt-card scroll-reveal group relative bg-canvas rounded-2xl border border-hairline p-6 flex flex-col gap-4 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-accent/30" style={`animation-delay: ${idx * 80}ms`}>
+              <!-- Gradient border glow on hover [compositor-friendly] -->
+              <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;"></div>
+              <div class="flex items-start justify-between relative z-10">
+                <span class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 text-3xl shrink-0" aria-hidden="true">{idea.emoji}</span>
                 <div class="text-right">
-                  <div class="text-xs text-steel uppercase tracking-wider">Recently raised</div>
-                  <div class="text-sm font-semibold text-ink">{idea.raised}</div>
+                  <div class="text-[10px] text-steel uppercase tracking-wider font-medium">Recently raised</div>
+                  <div class="text-base font-bold text-ink">{idea.raised}</div>
                   <div class="text-xs text-steel">from {idea.donors} donors</div>
                 </div>
               </div>
-              <h3 class="text-heading-5 text-ink group-hover:text-accent-deep transition-colors">{idea.title}</h3>
-              <p class="text-sm text-steel leading-relaxed">{idea.desc}</p>
-              <a href={`/fundraise?idea=${encodeURIComponent(slugify(idea.title))}`} class="mt-auto inline-flex items-center text-sm font-semibold text-accent-deep hover:text-accent group-hover:translate-x-1 transition-all">
-                Start this idea
-                <svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <h3 class="text-lg font-bold text-ink group-hover:text-accent transition-colors">{idea.title}</h3>
+              <p class="text-sm text-steel leading-relaxed flex-1">{idea.desc}</p>
+              <a href={`/fundraise?idea=${encodeURIComponent(slugify(idea.title))}`} class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-deep group-hover:translate-x-1 transition-all">
+                Start This Idea
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
@@ -120,35 +137,53 @@ const steps = [
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas border-t border-hairline">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-heading-2 text-ink mb-4">How it works</h2>
-          <p class="text-body-md text-steel max-w-xl mx-auto">Four steps from idea to impact report.</p>
+    <!-- How it works with step connectors -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas border-t border-hairline relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-[0.03] pointer-events-none" style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"></div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-4">
+            <span aria-hidden="true">🚀</span> Your Journey
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-ink mb-4 tracking-tight">Four Simple Steps</h2>
+          <p class="text-lg text-steel max-w-xl mx-auto">From idea to impact report — we guide you every step of the way.</p>
         </div>
-        <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 list-none">
-          {steps.map((step) => (
-            <li class="card-base p-6 flex flex-col gap-3 scroll-reveal">
-              <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent text-primary font-bold text-lg shrink-0" aria-hidden="true">{step.num}</span>
-              <h3 class="text-heading-5 text-ink">{step.title}</h3>
-              <p class="text-sm text-steel leading-relaxed">{step.desc}</p>
-            </li>
-          ))}
-        </ol>
+        <div class="relative">
+          <!-- Desktop connecting line -->
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20" aria-hidden="true"></div>
+          <ol class="grid grid-cols-1 md:grid-cols-4 gap-6 list-none">
+            {steps.map((step, idx) => (
+              <li class="text-center scroll-reveal group" style={`animation-delay: ${idx * 100}ms`}>
+                <div class="relative inline-flex mb-4">
+                  <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-deep flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-xl group-hover:shadow-accent/30 group-hover:-translate-y-1 transition-all duration-300">
+                    <span class="text-2xl font-bold text-white">{step.num}</span>
+                  </div>
+                  <div class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-canvas border-2 border-accent/30 flex items-center justify-center shadow-sm">
+                    <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                </div>
+                <h3 class="text-lg font-bold text-ink mb-1">{step.title}</h3>
+                <p class="text-sm text-steel leading-relaxed max-w-xs mx-auto">{step.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- Start-campaign form -->
+    <!-- Start-campaign form [performance: static form, no JS heavy lifting] -->
     <section id="start-campaign" class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-10">
-          <h2 class="text-heading-2 text-ink mb-4">Start your campaign</h2>
-          <p class="text-body-md text-steel">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-4">
+            <span aria-hidden="true">📝</span> Launch Your Campaign
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-ink mb-4 tracking-tight">Start Your Fundraiser</h2>
+          <p class="text-lg text-steel max-w-xl mx-auto">
             Tell us what you're planning. Our team will reach out within 48 hours with your personalised fundraising page, branded share links, and impact-reporting tools.
           </p>
         </div>
-        <form class="card-base p-6 md:p-8 space-y-6" data-fundraise-intake action="mailto:fundraise@peaceleagueafrica.org" method="post" enctype="text/plain">
+        <form class="rounded-2xl border border-hairline bg-canvas p-6 md:p-8 space-y-6 shadow-sm" data-fundraise-intake action="mailto:fundraise@peaceleagueafrica.org" method="post" enctype="text/plain">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
               <label for="fund-name" class="text-sm font-semibold text-ink">Your full name <span class="text-brand-error" aria-hidden="true">*</span></label>
@@ -259,6 +294,70 @@ const steps = [
   <Footer />
 
   <script>
+    // ── Animated Counters for Impact Strip [performance: IO + RAF] ──
+    function animateFundCount(el, target, prefix, duration) {
+      if (!duration) duration = 1200;
+      var start = 0;
+      var startTime = performance.now();
+      function tick(now) {
+        var elapsed = now - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.floor(start + (target - start) * eased).toLocaleString();
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    var fundCountersAnimated = false;
+    function initFundCounters() {
+      if (fundCountersAnimated) return;
+      fundCountersAnimated = true;
+      document.querySelectorAll('.stat-fund-counter').forEach(function(el) {
+        var targetVal = parseInt(el.dataset.target);
+        var prefix = el.dataset.prefix || '';
+        if (!isNaN(targetVal)) animateFundCount(el, targetVal, prefix);
+      });
+    }
+
+    var fundStatsEl = document.querySelector('.stat-fund-counter');
+    if (fundStatsEl && 'IntersectionObserver' in window) {
+      var fundObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            initFundCounters();
+            fundObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      fundObserver.observe(fundStatsEl);
+    } else {
+      initFundCounters();
+    }
+
+    // ── 3D Tilt Effect for idea cards [performance: RAF throttled] ──
+    var fundTiltRAF = null;
+    document.addEventListener('mousemove', function(e) {
+      if (fundTiltRAF) return;
+      fundTiltRAF = requestAnimationFrame(function() {
+        fundTiltRAF = null;
+        document.querySelectorAll('.tilt-card').forEach(function(card) {
+          var rect = card.getBoundingClientRect();
+          var deltaX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          var deltaY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          card.style.transform = 'perspective(800px) rotateX(' + (deltaY * -3) + 'deg) rotateY(' + (deltaX * 3) + 'deg) scale3d(1.01,1.01,1.01)';
+          card.style.transition = 'transform 0.1s ease-out';
+        });
+      });
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function() {
+      document.querySelectorAll('.tilt-card').forEach(function(card) {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        card.style.transition = 'transform 0.5s ease-out';
+      });
+    });
+
     // ── Cloudflare Turnstile ──
     const FUN_TURNSTILE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
     let funToken = '';
