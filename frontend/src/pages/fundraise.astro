@@ -17,16 +17,13 @@ const steps = [
   { num: "02", title: "Set Your Goal", desc: "How much do you want to raise? KES 500 funds a peace classroom. KES 5,000 drills a water well. Every shilling counts." },
   { num: "03", title: "Share Your Story", desc: "Tell your network why peace in Africa matters to you. Your passion is contagious — share it widely." },
   { num: "04", title: "Celebrate Impact", desc: "When you hit your goal, we'll send you photos, videos, and impact reports from the communities you helped." },
-];
-
-const heroImpact = {
+];const heroImpact = {
   totalRaised: "KES 61,510",
   totalDonors: "1,006",
   activeCampaigns: "47",
   avgCampaignGoal: "KES 18,400",
 };
 
-const formatKes = (n) => "KES " + Number(n.toString().replace(/[^0-9]/g, "")).toLocaleString();
 ---
 
 <Layout title="Fundraise for Peace" description="Start a fundraiser for Peace League Africa. Birthday, marathon, gaming — pick your format. Every shilling powers peace education, clean water, and community programmes across 12 African countries.">
@@ -154,11 +151,11 @@ const formatKes = (n) => "KES " + Number(n.toString().replace(/[^0-9]/g, "")).to
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
               <label for="fund-name" class="text-sm font-semibold text-ink">Your full name <span class="text-brand-error" aria-hidden="true">*</span></label>
-              <input id="fund-name" name="name" type="text" required autocomplete="name" placeholder="e.g. Aisha Wanjiru" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
+              <input id="fund-name" name="name" type="text" required aria-required="true" autocomplete="name" placeholder="e.g. Aisha Wanjiru" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
             </div>
             <div class="flex flex-col gap-1.5">
               <label for="fund-email" class="text-sm font-semibold text-ink">Email <span class="text-brand-error" aria-hidden="true">*</span></label>
-              <input id="fund-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
+              <input id="fund-email" name="email" type="email" required aria-required="true" autocomplete="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
             </div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -168,7 +165,7 @@ const formatKes = (n) => "KES " + Number(n.toString().replace(/[^0-9]/g, "")).to
             </div>
             <div class="flex flex-col gap-1.5">
               <label for="fund-idea" class="text-sm font-semibold text-ink">What kind of campaign? <span class="text-brand-error" aria-hidden="true">*</span></label>
-              <select id="fund-idea" name="idea" required class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+              <select id="fund-idea" name="idea" required aria-required="true" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
                 <option value="">Choose an idea…</option>
                 {ideas.map((idea) => <option value={idea.title}>{idea.title}</option>)}
                 <option value="other">My own idea</option>
@@ -176,8 +173,7 @@ const formatKes = (n) => "KES " + Number(n.toString().replace(/[^0-9]/g, "")).to
             </div>
           </div>
           <div class="flex flex-col gap-1.5">
-            <label for="fund-goal" class="text-sm font-semibold text-ink">Your fundraising goal (KES) <span class="text-brand-error" aria-hidden="true">*</span></label>
-            <input id="fund-goal" name="goal_amount" type="number" required inputmode="numeric" min="500" step="100" placeholder="e.g. 25000" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
+            <label for="fund-goal" class="text-sm font-semibold text-ink">Your fundraising goal (KES) <span class="text-brand-error" aria-hidden="true">*</span></label>              <input id="fund-goal" name="goal_amount" type="number" required aria-required="true" inputmode="numeric" min="500" step="100" placeholder="e.g. 25000" class="w-full px-4 py-3 rounded-xl border border-hairline bg-canvas text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20" />
             <p class="text-xs text-steel">Tip: KES 500 funds a peace classroom. KES 5,000 drills a water well.</p>
           </div>
           <div class="flex flex-col gap-1.5">
