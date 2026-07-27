@@ -179,3 +179,4 @@ Append a single line when:
 - 2026-07-27Z forms: Turnstile added to contact, fundraise, volunteer, awards voting modal. Donate: gradient hero + impact tiers + stats + trust signals. Build: 144 pages.
 - 2026-07-27Z volunteer: gradient hero with ambient glow + 3D tilt track cards + animated glass-morphism stat counters with IntersectionObserver + step process connectors + form polish + textarea fix. Build: 144 pages.
 - 2026-07-27Z fundraise: gradient hero with ambient glow + 3D tilt idea cards + animated glass-morphism impact counters + step process connectors + form polish. Performance: RAF throttling, IO disconnect, compositor-only transitions. Build: 144 pages.
+- 2026-07-27Z index: goal capped at KES 5M (raised KES 3.2M, 64%). Text updated to welcome KES 5/10/500+ donations. Diverse supporter initials (5) + count 156. Build: 144 pages.
