@@ -8,72 +8,70 @@ import Footer from '../components/Footer.astro';
   <Navigation />
 
   <main id="main-content" class="min-h-screen">
-    <!-- Hero with gradient + countdown -->
-    <section class="relative hero-gradient text-on-dark py-section-lg px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div class="absolute inset-0 hero-pattern"></div>
-      <div class="absolute inset-0 hero-pattern-overlay"></div>
-      <div class="relative max-w-7xl mx-auto text-center z-10">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent-soft font-semibold text-sm mb-6 backdrop-blur-sm">
-          <span>🏆</span> 2026 Awards
+    <!-- Hero: flat per DESIGN.md (atmospheric gradient reserved for home + startups only) [fixing-metadata + baseline-ui] -->
+    <section class="bg-surface text-ink py-section-lg px-4 sm:px-6 lg:px-8 border-b border-hairline">
+      <div class="max-w-7xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-6">
+          <span aria-hidden="true">🏆</span> 2026 Awards
         </div>
-        <h1 class="text-heading-1 text-on-dark mb-6 max-w-4xl mx-auto">
+        <h1 class="text-heading-1 text-ink mb-6 max-w-4xl mx-auto">
           Peace League Africa Awards
         </h1>
-        <p class="text-body-md text-on-dark-muted mb-8 max-w-2xl mx-auto">
+        <p class="text-body-md text-steel mb-8 max-w-2xl mx-auto">
           Celebrating the champions of peace-building, community service, and leadership
           across East Africa and the Great Lakes region.
         </p>
 
-        <!-- Countdown -->
-        <div class="flex justify-center gap-4 sm:gap-6 mb-10" id="countdown" aria-live="polite" aria-label="Countdown to awards ceremony">
-          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
-            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-days">—</div>
-            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Days</div>
+        <!-- Countdown (semantically grouped as a list; aria-live announces updates) [fixing-accessibility] -->
+        <div class="flex justify-center gap-4 sm:gap-6 mb-10" id="countdown" role="timer" aria-live="polite" aria-atomic="true" aria-label="Countdown to awards ceremony on December 17, 2026">
+          <div class="card-base px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-ink" id="countdown-days" aria-label="days remaining">—</div>
+            <div class="text-xs text-steel uppercase tracking-wider mt-1">Days</div>
           </div>
-          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
-            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-hours">—</div>
-            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Hours</div>
+          <div class="card-base px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-ink" id="countdown-hours" aria-label="hours remaining">—</div>
+            <div class="text-xs text-steel uppercase tracking-wider mt-1">Hours</div>
           </div>
-          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
-            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-minutes">—</div>
-            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Minutes</div>
+          <div class="card-base px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-ink" id="countdown-minutes" aria-label="minutes remaining">—</div>
+            <div class="text-xs text-steel uppercase tracking-wider mt-1">Minutes</div>
           </div>
-          <div class="glass rounded-2xl px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
-            <div class="text-3xl sm:text-4xl font-bold text-on-dark" id="countdown-seconds">—</div>
-            <div class="text-xs text-on-dark-muted uppercase tracking-wider mt-1">Seconds</div>
+          <div class="card-base px-4 sm:px-6 py-4 min-w-[80px] sm:min-w-[100px]">
+            <div class="text-3xl sm:text-4xl font-bold text-ink" id="countdown-seconds" aria-label="seconds remaining">—</div>
+            <div class="text-xs text-steel uppercase tracking-wider mt-1">Seconds</div>
           </div>
         </div>
 
         <!-- CTAs -->
         <div class="flex flex-wrap justify-center gap-4">
           <a href="#categories" class="btn btn-accent btn-large">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
             View Nominees
           </a>
-          <a href="/awards/nominate" class="btn btn-large bg-white/10 text-on-dark border border-white/20 hover:bg-white/20 hover:border-white/30">
+          <a href="/awards/nominate" class="btn btn-large border-2 border-accent text-accent-deep hover:bg-accent hover:text-on-dark transition-all">
             Nominate Someone
           </a>
-          <a href="/awards/program" class="btn btn-large inline-flex items-center gap-2 border-2 border-accent/40 text-accent-soft hover:bg-accent/10 transition-all">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a href="/awards/program" class="btn btn-large inline-flex items-center gap-2 border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             View Full Programme
           </a>
         </div>
 
         <!-- Event details -->
-        <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-on-dark-muted">
+        <dl class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-steel">
           <div class="flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            17 Dec 2026
+            <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <dt class="sr-only">Date</dt><dd>17 Dec 2026</dd>
           </div>
           <div class="flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            August 7th Memorial Park (next to Cooperative Bank), Nairobi
+            <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <dt class="sr-only">Venue</dt><dd>August 7th Memorial Park (next to Cooperative Bank), Nairobi</dd>
           </div>
           <div class="flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            10:00 AM EAT
+            <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <dt class="sr-only">Time</dt><dd>10:00 AM EAT</dd>
           </div>
-        </div>
+        </dl>
       </div>
     </section>
 
