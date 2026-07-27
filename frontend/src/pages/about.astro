@@ -124,24 +124,22 @@ const impactStats = [
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl sm:text-3xl font-semibold text-ink text-center mb-3">Our Journey</h2>
         <p class="text-steel text-center max-w-xl mx-auto mb-10">A decade of growth, resilience, and impact — told by the moments that shaped us.</p>
-        <div class="hs-accordion-group" role="region" aria-label="Organization history timeline">
+        <div class="space-y-4" role="region" aria-label="Organization history timeline">
           {milestones.map((m, idx) => (
-            <div class="hs-accordion bg-surface rounded-2xl border border-hairline mb-4 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-accent/20">
-              <button class="hs-accordion-toggle flex items-center justify-between gap-4 w-full p-5 md:p-6 text-left transition-colors hover:bg-accent/5" id={`milestone-${idx}`} aria-expanded={idx === 0 ? 'true' : 'false'}>
+            <details class="group bg-surface rounded-2xl border border-hairline overflow-hidden transition-all duration-300 hover:shadow-md hover:border-accent/20" open={idx === 0}>
+              <summary class="flex items-center justify-between gap-4 w-full p-5 md:p-6 cursor-pointer transition-colors list-none [&::-webkit-details-marker]:hidden hover:bg-accent/5">
                 <div class="flex items-center gap-4">
                   <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent font-bold text-sm shrink-0">{m.year}</span>
                   <span class="font-medium text-ink">{m.title}</span>
                 </div>
-                <svg class="w-5 h-5 text-steel hs-accordion-active:rotate-180 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" {idx === 0 ? '' : 'hidden'} aria-labelledby={`milestone-${idx}`}>
-                <div class="px-5 md:px-6 pb-5 md:pb-6">
-                  <div class="pl-14">
-                    <p class="text-steel leading-relaxed">{m.desc}</p>
-                  </div>
+                <svg class="w-5 h-5 text-steel shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-5 md:px-6 pb-5 md:pb-6">
+                <div class="pl-14">
+                  <p class="text-steel leading-relaxed">{m.desc}</p>
                 </div>
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </div>
@@ -181,6 +179,3 @@ const impactStats = [
   <Footer />
 </Layout>
 
-<script>
-  import 'preline';
-</script>
