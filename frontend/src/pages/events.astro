@@ -70,49 +70,46 @@ const mapEventsJson = JSON.stringify({
          SPLIT HERO — Left: title + next event countdown
                      Right: animated mosaic of event images
          ════════════════════════════════════════════════════════ -->
-    <section class="relative hero-inner grain-overlay overflow-hidden min-h-[70vh] flex items-center">
-      <div class="orb-float orb-float--1" style="top:-120px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-100px;left:-80px;" aria-hidden="true"></div>
-
-      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28">
+    <section class="py-12 lg:py-16 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Left: Content -->
           <div data-reveal="left">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium text-accent-soft border border-white/10 mb-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/5 rounded-full text-xs sm:text-sm font-medium text-accent border border-hairline mb-6">
               <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
               {upcomingEvents.length} Events Across 6 Countries
             </div>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.02] tracking-[-2px] text-white mb-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.02] tracking-[-2px] text-ink mb-6">
               Gather.<br/>
               <span class="bg-gradient-to-r from-accent via-accent-soft to-accent bg-clip-text text-transparent">Build Peace.</span>
             </h1>
 
-            <p class="text-lg sm:text-xl text-white/70 max-w-xl leading-relaxed mb-10">
+            <p class="text-lg sm:text-xl text-steel max-w-xl leading-relaxed mb-10">
               From summits in Nairobi to health fairs in Kigali — every event is a doorway into the movement. Find yours.
             </p>
 
             <!-- Next event countdown (if upcoming) -->
             {nextEvent && (
-              <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-5 border border-white/10 inline-block">
-                <p class="text-xs text-white/50 uppercase tracking-widest font-semibold mb-3">Next Event</p>
-                <p class="text-white font-semibold mb-3">{nextEvent.title} &middot; {nextEvent.location}</p>
+              <div class="bg-canvas rounded-2xl p-5 border border-hairline inline-block shadow-sm">
+                <p class="text-xs text-steel/70 uppercase tracking-widest font-semibold mb-3">Next Event</p>
+                <p class="text-ink font-semibold mb-3">{nextEvent.title} &middot; {nextEvent.location}</p>
                 <div class="flex gap-4" id="hero-countdown" data-target-date={`${nextIsoDate}T${nextStartTime}:00`}>
                   <div class="text-center">
-                    <span class="block text-3xl font-bold text-white tabular-nums" id="hero-days">--</span>
-                    <span class="text-[10px] text-white/40 uppercase tracking-wider">days</span>
+                    <span class="block text-3xl font-bold text-ink tabular-nums" id="hero-days">--</span>
+                    <span class="text-[10px] text-steel/60 uppercase tracking-wider">days</span>
                   </div>
                   <div class="text-center">
-                    <span class="block text-3xl font-bold text-white tabular-nums" id="hero-hours">--</span>
-                    <span class="text-[10px] text-white/40 uppercase tracking-wider">hrs</span>
+                    <span class="block text-3xl font-bold text-ink tabular-nums" id="hero-hours">--</span>
+                    <span class="text-[10px] text-steel/60 uppercase tracking-wider">hrs</span>
                   </div>
                   <div class="text-center">
-                    <span class="block text-3xl font-bold text-white tabular-nums" id="hero-mins">--</span>
-                    <span class="text-[10px] text-white/40 uppercase tracking-wider">min</span>
+                    <span class="block text-3xl font-bold text-ink tabular-nums" id="hero-mins">--</span>
+                    <span class="text-[10px] text-steel/60 uppercase tracking-wider">min</span>
                   </div>
                   <div class="text-center">
-                    <span class="block text-3xl font-bold text-white tabular-nums" id="hero-secs">--</span>
-                    <span class="text-[10px] text-white/40 uppercase tracking-wider">sec</span>
+                    <span class="block text-3xl font-bold text-ink tabular-nums" id="hero-secs">--</span>
+                    <span class="text-[10px] text-steel/60 uppercase tracking-wider">sec</span>
                   </div>
                 </div>
               </div>
@@ -123,7 +120,7 @@ const mapEventsJson = JSON.stringify({
                 Explore Events
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
               </a>
-              <a href="/contact" class="btn btn-large btn-ripple border-2 border-white/25 text-white hover:bg-white/10">
+              <a href="/contact" class="btn btn-large border-2 border-hairline text-ink hover:bg-accent/5 hover:border-accent/30 transition-all duration-200">
                 Host an Event
               </a>
             </div>
