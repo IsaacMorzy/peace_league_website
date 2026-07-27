@@ -176,3 +176,4 @@ Append a single line when:
 - 2026-07-27Z blog: fixed 21 missing hero images + 1 inline Utumishi image. Topic-relevant Unsplash CDN URLs replace non-existent local files. Build: 144 pages ✓
 - 2026-07-27Z awards: carousel arrows always visible, IntersectionObserver for stat counters on scroll, removed aggressive scroll-reveal mutation. Build: 144 pages.
 - 2026-07-27Z awards: inline voting modal with nominee picker + 3D tilt-card effect on category cards + featured nominees section with profile cards. Build: 144 pages.
+- 2026-07-27Z forms: Turnstile added to contact, fundraise, volunteer, awards voting modal. Donate: gradient hero + impact tiers + stats + trust signals. Build: 144 pages.

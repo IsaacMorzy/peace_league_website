@@ -63,16 +63,22 @@ const process = [
   <Navigation />
 
   <main id="main-content">
-    <!-- Hero: flat per DESIGN.md [baseline-ui] -->
-    <section class="py-12 lg:py-16 bg-surface border-b border-hairline">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-6">
-          <span aria-hidden="true">🤲</span> Volunteer
+    <!-- Hero: gradient with ambient glow -->
+    <section class="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style="background: linear-gradient(135deg, #0d2530 0%, #1a3d4a 40%, #0d2530 100%);">
+      <!-- Ambient glow orbs -->
+      <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-15" style="background: radial-gradient(circle, rgba(0,212,164,0.3) 0%, transparent 70%);"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10" style="background: radial-gradient(circle, rgba(0,212,164,0.2) 0%, transparent 70%);"></div>
+      <div class="absolute top-10 right-10 text-8xl opacity-[0.04] pointer-events-none select-none" aria-hidden="true">🤲</div>
+      <div class="absolute bottom-10 left-10 text-6xl opacity-[0.03] pointer-events-none select-none" aria-hidden="true">🌍</div>
+      <div class="max-w-7xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-accent-soft font-semibold text-sm mb-6 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+          1,200+ Active Volunteers
         </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 tracking-tight leading-[1.1]">
-          Bring your skills. <span class="text-accent">Build peace.</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+          Bring Your Skills. <span class="text-accent-soft">Build Peace.</span>
         </h1>
-        <p class="text-xl text-steel max-w-2xl mx-auto">
+        <p class="text-xl text-white/70 max-w-2xl mx-auto font-light">
           Three volunteer tracks — on the ground, online, or running your own chapter. We pair you with a real project, a real community, and a real impact report.
         </p>
       </div>
@@ -88,26 +94,33 @@ const process = [
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {tracks.map((t) => (
-            <article class={`card-base p-6 flex flex-col gap-4 relative ${t.featured ? "ring-2 ring-accent" : ""}`}>
+          {tracks.map((t, idx) => (
+            <article class={`tilt-card scroll-reveal group relative bg-canvas rounded-2xl border p-6 flex flex-col gap-4 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${t.featured ? "ring-2 ring-accent/50 hover:ring-accent border-accent/20" : "border-hairline hover:border-accent/30"}`} style={`animation-delay: ${idx * 100}ms`}>
               {t.featured && (
-                <div class="absolute -top-3 left-4 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full">
-                  Highest-impact
+                <div class="absolute -top-3 left-4 bg-gradient-to-r from-accent to-accent-deep text-[#0a0a0a] text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-accent/20">
+                  🔥 Highest-impact
                 </div>
               )}
-              <div class="flex items-center gap-3">
-                <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/15 text-2xl shrink-0" aria-hidden="true">{t.icon}</span>
-                <div>
-                  <h3 class="text-base font-semibold text-ink">{t.name}</h3>
-                  <p class="text-xs text-steel">{t.commitment} · {t.location}</p>
+              <!-- Gradient border glow on hover -->
+              <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="border: 1.5px solid transparent; background: linear-gradient(135deg, #00d4a4, #7cebcb, #00d4a4) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;"></div>
+              <div class="flex items-start gap-4">
+                <span class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 text-3xl shrink-0" aria-hidden="true">{t.icon}</span>
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-lg font-bold text-ink">{t.name}</h3>
+                  <p class="text-xs text-steel mt-0.5">
+                    <span class="inline-flex items-center gap-1"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>{t.commitment}</span>
+                    <span class="mx-1.5 text-hairline">·</span>
+                    <span class="inline-flex items-center gap-1"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>{t.location}</span>
+                  </p>
                 </div>
               </div>
-              <p class="text-sm text-steel leading-relaxed">{t.blurb}</p>
-              <div class="text-xs text-steel">
-                <span class="font-semibold text-ink">Skills:</span> {t.skills}
+              <p class="text-sm text-steel leading-relaxed flex-1">{t.blurb}</p>
+              <div class="text-xs text-steel bg-surface rounded-xl p-3 border border-hairline">
+                <span class="font-semibold text-ink">Skills needed:</span> {t.skills}
               </div>
-              <a href={`/contact?intent=volunteer&track=${encodeURIComponent(t.name)}`} class={`btn ${t.featured ? "btn-accent" : "border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all"} btn-large w-full justify-center`}>
+              <a href={`/contact?intent=volunteer&track=${encodeURIComponent(t.name)}`} class={`btn ${t.featured ? "btn-accent shadow-lg shadow-accent/20" : "border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep"} btn-large w-full justify-center group`}>
                 {t.cta}
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
             </article>
           ))}
@@ -115,47 +128,66 @@ const process = [
       </div>
     </section>
 
-    <!-- Stats strip -->
-    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-y border-hairline">
+    <!-- Stats strip with glass-morphism -->
+    <section class="py-section px-4 sm:px-6 lg:px-8" style="background: linear-gradient(180deg, #0d2530 0%, #f7f7f7 100%);">
       <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          {stats.map((stat) => (
-            <div>
-              <div class="text-3xl md:text-4xl font-bold text-accent mb-1">{stat.count}</div>
-              <div class="text-xs text-steel uppercase tracking-wider">{stat.label}</div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+          {stats.map((stat, idx) => (
+            <div class="scroll-reveal rounded-2xl p-5 relative overflow-hidden backdrop-blur-sm border border-white/10" style={`background: rgba(255,255,255,0.08); animation-delay: ${idx * 80}ms`}>
+              <div class="text-3xl md:text-4xl font-bold text-accent-soft stat-vol-counter" data-target={stat.count.replace(/[+,]/g, '')} data-suffix={stat.count.includes('yrs') ? ' yrs' : stat.count.includes('+') ? '+' : ''}>{stat.count}</div>
+              <div class="text-sm text-white/70 mt-1 font-medium">{stat.label}</div>
+              <div class="absolute -top-4 -right-4 text-5xl opacity-[0.06]" aria-hidden="true">{['🤝','🌍','🏛️','⏳'][idx]}</div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Process / how -->
-    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas border-t border-hairline">
-      <div class="max-w-5xl mx-auto">
+    <!-- Process / how with step connectors -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas border-t border-hairline relative">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-[0.03] pointer-events-none" style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"></div>
+      <div class="max-w-5xl mx-auto relative z-10">
         <div class="text-center mb-10">
-          <h2 class="text-heading-3 text-ink mb-4">From application to first impact</h2>
-          <p class="text-body-md text-steel">Four steps. Average time-to-first-volunteer-hour: 14 days.</p>
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-4">
+            <span aria-hidden="true">🚀</span> Your Journey
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-ink mb-4 tracking-tight">From Application to Impact</h2>
+          <p class="text-lg text-steel max-w-xl mx-auto">Average time to first volunteer hour: <strong>14 days</strong></p>
         </div>
-        <ol class="grid grid-cols-1 md:grid-cols-4 gap-6 list-none" aria-label="Volunteer onboarding steps">
-          {process.map((p) => (
-            <li class="card-base p-6 flex flex-col gap-3">
-              <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent text-primary font-bold text-lg shrink-0" aria-hidden="true">{p.step}</span>
-              <h3 class="text-base font-semibold text-ink">{p.title}</h3>
-              <p class="text-sm text-steel leading-relaxed">{p.desc}</p>
-            </li>
-          ))}
-        </ol>
+        <div class="relative">
+          <!-- Desktop connecting line -->
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20" aria-hidden="true"></div>
+          <ol class="grid grid-cols-1 md:grid-cols-4 gap-6 list-none" aria-label="Volunteer onboarding steps">
+            {process.map((p, idx) => (
+              <li class="text-center scroll-reveal group" style={`animation-delay: ${idx * 100}ms`}>
+                <div class="relative inline-flex mb-4">
+                  <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-deep flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-xl group-hover:shadow-accent/30 group-hover:-translate-y-1 transition-all duration-300">
+                    <span class="text-2xl font-bold text-white">{p.step}</span>
+                  </div>
+                  <div class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-canvas border-2 border-accent/30 flex items-center justify-center shadow-sm">
+                    <svg class="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                </div>
+                <h3 class="text-lg font-bold text-ink mb-1">{p.title}</h3>
+                <p class="text-sm text-steel leading-relaxed max-w-xs mx-auto">{p.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- CTA form -->
+    <!-- CTA form with glass styling -->
     <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-10">
-          <h2 class="text-heading-3 text-ink mb-4">Volunteer signup</h2>
-          <p class="text-body-md text-steel">5-minute form. We respond within 7 days.</p>
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-4">
+            <span aria-hidden="true">📝</span> Apply Now
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-ink mb-4 tracking-tight">Ready to Make a Difference?</h2>
+          <p class="text-lg text-steel max-w-xl mx-auto">5-minute form. We'll respond within 7 days with your matched opportunity.</p>
         </div>
-        <form class="card-base p-6 md:p-8 space-y-5" data-volunteer-intake action="mailto:volunteer@peaceleagueafrica.org" method="post" enctype="text/plain">
+        <form class="rounded-2xl border border-hairline bg-canvas p-6 md:p-8 space-y-5 shadow-sm" data-volunteer-intake action="mailto:volunteer@peaceleagueafrica.org" method="post" enctype="text/plain">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
               <label for="vol-name" class="text-sm font-semibold text-ink">Full name <span class="text-brand-error" aria-hidden="true">*</span></label>
@@ -175,7 +207,7 @@ const process = [
           </div>
           <div class="flex flex-col gap-1.5">
             <label for="vol-skills" class="text-sm font-semibold text-ink">Skills you bring (one paragraph)</label>
-            <textarea id="vol-skills" name="skills" rows="3" placeholder="Languages, design, research, fundraising, M&E…"></textarea>
+            <textarea id="vol-skills" name="skills" rows="3" placeholder="Languages, design, research, fundraising, M&E…" class="w-full px-4 py-3 rounded-xl border border-hairline bg-surface text-ink text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
           </div>
           <!-- Cloudflare Turnstile -->
           <div id="vol-turnstile-widget" class="my-4 flex justify-center" style="min-height:65px"></div>
@@ -205,6 +237,49 @@ const process = [
   <Footer />
 
   <script>
+    // ── Animated Counters for Stats ──
+    function animateVolCount(el, target, displaySuffix, duration) {
+      if (!duration) duration = 1200;
+      var start = 0;
+      var startTime = performance.now();
+      function tick(now) {
+        var elapsed = now - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(start + (target - start) * eased).toLocaleString() + displaySuffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    var volCountersAnimated = false;
+    function initVolCounters() {
+      if (volCountersAnimated) return;
+      volCountersAnimated = true;
+      document.querySelectorAll('.stat-vol-counter').forEach(function(el) {
+        var targetStr = el.dataset.target;
+        if (!targetStr) return;
+        var suffix = el.dataset.suffix || '';
+        var target = parseInt(targetStr.replace(/[+,]/g, ''));
+        if (!isNaN(target)) animateVolCount(el, target, suffix);
+      });
+    }
+
+    var volStatsSection = document.querySelector('.stat-vol-counter');
+    if (volStatsSection && 'IntersectionObserver' in window) {
+      var volObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            initVolCounters();
+            volObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      volObserver.observe(volStatsSection);
+    } else {
+      initVolCounters();
+    }
+
     // ── Cloudflare Turnstile ──
     const VOL_TURNSTILE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
     let volToken = '';
@@ -249,5 +324,32 @@ const process = [
         ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     }
+
+    // ── 3D Tilt Effect for track cards ──
+    var tiltVolRAF = null;
+    document.addEventListener('mousemove', function(e) {
+      if (tiltVolRAF) return;
+      tiltVolRAF = requestAnimationFrame(function() {
+        tiltVolRAF = null;
+        document.querySelectorAll('.tilt-card').forEach(function(card) {
+          var rect = card.getBoundingClientRect();
+          var cardCenterX = rect.left + rect.width / 2;
+          var cardCenterY = rect.top + rect.height / 2;
+          var deltaX = (e.clientX - cardCenterX) / (rect.width / 2);
+          var deltaY = (e.clientY - cardCenterY) / (rect.height / 2);
+          var tiltX = deltaY * -3;
+          var tiltY = deltaX * 3;
+          card.style.transform = 'perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) scale3d(1.01,1.01,1.01)';
+          card.style.transition = 'transform 0.1s ease-out';
+        });
+      });
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function() {
+      document.querySelectorAll('.tilt-card').forEach(function(card) {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        card.style.transition = 'transform 0.5s ease-out';
+      });
+    });
   </script>
 </Layout>
