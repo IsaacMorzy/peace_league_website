@@ -30,3 +30,4 @@
 {"run_id":"2026-07-27T09:34Z","pattern":"wayfinder-e2e","outcome":"closed","actions_taken":4,"slur_sha":"7cf5306","scope":"deploy+wayfinder"}
 {"run_id":"2026-07-27T09:55Z","pattern":"slice-8a","outcome":"shipped","actions_taken":1,"slur_sha":"5dde28f","scope":"perf/libredesk-lazy"}
 {"run_id": "2026-07-27T10:06Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 3, "slur_sha": "4fd14de", "scope": "deploy+leasure Slice 8A2 \u2192 / pushed"}
+{"run_id": "2026-07-27T10:13Z", "pattern": "adhoc", "outcome": "closed", "actions_taken": 3, "slur_sha": "255f5d5", "scope": "Fol-1 #144 closed + Fol-2 /donate Lighthouse + Fol-3 Slice 1 /privacy hero fluff cleanup"}
