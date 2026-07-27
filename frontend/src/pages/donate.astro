@@ -184,16 +184,30 @@ import causes from '../lib/causes-data.json';
       if (n >= 10_000)    return Math.min(Math.round(n / 5_000)  * 5_000,  cap);
       return Math.max(Math.round(n / 1_000) * 1_000, 1_000);
     }
+    // When goal * 0.10 >= cap (Emergency Relief, Climate Resilience, Disaster Prep,
+    // Tree Planting etc.) the per-% ladder collapses -- two adjacent radios would show
+    // 1,950,000 stacked. Fall back to a fixed distinguishing ladder that stays well
+    // under the 2M hard cap and never produces duplicate presets.
+    var useFixedLadder = (goal * 0.10) >= cap;
+    function presetValues(g) {
+      if (useFixedLadder) return [50000, 250000, 500000, 1000000];
+      var out = [];
+      for (var i = 0; i < tiers.length; i++) out.push(pretty(g * tiers[i]));
+      return out;
+    }
     var remaining = Math.max(goal - (Number(row.raised_amount) || 0), 0);
+    var note = useFixedLadder
+      ? 'KES ' + remaining.toLocaleString() + ' still needed. Goal exceeds the 2M-per-gift ceiling, so presets use a fixed ladder (50K / 250K / 500K / 1M).'
+      : 'KES ' + remaining.toLocaleString() + ' still needed. Presets are 1% / 5% / 10% / 25% of the KES '
+        + goal.toLocaleString() + ' goal, capped at KES 1,950,000.';
     document.getElementById('cause-heading').textContent = 'Donate to ' + row.title;
-    document.getElementById('cause-sub').textContent =
-      'KES ' + remaining.toLocaleString() + ' still needed. Presets are 1% / 5% / 10% / 25% of the KES '
-      + goal.toLocaleString() + ' goal, capped at KES 1,950,000.';
+    document.getElementById('cause-sub').textContent = note;
     document.getElementById('cause-hidden').value = row.title;
 
     var radios = document.querySelectorAll('#amount-grid input[type=radio]');
+    var values = presetValues(goal);
     radios.forEach(function (input, i) {
-      var amt = pretty(goal * tiers[i]);
+      var amt = values[i];
       input.value = String(amt);
       var lbl = input.closest('label').querySelector('div');
       lbl.textContent = amt.toLocaleString();
