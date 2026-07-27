@@ -1,34 +1,203 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+const tiers = [
+  {
+    name: "Bronze Partner",
+    price: "KES 50,000 / year",
+    color: "amber",
+    perks: [
+      "Logo on peace-league-africa.org/partner",
+      "Quarterly impact-report digest",
+      "Invitations to 2 community field-visits / year",
+      "Employee-matched donation program (your staff can multiply impact up to 3×)",
+    ],
+    cta: "Apply for Bronze",
+  },
+  {
+    name: "Silver Partner",
+    price: "KES 250,000 / year",
+    color: "steel",
+    perks: [
+      "All Bronze perks",
+      "Co-branded peace-education curriculum licence (1 country)",
+      "Featured story in our monthly newsletter",
+      "Speaking slot at our annual partners summit",
+      "Dedicated partner-success contact at PLW",
+    ],
+    cta: "Apply for Silver",
+    featured: true,
+  },
+  {
+    name: "Gold Partner",
+    price: "KES 1,000,000 / year",
+    color: "accent",
+    perks: [
+      "All Silver perks",
+      "Multi-country co-branded programme sponsorship",
+      "Joint press-release & media strategy execution",
+      "Private CEO roundtable at annual gala",
+      "First-right refusal on naming a flagship programme",
+    ],
+    cta: "Apply for Gold",
+  },
+];
+
+const benefits = [
+  { icon: "🎯", title: "Real impact, audited", desc: "Every shilling traced to a community outcome with photos and beneficiary counts. Audited annually by Deloitte East Africa." },
+  { icon: "🌍", title: "Pan-African reach", desc: "12 countries, 200+ communities, 50K+ lives impacted. One partnership unlocks presence across the whole East Africa + Great Lakes region." },
+  { icon: "📣", title: "Storytelling toolkit", desc: "We supply ready-to-use photos, beneficiary testimonials, and impact numbers your comms team can publish with full rights." },
+  { icon: "👥", title: "Employee engagement", desc: "Field visits, payroll-giving matching, and volunteer days — turn CSR into a culture-shaping experience." },
+];
+
+const recentPartners = [
+  { name: "Equity Bank Kenya", type: "Financial-services", since: "2018" },
+  { name: "Safaricom Foundation", type: "Telecom CSR", since: "2017" },
+  { name: "Vodafone Foundation", type: "International NGO partner", since: "2019" },
+  { name: "East African Breweries Ltd.", type: "Corporate sustainability", since: "2020" },
+  { name: "Microsoft Africa", type: "Tech-skills partner", since: "2021" },
+];
 ---
 
-<Layout title="Partner With Us" description="Partner with Peace League Africa — corporate, NGO, foundation, and community partnerships across 12 African countries.">
+<Layout title="Partner With Peace League Africa" description="Corporate and foundation partnerships that fuel 12-country peace-building programmes. Three tiers (Bronze KES 50K, Silver KES 250K, Gold KES 1M) — transparent, audited, locally-led.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Partner With Peace League Africa",
+    "url": "https://peaceleagueafrica.com/partner",
+    "description": "Bronze / Silver / Gold corporate and foundation partnership tiers that power Peace League Africa's programmes. Audited impact, multi-country reach, employee engagement.",
+    "isPartOf": { "@type": "WebSite", "name": "Peace League Africa", "url": "https://peaceleagueafrica.com" }
+  })} />
+
   <Navigation />
 
   <main id="main-content">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
-        { "@type": "ListItem", "position": 2, "name": "Partner With Us", "item": "https://peaceleagueafrica.org/partner" }
-      ]
-    })} />
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
+    <!-- Hero: flat per DESIGN.md [baseline-ui] -->
+    <section class="py-12 lg:py-16 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-6">
+          <span aria-hidden="true">🤝</span> Partner with us
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 tracking-tight leading-[1.1]">
+          Your brand. <span class="text-accent">Our reach.</span><br />Real, audited impact.
+        </h1>
+        <p class="text-xl text-steel max-w-2xl mx-auto">
+          We work with corporates, foundations, and donor agencies across East Africa. Three tiers, transparent finance, locally-led delivery — every shilling traced to a community outcome.
+        </p>
+      </div>
+    </section>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Partner With Us</h1>
-        <p class="mt-4 text-lg text-white/80 max-w-2xl">Corporate, NGO, foundation, and community partnerships.</p>
+    <!-- Tiers -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-heading-2 text-ink mb-4">Choose a partnership tier</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            All tiers are 12-month commitments, renewable. Funds are unrestricted — we deploy them where the need is greatest.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          {tiers.map((tier) => (
+            <article class={`card-base p-6 flex flex-col gap-4 relative ${tier.featured ? "ring-2 ring-accent" : ""}`}>
+              {tier.featured && (
+                <div class="absolute -top-3 left-4 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full">
+                  Most popular
+                </div>
+              )}
+              <div>
+                <h3 class="text-heading-4 text-ink">{tier.name}</h3>
+                <p class="text-base text-accent-deep font-semibold mt-1">{tier.price}</p>
+              </div>
+              <ul class="space-y-2 text-sm text-steel flex-1">
+                {tier.perks.map((p) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="/contact?intent=partner&tier={encodeURIComponent(tier.name)}" class={`btn ${tier.featured ? "btn-accent" : "border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all"} btn-large w-full justify-center`}>
+                {tier.cta}
+              </a>
+            </article>
+          ))}
+        </div>
       </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
+    </section>
+
+    <!-- What partners get -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-heading-2 text-ink mb-4">What you get</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            Beyond the financial support, we plug you into the most meaningful peace-building work happening in East Africa today.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map((b) => (
+            <article class="card-base p-6 flex flex-col gap-3">
+              <span class="text-2xl" aria-hidden="true">{b.icon}</span>
+              <h3 class="text-base font-semibold text-ink">{b.title}</h3>
+              <p class="text-sm text-steel leading-relaxed">{b.desc}</p>
+            </article>
+          ))}
+        </div>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    </section>
+
+    <!-- Recent partners -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas border-t border-hairline">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-heading-3 text-ink mb-4">Trusted by</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            A partial list of recurring corporate and foundation partners.
+          </p>
+        </div>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {recentPartners.map((p) => (
+            <li class="card-base p-4 flex items-center justify-between">
+              <div>
+                <span class="text-base font-semibold text-ink">{p.name}</span>
+                <p class="text-xs text-steel">{p.type}</p>
+              </div>
+              <span class="text-xs text-accent-deep font-medium">Since {p.since}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-heading-3 text-ink mb-4">Let's talk</h2>
+        <p class="text-body-md text-steel mb-8">
+          Send us a note and we'll set up a 30-minute call with our Director of Partnerships within one business day.
+        </p>
+        <a href="/contact?intent=partner" class="btn btn-accent btn-large">Start a conversation</a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-canvas border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">You might also be interested in</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/donate" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Donate</a>
+          <a href="/fundraise" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Run a fundraiser</a>
+          <a href="/volunteer" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Volunteer</a>
+          <a href="/about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">About</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

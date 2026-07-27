@@ -1,49 +1,183 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
-const teamMembers = [
-  { name: 'Amina Osei', role: 'Executive Director', bio: 'Over 15 years of experience in peace-building and community development across East Africa. Former UN peace mediator and founder of the Nairobi Peace Initiative.', avatar: 'Amina+Osei' },
-  { name: 'Joseph Kiprop', role: 'Programs Director', bio: 'Leads all field operations across 12 countries. Background in international development and conflict resolution from the University of Nairobi.', avatar: 'Joseph+Kiprop' },
-  { name: 'Grace Mukamana', role: 'Finance & Operations', bio: 'Ensures 95% of donations reach programs. Certified public accountant with deep expertise in NGO financial management.', avatar: 'Grace+Mukamana' },
-  { name: 'Dr. Samuel Tadesse', role: 'Health Programs Lead', bio: 'Medical doctor and public health specialist coordinating our community health and nutrition initiatives across the region.', avatar: 'Samuel+Tadesse' },
-  { name: 'Nkechi Okonkwo', role: 'Communications Lead', bio: 'Storyteller and media strategist amplifying the voices of peace-builders across Africa through digital and traditional media.', avatar: 'Nkechi+Okonkwo' },
-  { name: 'Pierre Habimana', role: 'Field Coordinator', bio: 'On-the-ground coordinator for reconciliation programs in the Great Lakes region, with over a decade of grassroots peace-building experience.', avatar: 'Pierre+Habimana' },
+const leaders = [
+  {
+    name: "Aisha Wanjiru",
+    role: "Executive Director",
+    location: "Nairobi, Kenya",
+    bio: "Founded Peace League Africa's first peace workshop in 2015. 14 years with grassroots peace-building organisations across East Africa. Master's in Conflict Resolution, University of Nairobi.",
+  },
+  {
+    name: "Daniel Okello",
+    role: "Director of Programmes",
+    location: "Kampala, Uganda",
+    bio: "Designs our 5-cause program portfolio. Former UNICEF field officer; led emergency education response in South Sudan (2017-2019).",
+  },
+  {
+    name: "Grace Mutua",
+    role: "Head of Partnerships & CSR",
+    location: "Nairobi, Kenya",
+    bio: "Builds the corporate-partner network across East Africa. 9 years at Vodafone Foundation; led the Connected Women in Peace initiative across 7 countries.",
+  },
+  {
+    name: "Joseph Bizimana",
+    role: "Field Operations Lead",
+    location: "Kigali, Rwanda",
+    bio: "Oversees 47 community partnerships and 200+ active volunteers. Former MC officer with the African Union Mission in Somalia.",
+  },
+  {
+    name: "Halima Yusuf",
+    role: "Communications & Storytelling",
+    location: "Mombasa, Kenya",
+    bio: "Captures field stories and runs the brand voice. Award-winning documentary photographer; published in National Geographic Africa and the BBC.",
+  },
+  {
+    name: "Samuel Echodu",
+    role: "M&E + Data Lead",
+    location: "Kampala, Uganda",
+    bio: "Builds the impact-measurement framework. Statistician with the East African Community; led the regional youth survey baseline (2022).",
+  },
 ];
 
-const boardMembers = [
-  { name: 'Dr. Elizabeth Wanjiku', role: 'Board Chair', bio: 'Professor of Peace Studies, University of Nairobi. Former Minister of Justice and Constitutional Affairs.' },
-  { name: 'Michael Odhiambo', role: 'Vice Chair', bio: 'CEO of East Africa Development Trust. 25 years in social enterprise and impact investment.' },
-  { name: 'Fatima Hassan', role: 'Treasurer', bio: 'Partner at KPMG Kenya. Specializes in nonprofit audit and financial governance.' },
+const fieldStaff = [
+  { count: "28", label: "Programme officers in 12 countries" },
+  { count: "14", label: "Community liaisons on the ground" },
+  { count: "9", label: "Country directors" },
+  { count: "47", label: "Local partner-organisation staff we co-fund" },
+];
+
+const culture = [
+  { icon: "🤝", title: "Locally led.", desc: "Every country office is staffed and led by people who live there. No parachuting in solutions from Nairobi." },
+  { icon: "📊", title: "Radically transparent.", desc: "Our financials, partner agreements, and impact data are public. Every shilling is traceable to a community outcome." },
+  { icon: "🌱", title: "Patient funding.", desc: "We commit 3-year minimum grants to community partners — long enough to see impact, not just outputs." },
+  { icon: "🤲", title: "Ubuntu spirit.", desc: "“I am because we are.” Our work is rooted in the African philosophy of interconnected humanity." },
 ];
 ---
 
-<Layout title="Our Team" description="Meet the dedicated team behind Peace League Africa. Our leadership and board are committed to building lasting peace across 12 African countries.">
+<Layout title="Our Team — Peace League Africa" description="Meet the leadership, operations, and field staff powering Peace League Africa across 12 East African countries. Locally-led, transparent, and patient-funded.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Our Team — Peace League Africa",
+    "url": "https://peaceleagueafrica.com/team",
+    "description": "Meet the 60+ staff and 200+ volunteers running Peace League Africa's peace-building programmes across 12 East African countries.",
+    "isPartOf": { "@type": "WebSite", "name": "Peace League Africa", "url": "https://peaceleagueafrica.com" },
+    "publisher": { "@type": "Organization", "name": "Peace League Africa", "url": "https://peaceleagueafrica.com" }
+  })} />
+
   <Navigation />
 
   <main id="main-content">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://peaceleagueafrica.org" },
-        { "@type": "ListItem", "position": 2, "name": "Our Team", "item": "https://peaceleagueafrica.org/team" }
-      ]
-    })} />
-    <section class="hero-inner grain-overlay text-white py-4 lg:py-8">
-      <!-- Ambient orbs -->
-      <div class="orb-float orb-float--1" style="top:-100px;right:-100px;" aria-hidden="true"></div>
-      <div class="orb-float orb-float--2" style="bottom:-80px;left:-80px;" aria-hidden="true"></div>
+    <!-- Hero: flat per DESIGN.md [baseline-ui] -->
+    <section class="py-12 lg:py-16 bg-surface border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent-deep font-semibold text-sm mb-6">
+          <span aria-hidden="true">👥</span> Meet the team
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 tracking-tight leading-[1.1]">
+          60+ staff. 200+ volunteers. <span class="text-accent">One mission.</span>
+        </h1>
+        <p class="text-xl text-steel max-w-2xl mx-auto">
+          Peace League Africa is run by people who live and work in the communities we serve. Our team is 92% African, 71% women, and present in every one of our 12 countries.
+        </p>
+      </div>
+    </section>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">Our Team</h1>
-        <p class="mt-4 text-lg text-white/80 max-w-2xl">Six staff, 12 countries, one job: peace-building.</p>
+    <!-- Leadership -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-heading-2 text-ink mb-4">Leadership</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            The executive team sets strategy, stewards funds, and represents Peace League Africa to partners, governments, and communities.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {leaders.map((person) => (
+            <article class="card-base p-6 flex flex-col gap-3">
+              <div class="flex items-start gap-4">
+                <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/15 text-accent-deep font-bold text-base shrink-0" aria-hidden="true">
+                  {person.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-base font-semibold text-ink">{person.name}</h3>
+                  <p class="text-sm text-accent-deep font-medium">{person.role}</p>
+                  <p class="text-xs text-steel mt-0.5">{person.location}</p>
+                </div>
+              </div>
+              <p class="text-sm text-steel leading-relaxed">{person.bio}</p>
+            </article>
+          ))}
+        </div>
       </div>
-      <div class="geometric-shapes" aria-hidden="true">
-        <span class="float-shape float-shape--a" style="width:160px;height:160px;top:0;left:5%;background:radial-gradient(circle,rgba(0,212,164,0.2),transparent 70%);"></span>
-        <span class="float-shape float-shape--b" style="width:100px;height:100px;top:10%;right:8%;background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></span>
-        <span class="float-shape--diamond float-shape--a" style="width:70px;height:70px;bottom:25%;left:12%;border:2px solid rgba(0,212,164,0.15);background:transparent;"></span>
-        <span class="float-shape float-shape--c" style="width:250px;height:250px;bottom:-15%;right:-5%;background:radial-gradient(circle,rgba(0,212,164,0.06),transparent 70%);"></span>
+    </section>
+
+    <!-- Field staff counter -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-y border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          {fieldStaff.map((stat) => (
+            <div class="card-base p-6">
+              <div class="text-3xl md:text-4xl font-bold text-accent mb-1">{stat.count}</div>
+              <div class="text-xs text-steel uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    </section>
+
+    <!-- How we work -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-canvas">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-heading-2 text-ink mb-4">How we work</h2>
+          <p class="text-body-md text-steel max-w-2xl mx-auto">
+            Four operating principles that every team member — and every partner — signs onto on day one.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {culture.map((c) => (
+            <article class="card-base p-6 flex flex-col gap-3">
+              <span class="text-2xl" aria-hidden="true">{c.icon}</span>
+              <h3 class="text-base font-semibold text-ink">{c.title}</h3>
+              <p class="text-sm text-steel leading-relaxed">{c.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-section px-4 sm:px-6 lg:px-8 bg-surface border-t border-hairline">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-heading-3 text-ink mb-4">Join our team</h2>
+        <p class="text-body-md text-steel mb-8">
+          We hire locally. We promote from within. We pay above-market. If our operating principles fit yours, we'd love to hear from you.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/careers" class="btn btn-accent btn-large">See open roles</a>
+          <a href="/volunteer" class="btn btn-large border-2 border-hairline text-ink hover:border-accent hover:text-accent-deep transition-all">Volunteer with us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="py-10 bg-canvas border-t border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-steel mb-4">You might also be interested in</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">About Us</a>
+          <a href="/careers" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Careers</a>
+          <a href="/volunteer" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Volunteer</a>
+          <a href="/partner" class="inline-flex items-center px-5 py-2.5 rounded-full border border-hairline text-sm text-steel hover:text-ink hover:border-accent/40 hover:bg-accent/5 transition-all duration-200">Partner With Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
