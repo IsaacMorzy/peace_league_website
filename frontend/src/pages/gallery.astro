@@ -111,45 +111,18 @@ const galleryImages = [
       </div>
     </section>
 
-    <!-- Photo-card live filter JS (mirrors /causes landing IIFE) -->
+    <!-- Photo-card live filter (uses the shared wireFilterPills helper from lib/filterPills) -->
     <script>
-      (function() {
-        const buttons = document.querySelectorAll("[data-filter-cat]");
-        const cards = document.querySelectorAll("[data-photo-card]");
-        const countEl = document.querySelector("[data-gallery-count]");
-        const emptyEl = document.querySelector("[data-gallery-empty]");
-        if (!buttons.length || !cards.length) return;
-        function applyFilter(cat) {
-          let visible = 0;
-          cards.forEach((card) => {
-            const match = cat === "All" || card.dataset.category === cat;
-            card.style.display = match ? "" : "none";
-            if (match) visible++;
-          });
-          if (countEl) {
-            countEl.textContent = cat === "All"
-              ? `Showing all ${cards.length} photos.`
-              : `Showing ${visible} photo(s) in ${cat}.`;
-          }
-          if (emptyEl) emptyEl.hidden = visible > 0;
-        }
-        buttons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const cat = btn.dataset.filterCat || "All";
-            buttons.forEach((b) => {
-              const isActive = b.dataset.filterCat === cat;
-              b.classList.toggle("bg-primary", isActive);
-              b.classList.toggle("text-on-primary", isActive);
-              b.classList.toggle("border-primary", isActive);
-              b.classList.toggle("bg-canvas", !isActive);
-              b.classList.toggle("text-steel", !isActive);
-              b.classList.toggle("border-hairline", !isActive);
-              b.setAttribute("aria-pressed", isActive ? "true" : "false");
-            });
-            applyFilter(cat);
-          });
-        });
-      })();
+      import { wireFilterPills } from "../lib/filterPills";
+      wireFilterPills({
+        buttons: document.querySelectorAll("[data-filter-cat]"),
+        cards:   document.querySelectorAll("[data-photo-card]"),
+        countEl: document.querySelector("[data-gallery-count]"),
+        emptyEl: document.querySelector("[data-gallery-empty]"),
+        countMessage: (visible, total, cat) => cat === "All"
+          ? `Showing all ${total} photos.`
+          : `Showing ${visible} photo(s) in ${cat}.`,
+      });
     </script>
   </main>
 
