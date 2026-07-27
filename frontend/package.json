@@ -7,6 +7,7 @@
   },
   "scripts": {
     "astro": "astro",
+    "audit:aria-db": "bash scripts/audit-aridadb.sh",
     "audit:astro-closures": "bash scripts/audit-astro-closures.sh",
     "audit:lighthouse": "node scripts/lighthouse-sweep.mjs --base-url http://localhost:4321 --routes-file scripts/routes.txt",
     "audit:playwright:ui-smoke": "node scripts/playwright-sweep.mjs",
