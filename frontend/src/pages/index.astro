@@ -23,9 +23,37 @@ const monthMap = { "Jan":"01","Feb":"02","Mar":"03","Apr":"04","May":"05","Jun":
 const awardsIsoDate = awardsEvent ? `${awardsEvent.year}-${monthMap[awardsEvent.month]}-${awardsEvent.day.padStart(2,"0")}` : "2026-12-17";
 const awardsStartTime = awardsEvent?.startTime || "10:00";
 
+const siteUrl = Astro.site?.toString() ?? "https://peaceleagueafrica.org/";
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Peace League Africa",
+  "url": siteUrl,
+  "logo": new URL("logo.svg", siteUrl).toString(),
+  "description": "Peace League Africa builds peace across 12 African countries through education, healthcare, clean water, and youth programs. 1,200+ volunteers active.",
+  "areaServed": "Africa",
+  "sameAs": [
+    "https://www.facebook.com/peaceleagueafrica",
+    "https://twitter.com/peaceleagueafrica",
+    "https://www.instagram.com/peaceleagueafrica"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+254-700-000-000",
+    "contactType": "customer support",
+    "areaServed": "Africa",
+    "availableLanguage": ["English", "Swahili"]
+  }
+};
+
 ---
 
 <Layout title="Home" description="Peace League Africa builds peace across 12 African countries through education, healthcare, clean water, and youth programs. 1,200+ volunteers active.">
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)}></script>
+  </Fragment>
+
+  
   <Navigation />
 
   <main id="main-content">
@@ -95,9 +123,9 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
       </div>
     </section>
 
-    <section data-reveal class="py-section-lg bg-surface text-ink border-y border-hairline overflow-hidden">
+    <section aria-labelledby="why-pla" data-reveal class="py-section-lg bg-surface text-ink border-y border-hairline overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">Why Peace League Africa</h2>
+        <h2 id="why-pla" class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">Why Peace League Africa</h2>
         <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
         <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-8">Four reasons to trust us with your support</p>
         
@@ -170,10 +198,10 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
       </div>
     </section>
 
-    <section data-reveal class="py-6 lg:py-10 bg-surface overflow-hidden">
+    <section aria-labelledby="impact-numbers" data-reveal class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
+        <h2 id="impact-numbers" class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Impact in Numbers</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-8">Grassroots peacebuilding measured in lives changed, communities rebuilt, and futures restored.</p>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 tilt-container">
           <div class="scroll-reveal tilt-card group relative bg-canvas rounded-2xl p-6 sm:p-8 border border-hairline text-center" style="animation-delay: 0ms;">
@@ -247,10 +275,10 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
       </div>
     </section>
 
-    <section data-reveal class="py-section-lg bg-surface text-ink border-y border-hairline overflow-hidden">
+    <section aria-labelledby="our-causes" data-reveal class="py-section-lg bg-surface text-ink border-y border-hairline overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
+        <h2 id="our-causes" class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Our Causes</h2>
         <p class="text-center text-lg text-steel max-w-2xl mx-auto mb-8">Every cause is community-driven, locally led, and fully transparent. Here is where your support goes.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 tilt-container">
           {causes.slice(0, 6).map((cause, idx) => (
@@ -296,11 +324,11 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
          FEATURED EVENT — Peace League Africa Awards Gala
          ════════════════════════════════════════════════════════ -->
     {awardsEvent && (
-    <section class="py-section-lg bg-surface text-ink border-y border-hairline overflow-hidden">
+    <section aria-labelledby="featured-event" class="py-section-lg bg-surface text-ink border-y border-hairline overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12" data-reveal>
           <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent uppercase tracking-wider mb-4">Awards Gala</span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Peace League Africa Awards Gala 2026</h2>
+          <h2 id="featured-event" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Peace League Africa Awards Gala 2026</h2>
           <p class="text-lg text-steel max-w-2xl mx-auto">Celebrating 62 categories of peace champions across Africa &mdash; join us at the historic August 7th Memorial Park for a landmark ceremony of honour, resilience, and hope.</p>
         </div>
 
@@ -500,7 +528,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
 
     <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">How We Work</h2>
+        <h2 id="how-we-work" class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-3">How We Work</h2>
         <div class="h-0.5 w-24 mx-auto mb-4 bg-gradient-to-r from-accent/60 via-accent-warm/60 to-accent/60"></div>
         <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto mb-8">A proven process rooted in listening, local leadership, and lasting change.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
@@ -558,7 +586,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
         <div class="text-center max-w-3xl mx-auto mb-8">
-          <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Your Donation Changes Lives</h2>
+          <h2 id="donation-tiers" class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Your Donation Changes Lives</h2>
           <p class="scroll-reveal text-lg text-steel text-center max-w-2xl mx-auto">Every dollar goes directly to community-driven programs. Here is what your generosity makes possible.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -637,7 +665,7 @@ const awardsStartTime = awardsEvent?.startTime || "10:00";
     <section class="py-6 lg:py-10 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-divider mb-6"></div>
-        <h2 class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Trusted by Leading Organizations</h2>
+        <h2 id="trusted-orgs" class="scroll-reveal text-xl sm:text-2xl lg:text-3xl font-semibold leading-[1.2] tracking-[-0.5px] text-ink text-center mb-4">Trusted by Leading Organizations</h2>
         <p class="scroll-reveal text-center text-lg text-steel max-w-2xl mx-auto mb-4">We are proud to collaborate with these global and regional organizations committed to peace and sustainable development.</p>
         <p class="scroll-reveal text-center text-sm text-steel max-w-xl mx-auto mb-12">Together, we amplify our reach, share expertise, and ensure that every initiative is grounded in proven best practices.</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
