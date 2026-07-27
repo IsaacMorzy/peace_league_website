@@ -4,49 +4,52 @@
  * live filtering + aria-live count + role="status" empty-state.
  *
  * Per-page wiring:
- *   const buttons = document.querySelectorAll('[data-filter-cat]');
- *   const cards   = document.querySelectorAll('[data-{whatever}-card]');
  *   wireFilterPills({
- *     buttons,
- *     cards,
- *     countEl:    document.querySelector('[data-...-count]'),
- *     emptyEl:    document.querySelector('[data...-empty]'),
- *     countMessage: (visible, total, cat) => cat === 'All'
+ *     buttons: document.querySelectorAll<HTMLButtonElement>("[data-filter-cat]"),
+ *     cards:   document.querySelectorAll<HTMLElement>("[data-{whatever}-card]"),
+ *     countEl: document.querySelector<HTMLElement>("[data-...-count]"),
+ *     emptyEl: document.querySelector<HTMLElement>("[data-...-empty]"),
+ *     matchAttr: "category",
+ *     countMessage: (visible, total, cat) => cat === "All"
  *       ? `Showing all ${total} causes.`
  *       : `Showing ${visible} cause(s) in ${cat}.`,
  *   });
+ *
+ * countMessage contract:
+ *   visible: number of cards currently matching the active filter
+ *   total:   total number of cards (cards.length)
+ *   cat:     the active category string ("All" for unfiltered state)
  */
 export interface FilterPillsConfig {
-  buttons: ArrayLike<Element>;
-  cards: ArrayLike<Element>;
-  matchAttr?: string;                 // dataset key on cards, default "category"
-  countEl?: Element | null;
-  emptyEl?: Element | null;
+  buttons: ArrayLike<HTMLButtonElement>;
+  cards: ArrayLike<HTMLElement>;
+  matchAttr?: string;
+  countEl?: HTMLElement | null;
+  emptyEl?: HTMLElement | null;
   countMessage: (visible: number, total: number, cat: string) => string;
 }
 
 export function wireFilterPills(cfg: FilterPillsConfig): void {
   const { buttons, cards, matchAttr = "category", countEl, emptyEl, countMessage } = cfg;
+  // Both pages have inline guards; preserve the no-op on empty so a page without
+  // matching buttons/cards never errors at runtime.
   if (!buttons.length || !cards.length) return;
 
   function applyFilter(cat: string): void {
     let visible = 0;
-    cards.forEach((raw) => {
-      const card = raw as HTMLElement;
+    cards.forEach((card) => {
       const match = cat === "All" || card.dataset[matchAttr] === cat;
       card.toggleAttribute("hidden", !match);
       if (match) visible++;
     });
-    if (countEl) (countEl as HTMLElement).textContent = countMessage(visible, cards.length, cat);
-    if (emptyEl) (emptyEl as HTMLElement).hidden = visible > 0;
+    if (countEl) countEl.textContent = countMessage(visible, cards.length, cat);
+    if (emptyEl) emptyEl.hidden = visible > 0;
   }
 
-  buttons.forEach((raw) => {
-    const btn = raw as HTMLElement;
+  buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const cat = btn.dataset.filterCat || "All";
-      buttons.forEach((rawOther) => {
-        const b = rawOther as HTMLElement;
+      buttons.forEach((b) => {
         const isActive = b.dataset.filterCat === cat;
         b.classList.toggle("bg-primary", isActive);
         b.classList.toggle("text-on-primary", isActive);
