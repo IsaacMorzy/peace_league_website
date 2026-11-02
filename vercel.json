@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd frontend && pnpm install --frozen-lockfile && pnpm build",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "peace_league_website/public/astro_pages",
   "framework": "astro"
 }
