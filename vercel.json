@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd frontend && pnpm build",
+  "outputDirectory": "peace_league_website/public/astro_pages",
+  "framework": "astro"
+}

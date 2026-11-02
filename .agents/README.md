@@ -23,7 +23,7 @@ Byte-identical copies of `~/.agents/skills/<name>/SKILL.md`. Pick whichever is i
 - `ponytail-audit` — repo-wide over-engineering audit (one-shot, lists findings, applies nothing). Output lands in `../docs/audit-YYYY-MM-DD.md`.
 - `ponytail-debt` — harvest `# ponytail:` comments into a debt ledger.
 - `setup-matt-pocock-skills` — wire issue tracker, triage labels, domain docs.
-- `tdd` / `test-driven-development` — red → green vertical-slice loop, behavior-not-implementation tests, agreed seams before any test.
+- `tdd` — red → green vertical-slice loop, behavior-not-implementation tests, agreed seams before any test.
 - `loop-constraints` — enforce `../loop-constraints.md` at startup.
 - `loop-triage` — rank CI failures / issues.
 - `loop-budget` — token-spend guard, early exit when nothing actionable.

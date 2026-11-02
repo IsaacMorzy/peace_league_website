@@ -25,7 +25,7 @@ Local stubs in `.agents/skills/`. Globals live in `~/.agents/skills/`.
 | `ponytail-audit` | Repo-wide over-engineering audit. |
 | `ponytail-debt` | Harvest `# ponytail:` comments into a debt ledger. |
 | `setup-matt-pocock-skills` | Wire issue tracker, triage labels, domain-doc layout. |
-| `tdd` / `test-driven-development` | Red → Green loop, vertical slices, tests at seams, not internals. |
+| `tdd` | Red → Green loop, vertical slices, tests at seams, not internals. |
 | `loop-constraints` | Read `loop-constraints.md` and enforce denylists, test rules, exit gates. |
 | `loop-triage` | Sort CI failures / issues into High / Watch / Noise. |
 | `loop-budget` | Token spend guard, early-exit when nothing actionable. |
